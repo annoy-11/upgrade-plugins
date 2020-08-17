@@ -1,0 +1,1 @@
+<?php echo $this->form->setAttrib('class', 'global_form_box loginseshtmlbtn_'.$this->idI)->render($this); ?>

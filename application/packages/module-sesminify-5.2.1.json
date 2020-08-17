@@ -1,0 +1,5621 @@
+{
+  "type": "module",
+  "name": "sesminify",
+  "version": "5.2.1",
+  "revision": null,
+  "path": "application\/modules\/Sesminify",
+  "repository": null,
+  "sku": null,
+  "date": "Thu, 23 Jul 2020 04:42:44 +0000",
+  "title": "SES - JS & CSS Minify Plugin",
+  "description": "SES - JS & CSS Minify Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Thu, 23 Jul 2020 04:42:44 +0000",
+    "title": "SES - JS & CSS Minify Plugin",
+    "description": "SES - JS & CSS Minify Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sesminify\/settings\/install.php",
+    "class": "Sesminify_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "5.0.0",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sesminify": {
+      "type": "directory",
+      "path": "application\/modules\/Sesminify",
+      "structure": [
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1282,
+          "sha1": "16a3ca6e4d9f26b8305cacf5a64107d95c19458f"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1963,
+          "sha1": "7bb5e4a15dbfa1fc20a2a3ddf3fd9d80d9a99db4"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/gzip.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2844,
+          "sha1": "140d7c6150a3c4239d3674cd7dc9115cb3af7a28"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/ignorecss.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 727,
+          "sha1": "b30e663a484bb810a11f3653b85bf486b1a559dc"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/ignore.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 678,
+          "sha1": "8274329ad22ff98e438c9be42873dbb9a776cfbd"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 349,
+          "sha1": "135ea20bf7df6b54e742ce800bcdbe1d7d09a03d"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 520,
+          "sha1": "63fde16394c0468a16fec473dd5851e0062aecd4"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3193,
+          "sha1": "b2db125ec584350e941b88e1c67eb842d8f09afb"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5907,
+          "sha1": "e29c074d8b3406238f76312b6ed896ea717d3f58"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 396,
+          "sha1": "01816efd5016d0840a9aab4d228c48d0b24896b1"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 932,
+          "sha1": "6c61ed0d661994341e0c21718a35bbf3e223f176"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "View",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "View\/Helper",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "View\/Helper\/HeadLink.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4390,
+          "sha1": "f335c437f555afa49b972af378c83bc5d593345b"
+        },
+        {
+          "path": "View\/Helper\/HeadScript.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4811,
+          "sha1": "6f84dc6f86cc1bd859f52cc5f67cf24207d94434"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Ignorecss.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1130,
+          "sha1": "e09e61c44d1387c66e5ff8c2213d6890bd8f8c92"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/General.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4345,
+          "sha1": "bc33e863d9a50482a33b9ef71e09c25b6456fa24"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Ignorejs.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1124,
+          "sha1": "87c411981ebcaa4ae089c39b3035d77954dfac94"
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1037,
+          "sha1": "9fd4b86066ebdd95e6431c203dd6bce64839830d"
+        },
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 390,
+          "sha1": "ec86377555458864bb405a328ae4bd4d3b4b4747"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 823,
+          "sha1": "2b717f0c17f01e11509082484a4b9c17d91e578d"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1462,
+          "sha1": "d2a25e87292fc9ff4c6a900d2f62b791724e5324"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0755",
+          "size": 1457,
+          "sha1": "a92a5165dbb5fe3f626f12892a30f88ec765e93a"
+        }
+      ]
+    },
+    "sesminify": {
+      "type": "directory",
+      "path": "sesminify",
+      "structure": [
+        {
+          "path": "lib",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 27537,
+          "sha1": "99e25986e7d86c58c53ed1fe1fb52fa45f5c501a"
+        },
+        {
+          "path": "lib\/MrClay",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/MrClay\/Cli",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/MrClay\/Cli\/Arg.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5098,
+          "sha1": "6f5cef8fdb778c32ebbd10fc90e9a37de8c02645"
+        },
+        {
+          "path": "lib\/MrClay\/Cli.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11458,
+          "sha1": "bb867425db9a70d98066370d9a7cdf46aed478ed"
+        },
+        {
+          "path": "lib\/Minify",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/NailgunClosureCompiler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2802,
+          "sha1": "9b7a77cfdf832763d06778af3f4f883825b321f7"
+        },
+        {
+          "path": "lib\/Minify\/LessCssSource.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2890,
+          "sha1": "fff179845cd0b4603cdc100ab667738b1dc79f52"
+        },
+        {
+          "path": "lib\/Minify\/DebugDetector.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 784,
+          "sha1": "f722813bbb1988cf30ac403f25f9767f8d84a3a8"
+        },
+        {
+          "path": "lib\/Minify\/Packer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 804,
+          "sha1": "8f31f1cd2152fcc68a674273f500e0610306b1cd"
+        },
+        {
+          "path": "lib\/Minify\/Lines.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6377,
+          "sha1": "28b05c11427f51c4df79f98b183aceb343d971c3"
+        },
+        {
+          "path": "lib\/Minify\/Controller",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/Controller\/Base.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1777,
+          "sha1": "139477b20bd45031b140950bb33c759d9a6eadd5"
+        },
+        {
+          "path": "lib\/Minify\/Controller\/MinApp.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7266,
+          "sha1": "68339d58b54bc4e24b7c7388428802b510222e8b"
+        },
+        {
+          "path": "lib\/Minify\/Controller\/Groups.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2118,
+          "sha1": "3dd4825117e6ec7772ad67060723eb56e8a22785"
+        },
+        {
+          "path": "lib\/Minify\/Controller\/Page.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2177,
+          "sha1": "e6bf176c92b8272d6854c3f5074452b53da2b346"
+        },
+        {
+          "path": "lib\/Minify\/Controller\/Files.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1842,
+          "sha1": "9a36c83f1774533df4b256af7b00a2390ee9fc5a"
+        },
+        {
+          "path": "lib\/Minify\/Source",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/Source\/Factory.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6897,
+          "sha1": "7a1cc294c373da8fe5bdbc07b3dd83b72b3b6cf1"
+        },
+        {
+          "path": "lib\/Minify\/Source\/FactoryException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 66,
+          "sha1": "93cbccb0a0deece8d0bb3a5bddf4e1599d1b844f"
+        },
+        {
+          "path": "lib\/Minify\/CSSmin.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2765,
+          "sha1": "9e623e1eccaa7d9f0cadd43e03e0796fab946995"
+        },
+        {
+          "path": "lib\/Minify\/HTML.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8209,
+          "sha1": "6524dc4155ca2fc61c7f44d7b09c3583b8821fb8"
+        },
+        {
+          "path": "lib\/Minify\/JS",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/JS\/JShrink.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1242,
+          "sha1": "933df66b78df1318d17bb02874f5fa346d854ecf"
+        },
+        {
+          "path": "lib\/Minify\/JS\/ClosureCompiler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7649,
+          "sha1": "327ff6554aa9d4a0b0677ce11d7d02dbc459bbc7"
+        },
+        {
+          "path": "lib\/Minify\/CSS",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/CSS\/Compressor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8699,
+          "sha1": "af904c5aa3dc63c393c24803e1db50e9401140d1"
+        },
+        {
+          "path": "lib\/Minify\/CSS\/UriRewriter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10628,
+          "sha1": "ca00c892a1a6e0023688e4c470f832d0e2bf64b3"
+        },
+        {
+          "path": "lib\/Minify\/SourceInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1428,
+          "sha1": "3324c1f094496708f7ac648f75f664e94f2d43e4"
+        },
+        {
+          "path": "lib\/Minify\/ClosureCompiler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6181,
+          "sha1": "644993b5c9e6b2e87be5836f2deb9a843caae284"
+        },
+        {
+          "path": "lib\/Minify\/App.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9339,
+          "sha1": "b0b82aed7102a1c477203ea20faeb5809eb3a162"
+        },
+        {
+          "path": "lib\/Minify\/ScssCssSource.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4142,
+          "sha1": "0f06ea132612ec7b7dcf1e51b5f6cf5920a03ef3"
+        },
+        {
+          "path": "lib\/Minify\/CommentPreserver.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2617,
+          "sha1": "aafce0fe355652388878c94cb34c7fd756b0ef76"
+        },
+        {
+          "path": "lib\/Minify\/ServeConfiguration.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1451,
+          "sha1": "c9301eb93da07b9169407987f77779520829efdc"
+        },
+        {
+          "path": "lib\/Minify\/Config.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1063,
+          "sha1": "0608cbdb67be9209a929cb84cb4f5386ecbdc2a1"
+        },
+        {
+          "path": "lib\/Minify\/YUICompressor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4648,
+          "sha1": "2bf601d6daf71e07ca68f6ad6900d365d220ea31"
+        },
+        {
+          "path": "lib\/Minify\/SourceSet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 590,
+          "sha1": "64c73df518d417b2d58007e811af4146dc7ebbaf"
+        },
+        {
+          "path": "lib\/Minify\/ImportProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7489,
+          "sha1": "ec58f0212356d65b806078b177c362105fe55550"
+        },
+        {
+          "path": "lib\/Minify\/Build.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2690,
+          "sha1": "c6ff665461d6c5a0cbdcb412c243f95b849ca0cc"
+        },
+        {
+          "path": "lib\/Minify\/HTML",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/HTML\/Helper.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7403,
+          "sha1": "72064f4dd044b64e22b727fff398b37c9dbcb658"
+        },
+        {
+          "path": "lib\/Minify\/Logger",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/Logger\/LegacyHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 525,
+          "sha1": "153792b7d5d9a5bfde2fa7bf142d4278d7abf344"
+        },
+        {
+          "path": "lib\/Minify\/CSS.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3279,
+          "sha1": "90880fb345af4d5e9f914672bdbb194911cc7d1c"
+        },
+        {
+          "path": "lib\/Minify\/Env.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3239,
+          "sha1": "6e9744ec52ce8ec275998a51265fce2718d90f6e"
+        },
+        {
+          "path": "lib\/Minify\/CacheInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1153,
+          "sha1": "0452fa9944980578b8fb7655c1bd6dc8f879075b"
+        },
+        {
+          "path": "lib\/Minify\/Cache",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/Minify\/Cache\/XCache.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2827,
+          "sha1": "9e487ec594860ef7d282441687f944bc9729c9b6"
+        },
+        {
+          "path": "lib\/Minify\/Cache\/Null.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1300,
+          "sha1": "53fc174a06e78a1385c5127eb8aeefd55d6b0948"
+        },
+        {
+          "path": "lib\/Minify\/Cache\/ZendPlatform.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2678,
+          "sha1": "f7800ce0f34c42335c2faf294142380d8e7faad5"
+        },
+        {
+          "path": "lib\/Minify\/Cache\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3874,
+          "sha1": "16fdef0ef4d7b1bcf0826267e968d8ed472a75f0"
+        },
+        {
+          "path": "lib\/Minify\/Cache\/WinCache.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3011,
+          "sha1": "170507d7dabde6dcebc3d24eefbef386f41956ed"
+        },
+        {
+          "path": "lib\/Minify\/Cache\/APC.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2769,
+          "sha1": "9f20d18ec560ac26361daa6d9d51c167e5a1e1eb"
+        },
+        {
+          "path": "lib\/Minify\/Cache\/Memcache.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3062,
+          "sha1": "a64716e34391caab861aaf7bf5c4f3de3e078399"
+        },
+        {
+          "path": "lib\/Minify\/Source.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5463,
+          "sha1": "9f9809e9a1b48545c3509a1a8b96377d75717607"
+        },
+        {
+          "path": "lib\/Minify\/ControllerInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 410,
+          "sha1": "500ae58b2ff470dfb3b8f421413e6ba5ffd54814"
+        },
+        {
+          "path": "lib\/HTTP",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "lib\/HTTP\/Encoder.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10565,
+          "sha1": "9ffa2a56a13f0bee1b62630983693084d645cdd6"
+        },
+        {
+          "path": "lib\/HTTP\/ConditionalGet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11792,
+          "sha1": "57b91fcabc0700be852f16ba5d07005346675cc4"
+        },
+        {
+          "path": "config.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6803,
+          "sha1": "18166704ba5271449603e503b0787c378db9d425"
+        },
+        {
+          "path": "bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 658,
+          "sha1": "35346ea52124ca38fb0f6b26de2081397169b4bc"
+        },
+        {
+          "path": "static",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "static\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1136,
+          "sha1": "a7f139c66c9fba5c45aec0942b8d23d18e3c019a"
+        },
+        {
+          "path": "static\/lib.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1501,
+          "sha1": "4f96b8b7f4b465b508a113cdab406d117c7e6602"
+        },
+        {
+          "path": "static\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2908,
+          "sha1": "2e7a1b1d0ddbf78a01c11f3b4af88987a76bb62e"
+        },
+        {
+          "path": "static\/gen.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3233,
+          "sha1": "1d8c8eb67aacd22b7e1442e43a0faa113c321161"
+        },
+        {
+          "path": "vendor",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/.travis.yml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 166,
+          "sha1": "d46964b6562713a452da72ffb054cc136e6af08a"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/tests\/DigestUserTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 272,
+          "sha1": "7108721d46de87bf07a16b70cc2dfbe9ecc4999b"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/tests\/BasicUserTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 841,
+          "sha1": "99ca1375df11454f4cc361a0d4694878ac546ff3"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/tests\/.gitkeep",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/tests\/HttpauthTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1296,
+          "sha1": "158e997175a76c24ee8de489bc8939ab746b0a9d"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2751,
+          "sha1": "b94549b9797607276b75b8286e7981379622dda1"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1078,
+          "sha1": "d2f50a3b11c50a5eb0eba6e729b82c225aa3d40e"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/config",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/config\/config.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1447,
+          "sha1": "bc092f29dd6bc270bec6dd53cccb211324e2eb39"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/config\/.gitkeep",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/UserInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 374,
+          "sha1": "097f0ade57fe86454f7ea67de913655e6bda902a"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/HttpauthServiceProviderLaravel4.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 599,
+          "sha1": "898fb550dd539a1fb3c92e487b19bd6398262bb2"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/Httpauth.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3710,
+          "sha1": "ec96bdbc9a374f0ca3a8280c86c1503cc18ce791"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/DigestUser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3001,
+          "sha1": "d966a56357080d8d1be333eca56b7507bdc79855"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/BasicUser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1430,
+          "sha1": "70f301fc79f24a279044703a8f40f372182ba54e"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/Facades",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/Facades\/Httpauth.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 212,
+          "sha1": "5f64132794724f5e981a6931d55827bfb39bd79e"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/HttpauthServiceProvider.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1606,
+          "sha1": "4c64b889477b7831494058df801d3d168ff1a45e"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/src\/Intervention\/Httpauth\/HttpauthServiceProviderLaravel5.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 791,
+          "sha1": "9951983a8437cefc807f926938d3b3f950b72eb7"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 31,
+          "sha1": "ec66936cbb610214d28f94c220b9e3bb2847b954"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 978,
+          "sha1": "e3881a793d120f7867dc3d1eadef12dd44ac0c75"
+        },
+        {
+          "path": "vendor\/intervention\/httpauth\/phpunit.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 570,
+          "sha1": "d0d7fdc1a342dfc3d372d2787032aa4a5cca061e"
+        },
+        {
+          "path": "vendor\/tubalmartin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/cssmin",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 754,
+          "sha1": "e35196e5414308f604521233efd47f10b245caa2"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/background-position.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 223,
+          "sha1": "9c8c37b06924c4ff81f63cb3214a125b2556b521"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/bootstrap.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 144632,
+          "sha1": "8ff7ad377489891b34b262f38a659972c4e897b6"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-base64-eof.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3832,
+          "sha1": "4cdeea288f54ef0486a9b849d210e299a9089834"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-noquote-multiline-font.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 348,
+          "sha1": "51ea3e6780a373ddb22432a32118b03cb056170e"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/star-underscore-hacks.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 95,
+          "sha1": "ce1ee6f1ab4a1cfa8922593ac2492a64ec6edf16"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/old-ie-filters.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 902,
+          "sha1": "9080dfbfdec3d5472a8ba4eb3476a5db802885ab"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/background.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 92,
+          "sha1": "cde4d739ba31424a3957427207ebb75014848f5a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/pseudo-classes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 53,
+          "sha1": "f949bfd57c943057aae0426d9f4b9abd0c4aaddb"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/numbers.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 949,
+          "sha1": "c780937bee4a881642006b7d6b89f8fc8766259e"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/flex.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 33,
+          "sha1": "aff8fd78bfb51e606f56e6461e23d854ba4eecfd"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-realdata-singlequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2568,
+          "sha1": "a9b82b21c4b29de4a50f6a3695ea384a48d47bf9"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/sourcemap-comment-preserve.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 55,
+          "sha1": "530ec9cc51938be636bb35785a1fc01c6999e343"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-realdata-doublequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2568,
+          "sha1": "b3893947c6232535f34cd8db0604bb737281aa0a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-realdata-yuiapp.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2079,
+          "sha1": "c1cbc24dd7f2cf3f697987a900a66d626d2672fd"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/kube.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 31192,
+          "sha1": "e980f96d768d552a0e4560933b4b2986eeb3faa3"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/linebreak-position.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 211,
+          "sha1": "4ee3cb7bb208869733a3757d5be8b4a6971ef546"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-base64-doublequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84644,
+          "sha1": "6eb425e3dc07ad0f8266408853707656860ea698"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/semicolons.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 28,
+          "sha1": "106fe999ae6ffd2f5b5f7353cd2f4145e3a5f3a0"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-nonbase64-noquotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1188,
+          "sha1": "cd92698910acb71743300f6407dbb9d8f0eda092"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-realdata-noquotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2566,
+          "sha1": "896d5451ebcbbd969135504d0af5b545d708c165"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/text-shadow.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 40,
+          "sha1": "1f3ffbef5c03cdad7f5da109387476878ae5cf91"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/lowercasing.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1271,
+          "sha1": "0c55ea7b271b0ae9c41d6ae69c929914be577246"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-base64-twourls.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4229,
+          "sha1": "0d6a1cd0c3678ae5778cac87a43aa07909e13586"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/comments.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 603,
+          "sha1": "986d672800874462dfdbd4dfa6dffe1df956a323"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-singlequote-font.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 350,
+          "sha1": "980c41ef17f12d150b0f8a4be6a16c907f9208a1"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-nonbase64-doublequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1186,
+          "sha1": "d9b610797fb2cf98a0f1efd471817213d6bfca0a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-base64-linebreakindata.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1886,
+          "sha1": "5365b976b122aba47cb40755d309218fcae4fc72"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/pseudo-elements.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 243,
+          "sha1": "aa5dbe9578f2812ef91582b0d5e47d24d7807898"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/materialize.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 123119,
+          "sha1": "1d1e2913a399cdf889b16911c71ce8090997b20e"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/unit-ms.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 176,
+          "sha1": "1909b814d257733fba4689e7a32557fce6ef893e"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/at-rules.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2806,
+          "sha1": "aa4b99ae0420883c86f5fbd4fa8802527a6d7765"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/preserve-case.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 170,
+          "sha1": "5bdd11d77219899054741a2d309727df21b71169"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/mui.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 40237,
+          "sha1": "8d22e097ab5d385a806fb2382e4ba56dda019648"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/important-comments-remove.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 188,
+          "sha1": "a244ada12b0e004d09c1cad42af4877becdbd1fb"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/border.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84,
+          "sha1": "0cf4836fad1474bdd57c2b626591741813e0bc77"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-base64-singlequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84644,
+          "sha1": "f32d3053466e65debb6c5e7c84735a0de9edd01a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-inline-svg.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 948,
+          "sha1": "f17708eecc45dfcfbee6377e1487c990af36a302"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/attribute-selectors.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 433,
+          "sha1": "db9946d243998f4768983fe3d693d25b250cce64"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/strings.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 264,
+          "sha1": "be580a8ab18e16eec550c59851898e5017a7353b"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/bulma.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 102312,
+          "sha1": "d3a94607ddac0f5e0844f9af9d5099db1709c21f"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/colors.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1725,
+          "sha1": "54cf3813d012497f0db1d02916841da34e8bad64"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/pure.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 17479,
+          "sha1": "7cd23c56b3f23c05929609f00e275bd6011b6fd9"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/empty-rules.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 151,
+          "sha1": "83efd40bec6573597f082c0e834e206b5ab2ef53"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/important.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 76,
+          "sha1": "3b68ca40ad32343914d15af4b735b8e2f1dd700c"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-dbquote-font.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 350,
+          "sha1": "6e55266f80e42c1daeada2f9b5ae690d61671f2d"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/sourcemap-comment-remove.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 16,
+          "sha1": "00a0788a60abf38e2ede1c64a5d346592ff03a68"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-nonbase64-singlequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1189,
+          "sha1": "5dd2e917a35356f09c278a91e21a23f8c0bad3c7"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/calc.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 269,
+          "sha1": "e02f7a01139da78ffceb4ecd4be07d76777e292b"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/font-weight.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 72,
+          "sha1": "6058c3229484de1ba7dcdf719af6b9e3dfe50d2a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/dataurl-base64-noquotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84638,
+          "sha1": "f382102dd610ad174e0f9e80602e04d34a956ede"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/foundation.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 82625,
+          "sha1": "de62f033e9a67e1b9ddf099c4221876b2b715ce0"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/webkit-transform-origin.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 59,
+          "sha1": "7c68988f2787657f49ccea4b6b7dcd1bad392152"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/expectations\/shortenable-properties.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 468,
+          "sha1": "315c32b5aef5a58ad587bde09dbec4cf3f866ec2"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/MinifierTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6652,
+          "sha1": "401ae3bacdb9f7a369c85b15e741f3af814949a2"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/background-position.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 288,
+          "sha1": "04638166b3e4adb3ed1a45606f309cef2d9f05c8"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/bootstrap.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 179854,
+          "sha1": "1fe0e0cbf2cf4ca86d1bf07c32dd1b45fd74715d"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-base64-eof.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3872,
+          "sha1": "1bfecc1dc7d9cc635e8a8d404973f5ec3d026a0d"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-noquote-multiline-font.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 514,
+          "sha1": "5b4f25f15196bd631624019867f345234d1a31ef"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/star-underscore-hacks.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 118,
+          "sha1": "4d913f98c54d112e43475c67724c095cb0c5e290"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/old-ie-filters.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1502,
+          "sha1": "efd71bab21002daebd7619e9518c5914622085aa"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/background.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 330,
+          "sha1": "11e4b06f89ee506f0d17a7179005e4ed8360b068"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/pseudo-classes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 72,
+          "sha1": "8557b835e9199685c69876a02ba841c4779cfdab"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/numbers.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1669,
+          "sha1": "b74c94245ac268bdd5b05263d74d3a1e6c9e344e"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/flex.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 42,
+          "sha1": "7ac8b91086b735c43c09cb381b4b44850184b4cd"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-realdata-singlequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2930,
+          "sha1": "d7fa3af644c62b107b9f3a527a6ca74e191dc698"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-realdata-doublequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2930,
+          "sha1": "b0f541f02d82fc7b1be49c3dba72329320c1ca2f"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-realdata-yuiapp.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2536,
+          "sha1": "8f6f5231af250e24fa58e88859fe17ba4cca1539"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/kube.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 41720,
+          "sha1": "9e547a0fa21308fb65b033fa317b67d49395adbc"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/linebreak-position.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 291,
+          "sha1": "f6ad285ac420adf3343863d85ac2d2410df16caa"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-base64-doublequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84725,
+          "sha1": "1fc52131ab963d8a40e67983d713e0e0a82533fa"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/semicolons.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 66,
+          "sha1": "b3241bee8edfa105e78f56a1f3a2e99dd16f0d98"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-nonbase64-noquotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1229,
+          "sha1": "15bfdf3681fee544cff77de472669711b340a64b"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-realdata-noquotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2928,
+          "sha1": "96b19a19951633f4f36be1b4c6ad556deab1f689"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/text-shadow.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 46,
+          "sha1": "a098dae64111d92f51e4f1e70290ad3952243af6"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/lowercasing.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1636,
+          "sha1": "fc37a032f71532b0407068ca75e22b743f0f7d4c"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-base64-twourls.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4315,
+          "sha1": "0e78fdfc7d47d044f3066aad2e6d22a945411b97"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/comments.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1107,
+          "sha1": "e1f0aee53d20cf5f2b4c064f42d8c5d33a79543d"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-singlequote-font.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 503,
+          "sha1": "f34da101618d94b49c6842dbbab4393d457efa36"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-nonbase64-doublequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1242,
+          "sha1": "819e27dc4b81366677e8faa3a1fbe038c016db57"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-base64-linebreakindata.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2550,
+          "sha1": "932aad96bae26fdb557343e18632bc3af53f687c"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/pseudo-elements.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 522,
+          "sha1": "9e67d9564dc5141edc8017683fd0a2fdca0cf95b"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/materialize.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 171470,
+          "sha1": "11639d148bd324264f362686c19803075a7b0d18"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/unit-ms.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 237,
+          "sha1": "3d80799354e5dd744c523a6066923190ff3a747a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/at-rules.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4853,
+          "sha1": "c8a136718221b88026b1f8a47ae68df0e20e743f"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/preserve-case.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 219,
+          "sha1": "a308ac1c257876da413cbd92c0b6e022ede946a0"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/mui.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 57341,
+          "sha1": "3ff8c6aaeae48fb4bb81aefada474e14759eb1b2"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/border.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 341,
+          "sha1": "4bdf5b2df0d4b919a917117bb06187b4b6466608"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-base64-singlequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84720,
+          "sha1": "e59397bfb4d463658a84d0ba390770b072bf9abb"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-inline-svg.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 968,
+          "sha1": "7535a97f061757e75c7e0b40989d529c694582f7"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/attribute-selectors.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 592,
+          "sha1": "155eb1602de6869f79c88876517f3e3552d6d02f"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/strings.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 534,
+          "sha1": "ecbec06b9d81b1d3112e952b1b87d4f09524a099"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/bulma.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 133019,
+          "sha1": "096685541b9b4196ec4d2ad5ac65effa15322286"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/colors.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2707,
+          "sha1": "9136674f9335489186ef15ab3cc0d1a4b598e800"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/pure.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 32029,
+          "sha1": "173b42718b69f79af6837fd45725542b51a19d79"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/empty-rules.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 598,
+          "sha1": "756fe7ae0253a2212d7fe80ac743ea743d344748"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/important.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 239,
+          "sha1": "b7dfdfb7105dc9ada3474ae8fc76c740d8b93649"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-dbquote-font.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 491,
+          "sha1": "8a6bb4d186251c787b620cbe3148ce98b694feb0"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/sourcemap-comment.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 65,
+          "sha1": "3e44e79360cb7410bb436bee36c60bcb09e9bb9e"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-nonbase64-singlequotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1277,
+          "sha1": "82e6a10cb7498dca95a2d8f3c837c77d4e254866"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/calc.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 327,
+          "sha1": "de78f36a73e7389a50ef95b652bd7a7f15128814"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/font-weight.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 88,
+          "sha1": "4b2a5f4d144227c841edd71fea51c842ab09df25"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/dataurl-base64-noquotes.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 84743,
+          "sha1": "eb5e6b4c5a3536f8a5426beabf79062883c11ebe"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/foundation.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 113526,
+          "sha1": "93f60dbb9b23b24a45fc8922cdfd06a84148fc6b"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/webkit-transform-origin.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 66,
+          "sha1": "6f4155ecdb322a74afeae1808c7f5b2eb5bd73ca"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/fixtures\/shortenable-properties.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 847,
+          "sha1": "cac12b840b7e798d97b4de07eec2513672379d2c"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/FineDiff",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/FineDiff\/Render",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/FineDiff\/Render\/Cli.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 791,
+          "sha1": "63cd935cbdd226385c08cbb99969010399619a97"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/bin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/tests\/bin\/runner",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1948,
+          "sha1": "eee861a2c3e5a967efe49f213de102adf6944db8"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 16988,
+          "sha1": "b60ca8a41d9005918c575c180ecaac6354b0c33a"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/bootstrap",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/bootstrap\/js",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/bootstrap\/js\/bootstrap.min.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1152,
+          "sha1": "c567447074c7e958066b8a1853073b9e99974182"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/bootstrap\/css",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/bootstrap\/css\/bootstrap.min.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 48087,
+          "sha1": "04ddc966214f8aa2024f7de08dba61f1f4766ba2"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/jquery-1.12.4.min.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 97178,
+          "sha1": "0ea83eb13cc687fb7eea2d7c04593ceb1bd3a6b3"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/third-party\/less-1.7.5.min.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 102798,
+          "sha1": "a8ddf977b485f598da289d188083014dfbf9e779"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/index.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9161,
+          "sha1": "14c837490aa02962b214c28387ea4a83122ce9dc"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1686,
+          "sha1": "9d3b56d47d8bcb17f08f268e19be9d76f3d72a49"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/gui\/scripts.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3447,
+          "sha1": "8e1e183bb3b4474b8b43e3bc72341e3df4da9dff"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/src\/Colors.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5489,
+          "sha1": "c255fd317dc2315492d7801a50993dd8c6c0ce28"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/src\/Command.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6805,
+          "sha1": "fa23ed145058f96857f5baf1823133b8abce34eb"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/src\/Minifier.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 31042,
+          "sha1": "1565d975d59312e7c423e6a96899516751c54057"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/src\/Utils.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4072,
+          "sha1": "31fa807c793a03d8dd5d7d7ab34e6c64a6ec4167"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 51,
+          "sha1": "d359fcdecc769405beea34a677f234422abf1e89"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1024,
+          "sha1": "13eb7337d08e52fce84f47228c9d266828acdeaf"
+        },
+        {
+          "path": "vendor\/tubalmartin\/cssmin\/phpunit.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 432,
+          "sha1": "8e062a3907aa05a27a3bff35477d1b1d742927ec"
+        },
+        {
+          "path": "vendor\/pimple",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/CHANGELOG",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1334,
+          "sha1": "6ddc7f8cbc924e877fe7cd693ea68730050c0db4"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/phpunit.xml.dist",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 448,
+          "sha1": "36db05b99c66ddc57063707def39433d5fea303a"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/pimple.c",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 37712,
+          "sha1": "f34c8e49d78da01da13a2dd63944ea1aff2dac70"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/pimple_compat.h",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2919,
+          "sha1": "66dd6ead39a3f1ca457287ade85415b6603eb625"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/016.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 577,
+          "sha1": "8c7674cac309919e5dad1621dac07958298bb1df"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/004.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 545,
+          "sha1": "5fc00b29f9a73cd326842830d31004b248bfcc61"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/011.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 416,
+          "sha1": "9c5797d71760681c0dd779dc927348a5f0b46727"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/001.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 598,
+          "sha1": "ff1d5ec9ec2cd9b6c7942a221b563bf5f9c9d79c"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/019.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 361,
+          "sha1": "c25bfe9e032eb7707e9c94750ff8144e498e023d"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/014.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 520,
+          "sha1": "def91b83b112301867428dd22b08f1e6adcedc9b"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/018.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 403,
+          "sha1": "4cd738183ee1e40b0fbdb63a5686753a88edf768"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/bench_shared.phpb",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 433,
+          "sha1": "8348517734eb4e9ec79fd8a08724707a87054bd4"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/017_1.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 385,
+          "sha1": "3dd41a5411712ab1c07fb27132758e81d1a0ee23"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/017.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 383,
+          "sha1": "6eb528d2523bf11177b05c4b2adb30154a6a4038"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/015.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 266,
+          "sha1": "0e3a7888ee71aa9d53bf244661412ca92c679dc6"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/007.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 370,
+          "sha1": "e156cbed5b28a58c857a302cc935d5146d4a436e"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/009.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 337,
+          "sha1": "47b9bc027bd11563694a70ec3cf134e71f1c34f3"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/006.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1109,
+          "sha1": "0bd1345ce62aba2b5fd34e78a2ec7ba9b3900103"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/010.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 645,
+          "sha1": "78e5f3e424b0554cc890da5621b5ac94da26577b"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/002.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 259,
+          "sha1": "6a2737d1624394742292199f299371cf8715834b"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/005.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 427,
+          "sha1": "9006186a874cbd928c1072e9bb3f30b1eade20e9"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/013.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 368,
+          "sha1": "9a5e6e09b138677a4a6d244bc530fdca38ca9223"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/012.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 507,
+          "sha1": "d4ead156f02d46fa353cfefb90a90c3d05527746"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/bench.phpb",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 713,
+          "sha1": "5111dc28e5b19864c9a8b1176c99ad3fd67fe09c"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/003.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 256,
+          "sha1": "e09a409350dac5a667035342734d8526c8675c2b"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/tests\/008.phpt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 501,
+          "sha1": "f5aa09b65aac297d493c9aceef7a45cd6f588556"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/php_pimple.h",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6312,
+          "sha1": "c41cc88bc1638efffd20efcb8745d9fadf91f862"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 166,
+          "sha1": "5c5622cc6e91ea2ef87c0a1d503722a28316ad1c"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/config.m4",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2025,
+          "sha1": "58564d333e6b1102fb25973b411014f59d9faa6c"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/config.w32",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 296,
+          "sha1": "c46a64db7f29708e23c1d64213c7a8648c6aa3d0"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/ext\/pimple\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 319,
+          "sha1": "a7b9a14992589ff1bd65263c266b76c35603105c"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/.travis.yml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 957,
+          "sha1": "20840f5425f53e3d4df8172f27b1ea9b2c55f8de"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1065,
+          "sha1": "468d3017da9c16bcb71c26238ff1551959808000"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/ServiceProviderInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1619,
+          "sha1": "1eb377684f5967923ae7bc085b55e4020cfe7bdb"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/ServiceIterator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1898,
+          "sha1": "bc8ad06b29e32132eecd7201a7acbff751908876"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Psr11",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Psr11\/ServiceLocator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2400,
+          "sha1": "2f03830a50d9270a61bd35502776ef777c00542f"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Psr11\/Container.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1704,
+          "sha1": "5bd1a362986ef0019ac55f671536996dfe45ca6f"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Exception",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Exception\/InvalidServiceIdentifierException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1713,
+          "sha1": "3faf14a507a2b243ac7d624d2a9496218561b6af"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Exception\/ExpectedInvokableException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1458,
+          "sha1": "0e5bd499bb16bc568d17f32cce6d4a9a21a02a37"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Exception\/UnknownIdentifierException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1664,
+          "sha1": "b7c360bc746640c542766ea55af04c707f28482f"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Exception\/FrozenServiceException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1656,
+          "sha1": "70130ae058ebb5a2dde6ed44feb806b573867db3"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/ServiceIteratorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1921,
+          "sha1": "1a447a7bb5b6b696552b6bd6f01a3988cc9bf158"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Fixtures",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Fixtures\/Service.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1286,
+          "sha1": "bc780045735e5dfb73aea329130ff248deb2b89e"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Fixtures\/PimpleServiceProvider.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1864,
+          "sha1": "f56930e5908f8d58c781d401a01da76a965e75e1"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Fixtures\/NonInvokable.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1268,
+          "sha1": "07b2e1dafccd20336ac038ebc8f1f99a5a945bd8"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Fixtures\/Invokable.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1368,
+          "sha1": "3a44df66525f2d9ead793ac72765c98663b11cbc"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/PimpleTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 17942,
+          "sha1": "2e1474c06c2f3811e0e7144b225bb35e2e924f1c"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/PimpleServiceProviderInterfaceTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2754,
+          "sha1": "d8349ff333ea6ed4700b15b3fa3672081ce204f4"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Psr11",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Psr11\/ContainerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2501,
+          "sha1": "4fa6ef232c5c0745c6854dc7ff67715c6d640737"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Tests\/Psr11\/ServiceLocatorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4447,
+          "sha1": "d2441086a02158c6322acb9db049426d2e029303"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/src\/Pimple\/Container.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9330,
+          "sha1": "a8d58b36ff90fc9877b3a6166a1a052d82172423"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/README.rst",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9642,
+          "sha1": "d98279a15e219b8419dd822f908a841c5ac171ae"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 35,
+          "sha1": "c1a3acd3c6c7365b69575277f3eeb76a8761d15b"
+        },
+        {
+          "path": "vendor\/pimple\/pimple\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 686,
+          "sha1": "4557521edf6cf66de43c579347abc62c1846aff0"
+        },
+        {
+          "path": "vendor\/psr",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/container",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/container\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 278,
+          "sha1": "7be8e95f73d79d702c0666869ccf39adbc56f203"
+        },
+        {
+          "path": "vendor\/psr\/container\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1145,
+          "sha1": "0dfb8628ea2720e16f03369149e7561db994829b"
+        },
+        {
+          "path": "vendor\/psr\/container\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/container\/src\/ContainerExceptionInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 248,
+          "sha1": "591e755cc175fab42a944cfde6861777ebd91ce6"
+        },
+        {
+          "path": "vendor\/psr\/container\/src\/ContainerInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1098,
+          "sha1": "1974e6a61abe30ab471839e2ce09736b1dbbd3d3"
+        },
+        {
+          "path": "vendor\/psr\/container\/src\/NotFoundExceptionInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 256,
+          "sha1": "90c067c33cd28c698bd684bf7338c57a5844c45d"
+        },
+        {
+          "path": "vendor\/psr\/container\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 37,
+          "sha1": "317b9f28f3aa5c8b4efb91e313bb1128905df1fc"
+        },
+        {
+          "path": "vendor\/psr\/container\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 654,
+          "sha1": "4bd5e07389d6942152d7c039416ff565d9429234"
+        },
+        {
+          "path": "vendor\/psr\/log",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/log\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1088,
+          "sha1": "94501e93abeab9e99ad0eb58f44cb40fd93a711c"
+        },
+        {
+          "path": "vendor\/psr\/log\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1085,
+          "sha1": "f59f1535e88d1c3717f27b756e4ebe746aa152a3"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/LoggerTrait.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3359,
+          "sha1": "38ed6895f1b9a6766b1f9dd739bee9ad1c378f83"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/AbstractLogger.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3088,
+          "sha1": "17eeb8829f2bd1cca908c29df8c61c8d52461b43"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/LogLevel.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 336,
+          "sha1": "b38b37be0c6622eae7b8928f399d4abeef9cc0b2"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/NullLogger.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 651,
+          "sha1": "e7b8b644efbaa3d4a9bb1a4086f974897ad75e42"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/Test",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/Test\/LoggerInterfaceTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4597,
+          "sha1": "aa10760e5c21cd62e533199caebccd89cea1834a"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/LoggerAwareTrait.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 397,
+          "sha1": "851f94d6d0f9999eeb5e876c6cb8dbb0716bf329"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/LoggerInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3039,
+          "sha1": "706851a260c8e151c925b857b80c63c5faee3d97"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/LoggerAwareInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 297,
+          "sha1": "4f635515ac2bf7385c606bc193959a9e253c3299"
+        },
+        {
+          "path": "vendor\/psr\/log\/Psr\/Log\/InvalidArgumentException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 96,
+          "sha1": "0f3f25e790aca80fd623f4adfedf5fc8b541c437"
+        },
+        {
+          "path": "vendor\/psr\/log\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7,
+          "sha1": "8c196ea633c934065ddf9f05370e83fdf52ed7c4"
+        },
+        {
+          "path": "vendor\/psr\/log\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 561,
+          "sha1": "1fbcb7823058241175bdce04b64c450d3e5d11de"
+        },
+        {
+          "path": "vendor\/composer",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/composer\/autoload_static.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6954,
+          "sha1": "db7eb36a922433606cbce261c822588692ab0e79"
+        },
+        {
+          "path": "vendor\/composer\/autoload_real.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1762,
+          "sha1": "c13c052c1c779fddcf86cd4d87f545ceeca82d08"
+        },
+        {
+          "path": "vendor\/composer\/ClassLoader.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13451,
+          "sha1": "3e056b23d4116e6191838864c9e5a781c156898d"
+        },
+        {
+          "path": "vendor\/composer\/autoload_psr4.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 638,
+          "sha1": "66f730c7509c2e7e17505359adb5f6e8ffbf1bc9"
+        },
+        {
+          "path": "vendor\/composer\/installed.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 15823,
+          "sha1": "f6b944c0bf7411331473e09648ab31ffb94541ad"
+        },
+        {
+          "path": "vendor\/composer\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1070,
+          "sha1": "38e062192cc23823bb2a279cb28c8a176d439b3b"
+        },
+        {
+          "path": "vendor\/composer\/autoload_namespaces.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 370,
+          "sha1": "7b769b4a19621ae0ccba22dde86e90e1cd1c5bf1"
+        },
+        {
+          "path": "vendor\/composer\/autoload_classmap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3762,
+          "sha1": "6f8667adbb86910c3af16f41b8a2e8fbf75d43f4"
+        },
+        {
+          "path": "vendor\/container-interop",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/ContainerInterface-meta.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5342,
+          "sha1": "5a818ce888ccac1561a2db43f5176e26e551a1ce"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/images\/side_by_side_containers.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 16265,
+          "sha1": "f7207870786b6cdf796ecba7bf196e08d9246da5"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/images\/priority.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 16252,
+          "sha1": "70f13684adb3b57dad68b095b62ec3b71f3caee4"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/images\/interoperating_containers.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 25738,
+          "sha1": "b42544c2243661d970633a169a594f6bd7806211"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/Delegate-lookup-meta.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 12492,
+          "sha1": "7bf0dedcaaee7b8276bfe41594a2dce0d0af7efa"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/ContainerInterface.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5990,
+          "sha1": "1c697ece41093d8abbdce15f188882d68ac175fd"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/docs\/Delegate-lookup.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2940,
+          "sha1": "36c84ed11d2af29b5fb3e46d322be70c309563ad"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8725,
+          "sha1": "84f96cdb1ad0165b7ea02ebbfaa24fb9188b906d"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1084,
+          "sha1": "536c7b38eed0f6b8a1ddc30a2668cd7368709a28"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src\/Interop",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src\/Interop\/Container",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src\/Interop\/Container\/ContainerInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 354,
+          "sha1": "754e6fff719ed623ce8914273926e49cef5abc89"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src\/Interop\/Container\/Exception",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src\/Interop\/Container\/Exception\/NotFoundException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 345,
+          "sha1": "601347056a881b471caedbeffa2298efb0743228"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/src\/Interop\/Container\/Exception\/ContainerException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 356,
+          "sha1": "cee60a6bfee2fe5c5db15a82c516907ce906baa1"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 37,
+          "sha1": "317b9f28f3aa5c8b4efb91e313bb1128905df1fc"
+        },
+        {
+          "path": "vendor\/container-interop\/container-interop\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 434,
+          "sha1": "5503bac25c0d6b3b19494b1b631731c6bbafdb56"
+        },
+        {
+          "path": "vendor\/mrclay",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/ContainerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7958,
+          "sha1": "c3a49a451610293c0e435185ef949192c17b3979"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/Pimple",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/Pimple\/Tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/Pimple\/Tests\/Service.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1327,
+          "sha1": "086d45c6f44be472af44a5c3d16e17ad06fa8afe"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/Pimple\/Tests\/PimpleTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13043,
+          "sha1": "303a2c8a3dbe07b184eb296c065dd573740d9384"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/Pimple\/Tests\/NonInvokable.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1264,
+          "sha1": "a49e59cb66b916133d9e28f5fc52b57853ced173"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/test\/Props\/Pimple\/Tests\/Invokable.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1364,
+          "sha1": "23c2a3d8da7852b196ed8f33afeb8e7a4b1a306d"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/.travis.yml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 289,
+          "sha1": "e3875aa8fcc2040a0108670553ea29e6491dee73"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4590,
+          "sha1": "e26a898e82e73eb633ad67aec62d021371fb0d9d"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/scripts\/example-pimple.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2023,
+          "sha1": "e169c5eb2988f258f69d766f8bbaa414b5c79455"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/scripts\/example.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1910,
+          "sha1": "4fa211c77a9bfd1ec97921a11bffc573cb6ac546"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/scripts\/pizza.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1458,
+          "sha1": "75cc40dcf329c51556e88f4fc04ef517de0ff4d9"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1055,
+          "sha1": "85f966c4b10ff61a9c991187f9c2538f52401a07"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props\/FactoryUncallableException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 164,
+          "sha1": "84bca8fb65c95e73ed1aa28e8ee65a5923ec6a71"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props\/NotFoundException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 156,
+          "sha1": "cb2d879d26ce1859fc454d161d6ed000c6dc71b3"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props\/ValueUnresolvableException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 164,
+          "sha1": "2f65f2ea02959f49630a9458492be3a69ebc03e5"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props\/BadMethodCallException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 160,
+          "sha1": "134319fb70ce5c5850e6adc14c59c35e48b58818"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props\/Pimple.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1432,
+          "sha1": "a177528a8c9c3ed1c5fb7ba444f00c69d9369a13"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/src\/Props\/Container.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6388,
+          "sha1": "538a0c40aed19c24bd30197d9baa935b1efc5ebc"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 248,
+          "sha1": "6149130cf5796480b36096f4c0ab132e50642ea0"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 772,
+          "sha1": "532979d62cf59c8291fa7dceeb651f8c26edda8f"
+        },
+        {
+          "path": "vendor\/mrclay\/props-dic\/phpunit.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 748,
+          "sha1": "acda843a0c4e199f650dc9c5d95aa450497200f5"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/phpunit.xml.dist",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 749,
+          "sha1": "d8d084e1b97660559f576c32e1d6d84342da7214"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/LICENSE.txt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1558,
+          "sha1": "a3c194f21249f4e8b181f8c617aa8d904e9395f7"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6,
+          "sha1": "10ecb38ffc99bee1f8be94f945b8a87a71faef9c"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/keyword-regex.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 188,
+          "sha1": "8cdbe2c8f6336c00e9588b203194d8c01fa5edbc"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/issue256.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 44,
+          "sha1": "dbe3a4f5ba56c32dfaf98a65deaa9f0bd417bd3c"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/condcomm.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 209,
+          "sha1": "58c66b57857260889d2d2ab1e979487042e4ea57"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/issue144.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 113,
+          "sha1": "29f9b8790792b2e7ae8c6b842a372fb824d27d4f"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/not-regexp.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 71,
+          "sha1": "28173dd91ab5ac0851e23664133d5b5bbbe281c0"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/token-regexp.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 191,
+          "sha1": "00134795f2eeb2abd869875cd0c47f3c0e35b3cd"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/starts-regex.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 201,
+          "sha1": "36e4c9cc472944f9336a1c7d30d921dedec7c086"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/regexes.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 216,
+          "sha1": "07bd8b6fb7248a6f9d3769b242f9925cb3b51b9a"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/input\/before.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1798,
+          "sha1": "99086aac8f1ce863097bee003aa9963fb9bceb7e"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/keyword-regex.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 15,
+          "sha1": "6868a1a5662bb8a7bbbef1fff91770225864f390"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/issue256.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 43,
+          "sha1": "4079f5d5e9d69c2139e6c6d6c77d1c314bca8397"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/condcomm.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 188,
+          "sha1": "df510aae2dde612a3e770308feaddb464ca7e764"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/issue144.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 55,
+          "sha1": "9bc94b9b70485d6ee73257e329698acf849a7dd5"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/not-regexp.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 68,
+          "sha1": "f8c6b7d75503c6f2f48f72b7cafbce0ce13b4cbb"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/token-regexp.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 17,
+          "sha1": "8e12752f6b0abf31bb73710ed709967892215c05"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/starts-regex.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 19,
+          "sha1": "3eeac44f1dacccce9fb6bbde8e9f4355c9d9cc9f"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/regexes.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 171,
+          "sha1": "9240ebd5a443fa08878613ab2c925218d2fe877a"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Resources\/minify\/expected\/before.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1237,
+          "sha1": "26fe4091c54865e19fa87afaf8aaf30dc360c90b"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Tests\/JSMin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/tests\/Tests\/JSMin\/JSMinTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5991,
+          "sha1": "33662c5ebec79f11aa0f53d9cf0cf3e9fcc43797"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/web",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/web\/README.txt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 70,
+          "sha1": "ea9ca03e2df375ffddac7f7a3d1b2cde251d2439"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/web\/index.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2512,
+          "sha1": "ca13967f695371f57a1114e07efc0553560c91d7"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/src\/JSMin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/src\/JSMin\/UnterminatedCommentException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 83,
+          "sha1": "9b192ba53d0808f29f8fe80091050ee3a5f2d691"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/src\/JSMin\/JSMin.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 15847,
+          "sha1": "da014bdaf6fa1b92a830284e2e6845c15f2740f0"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/src\/JSMin\/UnterminatedRegExpException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 82,
+          "sha1": "c0df66fcbbe7795f7cb835fe1d6d8d690853308e"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/src\/JSMin\/UnterminatedStringException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 82,
+          "sha1": "cd14eb188802bcbfae8947218f27e9aecc10c018"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/.editorconfig",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 288,
+          "sha1": "9536569e31045e5a41806c0b8a357e023aebbce1"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/HISTORY.txt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 591,
+          "sha1": "b0930fbf5d59c719d45c7346bf886fa9eca136fb"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/.gitignore",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 71,
+          "sha1": "4c58f8e2c268fb56160b643aa1d34cc03e0446d7"
+        },
+        {
+          "path": "vendor\/mrclay\/jsmin-php\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 829,
+          "sha1": "72b138d71c48ba2904b0fb0ef8467b9ea92bd980"
+        },
+        {
+          "path": "vendor\/monolog",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/phpunit.xml.dist",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 460,
+          "sha1": "52b4f8c0c45f944180cbc8208157688112da0fc6"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/CHANGELOG.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 19217,
+          "sha1": "a18646079dacf6ac1e37032140dfd7990bd2b8dc"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/RegistryTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3972,
+          "sha1": "da3632d9049210b4af41c7dc8591c5bec6460163"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/ErrorHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 934,
+          "sha1": "fc1e1d66d1ac9ee8d52e642184b33893737b65ed"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/HipChatHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10473,
+          "sha1": "278b76680f169e08e7bf12606fb194db35833eb2"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/GelfHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3387,
+          "sha1": "ccaafce0c7c1dfc024cc4c31b1f5a7636e93ad95"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/FlowdockHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2595,
+          "sha1": "7fb9cbcfdca30eace35d6c75866f2311f650f0ea"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/DeduplicationHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6134,
+          "sha1": "24d96afb0ede474ce6bb80888a911f2412438d98"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/LogEntriesHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2399,
+          "sha1": "208773feba3453d513aea1927030c8a0989fbf41"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/FirePHPHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2959,
+          "sha1": "adae50f6bc33c20919668463031325ed172949a2"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/GelfHandlerLegacyTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3191,
+          "sha1": "b1029f62b02cf5776b62d16d6a1204cd81889e33"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/GelfMockMessagePublisher.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 500,
+          "sha1": "ef41de29cb25f8bb1fba7a3858dd44f9dce875da"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SyslogHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1283,
+          "sha1": "8289a40b8fe17fabbf0ed39c6be567bf549fd5b2"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SyslogUdpHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2315,
+          "sha1": "a70910cd3f723ca5ec237248010dea40c3e45f00"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/ZendMonitorHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2039,
+          "sha1": "4dbab5bcfdb0fa72ccc58f169f2a415318d2692d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/PushoverHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5250,
+          "sha1": "f7448f675cea25b848af3a726299f87937243ecc"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/NullHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 747,
+          "sha1": "8ac29fd164fa212255c35f568f9779fe7994f315"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/RedisHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3922,
+          "sha1": "39a5f44ce08602d992c12fbc822bd2765d559256"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/FleepHookHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2242,
+          "sha1": "d8cf5286d99983dc62f7e081765214ae638e175d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/HandlerWrapperTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3301,
+          "sha1": "5de77790274c597be81b76c6210e620232bfdd67"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/ElasticSearchHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7688,
+          "sha1": "3f7e77e296bcc915fa7846f21a136230ae38651e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/FingersCrossedHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11106,
+          "sha1": "426030b3447f9a75604a89bbd46fe39b5740d7c5"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SwiftMailerHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3831,
+          "sha1": "275a8e59c15fd5c00f469af5d73f6d69765b40e9"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/AbstractHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4089,
+          "sha1": "84bd51ff88f911055896a830322e190cb52e1782"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/Fixtures",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/Fixtures\/.gitkeep",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/PsrHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1285,
+          "sha1": "106878ab4b47ca318382926d799b72b08ea62744"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/DoctrineCouchDBHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1478,
+          "sha1": "0307ab6bc553f112ee0ed9f6fed7a33d112e1c89"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/MongoDBHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1750,
+          "sha1": "f6f74e2d23828e1ee13d3c2835f207a83da2e5b6"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/DynamoDbHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2519,
+          "sha1": "65c3f804d3d596f3bdcdc4e0788d6ff7c69a7b33"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/CouchDBHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 751,
+          "sha1": "1adcea9357bf0c293106219b82b766d6b7813689"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/RavenHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8900,
+          "sha1": "f10cf337f0ab5697c15acab3cbf7133f837dfeec"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/UdpSocketTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1669,
+          "sha1": "764b91e97d1f93f1654641e5ecaaf4dfaa4efaa0"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/PHPConsoleHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9892,
+          "sha1": "0c288c2e3a2054032e1fa4003e5911b9ac7708a7"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/MockRavenClient.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 573,
+          "sha1": "9168ba0402b5ebcef1d0a383214cadec898e99ed"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SamplingHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 845,
+          "sha1": "9848a22f96f7893ad74780453fa219de448db3db"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/GroupHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3793,
+          "sha1": "463149a08bfa85b9a34c36aef33b3665c4ff048f"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/Slack",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/Slack\/SlackRecordTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13532,
+          "sha1": "03a1bda3dece39d60efb3f46056511169ea89d33"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/StreamHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5939,
+          "sha1": "43eb1d99715ea492c1badac3d5dd538b6764bd4d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SocketHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8702,
+          "sha1": "d1811d550ac5b89407dbd4a940937556a4297f77"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/NativeMailerHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3736,
+          "sha1": "73ca539a0bd3a32dd4ef9df29d0598d10aca719b"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/ChromePHPHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4880,
+          "sha1": "74b63f1ec19a8172ca2022451082ff1bc035fb68"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SlackWebhookHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3204,
+          "sha1": "468766744247cc3291d19692259ddd3f80203324"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/RollbarHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2188,
+          "sha1": "d7bea1c445a735eb0598d265d44a69c9484bd27c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/FilterHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6407,
+          "sha1": "7093c300c8d6c2ab5449bc44e6d05f61503e60bc"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SlackbotHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1153,
+          "sha1": "620d0654737b3af3d3fe3b7406dcab8a9cc2d4f1"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/ErrorLogHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2147,
+          "sha1": "1e154773b276ce7d6e527ae43ac34c158b0f3cb3"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/AmqpHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4193,
+          "sha1": "5b291def97d1a87f01a232d079a3793666d5330b"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/BufferHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5359,
+          "sha1": "ad13f7d621dd93a2351c4480a062c55409aea558"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/AbstractProcessingHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2656,
+          "sha1": "aaf5b4ff1844f4edc1555d89ddec4e257a3922a7"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/WhatFailureGroupHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3928,
+          "sha1": "70210e192e65957777aaa553a1239e09d5b4a040"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/BrowserConsoleHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4203,
+          "sha1": "ea72f09a0427424564ee5527baff318b2d236127"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/MailHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2203,
+          "sha1": "0fa06c3fa1111b314bf2b17d7397e4777462bab6"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/TestHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2675,
+          "sha1": "533472e3cbe2ce1788dca853b534f66c5df34a9e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/RotatingFileHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7849,
+          "sha1": "b79a7a95e9a7b2ee173e4bad759047c46cc324a8"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/SlackHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5434,
+          "sha1": "fe2a2801673d32ba4cd42f0d2cbaac8965c18b3c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Handler\/NewRelicHandlerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6061,
+          "sha1": "a140d66be3282a7a8510211b9167dc2a11f654fe"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/MemoryPeakUsageProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1361,
+          "sha1": "cfd7c0a8d62bf24f2c9a358154179f2d4c9e7aaa"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/TagProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1351,
+          "sha1": "6461580051f12af31310201c7ddf4e9c0e30a26e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/MercurialProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1116,
+          "sha1": "e828b769888425da943032237ac75bb619b8a625"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/IntrospectionProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3153,
+          "sha1": "c117e17a1a82723c2e066cc92a608881e9516e82"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/MemoryUsageProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1316,
+          "sha1": "9c9b1aa10c3f0aed2a0c3ed5868996206e6bc69c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/UidProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 755,
+          "sha1": "4b4df89b9d4f622cb0c1eef12c9a139ce0c36d2b"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/ProcessIdProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 844,
+          "sha1": "52fde3439a74ebe7f37e83a297b9a506d9aad757"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/WebProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3486,
+          "sha1": "c622788eea1260d07a5568784ce7abe8c5293415"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/GitProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 677,
+          "sha1": "51c5c1b3020a1e0e1c0fab6f14c16c9474ebe5c4"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Processor\/PsrLogMessageProcessorTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1056,
+          "sha1": "8b196555bba73efb7f1a4b8d66096b12d1fb4dad"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/WildfireFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4242,
+          "sha1": "dcfafae95604e67d9c3d32216bdc262818cf2518"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/GelfMessageFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8206,
+          "sha1": "44ae01489ff16c916034a3bed878cf372699632a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/FlowdockFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1545,
+          "sha1": "548f885287556b516f126542569334619da9d564"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/ElasticaFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2356,
+          "sha1": "db6f3b8783b1e1cda8829c2f253e232e12e359ea"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/LineFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7627,
+          "sha1": "5a018233c49580d4930a209b7b7506f158d4644d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/MongoDBFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9236,
+          "sha1": "eec8b81157e9dc4d3cf34a9e33bc72a14a55f515"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/NormalizerFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13946,
+          "sha1": "6a0a255ab318638e0ce2e0c4b594ca86505594fc"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/ChromePHPFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4252,
+          "sha1": "6e00d93a8bb4447acdadb61343553af4e31d8da1"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/LogstashFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11659,
+          "sha1": "570ac88e3ff7473236345006550a2a99c418e62e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/JsonFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6113,
+          "sha1": "5886df2c5d4c76c7a590e51ddf296ed32b599912"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/ScalarFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3276,
+          "sha1": "4b3e37a2eee4315e445bcbf07cf04fc6ac41ebec"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/FluentdFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1769,
+          "sha1": "621745129d0848e9576cbdef1f36dff2f7fa9bd3"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/Formatter\/LogglyFormatterTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1211,
+          "sha1": "4790667fa785da865b7c41111d6a276ae6753b3e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/LoggerTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 16714,
+          "sha1": "b096ea567f709bd31fc23b0b954bcaad99a7a575"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/PsrLogCompatTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1175,
+          "sha1": "9427367f7f604c16a9f8a956f004f761b4dd46ff"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/tests\/Monolog\/TestCase.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1645,
+          "sha1": "6fa30544e0feaea9bec691a2feb027a6a18a5952"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4047,
+          "sha1": "2845b6f9d4d2c7427b63c6c943ed4e708badf89c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1063,
+          "sha1": "1992d57a817b1762084f9f56c89fe50ebc667923"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/.php_cs",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1868,
+          "sha1": "a7843631b5cf28136ec9ca23cd15dd614b0f6cfb"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/doc",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/doc\/02-handlers-formatters-processors.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9951,
+          "sha1": "d5d9296be8ff3d0334ad51476da48a7f6e87f7a4"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/doc\/04-extending.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2159,
+          "sha1": "dee6abae0a453d039e818237e2165b87028758c0"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/doc\/sockets.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1023,
+          "sha1": "de106bccf87de5c147c8a3a8556d0b1e90c6f60b"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/doc\/03-utilities.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 798,
+          "sha1": "0b30a5f38d5ccb43f18a07d0d28a6a86599adb25"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/doc\/01-usage.md",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8476,
+          "sha1": "b0f27aacbe0cfc1ac961489075ed39c025977f68"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/ErrorHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8057,
+          "sha1": "c352e292e82db4ba2fb4a4d17299da906049da05"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/NewRelicHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6015,
+          "sha1": "31562bc02e4437e0ae822b7cf9f4665f2b23db20"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SyslogUdpHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2580,
+          "sha1": "d0ca2f3cfe6efde692936a54a4731abce31ceb3e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/CubeHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4631,
+          "sha1": "9e0c5920b9bdd8ea826adbb91763c2e466ce00cf"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/NativeMailerHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5206,
+          "sha1": "b15e21d4666805155d27a8c75e539220825b6f84"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/IFTTTHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2118,
+          "sha1": "5ad246f9b322f453c3472f6001cef59a4ad5d4be"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/RotatingFileHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5687,
+          "sha1": "f13c8cae4c0f21b35a24ddbb4f1673c939951bf8"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FingersCrossedHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5637,
+          "sha1": "6291c4d23fbd6bb2e8fc5253d5cec40c4169ba45"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/DynamoDbHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2440,
+          "sha1": "61a2427f54afe026553209c35a810200f3b2a8e3"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/AbstractHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4127,
+          "sha1": "7052f81811f26051e184c65bc7ce9fb186c51699"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/DoctrineCouchDBHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1000,
+          "sha1": "6f7ea6f55281545e3e792f9462854c848e6e5a91"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SyslogUdp",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SyslogUdp\/UdpSocket.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1401,
+          "sha1": "5f8703ec737957f4640889157b93e5d17bfa6e07"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SlackbotHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2029,
+          "sha1": "8ff0f122a2e5459672d4ea5ed790ce8a9670b019"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/LogEntriesHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1601,
+          "sha1": "e5c37e060ec1b9f3b6d30fb6d56f1f189d453778"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/ZendMonitorHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2240,
+          "sha1": "f86afe77cbd054f360333dc00a3d8e180b4cf3fc"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/LogglyHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2619,
+          "sha1": "b48d8d52da616e3b09d6ece19a43eec4679425c8"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/MailHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1622,
+          "sha1": "58281cf2ca5a46f717ee1debad607c9fd0b72ebb"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/DeduplicationHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5479,
+          "sha1": "f4bfaa01a1220160290bd9038ce128c886f39f1a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/AbstractSyslogHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3382,
+          "sha1": "9fedf093dd3b7c809ca449691b0db14a0ab8175a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/MongoDBHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1606,
+          "sha1": "8a9676df4952078bee84acb2f68b2be1e5bf4b62"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/AmqpHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3866,
+          "sha1": "44ffb209035b73bcf0d9c6cc9d7c8d3e3165f1a7"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/ErrorLogHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2380,
+          "sha1": "088cabc24bc68cdc0e3544dd3848e9ef4bb48c8d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/AbstractProcessingHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1498,
+          "sha1": "049cd5fa7d14655463e143c5aedecc8eb60b81a8"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SlackWebhookHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3737,
+          "sha1": "a6151a1ad749624934e4948c2d955c373245a4c7"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/HandlerWrapper.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2156,
+          "sha1": "c21e41a5eed29fa865b6a0ab24009eefc2be6570"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/WhatFailureGroupHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1485,
+          "sha1": "7c09ed2368a34cb3a013ac9d939ce87090b6430c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SamplingHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2674,
+          "sha1": "5311d748d9bdfcfa5f040135fd8035b4ac0dfc5a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/RavenHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7115,
+          "sha1": "d70ebef6e995fa19376d66ed4055f4f7adbabd7a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/HandlerInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2597,
+          "sha1": "ac3ceade20d03e6874d754030bffa351a7c29650"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SlackHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6381,
+          "sha1": "75d981939ddd21d6b85ed47e479250a1bf9b4a49"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/BufferHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3436,
+          "sha1": "390c4523e025258cfc1b005978fd908995027be1"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/ChromePHPHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5623,
+          "sha1": "fe435330fba5f858d1d420cc923f08503f5a0276"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FlowdockHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3357,
+          "sha1": "5f919a0a30656c87d310ba9adf56db975ffab564"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/PushoverHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6629,
+          "sha1": "eac03733b41c5f9a8e85b9b3a6e0c2042f761722"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/Slack",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/Slack\/SlackRecord.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8192,
+          "sha1": "40bad7380cdeb1323ca4a90ee9ed5bb7f3f0a779"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/Curl",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/Curl\/Util.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1497,
+          "sha1": "9c4a139b644c972912cba4615c4c6df15a3ffd79"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/MandrillHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2156,
+          "sha1": "75e813a8c07f41f3631fb0923730d0329b42250d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/RollbarHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3812,
+          "sha1": "1b5a59f500ea7529f85e513ac22dd76696beea54"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/PsrHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1433,
+          "sha1": "52275174e4c12528b6bf752b34dc3014aefa87d6"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/CouchDBHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1953,
+          "sha1": "d2f3f411b3a59012f3ec06a86557cc57ae26be05"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/BrowserConsoleHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7162,
+          "sha1": "5311f088daa7ea28ebfe87c14d6145cc6a117b46"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/StreamHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5203,
+          "sha1": "8d753a4380e641f1e740da9940409f271f347ade"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/MissingExtensionException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 450,
+          "sha1": "88594b1d04ed27767cdbebd21464944157fd0f4e"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SyslogHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1848,
+          "sha1": "44f798c41008a2943158c306bed42698b00cbb7a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/ElasticSearchHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3417,
+          "sha1": "e37b26721afc464ef64c3c01f12e7bc18186662a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/PHPConsoleHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9990,
+          "sha1": "c864171782e4506e45cb61593de1e05a99d6168c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FirePHPHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5466,
+          "sha1": "66a3e2e0d9e67c97fc7258515923ac1996a2db5f"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SwiftMailerHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3095,
+          "sha1": "e0bc3d9da742f5e6ebdf500b8cbbb2323ebfa4bd"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/SocketHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8884,
+          "sha1": "f21624889fe01514e6eb4b254aeb3374f3faf190"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FleepHookHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3363,
+          "sha1": "03d6c316425ae0d0a2e15aee939d926c857db732"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/HipChatHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10347,
+          "sha1": "2176dcfa608f7ef0cd4ee5ed23ea3ea37358066d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/TestHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4676,
+          "sha1": "27ebb2bae755e9c9d14c594ecb13e4e7b8490c2f"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FingersCrossed",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FingersCrossed\/ErrorLevelActivationStrategy.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 759,
+          "sha1": "7d057088d356956a88d07ce3651a3e0581fda1e7"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FingersCrossed\/ChannelLevelActivationStrategy.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1933,
+          "sha1": "b5c842295a491aca621422f17a86f93785d91995"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FingersCrossed\/ActivationStrategyInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 651,
+          "sha1": "61505538d9b75a739380f123d4af7a41cfa6ef60"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/GroupHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2496,
+          "sha1": "ef45d264a4904e9ac6cf334594926463a7b6f128"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/FilterHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4425,
+          "sha1": "7e7f20ef0e75784560c9f0afc7e010d3ad980cd5"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/NullHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 953,
+          "sha1": "881411f2cfaa32f9909cec0a5e2dac2ddbac90e4"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/RedisHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2889,
+          "sha1": "4f005397ed9cca54aa7087e2495b09a68f7b66ed"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Handler\/GelfHandler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2068,
+          "sha1": "ba90c9da244d4f1c9f7ba1d7f5c514d08f90ec9b"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Logger.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 19304,
+          "sha1": "f7ad63f75c358bcb42005a523c6f5a5a2d4b3526"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/ProcessIdProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 574,
+          "sha1": "390824657f28bba168bf6c4e03ddb2c361843652"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/MemoryPeakUsageProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 790,
+          "sha1": "c669b0c61a07e68e6fcc6a3751560e53828d3b7c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/MercurialProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1381,
+          "sha1": "1e1ef23ecee365331c9b05227d20ee35ab88a325"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/UidProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 944,
+          "sha1": "1ed86133439c0efa4295c6c185fc14b3b907f118"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/TagProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 820,
+          "sha1": "4e5411eb710948a8e9b4b99234c37d19285409fb"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/MemoryProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1809,
+          "sha1": "63c0fcfa446a044cc0014647714ba6b12bc271df"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/PsrLogMessageProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1272,
+          "sha1": "f13943882ac95ec86897d69fbdf9e351467b3f75"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/WebProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3212,
+          "sha1": "d2351d4aca31dc9157ef39aec6f1e992c3c7d7b2"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/IntrospectionProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3535,
+          "sha1": "0e759e7dd1acb3370ab7974b4ed45afac32b86ee"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/MemoryUsageProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 771,
+          "sha1": "3c5c3cd606d46ec1836547c71969eb2c59c2f12d"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Processor\/GitProcessor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1406,
+          "sha1": "2863a1645ec9386b1b5138a4f2c0d4ccf4ad07f7"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Registry.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4024,
+          "sha1": "36b78d00d4893db4c6ffa39e5ccee236a498e52c"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/WildfireFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3234,
+          "sha1": "5f8ff4af4a1ef563291fc1c1828e87eae114b8e0"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/LogglyFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1322,
+          "sha1": "b089e3e677eaf2a3cc84d88efed68ccc603a5ee4"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/MongoDBFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3260,
+          "sha1": "732987c328633d7b089ca56bb05312e05d903c53"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/FluentdFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2118,
+          "sha1": "31562ee426ef006ead47f261ba4c2f043bdd8b23"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/ChromePHPFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2043,
+          "sha1": "fc274258dca77e6eecff91ef6be70a93ff1fe805"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/NormalizerFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9402,
+          "sha1": "d622141ed43146133ea8e5b0f14d9667bfac5545"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/GelfMessageFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4408,
+          "sha1": "f4570ac7b2837c74cc1b86755f4a0c2f2584ce3b"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/JsonFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5482,
+          "sha1": "347b37cf24204eac469c6ef25b8717321ab3fede"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/FormatterInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 787,
+          "sha1": "eb157ac36b917590833a895b8b38d3be72c41bf3"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/FlowdockFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2548,
+          "sha1": "2965b18e539046030bf39d8c92a643c9fc321e20"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/ScalarFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1040,
+          "sha1": "7d697826f08f63405cb6e715cc25eb0ecf653477"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/HtmlFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4537,
+          "sha1": "0d3f7c5f903f856fe7ef6ee203db27ef8c8cfd3f"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/ElasticaFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1837,
+          "sha1": "6221927f4d4a8a14d52f2fbb174de8718f368136"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/LineFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5528,
+          "sha1": "5d0abe2949deabd3c8402a53e1335ec1a1a10a7a"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/src\/Monolog\/Formatter\/LogstashFormatter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5307,
+          "sha1": "de975e49fd01cbdbad0a87ef89ff454e1421c910"
+        },
+        {
+          "path": "vendor\/monolog\/monolog\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2535,
+          "sha1": "bd0306ea7985ffe6d3ea99ddc91f678c62ed4763"
+        },
+        {
+          "path": "vendor\/autoload.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 178,
+          "sha1": "3f732a7d4a56054594262d1f8b0d10205e57ffe7"
+        },
+        {
+          "path": ".htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 307,
+          "sha1": "32768307327810eddf8443d476e537129fa575c5"
+        },
+        {
+          "path": "index.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 256,
+          "sha1": "6d3908a8d3acc4dcf5ae580cd75d679db2c2c718"
+        },
+        {
+          "path": ".travis.yml",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 432,
+          "sha1": "fdf66e4f0b9b9ed339f85ba53da9e534d42df32e"
+        },
+        {
+          "path": "LICENSE.txt",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1558,
+          "sha1": "a3c194f21249f4e8b181f8c617aa8d904e9395f7"
+        },
+        {
+          "path": "groupsConfig.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 539,
+          "sha1": "326dba4b86ebab31fa876bba7b3b8fc6770c8fc5"
+        },
+        {
+          "path": ".php_cs",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 496,
+          "sha1": "a05c4d4b83d80035caf6f1c5ff08f8bc7f280080"
+        },
+        {
+          "path": "utils.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2634,
+          "sha1": "11f7eac141929e4ab9f413e95333692572ae6b55"
+        },
+        {
+          "path": "builder",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "builder\/ocCheck.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 814,
+          "sha1": "179c491069ede8d365ce6396eea9308e185bcfd3"
+        },
+        {
+          "path": "builder\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 117,
+          "sha1": "ff5363191a6d4a86f512c3226eb2bee2327a785c"
+        },
+        {
+          "path": "builder\/index.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9197,
+          "sha1": "58211d4437b26e546a52dc79cfb191cdf6f260b8"
+        },
+        {
+          "path": "builder\/bm2.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 574,
+          "sha1": "397893f0242867055182d70d1b0b9d813ea0dec2"
+        },
+        {
+          "path": "builder\/jquery-1.6.3.min.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 91628,
+          "sha1": "468caf0f356f46c831a77641e7b475d5fd8efeec"
+        },
+        {
+          "path": "builder\/_index.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9444,
+          "sha1": "14cb3abd9c59b7d045ef09a375bee9de4c14a57c"
+        },
+        {
+          "path": "builder\/test.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1470,
+          "sha1": "1837ea7e5b9b9d9b261436aa0644400fdcd1d881"
+        },
+        {
+          "path": "builder\/rewriteTest.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1,
+          "sha1": "356a192b7913b04c54574d18c28d46e6395428ab"
+        },
+        {
+          "path": "builder\/bm.js",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1473,
+          "sha1": "14a2c034750586f9ef203a95790a2b7d99e1307f"
+        }
+      ]
+    },
+    "application\/languages\/en\/sesminify.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sesminify.csv",
+      "structure": {
+        "path": "sesminify.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0777",
+        "size": 0,
+        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      }
+    },
+    "externals\/ses-scripts\/sesJquery.js": {
+      "type": "file",
+      "path": "externals\/ses-scripts\/sesJquery.js",
+      "structure": {
+        "path": "sesJquery.js",
+        "dir": false,
+        "file": true,
+        "perms": "0777",
+        "size": 96462,
+        "sha1": "e3e710d8c79b9bda3e9464d0e222e97bc716cd91"
+      }
+    }
+  }
+}

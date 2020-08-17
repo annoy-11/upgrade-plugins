@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesfeedgif
+ * @package    Sesfeedgif
+ * @copyright  Copyright 2017-2018 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Uploadgiphy.php  2017-12-06 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+class Sesfeedgif_Form_Admin_Image_Uploadgiphy extends Engine_Form {
+
+  public function init() {
+  
+    $this->setTitle('Import Multiple GIFs from GIPHY')
+            ->setDescription('');
+            
+    //Search options
+    $this->addElement('Text', 'searchtext',array(
+      'label' => 'Keyword For GIFs',
+      'allowEmpty' => false,
+      'required' => true,
+      'description' => 'Enter the category or keyword matching which the images from GIPHY imported to your website. (At a time 10-12 photos are imported so that the process does not break in between. If you want more images, then you can repeat the process. Each each process images will not be repeated so that you get new images during each import.)',
+      'filters' => array(
+        'StripTags',
+        new Engine_Filter_Censor(),
+      ),
+    ));
+    $this->searchtext->getDecorator("Description")->setOption("placement", "append");
+
+    //Search options
+    $this->addElement('Text', 'tags',array(
+      'label'=>'GIF Image Categories',
+      'autocomplete' => 'off',
+      'allowEmpty' => false,
+      'required' => true,
+      'description' => 'Enter the categories for this GIF image and separate them with commas.',
+      'filters' => array(
+        'StripTags',
+        new Engine_Filter_Censor(),
+      ),
+    ));
+    $this->tags->getDecorator("Description")->setOption("placement", "append");
+    
+    $this->addElement('Button', 'submit', array(
+      'label' => 'Upload',
+      'type' => 'submit',
+      'ignore' => true,
+      'decorators' => array('ViewHelper')
+    ));
+    $this->addElement('Cancel', 'cancel', array(
+        'label' => 'Cancel',
+        'link' => true,
+        'prependText' => ' or ',
+        'onclick' => 'javascript:parent.Smoothbox.close()',
+        'decorators' => array(
+            'ViewHelper',
+        ),
+    ));
+    $this->addDisplayGroup(array('submit', 'cancel'), 'buttons');
+  }
+}

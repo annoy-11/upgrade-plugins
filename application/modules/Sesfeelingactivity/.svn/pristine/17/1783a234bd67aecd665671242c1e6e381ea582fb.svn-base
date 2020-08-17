@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesfeelingactivity
+ * @package    Sesfeelingactivity
+ * @copyright  Copyright 2017-2018 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Level.php  2017-08-28 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+class Sesfeelingactivity_Form_Admin_Settings_Level extends Authorization_Form_Admin_Level_Abstract {
+
+  public function init() {
+
+    parent::init();
+
+    // My stuff
+    $this
+      ->setTitle('Member Level Settings')
+      ->setDescription("These settings are applied on a per member level basis. Start by selecting the member level you want to modify, then adjust the settings for that level below.");
+
+    if( !$this->isPublic() ) {
+
+      $this->addElement('Radio', 'enablefeeling', array(
+        'label' => 'Enable Feeling/Activity for this member level?',
+        'description' => 'Do you want to enable feeling/activity for this member level? If set to no, some other settings is not apply.',
+        'multiOptions' => array(
+          1 => 'Yes, enable feelings.',
+          0 => 'No, do not enable feelings.'
+        ),
+        'value' => 1,
+      ));
+
+      $getFeelings = Engine_Api::_()->getDbTable('feelings', 'sesfeelingactivity')->getFeelings(array('fetchAll' => 1, 'admin' => 1));
+      if(count($getFeelings) > 0) {
+        $allfeelingsCategories = $allFeelingsCategoriesIds = array();
+        foreach($getFeelings as $getFeeling) {
+          $allfeelingsCategories[$getFeeling->feeling_id] = $getFeeling->title;
+          $allFeelingsCategoriesIds[] = $getFeeling->feeling_id;
+        }
+      }
+
+      $this->addElement('MultiCheckbox', 'felingscategorie', array(
+        'label' => 'Choose Feeling/Activity Category',
+        'description' => 'Choose the categories for feeling/activity which will be shown to the members of this member level while updating their posts.',
+        'multiOptions' => $allfeelingsCategories,
+        'value' => $allFeelingsCategoriesIds,
+      ));
+    }
+  }
+}

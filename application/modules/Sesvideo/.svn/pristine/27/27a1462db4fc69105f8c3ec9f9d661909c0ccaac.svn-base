@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesvideo
+ * @package    Sesvideo
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: dismiss_message.tpl 2015-10-11 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+?>
+<h2><?php echo $this->translate("Advanced Videos & Channels Plugin") ?></h2>
+<?php 
+$sesvideo_adminmenu = Zend_Registry::isRegistered('sesvideo_adminmenu') ? Zend_Registry::get('sesvideo_adminmenu') : null;
+if(!empty($sesvideo_adminmenu)) { ?>
+  <?php if( count($this->navigation) ): ?>
+    <div class='sesbasic-admin-navgation'>
+      <?php echo $this->navigation()->menu()->setContainer($this->navigation)->render(); ?>
+    </div>
+  <?php endif; ?>
+<?php } ?>

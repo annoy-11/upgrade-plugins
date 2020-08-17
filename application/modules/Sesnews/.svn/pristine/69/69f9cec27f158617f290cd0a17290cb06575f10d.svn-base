@@ -1,0 +1,32 @@
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesnews
+ * @package    Sesnews
+ * @copyright  Copyright 2019-2020 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: my.sql 2019-02-27 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+("core_admin_main_plugins_sesnews", "sesnews", "SES - News / RSS Importer & Aggregator", "", '{"route":"admin_default","module":"sesnews","controller":"settings"}', "core_admin_main_plugins", "", 999),
+("sesnews_admin_main_settings", "sesnews", "Global Settings", "", '{"route":"admin_default","module":"sesnews","controller":"settings"}', "sesnews_admin_main", "", 1),
+("sesnews_admin_main_rsssettings", "sesnews", "RSS Settings", "", '{"route":"admin_default","module":"sesnews","controller":"settings", "action":"rss-settings"}', "sesnews_admin_main", "", 2);
+
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+('sesnews_admin_manageblackurl', 'sesnews', 'Blacklist URL', '', '{"route":"admin_default","module":"sesnews","controller":"manage-blacklist"}', 'sesnews_admin_main', '', 88);
+
+INSERT IGNORE INTO `engine4_core_mailtemplates` (`type`, `module`, `vars`) VALUES
+("notify_sesnews_subscribed_new", "sesnews", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description]"),
+("sesnews_news_owner_approve", "sesnews", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_name],[sender_email],[sender_link],[sender_photo],[message]");
+
+DROP TABLE IF EXISTS `engine4_sesnews_urls`;
+CREATE TABLE `engine4_sesnews_urls` (
+  `url_id` int(11) unsigned NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `enabled` TINYINT(1) NOT NULL DEFAULT '1',
+  `creation_date` datetime NOT NULL,
+  `modified_date` datetime NOT NULL,
+  PRIMARY KEY (`url_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;

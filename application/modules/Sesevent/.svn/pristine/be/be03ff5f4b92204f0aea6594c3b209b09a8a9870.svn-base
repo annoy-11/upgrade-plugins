@@ -1,0 +1,1076 @@
+<?php
+
+if (!$this->getRequest()->isPost()) {
+  return;
+}
+
+if (!$form->isValid($this->getRequest()->getPost())) {
+  return;
+}
+
+if ($this->getRequest()->isPost()) {
+
+  //Here we can set some variable for checking in plugin files.
+  if (1) {
+
+    if (!Engine_Api::_()->getApi('settings', 'core')->getSetting('sesevent.pluginactivated')) {
+      $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+
+			$sql = 'DROP TABLE IF EXISTS `engine4_sesevent_follows` ;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_follows` (
+			  `follow_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			  `resource_type` varchar(32) NOT NULL,
+			  `resource_id` int(11) unsigned NOT NULL,
+			  `poster_id` int(11) unsigned NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  PRIMARY KEY (`follow_id`),
+			  KEY `resource_type` (`resource_type`,`resource_id`),
+			  KEY `poster_type` (`poster_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_saves` ;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_saves` (
+			  `save_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			  `resource_type` varchar(32) NOT NULL,
+			  `resource_id` int(11) unsigned NOT NULL,
+			  `poster_id` int(11) unsigned NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  PRIMARY KEY (`save_id`),
+			  KEY `resource_type` (`resource_type`,`resource_id`),
+			  KEY `poster_type` (`poster_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_dashboards` ;
+			CREATE TABLE `engine4_sesevent_dashboards` (
+			  `dashboard_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			  `type` varchar(128) NOT NULL,
+			  `title` varchar(128) NOT NULL,
+			  `enabled` tinyint(1) NOT NULL default "1",
+			  `main` tinyint(1) NOT NULL default "0",
+			   PRIMARY KEY (`dashboard_id`),
+				 KEY `unique` (`type`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
+
+			INSERT IGNORE INTO `engine4_sesevent_dashboards` (`type`, `title`, `enabled`, `main`) VALUES
+			("manage_event", "Manage Event", "1", "1"),
+			("edit_event", "Edit Event", "1", "0"),
+			("edit_photo", "Edit Photo", "1", "0"),
+			("backgroundphoto", "Background Photo", "1", "0"),
+			("contact_information", "Contact Information", "1", "0"),
+			("overview", "Overview", "1", "0"),
+			("seo", "Seo", "1", "0");
+
+			DROP TABLE IF EXISTS `engine4_sesevent_albums` ;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_albums` (
+			  `album_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			  `event_id` int(11) unsigned NOT NULL,
+				`owner_id` int(11) unsigned NOT NULL,
+			  `title` varchar(128) NOT NULL,
+			  `description` varchar(255) NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  `modified_date` datetime NOT NULL,
+			  `search` tinyint(1) NOT NULL DEFAULT "1",
+			  `photo_id` int(11) unsigned NOT NULL DEFAULT "0",
+			  `view_count` int(11) unsigned NOT NULL DEFAULT "0",
+			  `comment_count` int(11) unsigned NOT NULL DEFAULT "0",
+			  `collectible_count` int(11) unsigned NOT NULL DEFAULT "0",
+			  `position_cover` varchar(255) DEFAULT NULL,
+			  `like_count` int(11) NOT NULL DEFAULT "0",
+			  `art_cover` int(11) NOT NULL DEFAULT "0",
+			  PRIMARY KEY (`album_id`),
+			  KEY `event_id` (`event_id`),
+			  KEY `search` (`search`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_categories` ;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_categories` (
+			`category_id` int(11) unsigned NOT NULL auto_increment,
+			`slug` varchar(255) NOT NULL,
+			`category_name` varchar(128) NOT NULL,
+			`subcat_id` int(11)  NULL DEFAULT 0,
+			`subsubcat_id` int(11)  NULL DEFAULT 0,
+			`title` varchar(255) DEFAULT NULL,
+			`description` text ,
+			`color` VARCHAR(255) ,
+			`thumbnail` int(11) NOT NULL DEFAULT 0,
+			`cat_icon` int(11) NOT NULL DEFAULT 0,
+			`colored_icon` int(11) NOT NULL DEFAULT 0,
+			`order` int(11) NOT NULL DEFAULT 0,
+			`profile_type_review` int(11) DEFAULT NULL,
+			`profile_type` int(11) DEFAULT NULL,
+			PRIMARY KEY (`category_id`),
+			KEY `category_id` (`category_id`,`category_name`),
+			KEY `category_name` (`category_name`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+
+
+			DROP TABLE IF EXISTS `engine4_sesevent_events`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_events` (
+			`event_id` int(11) unsigned NOT NULL auto_increment,
+			`user_id` int(11) NOT NULL,
+			`title` varchar(255) NOT NULL,
+			`description` text NOT NULL,
+			`custom_url` varchar(255) NOT NULL,
+			`starttime` varchar(255) NOT NULL,
+			`endtime` varchar(255) NOT NULL,
+			`category_id` int(11) NOT NULL DEFAULT "0",
+			`subcat_id` int(11) NOT NULL DEFAULT "0",
+			`timezone` VARCHAR(64) NOT NULL,
+			`subsubcat_id` int(11) NOT NULL DEFAULT "0",
+			`overview` text DEFAULT NULL,
+			`is_custom_term_condition` tinyint(1) NOT NULL DEFAULT "0",
+			`custom_term_condition` text,
+			`photo_id` INT(11) DEFAULT NULL,
+			`background_photo_id` INT(11) DEFAULT NULL,
+			`cover_photo` INT(11) DEFAULT NULL,
+			`is_webinar` tinyint(1) NOT NULL DEFAULT "0",
+			`location` varchar(255) DEFAULT NULL,
+			`venue_name` varchar(255) DEFAULT NULL,
+			`host_type` enum("site","offsite","unnamed") NOT NULL DEFAULT "site",
+			`host` int(11) unsigned NOT NULL,
+			`parent_type` varchar(64) DEFAULT NULL,
+			`parent_id` INT(11) unsigned NOT NULL,
+			`approval` TINYINT(1) DEFAULT 0,
+			`search` TINYINT(1) NOT NULL,
+			`rating` float NOT NULL,
+			`status` tinyint(1) NOT NULL DEFAULT "0",
+			`is_delete` TINYINT(1) NOT NULL DEFAULT "0",
+			`draft` tinyint(1) NOT NULL DEFAULT "0",
+			`invite` tinyint(1) NOT NULL DEFAULT "0",
+			`ticket_description` TEXT DEFAULT NULL,
+			`ticket_logo` INT(11) DEFAULT NULL,
+			`logo_description` TEXT DEFAULT NULL,
+			`recurring_params` text DEFAULT NULL,
+			`event_contact_name` VARCHAR(255) DEFAULT NULL,
+			`event_contact_email` VARCHAR (255) DEFAULT NULL,
+			`event_contact_phone`  VARCHAR(255) DEFAULT NULL,
+			`event_contact_website` VARCHAR(255) DEFAULT NULL,
+			`event_contact_facebook` VARCHAR(255) DEFAULT NULL,
+			`event_contact_twitter` VARCHAR(255) DEFAULT NULL,
+			`event_contact_linkedin` VARCHAR(255) DEFAULT NULL,
+			`seo_title` VARCHAR(255) DEFAULT NULL,
+			`seo_keywords` VARCHAR(255) DEFAULT NULL,
+			`seo_description` TEXT DEFAULT NULL,
+			`view_count` int(10) unsigned NOT NULL,
+			`member_count` int(11) unsigned NOT NULL,
+			`like_count` int(11) unsigned NOT NULL,
+			`comment_count` int(11) unsigned NOT NULL,
+			`favourite_count` int(11) unsigned NOT NULL,
+			`save_count` INT(11) unsigned NOT NULL,
+			`featured` TINYINT(1) NOT NULL DEFAULT "0",
+			`sponsored` TINYINT(1) NOT NULL DEFAULT "0",
+			`verified` TINYINT(1) NOT NULL DEFAULT "0",
+			`offtheday` tinyint(1) NOT NULL,
+			`startdate` date DEFAULT NULL,
+			`enddate` date DEFAULT NULL,
+			`show_timezone` tinyint(1) NOT NULL DEFAULT "0",
+			`is_sponsorship` tinyint(1) NOT NULL DEFAULT "1",
+			`ip_address` varchar(55) NOT NULL DEFAULT "0.0.0.0",
+			`is_approved` TINYINT(1) NOT NULL DEFAULT "1",
+			`creation_date` datetime NOT NULL,
+			`modified_date` datetime NOT NULL,
+			PRIMARY KEY (`event_id`),
+			KEY `user_id` (`user_id`),
+			KEY `parent_type` (`parent_type`, `parent_id`),
+			KEY `starttime` (`starttime`),
+			KEY `search` (`search`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+			DROP TABLE IF EXISTS `engine4_sesevent_remainingpayments`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_remainingpayments` (
+				`remainingpayment_id` INT(11) unsigned NOT NULL auto_increment,
+				`event_id` INT(11) unsigned NOT NULL,
+				`remaining_payment` FLOAT DEFAULT 0,
+				PRIMARY KEY (`remainingpayment_id`),
+				KEY `event_id` (`event_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_gateways`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_gateways` (
+				`gateway_id` int(10) unsigned NOT NULL,
+			  `title` varchar(128) NOT NULL,
+			  `description` text ,
+			  `enabled` tinyint(1) unsigned NOT NULL DEFAULT "0",
+			  `plugin` varchar(128) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+				`sponsorship` varchar(128) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+			  `config` mediumblob,
+			  `test_mode` tinyint(1) unsigned NOT NULL DEFAULT "0",
+				PRIMARY KEY (`gateway_id`)
+			) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+			INSERT IGNORE INTO `engine4_sesevent_gateways` (`gateway_id`, `title`, `description`, `enabled`, `plugin`,`sponsorship`, `config`, `test_mode`) VALUES
+			(1, "2Checkout", NULL, 0, "Sesevent_Plugin_Gateway_2Checkout","Sesevent_Plugin_Gateway_Sponsorship_2Checkout", NULL, 0),
+			(2, "PayPal", NULL, 0, "Sesevent_Plugin_Gateway_PayPal","Sesevent_Plugin_Gateway_Sponsorship_PayPal",NULL, 0),
+			(3, "Testing", NULL, 0, "Sesevent_Plugin_Gateway_Testing","Sesevent_Plugin_Gateway_Sponsorship_Testing", NULL, 1);
+
+			DROP TABLE IF EXISTS `engine4_sesevent_usergateways`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_usergateways` (
+				`usergateway_id` int(11) unsigned NOT NULL auto_increment,
+				`event_id` int(11) unsigned NOT NULL,
+				`user_id` int(11) unsigned NOT NULL,
+			  `title` varchar(128) NOT NULL,
+			  `description` text COLLATE utf8_unicode_ci,
+			  `enabled` tinyint(1) unsigned NOT NULL DEFAULT "0",
+			  `plugin` varchar(128) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+				`sponsorship` varchar(128) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+			  `config` mediumblob,
+				`test_mode` tinyint(1) unsigned NOT NULL DEFAULT "0",
+				PRIMARY KEY (`usergateway_id`)
+			) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_hosts`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_hosts` (
+			  `host_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			  `type` varchar(32) NOT NULL,
+			  `user_id` int(11) NOT NULL,
+			  `host_name` varchar(255) NOT NULL,
+			  `owner_id` int(11) NOT NULL,
+			  `host_email` varchar(128) NOT NULL,
+			  `host_phone` int(11) NOT NULL,
+			  `host_description` text COLLATE utf8_unicode_ci,
+			  `facebook_url` varchar(255) DEFAULT NULL,
+			  `twitter_url` varchar(255) DEFAULT NULL,
+			  `website_url` varchar(255) DEFAULT NULL,
+			  `googleplus_url` varchar(255) DEFAULT NULL,
+			  `linkdin_url` varchar(255) DEFAULT NULL,
+			  `photo_id` varchar(255) DEFAULT NULL,
+			  `is_delete` tinyint(1) NOT NULL DEFAULT "0",
+			  `view_count` int(10) unsigned NOT NULL,
+			  `like_count` int(11) unsigned NOT NULL,
+			  `comment_count` int(11) unsigned NOT NULL,
+			  `favourite_count` int(11) unsigned NOT NULL,
+			  `featured` tinyint(1) NOT NULL DEFAULT "0",
+			  `sponsored` tinyint(1) NOT NULL DEFAULT "0",
+			  `verified` tinyint(1) NOT NULL DEFAULT "0",
+			  `offtheday` tinyint(1) NOT NULL,
+			  `startdate` date NOT NULL,
+			  `enddate` date NOT NULL,
+			  `ip_address` varchar(55) NOT NULL DEFAULT "0.0.0.0",
+			  `creation_date` datetime NOT NULL,
+			  `modified_date` datetime NOT NULL,
+			  PRIMARY KEY (`host_id`),
+			  KEY `parent_type` (`host_name`,`host_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_membership`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_membership` (
+			  `resource_id` int(11) unsigned NOT NULL,
+			  `user_id` int(11) unsigned NOT NULL,
+			  `active` tinyint(1) NOT NULL default "0",
+			  `resource_approved` tinyint(1) NOT NULL default "0",
+			  `user_approved` tinyint(1) NOT NULL default "0",
+			  `message` text NULL,
+			  `rsvp` tinyint(3) NOT NULL default "3",
+			  `title` text NULL,
+			  PRIMARY KEY  (`resource_id`, `user_id`),
+			  KEY `REVERSE` (`user_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_photos`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_photos` (
+			  `photo_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			  `album_id` int(11) unsigned NOT NULL,
+			  `event_id` int(11) unsigned NOT NULL,
+			  `user_id` int(11) unsigned NOT NULL,
+			  `title` varchar(128) NOT NULL,
+			  `description` varchar(255) NOT NULL,
+			  `collection_id` int(11) unsigned NOT NULL,
+			  `file_id` int(11) unsigned NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  `modified_date` datetime NOT NULL,
+			  `view_count` int(11) unsigned NOT NULL DEFAULT "0",
+			  `comment_count` int(11) unsigned NOT NULL DEFAULT "0",
+			  `position_cover` varchar(255) DEFAULT NULL,
+			  `like_count` int(11) NOT NULL DEFAULT "0",
+			  `art_cover` int(11) NOT NULL DEFAULT "0",
+				`order` int(11) NOT NULL DEFAULT "0",
+			  PRIMARY KEY (`photo_id`),
+			  KEY `album_id` (`album_id`),
+			  KEY `event_id` (`event_id`),
+			  KEY `collection_id` (`collection_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_posts`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_posts` (
+			  `post_id` int(11) unsigned NOT NULL auto_increment,
+			  `topic_id` int(11) unsigned NOT NULL,
+			  `event_id` int(11) unsigned NOT NULL,
+			  `user_id` int(11) unsigned NOT NULL,
+			  `body` text NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  `modified_date` datetime NOT NULL,
+			  PRIMARY KEY  (`post_id`),
+			  KEY `topic_id` (`topic_id`),
+			  KEY `event_id` (`event_id`),
+			  KEY `user_id` (`user_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_topics`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_topics` (
+			  `topic_id` int(11) unsigned NOT NULL auto_increment,
+			  `event_id` int(11) unsigned NOT NULL,
+			  `user_id` int(11) unsigned NOT NULL,
+			  `title` varchar(64) NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  `modified_date` datetime NOT NULL,
+			  `sticky` tinyint(1) NOT NULL default "0",
+			  `closed` tinyint(1) NOT NULL default "0",
+			  `view_count` int(11) unsigned NOT NULL default "0",
+			  `post_count` int(11) unsigned NOT NULL default "0",
+			  `lastpost_id` int(11) unsigned NOT NULL,
+			  `lastposter_id` int(11) unsigned NOT NULL,
+			  PRIMARY KEY  (`topic_id`),
+			  KEY `event_id` (`event_id`),
+			  KEY `user_id` (`user_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_topicwatches`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_topicwatches` (
+			  `resource_id` int(10) unsigned NOT NULL,
+			  `topic_id` int(10) unsigned NOT NULL,
+			  `user_id` int(10) unsigned NOT NULL,
+			  `watch` tinyint(1) unsigned NOT NULL default "1",
+			  PRIMARY KEY  (`resource_id`,`topic_id`,`user_id`),
+			  KEY `user_id` (`user_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_event_fields_maps`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_event_fields_maps` (
+			  `field_id` int(11) NOT NULL,
+			  `option_id` int(11) NOT NULL,
+			  `child_id` int(11) NOT NULL,
+			  `order` smallint(6) NOT NULL,
+			  PRIMARY KEY (`field_id`,`option_id`,`child_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+			INSERT IGNORE INTO `engine4_sesevent_event_fields_maps` (`field_id`, `option_id`, `child_id`, `order`) VALUES (0, 0, 1, 1);
+
+			DROP TABLE IF EXISTS `engine4_sesevent_event_fields_meta`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_event_fields_meta` (
+			  `field_id` int(11) NOT NULL AUTO_INCREMENT,
+			  `type` varchar(24) NOT NULL,
+			  `label` varchar(64) NOT NULL,
+			  `description` varchar(255) NOT NULL DEFAULT "",
+			  `alias` varchar(32) NOT NULL DEFAULT "",
+			  `required` tinyint(1) NOT NULL DEFAULT "0",
+			  `display` tinyint(1) unsigned NOT NULL,
+			  `publish` tinyint(1) unsigned NOT NULL DEFAULT "0",
+			  `search` tinyint(1) unsigned NOT NULL DEFAULT "0",
+			  `show` tinyint(1) unsigned DEFAULT "0",
+			  `order` smallint(3) unsigned NOT NULL DEFAULT "999",
+			  `config` text NOT NULL,
+			  `validators` text COLLATE utf8_unicode_ci,
+			  `filters` text COLLATE utf8_unicode_ci,
+			  `style` text COLLATE utf8_unicode_ci,
+			  `error` text COLLATE utf8_unicode_ci,
+			  PRIMARY KEY (`field_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;
+
+			INSERT IGNORE INTO `engine4_sesevent_event_fields_meta` (`field_id`, `type`, `label`, `description`, `alias`, `required`, `display`, `publish`, `search`, `show`, `order`, `config`, `validators`, `filters`, `style`, `error`) VALUES
+			(1, "profile_type", "Profile Type", "", "profile_type", 1, 0, 0, 2, 0, 999, "", NULL, NULL, NULL, NULL);
+
+			DROP TABLE IF EXISTS `engine4_sesevent_event_fields_options`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_event_fields_options` (
+			  `option_id` int(11) NOT NULL AUTO_INCREMENT,
+			  `field_id` int(11) NOT NULL,
+			  `label` varchar(255) NOT NULL,
+			  `order` smallint(6) NOT NULL DEFAULT "999",
+			  PRIMARY KEY (`option_id`),
+			  KEY `field_id` (`field_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			INSERT IGNORE INTO `engine4_sesevent_event_fields_options` (`option_id`, `field_id`, `label`, `order`) VALUES (1, 1, "Rock Band", 0);
+
+			DROP TABLE IF EXISTS `engine4_sesevent_event_fields_search`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_event_fields_search` (
+			  `item_id` int(11) NOT NULL,
+			  `profile_type` smallint(11) unsigned DEFAULT NULL,
+			  PRIMARY KEY (`item_id`),
+			  KEY `profile_type` (`profile_type`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_event_fields_values`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_event_fields_values` (
+			  `item_id` int(11) NOT NULL,
+			  `field_id` int(11) NOT NULL,
+			  `index` smallint(3) NOT NULL DEFAULT "0",
+			  `value` text NOT NULL,
+			  PRIMARY KEY (`item_id`,`field_id`,`index`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+			DROP TABLE IF EXISTS `engine4_sesevent_favourites`;
+			CREATE TABLE IF NOT EXISTS `engine4_sesevent_favourites` (
+			  `favourite_id` int(11) unsigned NOT NULL auto_increment,
+			  `user_id` int(11) unsigned NOT NULL,
+			  `resource_type` varchar(128) NOT NULL,
+			  `resource_id` int(11) NOT NULL,
+			  PRIMARY KEY (`favourite_id`),
+			  KEY `user_id` (`user_id`,`resource_type`,`resource_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+			INSERT IGNORE INTO `engine4_core_jobtypes` (`title`, `type`, `module`, `plugin`, `priority`) VALUES
+			("Rebuild Event Privacy", "sesevent_maintenance_rebuild_privacy", "sesevent", "Sesevent_Plugin_Job_Maintenance_RebuildPrivacy", 50);
+
+			INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES
+			("sesevent_main", "standard", "SES - Advanced Event Main Navigation Menu"),
+			("sesevent_profile", "standard", "SES - Advanced Event Profile Options Menu");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_view" as `name`,
+			    5 as `value`,
+			    \'["everyone","registered","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_comment" as `name`,
+			    5 as `value`,
+			    \'["everyone","registered","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_photo" as `name`,
+			    5 as `value`,
+			    \'["everyone","registered","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_video" as `name`,
+			    5 as `value`,
+			    \'["everyone","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_music" as `name`,
+			    5 as `value`,
+			    \'["everyone","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_topic" as `name`,
+			    5 as `value`,
+			    \'["everyone","registered","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "auth_rating" as `name`,
+			    5 as `value`,
+			    \'["everyone","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "create" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "event_approve" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "delete" as `name`,
+			    2 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "edit" as `name`,
+			    2 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "view" as `name`,
+			    2 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "comment" as `name`,
+			    2 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "photo" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "video" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "topic" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "style" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "invite" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "create" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "delete" as `name`,
+			    1 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "edit" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "view" as `name`,
+			    1 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "comment" as `name`,
+			    1 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "photo" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			  INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "video" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "topic" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "style" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "invite" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "view" as `name`,
+			    1 as `value`,
+			    "1" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("public");
+
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "commentHtml" as `name`,
+			    3 as `value`,
+			    "blockquote, strong, b, em, i, u, strike, sub, sup, p, div, pre, address, h1, h2, h3, h4, h5, h6, span, ol, li, ul, a, img, embed, br, hr, iframe" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");
+
+			  INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "addlist_event" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");
+
+				INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "addlist_event" as `name`,
+			    1 as `value`,
+			    NULL as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` IN("user");
+
+				INSERT IGNORE INTO `engine4_authorization_permissions`
+			  SELECT
+			    level_id as `level_id`,
+			    "sesevent_event" as `type`,
+			    "addlist_maxevent" as `name`,
+			    3 as `value`,
+			    "0" as `params`
+			  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");';
+      $results = explode(';', $sql);
+      foreach ($results as $result) {
+        if (!empty($result)) {
+          $db->query($result);
+        }
+      }
+      $db->query('DROP TABLE IF EXISTS `engine4_sesevent_recentlyviewitems`;');
+      $db->query('CREATE TABLE IF NOT EXISTS  `engine4_sesevent_recentlyviewitems` (
+      `recentlyviewed_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+      `resource_id` INT NOT NULL ,
+      `resource_type` VARCHAR(64) NOT NULL DEFAULT "sesevent_event",
+      `owner_id` INT NOT NULL ,
+      `creation_date` DATETIME NOT NULL,
+      UNIQUE KEY `uniqueKey` (`resource_id`,`resource_type`, `owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+			$db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+			("core_main_sesevent", "sesevent", "Events", "", \'{"route":"sesevent_general","action":"welcome"}\', "core_main", "", 6),
+			("core_sitemap_sesevent", "sesevent", "Events", "", \'{"route":"sesevent_general"}\', "core_sitemap", "", 6),
+			("sesevent_main_browsehome", "sesevent", "Event Home", "", \'{"route":"sesevent_general","action":"home"}\', "sesevent_main", "", 1),
+			("sesevent_main_index", "sesevent", "Browse Events", "", \'{"route":"sesevent_general","action":"browse"}\', "sesevent_main", "", 2),
+			("sesevent_main_upcoming", "sesevent", "Upcoming Events", "", \'{"route":"sesevent_upcoming"}\', "sesevent_main", "", 3),
+			("sesevent_main_past", "sesevent", "Past Events", "", \'{"route":"sesevent_past"}\', "sesevent_main", "", 4),
+			("sesevent_main_manage", "sesevent", "My Events", "Sesevent_Plugin_Menus", \'{"route":"sesevent_general","action":"manage"}\', "sesevent_main", "", 5),
+			("sesevent_main_calender", "sesevent", "Calendar", "", \'{"route":"sesevent_general", "action":"calender"}\', "sesevent_main", "", 6),
+			("sesevent_main_create", "sesevent", "Create New Event", "Sesevent_Plugin_Menus", \'{"route":"sesevent_general","action":"create"}\', "sesevent_main", "", 7),
+			("sesevent_main_browsecategory", "sesevent", "Browse Categories", "", \'{"route":"sesevent_category"}\', "sesevent_main","", 8),
+			("sesevent_main_eventlocation", "sesevent", "Locations", "Sesevent_Plugin_Menus::locationEnable", \'{"route":"sesevent_general","action":"locations"}\', "sesevent_main", "", 9),
+			("sesevent_quick_create", "sesevent", "Create New Event", "Sesevent_Plugin_Menus::canCreateEvents", \'{"route":"sesevent_general","action":"create","class":"buttonlink icon_sesevent_new"}\', "sesevent_quick", "", 1),
+			("sesevent_main_browselist", "sesevent", "Browse Lists", "", \'{"route":"sesevent_list"}\', "sesevent_main", "", 4),
+			("sesevent_main_indexhost", "sesevent", "Browse Hosts", "", \'{"route":"sesevent_general","action":"browse-host"}\', "sesevent_main", "", 10),
+			("sesevent_profile_dashboard", "sesevent", "Dashboard", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 1),
+			("sesevent_profile_style", "sesevent", "Edit Styles", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 2),
+			("sesevent_profile_member", "sesevent", "Member", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 3),
+			("sesevent_profile_report", "sesevent", "Report Event", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 4),
+			("sesevent_profile_share", "sesevent", "Share", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 5),
+			("sesevent_profile_invite", "sesevent", "Invite", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 6),
+			("sesevent_profile_message", "sesevent", "Message Members", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 7),
+			("sesevent_profile_delete", "sesevent", "Delete Event", "Sesevent_Plugin_Menus", "", "sesevent_profile", "", 8),
+
+
+			("sesevent_admin_main_manage", "sesevent", "Manage Events", "", \'{"route":"admin_default","module":"sesevent","controller":"manage"}\', "sesevent_admin_main", "", 2),
+			("sesevent_admin_main_categories", "sesevent", "Categories", "", \'{"route":"admin_default","module":"sesevent","controller":"categories","action":"index"}\', "sesevent_admin_main", "", 3),
+			("sesevent_admin_main_subcategories", "sesevent", "Categories & Mapping", "", \'{"route":"admin_default","module":"sesevent","controller":"categories","action":"index"}\', "sesevent_admin_categories", "", 1),
+      ("sesevent_admin_main_subeventcreate", "sesevent", "Event Create Page Settings", "", \'{"route":"admin_default","module":"sesevent","controller":"settings", "action":"eventcreate"}\', "sesevent_admin_main_settings", "", 2),
+			("sesevent_admin_main_level", "sesevent", "Member Level Settings", "", \'{"route":"admin_default","module":"sesevent","controller":"settings","action":"level"}\', "sesevent_admin_main", "", 4),
+			("sesevent_admin_main_manageslidephotos", "sesevent", "Manage Slides", "", \'{"route":"admin_default","module":"sesevent","controller":"manage","action":"slides"}\', "sesevent_admin_main", "", 5),
+			("sesevent_admin_main_managehost", "sesevent", "Manage Hosts", "", \'{"route":"admin_default","module":"sesevent","controller":"host"}\', "sesevent_admin_main", "", 7),
+			("sesevent_admin_main_managewidgetizepage", "sesevent", "Widgetized Pages", "", \'{"route":"admin_default","module":"sesevent","controller":"settings", "action":"manage-widgetize-page"}\', "sesevent_admin_main", "", 666),
+			("sesevent_admin_main_subfields", "sesevent", "Form Questions", "", \'{"route":"admin_default","module":"sesevent","controller":"fields"}\', "sesevent_admin_categories", "", 2),
+			("sesevent_admin_main_managedashboards", "sesevent", "Dashboard", "", \'{"route":"admin_default","module":"sesevent","controller":"settings","action":"manage-dashboards"}\', "sesevent_admin_main", "", 8),
+			("sesevent_admin_main_managelists", "sesevent", "Manage Lists", "", \'{"route":"admin_default","module":"sesevent","controller":"manage","action":"list"}\', "sesevent_admin_main", "", 9),
+			("authorization_admin_level_sesevent", "sesevent", "Events", "", \'{"route":"admin_default","module":"sesevent","controller":"level","action":"index"}\', "authorization_admin_level", "", 999),
+			("sesevent_admin_main_statistics", "sesevent", "Statistics", "", \'{"route":"admin_default","module":"sesevent","controller":"settings","action":"statistic"}\', "sesevent_admin_main", "", 999),
+			("mobi_browse_sesevent", "sesevent", "Events", "", \'{"route":"sesevent_general"}\', "mobi_browse", "", 7);
+		');
+
+		$db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+			("sesevent_main_browsereview", "seseventreview", "Event Reviews", "", \'{"route":"seseventreview_extended","action":"browse"}\', "sesevent_main", "", 6),
+			("sesevent_admin_main_reviewsettings", "sesevent", "Review & Rating Settings", "", \'{"route":"admin_default","module":"seseventreview","controller":"manage", "action":"review-settings"}\', "sesevent_admin_main", "", 6),
+			("seseventreview_admin_main_reviewsettings", "seseventreview", "Setting", "", \'{"route":"admin_default","module":"seseventreview","controller":"manage", "action":"review-settings"}\', "seseventreview_admin_main", "", 1),
+			("seseventreview_admin_main_managereview", "seseventreview", "Manage Reviews", "", \'{"route":"admin_default","module":"seseventreview","controller":"manage", "action":"manage-reviews"}\', "seseventreview_admin_main", "", 2),
+			("seseventreview_admin_main_levelsettings", "seseventreview", "Member Level Setting", "", \'{"route":"admin_default","module":"seseventreview","controller":"manage", "action":"level-settings"}\', "seseventreview_admin_main", "", 3),
+			("seseventreview_admin_main_categories", "seseventreview", "Parameters & Custom Fields", "", \'{"route":"admin_default","module":"seseventreview","controller":"categories","action":"index"}\', "seseventreview_admin_main", "", 4),
+			("seseventreview_admin_main_subcategories", "seseventreview", "Categories & Mapping", "", \'{"route":"admin_default","module":"seseventreview","controller":"categories","action":"index"}\', "seseventreview_admin_categories", "", 1),
+			("seseventreview_admin_main_subfields", "seseventreview", "Profile Types", "", \'{"route":"admin_default","module":"seseventreview","controller":"fields"}\', "seseventreview_admin_categories", "", 2);
+		');
+
+			$db->query('INSERT IGNORE INTO `engine4_activity_actiontypes` (`type`, `module`, `body`, `enabled`, `displayable`, `attachable`, `commentable`, `shareable`, `is_generated`) VALUES
+				("sesevent_create", "sesevent", \'{item:$subject} created a new event {item:$object}:\', 1, 5, 1, 1, 1, 1),
+				("sesevent_join", "sesevent", \'{item:$subject} joined the event {item:$object}\', 1, 2, 1, 1, 1, 1),
+				("sesevent_topic_create", "sesevent", \'{item:$subject} posted a {item:$object:topic} in the event {itemParent:$object:event}: {body:$body}\', 1, 2, 1, 1, 1, 1),
+				("sesevent_topic_reply", "sesevent", \'{item:$subject} replied to a {item:$object:topic} in the event {itemParent:$object:event}: {body:$body}\', 1, 2, 1, 1, 1, 1),
+				("sesevent_photo_upload", "sesevent", \'{item:$subject} added {var:$count} photo(s).\', 1, 2, 2, 1, 1, 1),
+				("sesevent_event_save", "sesevent", \'{item:$subject} saved the event {item:$object}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_follow", "sesevent", \'{item:$subject} follow host in event {item:$object}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_editeventdate", "sesevent", \'{item:$subject} has edited date {var:$editDateFormat} in event {item:$object}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_editeventoverview", "sesevent", \'{item:$subject} has edited overview an event {item:$object}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_editeventvideo", "sesevent", \'{item:$subject} has posted a video in event {item:$object}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_eventmusic", "sesevent", \'{item:$subject} has posted a music album in event {item:$object}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_editvenue", "sesevent", \'{item:$subject} has edited venue {var:$editvenue} in event {item:$object}.\', 1, 2, 1, 1, 1, 1),
+				("sesevent_event_editlocation", "sesevent", \'{item:$subject} has edited location {var:$editlocation} in event {item:$object}.\', 1, 2, 1, 1, 1, 1),
+				("sesevent_list_create", "sesevent", \'{item:$subject} added event {item:$object} to list {item:$list}:\', 1, 2, 1, 1, 1, 1),
+				("sesevent_favourite_list", "sesevent", \'{item:$subject} added list {item:$object} to favorite:\', 1, 2, 1, 1, 1, 1);
+			');
+
+			$db->query('INSERT IGNORE INTO `engine4_activity_notificationtypes` (`type`, `module`, `body`, `is_request`, `handler`) VALUES
+				("sesevent_accepted", "sesevent", \'Your request to join the event {item:$object} has been approved.\', 0, ""),
+				("sesevent_approve", "sesevent", \'{item:$subject} has requested to join the event {item:$object}.\', 0, ""),
+				("sesevent_discussion_response", "sesevent", \'{item:$subject} has {item:$object:posted} on a {itemParent:$object::event topic} you created.\', 0, ""),
+				("sesevent_discussion_reply", "sesevent", \'{item:$subject} has {item:$object:posted} on a {itemParent:$object::event topic} you posted on.\', 0, ""),
+				("sesevent_invite", "sesevent", \'{item:$subject} has invited you to the event {item:$object}.\', 1, "sesevent.widget.request-sesevent"),
+				("sesevent_eventsave", "sesevent", \'{item:$subject} saved the event {item:$object}:\', 0, ""),
+				("sesevent_sitefriend_ashost", "sesevent", \'{item:$subject} has added to you as host in event {item:$object}:\', 0, ""),
+				("sesevent_eventfollow", "sesevent", \'{item:$subject} follow host in event {item:$object}:\', 0, "");
+			');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_sesevent_lists`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesevent_lists` (
+			`list_id` int(11) unsigned NOT NULL auto_increment,
+			`owner_id` int(11) unsigned NOT NULL,
+			`title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+			`description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+			`photo_id` INT(11) NULL DEFAULT 0,
+			`cover_id` INT(11) NULL DEFAULT 0,
+			`event_count`	INT(3) NULL DEFAULT 0,
+			`is_private` TINYINT(1) NULL default 0,
+			`creation_date` DATETIME NOT NULL,
+			`modified_date` DATETIME NOT NULL,
+			`event_id` INT(11) unsigned NOT NULL default 0,
+			`favourite_count` INT(11) NOT NULL,
+			`view_count` int(11) unsigned NOT NULL default 0,
+			`like_count` int(11) unsigned NOT NULL default 0,
+			`offtheday` tinyint(1)	NOT NULL DEFAULT "0",
+			`startdate` DATE DEFAULT NULL,
+			`enddate` DATE DEFAULT NULL,
+			`is_sponsored` int(11) unsigned NOT NULL DEFAULT 0,
+			`is_featured` int(11) unsigned NOT NULL DEFAULT 0,
+			`ip_address` VARCHAR(45)  NULL,
+			 PRIMARY KEY (`list_id`),
+			 KEY `owner_id` (`owner_id`),
+			 KEY `is_private` (`is_private`),
+			 KEY `creation_date` (`creation_date`),
+			 KEY `view_count` (`view_count`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_sesevent_slidephotos`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesevent_slidephotos` (
+			`slidephoto_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+			`photo_id` int(11) unsigned NOT NULL,
+			`title` varchar(255) NULL,
+			`description` TEXT  NULL,
+			`active`  tinyint(1) NOT NULL default "1",
+			`order` int(11) unsigned NOT NULL,
+			`creation_date` datetime NOT NULL,
+			 PRIMARY KEY (`slidephoto_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_sesevent_listevents`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesevent_listevents` (
+			`listevent_id` int(11) unsigned NOT NULL auto_increment,
+			`list_id` INT(11) NOT NULL ,
+			`file_id` int(11) unsigned NOT NULL,
+			`order` int(11) unsigned NOT NULL,
+			 PRIMARY KEY (`listevent_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+			$db->query('INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES
+			("sesevent_reviewprofile", "standard", "SES - Advanced Event - Review Profile Options Menu");');
+
+			$db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+			("seseventreview_profile_edit", "seseventreview", "Edit Review", "Seseventreview_Plugin_Menus", "", "sesevent_reviewprofile", "", 1),
+			("seseventreview_profile_delete", "seseventreview", "Delete Review", "Seseventreview_Plugin_Menus", "", "sesevent_reviewprofile", "", 2),
+			("seseventreview_profile_report", "seseventreview", "Report", "Seseventreview_Plugin_Menus", "", "sesevent_reviewprofile", "", 3),
+			("seseventreview_profile_share", "seseventreview", "Share", "Seseventreview_Plugin_Menus", "", "sesevent_reviewprofile", "", 4);');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_seseventreview_reviews`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_seseventreview_reviews` (
+			  `review_id` int(11) NOT NULL AUTO_INCREMENT,
+			  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+			  `pros` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+			  `cons` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+			  `description` TEXT COLLATE utf8_unicode_ci NOT NULL,
+			  `recommended` tinyint(1) NOT NULL DEFAULT "1",
+			  `owner_id` int(11) unsigned NOT NULL,
+			  `module_name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+			  `content_id` int(11) unsigned NOT NULL DEFAULT "0",
+			  `content_type` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+			  `creation_date` datetime NOT NULL,
+			  `like_count` int(11) NOT NULL,
+			  `comment_count` int(11) NOT NULL,
+			  `view_count` int(11) NOT NULL,
+			  `rating` tinyint(1) DEFAULT NULL,
+			  PRIMARY KEY (`review_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+		  SELECT
+		    level_id as `level_id`,
+		    "eventreview" as `type`,
+		    "auth_view" as `name`,
+		    5 as `value`,
+		    \'["everyone","registered","owner_network","owner_member_member","owner_member","owner"]\' as `params`
+		  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+		  SELECT
+		    level_id as `level_id`,
+		    "eventreview" as `type`,
+		    "auth_comment" as `name`,
+		    5 as `value`,
+		    \'["everyone","registered","owner_network","owner_member_member","owner_member","owner"]\' as `params`
+		  FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+
+		  $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+		  SELECT
+		    level_id as `level_id`,
+		    "eventreview" as `type`,
+		    "view" as `name`,
+		    2 as `value`,
+		    "1" as `params`
+		  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+		  SELECT
+		    level_id as `level_id`,
+		    "eventreview" as `type`,
+		    "comment" as `name`,
+		    2 as `value`,
+		    "1" as `params`
+		  FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+
+		  $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+				SELECT
+				  level_id as `level_id`,
+				  "eventreview" as `type`,
+				  "create" as `name`,
+				  1 as `value`,
+				  NULL as `params`
+				FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+		  $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+			SELECT
+			  level_id as `level_id`,
+			  "eventreview" as `type`,
+			  "edit" as `name`,
+			  2 as `value`,
+			  "1" as `params`
+			FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+		  $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+			SELECT
+			  level_id as `level_id`,
+			  "eventreview" as `type`,
+			  "delete" as `name`,
+			  2 as `value`,
+			  "1" as `params`
+			FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+		  $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+			SELECT
+			  level_id as `level_id`,
+			  "eventreview" as `type`,
+			  "create" as `name`,
+			  1 as `value`,
+			  NULL as `params`
+			FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+		  $db->query('
+			INSERT IGNORE INTO `engine4_authorization_permissions`
+			SELECT
+			  level_id as `level_id`,
+			  "eventreview" as `type`,
+			  "edit" as `name`,
+			  1 as `value`,
+			  "1" as `params`
+			FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+		  $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+			SELECT
+			  level_id as `level_id`,
+			  "eventreview" as `type`,
+			  "delete" as `name`,
+			  1 as `value`,
+			  NULL as `params`
+			FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_eventreview_fields_maps`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_eventreview_fields_maps` (
+			  `field_id` int(11) NOT NULL,
+			  `option_id` int(11) NOT NULL,
+			  `child_id` int(11) NOT NULL,
+			  `order` smallint(6) NOT NULL,
+			  PRIMARY KEY (`field_id`,`option_id`,`child_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+			$db->query('INSERT IGNORE INTO `engine4_eventreview_fields_maps` (`field_id`, `option_id`, `child_id`, `order`) VALUES (0, 0, 1, 1);');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_eventreview_fields_meta`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_eventreview_fields_meta` (
+			  `field_id` int(11) NOT NULL AUTO_INCREMENT,
+			  `type` varchar(24) NOT NULL,
+			  `label` varchar(64) NOT NULL,
+			  `description` varchar(255) NOT NULL DEFAULT "",
+			  `alias` varchar(32) NOT NULL DEFAULT "",
+			  `required` tinyint(1) NOT NULL DEFAULT "0",
+			  `display` tinyint(1) unsigned NOT NULL,
+			  `publish` tinyint(1) unsigned NOT NULL DEFAULT "0",
+			  `search` tinyint(1) unsigned NOT NULL DEFAULT "0",
+			  `show` tinyint(1) unsigned DEFAULT "0",
+			  `order` smallint(3) unsigned NOT NULL DEFAULT "999",
+			  `config` text NOT NULL,
+			  `validators` text COLLATE utf8_unicode_ci,
+			  `filters` text COLLATE utf8_unicode_ci,
+			  `style` text COLLATE utf8_unicode_ci,
+			  `error` text COLLATE utf8_unicode_ci,
+			  PRIMARY KEY (`field_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+			$db->query('INSERT IGNORE INTO `engine4_eventreview_fields_meta` (`field_id`, `type`, `label`, `description`, `alias`, `required`, `display`, `publish`, `search`, `show`, `order`, `config`, `validators`, `filters`, `style`, `error`) VALUES
+			(1, "profile_type", "Profile Type", "", "profile_type", 1, 0, 0, 2, 0, 999, "", NULL, NULL, NULL, NULL);');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_eventreview_fields_options`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_eventreview_fields_options` (
+				`option_id` int(11) NOT NULL AUTO_INCREMENT,
+				`field_id` int(11) NOT NULL,
+				`label` varchar(255) NOT NULL,
+				`order` smallint(6) NOT NULL DEFAULT "999",
+				PRIMARY KEY (`option_id`),
+				KEY `field_id` (`field_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+			$db->query('INSERT IGNORE INTO `engine4_eventreview_fields_options` (`option_id`, `field_id`, `label`, `order`) VALUES (1, 1, "Default", 0);');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_eventreview_fields_search`;');
+		  $db->query('CREATE TABLE IF NOT EXISTS `engine4_eventreview_fields_search` (
+				`item_id` int(11) NOT NULL,
+				`profile_type` smallint(11) unsigned DEFAULT NULL,
+				PRIMARY KEY (`item_id`),
+				KEY `profile_type` (`profile_type`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_eventreview_fields_values`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_eventreview_fields_values` (
+				`item_id` int(11) NOT NULL,
+				`field_id` int(11) NOT NULL,
+				`index` smallint(3) NOT NULL DEFAULT "0",
+				`value` text NOT NULL,
+				PRIMARY KEY (`item_id`,`field_id`,`index`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_seseventreview_parameters`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_seseventreview_parameters` (
+			`parameter_id` int(11) NOT NULL AUTO_INCREMENT,
+			`category_id` int(11) NOT NULL,
+			`title` VARCHAR(255) NOT NULL,
+			`rating` float NOT NULL,
+			 PRIMARY KEY (`parameter_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_seseventreview_review_parametervalues`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_seseventreview_review_parametervalues` (
+				`parametervalue_id` int(11) NOT NULL AUTO_INCREMENT,
+				`parameter_id` int(11) NOT NULL,
+				`rating` float NOT NULL,
+				`user_id` INT(11) NOT NULL,
+				`resources_id` INT(11) NOT NULL,
+				`content_id` INT(11) NOT NULL,
+				`resources_type` VARCHAR(255) NOT NULL,
+				 PRIMARY KEY (`parametervalue_id`),
+				UNIQUE KEY `uniqueKey` (`parameter_id`,`user_id`,`resources_id`,`resources_type`,`content_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+			$db->query('INSERT IGNORE INTO `engine4_core_settings` VALUES
+				("sesevent.html", 1),
+				("sesevent.bbcode", 1);
+			');
+
+
+        include_once APPLICATION_PATH . "/application/modules/Sesevent/controllers/defaultsettings.php";
+
+        $db->query("UPDATE `engine4_sesevent_categories` SET `category_id` = '0',`category_name` = 'Uncategorized' WHERE `category_name` = 'Uncategorized' LIMIT 1;");
+        $db->query("ALTER TABLE engine4_sesevent_categories AUTO_INCREMENT = 70;");
+        $db->query('UPDATE `engine4_sesevent_categories` set `slug` = LOWER(REPLACE(REPLACE(REPLACE(category_name,"&",""),"  "," ")," ","-")) where slug = "";');
+        $db->query('UPDATE `engine4_sesevent_categories` SET `order` = `category_id` WHERE `order` = 0;');
+        $db->query('UPDATE `engine4_sesevent_categories` set `title` = `category_name` where title = "";');
+      Engine_Api::_()->getApi('settings', 'core')->setSetting('sesevent.pluginactivated', 1);
+    }
+  }
+}

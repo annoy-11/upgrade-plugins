@@ -1,0 +1,94 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sessportz
+ * @package    Sessportz
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: FooterSettings.php 2015-10-28 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+class Sessportz_Form_Admin_FooterSettings extends Engine_Form {
+
+  public function init() {
+
+    $settings = Engine_Api::_()->getApi('settings', 'core');
+
+    $this->setTitle('Footer Settings')
+            ->setDescription('These settings will affect the footer of your website.');
+
+
+    $this->addElement('Textarea', 'sessportz_footer_aboutdes', array(
+        'label' => 'About Description',
+        'description' => 'Enter About Description',
+        'value' => $settings->getSetting('sessportz.footer.aboutdes', ''),
+    ));
+
+    $this->addElement('Textarea', 'sessportz_twitter_embedcode', array(
+        'label' => 'Twitter Embed Code',
+        'description' => 'Enter the twitter embed code.',
+        'value' => $settings->getSetting('sessportz.twitter.embedcode', ''),
+    ));
+
+    $this->addElement('Select', 'sessportz_foshow', array(
+        'label' => 'Show News Section',
+        'description' => 'Do you want to show news section?',
+        'multiOptions' => array(
+            '1' => 'Yes',
+            '0' => 'No',
+        ),
+        'onchange' => 'show_settings(this.value)',
+        'value' => $settings->getSetting('sessportz.foshow', 1),
+    ));
+
+    $moduleEnable = Engine_Api::_()->sessportz()->getModulesEnable();
+    $this->addElement('Select', 'sessportz_fo_module', array(
+        'label' => 'Choose the Module to be shown in footer.',
+        'description' => 'Choose the Module to be shown in footer.',
+        'multiOptions' => $moduleEnable,
+        'value' => $settings->getSetting('sessportz.fo.module', 'album'),
+    ));
+
+    $this->addElement('Select', 'sessportz_fo_popularitycriteria', array(
+        'label' => 'Choose the popularity criteria for footer.',
+        'description' => 'Choose the popularity criteria for footer.',
+        'multiOptions' => array(
+            'creation_date' => 'Recently Created',
+            'view_count' => 'View Count',
+            'like_count' => 'Most Liked',
+            'comment_count' => 'Most Commented',
+            'modified_date' => 'Recently Modified'
+        ),
+        'value' => $settings->getSetting('sessportz.fo.popularitycriteria', 'creation_date'),
+    ));
+
+
+
+    $this->addElement('Text', 'sessportz_con_location', array(
+        'label' => 'Contact Us Location',
+        'description' => 'Enter Contact Us Location',
+        'value' => $settings->getSetting('sessportz.con.location', ''),
+    ));
+    $this->addElement('Text', 'sessportz_con_phone', array(
+        'label' => 'Contact Us Phone',
+        'description' => 'Enter Contact Us Phone',
+        'value' => $settings->getSetting('sessportz.con.phone', ''),
+    ));
+    $this->addElement('Text', 'sessportz_con_email', array(
+        'label' => 'Contact Us Email',
+        'description' => 'Enter Contact Us Email',
+        'value' => $settings->getSetting('sessportz.con.email', ''),
+    ));
+
+
+    // Add submit button
+    $this->addElement('Button', 'submit', array(
+        'label' => 'Save Changes',
+        'type' => 'submit',
+        'ignore' => true
+    ));
+  }
+
+}

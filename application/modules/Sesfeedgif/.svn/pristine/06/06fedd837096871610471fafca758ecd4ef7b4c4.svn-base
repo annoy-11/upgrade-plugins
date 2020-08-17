@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesfeedgif
+ * @package    Sesfeedgif
+ * @copyright  Copyright 2017-2018 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Createonegiphy.php  2017-12-06 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+class Sesfeedgif_Form_Admin_Image_Createonegiphy extends Engine_Form {
+
+  public function init() {
+  
+    $this->setTitle('Import Single GIF from GIPHY URL')
+            ->setDescription('');
+
+    //Search options
+    $this->addElement('Text', 'tags',array(
+      'label'=>'GIF Image Categories',
+      'autocomplete' => 'off',
+      'allowEmpty' => false,
+      'required' => true,
+      'description' => 'Enter the categories for this GIF image and separate them with commas.',
+      'filters' => array(
+        'StripTags',
+        new Engine_Filter_Censor(),
+      ),
+    ));
+    $this->tags->getDecorator("Description")->setOption("placement", "append");
+    
+    
+    //Search options
+    $this->addElement('Text', 'url',array(
+      'label' => 'GIF Image URL',
+      'allowEmpty' => false,
+      'required' => true,
+      'description' => 'Enter the GIF URL from GIPHY [Make sure the url ends with “.gif”]',
+      'filters' => array(
+        'StripTags',
+        new Engine_Filter_Censor(),
+      ),
+    ));
+    $this->url->getDecorator("Description")->setOption("placement", "append");
+    
+    $this->addElement('Button', 'submit', array(
+      'label' => 'Upload',
+      'type' => 'submit',
+      'ignore' => true,
+      'decorators' => array('ViewHelper')
+    ));
+    $this->addElement('Cancel', 'cancel', array(
+        'label' => 'Cancel',
+        'link' => true,
+        'prependText' => ' or ',
+        'onclick' => 'javascript:parent.Smoothbox.close()',
+        'decorators' => array(
+            'ViewHelper',
+        ),
+    ));
+    $this->addDisplayGroup(array('submit', 'cancel'), 'buttons');
+  }
+}

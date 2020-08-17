@@ -1,0 +1,274 @@
+/* $Id:mobile.css 2016-07-23 00:00:00 SocialEngineSolutions $*/
+
+/* ACTION TYPE ICONS */
+.activity_icon_comment_sesproduct:before{content:"\\f0e5";}
+/* ITEM TYPE ICONS */
+.item_icon_sesproduct_product:before,
+.item_icon_sesproduct:before,
+.item_icon_sesproduct_entry:before,
+.notification_type_sesuser_claim_product:before,
+.notification_type_sesproduct_claim_declined:before,
+.notification_type_sesuser_claimadmin_product:before,
+.notification_type_sesproduct_subscribed_new:before{
+  content:"\\f0f6";
+  font-family:fontawesome;
+}
+/*Profile Tabs*/
+.sesproduct_profile_tabs ul li a{
+  color:$theme_font_color !important;
+}
+.sesproduct_profile_tabs ul li:hover a,
+.sesproduct_profile_tabs ul li.active a{
+  color:$theme_button_font_color !important;
+}
+.sesproduct_profile_tabs ul li:before{
+  background-color:$theme_button_background_color;
+}
+/*Generic Layout Container*/
+[class*='layout_sesproduct_'],
+[id^='global_page_sesproduct-'] .layout_core_content{
+  clear:both;
+  margin-bottom:15px;
+}
+[class*='layout_sesproduct_']:after,
+[id^='global_page_sesproduct-'] .layout_core_content:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+[class*='tab_layout_sesproduct_']{
+  margin:0;
+  clear:none;
+}
+/*Listing Buttons*/
+.sesproduct_thumb_btns{
+	margin-left:2px;
+	position:absolute;
+	opacity:0;
+	top:-20px;
+	right:10px;
+	z-index:2;
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+[dir="rtl"] .sesproduct_thumb_btns{
+	margin-left:0;
+	margin-right:2px;
+	left:10px;
+	right:auto;
+}
+.sesproduct_thumb:hover .sesproduct_thumb_btns,
+.sesproduct_listing_in_grid:hover .sesproduct_thumb_btns,
+.sesproduct_activity_product:hover .sesproduct_thumb_btns,
+.sesproduct_listing_in_grid2:hover .sesproduct_thumb_btns{
+	opacity:1;
+	top:10px;
+}
+/*Create Page*/
+.sesproduct_create_category_items ul > li:hover,
+.sesproduct_create_category_items ul > li.active{
+	background-color:$theme_list_background_color_hover;
+}
+.sesproduct_grid_info_title a{
+  color:$theme_font_color;
+}
+/*Listings*/
+.sesproduct_list_info_title a,
+.sesproduct_admin_list{
+  border-left-color:$theme_button_background_color;
+}
+[dir="rtl"] .sesproduct_list_info_title a,
+[dir="rtl"] .sesproduct_admin_list{
+  border-right-color:$theme_button_background_color;
+}
+.sesproduct_list_full_stats span{
+  border-right-color:$theme_button_background_color;
+}
+[dir="rtl"] .sesproduct_list_full_stats span{
+  border-left-color:$theme_button_background_color;
+}
+.sesproduct_list_info_title a,
+.sesproduct_grid_info_title a,
+.sesproduct_pinboard_list .sesproduct_pinboard_categry span a span,
+.sesproduct_pinboard_list .sesproduct_pinboard_title a,
+.sesblock_pinboard_readmore a,
+.sesproduct_new_grid_block .sesproduct_second_grid_info_title a,
+.sesproduct_last_grid_block .sesproduct_second_readmore_link a,
+.sesproduct_last_grid_block .sesproduct_grid_date_product a,
+.sesproduct_last_grid_block .sesproduct_grid_three_info_title a{
+  color:$theme_font_color !important;
+}
+.sesproduct_list_readmore a:hover,
+.sesproduct_list_border_two,
+.sesproduct_grid_memta_title span a,
+.sesproduct_grid .sesproduct_grid_hover_block,
+.sesproduct_new_grid_block .sesproduct_grid_date_product{
+  background-color:$theme_button_background_color;
+  color:$theme_button_font_color;
+}
+.sesproduct_list_full_stats span, .sesproduct_grid .sesproduct_grid_info_hover_title a, .sesproduct_grid .sesproduct_grid_hover_block .sesproduct_list_stats span, .sesproduct_grid .sesproduct_grid_hover_block .sesproduct_list_stats span i, .sesproduct_grid .sesproduct_grid_des, .sesproduct_grid_read_btn a, .sesproduct_grid_memta_title span a, .sesproduct_grid .sesproduct_admin_category span i, .sesproduct_grid .sesproduct_admin_category span a{
+  color:$theme_button_font_color !important;
+}
+.sesproduct_list_full_contant_product{
+  background:$theme_list_background_color_hover;
+}
+.sesproduct_list_full_view, .sesproduct_list_full_date_product,{
+  border-color:$theme_list_background_color_hover;
+}
+.sesproduct_new_grid_block .sesproduct_grid_info_title, .sesproduct_new_grid_block .sesproduct_grid_info_title a, .sesproduct_new_grid_block .sesproduct_grid_des span,{
+  background:$theme_font_color !important;
+  color:$theme_button_font_color !important;
+}
+.sesproduct_last_grid_block .sesproduct_gird-top_product .sesproduct_grid_info_title a{
+  color:$theme_button_background_color !important;
+}
+/*Mini Tabs*/
+.sesproduct_small_tabs{
+  border-bottom:1px solid $theme_button_background_color;
+  margin-bottom:5px;
+}
+.sesproduct_small_tabs li{
+	float:left;
+	margin-right:2px;
+}
+.sesproduct_small_tabs li a{
+	display:block;
+	padding:5px 7px;
+	text-decoration:none;
+	font-size:12px;
+}
+.sesproduct_small_tabs li.active a, .sesproduct_list_second_product .sesproduct_list_readmore a, .sesproduct_category_list_button a{
+  background-color:$theme_button_background_color !important;
+  color:$theme_button_font_color !important;
+}
+/*ALBUM PAGES CSS START HERE*//*Option Box*/
+.sesproduct_album_option_box{
+  background-color:$theme_list_background_color;
+  border:1px solid $theme_border_medium_color;
+}
+.sesproduct_album_option_box a{
+  color:$theme_font_color !important;
+}
+.sesproduct_album_option_box a:hover{
+  background-color:$theme_list_background_color_hover;
+}
+/*ALBUM PAGES CSS END HERE*/
+.bootstrap-datetimepicker-widget table th.picker-switch, .bootstrap-datetimepicker-widget table th.dow, .bootstrap-datetimepicker-widget table td.today, .bootstrap-datetimepicker-widget table td.day:hover, .bootstrap-datetimepicker-widget table td.hour:hover, .bootstrap-datetimepicker-widget table td.minute:hover, .bootstrap-datetimepicker-widget table td.second:hover{
+  color:$theme_button_background_color !important;
+	font-weight:bold;
+}
+.sesproduct-featured_product_view .featured_product_list .featured_teg a, .sesproduct-featured_product_view .featured_product_listing .featured_teg a, .sesproduct_grid_inside_info .category_tag a{
+  background:$theme_button_background_color;
+}
+.sesproduct_sidebar_categroies_list a{
+  color:$theme_font_color !important;
+}
+.sesproduct_sidebar_categroies_list a:hover{
+  color:$theme_button_background_color !important;
+}
+/*Slideshow*/
+.sesproduct_slideshow_product .bjqs-markers li.active-marker a{
+	background-color:$theme_button_background_color !important;
+}
+.sesproduct_slideshow_product_wrapper.isfull_width .sesproduct_slideshow_product_container > div{
+	margin:0 auto;
+	width:$theme_content_width;
+}
+.sesproduct_slideshow_product .sesproduct_slideshow_info .category_tag span a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sesproduct_slideshow_product .bjqs-controls li a{
+	background-color:$theme_button_background_color;
+}
+.sesproduct_slideshow_product .sesproduct_slideshow_info .category_tag span a:before{
+	border-top-color:$theme_button_background_color !important;
+}
+.sesproduct_slideshow_product .sesproduct_slideshow_info .category_tag span a:after{
+	border-bottom-color:$theme_button_background_color !important;
+}
+.sesproduct_slideshow_inside_contant{
+  border-left:5px solid $theme_button_background_color;
+}
+/*Pinboard*/
+.sesproduct_pinboard_list_comments .comments > form{
+background-color:$theme_list_background_color_hover;
+}
+.sesproduct_pinboard_list_item_btm, .sesproduct_pinboard_list_comments .comments > ul > li, .sesproduct_pinboard_list_comments .comments > form{
+border-color:$theme_border_color;
+}
+.sesproduct_pinboard_list_comments .comments > form textarea{
+color:$theme_font_color;
+}
+.sesproduct_pinboard_list_comments .comments > ul > li{
+background-color:$theme_list_background_color_hover;
+}
+#messages_compose #buttons-wrapper{
+	margin-left:137px;
+}
+#messages_compose #item_preview-element{
+	margin-top:10px;
+}
+#messages_compose #item_preview-element input[type=image]{
+	max-width:302px;
+}
+.sesproduct_dashboard_menu_list .sesbasic_dashboard_tabs > ul.sesbm ul li a:hover, .sesproduct_dashboard_menu_list .sesbasic_dashboard_tabs ul ul li.active a{
+  background-color:$theme_button_background_color;
+  color:$theme_button_font_color;
+}
+.sesproduct_upload_dragdrop_content:hover{
+border-color:$theme_button_background_color;
+}
+.sesproduct_category_cover_blocks{
+background:$theme_list_background_color;
+}
+.sesproduct_category_cover_blocks:after{
+	border-top:43px solid #fff;
+}
+.sesproduct_category_cover_title span{
+  background-color:$theme_button_background_color;
+}
+.feed_attachment_sesproduct_product > div > a{
+	display:block;
+	width:100%;
+}
+.feed_attachment_sesproduct_product > div > a > img{
+	max-width:inherit !important;
+	max-height:200px !important;
+	float:left;
+	border-width:0;
+	object-fit:cover;
+	width:100%;
+}
+.feed_attachment_sesproduct_product > div > div{
+	border-width:1px;
+	border-top-width:0px;
+	padding:10px 15px;
+	clear:both;
+}
+.feed_attachment_sesproduct_product > div > div .feed_item_link_title{
+	margin-bottom:8px;
+}
+.feed_attachment_sesproduct_product > div > div .feed_item_link_title a{
+	font-size:14px !important;
+}
+.feed_attachment_sesproduct_product > div > div .feed_item_link_desc{
+	font-size:13px !important;
+}
+[dir="rtl"] .sesbasic_dashboard_content #sesproduct_ajax_form_submit .form-label{
+	text-align:right;
+}
+/*Welcome Page*/
+#global_page_sesproduct-index-welcome{
+	background-color:$theme_list_background_color !important;
+	padding:0 !important;
+}
+.sesproduct_welcome_btn{
+	background-color:$theme_button_background_color !important;
+	color:$theme_button_font_color !important;
+}
+.sesproduct_welcome_btn:hover{
+	background-color:$theme_button_background_color_hover;
+}
+

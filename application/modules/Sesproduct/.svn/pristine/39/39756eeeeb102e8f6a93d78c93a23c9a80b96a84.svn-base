@@ -1,0 +1,151 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesproduct
+ * @package    Sesproduct
+ * @copyright  Copyright 2019-2020 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: view.tpl  2019-03-04 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+ 
+ ?>
+<?php $this->headLink()->appendStylesheet($this->layout()->staticBaseUrl . 'application/modules/Sesproduct/externals/styles/styles.css'); ?>
+<?php if($this->format == 'smoothbox' && empty($_GET['order'])){ ?>
+<link href="<?php $this->layout()->staticBaseUrl ?>application/modules/Sesproduct/externals/styles/print.css" rel="stylesheet" media="print" type="text/css" />
+<?php $this->headLink()->appendStylesheet($this->layout()->staticBaseUrl . 'application/modules/Sesproduct/externals/styles/print.css'); ?>
+<?php } ?>
+<a href="javascript:;" onclick= "javascript:parent.Smoothbox.close();" class="fa fa-close sesproduct_orderview_popup_close"></a>
+<div class="layout_middle">
+  <div class="sesproduct_ticket_order_view_page generic_layout_container layout_core_content">
+  <?php if($this->format != 'smoothbox'){ ?>
+    <div class="clear sesproduct_order_view_top">
+      <a href="<?php echo $this->url(array('action'=>'my-tickets'), 'sesproduct_my_ticket', true); ?>" class="buttonlink sesbasic_icon_back"><?php echo $this->translate("Back To My Tickets"); ?></a>
+    </div>
+    <?php } ?>
+    <div class="sesproduct_order_container sesproduct_invoice_container sesbasic_bxs sesbasic_clearfix">
+      <div class="sesproduct_invoice_header sesbasic_clearfix">
+        <div class="floatL">
+         <?php echo $this->translate("Order Id:#%s",$this->order->order_id); ?>
+        </div>
+
+        <div class="floatR">
+           <?php $totalAmount = $this->order->total; ?>
+          [<?php echo $this->translate('Total:'); ?><?php echo $totalAmount <= 0 ? $this->translate("FREE") : Engine_Api::_()->sesproduct()->getCurrencyPrice($totalAmount,$this->order->currency_symbol,$this->order->change_rate); ?>]
+        </div>
+      </div>
+      <div class="sesproduct_invoice_content_wrap sesbm sesbasic_clearfix clear">
+        <div class="sesproduct_invoice_content_left sesbm">
+          <div class="sesproduct_invoice_content_box sesbm">
+            <b class="bold"><?php echo $this->translate("Ordered For"); ?></b>
+            <div class="sesproduct_invoice_content_detail">
+              <span><?php echo $this->htmlLink($this->product->getHref(),$this->product->getTitle()); ?></span>
+            </div>
+          </div>
+          <div class="sesproduct_invoice_content_box sesbm">
+            <b class="bold"><?php echo $this->translate("Ordered By"); ?></b>
+            <div class="sesproduct_invoice_content_detail">
+            <?php $addressTable =   Engine_Api::_()->getDbtable('addresses', 'sesproduct'); ?>
+            <?php $shippingAddress  = $addressTable->getAddress(array('user_id'=>$this->viewer->getIdentity(),'type'=>1,'view'=>true)); ?>
+            <?php $billingAddress =  $addressTable->getAddress(array('user_id'=>$this->viewer->getIdentity(),'type'=>0 ,'view'=>true)); ?>
+              <span><?php echo $this->htmlLink($this->viewer->getHref(), $shippingAddress->getTitle()) ?></span>
+              <span><?php echo $shippingAddress->email; ?></span>
+            </div>
+          </div>
+          <div class="sesproduct_invoice_content_box sesbm">
+            <b class="bold"><?php echo $this->translate("Payment Information"); ?></b>
+            <div class="sesproduct_invoice_content_detail">
+              <span><?php echo $this->translate("Payment method: %s",$this->order->gateway_type); ?></span>
+            </div>
+          </div>
+        </div>
+        <div class="sesproduct_invoice_content_right">
+          <div class="sesproduct_invoice_content_box sesbm">
+            <b class="bold"><?php echo $this->translate("Order Information"); ?></b>
+            <div class="sesproduct_invoice_content_detail">
+              <span><?php echo $this->translate("Ordered Date :"); ?> <?php echo Engine_Api::_()->sesproduct()->dateFormat($this->order->creation_date); ?></span>
+              <?php if($this->order->total_shippingtax_cost > 0){ ?>
+              <span><?php echo $this->translate("Total Shipping Cost :"); ?> <?php echo Engine_Api::_()->sesproduct()->getCurrencyPrice($this->order->total_shippingtax_cost,$this->order->currency_symbol,$this->order->change_rate); ?></span>
+              <?php } ?>
+              <?php if($this->order->total_shippingtax_cost > 0){ ?>
+              <span><?php echo $this->translate("Entertainment Tax :"); ?><?php echo Engine_Api::_()->sesproduct()->getCurrencyPrice($this->order->total_shippingtax_cost,$this->order->currency_symbol,$this->order->change_rate); ?></span>
+              <?php } ?>
+            </div>
+          </div>
+        </div>
+        </div>
+      <div class="sesproduct_invoice_header"><b class="bold"><?php echo $this->translate("Order Details"); ?></b></div>
+      <div class="sesproduct_table sesproduct_invoice_order_table">
+         <table>
+          <tr>
+            <th><?php echo $this->translate("Order Id"); ?></th>
+            <th class="rightT"><?php echo $this->translate("Price"); ?></th>
+            <th class="centerT"><?php echo $this->translate("Quantity"); ?></th>
+            <th class="rightT"><?php echo $this->translate("Sub Total"); ?></th>
+          </tr>
+          <?php foreach($this->orderTickets as $order){ ?>
+          <tr>
+            <td><?php echo $order->order_id; ?></td>
+            <td class="rightT">
+                <?php echo $order->price <= 0 ? $this->translate("FREE") : Engine_Api::_()->sesproduct()->getCurrencyPrice($order->price,$this->order->currency_symbol,$this->order->change_rate); ?><br />
+                <?php if($order->total_shippingtax_cost >0){ ?>
+                  <?php echo $this->translate("Service Tax :"); ?> <?php echo @round($order->total_shippingtax_cost,2).'%'; ?><br />
+                <?php } ?>
+                <?php if($order->total_billingtax_cost >0){ ?>
+                  <?php echo $this->translate("Billing Tax :"); ?><?php echo @round($order->total_billingtax_cost,2).'%'; ?>
+                <?php } ?>
+            </td>
+            <td class="centerT"><?php echo $order->quantity; ?></td>
+            <td class="rightT">
+              <?php $price= $order->price; ?>
+              <?php echo $price <= 0 ? $this->translate("FREE") : Engine_Api::_()->sesproduct()->getCurrencyPrice(round($price*$order->quantity,2),$this->order->currency_symbol,$this->order->change_rate); ?><br />
+                <?php if($order->service_tax > 0){ ?>
+                  <?php $serviceTax = round(($price *($order->service_tax/100) )*$order->quantity,2); ?>
+                   <?php echo $this->translate("Service Tax :"); ?> <?php echo Engine_Api::_()->sesproduct()->getCurrencyPrice($serviceTax,$this->order->currency_symbol,$this->order->change_rate); ?><br />
+                <?php } ?>
+                <?php if($order->admin_taxes > 0){ ?>
+                 <?php $entertainmentTax = round(($price *($order->admin_taxes/100) )*$order->quantity,2);  ?>
+                   <?php echo $this->translate("Admin Tax :"); ?> <?php echo Engine_Api::_()->sesproduct()->getCurrencyPrice($entertainmentTax,$this->order->currency_symbol,$this->order->change_rate); ?>
+                <?php } ?>
+            </td>
+           </tr>
+          <?php } ?>
+        </table>
+        <div class="sesproduct_invoice_total_price_box sesbm">
+          <div>
+            <span><?php echo $this->translate("Subtotal:"); ?></span>
+            <span><?php echo $this->order->total <= 0 ? $this->translate("FREE") : Engine_Api::_()->sesproduct()->getCurrencyPrice($this->order->total,$this->order->currency_symbol,$this->order->change_rate); ?></span>
+          </div>
+          <?php /**/ if($this->order->billing_taxes > 0){ ?>
+          <div>
+            <span><?php echo $this->translate("Service Taxes :"); ?></span>
+            <span><?php /**/ echo $this->order->billing_taxes > 0 ? Engine_Api::_()->sesproduct()->getCurrencyPrice($this->order->billing_taxes,$this->order->currency_symbol,$this->order->change_rate) : "-"; ?></span>
+          </div>
+          <?php } ?>
+          <?php if($this->order->billing_taxes > 0){ ?>
+          <div>
+            <span><?php /**/ echo $this->translate("Entertainment Taxes :"); ?></span>
+            <span><?php echo $this->order->billing_taxes > 0 ? Engine_Api::_()->sesproduct()->getCurrencyPrice($this->order->billing_taxes,$this->order->currency_symbol,$this->order->change_rate) : "-"; ?></span>
+          </div>
+         <?php } ?>
+          <div class="sesproduct_invoice_total_price_box_total">
+            <span><?php echo $this->translate("Grand Total :"); ?></span>
+            <span><?php echo $totalAmount <= 0  ? $this->translate("FREE") : Engine_Api::_()->sesproduct()->getCurrencyPrice($totalAmount,$this->order->currency_symbol,$this->order->change_rate); ?></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php if($this->format == 'smoothbox' && empty($_GET['order'])){ ?>
+<style type="text/css" media="print">
+  @page { size: landscape; }
+</style>
+<script type="application/javascript">
+sesJqueryObject(document).ready(function(e){
+		window.print();
+});
+</script>
+<?php } ?>

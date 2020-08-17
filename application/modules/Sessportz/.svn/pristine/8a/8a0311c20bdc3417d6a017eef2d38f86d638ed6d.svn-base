@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sessportz
+ * @package    Sessportz
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: manifest.php 2015-10-28 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+return array(
+    'package' => array(
+        'type' => 'module',
+        'name' => 'sessportz',
+        'version' => '4.10.3',
+        'path' => 'application/modules/Sessportz',
+        'title' => 'SES - Responsive Sportz Theme',
+        'description' => 'SES - Responsive Sportz Theme',
+        'author' => '<a href="http://www.socialenginesolutions.com" style="text-decoration:underline;" target="_blank">SocialEngineSolutions</a>',
+        'actions' => array(
+            'install',
+            'upgrade',
+            'refresh',
+            'enable',
+            'disable',
+        ),
+        'callback' => array(
+            'path' => 'application/modules/Sessportz/settings/install.php',
+            'class' => 'Sessportz_Installer',
+        ),
+        'directories' =>
+        array(
+            0 => 'application/modules/Sessportz',
+            1 => 'application/themes/sessportz',
+            2 => 'public/admin'
+        ),
+        'files' => array(
+            'application/languages/en/sessportz.csv',
+        ),
+    ),
+    // Items ---------------------------------------------------------------------
+    'items' => array(
+        'sessportz_socialicons', 'sessportz_footerlinks', 'sessportz_slideimage', 'sessportz_slide',
+        'sessportz_gallery', 'sessportz_managesearchoptions','sessportz_headerphoto','sessportz_teams', 'sessportz_newsletteremail'
+    ),
+    'hooks' => array(
+        array(
+            'event' => 'onRenderLayoutDefault',
+            'resource' => 'Sessportz_Plugin_Core'
+        ),
+				array(
+            'event' => 'onRenderLayoutDefaultSimple',
+            'resource' => 'Sessportz_Plugin_Core'
+        ),
+    ),
+);
+?>

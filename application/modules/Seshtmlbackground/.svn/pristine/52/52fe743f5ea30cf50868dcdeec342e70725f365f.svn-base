@@ -1,0 +1,71 @@
+<?php
+
+if (!$this->getRequest()->isPost()) {
+  return;
+}
+
+if (!$form->isValid($this->getRequest()->getPost())) {
+  return;
+}
+
+if ($this->getRequest()->isPost()) {
+
+  //here we can set some variable for checking in plugin files.
+  if (1) {
+
+    if (!Engine_Api::_()->getApi('settings', 'core')->getSetting('seshtmlbackground.pluginactivated')) {
+      $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+			("seshtmlbackground_admin_main_manageSlides", "seshtmlbackground", "Manage Slides", "", \'{"route":"admin_default","module":"seshtmlbackground","controller":"manage-slide","action":"index"}\', "seshtmlbackground_admin_main", "", 2);');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_seshtmlbackground_slides`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_seshtmlbackground_slides` (
+			`slide_id` int(11) unsigned NOT NULL auto_increment,
+			`gallery_id` int(11) DEFAULT NULL,
+			`title` varchar(255) DEFAULT NULL,
+			`title_button_color` varchar(255) DEFAULT NULL,
+			`description` text,
+			`description_button_color` varchar(255) DEFAULT NULL,
+			`thumb_icon` INT(11) DEFAULT "0",
+			`file_type` varchar(255) DEFAULT NULL,
+			`file_id` INT(11) DEFAULT "0",
+			`login_button` tinyint(1) DEFAULT "1",
+			`extra_button` tinyint(1) DEFAULT "0",
+			`signup_button` tinyint(1) DEFAULT "1",
+			`login_button_color` varchar(255) DEFAULT NULL,
+			`login_button_mouseover_color` varchar(255) DEFAULT NULL,
+			`login_button_text` varchar(255) DEFAULT NULL,
+			`login_button_text_color` varchar(255) DEFAULT NULL,
+			`signup_button_color` varchar(255) DEFAULT NULL,
+			`signup_button_mouseover_color` varchar(255) DEFAULT NULL,
+			`signup_button_text` varchar(255) DEFAULT NULL,
+			`signup_button_text_color` varchar(255) DEFAULT NULL,
+			`show_register_form` tinyint(1) DEFAULT "0",
+			`position_register_form` enum("left","right") DEFAULT "right",
+			`extra_button_color` varchar(255) DEFAULT NULL,
+			`extra_button_mouseover_color` varchar(255) DEFAULT NULL,
+			`extra_button_text` varchar(255) DEFAULT NULL,
+			`extra_button_text_color` varchar(255) DEFAULT NULL,
+			`extra_button_link` varchar(255) DEFAULT NULL,
+			`order` tinyint(10) NOT NULL DEFAULT "0",
+			`creation_date` datetime NOT NULL,
+			`modified_date` datetime NOT NULL,
+			 PRIMARY KEY (`slide_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+			');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_seshtmlbackground_galleries`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_seshtmlbackground_galleries` (
+			`gallery_id` int(11) unsigned NOT NULL auto_increment,
+			 `gallery_name` VARCHAR(255)  NULL ,
+			`creation_date` datetime NOT NULL,
+			`modified_date` datetime NOT NULL,
+			 PRIMARY KEY (`gallery_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+			');
+      include_once APPLICATION_PATH . "/application/modules/Seshtmlbackground/controllers/defaultsettings.php";
+      Engine_Api::_()->getApi('settings', 'core')->setSetting('seshtmlbackground.pluginactivated', 1);
+    }
+  }
+}

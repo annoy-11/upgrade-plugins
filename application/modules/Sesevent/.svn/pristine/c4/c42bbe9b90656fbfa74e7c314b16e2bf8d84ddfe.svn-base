@@ -1,0 +1,22 @@
+<?php
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesevent
+ * @package    Sesevent
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Controller.php 2016-07-26 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+class Sesevent_Widget_LocationDetectController extends Engine_Content_Widget_Abstract {
+  public function indexAction() {
+    //get cookie data for auto location
+		$headScript = new Zend_View_Helper_HeadScript();
+		$this->view->cookiedata = $cookiedata = Engine_Api::_()->sesbasic()->getUserLocationBasedCookieData();
+		if(Engine_Api::_()->getApi('settings', 'core')->getSetting('sesevent_enable_location', 1))
+				$headScript->appendFile('https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=' . Engine_Api::_()->getApi('settings', 'core')->getSetting('ses.mapApiKey', ''));
+		else
+			$this->setNoRender();
+  }
+}

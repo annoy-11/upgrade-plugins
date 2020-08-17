@@ -1,0 +1,179 @@
+<?php
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesevent
+ * @package    Sesevent
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: install.php 2016-07-26 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+class Sesevent_Installer extends Engine_Package_Installer_Module {
+
+//   public function onPreinstall() {
+//
+//     $db = $this->getDb();
+//     $plugin_currentversion = '4.10.3p21';
+//
+//     //Check: Basic Required Plugin
+//     $select = new Zend_Db_Select($db);
+//     $select->from('engine4_core_modules')
+//             ->where('name = ?', 'sesbasic');
+//     $results = $select->query()->fetchObject();
+//     if (empty($results)) {
+//       return $this->_error('<div class="global_form"><div><div><p style="color:red;">The required SocialEngineSolutions Basic Required Plugin is not installed on your website. Please download the latest version of this FREE plugin from <a href="http://www.socialenginesolutions.com" target="_blank">SocialEngineSolutions.com</a> website.</p></div></div></div>');
+//     } else {
+//       $error = include APPLICATION_PATH . "/application/modules/Sesbasic/controllers/checkPluginVersion.php";
+//       if($error != '1') {
+//         return $this->_error($error);
+//       }
+// 		}
+//     parent::onPreinstall();
+//   }
+
+  public function onEnable() {
+    parent::onEnable();
+  }
+
+  public function onInstall() {
+
+    $db = $this->getDb();
+    $this->_addContentMemberHome();
+    $this->_addContentMemberProfile();
+    parent::onInstall();
+  }
+
+  protected function _addContentMemberHome() {
+
+    $db = $this->getDb();
+
+    $select = new Zend_Db_Select($db);
+    // Get page id
+    $page_id = $select
+            ->from('engine4_core_pages', 'page_id')
+            ->where('name = ?', 'user_index_home')
+            ->limit(1)
+            ->query()
+            ->fetchColumn(0);
+    // Check if it's already been placed
+    $select = new Zend_Db_Select($db);
+    $hasWidget = $select
+            ->from('engine4_core_content', new Zend_Db_Expr('TRUE'))
+            ->where('page_id = ?', $page_id)
+            ->where('type = ?', 'widget')
+            ->where('name = ?', 'sesevent.home-upcoming')
+            ->query()
+            ->fetchColumn();
+    if (!$hasWidget) {
+      $select = new Zend_Db_Select($db);
+      $container_id = $select
+              ->from('engine4_core_content', 'content_id')
+              ->where('page_id = ?', $page_id)
+              ->where('type = ?', 'container')
+              ->limit(1)
+              ->query()
+              ->fetchColumn();
+
+      // middle_id (will always be there)
+      $select = new Zend_Db_Select($db);
+      $right_id = $select
+              ->from('engine4_core_content', 'content_id')
+              ->where('parent_content_id = ?', $container_id)
+              ->where('type = ?', 'container')
+              ->where('name = ?', 'right')
+              ->limit(1)
+              ->query()
+              ->fetchColumn();
+
+      // insert
+      if ($right_id) {
+        $db->insert('engine4_core_content', array(
+            'page_id' => $page_id,
+            'type' => 'widget',
+            'name' => 'sesevent.home-upcoming',
+            'parent_content_id' => $right_id,
+            'order' => 1,
+            'params' => '{"title":"Upcoming Events","titleCount":true}',
+        ));
+      }
+    }
+  }
+
+  protected function _addContentMemberProfile() {
+
+    $db = $this->getDb();
+    $select = new Zend_Db_Select($db);
+
+    // Get page id
+    $page_id = $select
+            ->from('engine4_core_pages', 'page_id')
+            ->where('name = ?', 'user_profile_index')
+            ->limit(1)
+            ->query()
+            ->fetchColumn(0);
+
+    // sesevent.profile-events
+    // Check if it's already been placed
+    $select = new Zend_Db_Select($db);
+    $hasProfileEvents = $select
+            ->from('engine4_core_content', new Zend_Db_Expr('TRUE'))
+            ->where('page_id = ?', $page_id)
+            ->where('type = ?', 'widget')
+            ->where('name = ?', 'sesevent.profile-events')
+            ->query()
+            ->fetchColumn();
+
+    // Add it
+    if (!$hasProfileEvents) {
+
+      // container_id (will always be there)
+      $select = new Zend_Db_Select($db);
+      $container_id = $select
+              ->from('engine4_core_content', 'content_id')
+              ->where('page_id = ?', $page_id)
+              ->where('type = ?', 'container')
+              ->limit(1)
+              ->query()
+              ->fetchColumn();
+
+      // middle_id (will always be there)
+      $select = new Zend_Db_Select($db);
+      $middle_id = $select
+              ->from('engine4_core_content', 'content_id')
+              ->where('parent_content_id = ?', $container_id)
+              ->where('type = ?', 'container')
+              ->where('name = ?', 'middle')
+              ->limit(1)
+              ->query()
+              ->fetchColumn();
+
+      // tab_id (tab container) may not always be there
+      $select = new Zend_Db_Select($db);
+      $select
+              ->from('engine4_core_content', 'content_id')
+              ->where('type = ?', 'widget')
+              ->where('name = ?', 'core.container-tabs')
+              ->where('page_id = ?', $page_id)
+              ->limit(1);
+      $tab_id = $select->query()->fetchObject();
+      if ($tab_id && @$tab_id->content_id) {
+        $tab_id = $tab_id->content_id;
+      } else {
+        $tab_id = $middle_id;
+      }
+
+      // insert
+      if ($tab_id) {
+        $db->insert('engine4_core_content', array(
+            'page_id' => $page_id,
+            'type' => 'widget',
+            'name' => 'sesevent.profile-events',
+            'parent_content_id' => $tab_id,
+            'order' => 8,
+            'params' => '{"title":"Events","titleCount":true}',
+        ));
+      }
+    }
+  }
+}

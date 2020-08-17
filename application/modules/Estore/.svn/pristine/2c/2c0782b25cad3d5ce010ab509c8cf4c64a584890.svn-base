@@ -1,0 +1,1 @@
+ALTER TABLE `engine4_estore_stores` CHANGE `member_count` `member_count` INT(1) NULL DEFAULT '0';

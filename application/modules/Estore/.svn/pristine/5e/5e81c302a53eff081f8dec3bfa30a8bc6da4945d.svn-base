@@ -1,0 +1,1943 @@
+<?php
+
+if (!$this->getRequest()->isPost()) {
+  return;
+}
+
+if (!$form->isValid($this->getRequest()->getPost())) {
+  return;
+}
+
+if ($this->getRequest()->isPost()) {
+
+  //here we can set some variable for checking in plugin files.
+  if (1) {
+    if (!Engine_Api::_()->getApi('settings', 'core')->getSetting('estore.pluginactivated')) {
+
+      $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES
+      ("estore_main", "standard", "SES - Stores Marketplace - Main Navigation Menu"),
+      ("estore_quick", "standard", "Store Marketplace - Quick Navigation Menu"),
+      ("estore_profile", "standard", "SES - Store Marketplace - Store Profile Options Menu");');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_stores`;');
+      $db->query('CREATE TABLE `engine4_estore_stores` (
+      `store_id` int(11) unsigned NOT NULL auto_increment,
+      `owner_id` int(11) NOT NULL,
+      `resource_type` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `resource_id` int(11) NULL DEFAULT "0",
+      `parent_id` int(11) NULL DEFAULT "0",
+      `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+      `description` text COLLATE utf8_unicode_ci NOT NULL,
+      `custom_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+      `category_id` int(11) NOT NULL DEFAULT "0",
+      `subcat_id` int(11) NOT NULL DEFAULT "0",
+      `subsubcat_id` int(11) NOT NULL DEFAULT "0",
+      `storestyle` tinyint(1) NOT NULL DEFAULT "1",
+      `overview` text COLLATE utf8_unicode_ci,
+      `photo_id` int(11) DEFAULT NULL,
+      `cover` int(11) DEFAULT NULL,
+      `location` varchar(255) DEFAULT NULL,
+      `venue_name` varchar(255) DEFAULT NULL,
+      `price` varchar(255) DEFAULT NULL,
+      `price_type` tinyint(1) NULL DEFAULT "1",
+      `show_adult` tinyint(1) NOT NULL DEFAULT "0",
+      `enable_lock` tinyint(1) NOT NULL DEFAULT "0",
+      `store_password` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci default NULL,
+      `networks` varchar(255) DEFAULT NULL,
+      `can_join` tinyint(1) NOT NULL DEFAULT "0",
+      `member_title_singular` varchar(255) DEFAULT NULL,
+      `member_title_plural` varchar(255) DEFAULT NULL,
+      `other_tag` tinyint(1) NOT NULL DEFAULT "0",
+      `can_invite` int(11) NOT NULL DEFAULT "1",
+      `cover_position` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `background_photo_id` int(11) DEFAULT NULL,
+      `search` tinyint(1) NOT NULL,
+      `draft` tinyint(1) NOT NULL DEFAULT "0",
+      `view_privacy` VARCHAR(24) NOT NULL,
+      `auto_approve` TINYINT(1) NOT NULL DEFAULT "1",
+      `store_contact_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_facebook` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_twitter` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_linkedin` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_instagram` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `store_contact_pinterest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `seo_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `seo_keywords` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+      `seo_description` text COLLATE utf8_unicode_ci,
+      `view_count` int(10) UNSIGNED NOT NULL,
+      `like_count` int(11) UNSIGNED NOT NULL,
+      `comment_count` int(11) UNSIGNED NOT NULL,
+      `favourite_count` int(11) UNSIGNED NOT NULL,
+      `follow_count` int(11) UNSIGNED NOT NULL,
+      `member_count` int(1) NULL DEFAULT "1",
+      `featured` tinyint(1) NOT NULL DEFAULT "0",
+      `sponsored` tinyint(1) NOT NULL DEFAULT "0",
+      `hot` tinyint(1) NOT NULL DEFAULT "0",
+      `verified` tinyint(1) NOT NULL DEFAULT "0",
+      `is_approved` tinyint(1) NOT NULL DEFAULT "1",
+      `approval` tinyint(1) NULL DEFAULT 0,
+      `status` tinyint(1) NULL DEFAULT "1",
+      `offtheday` tinyint(1) NOT NULL,
+      `startdate` date DEFAULT NULL,
+      `enddate` date DEFAULT NULL,
+      `term_and_condition` TEXT DEFAULT NULL,
+      `shipping_policy` TEXT DEFAULT NULL,
+      `return_policy` TEXT DEFAULT NULL,
+      `minimum_shipping_cost` FLOAT NOT NULL DEFAULT "0",
+        `rating` FLOAT NOT NULL,
+      `creation_date` datetime NOT NULL,
+      `modified_date` datetime NOT NULL,
+      `product_count` INT(11) NOT NULL DEFAULT "0",
+      PRIMARY KEY  (`store_id`),
+      KEY `owner_id` (`owner_id`),
+      KEY `search` (`search`),
+      KEY `creation_date` (`creation_date`),
+      KEY `view_count` (`view_count`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+        $db->query('INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES("estore_reviewprofile", "standard", "SES - Stores Marketplace Plugin - Review Profile Options Menu");');
+        $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("estore_review_profile_edit", "estore", "Edit Review", "Estore_Plugin_Menus", "", "estore_reviewprofile", "", 1),
+      ("estore_review_profile_delete", "estore", "Delete Review", "Estore_Plugin_Menus", "", "estore_reviewprofile", "", 2),
+      ("estore_review_profile_report", "estore", "Report", "Estore_Plugin_Menus", "", "estore_reviewprofile", "", 3),
+      ("estore_review_profile_share", "estore", "Share", "Estore_Plugin_Menus", "", "estore_reviewprofile", "", 4);');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_sections`;');
+        $db->query('CREATE TABLE `engine4_estore_sections` (
+        `section_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `estore_id` int(11) unsigned NOT NULL,
+        `owner_id` int(11) UNSIGNED NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `order` int(11) UNSIGNED NOT NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        PRIMARY KEY (`section_id`),
+        KEY `estore_id` (`estore_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_remainingpayments`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_remainingpayments` (
+				`remainingpayment_id` INT(11) unsigned NOT NULL auto_increment,
+				`store_id` INT(11) unsigned NOT NULL,
+				`remaining_payment` FLOAT DEFAULT 0,
+				PRIMARY KEY (`remainingpayment_id`),
+				KEY `store_id` (`store_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_locations`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_locations` (
+        `location_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+        `store_id` INT( 11 ) NOT NULL ,
+        `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `location` varchar(255) DEFAULT NULL,
+        `lat` DECIMAL( 10, 8 ) NULL ,
+        `lng` DECIMAL( 11, 8 ) NULL ,
+        `venue` VARCHAR(255) NULL,
+        `address` TEXT NULL,
+        `address2` TEXT NULL,
+        `city` VARCHAR(255) NULL,
+        `state` VARCHAR(255) NULL,
+        `zip` VARCHAR(255) NULL,
+        `country` VARCHAR(255) NULL,
+        `is_default` tinyint(1) NOT NULL DEFAULT "0",
+        `modified_date` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_estore_reviewvotes`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_reviewvotes` (
+        `reviewvote_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `store_id` INT(11) unsigned NOT NULL,
+        `user_id` INT(11) unsigned NOT NULL,
+        `review_id` INT(11) unsigned NOT NULL ,
+        `type` tinyint(1) NOT NULL,
+        PRIMARY KEY (`reviewvote_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+    $db->query('DROP TABLE IF EXISTS `engine4_estore_reviews`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_reviews` (
+        `review_id` int(11) NOT NULL AUTO_INCREMENT,
+        `owner_id` int(11) unsigned NOT NULL,
+        `store_id` int(11) unsigned NOT NULL DEFAULT "0",
+        `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `pros` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `cons` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `recommended` tinyint(1) NOT NULL DEFAULT "1",
+        `like_count` int(11) NOT NULL,
+        `comment_count` int(11) NOT NULL,
+        `view_count` int(11) NOT NULL,
+        `rating` tinyint(1) DEFAULT NULL,
+        `featured` tinyint(1) NOT NULL DEFAULT "0",
+        `verified` tinyint(1) NOT NULL DEFAULT "0",
+        `oftheday` tinyint(1) DEFAULT "0",
+        `starttime` datetime DEFAULT NULL,
+        `endtime` datetime DEFAULT NULL,
+        `useful_count` int(11) NOT NULL DEFAULT "0",
+        `funny_count` int(11) NOT NULL DEFAULT "0",
+        `cool_count` int(11) NOT NULL DEFAULT "0",
+        `creation_date` datetime NOT NULL,
+        PRIMARY KEY (`review_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_categories` ;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_categories` (
+        `category_id` int(11) unsigned NOT NULL auto_increment,
+        `slug` varchar(255) NOT NULL,
+        `category_name` varchar(128) NOT NULL,
+        `subcat_id` int(11)  NULL DEFAULT 0,
+        `subsubcat_id` int(11)  NULL DEFAULT 0,
+        `title` varchar(255) DEFAULT NULL,
+        `description` text ,
+        `color` VARCHAR(255) ,
+        `thumbnail` int(11) NOT NULL DEFAULT 0,
+        `cat_icon` int(11) NOT NULL DEFAULT 0,
+        `colored_icon` int(11) NOT NULL DEFAULT 0,
+        `order` int(11) NOT NULL DEFAULT 0,
+        `profile_type` int(11) DEFAULT NULL,
+        PRIMARY KEY (`category_id`),
+        KEY `category_id` (`category_id`,`category_name`),
+        KEY `category_name` (`category_name`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+    $db->query("INSERT INTO `engine4_estore_categories` (`category_id`, `slug`, `category_name`, `subcat_id`, `subsubcat_id`, `title`, `description`, `color`, `thumbnail`, `cat_icon`, `colored_icon`, `order`, `profile_type`) VALUES
+(51, 'men', 'Men', 0, 0, 'Men', '', '990066', 0, 0, 0, 0, 0),
+(52, 'women', 'Women', 0, 0, 'Women', '', '990066', 0, 0, 0, 1, 0),
+(53, 'kids-', 'Kids ', 0, 0, 'Kids', 'Kids', '990066', 0, 0, 0, 2, 0),
+(54, 'furnitures', 'Furniture', 0, 0, 'Furniture', 'Furniture', '990066', 0, 0, 0, 3, 0),
+(55, 'electronicss', 'Electronics', 0, 0, 'Electronics', 'Electronics', '990066', 0, 0, 0, 4, 0),
+(56, 'educational', 'Education', 0, 0, 'Education', 'Education is the key for success', '990066', 0, 0, 0, 5, 0),
+(57, 'health-food', 'Health & Food', 0, 0, 'Health & Food', 'Health & Food', '990066', 0, 0, 0, 6, 0),
+(58, 'beauty-care', 'Beauty Care', 0, 0, 'Beauty Care', 'Beauty Care', '990066', 0, 0, 0, 8, 0),
+(59, 'musical-instruments', 'Musical Instruments', 0, 0, 'Musical Instruments', 'Musical Instruments', '990066', 0, 0, 0, 9, 0),
+(60, 'animal-care', 'Animal Care', 0, 0, 'Animal Care', 'Animal Care', '990066', 0, 0, 0, 10, 0),
+(61, 'automobiles', 'Automobiles', 0, 0, 'Automobiles', 'Best Automobiles Parts available Here', '990066', 0, 0, 0, 11, 0),
+(62, 'others', 'Others', 0, 0, 'Others', 'Others', '344F99', 0, 0, 0, 7, 0),
+(63, 'clothing', 'Clothing', 51, 0, 'Clothing', 'Clothing', '990066', 0, 0, 0, 1, 0),
+(64, 'topwear', 'Topwear', 0, 63, 'Topwear', 'Topwear', '990066', 0, 0, 0, 1, 0),
+(66, 'clothes', 'Clothing', 53, 0, 'Clothing', 'Clothing', '990066', 0, 0, 0, 1, 0),
+(68, 'wooden', 'Wooden', 54, 0, 'Wooden', 'Wooden', '990066', 0, 0, 0, 1, 0),
+(69, 'fiber', 'Fiber', 54, 0, 'Fiber', 'Fiber', '990066', 0, 0, 0, 2, 0),
+(70, 'mobiles', 'Mobiles', 55, 0, 'Mobiles', 'Mobiles', '990066', 0, 0, 0, 1, 0),
+(71, 'computers', 'Computers', 55, 0, 'Computers', 'Computers', '990066', 0, 0, 0, 2, 0),
+(72, 'tv', 'TV', 55, 0, 'TV', 'TV', '990066', 1301, 1429, 0, 3, 0),
+(73, 'refrigerators', 'Refrigerators', 55, 0, 'Refrigerators', 'Refrigerators', '990066', 0, 0, 0, 4, 0),
+(74, 'tablets', 'Tablets', 55, 0, 'Tablets', 'Tablets', '990066', 0, 0, 0, 5, 0),
+(75, 'books', 'Books', 56, 0, 'Books', 'Books', '990066', 0, 0, 0, 1, 0),
+(76, 'notebooks', 'Notebooks', 56, 0, 'Notebooks', ' Best Notebooks', '990066', 0, 0, 0, 2, 0),
+(77, 'nutrition', 'Nutrition', 57, 0, 'Nutrition', 'Nutrition', '990066', 0, 0, 0, 1, 0),
+(78, 'grocery-items', 'Grocery Items', 57, 0, 'Grocery Items', 'Grocery Items', '990066', 0, 0, 0, 2, 0),
+(79, 'android-phones', 'Android Phones', 0, 70, 'Android Phones', 'Android Phones', '990066', 0, 0, 0, 1, 0),
+(80, 'featured-phones', 'Featured Phones', 0, 70, 'Featured Phones', 'Featured Phones', '990066', 0, 0, 0, 2, 0),
+(81, 'iphones', 'Iphones', 0, 70, 'Iphones', 'Iphones', '990066', 0, 0, 0, 3, 0),
+(82, 'footwear', 'Footwear', 0, 0, 'Footwear', 'Footwear', '990066', 0, 0, 0, 12, 0),
+(83, 'footwears', 'Footwear', 51, 0, '', '', '990066', 0, 0, 0, 2, 0);");
+
+      $db->query('DROP TABLE IF EXISTS `engine4_stores_fields_maps`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_stores_fields_maps` (
+        `field_id` int(11) NOT NULL,
+        `option_id` int(11) NOT NULL,
+        `child_id` int(11) NOT NULL,
+        `order` smallint(6) NOT NULL,
+        PRIMARY KEY (`field_id`,`option_id`,`child_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('INSERT IGNORE INTO `engine4_stores_fields_maps` (`field_id`, `option_id`, `child_id`, `order`) VALUES (0, 0, 1, 1);');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_stores_fields_meta`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_stores_fields_meta` (
+        `field_id` int(11) NOT NULL AUTO_INCREMENT,
+        `type` varchar(24) NOT NULL,
+        `label` varchar(64) NOT NULL,
+        `description` varchar(255) NOT NULL DEFAULT "",
+        `alias` varchar(32) NOT NULL DEFAULT "",
+        `required` tinyint(1) NOT NULL DEFAULT "0",
+        `display` tinyint(1) unsigned NOT NULL,
+        `publish` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `search` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `show` tinyint(1) unsigned DEFAULT "0",
+        `order` smallint(3) unsigned NOT NULL DEFAULT "999",
+        `config` text NOT NULL,
+        `validators` text COLLATE utf8_unicode_ci,
+        `filters` text COLLATE utf8_unicode_ci,
+        `style` text COLLATE utf8_unicode_ci,
+        `error` text COLLATE utf8_unicode_ci,
+        PRIMARY KEY (`field_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('INSERT IGNORE INTO `engine4_stores_fields_meta` (`field_id`, `type`, `label`, `description`, `alias`, `required`, `display`, `publish`, `search`, `show`, `order`, `config`, `validators`, `filters`, `style`, `error`) VALUES(1, "profile_type", "Profile Type", "", "profile_type", 1, 0, 0, 2, 0, 999, "", NULL, NULL, NULL, NULL);');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_stores_fields_options`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_stores_fields_options` (
+        `option_id` int(11) NOT NULL AUTO_INCREMENT,
+        `field_id` int(11) NOT NULL,
+        `label` varchar(255) NOT NULL,
+        `order` smallint(6) NOT NULL DEFAULT "999",
+        PRIMARY KEY (`option_id`),
+        KEY `field_id` (`field_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('INSERT IGNORE INTO `engine4_stores_fields_options` (`option_id`, `field_id`, `label`, `order`) VALUES (1, 1, "Rock Band", 0);');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_stores_fields_search`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_stores_fields_search` (
+        `item_id` int(11) NOT NULL,
+        `profile_type` smallint(11) unsigned DEFAULT NULL,
+        PRIMARY KEY (`item_id`),
+        KEY `profile_type` (`profile_type`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_stores_fields_values`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_stores_fields_values` (
+        `item_id` int(11) NOT NULL,
+        `field_id` int(11) NOT NULL,
+        `index` smallint(3) NOT NULL DEFAULT "0",
+        `value` text NOT NULL,
+        PRIMARY KEY (`item_id`,`field_id`,`index`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_dashboards` ;');
+      $db->query('CREATE TABLE `engine4_estore_dashboards` (
+        `dashboard_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `type` varchar(128) NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `enabled` tinyint(1) NOT NULL default "1",
+        `main` tinyint(1) NOT NULL default "0",
+        `action_name` VARCHAR(255) NOT NULL,
+        `manage_section_name` VARCHAR(255) NOT NULL,
+        `permission_name` VARCHAR(255) NOT NULL,
+         PRIMARY KEY (`dashboard_id`),
+         KEY `unique` (`type`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('INSERT IGNORE INTO `engine4_estore_dashboards` (`type`, `title`, `enabled`, `main`, `action_name`, `manage_section_name`, `permission_name`) VALUES
+      ("manage_store", "Manage Store", 1, 1, "manage_store", "manage_store", ""),
+
+      ("manage_product", "Manage Products & Orders", 1, 1, "manage_product", "manage_product", ""),
+      ("manage_product_product", "Manage Products", 1, 0, "edit", "manage_product", "edit"),
+
+      ("manage_product_orders", "Manage Orders", 1, 0, "edit", "manage_product", "edit"),
+
+      ("manage_payments", "Manage Payments", 1, 1, "manage_payments", "manage_payments", ""),
+      ("payment_taxes", "Taxes", 1, 0, "edit", "manage_payments", "edit"),
+      ("payment_general_taxes", "General Taxes", 1, 0, "edit", "manage_payments", "edit"),
+      ("payment_requested", "Payment Requested", 1, 0, "edit", "manage_payments", "edit"),
+      ("shipping_method", "Shipping Methods", 1, 0, "edit", "manage_payments", "edit"),
+      ("payment_received", "Payment Received", 1, 0, "edit", "manage_payments", "edit"),
+      ("sales_stats", "Sales Stats", 1, 0, "edit", "manage_payments", "edit"),
+      ("sales_report", "Sales Report", 1, 0, "edit", "manage_payments", "edit"),
+      ("account_details", "Account Details", 1, 0, "edit", "manage_payments", "edit"),
+
+
+
+      ("edit_store", "Edit Store", 1, 0, "edit", "manage_store", "edit"),
+      ("policies_store", "Store Policies", 1, 0, "edit", "manage_store", "edit"),
+      ("store_style", "Store Directory Styling", 1, 1, "store_style", "store_style", ""),
+      ("edit_photo", "Main Photo", 1, 0, "mainphoto", "store_style", ""),
+      ("backgroundphoto", "Background Photo", 1, 0, "backgroundphoto", "store_style", "store_bgphoto"),
+      ("style", "Css Style", 1, 0, "style", "store_style", "bs_edit_style"),
+      ("layout_design", "Design Views", 1, 0, "design", "store_style", "store_choose_style"),
+      ("contact_information", "Contact Information", 1, 0, "contact-information", "manage_store", "bs_contactinfo"),
+      ("post_attribution", "Post Attribution", 1, 0, "post-attribution", "manage_store", "seb_attribution"),
+      ("store_roles", "Store Roles", 1, 0, "store-roles", "manage_store", "bs_allow_roles"),
+      ("store_promotion", "Store Promotions", 1, 1, "store_promotion", "store_promotion", ""),
+      ("overview", "Overview", 1, 0, "overview", "store_promotion", "bs_overview"),
+      ("seo", "SEO", 1, 0, "seo", "store_promotion", "store_seo"),
+      ("open_hour", "Operating Hours", 1, 0, "open-hours", "manage_store", "estore_allow_close"),
+      ("announcement", "Manage Announcements", 1, 0, "announcement", "store_promotion", "store_allow_announcement"),
+      ("location", "Locations", 1, 0, "manage-location", "manage_store", "estore_allow_multiple_location"),
+      ("profile_field", "Category Based Profile Information", 1, 0, "profile-field", "manage_store", ""),
+      ("change_owner", "Transfer Ownership", 1, 0, "change-owner", "manage_store", "store_allow_changeowner"),
+      ("linked_stores", "Linked Stores", 1, 0, "linked-store", "store_promotion", "estore_allow_link_store"),
+      ("advertise_stores", "Advertise Store", 1, 0, "advertise-store", "store_promotion", ""),
+      ("store_manageapps", "Manage Apps", 1, 1, "store_storeapps", "store_storeapps", ""),
+      ("store_crosspost", "Cross Post", 1, 0, "cross-post", "manage_store", "estore_allow_crosspost"),
+      ("manage_notifications", "Manage Notifications", 1, 0, "manage-notification", "manage_store", ""),
+      ("contact_store_owner", "Contact Store Members", 1, 0, "contact", "store_promotion", "estore_allow_contact_store"),
+      ("store_storeapps", "Store Apps", 1, 0, "manage-storeapps", "store_storeapps", ""),
+      ("storeteam", "Team", 1, 0, "manage-team", "manage_apps", "store_team"),
+      ("storeservices", "Services", 1, 0, "manage-services", "manage_services", "store_service");');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_favourites`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_favourites` (
+        `favourite_id` int(11) unsigned NOT NULL auto_increment,
+        `resource_type` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+        `resource_id` int(11) unsigned NOT NULL,
+        `owner_id` int(11) unsigned NOT NULL,
+        `creation_date` datetime NOT NULL,
+        PRIMARY KEY  (`favourite_id`),
+        KEY `resource_type` (`resource_type`, `resource_id`),
+        KEY `owner_id` (`owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_followers`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_followers` (
+        `follower_id` int(11) unsigned NOT NULL auto_increment,
+        `resource_type` varchar(32) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+        `resource_id` int(11) unsigned NOT NULL,
+        `owner_id` int(11) unsigned NOT NULL,
+        PRIMARY KEY  (`follower_id`),
+        KEY `resource_type` (`resource_type`, `resource_id`),
+        KEY `owner_id` (`owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_recentlyviewitems`;');
+      $db->query('CREATE TABLE IF NOT EXISTS  `engine4_estore_recentlyviewitems` (
+        `recentlyviewed_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+        `resource_id` INT NOT NULL ,
+        `resource_type` VARCHAR(64) NOT NULL DEFAULT "stores",
+        `owner_id` INT NOT NULL ,
+        `creation_date` DATETIME NOT NULL,
+        UNIQUE KEY `uniqueKey` (`resource_id`,`resource_type`, `owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_locationphotos`;');
+      $db->query('CREATE TABLE `engine4_estore_locationphotos` (
+        `locationphoto_id` int(11) unsigned NOT NULL auto_increment,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        `owner_type` varchar(64) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+        `location_id` int(11) unsigned NOT NULL,
+        `store_id` int(11) unsigned NOT NULL,
+        `owner_id` int(11) unsigned NOT NULL,
+        `file_id` int(11) unsigned NOT NULL,
+        PRIMARY KEY (`locationphoto_id`),
+        KEY `owner_type` (`owner_type`, `owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_announcements`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_announcements` (
+        `announcement_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `store_id` int(11) unsigned NOT NULL,
+        `user_id` int(11) unsigned NOT NULL,
+        `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `body` text COLLATE utf8_unicode_ci NOT NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime DEFAULT NULL,
+        PRIMARY KEY (`announcement_id`),
+        KEY `store_id` (`store_id`)
+      ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_linkstores`;');
+      $db->query('CREATE TABLE `engine4_estore_linkstores` (
+        `linkstore_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `store_id` int(11) unsigned NOT NULL,
+		`link_store_id` int(11) unsigned NOT NULL,
+        `user_id` int(11) unsigned NOT NULL,
+        `active` tinyint(1) NOT NULL default "0",
+        PRIMARY KEY  (`linkstore_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_recentlyviewitems`;');
+      $db->query('CREATE TABLE IF NOT EXISTS  `engine4_estore_recentlyviewitems` (
+        `recentlyviewed_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+        `resource_id` INT NOT NULL ,
+        `resource_type` VARCHAR(64) NOT NULL DEFAULT "stores",
+        `owner_id` INT NOT NULL ,
+        `creation_date` DATETIME NOT NULL,
+        UNIQUE KEY `uniqueKey` (`resource_id`,`resource_type`, `owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_activitycomments`;');
+      $db->query('CREATE TABLE `engine4_estore_activitycomments` (
+        `activitycomment_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `type` VARCHAR(255) NOT NULL,
+        `item_id` INT(11) NOT NULL,
+        `store_id` int(11) NOT NULL,
+        `store_type` varchar(255) NOT NULL,
+        `user_id` int(11) NOT NULL,
+        `user_type` varchar(255) NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_membership`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_membership` (
+        `resource_id` int(11) unsigned NOT NULL,
+        `user_id` int(11) unsigned NOT NULL,
+        `active` tinyint(1) NOT NULL default "0",
+        `resource_approved` tinyint(1) NOT NULL default "0",
+        `user_approved` tinyint(1) NOT NULL default "0",
+        `message` text NULL,
+        `title` text NULL,
+        PRIMARY KEY  (`resource_id`, `user_id`),
+        KEY `REVERSE` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE utf8_unicode_ci ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_openhours`;');
+      $db->query('CREATE TABLE `engine4_estore_openhours` (
+        `openhour_id` int(11) NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+        `store_id` int(11) NOT NULL,
+        `params` text NOT NULL,
+        `timezone` VARCHAR(255) NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_postattributions`;');
+
+      $db->query('CREATE TABLE `engine4_estore_postattributions` (
+        `postattribution_id` int(11) NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+        `store_id` int(11) NOT NULL,
+        `user_id` int(11) NOT NULL,
+        `type` tinyint(1) NOT NULL DEFAULT "1"
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_callactions`;');
+      $db->query('CREATE TABLE `engine4_estore_callactions` (
+        `callaction_id` int(11) NOT NULL AUTO_INCREMENT  PRIMARY KEY,
+        `store_id` int(11) NOT NULL,
+        `user_id` int(11) NOT NULL,
+        `type` varchar(45) NOT NULL,
+        `params` varchar(255) NULL,
+        `creation_date` datetime NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_memberrolepermissions`;');
+      $db->query('CREATE TABLE `engine4_estore_memberrolepermissions` (
+        `memberrolepermission_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `memberrole_id` INT(11) NOT NULL,
+        `type` VARCHAR(255) NOT NULL,
+        `value` TINYINT(1) NOT NULL DEFAULT "0",
+        `active` TINYINT(1) NOT NULL DEFAULT "1"
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_storeroles`;');
+      $db->query('CREATE TABLE `engine4_estore_storeroles` (
+        `storerole_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `user_id` INT(11) NOT NULL,
+        `store_id` INT(11) NOT NULL,
+        `memberrole_id` INT(11) NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_crossposts`;');
+      $db->query('CREATE TABLE `engine4_estore_crossposts` (
+        `crosspost_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `sender_store_id` INT(11) NOT NULL,
+        `receiver_store_id` INT(11) NOT NULL,
+        `receiver_approved` tinyint(1) NOT NULL DEFAULT "0"
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_albums` ;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_albums` (
+        `album_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `store_id` int(11) unsigned NOT NULL,
+        `owner_id` int(11) unsigned NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `description` varchar(255) NOT NULL,
+        `type` VARCHAR(255) NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        `search` tinyint(1) NOT NULL DEFAULT "1",
+        `photo_id` int(11) unsigned NOT NULL DEFAULT "0",
+        `view_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `comment_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `favourite_count` INT( 11 ) UNSIGNED NOT NULL DEFAULT "0",
+        `collectible_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `position_cover` varchar(255) DEFAULT NULL,
+        `like_count` int(11) NOT NULL DEFAULT "0",
+        `featured` TINYINT(1) NOT NULL DEFAULT "0",
+        `sponsored` TINYINT(1) NOT NULL DEFAULT "0",
+        `art_cover` int(11) NOT NULL DEFAULT "0",
+        PRIMARY KEY (`album_id`),
+        KEY `store_id` (`store_id`),
+        KEY `search` (`search`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_photos`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_photos` (
+        `photo_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `album_id` int(11) unsigned NOT NULL,
+        `store_id` int(11) unsigned NOT NULL,
+        `user_id` int(11) unsigned NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `description` varchar(255) NOT NULL,
+        `collection_id` int(11) unsigned NOT NULL,
+        `file_id` int(11) unsigned NOT NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        `view_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `comment_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `favourite_count` INT( 11 ) UNSIGNED NOT NULL DEFAULT "0",
+        `position_cover` varchar(255) DEFAULT NULL,
+        `like_count` int(11) NOT NULL DEFAULT "0",
+        `art_cover` int(11) NOT NULL DEFAULT "0",
+        `featured` TINYINT(1) NOT NULL DEFAULT "0",
+        `sponsored` TINYINT(1) NOT NULL DEFAULT "0",
+        `order` int(11) NOT NULL DEFAULT "0",
+        PRIMARY KEY (`photo_id`),
+        KEY `album_id` (`album_id`),
+        KEY `store_id` (`store_id`),
+        KEY `collection_id` (`collection_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_notifications`;');
+      $db->query('CREATE TABLE `engine4_estore_notifications` (
+        `notification_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `type` VARCHAR(255) NOT NULL,
+        `value` VARCHAR(45) NOT NULL,
+        `user_id` INT(11) NOT NULL,
+        `store_id` INT(11) NOT NULL,
+        `creation_date` datetime NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_memberroles`;');
+      $db->query('CREATE TABLE `engine4_estore_memberroles` (
+        `memberrole_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `title` VARCHAR(255) NOT NULL,
+        `description` TEXT,
+        `user_id` int(11) NOT NULL,
+        `type` TINYINT(1) NOT NULL DEFAULT "0",
+        `active` tinyint(1) NOT NULL default "1",
+        `creation_date` datetime NOT NULL
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('INSERT IGNORE INTO `engine4_estore_memberroles` (`memberrole_id`, `title`, `description`, `user_id`, `type`, `creation_date`) VALUES
+      (1, "Store Admin", "Can manage all aspects of the Store. They can contact Store members and publish as the Store, respond to and delete content from the Store, create content like photos and approve/ disapprove members.", 1, 1, "2018-02-03 15:12:31"),
+      (2, "Store Moderator", "Can contact Store members by messaging on behalf of store, respond to and delete content on the Store.", 1, 0, "2018-02-03 15:12:38"),
+      (3, "Marketers", "Can manage Store Promotion content for the Store.", 1, 0, "2018-02-06 09:26:46"),
+      (4, "Editor", "Can create, edit and delete content on the store.", 1, 0, "2018-02-06 09:27:03"),
+      (5, "Contributors", "Can contribute to the store by creating and uploading new content to it.", 1, 0, "2018-02-06 09:27:19");');
+
+      $db->query('INSERT IGNORE INTO `engine4_sesbasic_integrateothermodules` (`module_name`, `type`, `content_type`, `content_type_photo`, `content_id`, `content_id_photo`, `enabled`) VALUES ("estore", "lightbox", "estore_album", "estore_photo", "album_id", "photo_id", "1");');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_mailtemplates` (`type`, `module`, `vars`) VALUES
+      ("estore_contact_member", "payment", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[host],[object_link]");');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_managestoreapps`;');
+      $db->query('CREATE TABLE `engine4_estore_managestoreapps` (
+        `managestoreapp_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `store_id` int(11) NOT NULL,
+        `photos` TINYINT(1) NOT NULL DEFAULT "1",
+        `fileupload` TINYINT(1) NOT NULL DEFAULT "1",
+        `buysell` TINYINT(1) NOT NULL DEFAULT "1",
+        `videos` TINYINT(1) NOT NULL DEFAULT "1",
+        `music` TINYINT(1) NOT NULL DEFAULT "1",
+        `service` TINYINT(1) NOT NULL DEFAULT "1",
+        `team` TINYINT(1) NOT NULL DEFAULT "1"
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_likestores`;');
+      $db->query('CREATE TABLE `engine4_estore_likestores` (
+        `likestore_id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        `store_id` int(11) NOT NULL,
+        `like_store_id` int(11) NOT NULL,
+        `user_id` int(11) NOT NULL,
+        UNIQUE KEY `unique` (`store_id`, `like_store_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=latin1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_estore_services`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_estore_services` (
+        `service_id` int(11) NOT NULL AUTO_INCREMENT,
+        `store_id` int(11) NOT NULL,
+        `owner_id` int(11) NOT NULL,
+        `title` varchar(255)  NOT NULL,
+        `description` varchar(255)  DEFAULT NULL,
+        `price` int(11) NOT NULL,
+        `duration` int(11) NOT NULL,
+        `duration_type` varchar(11) NOT NULL,
+        `photo_id` int(11) NOT NULL,
+        `order` int(11) DEFAULT NULL,
+        PRIMARY KEY (`service_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+
+     $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "stores" as `type`,
+        "allow_buying" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels`');
+
+        $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "stores" as `type`,
+        "allow_selling" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels`');
+
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("core_main_estore", "estore", "Stores", "", \'{"route":"estore_general"}\', "core_main", "", 999),
+      ("estore_main_home", "estore", "Store Home", "", \'{"route":"estore_general","action":"home"}\', "estore_main", "", 1),
+      ("estore_main_browse", "estore", "Browse Stores", "", \'{"route":"estore_general","action":"browse"}\', "estore_main", "", 2),
+      ("estore_main_categories", "estore", "Categories", "", \'{"route":"estore_category"}\', "estore_main", "", 3),
+      ("estore_main_browselocations", "estore", "Browse Locations", "", \'{"route":"estore_general","action":"browse-locations"}\', "estore_main", "", 4),
+      ("estore_main_featured", "estore", "Featured Stores", "", \'{"route":"estore_general","action":"featured"}\', "estore_main", "", 5),
+      ("estore_main_verified", "estore", "Verified Stores", "", \'{"route":"estore_general","action":"verified"}\', "estore_main", "", 6),
+      ("estore_main_sponsored", "estore", "Sponsored Stores", "", \'{"route":"estore_general","action":"sponsored"}\', "estore_main", "", 7),
+      ("estore_main_hot", "estore", "Hot Stores", "", \'{"route":"estore_general","action":"hot"}\', "estore_main", "", 8),
+      ("estore_main_create", "estore", "Create New Store", "Estore_Plugin_Menus", \'{"route":"estore_general","action":"create"}\', "estore_main", "", 9),
+      ("estore_main_manage", "estore", "My Stores", "Estore_Plugin_Menus", \'{"route":"estore_general","action":"manage"}\', "estore_main", "", 10),
+      ("estore_main_pinboard", "estore", "Pinboard", "", \'{"route":"estore_general","action":"pinboard"}\', "estore_main", "", 11),
+      ("estore_main_storealbumhome", "estore", "Albums Home", "", \'{"route":"estorealbum_general","action":"home"}\', "estore_main", "", 12),
+      ("estore_main_storealbumbrowse", "estore", "Browse Albums", "", \'{"route":"estorealbum_general","action":"browse"}\', "estore_main", "", 13);');
+
+
+       $db->query("INSERT IGNORE INTO `engine4_core_menuitems` (`id`, `name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `enabled`, `custom`, `order`) VALUES (NULL, 'estore_my_wishlist_dropdown', 'estore', 'My Wishlist', '', '{\"route\":\"estore_account\",\"action\":\"my-wishlists\"}', 'core_mini', '', '1', '0', '7');");
+
+
+      $db->query('INSERT IGNORE INTO `engine4_activity_actiontypes` (`type`, `module`, `body`, `enabled`, `displayable`, `attachable`, `commentable`, `shareable`, `is_generated`) VALUES
+      ("estorevideo_video_create", "estore", \'{item:$subject} posted a new video in store {item:$object}:\', "1", "5", "1", "3", "1", 0),
+      ("estore_store_create", "estore", \'{item:$subject} created a new store:\', 1, 5, 1, 3, 1, 1),
+      ("estore_store_join", "estore", \'{item:$subject} has joined a store {item:$object}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_store_like", "estore", \'{item:$subject} has liked a store {item:$object}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_store_follow", "estore", \'{item:$subject} has followed a store {item:$object}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_store_favourite", "estore", \'{item:$subject} marked a store {item:$object} as Favourite:\', 1, 5, 1, 3, 1, 1),
+      ("estore_album_create", "estore", \'{item:$subject} has added a new {var:$albumlink} in the store {var:$storename}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_album_photo_new", "estore", \'{item:$subject} has added {var:$count} photo(s) to the album {item:$object} in store {var:$storename}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_album_like", "estore", \'{item:$subject} has liked {var:$albumlink} of the store {var:$storename}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_photo_like", "estore", \'{item:$subject} has liked {var:$photolink} of the store {var:$storename}:\', 1, 5, 1, 3, 1, 1),
+      ("estore_store_coverphoto", "estore", \'{item:$subject} has a new cover photo:\', 1, 5, 1, 3, 1, 1),
+      ("estore_store_pfphoto", "estore", \'{item:$subject} has a new profile photo:\', 1, 5, 1, 3, 1, 1),
+      ("comment_estore_store", "estore", \'{item:$subject} has commented on the store {item:$object}:\', 1, 1, 1, 3, 3, 0),
+      ("comment_estore_album", "estore", \'{item:$subject} has commented on store\'\'s photo album {item:$object}:\', 1, 1, 1, 3, 3, 0),
+      ("comment_estore_photo", "estore", \'{item:$subject} has commented on store\'\'s photo {item:$object}:\', 1, 1, 1, 3, 3, 0);');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("estore_admin_main_storecreate", "estore", "Store Creation Settings", "", \'{"route":"admin_default","module":"estore","controller":"settings", "action":"storecreate"}\', "estore_admin_main", "", 2),
+      ("estore_admin_main_storeroles", "estore", "Store Roles", "", \'{"route":"admin_default","module":"estore","controller":"settings","action":"store-roles"}\', "estore_admin_main", "", 3),
+      ("estore_admin_main_manage", "estore", "Manage Stores", "", \'{"route":"admin_default","module":"estore","controller":"manage"}\', "estore_admin_main", "", 4),
+      ("estore_admin_main_level", "estore", "Member Level Settings", "", \'{"route":"admin_default","module":"estore","controller":"settings","action":"level"}\', "estore_admin_main", "", 5),
+      ("estore_admin_main_categories", "estore", "Categories & Profile Fields", "", \'{"route":"admin_default","module":"estore","controller":"categories","action":"index"}\', "estore_admin_main", "", 6),
+      ("estore_admin_main_subcategories", "estore", "Categories & Mapping", "", \'{"route":"admin_default","module":"estore","controller":"categories","action":"index"}\', "estore_admin_categories", "", 1),
+      ("estore_admin_main_subfields", "estore", "Form Questions", "", \'{"route":"admin_default","module":"estore","controller":"fields"}\', "estore_admin_categories", "", 2),
+      ("estore_admin_main_statistics", "estore", "Statistics", "", \'{"route":"admin_default","module":"estore","controller":"settings","action":"statistic"}\', "estore_admin_main", "", 8),
+      ("estore_admin_main_mgphlbum", "estore", "Manage Albums", "", \'{"route":"admin_default","module":"estore","controller":"manage-album"}\', "estore_admin_main", "", 10),
+      ("estore_admin_main_managealbum", "estore", "Manage Albums", "", \'{"route":"admin_default","module":"estore","controller":"manage-album"}\', "estore_admin_main_mgphlbum", "", 1),
+      ("estore_admin_main_managephotos", "estore", "Manage Photos", "", \'{"route":"admin_default","module":"estore","controller":"manage-album","action":"photos"}\', "estore_admin_main_mgphlbum", "", 2);');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("estore_profile_dashboard", "estore", "Dashboard", "Estore_Plugin_Menus", "", "estore_profile", "", 1),
+      ("estore_profile_report", "estore", "Report Store", "Estore_Plugin_Menus", "", "estore_profile", "", 2),
+      ("estore_profile_like", "estore", "Like As Your Store", "Estore_Plugin_Menus", "", "estore_profile", "", 3),
+      ("estore_profile_unlike", "estore", "Unike As Your Store", "Estore_Plugin_Menus", "", "estore_profile", "", 4),
+      ("estore_profile_share", "estore", "Share Store", "Estore_Plugin_Menus", "", "estore_profile", "", 5),
+      ("estore_profile_member", "estore", "Member", "Estore_Plugin_Menus", "", "estore_profile", "", 3),
+      ("estore_profile_invite", "estore", "Invite", "Estore_Plugin_Menus", "", "Estore_profile", "", 4),
+      ("estore_profile_delete", "estore", "Delete Store", "Estore_Plugin_Menus", "", "estore_profile", "", 4),
+      ("estore_profile_substore", "estore", "Create Associated Sub Store", "Estore_Plugin_Menus", "", "estore_profile", "", 5),
+      ("estore_profile_addtoshortcut", "estore", "Add to Shortcuts", "Estore_Plugin_Menus", "", "estore_profile", "", 999);');
+
+      $db->query('INSERT IGNORE INTO `engine4_activity_notificationtypes` (`type`, `module`, `body`, `is_request`, `handler`) VALUES
+      ("estore_link_store", "estore", \'{item:$subject} is want to link your store {item:$object}.\', 1, "estore.widget.request-estore"),
+      ("estore_accept_link_request", "estore", \'{item:$subject} has been approved your linking request of store {item:$object}.\', 1, ""),
+      ("estore_reject_link_request", "estore", \'{item:$subject} has been rejected your linking request of store {item:$object}.\', 1, ""),
+      ("estore_approve", "estore", \'{item:$subject} has requested to join the store {item:$object}.\', 0, ""),
+      ("estore_invite", "estore", \'{item:$subject} has invited you to the store {item:$object}.\', 1, "estore.widget.request-estore"),
+      ("estore_storeroll_ctbs", "estore", \'{item:$subject} has made you {var:$roletitle} in store {item:$object}.\', 0, ""),
+      ("estore_crosspost_apbs", "estore", \'{item:$subject} has approved your crosspost store request {var:$postLink}.\', 0, ""),
+      ("estore_crosspost_ctbs", "estore", \'{item:$subject} has requested to crosspost your store {var:$postLink}.\', 0, ""),
+      ("estore_accepted", "estore", \'Your request to join the store {item:$object} has been approved.\', 0, ""),
+      ("estore_reject", "estore", \'Your request to join the store {item:$object} has been disapproved.\', 0, ""),
+      ("estore_store_newanc", "estore", \'A new announcement is posted in store {item:$object}.\', 0, ""),
+      ("estore_store_join", "estore", \'{item:$subject} has joined your store {item:$object}.\', 0, ""),
+      ("estore_store_like", "estore", \'{item:$subject} has liked your store {item:$object}.\', 0, ""),
+      ("estore_store_follow", "estore", \'{item:$subject} has followed your store {item:$object}.\', 0, ""),
+      ("estore_store_favourite", "estore", \'{item:$subject} has favourited your store {item:$object}.\', 0, ""),
+      ("estore_store_adminaapr", "estore", \'Your store {item:$object} has been approved.\', 0, ""),
+      ("estore_store_admindisapr", "estore", \'Your store {item:$object} has been disapproved.\', 0, ""),
+      ("estore_store_wtadminapr", "estore", \'New store {item:$object} has been created and is waiting for admin approval.\', 0, ""),
+      ("estore_store_wtapr", "estore", \'Your store {item:$object} has been created and is waiting for admin approval.\', 0, ""),
+      ("estore_store_bsjoined", "estore", \'{item:$subject} has joined your joined store {item:$object}.\', 0, ""),
+      ("estore_store_bsjoinlike", "estore", \'{item:$subject} likes your joined store {item:$object}.\', 0, ""),
+      ("estore_store_bsjoinalbum", "estore", \'{item:$subject} has created new photo album {item:$object} in your joined store {var:$storelink}.\', 0, ""),
+      ("estore_store_bsjoinphoto", "estore", \'{item:$subject} has uploaded photo(s) in album {item:$object} in your joined store {var:$storelink}.\', 0, ""),
+      ("estore_store_bsjoinnch", "estore", \'Name of the store {var:$old_store_title} you joined is changed to {item:$object}.\', 0, ""),
+      ("estore_store_bsfollwlike", "estore", \'{item:$subject} likes your followed store {item:$object}.\', 0, ""),
+      ("estore_store_bsfollwjoin", "estore", \'{item:$subject} has joined your followed store {item:$object}.\', 0, ""),
+      ("estore_store_bsfollphoto", "estore", \'{item:$subject} has created new photo album {item:$object} in your followed store {var:$storelink}.\', 0, ""),
+      ("estore_store_bsfoupphoto", "estore", \'{item:$subject} has uploaded photo(s) in album {item:$object} in your followed store {var:$storelink}.\', 0, ""),
+      ("estore_store_bsfollnmchg", "estore", \'Name of the store {var:$old_store_title} you followed is changed to {item:$object}.\', 0, ""),
+      ("estore_store_bsfavnmchg", "estore", \'Name of the store {var:$old_store_title} you favourited is changed to {item:$object}.\', 0, "");');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_mailtemplates` (`type`, `module`, `vars`) VALUES
+      ("notify_estore_store_superadmin", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description]"),
+      ("notify_estore_store_adminapproval", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[adminmanage_link]"),
+      ("notify_estore_store_storesentforapproval", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[adminmanage_link],[store_title]"),
+      ("notify_estore_store_approvedbyadmin", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_disapprovedbyadmin", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_storejoined", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_storeliked", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_storefollowed", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_storemarkfavourite", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_likestorefollowed", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_joinedstorefollowed", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_likestorejoined", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_joinstorejoined", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_albumcreate", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_albumcreatefollowed", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_store_storenamechanged", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_storeroll_createstore", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_storenewannouncement", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description],[store_title]"),
+      ("notify_estore_accepted", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description]"),
+      ("notify_estore_invite", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description]"),
+      ("notify_estore_reject", "estore", "[host],[email],[recipient_title],[recipient_link],[recipient_photo],[sender_title],[sender_link],[sender_photo],[object_title],[object_link],[object_photo],[object_description]");');
+
+
+        $db->query('INSERT IGNORE INTO `engine4_sesbasic_integrateothermodules` ( `module_name`, `type`, `content_type`, `content_type_photo`, `content_id`, `content_id_photo`, `enabled`) VALUES ("sesproduct", "lightbox", "sesproduct_album", "sesproduct_photo", "album_id", "photo_id", 1);');
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_favourites`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_favourites` (
+        `favourite_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` int(11) unsigned NOT NULL,
+        `resource_type` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+        `resource_id` int(11) NOT NULL,
+        PRIMARY KEY (`favourite_id`),
+        KEY `user_id` (`user_id`,`resource_type`,`resource_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_roles`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_roles` (
+        `role_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `user_id` int(11) unsigned NOT NULL,
+        `product_id` int(11) unsigned NOT NULL,
+        PRIMARY KEY (`role_id`),
+        KEY `user_id` (`product_id`,`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_products`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_products` (
+        `product_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `store_id` int(11) unsigned NOT NULL,
+        `type` VARCHAR(45) NOT NULL,
+        `custom_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `sku` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `parent_id` int(11) DEFAULT "0",
+        `photo_id` int(11) DEFAULT "0",
+        `title` varchar(224) COLLATE utf8_unicode_ci NOT NULL,
+        `body` longtext COLLATE utf8_unicode_ci NOT NULL,
+        `location` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `owner_type` varchar(64) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+        `owner_id` int(11) unsigned NOT NULL,
+        `category_id` int(11) unsigned NOT NULL DEFAULT "0",
+        `subcat_id` int(11) DEFAULT "0",
+        `subsubcat_id` int(11) DEFAULT "0",
+        `section_id` INT(11) NOT NULL DEFAULT "0",
+        `publish_date` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `starttime` varchar(255) COLLATE utf8_unicode_ci NULL,
+        `endtime` varchar(255) COLLATE utf8_unicode_ci NULL,
+        `view_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `comment_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `like_count` int(11) unsigned NOT NULL DEFAULT "0",
+        `price` decimal(16,2) NOT NULL DEFAULT "0",
+        `discount` TINYINT(1) NOT NULL DEFAULT "0",
+        `discount_type` TINYINT(1) NOT NULL DEFAULT "0",
+        `percentage_discount_value` decimal(16,2) NOT NULL DEFAULT "0",
+        `fixed_discount_value` decimal(16,2) NOT NULL DEFAULT "0",
+        `discount_start_date` varchar(255) COLLATE utf8_unicode_ci NULL,
+        `discount_end_type` TINYINT(1) NOT NULL DEFAULT "0",
+        `discount_end_date`  varchar(255) COLLATE utf8_unicode_ci NULL,
+        `allowed_discount_type` TINYINT(1) NOT NULL DEFAULT "0",
+        `brand` varchar(255) NULL,
+        `manage_stock` tinyint(1) NOT NULL DEFAULT "0",
+        `stock_quatity` INT(11) NOT NULL DEFAULT "0",
+        `show_outof_stock` TINYINT(1) NOT NULL DEFAULT "0",
+        `enable_backin_stock` TINYINT(1) NOT NULL DEFAULT "0",
+        `min_quantity` INT(11) NOT NULL DEFAULT "0",
+        `max_quatity` INT(11) NOT NULL DEFAULT "0",
+        `show_start_time` TINYINT(1) NULL,
+        `show_end_time` TINYINT(1) NULL,
+        `purchase_note` TEXT NULL,
+        `enable_review` TINYINT(1) NOT NULL DEFAULT "0",
+        `weight` INT(11) NOT NULL DEFAULT "0",
+
+        `length` INT(11) NOT NULL DEFAULT "0",
+        `width` INT(11) NOT NULL DEFAULT "0",
+        `height` INT(11) NOT NULL DEFAULT "0",
+        `enable_product` INT(11) NOT NULL DEFAULT "0",
+
+        `product_contact_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `product_contact_email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `product_contact_phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `product_contact_website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `product_contact_facebook` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `resource_type` varchar(255) COLLATE utf8_unicode_ci NULL,
+        `resource_id` INT(11) NOT NULL DEFAULT "0",
+        `parent_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `seo_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `seo_keywords` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `seo_description` text COLLATE utf8_unicode_ci,
+        `featured` tinyint(1) NOT NULL DEFAULT "0",
+        `sponsored` tinyint(1) NOT NULL DEFAULT "0",
+        `verified` tinyint(1) NOT NULL DEFAULT "0",
+        `is_approved` tinyint(1) NOT NULL DEFAULT "1",
+        `ip_address` varchar(55) NOT NULL DEFAULT "0.0.0.0",
+        `favourite_count` tinyint(11) NOT NULL DEFAULT "0",
+        `offtheday` tinyint(1) NOT NULL,
+        `style` tinyint(1) NOT NULL DEFAULT "1",
+        `rating` float NOT NULL,
+        `search` tinyint(1) NOT NULL DEFAULT "1",
+        `draft` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `closed` TINYINT(1) NOT NULL DEFAULT "1" COMMENT "1 - open, 0 - closed",
+        `is_publish` tinyint(1) NOT NULL DEFAULT "0",
+        `networks` VARCHAR(255) NULL,
+        `levels` VARCHAR(255) NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        PRIMARY KEY (`product_id`),
+        KEY `owner_type` (`owner_type`,`owner_id`),
+        KEY `search` (`search`,`creation_date`),
+        KEY `owner_id` (`owner_id`,`draft`),
+        KEY `draft` (`draft`,`search`),
+        KEY `store_id` (`store_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_upsells`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_upsells` (
+        `upsell_id` int(11) NOT NULL AUTO_INCREMENT,
+        `product_id` int(11) NOT NULL,
+        `resource_id` INT(11) NOT NULL DEFAULT "0",
+        `creation_date` datetime NOT NULL,
+        PRIMARY KEY (`upsell_id`),
+        KEY (`product_id`,`resource_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_crosssells`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_crosssells` (
+        `crosssell_id` int(11) NOT NULL AUTO_INCREMENT,
+        `product_id` int(11) NOT NULL,
+        `resource_id` INT(11) NOT NULL DEFAULT "0",
+        `creation_date` datetime NOT NULL,
+        PRIMARY KEY (`crosssell_id`),
+        KEY (`product_id`,`resource_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_albums`;');
+			$db->query('CREATE TABLE `engine4_sesproduct_albums` (
+        `album_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `product_id` int(11) unsigned NOT NULL,
+        `owner_id` int(11) UNSIGNED NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `description` mediumtext NOT NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        `search` tinyint(1) NOT NULL default "1",
+        `photo_id` int(11) unsigned NOT NULL default "0",
+        `view_count` int(11) unsigned NOT NULL default "0",
+        `comment_count` int(11) unsigned NOT NULL default "0",
+        `collectible_count` int(11) unsigned NOT NULL default "0",
+        `like_count` int(11) NOT NULL DEFAULT "0",
+        `position_cover` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `art_cover` int(11) NOT NULL DEFAULT "0",
+        `favourite_count` int(11) UNSIGNED NOT NULL DEFAULT "0",
+        PRIMARY KEY (`album_id`),
+        KEY `product_id` (`product_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_photos`;');
+			$db->query('CREATE TABLE `engine4_sesproduct_photos` (
+        `photo_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `album_id` int(11) unsigned NOT NULL,
+        `product_id` int(11) unsigned NOT NULL,
+        `user_id` int(11) unsigned NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `description` varchar(255) NOT NULL,
+        `collection_id` int(11) unsigned NOT NULL,
+        `file_id` int(11) unsigned NOT NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        `view_count` int(11) UNSIGNED NOT NULL DEFAULT "0",
+        `comment_count` int(11) UNSIGNED NOT NULL DEFAULT "0",
+        `like_count` int(11) UNSIGNED NOT NULL DEFAULT "0",
+        `order` int(11) NOT NULL DEFAULT "0",
+        `position_cover` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+        `art_cover` int(11) NOT NULL DEFAULT "0",
+        `favourite_count` int(11) UNSIGNED NOT NULL DEFAULT "0",
+        PRIMARY KEY (`photo_id`),
+        KEY `album_id` (`album_id`),
+        KEY `product_id` (`product_id`),
+        KEY `user_id` (`user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_mapevents`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_mapevents` (
+        `mapevent_id` int(11) NOT NULL AUTO_INCREMENT,
+        `event_id` int(11) unsigned NOT NULL,
+        `product_id` int(11) unsigned NOT NULL,
+        `request_owner_product` tinyint(1) NOT NULL,
+        `request_owner_event` tinyint(1) NOT NULL,
+        `approved` tinyint(1) NOT NULL DEFAULT "1",
+        PRIMARY KEY (`mapevent_id`),
+        KEY `event_id` (`event_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_categories`;');
+			$db->query('CREATE TABLE `engine4_sesproduct_categories` (
+    `category_id` int(11) UNSIGNED NOT NULL,
+    `user_id` int(11) UNSIGNED NOT NULL,
+    `category_name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+    `description` text COLLATE utf8_unicode_ci DEFAULT NULL,
+    `order` int(11) NOT NULL DEFAULT 0,
+    `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+    `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+    `subcat_id` int(11) DEFAULT 0,
+    `subsubcat_id` int(11) DEFAULT 0,
+    `thumbnail` int(11) NOT NULL DEFAULT 0,
+    `cat_icon` int(11) NOT NULL DEFAULT 0,
+    `colored_icon` int(11) NOT NULL,
+    `color` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+    `profile_type_review` int(11) DEFAULT NULL,
+    `profile_type` int(11) DEFAULT NULL,
+    `member_levels` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+    `seproduct_categoryid` int(11) DEFAULT NULL,
+    PRIMARY KEY (`category_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+	$db->query("INSERT INTO `engine4_sesproduct_categories` (`category_id`, `user_id`, `category_name`, `description`, `order`, `title`, `slug`, `subcat_id`, `subsubcat_id`, `thumbnail`, `cat_icon`, `colored_icon`, `color`, `profile_type_review`, `profile_type`, `member_levels`,seproduct_categoryid) VALUES
+(14, 0, 'Men', 'Men', 1, 'Men', 'men', 0, 0, 0, 0, 0, NULL, NULL, 2, '', NULL),
+(15, 0, 'Women', '', 2, 'Women', 'women', 0, 0, 0, 0, 0, NULL, NULL, 3, '', NULL),
+(16, 0, 'Kids', 'Kids', 3, 'Kids', 'kids', 0, 0, 0, 0, 0, NULL, NULL, 4, '', NULL),
+(17, 0, 'Furniture', 'Furniture', 4, 'Furniture', 'furniture', 0, 0, 0, 0, 0, NULL, NULL, 5, '', NULL),
+(18, 0, 'Electronics', 'Electronics', 5, 'Electronics', 'electronics', 0, 0, 0, 0, 0, NULL, NULL, 6, '', NULL),
+(19, 0, 'Education', 'Education', 6, 'Education', 'education', 0, 0, 0, 0, 0, NULL, NULL, 8, '', NULL),
+(20, 0, 'Health & Food', 'Health & Food', 7, 'Health & Food', 'health-food', 0, 0, 0, 0, 0, NULL, NULL, 9, '', NULL),
+(21, 0, 'Beauty Care', 'Beauty Care', 8, 'Beauty Care', 'beauty-care', 0, 0, 0, 0, 0, NULL, NULL, 10, '', NULL),
+(22, 0, 'Musical Instruments', 'Musical Instruments', 9, 'Musical Instruments', 'musical-instruments', 0, 0, 0, 0, 0, NULL, NULL, 11, '', NULL),
+(23, 0, 'Automobiles', 'Automobiles', 10, 'Automobiles', 'automobiles', 0, 0, 0, 0, 0, NULL, NULL, 14, '', NULL),
+(24, 0, 'Animal Care', 'Animal Care', 11, 'Animal Care', 'animal-care', 0, 0, 0, 0, 0, NULL, NULL, 12, '', NULL),
+(25, 0, 'Others', 'Others', 12, 'Others', 'others', 0, 0, 0, 0, 0, NULL, NULL, 15, '', NULL),
+(26, 0, 'Clothing', 'Clothing', 1, 'Clothing', 'clothing', 14, 0, 0, 0, 0, NULL, NULL, 16, NULL, NULL),
+(27, 0, 'Top wear', 'Top wear', 1, 'Top wear', 'top-wear', 0, 26, 0, 0, 0, NULL, NULL, 17, '', NULL),
+(28, 0, 'Botton wear', 'Botton wear', 2, 'Botton wear', 'botton-wear', 0, 26, 0, 0, 0, NULL, NULL, 18, '', NULL),
+(29, 0, 'Wedding Dress', 'Wedding Dress', 3, 'Wedding Dress', 'wedding-dress', 0, 26, 0, 0, 0, NULL, NULL, 19, '', NULL),
+(30, 0, 'Mobiles', 'Mobiles', 1, 'Mobiles', 'mobiles', 18, 0, 0, 0, 0, NULL, NULL, 27, NULL, NULL),
+(31, 0, 'Featured Phones', 'Featured Phones', 1, 'Featured Phones', 'featured-phones', 0, 30, 0, 0, 0, NULL, NULL, 29, '', NULL),
+(32, 0, 'Android Phones', 'Android Phones', 2, 'Android Phones', 'android-phones', 0, 30, 0, 0, 0, NULL, NULL, 28, '', NULL),
+(33, 0, 'Iphones', 'Iphones', 3, 'Iphones', 'iphones', 0, 30, 0, 0, 0, NULL, NULL, 31, '', NULL),
+(34, 0, 'Computers', 'Computers', 2, 'Computers', 'computers', 18, 0, 0, 0, 0, NULL, NULL, 32, NULL, NULL),
+(35, 0, 'T.V.', 'T.V.', 3, 'T.V.', 't-v-', 18, 0, 0, 0, 0, NULL, NULL, 34, NULL, NULL),
+(36, 0, 'Desktop', 'Desktop', 1, 'Desktop', 'desktop', 0, 34, 0, 0, 0, NULL, NULL, 33, '', NULL),
+(37, 0, 'Laptops', 'Laptops', 2, 'Laptops', 'laptops', 0, 34, 0, 0, 0, NULL, NULL, 33, '', NULL),
+(38, 0, 'LCD, LED, Plasma', 'LCD, LED, Plasma', 1, 'LCD, LED, Plasma', 'lcd-led-plasma', 0, 35, 0, 0, 0, NULL, NULL, 35, '', NULL),
+(39, 0, 'Refrigerators', 'Refrigerators', 4, 'Refrigerators', 'refrigerators', 18, 0, 0, 0, 0, NULL, NULL, 36, NULL, NULL),
+(40, 0, 'Tablets', 'Tablets', 5, 'Tablets', 'tablets', 18, 0, 0, 0, 0, NULL, NULL, 37, NULL, NULL),
+(41, 0, 'Books ', 'Books ', 1, 'Books ', 'books-', 19, 0, 0, 0, 0, NULL, NULL, 38, NULL, NULL),
+(42, 0, 'Notebooks', 'Notebooks', 2, 'Notebooks', 'notebooks', 19, 0, 0, 0, 0, NULL, NULL, 39, NULL, NULL),
+(43, 0, 'Novels', 'Novels', 1, 'Novels', 'novels', 0, 41, 0, 0, 0, NULL, NULL, 42, '', NULL),
+(44, 0, 'Diary', 'Diary', 1, 'Diary', 'diary', 0, 42, 0, 0, 0, NULL, NULL, 41, '', NULL),
+(45, 0, 'Nutrition', 'Nutrition', 1, 'Nutrition', 'nutrition', 20, 0, 0, 0, 0, NULL, NULL, 44, NULL, NULL),
+(46, 0, 'Grocery Items', 'Grocery Items', 2, 'Grocery Items', 'grocery-items', 20, 0, 0, 0, 0, NULL, NULL, 45, NULL, NULL),
+(47, 0, 'Perfumes & Deodorants', 'Perfumes & Deodorants', 1, 'Perfumes & Deodorants', 'perfumes-deodorants', 21, 0, 0, 0, 0, NULL, NULL, 46, NULL, NULL),
+(48, 0, 'Skin Products', 'Skin Products', 2, 'Skin Products', 'skin-products', 21, 0, 0, 0, 0, NULL, NULL, 48, NULL, NULL),
+(49, 0, 'Drums', 'Drums', 1, 'Drums', 'drums', 22, 0, 0, 0, 0, NULL, NULL, 49, NULL, NULL),
+(50, 0, 'Guitar', 'Guitar', 2, 'Guitar', 'guitar', 22, 0, 0, 0, 0, NULL, NULL, 51, NULL, NULL),
+(51, 0, 'Food Items', 'Food Items', 1, 'Food Items', 'food-items', 24, 0, 0, 0, 0, NULL, NULL, 52, NULL, NULL),
+(52, 0, 'Pet Care Products', 'Pet Care Products', 2, 'Pet Care Products', 'pet-care-products', 24, 0, 0, 0, 0, NULL, NULL, 53, NULL, NULL),
+(53, 0, 'Car', 'Car', 1, 'Car', 'car', 23, 0, 0, 0, 0, NULL, NULL, 54, NULL, NULL),
+(54, 0, 'Bike', 'Bike', 2, 'Bike', 'bike', 23, 0, 0, 0, 0, NULL, NULL, 55, NULL, NULL),
+(55, 0, 'Mopeds', 'Mopeds', 3, 'Mopeds', 'mopeds', 23, 0, 0, 0, 0, NULL, NULL, 56, NULL, NULL),
+(56, 0, 'Wooden ', 'Wooden ', 1, 'Wooden ', 'wooden-', 17, 0, 0, 0, 0, NULL, NULL, 21, NULL, NULL),
+(57, 0, 'Fiber', 'Fiber', 2, 'Fiber', 'fiber', 17, 0, 0, 0, 0, NULL, NULL, 22, NULL, NULL),
+(58, 0, 'Table', 'Table', 1, 'Table', 'table', 0, 56, 0, 0, 0, NULL, NULL, 23, '', NULL),
+(60, 0, 'Bed', 'Bed', 3, 'Bed', 'bed', 0, 56, 0, 0, 0, NULL, NULL, 25, '', NULL),
+(61, 0, 'Sofa', 'Sofa', 1, 'Sofa', 'sofa', 0, 57, 0, 0, 0, NULL, NULL, 26, '', NULL),
+(62, 0, 'footwear', '', 2, '', 'footwear', 14, 0, 0, 0, 0, NULL, NULL, 0, NULL, NULL),
+(63, 0, 'Boy', 'Boy', 1, 'Boy', 'boy', 16, 0, 0, 0, 0, NULL, NULL, 0, NULL, NULL),
+(64, 0, 'Girl', '', 2, 'Girl', 'girl', 16, 0, 0, 0, 0, NULL, NULL, 0, NULL, NULL),
+(65, 0, 'Toys', '', 3, 'Toys', 'toys', 16, 0, 0, 0, 0, NULL, NULL, 0, NULL, NULL),
+(66, 0, 'Bottom Wear', '', 4, '', 'bottom-wear', 0, 26, 0, 0, 0, NULL, NULL, 0, NULL, NULL);");
+
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_carts` (
+        `cart_id` int(11) NOT NULL AUTO_INCREMENT,
+        `owner_id` int(11) NOT NULL,
+        `phpsessionid` VARCHAR(255) NULL,
+        `creation_date` datetime,
+        `modified_date` datetime,
+        PRIMARY KEY (`cart_id`),
+        KEY (`owner_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts` (
+        `cartproduct_id` int(11) NOT NULL AUTO_INCREMENT,
+        `cart_id` INT(11) NOT NULL DEFAULT "0",
+        `product_id` int(11) NOT NULL,
+        `quantity` int(11) NOT NULL DEFAULT "0",
+        `params` text NULL,
+        PRIMARY KEY (`cartproduct_id`),
+        KEY (`product_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartoptions`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartoptions` (
+        `cartoption_id` int(11) NOT NULL AUTO_INCREMENT,
+        `product_id` int(11) NOT NULL,
+        `option_id` INT(11) NOT NULL DEFAULT "0",
+        `creation_date` datetime NOT NULL,
+        PRIMARY KEY (`cartoption_id`),
+        KEY `unique` (`product_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_fields_maps`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_fields_maps` (
+        `field_id` int(11) NOT NULL,
+        `option_id` int(11) NOT NULL,
+        `child_id` int(11) NOT NULL,
+        `order` smallint(6) NOT NULL,
+        PRIMARY KEY (`field_id`,`option_id`,`child_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_combinationmaps`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_combinationmaps` (
+        `combinationmap_id` int(11) NOT NULL AUTO_INCREMENT,
+        `combination_id` INT(11) NOT NULL DEFAULT "0",
+        `field_id` INT(11) NOT NULL DEFAULT "0",
+        `order` INT(11) NOT NULL DEFAULT "0",
+        `option_id` int(11) NOT NULL,
+        PRIMARY KEY (`combinationmap_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_combinations`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_combinations` (
+        `combination_id` int(11) NOT NULL AUTO_INCREMENT,
+        `product_id` int(11) NOT NULL,
+        `type` tinyint(1) NOT NULL DEFAULT "1" COMMENT "0 - incremented value, 1 - decremented value",
+        `status` tinyint(1) NOT NULL  DEFAULT "1",
+        `price` FLOAT NOT NULL DEFAULT "0",
+        `quantity` INT(11) NOT NULL DEFAULT "0",
+        PRIMARY KEY (`combination_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_fields_meta`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_fields_meta` (
+        `field_id` int(11) NOT NULL AUTO_INCREMENT,
+        `type` varchar(24) NOT NULL,
+        `label` varchar(64) NOT NULL,
+        `description` varchar(255) NOT NULL DEFAULT "",
+        `alias` varchar(32) NOT NULL DEFAULT "",
+        `required` tinyint(1) NOT NULL DEFAULT "0",
+        `display` tinyint(1) unsigned NOT NULL,
+        `publish` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `search` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `show` tinyint(1) unsigned DEFAULT "0",
+        `order` smallint(3) unsigned NOT NULL DEFAULT "999",
+        `config` text NOT NULL,
+        `validators` text COLLATE utf8_unicode_ci,
+        `filters` text COLLATE utf8_unicode_ci,
+        `style` text COLLATE utf8_unicode_ci,
+        `error` text COLLATE utf8_unicode_ci,
+        PRIMARY KEY (`field_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_fields_options`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_fields_options` (
+        `option_id` int(11) NOT NULL AUTO_INCREMENT,
+        `field_id` int(11) NOT NULL,
+        `label` varchar(255) NOT NULL,
+        `order` smallint(6) NOT NULL DEFAULT "999",
+        `quantity` INT(11) NOT NULL DEFAULT "0",
+        `price` FLOAT NOT NULL DEFAULT "0",
+        `limit` INT(11) NOT NULL DEFAULT "0",
+        `type` TINYINT(1) NOT NULL DEFAULT "1" COMMENT "0 - incremented value, 1 - decremented value",
+        PRIMARY KEY (`option_id`),
+        KEY `field_id` (`field_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_fields_search`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_fields_search` (
+        `item_id` int(11) NOT NULL,
+        `profile_type` smallint(11) unsigned DEFAULT NULL,
+        PRIMARY KEY (`item_id`),
+        KEY `profile_type` (`profile_type`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_cartproducts_fields_values`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_cartproducts_fields_values` (
+        `item_id` int(11) NOT NULL,
+        `field_id` int(11) NOT NULL,
+        `index` smallint(3) NOT NULL DEFAULT "0",
+        `value` text NOT NULL,
+        `is_select_type` TINYINT(1) NOT NULL DEFAULT "0",
+        PRIMARY KEY (`item_id`,`field_id`,`index`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+
+	$db->query("INSERT IGNORE INTO `engine4_sesproduct_cartproducts_fields_maps` (`field_id`, `option_id`, `child_id`, `order`) VALUES (0, 0, 1, 1)");
+    $db->query("INSERT IGNORE INTO `engine4_sesproduct_cartproducts_fields_meta` (`field_id`, `type`, `label`, `description`, `alias`, `required`, `display`, `publish`, `search`, `show`, `order`, `config`, `validators`, `filters`, `style`, `error`) VALUES
+			(1, \"profile_type\", \"Profile Type\", \"\", \"profile_type\", 1, 0, 0, 2, 0, 999, \"\", NULL, NULL, NULL, NULL);");
+
+    $db->query("INSERT IGNORE INTO `engine4_sesproduct_cartproducts_fields_options` (`option_id`, `field_id`, `label`, `order`) VALUES (1, 1, \"Default Type\", 0);");
+
+    $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+    ("core_main_sesproduct", "sesproduct", "Product", "", \'{"route":"sesproduct_general"}\', "core_main", "", 999),
+    ("sesproduct_main_browseplaylist", "sesproduct", "Browse Wishlist", "", \'{"route":"sesproduct_wishlist"}\', "sesproduct_main", "", 6),
+     ("sesproduct_admin_main_managewishlists", "sesproduct", "Manage Wishlists", "", \'{"route":"admin_default","module":"sesproduct","controller":"manage","action":"wishlist"}\', "sesproduct_admin_main", "", 5);');
+        $db->query("INSERT IGNORE INTO `engine4_core_menuitems` (`id`, `name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `enabled`, `custom`, `order`) VALUES (NULL, 'sesproduct_add_cart_dropdown', 'sesproduct', 'Add To Cart', 'Sesproduct_Plugin_Menus::addtocart', '{\"route\":\"sesproduct_cart\",\"module\":\"sesproduct\"}', 'core_mini', '', '1', '0', '6');");
+
+        //order related queries
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_addresses`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_addresses` (
+        `address_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+        `user_id` int(11) NOT NULL,
+        `type` tinyint(1) NOT NULL DEFAULT "0"  COMMENT "0 - billing, 1 - shipping",
+        `first_name` VARCHAR(255) NOT NULL,
+        `last_name` VARCHAR(255) NOT NULL,
+        `email` VARCHAR(255) NOT NULL,
+        `phone_number` VARCHAR(255) NOT NULL,
+        `address` VARCHAR(255) NOT NULL,
+        `country` VARCHAR(255) NOT NULL,
+        `state` VARCHAR(255) NOT NULL,
+        `city` VARCHAR(255) NOT NULL,
+        `zip_code` VARCHAR(255) NOT NULL,
+        PRIMARY KEY (`address_id`),
+        KEY `user_id` (user_id)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_order_downloads`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_order_downloads` (
+        `orderdownload_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+        `order_id` INT (11) UNSIGNED NOT NULL,
+        `product_id` int(11) UNSIGNED NOT NULL,
+        `file_id` int(11) UNSIGNED NOT NULL,
+        `download_count` INT(11) NOT NULL DEFAULT "0",
+        `current_downloads` INT(11) NOT NULL DEFAULT "0",
+        PRIMARY KEY (`orderdownload_id`),
+        KEY `order_id` (order_id)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_order_cheques`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_order_cheques` (
+        `ordercheque_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+        `cheque_number` VARCHAR (255) NOT NULL,
+        `name` VARCHAR(255) NOT NULL,
+        `account_number` VARCHAR(255) NOT NULL,
+        `routing_number` VARCHAR(255) NOT NULL,
+        PRIMARY KEY (`ordercheque_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_orders`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_orders` (
+        `order_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+        `parent_order_id` INT(11) UNSIGNED NOT NULL,
+        `user_id` INT (11) unsigned not  null,
+        `store_id` INT (11) UNSIGNED NOT NULL,
+        `item_count` INT (11) NOT NULL DEFAULT "1",
+        `total` FLOAT NOT NULL,
+        `shipping_taxes` VARCHAR(255) NULL,
+        `total_shippingtax_cost` FLOAT NOT NULL DEFAULT "0.00",
+        `shipping_delivery_tile` VARCHAR(255) NULL,
+        `billing_taxes` TEXT NULL,
+        `total_billingtax_cost` FLOAT NOT NULL DEFAULT "0.00",
+        `admin_taxes` TEXT NULL,
+        `total_admintax_cost` FLOAT NOT NULL DEFAULT "0.00",
+        `cheque_id` INT(11) NOT NULL DEFAULT "0",
+        `order_note` TEXT NULL,
+        `gateway_id` VARCHAR(255) DEFAULT NULL,
+        `gateway_transaction_id` VARCHAR(255) DEFAULT NULL COMMENT "21 - cod, 20 - check",
+        `commission_amount` FLOAT NOT NULL DEFAULT "0",
+        `change_rate` FLOAT NOT NULL DEFAULT "0",
+        `currency_symbol` varchar (45) DEFAULT NULL,
+        `gateway_type` VARCHAR (45) NOT NULL DEFAULT "Paypal",
+        `ip_address` VARCHAR(45) NOT NULL,
+        `state` VARCHAR(45) NOT NULL DEFAULT "initial",
+        `creation_date` datetime NOT NULL,
+         `modified_date` datetime NOT NULL,
+        PRIMARY KEY (`order_id`),
+        KEY `store_id` (store_id),
+        KEY `order_id` (user_id)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_userpayrequests`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_userpayrequests` (
+            `userpayrequest_id` INT(11) unsigned NOT NULL auto_increment,
+            `store_id` INT(11) unsigned NOT NULL,
+            `owner_id` INT(11) unsigned NOT NULL,
+            `requested_amount` FLOAT DEFAULT "0",
+            `release_amount` FLOAT DEFAULT "0",
+            `user_message` TEXT,
+            `admin_message` TEXT,
+            `creation_date` datetime NOT NULL,
+            `release_date` datetime NOT NULL,
+            `is_delete` TINYINT(1) NOT NULL DEFAULT "0",
+            `gateway_id` TINYINT (1) DEFAULT "2",
+            `gateway_transaction_id` varchar(128) DEFAULT NULL,
+            `state` ENUM("pending","cancelled","failed","incomplete","complete","refund") DEFAULT "pending",
+            `currency_symbol` VARCHAR(45) NOT NULL,
+            `gateway_type` VARCHAR(45) NOT NULL DEFAULT "Paypal",
+            PRIMARY KEY (`userpayrequest_id`),
+            KEY `store_id` (`store_id`),
+            KEY `owner_id` (`owner_id`)
+        ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+        $db->query("DROP TABLE IF EXISTS `engine4_sesproduct_remainingpayments`;");
+        $db->query("CREATE TABLE IF NOT EXISTS `engine4_sesproduct_remainingpayments` (
+				`remainingpayment_id` INT(11) unsigned NOT NULL auto_increment,
+				`store_id` INT(11) unsigned NOT NULL,
+				`remaining_payment` FLOAT DEFAULT 0,
+				PRIMARY KEY (`remainingpayment_id`),
+				KEY `store_id` (`store_id`)
+			) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;");
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_transactions`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_transactions` (
+        `transaction_id` int(11) NOT NULL AUTO_INCREMENT,
+        `owner_id` int(11) NOT NULL,
+        `order_id` int(11) NOT NULL,
+        `gateway_id` tinyint(1) DEFAULT NULL,
+        `gateway_transaction_id` varchar(128) DEFAULT NULL,
+        `gateway_parent_transaction_id` varchar(128) DEFAULT NULL,
+        `gateway_profile_id` VARCHAR(128) DEFAULT NULL,
+        `state` enum("pending","cancelled","failed","incomplete","complete","refund","okay","overdue","initial","active") NOT NULL DEFAULT "pending",
+        `change_rate` float NOT NULL DEFAULT "0",
+        `total_amount` float NOT NULL DEFAULT "0",
+        `currency_symbol` varchar(45) DEFAULT NULL,
+        `gateway_type` varchar(45) DEFAULT NULL,
+        `ip_address` varchar(45) NOT NULL DEFAULT "0.0.0.0",
+        `expiration_date` varchar(255) NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        PRIMARY KEY (`transaction_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT = 1 ;');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_order_products`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_order_products` (
+            `orderproduct_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+            `order_id` INT (11) unsigned not  null,
+            `user_id` INT (11) unsigned not  null,
+            `store_id` INT(11) UNSIGNED NOT NULL,
+            `product_id` INT (11) UNSIGNED NOT NULL,
+            `title` VARCHAR(255) DEFAULT NULL,
+            `sku` VARCHAR(255) DEFAULT NULL,
+            `price` FLOAT NOT NULL DEFAULT "0.00",
+            `quantity` INT(11) NOT NULL DEFAULT "1",
+            `params` TEXT NULL,
+            `creation_date` datetime NOT NULL,
+            `modified_date` datetime NOT NULL,
+            PRIMARY KEY (`orderproduct_id`),
+            KEY `store_id` (store_id),
+            KEY `product_id` (product_id),
+            KEY `order_id` (user_id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_order_addresses`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_order_addresses` (
+        `orderaddress_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+        `order_id` INT (11) UNSIGNED NOT NULL,
+        `user_id` int(11) NOT NULL,
+        `type` tinyint(1) NOT NULL DEFAULT "0"  COMMENT "0 - billing, 1 - shipping",
+        `first_name` VARCHAR(255) NOT NULL,
+        `last_name` VARCHAR(255) NOT NULL,
+        `email` VARCHAR(255) NOT NULL,
+        `phone_number` VARCHAR(255) NOT NULL,
+        `address` VARCHAR(255) NOT NULL,
+        `country` VARCHAR(255) NOT NULL,
+        `state` VARCHAR(255) NOT NULL,
+        `city` VARCHAR(255) NOT NULL,
+        `zip_code` VARCHAR(255) NOT NULL,
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        PRIMARY KEY (`orderaddress_id`),
+        KEY `user_id` (user_id)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+
+        //order query ends here
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_wishlists` ;');
+     $db->query("CREATE TABLE `engine4_sesproduct_wishlists` (
+              `wishlist_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+              `owner_id` int(11) UNSIGNED NOT NULL,
+              `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+              `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+              `photo_id` int(11) DEFAULT '0',
+              `cover_id` int(11) DEFAULT '0',
+              `product_count` int(3) DEFAULT '0',
+              `is_private` tinyint(1) DEFAULT '0',
+              `creation_date` datetime NOT NULL,
+              `modified_date` datetime NOT NULL,
+              `product_id` int(11) UNSIGNED NOT NULL DEFAULT '0',
+              `favourite_count` int(11) NOT NULL,
+              `view_count` int(11) UNSIGNED NOT NULL DEFAULT '0',
+              `like_count` int(11) UNSIGNED NOT NULL DEFAULT '0',
+              `offtheday` tinyint(1) NOT NULL DEFAULT '0',
+              `starttime` date DEFAULT NULL,
+              `endtime` date DEFAULT NULL,
+              `is_sponsored` int(11) UNSIGNED NOT NULL DEFAULT '0',
+              `is_featured` int(11) UNSIGNED NOT NULL DEFAULT '0',
+              `ip_address` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+              PRIMARY KEY (`wishlist_id`),
+              KEY `owner_id` (`owner_id`),
+              KEY `is_private` (`is_private`),
+              KEY `creation_date` (`creation_date`),
+              KEY `view_count` (`view_count`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;");
+
+      $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+                SELECT
+                  level_id as `level_id`,
+                  "sesproduct" as `type`,
+                  "addwishlist_max" as `name`,
+                  3 as `value`,
+                  "0" as `params`
+                FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+
+      $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+                SELECT
+                  level_id as `level_id`,
+                  "sesproduct" as `type`,
+                  "addwishlist" as `name`,
+                  1 as `value`,
+                  NULL as `params`
+                FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+
+
+        $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("sesproduct_admin_main_manageorde", "sesproduct", "Manage Orders", "", \'{"route":"admin_default","module":"sesproduct","controller":"orders","action":"index"}\', "estore_admin_main", "", 6),
+      ("sesproduct_admin_main_manageordersub", "sesproduct", "Manage Orders", "", \'{"route":"admin_default","module":"sesproduct","controller":"orders","action":"index"}\', "sesproduct_admin_main_manageorde", "", 1),
+      ("sesproduct_admin_main_payreq", "sesproduct", "Manage Payments", "", \'{"route":"admin_default","module":"sesproduct","controller":"payment"}\', "sesproduct_admin_main_manageorde", "", 1),
+      ("sesproduct_admin_main_patreqsub", "sesproduct", "Payment Requests", "", \'{"route":"admin_default","module":"sesproduct","controller":"payment"}\', "sesproduct_admin_main_payreq", "", 1),
+      ("sesproduct_admin_main_paymade", "sesproduct", "Manage Payments Made", "", \'{"route":"admin_default","module":"sesproduct","controller":"payment","action":"manage-payment-store-owner"}\', "sesproduct_admin_main_payreq", "", 2),
+      ("sesproduct_admin_main_currency", "sesproduct", "Manage Currency", "Sesproduct_Plugin_Menus::canViewMultipleCurrency", \'{"route":"admin_default","module":"sesbasic","controller":"settings","action":"currency","target":"_blank"}\', "sesproduct_admin_main_manageorde", "", 4),
+      ("sesproduct_admin_main_gateway", "sesproduct", "Manage Gateways", "", \'{"route":"admin_default","module":"payment","controller":"gateway","target":"_blank"}\', "sesproduct_admin_main_manageorde", "", 5);');
+
+      $db->query('INSERT IGNORE INTO `engine4_activity_actiontypes` (`type`, `module`,  `body`,  `enabled`,  `displayable`,  `attachable`,  `commentable`,  `shareable`, `is_generated`) VALUES ("sesproduct_wishlist_favourite", "sesproduct", \'{item:$subject} added wishlist {item:$object} to favorite:\', 1, 5, 1, 1, 1, 1)');
+      $db->query('INSERT IGNORE INTO `engine4_activity_notificationtypes` (`type`, `module`, `body`, `is_request`, `handler`) VALUES ("sesproduct_wishlist_favourite", "sesproduct", \'{item:$subject} has added your wishlist {item:$object} to favorite.\', 0, "")');
+      $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+                SELECT
+                  level_id as `level_id`,
+                  "sesproduct" as `type`,
+                  "addwishlist" as `name`,
+                  1 as `value`,
+                  NULL as `params`
+                FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+      //$db->query('');
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_recentlyviewitems` ;');
+      $db->query("CREATE TABLE `engine4_sesproduct_recentlyviewitems` (
+                  `recentlyviewed_id` int(11) NOT NULL AUTO_INCREMENT,
+                  `resource_id` int(11) NOT NULL,
+                  `resource_type` varchar(64) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'sesproduct',
+                  `owner_id` int(11) NOT NULL,
+                  `creation_date` datetime NOT NULL,
+                  PRIMARY KEY (`recentlyviewed_id`),
+                  UNIQUE KEY `uniqueKey` (`resource_id`,`resource_type`,`owner_id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;");
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_playlistproducts` ;');
+      $db->query("CREATE TABLE `engine4_sesproduct_playlistproducts` (
+            `playlistproduct_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+            `wishlist_id` int(11) NOT NULL,
+            `file_id` int(11) UNSIGNED NOT NULL,
+            `order` int(11) UNSIGNED NOT NULL,
+            PRIMARY KEY (`playlistproduct_id`)
+          ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;");
+
+      $db->query('INSERT IGNORE INTO `engine4_activity_actiontypes` (`type`, `module`,  `body`,  `enabled`,  `displayable`,  `attachable`,  `commentable`,  `shareable`, `is_generated`) VALUES ("sesproduct_wishlist_create", "sesproduct", \'{item:$subject} added product {item:$object} to wishlist {item:$wishlist}:\', 1, 5, 1, 1, 1, 1)');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_dashboards` ;');
+			$db->query('CREATE TABLE `engine4_sesproduct_dashboards` (
+        `dashboard_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `type` varchar(128) NOT NULL,
+        `title` varchar(128) NOT NULL,
+        `enabled` tinyint(1) NOT NULL default "1",
+        `main` tinyint(1) NOT NULL default "0",
+        PRIMARY KEY (`dashboard_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_slides`;');
+			$db->query('CREATE TABLE `engine4_sesproduct_slides` (
+        `slide_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `product_id` INT(11) NOT NULL,
+        `type` varchar(128) NOT NULL,
+        `title` VARCHAR(255) NULL,
+        `description` VARCHAR(255) NULL,
+        `duration` VARCHAR(255) NULL,
+        `file_id` INT(11) NOT NULL,
+        `code` TEXT NULL,
+        `slide` VARCHAR(255) NULL,
+        `enabled` tinyint(1) NOT NULL default "1",
+        PRIMARY KEY (`slide_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('INSERT IGNORE INTO `engine4_sesproduct_dashboards` (`type`, `title`, `enabled`, `main`) VALUES
+      ("manage_product", "Manage Product", "1", "1"),
+      ("edit_product", "Edit Product", "1", "0"),
+      ("edit_photos", "Photos", "1", "0"),
+      ("attributes", "Attributes", "1", "0"),
+      ("variation", "Variation", "1", "0"),
+      ("edit_photo", "Profile Picture", "1", "0"),
+      ("product_role", "Product Roles", "1", "0"),
+      ("manage_product_video", "Manage Videos", "1", "0"),
+      ("manage_product_music", "Manage Music Albums", "1", "0"),
+      ("manage_product_albums", "Manage Albums", "1", "0"),
+      ("contact_information", "Contact Information", "1", "0"),
+      ("edit_style", "Edit Style", "1", "0"),
+      ("edit_location", "Edit Location", "1", "0"),
+      ("seo", "Seo Details", "1", "0"),
+      ("orders", "Orders", "1", "0"),
+      ("slideshow", "Slideshow", "1", "0")
+      ;');
+
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_subscriptions`;');
+        $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_subscriptions` (
+        `subscription_id` int(10) unsigned NOT NULL auto_increment,
+        `user_id` int(10) unsigned NOT NULL,
+        `subscriber_user_id` int(10) unsigned NOT NULL,
+        PRIMARY KEY  (`subscription_id`),
+        UNIQUE KEY `user_id` (`user_id`,`subscriber_user_id`),
+        KEY `subscriber_user_id` (`subscriber_user_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_fields_maps`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_fields_maps` (
+        `field_id` int(11) NOT NULL,
+        `option_id` int(11) NOT NULL,
+        `child_id` int(11) NOT NULL,
+        `order` smallint(6) NOT NULL,
+        PRIMARY KEY (`field_id`,`option_id`,`child_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+			$db->query('INSERT IGNORE INTO `engine4_sesproduct_fields_maps` (`field_id`, `option_id`, `child_id`, `order`) VALUES (0, 0, 1, 1);');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_fields_meta`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_fields_meta` (
+        `field_id` int(11) NOT NULL AUTO_INCREMENT,
+        `type` varchar(24) NOT NULL,
+        `label` varchar(64) NOT NULL,
+        `description` varchar(255) NOT NULL DEFAULT "",
+        `alias` varchar(32) NOT NULL DEFAULT "",
+        `required` tinyint(1) NOT NULL DEFAULT "0",
+        `display` tinyint(1) unsigned NOT NULL,
+        `publish` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `search` tinyint(1) unsigned NOT NULL DEFAULT "0",
+        `show` tinyint(1) unsigned DEFAULT "0",
+        `order` smallint(3) unsigned NOT NULL DEFAULT "999",
+        `config` text NOT NULL,
+        `validators` text COLLATE utf8_unicode_ci,
+        `filters` text COLLATE utf8_unicode_ci,
+        `style` text COLLATE utf8_unicode_ci,
+        `error` text COLLATE utf8_unicode_ci,
+        PRIMARY KEY (`field_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+			$db->query('INSERT IGNORE INTO `engine4_sesproduct_fields_meta` (`field_id`, `type`, `label`, `description`, `alias`, `required`, `display`, `publish`, `search`, `show`, `order`, `config`, `validators`, `filters`, `style`, `error`) VALUES (1, "profile_type", "Profile Type", "", "profile_type", 1, 0, 0, 2, 0, 999, "", NULL, NULL, NULL, NULL);');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_fields_options`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_fields_options` (
+        `option_id` int(11) NOT NULL AUTO_INCREMENT,
+        `field_id` int(11) NOT NULL,
+        `label` varchar(255) NOT NULL,
+        `order` smallint(6) NOT NULL DEFAULT "999",
+        PRIMARY KEY (`option_id`),
+        KEY `field_id` (`field_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('INSERT IGNORE INTO `engine4_sesproduct_fields_options` (`option_id`, `field_id`, `label`, `order`) VALUES (1, 1, "Rock Products", 0);');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_fields_search`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_fields_search` (
+        `item_id` int(11) NOT NULL,
+        `profile_type` smallint(11) unsigned DEFAULT NULL,
+        PRIMARY KEY (`item_id`),
+        KEY `profile_type` (`profile_type`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_fields_values`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_fields_values` (
+        `item_id` int(11) NOT NULL,
+        `field_id` int(11) NOT NULL,
+        `index` smallint(3) NOT NULL DEFAULT "0",
+        `value` text NOT NULL,
+        PRIMARY KEY (`item_id`,`field_id`,`index`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci; ');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_parameters`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_parameters` (
+        `parameter_id` int(11) NOT NULL AUTO_INCREMENT,
+        `category_id` int(11) NOT NULL,
+        `title` VARCHAR(255) NOT NULL,
+        `rating` float NOT NULL,
+        PRIMARY KEY (`parameter_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('INSERT IGNORE INTO `engine4_core_jobtypes` (`title`, `type`, `module`, `plugin`, `priority`) VALUES
+      ("SES - Advanced Product - Rebuild Privacy", "sesproduct_maintenance_rebuild_privacy", "sesproduct", "Sesproduct_Plugin_Job_Maintenance_RebuildPrivacy", 50);');
+			$db->query('INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES
+      ("sesproduct_main", "standard", "SES - Advanced Product - Main Navigation Menu"),
+      ("sesproduct_quick", "standard", "SES - Advanced Product - Quick Navigation Menu"),
+      ("sesproduct_gutter", "standard", "SES - Advanced Product - Gutter Navigation Menu"),
+      ("sesproductreview_profile", "standard", "SES - Advanced Product - Review Profile Options Menu");');
+
+			$db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+			("sesproductreview_profile_edit", "sesproduct", "Edit Review", "Sesproduct_Plugin_Menus", "", "sesproductreview_profile", "", 1),
+      ("sesproductreview_profile_delete", "sesproduct", "Delete Review", "Sesproduct_Plugin_Menus", "", "sesproductreview_profile", "", 2),
+      ("sesproductreview_profile_report", "sesproduct", "Report", "Sesproduct_Plugin_Menus", "", "sesproductreview_profile", "", 3),
+      ("sesproductreview_profile_share", "sesproduct", "Share", "Sesproduct_Plugin_Menus", "", "sesproductreview_profile", "", 4),
+
+      ("core_sitemap_sesproduct", "sesproduct", "Products", "", \'{"route":"sesproduct_general"}\', "core_sitemap", "", 4),
+      ("mobi_browse_sesproduct", "sesproduct", "Products", "", \'{"route":"sesproduct_general"}\', "mobi_browse", "", 3),
+      ("sesproduct_main_browsehome", "sesproduct", "Product Home", "", \'{"route":"sesproduct_general","action":"home"}\', "sesproduct_main", "", 1),
+      ("sesproduct_main_browsecategory", "sesproduct", "Browse Categories", "", \'{"route":"sesproduct_category"}\', "sesproduct_main", "", 3),
+      ("sesproduct_main_browse", "sesproduct", "Browse Products", "Sesproduct_Plugin_Menus::canViewSesproducts", \'{"route":"sesproduct_general","action":"browse"}\', "sesproduct_main", "", 2),
+      ("sesproduct_main_location", "sesproduct", "Locations", "Sesproduct_Plugin_Menus::locationEnable", \'{"route":"sesproduct_general","action":"locations"}\', "sesproduct_main", "", 4),
+
+      ("sesproduct_main_manage", "sesproduct", "My Products", "Sesproduct_Plugin_Menus::canCreateSesproducts", \'{"route":"sesproduct_general","action":"manage"}\', "sesproduct_main", "", 7),
+
+
+      ("sesproduct_quick_style", "sesproduct", "Edit Product Style", "Sesproduct_Plugin_Menus", \'{"route":"sesproduct_general","action":"style","class":"smoothbox buttonlink icon_sesproduct_style"}\', "sesproduct_quick", "", 2),
+       ("sesproduct_gutter_dashboard", "sesproduct", "Dashboard", "Sesproduct_Plugin_Menus", \'{"route":"sesproduct_dashboard","action":"edit","class":"buttonlink icon_sesproduct_edit"}\', "sesproduct_gutter", "", 4),
+      ("sesproduct_gutter_list", "sesproduct", "View All Products", "Sesproduct_Plugin_Menus", \'{"route":"sesproduct_view","class":"buttonlink icon_sesproduct_viewall"}\', "sesproduct_gutter", "", 5),
+      ("sesproduct_gutter_delete", "sesproduct", "Delete This Product", "Sesproduct_Plugin_Menus", \'{"route":"sesproduct_specific","action":"delete","class":"buttonlink smoothbox icon_sesproduct_delete"}\', "sesproduct_gutter", "", 5),
+      ("sesproduct_gutter_share", "sesproduct", "Share", "Sesproduct_Plugin_Menus", \'{"route":"default","module":"activity","controller":"index","action":"share","class":"buttonlink smoothbox icon_comments"}\', "sesproduct_gutter", "", 6),
+      ("sesproduct_gutter_report", "sesproduct", "Report", "Sesproduct_Plugin_Menus", \'{"route":"default","module":"core","controller":"report","action":"create","class":"buttonlink smoothbox icon_report"}\', "sesproduct_gutter", "", 7),
+      ("sesproduct_gutter_subscribe", "sesproduct", "Subscribe", "Sesproduct_Plugin_Menus", \'{"route":"default","module":"sesproduct","controller":"subscription","action":"add","class":"buttonlink smoothbox icon_sesproduct_subscribe"}\', "sesproduct_gutter", "", 8),
+
+      ("sesproduct_admin_main_manage", "sesproduct", "Manage Products", "", \'{"route":"admin_default","module":"sesproduct","controller":"manage"}\', "sesproduct_admin_main", "", 2),
+      ("sesproduct_admin_main_level", "sesproduct", "Member Level Settings", "", \'{"route":"admin_default","module":"sesproduct","controller":"level"}\', "sesproduct_admin_main", "", 3),
+      ("sesproduct_admin_main_categories", "sesproduct", "Categories", "", \'{"route":"admin_default","module":"sesproduct","controller":"categories","action":"index"}\', "sesproduct_admin_main", "", 4),
+      ("sesproduct_admin_main_subcategories", "sesproduct", "Categories", "", \'{"route":"admin_default","module":"sesproduct","controller":"categories","action":"index"}\', "sesproduct_admin_categories", "", 1),
+      ("sesproduct_admin_main_subfields", "sesproduct", "Form Questions", "", \'{"route":"admin_default","module":"sesproduct","controller":"fields"}\', "sesproduct_admin_categories", "", 2),
+      ("sesproduct_admin_main_reviewsettings", "sesproduct", "Review Settings", "", \'{"route":"admin_default","module":"sesproduct","controller":"review", "action":"review-settings"}\', "sesproduct_admin_main", "", 5),
+      ("sesproduct_admin_main_review_settings", "sesproduct", "Review & Rating Settings", "",\'{"route":"admin_default","module":"sesproduct","controller":"review", "action":"review-settings"}\', "sesproduct_admin_main_reviewsettings", "", 1),
+      ("sesproduct_admin_main_managereview", "sesproduct", "Manage Reviews", "", \'{"route":"admin_default","module":"sesproduct","controller":"review", "action":"manage-reviews"}\', "sesproduct_admin_main_reviewsettings", "", 2),
+      ("sesproduct_admin_main_levelsettings", "sesproduct", "Member Level Setting", "", \'{"route":"admin_default","module":"sesproduct","controller":"review", "action":"level-settings"}\', "sesproduct_admin_main_reviewsettings", "", 3),
+      ("sesproduct_admin_main_review_categories", "sesproduct", "Rating Parameters", "", \'{"route":"admin_default","module":"sesproduct","controller":"review-categories","action":"index"}\', "sesproduct_admin_main_reviewsettings", "", 4),
+      ("sesproduct_admin_main_review_subcategories", "sesproduct", "Categories & Mapping", "", \'{"route":"admin_default","module":"sesproduct","controller":"review-categories","action":"index"}\', "sesproduct_admin_main_review_categories", "", 1),
+      ("sesproduct_admin_main_review_subfields", "sesproduct", "Form Questions", "", \'{"route":"admin_default","module":"sesproduct","controller":"review-fields"}\', "sesproduct_admin_main_review_categories", "", 2),
+      ("sesproduct_admin_main_statistic", "sesproduct", "Statistics", "", \'{"route":"admin_default","module":"sesproduct","controller":"settings","action":"statistic"}\', "sesproduct_admin_main", "", 7);');
+
+			$db->query('INSERT IGNORE INTO `engine4_activity_actiontypes` (`type`, `module`, `body`, `enabled`, `displayable`, `attachable`, `commentable`, `shareable`, `is_generated`) VALUES ("sesproduct_new", "sesproduct", \'{item:$subject} created a new product:\', 1, 5, 1, 3, 1, 1), ("comment_sesproduct", "sesproduct", \'{item:$subject} commented on {item:$owner}\'\'s {item:$object:product entry}: {body:$body}\', 1, 1, 1, 1, 1, 0),
+			("sesproduct_like_product", "sesproduct", \'{item:$subject} likes the product {item:$object}:\', 1, 7, 1, 1, 1, 1),
+      ("sesproduct_like_productalbum", "sesproduct", \'{item:$subject} likes the product album {item:$object}:\', 1, 7, 1, 1, 1, 1),
+      ("sesproduct_like_productphoto", "sesproduct", \'{item:$subject} likes the product photo {item:$object}:\', 1, 7, 1, 1, 1, 1),
+      ("sesproduct_favourite_product", "sesproduct", \'{item:$subject} added product {item:$object} to favorite:\', 1, 7, 1, 1, 1, 1);');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_categorymappings`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_categorymappings` (
+        `categorymapping_id` int(11) NOT NULL AUTO_INCREMENT,
+        `module_name` varchar(64) NOT NULL,
+        `category_id` int(11) NOT NULL,
+        `profiletype_id` int(11) NOT NULL,
+        `profile_type` varchar(255) NOT NULL,
+        PRIMARY KEY (`categorymapping_id`),
+        KEY `category_id` (`category_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_reviews`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_reviews` (
+        `review_id` int(11) NOT NULL AUTO_INCREMENT,
+        `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `pros` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `cons` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+        `description` text COLLATE utf8_unicode_ci NOT NULL,
+        `recommended` tinyint(1) NOT NULL DEFAULT "1",
+        `owner_id` int(11) unsigned NOT NULL,
+        `product_id` int(11) unsigned NOT NULL DEFAULT "0",
+        `like_count` int(11) NOT NULL,
+        `comment_count` int(11) NOT NULL,
+        `view_count` int(11) NOT NULL,
+        `rating` tinyint(1) DEFAULT NULL,
+        `useful_count` int(11) NOT NULL DEFAULT "0",
+        `funny_count` int(11) NOT NULL DEFAULT "0",
+        `cool_count` int(11) NOT NULL DEFAULT "0",
+        `creation_date` datetime NOT NULL,
+        `modified_date` datetime NOT NULL,
+        PRIMARY KEY (`review_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;');
+
+			$db->query('DROP TABLE IF EXISTS `engine4_sesproduct_review_parametervalues`;');
+			$db->query('CREATE TABLE IF NOT EXISTS `engine4_sesproduct_review_parametervalues` (
+        `parametervalue_id` int(11) NOT NULL AUTO_INCREMENT,
+        `parameter_id` int(11) NOT NULL,
+        `rating` float NOT NULL,
+        `user_id` INT(11) NOT NULL,
+        `resources_id` INT(11) NOT NULL,
+        `content_id` INT(11) NOT NULL,
+        PRIMARY KEY (`parametervalue_id`),
+        UNIQUE KEY `uniqueKey` (`parameter_id`,`user_id`,`resources_id`,`content_id`)
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;');
+        $db->query('DROP TABLE IF EXISTS `engine4_sesproduct_reviewvotes`;');
+			$db->query("CREATE TABLE `engine4_sesproduct_reviewvotes` (
+  `reviewvote_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) UNSIGNED NOT NULL,
+  `review_id` int(11) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `type` tinyint(1) NOT NULL,
+  PRIMARY KEY (`reviewvote_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;");
+
+			$db->query('INSERT IGNORE INTO `engine4_core_tasks` (`title`, `module`, `plugin`, `timeout`) VALUES ("SES - Advanced Product - Publish", "sesproduct", "Sesproduct_Plugin_Task_Publish", 15);');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "auth_view" as `name`,
+        5 as `value`,
+        \'["everyone","registered","owner_network","owner_member_member","owner_member","owner"]\' as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "auth_comment" as `name`,
+        5 as `value`,
+        \'["everyone","registered","owner_network","owner_member_member","owner_member","owner"]\' as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "auth_html" as `name`,
+        3 as `value`,
+        "strong, b, em, i, u, strike, sub, sup, p, div, pre, address, h1, h2, h3, h4, h5, h6, span, ol, li, ul, a, img, embed, br, hr, iframe" as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "create" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "delete" as `name`,
+        2 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "edit" as `name`,
+        2 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "view" as `name`,
+        2 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "comment" as `name`,
+        2 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "style" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "max" as `name`,
+        3 as `value`,
+        1000 as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "create" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "delete" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "edit" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "view" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "comment" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "style" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "max" as `name`,
+        3 as `value`,
+        50 as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "view" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("public");');
+
+	 $db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "auth_video" as `name`,
+        5 as `value`,
+        \'["everyone","registered","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproduct" as `type`,
+        "auth_music" as `name`,
+        5 as `value`,
+        \'["everyone","registered","owner_network","owner_member_member","owner_member","parent_member","member","owner"]\' as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+        SELECT
+          level_id as `level_id`,
+          "sesproduct" as `type`,
+          "video" as `name`,
+          1 as `value`,
+          NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+        SELECT
+          level_id as `level_id`,
+          "sesproduct" as `type`,
+          "video" as `name`,
+          1 as `value`,
+          NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "auth_comment" as `name`,
+        5 as `value`,
+        \'["everyone","registered","owner_network","owner_member_member","owner_member","owner"]\' as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "comment" as `name`,
+        2 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "comment" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "auth_view" as `name`,
+        5 as `value`,
+        \'["everyone","registered","owner_network","owner_member_member","owner_member","owner"]\' as `params`
+      FROM `engine4_authorization_levels` WHERE `type` NOT IN("public");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+        SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "create" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+      level_id as `level_id`,
+      "sesproductreview" as `type`,
+      "edit" as `name`,
+      2 as `value`,
+      NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+      level_id as `level_id`,
+      "sesproductreview" as `type`,
+      "delete" as `name`,
+      2 as `value`,
+      NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+      level_id as `level_id`,
+      "sesproductreview" as `type`,
+      "create" as `name`,
+      1 as `value`,
+      NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+      level_id as `level_id`,
+      "sesproductreview" as `type`,
+      "edit" as `name`,
+      1 as `value`,
+      NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+      level_id as `level_id`,
+      "sesproductreview" as `type`,
+      "delete" as `name`,
+      1 as `value`,
+      NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("user");');
+			$db->query('  INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "view" as `name`,
+        2 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("moderator", "admin");');
+			$db->query('INSERT IGNORE INTO `engine4_authorization_permissions`
+      SELECT
+        level_id as `level_id`,
+        "sesproductreview" as `type`,
+        "view" as `name`,
+        1 as `value`,
+        NULL as `params`
+      FROM `engine4_authorization_levels` WHERE `type` IN("public");');
+
+
+
+      $db->query('INSERT IGNORE INTO `engine4_activity_notificationtypes` (`type`, `module`, `body`, `is_request`, `handler`) VALUES
+      ("sesproduct_subscribed_new", "sesproduct", \'{item:$subject} has posted a new product entry: {item:$object}.\', 0, ""),
+      ("sesproduct_link_event", "sesproduct", \'{item:$subject} wants to add product: {var:$productPageLink} in your event : {item:$object}.\', 0, ""),
+      ("sesproduct_link_product", "sesproduct", \'{item:$subject} wants to add product: {var:$productPageLink} in event : {item:$object}.\', 0, ""),
+      ("sesproduct_reject_event_request", "sesproduct", \'{item:$subject} has been rejected to add product: {var:$productPageLink} in your event : {item:$object}.\', 0, ""),
+      ("sesproduct_reject_product_request", "sesproduct", \'{item:$subject} has been rejected to add product: {var:$productPageLink} in event : {item:$object}.\', 0, "");');
+
+      include_once APPLICATION_PATH . "/application/modules/Estore/controllers/defaultsettings.php";
+      Engine_Api::_()->getApi('settings', 'core')->setSetting('estore.pluginactivated', 1);
+    }
+    $error = 1;
+  }
+}

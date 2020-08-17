@@ -1,0 +1,1 @@
+ALTER TABLE `engine4_seshtmlbackground_slides` ADD `show_login_form` TINYINT(1) NOT NULL DEFAULT "0";

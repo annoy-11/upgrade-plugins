@@ -1,0 +1,93 @@
+<?php
+
+if (!$this->getRequest()->isPost()) {
+  return;
+}
+
+if (!$form->isValid($this->getRequest()->getPost())) {
+  return;
+}
+
+if ($this->getRequest()->isPost()) {
+
+
+//here we can set some variable for checking in plugin files.
+  if (1) {
+
+    if (!Engine_Api::_()->getApi('settings', 'core')->getSetting('sesteam.pluginactivated')) {
+      $db = Zend_Db_Table_Abstract::getDefaultAdapter();
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("sesteam_admin_main_managedesignation", "sesteam", "Designations", "", \'{"route":"admin_default","module":"sesteam","controller":"manage", "action":"designations"}\', "sesteam_admin_main", "", 2),
+      ("sesteam_admin_main_manage", "sesteam", "Manage Site Team", "", \'{"route":"admin_default","module":"sesteam","controller":"manage"}\', "sesteam_admin_main", "", 3),
+      ("sesteam_admin_main_managenonsiteteam", "sesteam", "Manage Non-Site Team", "", \'{"route":"admin_default","module":"sesteam","controller":"nonsiteteam"}\', "sesteam_admin_main", "", 4)      ;');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("sesteam_footer_teampage", "sesteam", "Team", "", \'{"route":"sesteam_teampage","module":"sesteam","controller":"index","action":"team"}\', "core_footer", "", 999);');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesteam_teams`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesteam_teams` (
+      `team_id` int(11) NOT NULL AUTO_INCREMENT,
+      `user_id` int(11) NOT NULL,
+      `name` varchar(255)  NOT NULL,
+      `designation_id` int(11) DEFAULT NULL,
+      `designation` varchar(255)  DEFAULT NULL,
+      `description` varchar(255)  DEFAULT NULL,
+      `detail_description` longtext  NOT NULL,
+      `email` varchar(255)  DEFAULT NULL,
+      `location` varchar(255)  DEFAULT NULL,
+      `phone` varchar(255)  DEFAULT NULL,
+      `website` varchar(255)  DEFAULT NULL,
+      `skype` varchar(64)  DEFAULT NULL,
+      `facebook` varchar(255)  DEFAULT NULL,
+      `twitter` varchar(255)  DEFAULT NULL,
+      `linkdin` varchar(255)  DEFAULT NULL,
+      `googleplus` varchar(255)  DEFAULT NULL,
+      `enabled` tinyint(1) NOT NULL DEFAULT "1",
+      `featured` tinyint(1) NOT NULL,
+      `sponsored` tinyint(1) NOT NULL,
+      `offtheday` tinyint(1) NOT NULL,
+      `starttime` date NOT NULL,
+      `endtime` date NOT NULL,
+      `type` varchar(255)  NOT NULL DEFAULT "teammember",
+      `photo_id` int(11) NOT NULL,
+      `order` int(11) DEFAULT NULL,
+      PRIMARY KEY (`team_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('DROP TABLE IF EXISTS `engine4_sesteam_designations`;');
+      $db->query('CREATE TABLE IF NOT EXISTS `engine4_sesteam_designations` (
+      `designation_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+      `designation` varchar(255) NOT NULL,
+      `order` int(3) NOT NULL,
+      PRIMARY KEY (`designation_id`)
+      ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1;');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES ("sesteam_main", "standard", "Team Showcase - Main Navigation Menu");');
+
+      $db->query('INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+      ("sesteam_main_home", "sesteam", "Site Team Home", "", \'{"route":"sesteam_teampage","action":"team"}\', "sesteam_main", "", 1),
+
+      ("sesteam_main_nonsitehome", "sesteam", "Sponsors", "", \'{"route":"sesteam_teampage","action":"nonsiteteam"}\', "sesteam_main", "", 2),
+
+      ("sesteam_main_browse", "sesteam", "Browse Site Team", "", \'{"route":"sesteam_teampage","action":"browse"}\', "sesteam_main", "", 3),
+
+      ("sesteam_main_nonsitebrowse", "sesteam", "Browse Sponsors", "", \'{"route":"sesteam_teampage","action":"browsenonsiteteam"}\', "sesteam_main", "", 4);');
+
+      $db->query('INSERT IGNORE INTO `engine4_sesteam_designations` (`designation`, `order`) VALUES
+      ("Leader", 1),
+      ("Developer", 2),
+      ("Economist & Strategist", 3),
+      ("Blogger", 4),
+      ("Official Partner", 5),
+      ("Contributer", 6),
+      ("Testimonial", 7),
+      ("Sponsor", 8),
+      ("Web designer", 9);');
+      include_once APPLICATION_PATH . "/application/modules/Sesteam/controllers/defaultsettings.php";
+      Engine_Api::_()->getApi('settings', 'core')->setSetting('sesteam.pluginactivated', 1);
+    }
+    Engine_Api::_()->getApi('settings', 'core')->setSetting('sesteam.teammembers', 1);
+    Engine_Api::_()->getApi('settings', 'core')->setSetting('sesteam.sponsoredmem', 1);
+  }
+}

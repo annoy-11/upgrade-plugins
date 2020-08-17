@@ -1,0 +1,26 @@
+<?php
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesevent
+ * @package    Sesevent
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Bootstrap.php 2016-07-26 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+class Sesevent_Bootstrap extends Engine_Application_Bootstrap_Abstract {
+  public function __construct($application) {
+    parent::__construct($application);
+		 $baseURL = Zend_Registry::get('StaticBaseUrl');
+      $view = Zend_Registry::isRegistered('Zend_View') ? Zend_Registry::get('Zend_View') : null;
+      $this->initViewHelperPath();
+      $headScript = new Zend_View_Helper_HeadScript();
+		if(Engine_Api::_()->getApi('settings', 'core')->getSetting('sesevent_enable_location', 1))
+				$headScript->appendFile('https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=' . Engine_Api::_()->getApi('settings', 'core')->getSetting('ses.mapApiKey', ''));
+  }
+  protected function _initFrontController() {
+		$this->initActionHelperPath();
+	  include APPLICATION_PATH . '/application/modules/Sesevent/controllers/Checklicense.php';
+  }
+}

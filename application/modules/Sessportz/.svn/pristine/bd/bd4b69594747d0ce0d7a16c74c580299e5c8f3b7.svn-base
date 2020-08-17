@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sessportz
+ * @package    Sessportz
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: add-team-members.tpl 2015-02-20 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+?>
+<?php include APPLICATION_PATH .  '/application/modules/Sessportz/views/scripts/dismiss_message.tpl';?>
+
+<?php echo $this->htmlLink(array('route' => 'admin_default', 'module' => 'sessportz', 'controller' => 'manageteam', 'action' => 'index'), $this->translate("Back to Manage Team"), array('class'=>'sesbasic_icon_back buttonlink')) ?>
+<br class="clear" /><br />
+
+<div class='settings sesbasic_admin_form'>
+  <?php echo $this->form->render($this) ?>
+</div>

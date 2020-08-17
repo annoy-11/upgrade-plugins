@@ -1,0 +1,281 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesproduct
+ * @package    Sesproduct
+ * @copyright  Copyright 2019-2020 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: index.tpl  2019-03-04 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+ 
+ ?>
+<?php $this->headLink()->appendStylesheet($this->layout()->staticBaseUrl . 'application/modules/Sesproduct/externals/styles/styles.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->layout()->staticBaseUrl . 'application/modules/Sesbasic/externals/styles/customscrollbar.css'); ?>
+<?php $this->headScript()->appendFile($this->layout()->staticBaseUrl . 'application/modules/Sesbasic/externals/scripts/jquery.min.js'); ?>
+<?php $this->headScript()->appendFile($this->layout()->staticBaseUrl . 'application/modules/Sesbasic/externals/scripts/customscrollbar.concat.min.js'); ?>
+<?php if(isset($this->identityForWidget) && !empty($this->identityForWidget)):?>
+	<?php $randonNumber = $this->identityForWidget;?>
+<?php else:?>
+	<?php $randonNumber = $this->identity;?>
+<?php endif;?>
+<?php if(!$this->is_ajax){ ?>
+<?php $baseUrl = $this->layout()->staticBaseUrl; ?>
+<?php if(isset($this->category->thumbnail) && !empty($this->category->thumbnail)){ ?>
+  <div class="sesproduct_category_cover sesbasic_bxs sesbm">
+ 		<div class="sesproduct_category_cover_inner" style="background-image:url(<?php echo  Engine_Api::_()->storage()->get($this->category->thumbnail)->getPhotoUrl('thumb.thumb'); ?>">
+    	<div class="sesproduct_category_cover_content">
+        <div class="sesproduct_category_cover_breadcrumb">
+          <!--breadcrumb -->
+          <a href="<?php echo $this->url(array('action' => 'browse'), "sesproduct_category"); ?>"><?php echo $this->translate("Categories"); ?></a>&nbsp;&raquo;
+          <?php if(isset($this->breadcrumb['category'][0]->category_id)){ ?>
+             <?php if($this->breadcrumb['subcategory']) { ?>
+              <a href="<?php echo $this->breadcrumb['category'][0]->getHref(); ?>"><?php echo $this->translate($this->breadcrumb['category'][0]->category_name) ?></a>
+             <?php }else{ ?>
+               <?php echo $this->translate($this->breadcrumb['category'][0]->category_name) ?>
+             <?php } ?>
+             <?php if($this->breadcrumb['subcategory']) echo "&nbsp;&raquo"; ?>
+          <?php } ?>
+          <?php if(isset($this->breadcrumb['subcategory'][0]->category_id)){ ?>
+            <?php if($this->breadcrumb['subSubcategory']) { ?>
+              <a href="<?php echo $this->breadcrumb['subcategory'][0]->getHref(); ?>"><?php echo $this->translate($this->breadcrumb['subcategory'][0]->category_name) ?></a>
+            <?php }else{ ?>
+              <?php echo $this->translate($this->breadcrumb['subcategory'][0]->category_name) ?>
+            <?php } ?>
+            <?php if($this->breadcrumb['subSubcategory']) echo "&nbsp;&raquo"; ?>
+          <?php } ?>
+          <?php if(isset($this->breadcrumb['subSubcategory'][0]->category_id)){ ?>
+            <?php echo $this->translate($this->breadcrumb['subSubcategory'][0]->category_name) ?>
+          <?php } ?>
+        </div>
+
+        <div class="sesproduct_category_cover_blocks">
+          <div class="sesproduct_category_cover_block_img">
+            <span style="background-image:url(<?php echo  Engine_Api::_()->storage()->get($this->category->thumbnail)->getPhotoUrl('thumb.thumb'); ?>"></span>
+          </div>
+          <div class="sesproduct_category_cover_block_info">
+            <?php if(isset($this->category->title) && !empty($this->category->title)): ?>
+              <div class="sesproduct_category_cover_title"> 
+                <?php echo $this->category->title; ?>
+              </div>
+            <?php endif; ?>
+            <?php if(isset($this->category->description) && !empty($this->category->description)): ?>
+              <div class="sesproduct_category_cover_des clear sesbasic_custom_scroll">
+                <?php echo $this->category->description;?>
+              </div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+<?php } else { ?>
+  <div class="sesvide_breadcrumb clear sesbasic_clearfix">
+    <!--breadcrumb -->
+    <a href="<?php echo $this->url(array('action' => 'browse'), "sesproduct_category"); ?>"><?php echo $this->translate("Categories"); ?></a>&nbsp;&raquo;
+    <?php if(isset($this->breadcrumb['category'][0]->category_id)){ ?>
+       <?php if($this->breadcrumb['subcategory']) { ?>
+        <a href="<?php echo $this->breadcrumb['category'][0]->getHref(); ?>"><?php echo $this->translate($this->breadcrumb['category'][0]->category_name) ?></a>
+       <?php }else{ ?>
+         <?php echo $this->translate($this->breadcrumb['category'][0]->category_name) ?>
+       <?php } ?>
+       <?php if($this->breadcrumb['subcategory']) echo "&nbsp;&raquo"; ?>
+    <?php } ?>
+    <?php if(isset($this->breadcrumb['subcategory'][0]->category_id)){ ?>
+      <?php if($this->breadcrumb['subSubcategory']) { ?>
+        <a href="<?php echo $this->breadcrumb['subcategory'][0]->getHref(); ?>"><?php echo $this->translate($this->breadcrumb['subcategory'][0]->category_name) ?></a>
+      <?php }else{ ?>
+        <?php echo $this->translate($this->breadcrumb['subcategory'][0]->category_name) ?>
+      <?php } ?>
+      <?php if($this->breadcrumb['subSubcategory']) echo "&nbsp;&raquo"; ?>
+    <?php } ?>
+    <?php if(isset($this->breadcrumb['subSubcategory'][0]->category_id)){ ?>
+      <?php echo $this->translate($this->breadcrumb['subSubcategory'][0]->category_name) ?>
+    <?php } ?>
+  </div>
+  <div class="sesproduct_browse_cat_top sesbm">
+    <?php if(isset($this->category->title) && !empty($this->category->title)): ?>
+      <div class="sesproduct_catview_title"> 
+        <?php echo $this->category->title; ?>
+      </div>
+    <?php endif; ?>
+    <?php if(isset($this->category->description) && !empty($this->category->description)): ?>
+      <div class="sesproduct_catview_des">
+        <?php echo $this->category->description;?>
+      </div>
+    <?php endif; ?>
+  </div>
+<?php } ?>
+
+<!-- category subcategory -->
+<?php if($this->show_subcat == 1 && count($this->innerCatData)>0){ ?>
+  <div class="sesproduct_category_grid sesbasic_clearfix sesbasic_bxs">
+    <ul class="">	
+      <?php foreach( $this->innerCatData as $item ):  ?>
+        <li class=" ">
+        <div class="sesproduct_thumb_contant"  style="height:<?php echo is_numeric($this->heightSubcat) ? $this->heightSubcat.'px' : $this->heightSubcat ?>;width:<?php echo is_numeric($this->widthSubcat) ? $this->widthSubcat.'px' : $this->widthSubcat ?>;">
+          <a href="<?php echo $item->getHref(); ?>" class="link_img img_animate">
+            <?php if($item->thumbnail != '' && !is_null($item->thumbnail) && intval($item->thumbnail)){ ?>
+                <img class="list_main_img"  src="<?php echo  Engine_Api::_()->storage()->get($item->thumbnail)->getPhotoUrl('thumb.thumb'); ?>"/>
+              <?php } ?>
+            <div class="animate_contant">
+              <div>
+                  <?php if(isset($this->iconSubcatActive) && $item->cat_icon != '' && !is_null($item->cat_icon) && intval($item->cat_icon)){ ?>
+                    <img src="<?php echo  Engine_Api::_()->storage()->get($item->cat_icon)->getPhotoUrl('thumb.icon'); ?>" />
+                  <?php } ?>
+                  <?php if(isset($this->titleSubcatActive)){ ?>
+                  <p class="title"><?php echo $this->translate($item->category_name); ?></p>
+                  <?php } ?>
+                  <?php if(isset($this->countProductSubcatActive)){ ?>
+                    <p class="count"><?php echo $this->translate(array('%s product', '%s products', $item->total_products_categories), $this->locale()->toNumber($item->total_products_categories))?></p>
+                  <?php } ?>
+                
+              </div>
+            </div>
+          </a>
+          </div>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+   </div>
+<?php } ?> 
+
+<div class="sesproduct_subcat_list_head clear sesbasic_clearfix">
+		 <?php if(isset($this->totalProductActive)){ ?>
+        <?php echo $this->translate(array('%s Product found.', '%s Products found.', $this->paginator->getTotalItemCount()), $this->locale()->toNumber($this->paginator->getTotalItemCount())); ?>
+		<?php } ?>
+	<p><?php echo $this->translate($this->textProduct);?></p>
+</div>
+<div id="scrollHeightDivSes_<?php echo $randonNumber; ?>" class="sesbasic_clearfix sesbasic_bxs clear">  
+<?php } ?>
+   <?php if($this->viewType == 'list'):?>
+		<?php if(!$this->is_ajax){ ?>
+		<ul class="sesproduct_products_listing sesbasic_clearfix clear" id="tabbed-widget_<?php echo $randonNumber; ?>" style="display:block;">
+	<?php } ?>
+			<?php foreach($this->paginator as $key=>$product): $item = $product; ?>
+        <?php $photoPath = $item->getPhotoUrl();?>
+				<?php include APPLICATION_PATH .  '/application/modules/Sesproduct/views/scripts/_listView.tpl';?>
+		<?php endforeach;?>
+		<?php  if(count($this->paginator) == 0){  ?>
+			<div class="tip">
+				<span>
+					<?php echo $this->translate("No product in this  category."); ?>
+				</span>
+			</div>
+		<?php } ?>    
+		<?php if($this->loadOptionData == 'pagging'): ?>
+			<?php echo $this->paginationControl($this->paginator, null, array("_pagging.tpl", "sesproduct"),array('identityWidget'=>$randonNumber)); ?>
+		<?php endif; ?>
+	<?php if(!$this->is_ajax){ ?> 
+	</ul>
+	<?php } ?>
+ <?php else:?>
+	<?php if(!$this->is_ajax){ ?> 
+	<ul class="sesproduct_products_listing sesbasic_clearfix clear" id="tabbed-widget_<?php echo $randonNumber; ?>">
+	<?php } ?>
+			<?php foreach($this->paginator as $key=>$product): $item = $product; ?>
+            <?php $photoPath = $item->getPhotoUrl();?>
+         <?php include APPLICATION_PATH .  '/application/modules/Sesproduct/views/scripts/_gridView.tpl';?>
+			<?php endforeach;?>
+			<?php  if(  count($this->paginator) == 0){  ?>
+				<div class="tip">
+					<span>
+						<?php echo $this->translate("No product in this  category."); ?>
+					</span>
+				</div>
+			<?php } ?>    
+			<?php if($this->loadOptionData == 'pagging'){ ?>
+				<?php echo $this->paginationControl($this->paginator, null, array("_pagging.tpl", "sesproduct"),array('identityWidget'=>$randonNumber)); ?>
+			<?php } ?>
+	<?php if(!$this->is_ajax){ ?> 
+	</ul>
+	<?php } ;?>
+	<?php endif;?>
+	<?php if(!$this->is_ajax){ ?>
+ </div>
+ <?php if($this->loadOptionData != 'pagging'){ ?>
+  <div class="sesbasic_view_more" id="view_more_<?php echo $randonNumber; ?>" onclick="viewMore_<?php echo $randonNumber; ?>();" > <?php echo $this->htmlLink('javascript:void(0);', $this->translate('View More'), array('id' => "feed_viewmore_link_$randonNumber", 'class' => 'buttonlink icon_viewmore')); ?> </div>
+  <div class="sesbasic_view_more_loading" id="loading_image_<?php echo $randonNumber; ?>" style="display: none;"> <img src="<?php echo $this->layout()->staticBaseUrl; ?>application/modules/Sesbasic/externals/images/loading.gif" /> </div>
+  <?php } ?>
+  <script type="application/javascript">
+function paggingNumber<?php echo $randonNumber; ?>(pageNum){
+	 sesJqueryObject('.sesbasic_loading_cont_overlay').css('display','block');
+	 var openTab_<?php echo $randonNumber; ?> = '<?php echo $this->defaultOpenTab; ?>';
+    en4.core.request.send(new Request.HTML({
+      method: 'post',
+      'url': en4.core.baseUrl + "widget/index/mod/sesproduct/name/<?php echo $this->widgetName; ?>/openTab/" + openTab_<?php echo $randonNumber; ?>,
+      'data': {
+        format: 'html',
+        page: pageNum,    
+				params :<?php echo json_encode($this->params); ?>, 
+				is_ajax : 1,
+				identity : '<?php echo $randonNumber; ?>',
+				type:'<?php echo $this->view_type; ?>'
+      },
+      onSuccess: function(responseTree, responseElements, responseHTML, responseJavaScript) {
+				sesJqueryObject('.sesbasic_loading_cont_overlay').css('display','none');
+        document.getElementById('tabbed-widget_<?php echo $randonNumber; ?>').innerHTML =  responseHTML;
+				dynamicWidth();
+      }
+    }));
+    return false;
+}
+</script>
+  <?php } ?>
+<script type="text/javascript">
+var valueTabData ;
+// globally define available tab array
+	var availableTabs_<?php echo $randonNumber; ?>;
+	var requestTab_<?php echo $randonNumber; ?>;
+  availableTabs_<?php echo $randonNumber; ?> = <?php echo json_encode($this->defaultOptions); ?>;
+<?php if($this->loadOptionData == 'auto_load'){ ?>
+		window.addEvent('load', function() {
+		 sesJqueryObject(window).scroll( function() {
+			  var heightOfContentDiv_<?php echo $randonNumber; ?> = sesJqueryObject('#scrollHeightDivSes_<?php echo $randonNumber; ?>').offset().top;
+        var fromtop_<?php echo $randonNumber; ?> = sesJqueryObject(this).scrollTop();
+        if(fromtop_<?php echo $randonNumber; ?> > heightOfContentDiv_<?php echo $randonNumber; ?> - 100 && sesJqueryObject('#view_more_<?php echo $randonNumber; ?>').css('display') == 'block' ){
+						document.getElementById('feed_viewmore_link_<?php echo $randonNumber; ?>').click();
+				}
+     });
+	});
+<?php } ?>
+var defaultOpenTab ;
+  viewMoreHide_<?php echo $randonNumber; ?>();
+  function viewMoreHide_<?php echo $randonNumber; ?>() {
+    if ($('view_more_<?php echo $randonNumber; ?>'))
+      $('view_more_<?php echo $randonNumber; ?>').style.display = "<?php echo ($this->paginator->count() == 0 ? 'none' : ($this->paginator->count() == $this->paginator->getCurrentPageNumber() ? 'none' : '' )) ?>";
+  }
+  function viewMore_<?php echo $randonNumber; ?> (){
+    var openTab_<?php echo $randonNumber; ?> = '<?php echo $this->defaultOpenTab; ?>';
+    document.getElementById('view_more_<?php echo $randonNumber; ?>').style.display = 'none';
+    document.getElementById('loading_image_<?php echo $randonNumber; ?>').style.display = '';    
+    en4.core.request.send(new Request.HTML({
+      method: 'post',
+      'url': en4.core.baseUrl + "widget/index/mod/sesproduct/name/<?php echo $this->widgetName; ?>/openTab/" + openTab_<?php echo $randonNumber; ?>,
+      'data': {
+        format: 'html',
+        page: <?php echo $this->page + 1; ?>,    
+				params :<?php echo json_encode($this->params); ?>, 
+				is_ajax : 1,
+				identity : '<?php echo $randonNumber; ?>',
+      },
+      onSuccess: function(responseTree, responseElements, responseHTML, responseJavaScript) {
+        document.getElementById('tabbed-widget_<?php echo $randonNumber; ?>').innerHTML = document.getElementById('tabbed-widget_<?php echo $randonNumber; ?>').innerHTML + responseHTML;
+				document.getElementById('loading_image_<?php echo $randonNumber; ?>').style.display = 'none';
+				dynamicWidth();
+      }
+    }));
+    return false;
+  }
+<?php if(!$this->is_ajax){ ?>
+function dynamicWidth(){
+	var objectClass = sesJqueryObject('.sesproduct_cat_product_list_info');
+	for(i=0;i<objectClass.length;i++){
+			sesJqueryObject(objectClass[i]).find('div').find('.sesproduct_cat_product_list_content').find('.sesproduct_cat_product_list_title').width(sesJqueryObject(objectClass[i]).width());
+	}
+}
+dynamicWidth();
+<?php } ?>
+</script>

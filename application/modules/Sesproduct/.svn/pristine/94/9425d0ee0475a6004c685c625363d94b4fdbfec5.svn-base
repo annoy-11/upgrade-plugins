@@ -1,0 +1,175 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesproduct
+ * @package    Sesproduct
+ * @copyright  Copyright 2019-2020 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Orders.php  2019-03-04 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+class Sesproduct_Form_Admin_Orders extends Engine_Form {
+  public function init() {
+
+    $this->clearDecorators()
+            ->addDecorator('FormElements')
+            ->addDecorator('Form')
+            ->addDecorator('HtmlTag', array('tag' => 'div', 'class' => 'search'))
+            ->addDecorator('HtmlTag2', array('tag' => 'div', 'class' => 'clear'));
+    $this->setAttribs(array('id' => 'orders_form', 'class' => 'global_form_box'))->setMethod('GET');
+
+    $this->addElement('Text', 'order_id', array(
+        'label' => 'Order Id',
+        'placeholder' => 'Enter Order Id',
+        'decorators' => array(
+            'ViewHelper',
+            array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+            array('HtmlTag', array('tag' => 'div'))
+        ),
+    ));
+
+    $this->addElement('Text', 'buyer_name', array(
+        'label' => 'Buyer Name',
+        'placeholder' => 'Enter Buyer Name',
+        'decorators' => array(
+            'ViewHelper',
+            array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+            array('HtmlTag', array('tag' => 'div'))
+        ),
+    ));
+
+    $this->addElement('Text', 'order_date', array(
+        'placeholder' => 'Enter Order Date',
+        'decorators' => array(
+            'ViewHelper',
+            array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+            array('HtmlTag', array('tag' => 'div'))
+        ),
+    ));
+/*
+    $categories = Engine_Api::_()->getDbtable('categories', 'sesproduct')->getCategory(array('column_name' => '*'));
+		$data[''] = 'Choose a Category';
+      foreach ($categories as $category) {
+        $data[$category['category_id']] = $category['category_name'];
+				$categoryId = $category['category_id'];
+      }
+    if (count($categories) > 1) {
+      $this->addElement('Select', 'category_id', array(
+          'label' => "Category",
+          'required' => true,
+          'multiOptions' => $data,
+          'decorators' => array(
+              'ViewHelper',
+              array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+              array('HtmlTag', array('tag' => 'div'))
+          ),
+          'onchange' => "showSubCategory(this.value)",
+      ));
+
+    }
+*/
+    $this->addElement('Text', 'total_order', array(
+        'label' => "Total Orders",
+    ));
+
+    $this->addElement('Text', 'commision', array(
+        'label' => "Commission",
+    ));
+    $paymentGateways = Engine_Api::_()->sesproduct()->checkPaymentGatewayEnable();
+    $paymentGateways['methods'];
+    foreach($paymentGateways['methods'] as $key => $paymentmethod){
+        $mutiOption[$key] = $paymentmethod;
+    }
+    $this->addElement('Select', 'gateway', array(
+        'label' => "Gateway",
+        'required' => true,
+        'multiOptions' => $mutiOption,
+        'decorators' => array(
+            'ViewHelper',
+            array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+            array('HtmlTag', array('tag' => 'div'))
+        ),
+    ));
+
+   /* $this->addElement('Select', 'featured', array(
+        'label' => "Featured",
+        'required' => true,
+        'multiOptions' => array("" => 'Select', "1" => "Yes", "0" => "No"),
+        'decorators' => array(
+            'ViewHelper',
+            array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+            array('HtmlTag', array('tag' => 'div'))
+        ),
+    ));*/
+
+  /*  $this->addElement('Select', 'status', array(
+        'label' => "Status",
+        'required' => true,
+        'multiOptions' => array("" => 'Select', "0" => "Published", "1" => "Draft"),
+        'decorators' => array(
+            'ViewHelper',
+            array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+            array('HtmlTag', array('tag' => 'div'))
+        ),
+    ));
+*/
+	/*	$this->addElement('Select', 'is_approved', array(
+			'label' => "Approved",
+			'required' => true,
+			'multiOptions' => array("" => 'Select', "1" => "Yes", "0" => "No"),
+			'decorators' => array(
+			'ViewHelper',
+				array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+				array('HtmlTag', array('tag' => 'div'))
+			),
+		));
+
+	/*	$isEnablePackage = Engine_Api::_()->getDbtable('modules', 'core')->isModuleEnabled('sesproductpackage') && Engine_Api::_()->getApi('settings', 'core')->getSetting('sesproductpackage.enable.package', 1);
+		if($isEnablePackage){
+				$packages = Engine_Api::_()->getDbTable('packages','sesproductpackage')->getPackage(array('default' => true));
+				$packagesArray = array(''=>'');
+				foreach($packages as $package){
+					$packagesArray[$package['package_id']]	= $package['title'];
+				}
+			  if(count($packagesArray) > 2) {
+					$this->addElement('Select', 'package_id', array(
+							'label' => "Packages",
+							'required' => true,
+							'multiOptions' => $packagesArray,
+							'decorators' => array(
+									'ViewHelper',
+									array('Label', array('tag' => null, 'placement' => 'PREPEND')),
+									array('HtmlTag', array('tag' => 'div'))
+							),
+					));
+				}
+		}*/
+
+    $this->addElement('Button', 'manage_product_search_form', array(
+        'label' => 'Search',
+        'type' => 'submit',
+        'ignore' => true,
+    ));
+
+  /*  $this->addElement('Hidden', 'order', array(
+        'order' => 10004,
+    ));
+    $this->addElement('Hidden', 'order_direction', array(
+        'order' => 10002,
+    ));
+
+    $this->addElement('Hidden', 'event_id', array(
+        'order' => 10003,
+    ));*/
+
+    //Set default action without URL-specified params
+    $params = array();
+    foreach (array_keys($this->getValues()) as $key) {
+      $params[$key] = null;
+    }
+    $this->setAction(Zend_Controller_Front::getInstance()->getRouter()->assemble($params));
+  }
+
+}
