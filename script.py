@@ -34,7 +34,7 @@ for i in range(len(all_demo)):
         os.system("chmod -R 777 application/packages")
 
         # delete tar file from the local
-        os.system("rm -rf /var/www/html/module-{}*".format(plugin_name)) 
+        # os.system("rm -rf /var/www/html/module-{}*".format(plugin_name)) 
 
         
         #untar module to current repo
