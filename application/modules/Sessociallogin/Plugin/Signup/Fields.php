@@ -138,6 +138,38 @@ class Sessociallogin_Plugin_Signup_Fields extends Core_Plugin_FormSequence_Abstr
                     // Silence?
                 }
             }
+            if (!empty($_SESSION['twitter_signup'])) {
+                try {
+                    $settings = Engine_Api::_()->getDbtable('settings', 'core');
+                    // Load twitter data
+                    $fb_data = array();
+                    $fb_keys = array('first_name', 'last_name');
+                    $apiInfo = $_SESSION['signup_fields'];
+                    foreach ($fb_keys as $key) {
+                        if (isset($apiInfo[$key])) {
+                            $fb_data[$key] = $apiInfo[$key];
+                        }
+                    }
+                    // populate fields, using twitter data
+                    $struct = $this->_form->getFieldStructure();
+                    foreach ($struct as $fskey => $map) {
+                        $field = $map->getChild();
+                        if ($field->isHeading())
+                            continue;
+                        if (isset($field->type) && in_array($field->type, $fb_keys)) {
+                            $el_key = $map->getKey();
+                            $el_val = $fb_data[$field->type];
+                            $el_obj = $this->_form->getElement($el_key);
+                            if ($el_obj instanceof Zend_Form_Element &&
+                                    !$el_obj->getValue()) {
+                                $el_obj->setValue($el_val);
+                            }
+                        }
+                    }
+                } catch (Exception $e) {
+                    // Silence?
+                }
+            }
 
             if (!empty($_SESSION['instagram_signup'])) {
                 try {

@@ -10,6 +10,9 @@
  * @version    $Id: AuthController.php 2017-07-04 00:00:00 SocialEngineSolutions $
  * @author     SocialEngineSolutions
  */
+ require(realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . 'Api' . DIRECTORY_SEPARATOR . 'twitter'.DIRECTORY_SEPARATOR.'autoload.php');
+    use Abraham\TwitterOAuth\TwitterOAuth;
+
 class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
 
   public function hotmailAction() {
@@ -125,6 +128,7 @@ class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
         }
       }
     }
+    return $this->_helper->redirector->gotoRoute(array(), 'default', true);
   }
 
   public function facebookAction() {
@@ -285,7 +289,6 @@ class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
             'scope' => join(',', array(
                 'email',
                 'user_birthday',
-                'publish_actions',
             )),
         ));
         return $this->_helper->redirector->gotoUrl($url, array('prependBase' => false));
@@ -405,7 +408,51 @@ class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
     define('OAUTH_DOMAIN', ( isset($_SERVER["HTTPS"]) && (strtolower($_SERVER["HTTPS"]) == 'on') ? "https://" : "http://") . $_SERVER['HTTP_HOST']);
     define('OAUTH_APP_ID', $settings->getSetting('sessociallogin.yahooappid', false));
     // Include the YOS library.
-    require realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . 'Api' . DIRECTORY_SEPARATOR . 'Yahoo' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'Yahoo.inc';
+
+    require(realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . 'Api' . DIRECTORY_SEPARATOR . 'Yahoo'. DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'autoload.php');
+
+
+      $url = (((!empty($_SERVER["HTTPS"]) && strtolower($_SERVER["HTTPS"]) == 'on') ? "https://" : "http://") . $_SERVER['HTTP_HOST']) . Zend_Registry::get('StaticBaseUrl') . 'sessociallogin/auth/yahoo';
+    $provider = new Hayageek\OAuth2\Client\Provider\Yahoo([
+        'clientId'     => OAUTH_CONSUMER_KEY,
+        'clientSecret' => OAUTH_CONSUMER_SECRET,
+        'redirectUri'  => $url,
+    ]);
+
+    if (!empty($_GET['error'])) {
+        // Got an error, probably user denied access
+        exit('Got error: ' . $_GET['error']);
+    } elseif (empty($_GET['code'])) {
+        // If we don't have an authorization code then get one
+        $authUrl = $provider->getAuthorizationUrl();
+        // If we want to set approve page language (default is 'en-us')
+        $_SESSION['oauth2state'] = $provider->getState();
+        header("location:" .$authUrl);
+        exit;
+    } elseif (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
+        // State is invalid, possible CSRF attack in progress
+        unset($_SESSION['oauth2state']);
+        exit('Invalid state');
+    } else {
+        // Try to get an access token (using the authorization code grant)
+        $token = $provider->getAccessToken('authorization_code', [
+            'code' => $_GET['code']
+        ]);
+        // Optional: Now you have a token you can look up a users profile data
+        try {
+            // We got an access token, let's now get the owner details
+            $ownerDetails = $provider->getResourceOwner($token);
+            print_r($ownerDetails);die;
+        } catch (Exception $e) {
+            throw $e;
+            
+            // Failed to get user details
+            exit('Something went wrong: ' . $e->getMessage());
+        }
+    }
+
+    /*
+    //require realpath(dirname(__FILE__) . '/..') . DIRECTORY_SEPARATOR . 'Api' . DIRECTORY_SEPARATOR . 'Yahoo' . DIRECTORY_SEPARATOR . 'lib' . DIRECTORY_SEPARATOR . 'Yahoo.inc';
     if (isset($_GET['return_url'])) {
       $_SESSION['redirectURL'] = $_GET['return_url'];
       // YahooSession::clearSession();
@@ -472,9 +519,114 @@ class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
         $url = $_SESSION['redirectURL'];
         return $this->_redirect($url, array('prependBase' => false));
       }
+    }*/
+  }
+  public function twitterAction(){
+    session_start();
+
+    $callback = (((!empty($_SERVER["HTTPS"]) && strtolower($_SERVER["HTTPS"]) == 'on') ? "https://" : "http://") . $_SERVER['HTTP_HOST']) . Zend_Registry::get('StaticBaseUrl') . 'sessociallogin/auth/twitter';
+    $settings = Engine_Api::_()->getApi('settings', 'core')->getSetting('core.twitter');
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $twitterTable = Engine_Api::_()->getDbtable('twitter', 'user');
+    $db = Engine_Db_Table::getDefaultAdapter();
+    $ipObj = new Engine_IP();
+    $ipExpr = new Zend_Db_Expr($db->quoteInto('UNHEX(?)', bin2hex($ipObj->toBinary())));
+
+    define('CONSUMER_KEY', $settings['key']);  // add your app consumer key between single quotes
+    define('CONSUMER_SECRET', $settings['secret']); // add your app consumer                                       secret key between single quotes
+    define('OAUTH_CALLBACK', $callback); // your app callback URL i.e. 
+    if(isset($_SESSION['oauth_token']) && isset($_GET['oauth_token'])){
+      $oauth_token=$_SESSION['oauth_token'];unset($_SESSION['oauth_token']);
+      $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
+     //necessary to get access token other wise u will not have permision to get user info
+      $params=array("oauth_verifier" => $_GET['oauth_verifier'],"oauth_token"=>$_GET['oauth_token']);
+      $access_token = $connection->oauth("oauth/access_token", $params);
+      //now again create new instance using updated return oauth_token and oauth_token_secret because old one expired if u dont u this u will also get token expired error
+      $connection = new TwitterOAuth(CONSUMER_KEY,CONSUMER_SECRET,
+      $access_token['oauth_token'],$access_token['oauth_token_secret']);
+      $twitter_token = $access_token['oauth_token'];
+      $twitter_secret = $access_token['oauth_token_secret'];
+      $accountInfo = $connection->get("account/verify_credentials");
+      if( $viewer->getIdentity() ) {
+          $info = $twitterTable->select()
+              ->from($twitterTable)
+              ->where('user_id = ?', $viewer->getIdentity())
+              ->query()
+              ->fetch();
+          if( !empty($info) ) {
+              $twitterTable->update(array(
+                  'twitter_uid' => $accountInfo->id,
+                  'twitter_token' => $twitter_token,
+                  'twitter_secret' => $twitter_secret,
+              ), array(
+                  'user_id = ?' => $viewer->getIdentity(),
+              ));
+          } else {
+              $twitterTable->insert(array(
+                  'user_id' => $viewer->getIdentity(),
+                  'twitter_uid' => $accountInfo->id,
+                  'twitter_token' => $twitter_token,
+                  'twitter_secret' => $twitter_secret,
+              ));
+          }
+          // Redirect
+          return $this->_helper->redirector->gotoRoute(array(), 'default', true);
+      } else { // Otherwise try to login?
+          $info = $twitterTable->select()
+              ->from($twitterTable)
+              ->where('twitter_uid = ?', $accountInfo->id)
+              ->query()
+              ->fetch();
+          if(empty($info) || empty($info['user_id'])) {
+              // They do not have an account
+              $_SESSION['twitter_signup'] = true;
+              $name = explode(" ", $accountInfo->name);
+              $FieldArray['id'] = $accountInfo->id;
+              $FieldArray['photo'] = $accountInfo->profile_image_url;
+              $FieldArray['first_name'] = @$name[0];
+              $FieldArray['last_name'] =  @$name[1]; 
+              $FieldArray['username'] =  $accountInfo->screen_name;
+              $FieldArray['lang'] =  $accountInfo->lang;
+
+              $_SESSION['twitter_token'] = $twitter_token;
+              $_SESSION['twitter_secret'] = $twitter_secret;
+
+              $_SESSION['twitter_uid'] = $accountInfo->id;
+              $_SESSION['signup_fields'] = $FieldArray;
+              return $this->_helper->redirector->gotoRoute(array(//'action' => 'twitter',
+              ), 'user_signup', true);
+          } else {
+              Zend_Auth::getInstance()->getStorage()->write($info['user_id']);
+              // Register login
+              $viewer = Engine_Api::_()->getItem('user', $info['user_id']);
+              $viewer->lastlogin_date = date("Y-m-d H:i:s");
+              if( 'cli' !== PHP_SAPI ) {
+                  $viewer->lastlogin_ip = $ipExpr;
+                  Engine_Api::_()->getDbtable('logins', 'user')->insert(array(
+                      'user_id' => $info['user_id'],
+                      'ip' => $ipExpr,
+                      'timestamp' => new Zend_Db_Expr('NOW()'),
+                      'state' => 'success',
+                      'source' => 'twitter',
+                  ));
+              }
+              $viewer->save();
+              // Redirect to referer page
+              $url = $_SESSION['redirectURL'];
+              return $this->_redirect($url, array('prependBase' => false));
+          }
+      }
+    }
+    else{
+      $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
+      $temporary_credentials = $connection->oauth('oauth/request_token', array("oauth_callback" =>$callback));
+      $_SESSION['oauth_token']=$temporary_credentials['oauth_token'];   
+      $_SESSION['oauth_token_secret']=$temporary_credentials['oauth_token_secret'];
+      $url = $connection->url("oauth/authorize", array("oauth_token" => $temporary_credentials['oauth_token']));
+    // REDIRECTING TO THE URL
+      header('Location: ' . $url); 
     }
   }
-
   public function googleAction() {
     // Clear
     unset($_SESSION['google_lock']);
@@ -705,7 +857,6 @@ class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
           return $this->_helper->redirector->gotoRoute(array(), 'user_signup', true);
         }
       }
-      $url = $_SESSION['redirectURL'];
       return $this->_redirect($url, array('prependBase' => false));
     } else {
       header("Location:" . $vk->getLoginUrl());
@@ -939,7 +1090,8 @@ class Sessociallogin_AuthController extends Core_Controller_Action_Standard {
         if ($result['success'] === TRUE) {
           $_SESSION['linkedin_token'] = $result['linkedin']['oauth_token'];
           $_SESSION['oauth_token_secret'] = $result['linkedin']['oauth_token_secret'];
-          header('Location: https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id='.$access.'&redirect_uri='.urlencode((_ENGINE_SSL ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $this->view->url()).'&state=fooobar&scope=r_liteprofile%20r_emailaddress%20r_basicprofile');
+          //%20r_basicprofile'
+          header('Location: https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id='.$access.'&redirect_uri='.urlencode((_ENGINE_SSL ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $this->view->url()).'&state=fooobar&scope=r_liteprofile%20r_emailaddress');
           exit();
         }
       } else if (!empty($_GET['code'])) {

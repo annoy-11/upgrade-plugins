@@ -15,12 +15,12 @@ return array(
 	'package' => array(
 			'type' => 'module',
 			'name' => 'sessociallogin',
-			'version' => '4.10.5',
+			'version' => '5.2.1p3',
             'dependencies' => array(
                 array(
                     'type' => 'module',
                     'name' => 'core',
-                    'minVersion' => '4.10.5',
+                    'minVersion' => '5.0.0',
                 ),
             ),
 			'path' => 'application/modules/Sessociallogin',

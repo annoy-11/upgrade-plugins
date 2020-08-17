@@ -15,7 +15,7 @@
 <?php $settings = Engine_Api::_()->getApi('settings', 'core');?>
 <?php $returnUrl = (((!empty($_SERVER["HTTPS"]) && strtolower($_SERVER["HTTPS"]) == 'on') ? "https://" : "http://") . $_SERVER['HTTP_HOST']) .Zend_Controller_Front::getInstance()->getRequest()->getRequestUri(); ?>
 <?php $facebookHref = Zend_Controller_Front::getInstance()->getRouter()->assemble(array('module' => 'sessociallogin', 'controller' => 'auth', 'action' => 'facebook'), 'default', true);?>
-<?php $twitterHref = Zend_Controller_Front::getInstance()->getRouter()->assemble(array('module' => 'user', 'controller' => 'auth', 'action' => 'twitter'), 'default', true);?>
+<?php $twitterHref = Zend_Controller_Front::getInstance()->getRouter()->assemble(array('module' => 'sessociallogin', 'controller' => 'auth', 'action' => 'twitter'), 'default', true);?>
 <?php if(!Engine_Api::_()->user()->getViewer()->getIdentity()): ?>
   <?php $linkdinHref = Zend_Controller_Front::getInstance()->getRouter()->assemble(array('module' => 'sessociallogin', 'controller' => 'auth', 'action' => 'linkedin'), 'default', true).'?return_url='.$returnUrl;?>     
   <?php $likedinTable = Engine_Api::_()->getDbtable('linkedin', 'sessociallogin');
@@ -43,23 +43,23 @@
 <div class="sessocial_login_btns sidebar_social_login_icons sesbasic_bxs">
   <ul>
     <?php if(Engine_Api::_()->getDbtable('facebook', 'sessociallogin')->getApi()):?>
-      <li class="sessl_facebook" title="<?php echo $this->translate('Log in with Facebook');?>"><a href="<?php echo $facebookHref; ?>"><i class="fa fa-facebook"></i></a></li>
+      <li class="sessl_facebook" title="<?php echo $this->translate('Log in with Facebook');?>"><a href="<?php echo $facebookHref; ?>"><i class="fab fa-facebook-f"></i></a></li>
     <?php endif;?>
     <?php if( 'none' != $settings->getSetting('core_twitter_enable', 'none')
     && $settings->core_twitter_secret):?>
-      <li title="<?php echo $this->translate('Log in with Twitter');?>" class="sessl_twitter"><a href="<?php echo $twitterHref; ?>"><i class="fa fa-twitter"></i></a></li>
+      <li title="<?php echo $this->translate('Log in with Twitter');?>" class="sessl_twitter"><a href="<?php echo $twitterHref; ?>"><i class="fab fa-twitter"></i></a></li>
     <?php endif;?>
     <?php if($linkedinApi && $likedinTable->isConnected()):?>
-      <li title="<?php echo $this->translate('Log in with Linkedin');?>" class="sessl_linkedin"><a href="<?php echo $linkdinHref;?>"><i class="fa fa-linkedin "></i></a></li>
+      <li title="<?php echo $this->translate('Log in with Linkedin');?>" class="sessl_linkedin"><a href="<?php echo $linkdinHref;?>"><i class="fab fa-linkedin "></i></a></li>
     <?php endif;?>
     <?php if($instagramTable->isConnected() && $instagram):?>
-      <li title="<?php echo $this->translate('Log in with Instagram');?>" class="sessl_instagram"><a href="<?php echo $instagramHref;?>"><i class="fa fa-instagram"></i></a></li>
+      <li title="<?php echo $this->translate('Log in with Instagram');?>" class="sessl_instagram"><a href="<?php echo $instagramHref;?>"><i class="fab fa-instagram"></i></a></li>
     <?php endif;?>
     <?php if($googleTable->isConnected()):?>
-      <li title="<?php echo $this->translate('Log in with Google Plus');?>" class="sessl_google"><a href="<?php echo $googleHref;?>"><i class="fa fa-google-plus"></i></a></li>
+      <li title="<?php echo $this->translate('Log in with Google Plus');?>" class="sessl_google"><a href="<?php echo $googleHref;?>"><i class="fab fa-google-plus-g"></i></a></li>
     <?php endif;?>
     <?php if($pinterestTable->isConnected()):?>
-      <li title="<?php echo $this->translate('Log in with Pinterest');?>" class="sessl_pinterest"><a href="<?php echo $pinterestHref;?>"><i class="fa fa-pinterest-p"></i></a></li>
+      <li title="<?php echo $this->translate('Log in with Pinterest');?>" class="sessl_pinterest"><a href="<?php echo $pinterestHref;?>"><i class="fab fa-pinterest-p"></i></a></li>
     <?php endif;?>
     <?php if($yahooTable->isConnected()):?>
       <li title="<?php echo $this->translate('Log in with Yahoo');?>" class="sessl_yahoo"><a href="<?php echo $yahooHref;?>"><i></i></a></li>
@@ -68,10 +68,10 @@
       <li title="<?php echo $this->translate('Log in with Hot Mail');?>" class="sessl_hotmail"><a href="<?php echo $hotmailHref;?>"><i class="fa fa-envelope"></i></a></li>
     <?php endif;?>
     <?php if($flickrTable->isConnected()):?>
-      <li class="sessl_flickr"><a href="<?php echo $flickrHref;?>"><i class="fa fa-flickr"></i><span><?php echo $this->translate('Log in with Flickr');?></span></a></li>
+      <li class="sessl_flickr"><a href="<?php echo $flickrHref;?>"><i class="fab fa-flickr"></i><span><?php echo $this->translate('Log in with Flickr');?></span></a></li>
     <?php endif;?>
     <?php if($vkTable->isConnected()):?>
-      <li class="sessl_vk"><a href="<?php echo $vkHref;?>"><i class="fa fa-vk"></i><span><?php echo $this->translate('Log in with Vkontakte');?></span></a></li>
+      <li class="sessl_vk"><a href="<?php echo $vkHref;?>"><i class="fab fa-vk"></i><span><?php echo $this->translate('Log in with Vkontakte');?></span></a></li>
     <?php endif;?>
   </ul>
 </div>

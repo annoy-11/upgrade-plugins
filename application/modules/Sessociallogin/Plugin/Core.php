@@ -18,7 +18,7 @@ class Sessociallogin_Plugin_Core extends Zend_Controller_Plugin_Abstract {
       $action = $request->getActionName();
       $view = Zend_Registry::isRegistered('Zend_View') ? Zend_Registry::get('Zend_View') : null;
       if($module == "user" && $action == "index" && $controller == "admin-signup"){
-        $view->headStyle()->appendStyle('#step_1, #step_2, #step_3{display:none;}');
+        $view->headStyle()->appendStyle('#step_1, #step_3, #step_4{display:none;}');
       }
       if($module == "user" && $action == "order" && $controller == "admin-signup"){
           $request->setModuleName('sessociallogin');
@@ -58,6 +58,13 @@ class Sessociallogin_Plugin_Core extends Zend_Controller_Plugin_Abstract {
             unset($_SESSION['access_token']);
             unset($_SESSION['refresh_token']);
             unset($_SESSION['google_uid']);
+        }
+        if (!empty($_SESSION['twitter_signup'])) {
+            unset($_SESSION['twitter_signup']);
+            unset($_SESSION['signup_fields']);
+            unset($_SESSION['twitter_uid']);
+            unset($_SESSION['twitter_token']);
+            unset($_SESSION['twitter_secret']);
         }
     }
 

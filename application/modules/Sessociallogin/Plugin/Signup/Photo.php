@@ -138,15 +138,11 @@ class Sessociallogin_Plugin_Signup_Photo extends Core_Plugin_FormSequence_Abstra
         if (!empty($_SESSION['twitter_signup'])) {
             try {
                 $twitterTable = Engine_Api::_()->getDbtable('twitter', 'user');
-                $twitter = $twitterTable->getApi();
+                //$twitter = $twitterTable->getApi();
                 $settings = Engine_Api::_()->getDbtable('settings', 'core');
-
-                if ($twitter && $settings->core_twitter_enable) {
-                    $accountInfo = $twitter->account->verify_credentials();
-                    $photo_url = "http://api.twitter.com/1/users/profile_image?screen_name="
-                            . $accountInfo->screen_name
-                            . "&size=bigger";
-
+                if ($settings->core_twitter_enable) {
+                    //$accountInfo = $twitter->account->verify_credentials();
+                    $photo_url = $_SESSION['signup_fields']['photo'];
                     $this->_fetchImage($photo_url);
                 }
             } catch (Exception $e) {

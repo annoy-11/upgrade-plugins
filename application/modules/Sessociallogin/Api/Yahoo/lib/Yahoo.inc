@@ -1310,6 +1310,15 @@ class YahooAuthorization {
 
         $response = $client->post($request_url, "application/x-www-form-urlencoded", $parameters);
 
+     /*   $request_url = sprintf("https://%s/oauth2/request_auth", $YahooConfig["OAUTH_HOSTNAME"]);
+        $parameters = array("redirect_uri" => $callback);
+        $parameters['client_id'] = $consumerKey;
+        $parameters['response_type'] = "code";	
+        $request_url .= "?client_id=".$consumerKey."&response_type=code&redirect_uri=".$callback;
+       */
+        $response = $client->get($request_url, "application/x-www-form-urlencoded", $parameters);
+
+        
         if(is_null($response)) {
             YahooLogger::error("OAuth call to get request token failed");
             return NULL;

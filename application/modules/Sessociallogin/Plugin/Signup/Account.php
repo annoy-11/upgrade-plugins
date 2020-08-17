@@ -65,17 +65,17 @@ class Sessociallogin_Plugin_Signup_Account extends Core_Plugin_FormSequence_Abst
             if (!empty($_SESSION['twitter_signup'])) {
                 try {
                     $twitterTable = Engine_Api::_()->getDbtable('twitter', 'user');
-                    $twitter = $twitterTable->getApi();
+                   // $twitter = $twitterTable->getApi();
                     $settings = Engine_Api::_()->getDbtable('settings', 'core');
-                    if ($twitter && $settings->core_twitter_enable) {
-                        $accountInfo = $twitter->account->verify_credentials();
+                    if ($settings->core_twitter_enable) {
+                        //$accountInfo = $twitter->account->verify_credentials();
 
                         // General
                         $this->getForm()->populate(array(
                             //'email' => $apiInfo['email'],
-                            'username' => preg_replace('/[^A-Za-z]/', '', $accountInfo->name), // $accountInfo->screen_name
+                            'username' => preg_replace('/[^A-Za-z]/', '', $_SESSION['signup_fields']['username']), // $accountInfo->screen_name
                             // 'timezone' => $accountInfo->utc_offset, (doesn't work)
-                            'language' => $accountInfo->lang,
+                            'language' => $_SESSION['signup_fields']['lang'],
                         ));
                     }
                 } catch (Exception $e) {
@@ -528,16 +528,16 @@ class Sessociallogin_Plugin_Signup_Account extends Core_Plugin_FormSequence_Abst
         if (!empty($_SESSION['twitter_signup'])) {
             try {
                 $twitterTable = Engine_Api::_()->getDbtable('twitter', 'user');
-                $twitter = $twitterTable->getApi();
-                $twitterOauth = $twitterTable->getOauth();
+                /*$twitter = $twitterTable->getApi();
+                $twitterOauth = $twitterTable->getOauth(); */
                 $settings = Engine_Api::_()->getDbtable('settings', 'core');
-                if ($twitter && $twitterOauth && $settings->core_twitter_enable) {
-                    $accountInfo = $twitter->account->verify_credentials();
+                if ($settings->core_twitter_enable) { 
+                   // $accountInfo = $twitter->account->verify_credentials();
                     $twitterTable->insert(array(
                         'user_id' => $user->getIdentity(),
-                        'twitter_uid' => $accountInfo->id,
-                        'twitter_token' => $twitterOauth->getToken(),
-                        'twitter_secret' => $twitterOauth->getTokenSecret(),
+                        'twitter_uid' => $_SESSION['twitter_uid'],
+                        'twitter_token' => $_SESSION['twitter_token'],
+                        'twitter_secret' => $_SESSION['twitter_secret'],
                     ));
                 }
             } catch (Exception $e) {
