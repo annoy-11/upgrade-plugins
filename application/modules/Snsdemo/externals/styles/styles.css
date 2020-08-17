@@ -1,0 +1,215 @@
+
+
+.snsdemo_header_strip{
+	background-color:#515354;
+	position:relative;
+	margin-top:0;
+	webkit-transition: all 500ms ease 0s;
+	-moz-transition: all 500ms ease 0s;
+	-o-transition: all 500ms ease 0s;
+	transition: all 500ms ease 0s;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:99;
+}
+html{
+	webkit-transition: all 500ms ease 0s;
+	-moz-transition: all 500ms ease 0s;
+	-o-transition: all 500ms ease 0s;
+	transition: all 500ms ease 0s;
+}
+.hide_strip{
+	padding-top:0 !important;
+}
+.hide_strip .snsdemo_header_strip{
+	margin-top:-60px;
+}
+.snsdemo_header_strip section{
+	position:relative;
+	padding:0 0 0 15px;
+	display:flex;
+	align-items:center;
+}
+.snsdemo_header_strip_logo{
+	padding:5px 10px;
+	margin-right:50px;
+}
+.snsdemo_header_strip_logo img{
+	height: 40px;
+	vertical-align: middle;
+}
+.snsdemo_header_dropdown_wrap{
+	position:relative;
+}
+.snsdemo_header_dropdown_wrap > a{
+	line-height: 60px;
+	height:60px;
+	display: block;
+	color: #fff;
+	font-weight:bold;
+	padding:0 30px;
+}
+.snsdemo_header_dropdown_wrap > a.selected{
+	background-color:#57656b;
+}
+.snsdemo_header_dropdown_wrap > a i{
+	margin-left:10px;
+}
+.snsdemo_header_dropdown_wrap > a i:before{
+	content:"\f107";
+}
+.snsdemo_header_dropdown_wrap > a.selected i:before{
+	content:"\f106";
+}
+.snsdemo_header_dropdown{
+	background-color:#57656b;
+	position:absolute;
+	left:0;
+	top:60px;
+	display:none;
+	z-index:10;
+}
+.snsdemo_header_dropdown > ul{
+	max-height:500px;
+	overflow:auto;
+}
+.open_list .snsdemo_header_dropdown{
+	display:block;
+}
+.snsdemo_header_dropdown li + li{
+	border-top: 1px solid #455a64;
+}
+.snsdemo_header_dropdown li a{
+	padding:15px 30px;
+	display:block;
+	white-space:nowrap;
+	color:#fff;
+}
+.snsdemo_header_dropdown li a:hover{
+	background-color:#2196f3;
+}
+.snsdemo_header_services_list_wrap{
+	margin-right:30px;
+}
+.snsdemo_header_services_list_wrap .snsdemo_header_dropdown{
+	right:0;
+	left:auto;
+}
+.snsdemo_header_strip_main{
+	flex:1;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+.snsdemo_header_strip_main > div{
+	margin:0 10px;
+}
+.snsdemo_header_strip_main .btn_main{
+	background-color: #e88f0f;
+	display: flex;
+	color: #fff;
+	height: 40px;
+	align-items: center;
+	padding: 0 25px;
+	border-radius: 3px;
+	white-space:nowrap;
+}
+.snsdemo_header_strip_main .btn_sec{
+	background-color:#0DC7F1;
+}
+.snsdemo_header_strip_main .btn_main:hover{
+	opacity:.8;
+}
+.snsdemo_header_strip_main .btn_main i{
+	margin-right:10px;
+}
+.snsdemo_header_strip_contact{
+	border:1px solid #b0bec5;
+	border-radius: 3px;
+	margin-left: 10px;
+	display: flex;
+}
+.snsdemo_header_strip_contact > a{
+	display:block;
+	color:#fff;
+	height:40px;
+	width:30px;
+	position:relative;
+	margin:0 5px;
+}
+.snsdemo_header_strip_contact > a i{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	font-size:17px;
+}
+.hide_strip .snsdemo_header_strip .snsdemo_header_strip_btn{
+	position:relative;
+	top:60px;
+	overflow:hidden;
+}
+.snsdemo_header_strip_btn a{
+	height:60px;
+	width:50px;
+	position:relative;
+	display:block;
+	color:#fff;
+}
+.snsdemo_header_strip_btn a i{
+	font-size:20px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+.snsdemo_header_strip_btn > a i:before{
+	content:"\f106";
+}
+.snsdemo_header_strip_btn > a.selected i:before{
+	content:"\f107";
+}
+.hide_strip .snsdemo_header_strip .snsdemo_header_strip_btn:before{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 55px solid transparent;
+	border-bottom: 55px solid transparent;
+	border-left: 55px solid #243238;
+	box-shadow: 0 5px 10px rgba(36,50,56,0.25);
+	opacity: 1;
+	transform: rotate(-45deg);
+	left: 25px;
+	top: -40px;
+	transition-duration: .3s;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.86,0,0.07,1);
+}
+.hide_strip .snsdemo_header_strip .snsdemo_header_strip_btn i{
+	transform:none;
+	top:5px;
+	left:auto;
+	right:10px;
+}
+@media only screen and (max-width:767px){
+	.snsdemo_header_strip section{
+		padding-left:5px;
+	}
+	.snsdemo_header_strip_logo,
+	.snsdemo_header_strip_contact,
+	.snsdemo_header_services_list_wrap,
+	.snsdemo_header_demos_list_wrap {
+		display:none;
+	}
+	.snsdemo_header_strip_main > div {
+    margin:0 5px;
+	}
+	.snsdemo_header_strip_main .btn_main{
+		padding:0 10px;
+	}
+	.snsdemo_header_strip_main .btn_main i{
+		display:none;
+	}
+}

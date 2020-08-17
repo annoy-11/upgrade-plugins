@@ -1,0 +1,459 @@
+{
+  "type": "module",
+  "name": "seslangtranslator",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Seslangtranslator",
+  "repository": null,
+  "sku": null,
+  "date": "Thu, 19 Sep 2019 06:35:13 +0000",
+  "title": "SES - Multiple Language Translator Plugin",
+  "description": "SES - Multiple Language Translator Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Thu, 19 Sep 2019 06:35:13 +0000",
+    "title": "SES - Multiple Language Translator Plugin",
+    "description": "SES - Multiple Language Translator Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Seslangtranslator\/settings\/install.php",
+    "class": "Seslangtranslator_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Seslangtranslator": {
+      "type": "directory",
+      "path": "application\/modules\/Seslangtranslator",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 428,
+          "sha1": "f73c8fc5e16752b6fcaa6afea79ee4637f49dd62"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 455,
+          "sha1": "b81775f78e4ee605592819bce78b47ee4b8f0e4e"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 16741,
+          "sha1": "b0cdca6dee01613e18e760ab57a4c545925bfde6"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1479,
+          "sha1": "dcdc3364872a5ed3b4862200df999b51939518a3"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 424,
+          "sha1": "dad1a4bd20aa9e1354c0a83a14377df2dd77fe67"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6118,
+          "sha1": "5c01e3af8fb11deca0a98e7f5bd563c1dd9d2718"
+        },
+        {
+          "path": "controllers\/specialvariable.text",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3819,
+          "sha1": "cbf9dc6eeea66c0e2f1557a0d32888784d320883"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 866,
+          "sha1": "62659e3101baddd4be67397ba4b65c6fdd7db53e"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 101,
+          "sha1": "5cefedd997aa0893ee903dfe67640c7a65662a71"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage\/AddNewPhrase.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4222,
+          "sha1": "ad14232fec4770f19847b6402853447a95e7280e"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/MissingPhrase.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8630,
+          "sha1": "e20d17e090871db2c0228ba7d7c476db099d7c20"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Settings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3946,
+          "sha1": "f874c8058795b5a03ff026d3590f62dc45a47533"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2888,
+          "sha1": "3f930109de775557fbcc246e9128770d5a8e87f0"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1572,
+          "sha1": "86e6f61b175ddd70caf90aec9d56596c409c58e9"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 383,
+          "sha1": "30c7fa97cc6b1104c2bebc48b83d31242f5cbd38"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 512,
+          "sha1": "6d7075138e8a07969719fa5df76a43448fa9c9ec"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1768,
+          "sha1": "ec71a4a2ad2d4fca2b50371931617eb3bd930583"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 910,
+          "sha1": "379a4fb5cfeb07a92756db6b2a9d5ac7d9455a2b"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/add-new-phrase.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3012,
+          "sha1": "a113b7cbb8b82951c75852f0314fb231024cf0d1"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5510,
+          "sha1": "060be13717fe7d286d2848c29b7c1602cfc58df1"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/manage-lang-packs.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3158,
+          "sha1": "c2152770f226628a0829817e4c16b2544d6fe509"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/missing-phrase.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3303,
+          "sha1": "b9d917d547678e3436e85ae11a47ea664f89736c"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1278,
+          "sha1": "55876c5cf872cc6c988a4006366c9cd0a9e79488"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 629,
+          "sha1": "61589c3b9bce2503f4a71bf9c150829f932e0323"
+        }
+      ]
+    },
+    "application\/languages\/en\/seslangtranslator.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/seslangtranslator.csv",
+      "structure": {
+        "path": "seslangtranslator.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 64,
+        "sha1": "fad499c1d5dca98d6760d132748dc2c875dc3043"
+      }
+    }
+  }
+}

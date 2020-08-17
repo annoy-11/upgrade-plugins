@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Eblog
+ * @package    Eblog
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: _listView.tpl 2016-07-23 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+?>
+<?php 
+  $item = $this->item;
+  $truncation = $this->truncation;
+  $allParams = $this->allParams;
+  $divclass = $this->divclass;
+?>
+<?php if(in_array('title', $allParams['show_criteria'])): ?>
+  <div class="<?php echo $divclass; ?>">
+    <?php if(strlen($item->getTitle()) > $truncation):?>
+      <?php $title = mb_substr($item->getTitle(),0,$truncation).'...';?>
+      <?php echo $this->htmlLink($item->getHref(),$title,array('title'=>$item->getTitle())); ?>
+    <?php else: ?>
+      <?php echo $this->htmlLink($item->getHref(),$item->getTitle(),array('title'=>$item->getTitle())  ) ?>
+    <?php endif;?>
+      <?php if(in_array('verifiedLabel', $allParams['show_criteria']) && $item->verified):?>
+      <i class="sesbasic_verified_icon" title="Verified"></i>
+    <?php endif;?>
+  </div>
+<?php endif;?>

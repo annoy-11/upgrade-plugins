@@ -1,0 +1,485 @@
+
+
+/*Store Packages Table Start Here*/
+.estore_packages_main{
+	padding:50px 20px;
+	margin-bottom:40px;
+}
+.estore_packages_main_header{
+	text-align:center;
+	margin-bottom:25px;
+}
+.estore_packages_main_header h2{
+	font-size:30px;
+	font-weight:bold;
+	letter-spacing:normal;
+	margin:10px;
+	padding:0;
+}
+.estore_packages_main_header p{
+	font-size:17px;
+	margin-top:10px;
+}
+.estore_packages_transactions_btn{
+	text-align:right;
+}
+.estore_packages_transactions_btn a{
+	display:inline-block;
+	padding:13px 30px;
+	text-align:center;
+	border-radius:5px;
+	font-size:13px;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
+.estore_packages_table{
+	display:flex;
+	flex-wrap:wrap;
+}
+.estore_packages_table_item{
+	width:25%;
+	padding:0 10px;
+	margin:10px 0;
+}
+.estore_packages_table_item > section{
+	box-shadow:0 0 5px #e2e2e2;
+	border-radius:3px;
+	border-bottom-width:2px;
+	height:100%;
+}
+.estore_packages_table_item.active > section{
+	transform:scale(1.02);
+}
+.estore_packages_table_item ._title{
+	padding:15px;
+}
+.estore_packages_table_item ._title h5{
+	font-size:20px;
+	line-height:30px;
+	margin-bottom:0;
+	font-weight:normal;
+	text-align:center;
+}
+.estore_packages_table_item ._title span{
+	display:block;
+	font-size:20px;
+	line-height:30px;
+	margin-bottom:0;
+	font-weight:700;
+	text-align:center;
+}
+.estore_packages_table_item ._btn{
+	padding:10px 10px 10px;
+}
+.estore_packages_table_item ._btn a{
+	display:block;
+	padding:15px;
+	text-align:center;
+	border-radius:5px;
+	font-size:13px;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
+.estore_packages_table_item ._cont{
+	border-top-width:1px;
+	padding:10px;
+}
+.estore_packages_table_item .package_capabilities li{
+	border-bottom-width:1px;
+	padding-bottom:10px;
+	margin-bottom:10px;
+}
+.estore_packages_table_item .package_capabilities li span._label{
+	float:left;
+}
+.estore_packages_table_item .package_capabilities li span._value{
+	float:right;
+}
+.estore_packages_table_item .package_capabilities li span._value ._icon{
+	display:inline-block;
+	height:16px;
+	width:16px;
+}
+.estore_packages_table_item .package_capabilities li span._value ._yes{
+	background-image:url(../images/tick-green.png);
+}
+.estore_packages_table_item .package_capabilities li span._value ._no{
+	background-image:url(../images/cross.png);
+}
+.estore_packages_table_item .package_des{
+	font-style:italic;
+	text-align:center;
+}
+@media only screen and (max-width:900px) and (min-width:768px){
+	.estore_packages_table_item{width:33.33%;}
+}
+@media only screen and (max-width:767px){
+	.estore_packages_main_header{margin-bottom:10px;}
+	.estore_packages_main_header h2{font-size:20px;}
+	.estore_packages_main_header p{font-size:14px;}
+	.estore_packages_table_item{width:50%;}
+}
+@media only screen and (max-width:540px){
+	.estore_packages_table_item{width:100%;}
+}
+/*Packages Horrizonal List*/
+.estore_packages_list{
+	display:flex;
+	flex-wrap:wrap;	
+}
+.estore_packages_list_item{
+	width:100%;
+	margin-top:20px;
+}
+.estore_packages_list_item > section{
+	border-radius:3px;
+	border-bottom-width:2px;
+}
+.estore_packages_list_item ._top{
+	padding:0 20px 25px;
+}
+.estore_packages_list_item ._top ._title{
+	float:left;
+}
+.estore_packages_list_item ._top ._title h5{
+	font-size:20px;
+	line-height:50px;
+	padding:0 30px;
+	min-width:150px;
+	text-align:center;
+}
+.estore_packages_list_item ._top ._price{
+	float:right;
+	padding-top:10px;
+}
+.estore_packages_list_item ._top ._price span{
+	font-size:30px;
+	margin-bottom:0;
+	vertical-align:middle;
+}
+.estore_packages_list_item ._cont{
+	padding:0 20px 10px;
+	display:table;
+	width:100%;
+}
+.estore_packages_list_item ._cont ._features{
+	display:table-cell;
+}
+.estore_packages_list_item .package_capabilities > div{
+	float:left;
+	margin-bottom:10px;
+	width:33.33%;
+	padding-right:20px;
+}
+.estore_packages_list_item .package_capabilities > div > div{
+	height:30px;
+	overflow:hidden;
+	border-bottom-width:1px;
+	padding-bottom:10px;
+}
+.estore_packages_list_item .package_capabilities > div:nth-last-child(1){
+	border-bottom-width:0;
+}
+.estore_packages_list_item .package_capabilities span._label{
+	float:left;
+}
+.estore_packages_list_item .package_capabilities span._value{
+	float:right;
+}
+.estore_packages_list_item .package_capabilities span._value ._icon{
+	display:inline-block;
+	height:16px;
+	width:16px;
+}
+.estore_packages_list_item .package_capabilities span._value ._yes{
+	background-image:url(../images/tick-green.png);
+}
+.estore_packages_list_item .package_capabilities span._value ._no{
+	background-image:url(../images/cross.png);
+}
+.estore_packages_list_item ._cont ._des{
+	display:table-cell;
+	width:25%;
+	padding:15px;
+	background-color:rgba(0, 0, 0, .05);
+	line-height:22px;
+	vertical-align:top;
+}
+.estore_packages_list_item ._btns{
+	padding:10px 20px;
+	text-align:right;
+	border-top-width:1px;
+}
+.estore_packages_list_item ._btns a{
+	display:inline-block;
+	padding:13px 30px;
+	text-align:center;
+	border-radius:5px;
+	font-size:13px;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing:2px;
+}
+.estore_packages_list_item ._btns ._left{
+	float:left;
+}
+.estore_packages_cancel_btn{
+	background-color:#ca1616;
+	color:#fff !important;
+}
+.estore_packages_list_item ._btns ._left > a{
+	margin-right:10px;
+}
+.estore_packages_list_item ._btns ._left span{
+	display:inline-block;
+	vertical-align:middle;
+}
+.estore_packages_list_item ._btns ._right{
+	float:right;
+}
+/*Upgrade Section*/
+.estore_packages_upgrade{
+}
+.estore_packages_upgrade .estore_packages_main_header{
+	margin-bottom:0;
+	text-align:left;
+}
+.estore_packages_upgrade div + .estore_packages_main_header{
+	margin-top:40px;
+}
+.estore_packages_upgrade .estore_packages_main_header h2{
+	margin:0;
+	font-size:20px;
+}
+@media only screen and (max-width:900px) and (min-width:768px){
+	.estore_packages_list_item .package_capabilities > div{
+		width:50%;
+	}
+	.estore_packages_list_item ._cont ._des{
+		width:33.33%;
+	}
+}
+@media only screen and (max-width:767px){
+	.estore_packages_list_item .package_capabilities > div{
+		width:50%;
+	}
+	.estore_packages_list_item .package_capabilities > div:nth-child(even){
+		padding-right:0;
+	}
+	.estore_packages_list_item .package_capabilities,
+	.estore_packages_list_item ._cont ._des{
+    display:block !important;
+    width:100%;
+    clear:both;
+	}
+}
+@media only screen and (max-width:540px){
+	.estore_packages_list_item ._top ._title,
+	.estore_packages_list_item ._top ._price,
+	.estore_packages_list_item ._btns a{
+		text-align:center;
+		width:100%;
+	}
+	.estore_packages_list_item .package_capabilities > div{
+		padding:0;
+		width:100%;
+	}
+}
+/*Store Packages Table End Here*/
+/*Payment Complete Message Start Here*/
+.estorepackage_payment_process_complete_page{
+	padding:40px 0;
+}
+.estorepackage_payment_process_complete{
+	text-align:center;
+}
+.estorepackage_payment_process_complete i{
+	margin:0 auto;
+}
+.estorepackage_payment_process_complete ._text{
+	font-size:25px;
+	display:block;
+	color:#44a72d;
+	margin:10px 0;
+}
+.estorepackage_payment_process_complete ._error{
+	color:#f00;
+}
+.estorepackage_payment_process_complete ._wait{
+	color:#F90;
+}
+.estorepackage_payment_process_complete_btn{
+	text-align:center;
+	padding-top:20px;
+}
+.estorepackage_payment_process_complete_btn > button{
+	display:inline-block;
+	float:none;
+	padding:10px 20px;
+	margin:0 5px;
+}
+/*Payment Complete Message End Here*/
+/*All Transactions List Start*/
+.estore_packages_transactions_header{
+	margin-bottom:10px;
+}
+.estore_packages_transactions_header h3{
+	font-weight:bold;
+	font-size:17px;
+}
+.estore_packages_transactions_header a{
+	padding:5px 10px;
+}
+.estore_packages_transactions_header a:before{
+	margin-right:5px;
+}
+.estore_packages_transactions_table table{
+	border-width:1px;
+	width:100%;
+}
+.estore_packages_transactions_table table th,
+.estore_packages_transactions_table table td{
+	padding:10px;
+}
+.estore_packages_transactions_table table th{
+	background-image:url(../images/t-img-light.png);
+}
+.estore_packages_transactions_table table td{
+	border-top-width:1px;
+}
+.estore_packages_transactions_table table th + th,
+.estore_packages_transactions_table table td + td{
+	border-left-width:1px;
+}
+/*All Transactions End Start*/
+/*Payemnt Process*/
+.estore_package_payment_process{
+	border-width:1px;
+	padding:15px;
+}
+.estore_package_payment_process ._head{
+	font-size:20px;
+	margin:0 0 10px;
+	padding:0;
+	background:none;
+	border-width:0;
+}
+.estore_package_payment_process #buttons-wrapper{
+	margin-top:15px;
+}
+.estore_package_payment_process button{
+	margin-right:10px;
+}
+.estore_package_payment_process button i{
+	margin-right:5px;
+}
+/*Account Details*/
+.estorepackage_account_details_box{
+	border-width:1px;
+	padding:15px;
+	margin-top:20px;
+}
+.estorepackage_account_details_box h3{
+	font-size:20px;
+	margin:0 0 10px;
+	padding:0;
+	background:none;
+	border-width:0;
+}
+.estorepackage_account_details{
+	margin:15px 0;
+	display:inline-block;
+	width:100%;
+}
+.estorepackage_account_details ._field{
+	overflow:hidden;
+}
+.estorepackage_account_details ._field ._label{
+	float:left;
+	width:180px;
+	font-weight:bold;
+	padding:15px 0;
+}
+.estorepackage_account_details ._field ._label:after{
+	margin-left:5px;
+}
+.estorepackage_account_details ._field ._element{
+	overflow:hidden;
+}
+.estorepackage_account_details ._field ._element > div{
+	width:calc(33.33% - 20px);
+	margin-right:20px;
+	float:left;
+}
+.estorepackage_account_details ._header ._element > div{
+	text-align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+.estorepackage_account_details ._field ._element ._box{
+	border-width:1px 1px 0;
+	border-style:dashed;
+	padding:15px;
+}
+.estorepackage_account_details ._field:nth-last-child(1) ._element ._box{
+	border-bottom-width:1px;
+}
+.estore_package_payment_process #buttons-wrapper button,
+.estorepackage_account_details_btn a{
+	border-radius:3px;
+	padding:0 15px;
+	display:inline-block;
+	line-height:40px;
+	font-weight:bold;
+	font-size:105%;
+}
+.estorepackage_account_details_btn a i {
+	margin-right:5px;
+}
+.estorepackage_details_popup{
+	width:500px;
+}
+.estorepackage_details_popup .global_form div.form-label{
+	width:120px;
+	text-align:left;
+}
+.estorepackage_details_popup .global_form div.form-element{
+	overflow:hidden;
+	min-width:inherit;
+}
+#global_page_estorepackage-payment-gateway form {
+    margin: 20px 0;
+}
+#global_page_estorepackage-payment-gateway .sescredit_cart_total {
+    display: inline-block;
+}
+#global_page_estorepackage-payment-gateway .sescredit_cart_total > h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.sescredit_cart_total table td {
+    padding: 10px;
+}
+.sescredit_cart_total table {
+    border-width: 1px;
+}
+.sescredit_cart_total table tr:nth-child(odd){
+	background:url(../images/transprant-bg.png);
+}
+.sescredit_cart_total tfoot tr:nth-child(even) {
+    display: table-row !important;
+}
+.sescredit_cart_total table td:nth-child(odd) {
+    font-weight: bold;
+}
+.ecoupon_coupon_box ._btn {
+    margin: 15px 0;
+}
+.ecoupon_coupon_box > p {
+    margin: 10px 0;
+}
+.ecoupon_coupon_link {
+    margin-top: 10px;
+}

@@ -1,0 +1,1 @@
+INSERT IGNORE INTO `engine4_activity_notificationtypes` (`type`, `module`, `body`, `is_request`, `handler`) VALUES ("sesmember_member_likes", "sesmember", '{item:$subject} has liked your profile.', 0, "");

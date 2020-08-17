@@ -1,0 +1,601 @@
+.layout_eclassroom_classroom_view{
+	border-width:0 !important;
+	padding:0 !important;
+	background:none !important;
+	box-shadow:none !important;
+}
+.eclassroom_cover_inner{
+	position:relative;
+}
+.eclassroom_default_cover{
+	background-position:center;
+	background-size:cover;
+	height:400px;
+	position:relative;
+	overflow:hidden;
+}
+.eclassroom_default_cover img{
+	min-height:100%;
+	min-width:100%;
+	width:100%;
+	position:absolute;
+}
+.eclassroom_default_cover img.ui-draggable{
+	cursor:-webkit-grab;
+	cursor:grab;
+}
+.eclassroom_cover_fade{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, .1);
+}
+/*Change Cover Buttons*/
+.eclassroom_cover_change_btn{
+	position:absolute;
+	top:40px;
+	right:20px;
+	display:none;
+	z-index:9;
+}
+.eclassroom_cover_container:hover .eclassroom_cover_change_btn,
+.eclassroom_cover_container .eclassroom_cover_change_btn.active,
+.eclassroom_view_main_photo:hover .eclassroom_cover_change_btn,
+.eclassroom_view_main_photo .eclassroom_cover_change_btn.active{
+	display:block;
+}
+.eclassroom_cover_change_btn > a{
+	background-color:rgba(0, 0, 0, 0.8);
+	border:1px solid rgba(255, 255, 255, 0.8);
+	-webkit-transition:all 300ms ease 0s;
+	-moz-transition:all 300ms ease 0s;
+	-o-transition:all 300ms ease 0s;
+	transition:all 300ms ease 0s;
+	border-radius:3px;
+	display:block;
+	overflow:hidden;
+	padding:3px 5px;
+}
+.eclassroom_cover_change_btn > a i{
+	color:#fff;
+	float:left;
+	line-height:25px;
+	height:25px;
+	margin-right:5px;
+	text-align:center;
+	width:25px;
+}
+.eclassroom_cover_change_btn > a span{
+	color:#fff;
+	font-size:12px;
+	float:left;
+	margin-top:5px;
+}
+.eclassroomcover_option_box_arrow{
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	height:0;
+	right:7px;
+	position:absolute;
+	top:-10px;
+	width:0;
+}
+.eclassroom_cover_change_options{
+	right:0;
+	top:45px;
+	display:none;
+	z-index:10;
+}
+.eclassroom_cover_change_btn.active .eclassroom_cover_change_options{
+	display:block;
+}
+.eclassroom_cover_reposition_btn{
+	position:absolute;
+	right:20px;
+	bottom:20px;
+	z-index:10;
+}
+.eclassroom_cover_reposition_btn a{
+	display:inline-block;
+}
+.eclassroom_cover_container .dragncrop-instruction{
+	position:absolute;
+	top:40%;
+	opacity:0.7;
+	background:black;
+	color:#DDD;
+	text-align:center;
+	border-radius:6px;
+	line-height:1;
+	z-index:1;
+	left:50%;
+	padding:10px 12px;
+	width:200px;
+	margin-left:-100px;
+}
+.eclassroom_cover_container .dragncrop-instruction-text {
+	color:#DDD;
+	text-align:center;
+	line-height:1;
+	font-family:sans-serif;
+	background-repeat:no-repeat;
+	background-position:0 50%;
+	display:block;
+	padding:5px;
+	font-size:13px;
+}
+.eclassroom_cover_container:hover .dragncrop-instruction{
+	display:none;
+}
+.eclassroom_cover_content{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+}
+.eclassroom_cover_content:before{
+	background:linear-gradient(rgba(0, 0, 0, 0.2) 60%, rgba(0,0,0, .53));
+	position:absolute;
+	content:"";
+	left:0;
+	width:100%;
+	height:100%;
+}
+/*Labels*/
+.eclassroom_cover_labels{
+	top:40px;
+	position:absolute;
+	left:20px;
+	text-align:center;
+	z-index:1;
+}
+.eclassroom_cover_labels span {
+	display:block;
+	height:25px;
+	color:#fff;
+	margin:0 0 5px;
+	font-size:12px;
+	width:100px;
+	line-height:25px;
+	position: relative;
+}
+/*DESIGN 1 START HERE*/
+.eclassroom_cover_d1 ._maincont{
+	position:absolute;
+	top:50%;
+	right:0;
+	transform:translateY(-50%);
+	text-align:center;
+	z-index:1;
+	left:0;
+}
+.eclassroom_cover_d1 ._mainphoto{
+	height:150px;
+	margin:0 auto 10px;
+	position:relative;
+	width:150px;
+}
+.eclassroom_cover_d1 .eclassroom_cover_mainphotoinner{
+	border-radius:50%;
+	border:2px solid #fff;
+	overflow:hidden;
+	height:100%;
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	-moz-box-shadow:0 0 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow:0 0 1px rgba(0, 0, 0, 0.2);
+	box-shadow:0 0 1px rgba(0, 0, 0, 0.2);
+}
+.eclassroom_cover_d1 .eclassroom_cover_mainphotoinner > img {
+	border-width:0;
+	height:100%;
+	max-height:none;
+	max-width:none;
+	object-fit:cover;
+	width:100%;
+}
+.eclassroom_cover_d1 ._mainphoto .eclassroom_cover_change_btn{
+	left:50%;
+	top:5px;
+	display:block;
+	right:inherit;
+	transform:translateX(-50%);
+}
+.eclassroom_cover_d1 ._mainphoto .eclassroom_cover_change_btn > a{
+	border-radius:50%;
+	height:30px;
+	width:30px;
+	padding:0;
+	display:none;
+}
+.eclassroom_cover_d1 ._mainphoto .eclassroom_cover_change_btn > a i{
+	float:left;
+	font-size:12px;
+	margin:2px 0 0 2px;
+}
+.eclassroom_cover_d1 ._mainphoto:hover .eclassroom_cover_change_btn > a,
+.eclassroom_cover_d1 ._mainphoto .eclassroom_cover_change_btn > a.open{
+	display:block;
+}
+.eclassroom_cover_d1 ._mainphoto .eclassroom_cover_change_btn > a.open + .sesbasic_option_box {
+	display:block;
+	margin-top:10px;
+}
+.eclassroom_cover_d1 ._mainphoto .sesbasic_option_box > i{
+	left:6px;
+}
+.eclassroom_cover_d1 ._maincont ._info{
+	padding:0 20px;
+}
+.eclassroom_cover_d1 h1{
+	color:#fff;
+	font-size:24px;
+	margin-bottom:0;
+	text-shadow:-1px 1px 10px rgba(0,0,0,0.5);
+	font-weight:600;
+}
+.eclassroom_cover_d1  h1 .eclassroom_label_verified{
+	vertical-align:middle;
+	text-shadow:none;
+	margin-left:10px;
+}
+.eclassroom_cover_d1 ._data{
+	text-align:center;
+}
+.eclassroom_cover_d1 ._data,
+.eclassroom_cover_d1 ._data a{
+	text-shadow:-1px 1px 10px rgba(0,0,0,0.5);
+	color:#fff;
+}
+.eclassroom_cover_d1 ._stats{
+	margin-top:10px;
+}
+.eclassroom_cover_d1 ._stats > span{
+	margin:0 5px 0 0;
+	color:#fff;
+}
+.eclassroom_cover_d1 ._stats > span > i{
+	margin-right:2px;
+}
+.eclassroom_cover_d1 ._stats > span + span:before{
+	content:"\00b7";
+	margin-right:7px;
+}
+.eclassroom_cover_d1 ._midbtns{
+	text-align:center;
+	padding-top:15px;
+}
+.eclassroom_cover_d1 ._midbtns > div{
+	display:inline-block;
+	margin:0 3px;
+}
+.eclassroom_cover_d1 ._midbtns > div a{
+	height:35px;
+	padding:0 30px;
+	line-height:35px;
+	display:block;
+	border-radius:20px;
+	font-weight:bold;
+}
+.eclassroom_cover_d1 ._midbtns > div a i{
+	margin-right:2px;
+}
+/*Footer*/
+.eclassroom_cover_d1 ._footer{
+	left:0px;
+	width:100%;
+	background-color:rgba(0, 0, 0, 0.5);
+	border-top:1px solid rgba(255, 255, 255, 0.2);
+	bottom:0;
+	position:absolute;
+	z-index:1;
+}
+.eclassroom_cover_d1 ._footer .eclassroom_cover_social_btns{
+	float:right;
+}
+.eclassroom_cover_d1 ._footer .sesbasic_icon_btn{
+	border-radius:0px;
+	background-color:transparent;
+	border-left:1px solid rgba(255, 255, 255, 0.2);
+	padding:12px 0;
+	margin:0;
+	height:40px;
+	width:40px;
+}
+.eclassroom_cover_d1 ._footer .sesbasic_icon_btn:nth-last-child(1){
+	border-right:1px solid rgba(255, 255, 255, 0.2);
+}
+.eclassroom_cover_d1 ._footer .sesbasic_icon_like_btn:hover,
+.eclassroom_cover_d1 ._footer .sesbasic_icon_like_btn.button_active{background-color:#02adea;}
+.eclassroom_cover_d1 ._footer .sesbasic_icon_fav_btn:hover,
+.eclassroom_cover_d1 ._footer .sesbasic_icon_fav_btn.button_active{background-color:#ff4c4c;}
+.eclassroom_cover_d1 ._footer .sesbasic_icon_follow_btn:hover,
+.eclassroom_cover_d1 ._footer .sesbasic_icon_follow_btn.button_active{background-color:#4CAF50;}
+.eclassroom_cover_d1 ._footer ._tabs{
+	float:left;
+}
+.eclassroom_cover_d1 ._footer .sesbasic_icon_btn_count i:before,
+.eclassroom_cover_d1 ._footer .sesbasic_icon_btn_count span{
+	line-height:40px;
+}
+.eclassroom_cover_d1 ._footer ._tabs .tabs_alt,
+.eclassroom_cover_d1 ._footer ._tabs .tabs_alt > ul{
+	background-color:transparent;
+	margin:0px;
+	padding:0px;
+	border:0px;
+}
+.eclassroom_cover_d1 ._footer ._tabs .tabs_alt > ul > li,
+.eclassroom_cover_d1 ._footer ._tabs .tabs_alt > ul > li.active + li{
+	border-right:1px solid rgba(255, 255, 255, 0.2) !Important;
+	float:left;
+	margin:0;
+}
+.eclassroom_cover_d1 ._footer ._tabs  .tabs_alt > ul > li + li{
+	border-left-width:0;
+}
+.eclassroom_cover_d1 ._footer ._tabs .tabs_alt > ul > li:nth-child(1){
+	border-left:1px solid rgba(255, 255, 255, 0.2) !important;
+}
+.eclassroom_cover_d1 ._footer ._tabs > div > ul > li > a:hover, 
+.eclassroom_cover_d1 ._footer ._tabs > div > ul > li > a:active, 
+.eclassroom_cover_d1 ._footer ._tabs > div > ul > li.active > a, 
+.eclassroom_cover_d1 ._footer ._tabs > div > ul > li.active > a:hover, 
+.eclassroom_cover_d1 ._footer ._tabs > div > ul > li.tab_open > a {
+	background-color:rgba(0, 0, 0, 0.9);
+	color:#fff !important;
+	top:0;
+}
+.eclassroom_cover_d1 ._footer ._tabs > div > ul > li > a {
+	border-radius:0 !important;
+	border-width:0 !important;
+	color:#fff;
+	display:block;
+	font-size:13px;
+	font-weight:bold;
+	line-height:40px;
+	padding:0 20px !important;
+	text-decoration:none;
+	outline:none;
+	margin:0;
+}
+.eclassroom_cover_d1 ._footer ._tabs li.tab_open .tab_pulldown_contents_wrapper{
+	margin-top:40px;
+	display:block;
+}
+.eclassroom_cover_d1 ._footer ._tabs .tab_pulldown_contents > ul > li{
+	padding:10px;
+}
+/*DESIGN 2 START HERE*/
+.eclassroom_cover_d2 ._maincont{
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+}
+.eclassroom_cover_d2 ._maincont ._cnw{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-align:end;
+	-ms-flex-align:end;
+	align-items:flex-end;
+	padding:15px 0;
+	position:relative;
+}
+.eclassroom_cover_d2 ._maincont ._mainphoto{
+	height:160px;
+	width:160px;
+	float:left;
+	margin:0 0 0 10px;
+	position:relative;
+	bottom:-56px;
+	box-shadow:0 0 10px rgba(0, 0, 0, .4);
+}
+.eclassroom_cover_d2 ._maincont .eclassroom_cover_mainphotoinner{
+	border:2px solid #fff;
+	border-radius:5px;
+	position:relative;
+	overflow:hidden;
+	height:100%;
+}
+.eclassroom_cover_d2 ._maincont .eclassroom_cover_mainphotoinner > img{
+	object-fit:cover;
+	height:100%;
+	width:100%;
+}
+.eclassroom_cover_d2 ._mainphoto .eclassroom_cover_change_btn{
+	left:5px;
+	top:5px;
+	display:block;
+	right:inherit;
+}
+.eclassroom_cover_d2 ._mainphoto .eclassroom_cover_change_btn > a{
+	height:30px;
+	width:30px;
+	padding:0;
+	background:none;
+	border-width:0;
+	display:none;
+}
+.eclassroom_cover_d2 ._mainphoto .eclassroom_cover_change_btn > a i{
+	float:left;
+	font-size:12px;
+	margin:2px 0 0 2px;
+}
+.eclassroom_cover_d2 ._mainphoto:hover .eclassroom_cover_change_btn > a,
+.eclassroom_cover_d2 ._mainphoto .eclassroom_cover_change_btn > a.open{
+	display:block;
+}
+.eclassroom_cover_d2 ._mainphoto .eclassroom_cover_change_btn > a.open + .sesbasic_option_box {
+	display:block;
+	margin-top:10px;
+}
+.eclassroom_cover_d2 ._mainphoto .sesbasic_option_box > i{
+	left:6px;
+}
+.eclassroom_cover_d2 ._maincont ._info{
+	padding:0 20px;
+}
+.eclassroom_cover_d2 ._maincont ._info h1,
+.eclassroom_cover_d2 ._maincont ._info ._data,
+.eclassroom_cover_d2 ._maincont ._info ._data a{
+	color:#fff !important;
+	text-shadow:-1px 1px 10px rgba(0,0,0,0.5);	
+}
+.eclassroom_cover_d2 ._maincont ._info > *{
+	margin-top:5px;
+}
+.eclassroom_cover_d2 ._maincont ._info h1{
+	font-size:24px;
+}
+.eclassroom_cover_d2 ._maincont ._info h1 i{
+	margin-left:10px;
+}
+.eclassroom_cover_d2 ._maincont ._info ._stats span{
+	margin-right:1px;
+	color:#fff;
+}
+.eclassroom_cover_d2 ._maincont ._info ._stats span i{
+	margin-right:4px;
+}
+.eclassroom_cover_d2 ._maincont ._info ._stats span + span:before{
+	content:"-";
+	margin-right:5px;
+}
+.sescover_footer_des2_footer{
+	padding:10px;
+	border-width:0 1px 1px;
+}
+.sescover_footer_des2_footer.ismainphoto{
+	padding-left:190px;
+}
+.sescover_footer_des2_footer ._leftbtns{
+	float:left;
+}
+.sescover_footer_des2_footer ._leftbtns > div{
+	float:left;
+}
+.sescover_footer_des2_footer ._leftbtns > div > a{
+	border-radius:0;
+	height:30px;
+	line-height:28px;
+	padding:0 10px;
+}
+.sescover_footer_des2_footer ._leftbtns > div:nth-child(1) > a{
+	border-radius:5px 0 0 5px;
+}
+.sescover_footer_des2_footer ._leftbtns > div:nth-last-child(1) > a{
+	border-radius:0 5px 5px 0;
+}
+.sescover_footer_des2_footer ._leftbtns > div + div > a{
+	border-left-width:0;
+}
+.sescover_footer_des2_footer ._sharebtn{
+	position:relative;
+}
+.sescover_footer_des2_footer ._sharebtn .eclassroom_listing_share_popup{
+	white-space:nowrap;
+	left:50%;
+	transform:translateX(-50%);
+}
+.sescover_footer_des2_footer ._rightbtns > div a i{
+	margin-right:0;
+}
+.sescover_footer_des2_footer ._rightbtns{
+	float:right;
+}
+.sescover_footer_des2_footer ._rightbtns > div{
+	float:left;
+	margin-left:5px;
+}
+.sescover_footer_des2_footer ._rightbtns > div a{
+	font-weight:bold;
+	border-radius:5px;
+	height:30px;
+	line-height:30px;
+	padding:0px 10px;
+	display:block;
+}
+.sescover_footer_des2_footer ._rightbtns ._contactbtn a{
+	padding:0 10px;
+}
+.sescover_footer_des2_footer ._rightbtns > div a.sesbasic_button{
+	line-height:28px;
+}
+.sescover_footer_des2_footer .generic_layout_container {
+	margin:0;
+}
+.sescover_footer_des2_footer ._rightbtns > div a i{
+	position:relative;
+	margin-right:2px;
+}
+/*FULL WIDTH*/
+.eclassroom_cover_container_full .eclassroom_cover_inner{
+	left:0;
+	right:0;
+	position:absolute;
+}
+/* responsive css */
+@media (max-width:767px){
+	.eclassroom_cover, .eclassroom_default_cover{
+		height:300px !important;
+	}
+	.sescover_footer_des2_footer ._leftbtns > div > a{
+		padding:0 5px;
+	}
+	.sescover_footer_des2_footer ._rightbtns {
+		float:none;
+	}
+	.sescover_footer_des2_footer ._rightbtns > div{
+		margin-left:0;
+		margin-top:10px;
+	}
+	.layout_core_container_tabs > .generic_layout_container > h3 {
+		margin:auto;
+	}
+	.eclassroom_cover_d2 ._maincont ._mainphoto {
+		height:120px;
+		width:120px;
+		margin:auto;
+		float:none;
+		bottom:0;
+	}
+	.eclassroom_cover_d2 ._maincont ._info{
+		text-align:center;
+		margin-bottom:10px;
+	}
+	.eclassroom_cover_d2 ._maincont ._cnw{
+		display:block;
+	}
+	.sescover_footer_des2_footer.ismainphoto{
+		padding-left:10px;
+	}
+	.eclassroom_cover_container_full .eclassroom_cover_inner {
+		position:relative;
+	}
+	.eclassroom_default_cover img {
+		position:static;
+		object-fit:cover;
+	}
+}
+@media (max-width:480px){
+	.eclassroom_cover_d1 ._maincont {
+  transform: translateY(-30%);
+}
+.eclassroom_cover_d1 ._mainphoto {
+	height: 100px !important;
+	width: 100px !important;
+}
+.eclassroom_cover_d1 h1 {
+	font-size: 16px !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 10px;
+}
+}

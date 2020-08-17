@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesjob
+ * @package    Sesjob
+ * @copyright  Copyright 2019-2020 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Controller.php 2019-03-27 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+class Sesjob_Widget_BrowseMenuQuickController extends Engine_Content_Widget_Abstract
+{
+  public function indexAction()
+  {
+    // Get quick navigation
+    $this->view->quickNavigation = $quickNavigation = Engine_Api::_()->getApi('menus', 'core')
+      ->getNavigation('sesjob_quick');
+
+  }
+}

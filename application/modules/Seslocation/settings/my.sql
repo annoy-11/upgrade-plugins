@@ -1,0 +1,1 @@
+INSERT IGNORE INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES  ('seslocation', 'SES - Location Based Member & Content Display', 'SES - Location Based Member & Content Display', '4.11', 1, 'extra') ;

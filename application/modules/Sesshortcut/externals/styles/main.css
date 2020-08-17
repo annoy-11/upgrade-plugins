@@ -1,0 +1,197 @@
+
+
+/*Button*/
+.sesshortcut_button a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+	display:block;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	border-radius:5px;
+	font-weight:bold;
+}
+.sesshortcut_button a:hover{
+	background-color:$theme_button_background_color_hover;
+}
+.sesshortcut_button a i{
+	margin-right:8px;
+}
+/*Menu*/
+.sesshortcut_menu_edit span{
+	float:right;
+	font-size:$theme_font_size;
+}
+.sesshortcut_menu ul li{
+	position:relative;
+}
+.sesshortcut_menu > ul > li > a {
+	color:$theme_font_color;
+	padding:3px 5px;
+	display:block;
+	overflow:hidden;
+}
+.sesshortcut_menu > ul > li > a img {
+	width:25px;
+	height:25px;
+	object-fit:cover;
+	margin-right:10px;
+	float:left;
+}
+.sesshortcut_menu > ul > li > a > span{
+	white-space:nowrap;
+	overflow:hidden;
+	display:block;
+	text-overflow:ellipsis;
+	line-height:25px;
+}
+.sesshortcut_menu > ul > li:hover > a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sesshortcut_menu > ul > li ._menu{
+	color:$theme_button_font_color;
+	position:absolute;
+	right:3px;
+	font-size:17px;
+	top:0;
+	height:25px;
+	width:20px;
+	display:none;
+	line-height:24px;
+	text-align:center;
+}
+.sesshortcut_menu > ul > li:hover ._menu{
+	display:block;
+	color:$theme_button_font_color;
+}
+.sesshortcut_menu_more{
+	margin-top:10px;
+	display:block;
+}
+.sesshortcut_menu_more a i{
+	margin:0 14px;
+}
+.sesshortcut_menu_options{
+	background-color:$theme_list_background_color;
+	border-width:1px;
+	display:none;
+	box-shadow:0 0 20px rgba(0, 0, 0, .1);
+	position:absolute;
+	min-width:150px;
+	right:0;
+	z-index:96;
+	display:none
+}
+.showoption + .sesshortcut_menu_options{
+	display:block;
+}
+.sesshortcut_menu_options ul{
+	padding:3px 0;
+	max-height:300px;
+	overflow:auto;
+}
+.sesshortcut_menu_options li{
+	clear:both;
+	display:block !important;
+	position:relative;
+}
+.sesshortcut_menu_options li a {
+	padding:7px 15px;
+	display:block;
+	text-decoration:none !important;
+}
+.sesshortcut_menu_options li a:hover{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+}
+/*Popup*/
+.sesshortcut_popup{
+	width:500px;
+}
+.sesshortcut_popup ._header{
+	background-color:$theme_list_background_color_hover;
+	padding:15px;
+}
+.sesshortcut_popup ._header h3{
+	font-size:17px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.sesshortcut_popup ._search{
+	position:relative;
+	margin-top:10px;
+}
+.sesshortcut_popup ._search i{
+	position:absolute;
+	left:0;
+	width:30px;
+	text-align:center;
+	line-height:30px;
+}
+.sesshortcut_popup ._search input{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	padding:0 10px 0 30px;
+}
+.sesshortcut_popup ._cont{
+	max-height:300px;
+	padding:10px 0;
+	overflow:auto;
+}
+.sesshortcut_popup .item_list{
+	padding:5px 15px;
+}
+.sesshortcut_popup .item_list ._thumb{
+	float:left;
+}
+.sesshortcut_popup .item_list ._thumb img{
+	height:35px;
+	width:35px;
+	vertical-align:middle;
+}
+.sesshortcut_popup .item_list ._options{
+	float:right;
+}
+.sesshortcut_popup .item_list ._options select{
+	height:30px;
+}
+.sesshortcut_popup .item_list ._info{
+	display:block;
+	overflow:hidden;
+	padding:10px 10px 0;
+}
+.sesshortcut_popup .item_list ._title{
+	font-weight:bold;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.sesshortcut_popup ._footer{
+	padding:10px 15px;
+	border-top-width:1px;
+}
+.sesshortcut_success_message{
+	padding:10px;
+}
+.sesshortcut_success_message span{
+	width:100%;
+	color:#3c763d;
+	background-color:#dff0d8;
+	border-color:#d6e9c6;
+	padding:10px;
+	border-width:1px;
+	border-radius:4px;
+	font-weight:bold;
+	font-size:14px;
+	display:block;
+
+}
+.sesshortcut_success_message span:before{
+	content:'\\f058';
+	font-size:14px;
+	font-family:FontAwesome;
+	display:inline-block;
+	margin-right:10px;
+}

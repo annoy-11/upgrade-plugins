@@ -1,0 +1,46 @@
+/* $Id:main.css 2015-7-1 00:00:00 SocialEngineSolutions $*/
+
+.clear{clear:both;}
+.sespoke_bxs, .sespoke_bxs *{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.sespoke_clearfix:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+.sespoke_text_light{color:$theme_font_color_light;}
+.sespoke_member_list_grid, .sespoke_sidebar_list, .sespoke_buttons_block{
+	+rounded;
+	+foreground;
+	padding:5px;
+}
+a.sespoke_close_btn{background:$theme_button_background_color;}
+a.sespoke_close_btn:hover{background:$theme_button_background_color_hover;}
+a.sespoke_close_btn:before{color:$theme_button_font_color;}
+[class*="sespoke_gutter_create_"],
+[class*="notification_type_sespoke_"],
+[class*="activity_icon_sespoke_"]{
+	padding-left:21px !important;
+	background-position:center left;
+	background-repeat:no-repeat;
+}
+[dir="rtl"] [class*="sespoke_gutter_create_"],
+[dir="rtl"] [class*="notification_type_sespoke_"],
+[dir="rtl"] [class*="activity_icon_sespoke_"]{
+	background-position:center right;
+	padding-left:0 !important;
+	padding-right:21px !important;
+}
+/*View More Link*/
+.sespoke_link_btn{
+	background-color:$theme_list_background_color;
+  border:1px solid $theme_button_background_color;
+	color:$theme_button_background_color !important;
+}
+.sespoke_link_btn:hover{
+  background:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+}

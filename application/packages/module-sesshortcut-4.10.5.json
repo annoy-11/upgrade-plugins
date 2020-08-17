@@ -1,0 +1,475 @@
+{
+  "type": "module",
+  "name": "sesshortcut",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Sesshortcut",
+  "repository": null,
+  "sku": null,
+  "date": "Wed, 18 Sep 2019 11:38:50 +0000",
+  "title": "SES - Add To Shortcuts \/ Bookmarks Plugin",
+  "description": "SES - Add To Shortcuts \/ Bookmarks Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Wed, 18 Sep 2019 11:38:50 +0000",
+    "title": "SES - Add To Shortcuts \/ Bookmarks Plugin",
+    "description": "SES - Add To Shortcuts \/ Bookmarks Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sesshortcut\/settings\/install.php",
+    "class": "Sesshortcut_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sesshortcut": {
+      "type": "directory",
+      "path": "application\/modules\/Sesshortcut",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 411,
+          "sha1": "e7a5e37b0cc8cfef1df6d6f1a49288cd71002d69"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 437,
+          "sha1": "26fb2d39da1ab40b0ffaad011788691a596c9041"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1487,
+          "sha1": "80544cb8cb6478a1ee14e2f5363009c704638f27"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 415,
+          "sha1": "c594a2d7f3038abf94a198458fa8ab29fc2f4541"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7124,
+          "sha1": "c15ba82e5b394f87500c430a6b53bdf62ff447fa"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6126,
+          "sha1": "56f8a2d36d807d8e384075535aa76a2b8dfb5ed6"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2706,
+          "sha1": "77a92456ca9c4d33a7be7a843cd502b11da90d92"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3945,
+          "sha1": "ea7b09f4b9252575e5b1e6f504a80620f31bb8e0"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/AddShortcuts.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1334,
+          "sha1": "fa3029bfbcff4fdf813d92a33726405fe122239c"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3534,
+          "sha1": "e832c3d908a78bdc38cbe84b145d64d332c6c222"
+        },
+        {
+          "path": "Form\/RemoveShortcuts.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1361,
+          "sha1": "d62a7e4b61796b8de538eb02185b56849e98c653"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/DbTable\/Shortcuts.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2686,
+          "sha1": "dab2b6c32d90c0faff4e80c57c6ed79621ba7ef3"
+        },
+        {
+          "path": "Model\/Shortcut.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 460,
+          "sha1": "f4b2bb38de8d1f46c6c0abdb8d0252d5a28679d4"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1750,
+          "sha1": "1fde7708d2da3e44d6e9013309726dcf572edc18"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1508,
+          "sha1": "222ed59dcee9b5d208ffd63b76e658b6725a97b5"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1737,
+          "sha1": "71fc6b0d250959c8b35250cd0aac6f55bc43eefa"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 855,
+          "sha1": "786a79ee1c0cbd0ca8ca49457e3625d1d980546c"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1254,
+          "sha1": "675b5048659fce4301be09f03830b8f15f381434"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1748,
+          "sha1": "bc67e52b6b824f4d95c56806a64946c354ba13be"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/addshortcuts.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 404,
+          "sha1": "5e8c46d7e11ae8d0ab7e52a9986dde4eb3ad0604"
+        },
+        {
+          "path": "views\/scripts\/index\/get-all-shortcuts.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8414,
+          "sha1": "3bbd59d168c92197bdf2bdcc1623bfd0ecdb01ae"
+        },
+        {
+          "path": "views\/scripts\/index\/removeshortcuts.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 407,
+          "sha1": "87e4b9e6350d19bebad1f9d10e508ea1a7381899"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/shortcut-button",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/shortcut-button\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1614,
+          "sha1": "7c92f6b552e0f467c97ac7917083dc852c9804f3"
+        },
+        {
+          "path": "widgets\/shortcut-button\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2820,
+          "sha1": "603c383d8996bdb03e9cd5c955881b1d8ffc09f6"
+        },
+        {
+          "path": "widgets\/shortcut-menu",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/shortcut-menu\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1338,
+          "sha1": "046c1f375f9aad20fb457e56f5ec41a256a20cba"
+        },
+        {
+          "path": "widgets\/shortcut-menu\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6350,
+          "sha1": "5796080090c61ee5816647ddc5b2ad35bfa17b0f"
+        }
+      ]
+    },
+    "application\/languages\/en\/sesshortcut.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sesshortcut.csv",
+      "structure": {
+        "path": "sesshortcut.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 256,
+        "sha1": "2563bfe139eb94cd04d7b0ed3d555ff59397dd02"
+      }
+    }
+  }
+}

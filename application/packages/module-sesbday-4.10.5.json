@@ -1,0 +1,650 @@
+{
+  "type": "module",
+  "name": "sesbday",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Sesbday",
+  "repository": null,
+  "sku": null,
+  "date": "Thu, 19 Sep 2019 13:37:26 +0000",
+  "title": "SES - Birthday Plugin",
+  "description": "",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Thu, 19 Sep 2019 13:37:26 +0000",
+    "title": "SES - Birthday Plugin",
+    "description": "",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sesbday\/settings\/install.php",
+    "class": "Sesbday_Installer",
+    "priority": 100
+  },
+  "dependencies": null,
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sesbday": {
+      "type": "directory",
+      "path": "application\/modules\/Sesbday",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4295,
+          "sha1": "9d602f10e73882b51e71c640a606462d5475487a"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 426,
+          "sha1": "bbe3a9a3a514dd54bf85e12c149174dc0806cc14"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminBirthdayController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3850,
+          "sha1": "ea2ee8b1e338c1eba5ccd88c6762d94db86daa06"
+        },
+        {
+          "path": "controllers\/AdminLevelsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1490,
+          "sha1": "d5909bc3c815bfab239e029744ac959aae0b4db1"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2790,
+          "sha1": "ffca60151311f8f26c7dc5fbe0a95eb4cf961ee8"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2437,
+          "sha1": "e614d8bbacb5aec2b17f5a85d467a4de08a1cfd3"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/Balloon_Birthday.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 116190,
+          "sha1": "24f4256de8d998c2df9e72414564c0fdcda3d40a"
+        },
+        {
+          "path": "externals\/images\/birthday-icon-small.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 539,
+          "sha1": "fd757096aa96356c3bdc8b644fbdcb60ee5f5adf"
+        },
+        {
+          "path": "externals\/images\/Pink_Birthday.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 168542,
+          "sha1": "43872fe62f629faaea160a5ed6d9e241c18567c7"
+        },
+        {
+          "path": "externals\/images\/popup-head-bg.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5600,
+          "sha1": "65f420064868040771045f95f74abb5777b602f4"
+        },
+        {
+          "path": "externals\/images\/transprant-bg.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 932,
+          "sha1": "85045c213efb0c2d324e1783e40272e0f213fdff"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts\/sessmoothbox",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/sessmoothbox\/sessmoothbox.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7378,
+          "sha1": "7f089e47bae22e97af15ffa9fd80a4313ed944b5"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/calendar.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7169,
+          "sha1": "525d6bfe805ffad62dfa16cc09e4f33bd70b7120"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1072,
+          "sha1": "cc98eff74e8fa3b75eb044a6b8a727975bec53af"
+        },
+        {
+          "path": "externals\/styles\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6890,
+          "sha1": "9504d8f651eaf027b24974465788a028814168c1"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Birthday.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3840,
+          "sha1": "e4502274746fc9d199171ff6bda6038c4f341fbd"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2157,
+          "sha1": "6a85c8f5ff7986bd36f666594b83c431d8592ec4"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2568,
+          "sha1": "463995a42df506413813f20e52ee8f649a852fd0"
+        },
+        {
+          "path": "Form\/Admin\/Testemail.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1378,
+          "sha1": "565db7a554d42fe174be8f79ff97732ab92b19ed"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/DbTable\/Wishes.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 412,
+          "sha1": "13de7b0b48a696175ac86787053882ca7d7d2d71"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Task",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Task\/Jobs.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4611,
+          "sha1": "4947dd4832a0a693589349891cbbfd548b750077"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1065,
+          "sha1": "13eeddf681f0c29a9f54c2af24206bae5a3929a1"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7824,
+          "sha1": "380407c5694654ec167597082da95014f4d525e6"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1575,
+          "sha1": "cd59bc5cddc8c1d7ecd3db2a6874c5e546cca7e4"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3204,
+          "sha1": "fc0cba7efa090470e6b732fb267a3e5bdc7a4cc0"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-birthday",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-birthday\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1786,
+          "sha1": "cd6f0b8ba01c3504d1a4c3f09ce765b24eb096d5"
+        },
+        {
+          "path": "views\/scripts\/admin-birthday\/testemail.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 940,
+          "sha1": "0dd91a32e09e43e7338a15ec821555522d8b5999"
+        },
+        {
+          "path": "views\/scripts\/admin-levels",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-levels\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 724,
+          "sha1": "a1a3f3b647999514471ae474a334b9680d51d96d"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 724,
+          "sha1": "a1a3f3b647999514471ae474a334b9680d51d96d"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 863,
+          "sha1": "b9a8aa968bfe73b65bb64411f3a410488ef8eeae"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/browse.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 350,
+          "sha1": "8fc259cfb8b65c92f70f4e4720263ec94561b52c"
+        },
+        {
+          "path": "views\/scripts\/index\/get-users.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5536,
+          "sha1": "2fbf3240230d23df60e7aee80e7eda577385a04f"
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 429,
+          "sha1": "6f5deb6a905a1e44c1eb4d04e928de9e276ff1cb"
+        },
+        {
+          "path": "views\/scripts\/index\/popup.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3998,
+          "sha1": "8127d7075a9846d98f00f7833aecc2e7032a9b7e"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/birthday-listing",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/birthday-listing\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1209,
+          "sha1": "b7773ef7bfd960c71439cd3fdcc61501e583fa40"
+        },
+        {
+          "path": "widgets\/birthday-listing\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5364,
+          "sha1": "bf4d6e6527b833128f39a5891de861c5c289074f"
+        },
+        {
+          "path": "widgets\/birthday-listing\/later-birthday.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2334,
+          "sha1": "378a6038991b1718d9dcbfabfb2e07bbcd6a3676"
+        },
+        {
+          "path": "widgets\/birthday-listing\/todays-birthday.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3322,
+          "sha1": "357c4646c5b0791d5e9562a73c8c8ae637892d6f"
+        },
+        {
+          "path": "widgets\/birthday-listing\/upcoming-birthday.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1836,
+          "sha1": "a3d071acb123b619c2158ef500311478827e7fa1"
+        },
+        {
+          "path": "widgets\/calendar",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/calendar\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1902,
+          "sha1": "d0524985ad2fc257f44d684bcf9815366c861e9c"
+        },
+        {
+          "path": "widgets\/calendar\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8533,
+          "sha1": "92b6b64d3d3562b5f843b2e1dcb6e6d7cc2a22f6"
+        },
+        {
+          "path": "widgets\/today-birthdays-tip",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/today-birthdays-tip\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 845,
+          "sha1": "5513927f861d19750c27a155ff247d560caf7033"
+        },
+        {
+          "path": "widgets\/today-birthdays-tip\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1591,
+          "sha1": "44744e0144d09badf378038e603d2cde81a53608"
+        }
+      ]
+    },
+    "application\/languages\/en\/sesbday.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sesbday.csv",
+      "structure": {
+        "path": "sesbday.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 1662,
+        "sha1": "c52abf71f878f435fe8366c488f356c8d95246d2"
+      }
+    }
+  }
+}

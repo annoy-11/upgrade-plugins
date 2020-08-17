@@ -1,0 +1,1 @@
+<h2><?php echo $this->translate("SenangPay Payment Gateway Plugin") ?></h2>

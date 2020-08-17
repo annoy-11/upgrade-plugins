@@ -1,0 +1,1 @@
+<?php echo $this->sesblogpackagefieldValueLoop($this->blog, $this->fieldStructure) ?>

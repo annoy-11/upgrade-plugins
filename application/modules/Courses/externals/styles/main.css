@@ -1,0 +1,351 @@
+/*Generic Layout Container*/
+[class*='layout_courses_'], 
+[id^='global_page_courses-'] .layout_core_content{
+  clear:both;
+  margin-bottom:15px;
+}
+[class*='layout_courses_']:after, 
+[id^='global_page_courses-'] .layout_core_content:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+[class*='tab_layout_courses_']{
+  margin:0;
+  clear:none;
+}
+.courses_add_cart_dropdown:before{
+	content: "\\f07a";
+	font-family: 'FontAwesome';
+	font-size: 20px;
+}
+.item_icon_courses:before, 
+.item_icon_courses:before,
+.item_icon_courses_entry:before,
+.notification_type_sesuser_claim_courses:before,
+.notification_type_courses_claim_declined:before,
+.notification_type_sesuser_claimadmin_courses:before,
+.notification_type_courses_subscribed_new:before{
+  content:"\\f19d";
+  font-family:fontawesome;
+}
+.notification_type_coursesadmin:before{
+	content:"\\f007";
+  font-family:fontawesome;
+}
+.notification_type_courses_acceptadminre:before{
+	content:"\\f00c";
+  font-family:fontawesome;
+}
+.notification_type_courses_rejestadminre:before{
+	content:"\\f00d";
+  font-family:fontawesome;
+}
+/*FEED ITEMS*/
+.feed_attachment_courses > div{
+  border-width:1px;
+  margin-bottom:5px;
+  overflow:hidden;
+}
+.feed_attachment_courses > div > a{
+  display:block;
+}
+.feed_attachment_courses > div > a > img{
+  height:250px;
+  margin:0;
+  width:100%;
+  max-height:inherit !important;
+  max-width:inherit !important;
+  object-fit:cover;
+}
+.feed_attachment_courses > div > div{
+  clear:both;
+  padding:10px 15px;
+}
+.feed_attachment_courses .feed_item_link_title{
+  font-size:14px !important;
+}
+.feed_attachment_courses .feed_item_link_desc{
+  font-size:13px !important;
+}
+.feed_item_attachments .feed_attachment_courses_album > div > a img{
+	max-width: 100% !important;
+	max-height: 400px !important;
+	width: auto;
+}
+.feed_item_attachments .feed_attachment_courses_album > div > a + div{
+	display:none;
+}
+/* DASHBOARD CSS */
+.courses_dashboard_tabs > ul ul a i,
+.courses_test_result_head,
+.courses_question_view_inner ._timer,
+.courses_lecture_view_time{
+	color:$theme_button_background_color;
+}
+.courses_dashboard_top_section,
+.courses_dashboard_content,
+.courses_dashboard_tabs > ul,
+.courses_dashboard_page_info,
+.courses_tags_cloud_page .courses_tags_cloud_list li a,
+.courses_compare_fixed,.courses_owner_contact_name,
+.courses_test_question_box ._ans .checkmark,
+.courses_grid_item > article,
+.courses_invoice_page,.dashboard_test_answer,
+.courses_tags_cloud_list > li > a,
+.courses_dashboard_course_info,
+.courses_banner_search_wrapper ._searchform form,
+.courses_banner_search_wrapper ._catsection > ._cont,
+.courses_myaccount_list > li > a,
+.courses_oftheday .sespagereview_review_grid_thumb span{
+	background-color:$theme_list_background_color;
+}
+.courses_create_tips .create_tips_top_sec,
+.courses_compare_fixed .courses_compare_tabs ul li.active,
+.courses_compare_fixed .courses_compare_btn a.compare_cancel,
+.courses_test_question_box  label input:checked ~ .checkmark,
+.courses_welcome_banner_inner .play-btn:before,
+.courses_welcome_banner_inner .play-btn a:before,
+.courses_welcome_banner_inner .play-btn a i{
+	background-color:$theme_button_background_color;	
+}
+.courses_compare_fixed .courses_compare_btn a.compare_apply{
+	background-color:$theme_button_background_color_hover;	
+}
+.courses_compare_fixed .courses_compare_tabs ul li.active a,
+.courses_compare_fixed .courses_compare_btn a.compare_cancel,
+.courses_compare_fixed .courses_compare_btn a.compare_apply{
+	color:$theme_button_font_color;
+}
+.courses_create_tips .create_tips_top_sec:before{
+	border-color:$theme_button_background_color;
+	opacity:0.5;
+}
+.courses_banner_categories .owl-nav>div{
+	background-color:$theme_button_background_color;	
+	border-color:$theme_button_background_color;
+}
+.courses_create_tips .create_tips_bottom_sec ol li,
+.courses_grid_item .pricing_header ._discount{
+	color:$theme_button_background_color;
+}
+.courses_dashboard_tabs > ul ul li.active a,
+.courses_dashboard_tabs > ul ul li.active a i,
+.courses_oftheday .courses_review_grid_title a{
+	color:$theme_font_color !important;
+}
+.courses_dashboard_tabs > ul > li > a,
+.layout_left .courses_list_item ._price,
+.layout_right .courses_list_item ._price,
+.layout_left .courses_pinboard_item ._price,
+.layout_right .courses_pinboard_item ._price,
+.courses_single_view .course_header ._price,
+.courses_single_view .mid_cont ._buy > a,
+.courses_single_view .bottom_cont ._cart a,
+.courses_options ._left a.add_to_cart,
+.courses_grid_item .courses_options ._left a,
+.courses_pinboard_item .courses_options ._left a,
+.dashboard_test_question > ._data a:first-child,
+.courses_dashboard_content .panel .add_ques,
+.course_compare_info ._add_cart > a,
+.courses_options ._left a,
+._next_skip > ._next_ques,
+.test_list_box > ._btn a,
+.courses_category_carousel_item_info_button a,
+.courses_test_list_box > ._btn a,
+.courses_myaccount_list > li.active > a,
+.courses_reviews_table ._reviewstype > ._active > a,
+.courses_welcome_features_inner ._left a:hover,
+.courses_welcome_banner_inner > div a:nth-child(2n+1),
+.ecourses_welcome_page .tabs_alt > ul > li.tab_active > a, 
+.ecourses_welcome_page .tabs_alt > ul > li.active > a,
+.courses_welcome_strip_inner ._btn:hover{
+	background:$theme_button_background_color !important;
+	color:$theme_button_font_color !important;
+}
+.courses_welcome_strip_inner ._btn:hover a{
+	color:$theme_button_font_color !important;
+}
+.courses_welcome_banner_inner > div a:nth-child(2n+1){
+	border-color:$theme_button_background_color !important;
+}
+/* CLASSROOM LIST VIEW */
+html .courses_options ._left .courses_wishlist,
+.course_compare_info ._add_cart a:last-child,
+.courses_profile_lectures .panel,
+.courses_test_question_box ._ans label .checkmark:after,
+.courses_course_of_the_day .courses_grid_item ._cont{
+	  background:$theme_list_background_color !important;
+}
+.courses_single_view .mid_cont ._img img{
+	border:1px solid $theme_button_background_color;
+}
+.courses_single_view .mid_cont > div:before{
+	background:$theme_border_color;
+}
+.courses_single_view .bottom_cont ._cart a{
+	border:1px solid $theme_button_background_color;
+}
+.courses_single_view .bottom_cont ._wishlist a,
+html .courses_options ._left .courses_wishlist,
+.course_compare_info ._add_cart a:last-child{
+	border:1px solid $theme_button_background_color;
+	color:$theme_button_background_color !important;
+}
+.courses_features .feature_item > .icon i,
+.courses_list_item .owner a,
+.courses_grid_item .owner a,
+.courses_pinboard_item .owner a,
+.courses_owner_contact_details > ul > li,
+.courses_test_question_box ._ques ._timer{
+	color:$theme_button_background_color;
+}
+.course_addtocart{
+	border:1px solid $theme_button_background_color;
+}
+.courses_owner_contact_details > ul > li span,
+.courses_owner_contact_details > ul > li span > a,
+.courses_test_question_box ._next_skip ._skip_ques,
+.courses_my_wishlist ._stats a{
+	color:$theme_font_color_light !important;
+}
+.courses_test_question_box ._ans label.checked,
+.courses_test_question_box ._ans label:hover{
+	background:$theme_list_background_color_hover; 
+}
+.courses_test_question_box ._ans label .checkcontainer .checkmark:after {
+  border:1px solid $theme_list_background_color !important;
+}
+.courses_test_question_box .mc_ans label .checkmark:after{
+	color:$theme_button_font_color;
+}
+
+/*CHECKOUT CSS START HERE*/
+.courses_checkout_step_active .courses_checkout_step_head{
+	background-color:$theme_button_background_color;
+}
+.courses_checkout_step_active .courses_checkout_step_head *,
+.courses_welcome_banner_inner .play-btn a{
+	color:$theme_button_font_color;
+}
+/*CHECKOUT CSS END HERE*/
+/*PULLDOWN CSS END HERE*/
+.courses_welcome_discovercourses .discover_bottom ._desc,
+.courses_carousel_deals .courses_welcome_offer,
+.courses_welcome_discovercourses .discover_bottom .discover_lgb ._desc{
+	background:$theme_list_background_color_hover;
+}
+.courses_welcome_branddiscount .brands_discount ._desc a,
+.courses_welcome_discovercourses .discover_large .discover_smb ._desc a,
+.courses_welcome_discovercourses .discover_large .discover_lgb ._desc a, 
+.courses_welcome_discovercourses .discover_bottom ._desc a, 
+.courses_products_carousel .courses_welcomep_products .item ._desc a,
+.courses_welcome_features_inner ._left a{
+	color:$theme_button_background_color;
+}
+#smoothbox_window .courses_test_result {
+	max-width:$theme_content_width;
+	margin:auto;
+}
+#smoothbox_window #global_page_courses-test-print-result #global_content_simple{
+	display:block;
+}
+.courses_dashboard_sub_tabs li._active{
+	background-color:$theme_list_background_color;
+}
+.courses_dashboard_sub_tabs li._active a{
+	color:$theme_button_background_color;
+}
+.courses_browse_wishlist_inner .sesbasic_tip span{
+	color:$theme_font_color !important;
+}
+
+/*WELCOME STORE CSS START HERE*/
+.ecourses_welcome_page,
+.courses_welcome_members_inner > ul > li{
+ background-color:$theme_list_background_color;
+}
+.ecourses_welcome_page #global_wrapper{
+	padding:0 !important;
+}
+.courses_welcome_banner_inner,
+.courses_welcome_features_inner,
+.ecourses_welcome_page .layout_core_container_tabs .layout_courses_browse_courses,
+.courses_welcome_strip_inner,
+.ecourses_welcome_page .layout_eclassroom_browse_classrooms ul,
+.ecourses_welcome_page .sestestimonial_grid_basic,
+.ecourses_welcome_page .layout_sesblog_browse_blogs,
+.courses_welcome_members_inner{
+ max-width:$theme_content_width;
+}
+.ecourses_welcome_page #global_content .layout_main .layout_estore_browse_menu .tabs > ul > li > a{
+ border:1px solid $theme_button_background_color;
+ color:$theme_button_background_color;
+}
+.ecourses_welcome_page #global_content .generic_layout_container > h3:after{
+	content: "";
+  border-bottom:3px solid $theme_button_background_color;
+	width: 80px;
+	position: absolute;
+	left: 50%;
+	margin-left: -40px;
+	bottom: -20px;
+}
+@media (max-width:767px){
+	.courses_banner_search_wrapper ._searchform .form-elements > .form-wrapper{
+	 border-bottom:1px solid $theme_border_color;
+	}
+}
+/*WELCOME STORE CSS END HERE*/
+.courses_welcome_offerblk .offersblk_inner .offer_blk ._desc h5,
+ .courses_welcome_offerblk .offersblk_inner .offer_blk ._desc p, 
+ .courses_welcome_offerblk .offersblk_inner .offer_blk ._desc span._code, 
+ .courses_welcome_offerblk .offersblk_inner .offer_blk ._desc a{
+	color:$theme_list_background_color;
+}
+.courses_welcome_offerblk .offersblk_inner .offer_blk ._desc h5:before,
+.courses_welcome_branddiscount .brands_discount ._desc,
+.courses_welcome_discovercourses .discover_large .discover_smb ._desc,
+.courses_products_carousel .owl-nav >div,
+.courses_carousel_deals .owl-nav >div,
+.courses_carousel_deals .courses_welcome_offer ._desc{
+	background:$theme_list_background_color;
+}
+.courses_welcome_branddiscount .brands_discount ._desc a,
+.courses_welcome_discovercourses .discover_large .discover_smb ._desc a,
+.courses_welcome_discovercourses .discover_large .discover_lgb ._desc a,
+.courses_welcome_discovercourses .discover_bottom ._desc a,
+.courses_products_carousel .courses_welcomep_products .item ._desc a,
+.courses_welcome_strip_inner ._btn a{
+	color:$theme_button_background_color;
+}
+.courses_welcome_discovercourses .discover_bottom ._desc,
+.courses_carousel_deals .courses_welcome_offer,
+.courses_welcome_discovercourses .discover_bottom .discover_lgb ._desc,
+.ecourses_welcome_page #global_content .courses_welcome_members{
+	background:$theme_list_background_color_hover;
+}
+.courses_products_carousel .courses_welcomep_products .item ._desc p,
+.courses_products_carousel .owl-nav >div,
+.courses_carousel_deals .owl-nav >div{
+	color:$theme_font_color;
+}
+.courses_welcome_banner{
+  background: linear-gradient(106deg, #000000, $theme_button_background_color);
+}
+.courses_welcome_strip_inner ._btn{
+	background:$theme_button_font_color;
+}
+.ecourses_welcome_page #global_content .layout_core_html_block h2:before,
+.ecourses_welcome_page #global_content .layout_core_html_block h2:after,
+.ecourses_welcome_page #global_content .courses_welcome_members h2:before,
+.ecourses_welcome_page #global_content .courses_welcome_members h2:after{
+	background: $theme_button_background_color none repeat scroll 0 0;
+}
+.ecourses_welcome_page #global_content .layout_core_html_block p,
+.courses_gutter_photo ._des{
+	color:$theme_font_color_light !important;
+}
+.courses_welcome_members_inner > ._teachers:before{
+	background:$theme_border_color;
+}

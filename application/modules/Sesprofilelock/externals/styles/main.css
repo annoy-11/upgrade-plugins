@@ -1,0 +1,66 @@
+/* $Id: main.css 2016-04-30 00:00:00 SocialEngineSolutions $*/
+
+/*Icon*/
+.sesprofilelock_index_membersblock:before{
+	content:"\\f007";
+}
+/*Widgets*/
+.layout_sesprofilelock_blocked_members,
+.layout_sesprofilelock_most_viewed,
+.layout_sesprofilelock_user_viewed{
+  clear: both;
+  margin-bottom: 15px;
+}
+.sesprofilelock_blocked_members{
+  max-height: 250px;
+  overflow-y: auto;
+}
+/*Blocked Members Widget*/
+.sesprofilelock_user_widget{
+ +foreground;
+ +rounded;
+	padding:5px;
+}
+.sesprofilelock_user_widget li{
+	clear:both;
+	overflow:hidden;
+	padding:3px 5px;
+}
+.sesprofilelock_user_thumb{
+	float:left;
+	margin-right:10px;
+}
+html[dir="rtl"] .sesprofilelock_user_thumb{
+	float:right;
+	margin-left:10px;
+	margin-right:0;
+}
+.sesprofilelock_user_info{
+  overflow: hidden;
+}
+.sesprofilelock_user_name{
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.sesprofilelock_user_stats{
+  font-size: .8em;
+  color: $theme_font_color_light;
+}
+.sesprofilelock_user_stats button{
+  font-size: 12px;
+  padding: 3px 7px;
+}
+/*Block Members Setting Form*/
+.layout_page_sesprofilelock_index_blocked .global_form div.form-element{
+  position: inherit !important;
+}
+/*Show Error Message*/
+.sesprofilelock_error_message{
+  +rounded(5px);
+  background-color: #ff3e47;
+  border:1px solid #f3313a;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
+}

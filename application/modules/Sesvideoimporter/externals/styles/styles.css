@@ -1,0 +1,219 @@
+
+
+/*Listing*/
+.sesimp_listing_item{
+	float:left;
+	margin:0 5px 10px;
+	width:225px;
+}
+.sesimp_listing_item_inner{
+	border-width:1px;
+	border-style:solid;
+	padding:10px;
+	width:100%;
+}
+.sesimp_listing_item_thumb{
+	background-color:#ccc;
+	height:150px;
+	position:relative;
+	width:100%;
+}
+.sesimp_listing_item_thumb_img{
+	background-position:center center;
+	background-size:cover;
+	display:block;
+	height:100%;
+	width:100%;
+}
+.sesimp_listing_item_info{
+	padding:5px 0;
+}
+.sesimp_listing_item_title a{
+	font-weight:bold;
+	white-space:nowrap;
+	display:block;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+.sesimp_listing_item_thumb:after{
+	opacity:0;
+	background-color:rgba(0, 0, 0, .2);
+	content:"";
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	top:0;
+	z-index:1;
+}
+.sesimp_listing_item_play_btn{
+	opacity:0;
+	font-size:40px;
+	width:40px;
+	height:40px;
+	display:block;
+	position:absolute;
+	left:50%;
+	margin-left:-20px;
+	margin-top:-20px;
+	top:50%;
+	z-index:2;
+}
+.sesimp_listing_item_play_btn i:before{
+	color:#fff;
+}
+.sesimp_listing_item_add_btn{
+	opacity:0;
+	position:absolute;
+	right:0;
+	bottom:0;
+	height:30px;
+	width:30px;
+	z-index:2;
+}
+.sesimp_listing_item_add_btn i:before{
+	font-size:16px;
+	float:left;
+	margin:8px 9px;
+}
+/*Hover Effect*/
+.sesimp_listing_item:hover .sesimp_listing_item_inner{
+	background-color:rgba(0, 0, 0, .02);
+}
+.sesimp_listing_item:hover .sesimp_listing_item_thumb:after,
+.sesimp_listing_item:hover .sesimp_listing_item_play_btn,
+.sesimp_listing_item:hover .sesimp_listing_item_add_btn{
+	opacity:1;
+  -webkit-transition:all 500ms ease 0s;
+  -moz-transition:all 500ms ease 0s;
+  -o-transition:all 500ms ease 0s;
+  transition:all 500ms ease 0s;
+}
+.sesimp_listing_item_play_btn:hover,
+.sesimp_listing_item_add_btn:hover{
+	opacity:.8;
+}
+
+
+/*Popup*/
+.sesimp_popup{
+	margin:10px 0 0 10px;
+}
+.sesimp_popup_close{
+	padding-top:10px;
+}
+
+/*Search Widget*/
+.sesimp_search {
+	margin:0 5px 15px;
+}
+.sesimp_search #filter_form,
+.sesimp_search #filter_form > div{
+  padding:0;
+}
+.sesimp_search #filter_form > div > div{
+  padding:10px;
+}
+.sesimp_search #filter_form > div > div:after,
+.sesimp_search .form-elements:after{
+  display:block;
+  content:'';
+  clear:both;
+}
+.sesimp_search .form-elements{
+  border-radius:3px;
+  border-width:1px;
+  padding:5px;
+	position:relative;
+  width:100%;
+}
+.sesimp_search .form-wrapper{
+  margin:0 !important;
+}
+.sesimp_search .form-label{
+  display:none;
+}
+.sesimp_search #genres-wrapper{
+  float:left;
+  width:150px;
+}
+[dir="rtl"] .sesimp_search #genres-wrapper{
+  float:right;
+} 
+.sesimp_search #text-wrapper{
+  overflow:hidden;
+}
+.sesimp_search .form-wrapper select,
+.sesimp_search .form-wrapper input{
+  background:none;
+  border-width:0;
+  border-radius:0;
+	height:25px;
+  padding:0;
+  outline:none;
+  width:100%;
+}
+.sesimp_search .form-wrapper input{
+  padding-left:10px;
+}
+[dir="rtl"] .sesimp_search .form-wrapper input{
+  padding-left:0;
+  padding-right:10px;
+}
+.sesimp_search #submit-wrapper{
+	position:absolute;
+	right:3px;
+	top:3px;
+}
+[dir="rtl"] .sesimp_search #submit-wrapper{
+	left:3px;
+	right:inherit;
+}
+.sesimp_search #submit-wrapper button{
+	height:30px;
+	text-indent:-999px;
+	width:30px;
+	position:relative;
+	background:none;
+	border-width:0;
+}
+.sesimp_search #submit-element button:before{
+	content:"\f002";
+	font-family:FontAwesome;
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	position:absolute;
+	font-size:14px;
+	top:7px;
+	right:8px;
+	text-indent:0;
+}
+[dir="rtl"] .sesimp_search #submit-element button:before{
+	left:8px;
+	right:inherit;
+}
+.sesimp_search #loadingimgsesvideoimporter-wrapper{
+	position:absolute;
+	right:30px;
+	top:10px;
+}
+[dir="rtl"] .sesimp_search #loadingimgsesvideoimporter-wrapper{
+	left:30px;
+	right:inherit;
+}
+@media only screen and (max-width:768px){
+	.sesimp_listing_item{width:32%;margin:0 .666% 10px;}
+	.sesimp_listing_item_add_btn{display:block;opacity:1;}
+	.sesimp_search #genres-wrapper{float:left !important;width:100px !important;}
+	.sesimp_search #text-wrapper {display: block;width: auto !important;}
+	.sesimp_search #submit-wrapper{width:auto !important;}
+}
+@media only screen and (max-width:480px){
+	.sesimp_listing_item{width:48%;margin:0 1% 10px;}
+}
+@media only screen and (max-width:320px){
+	.sesimp_listing_item{width:100%;}
+}

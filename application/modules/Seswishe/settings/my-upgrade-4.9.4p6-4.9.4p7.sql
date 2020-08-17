@@ -1,0 +1,1 @@
+UPDATE `engine4_core_menuitems` SET `params` = '{"route":"seswishe_general","action":"create", "class":"sessmoothbox"}' WHERE `engine4_core_menuitems`.`name` = "seswishe_main_create";

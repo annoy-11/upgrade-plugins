@@ -1,0 +1,1 @@
+ALTER TABLE `engine4_sesfaq_faqs` ADD `order` INT(11) NOT NULL;

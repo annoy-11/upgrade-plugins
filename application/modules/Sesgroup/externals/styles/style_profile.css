@@ -1,0 +1,1414 @@
+
+#global_group_sesgroup-profile-index #global_wrapper{
+	background-position:top center;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+/*ALBUM COMPOSER*/
+.advact_compose_photo_item .sesgroup_upload_item_abort{
+	position:absolute;
+	bottom:10px;
+	top:inherit;
+	text-align:center;
+	width:100%;
+	z-index:3;
+}
+.advact_compose_photo_item .sesgroup_upload_item_abort span{
+	background-color:#d9534f;
+	border:1px solid #d43f3a;
+	border-radius:3px;
+	color:#fff;
+	cursor:pointer;
+	display:inline-block;
+	font-size:11px;
+	padding:3px 5px;
+}
+.advact_compose_photo_item .sesgroup_upload_item_abort span:hover{
+	background-color:#c9302c;
+}
+[dir="rtl"] .advact_compose_photo_item .sesgroup_upload_item_abort{
+	text-align:center;
+}
+.advact_compose_photo_item .sesgroup_upload_item_options{
+	position:absolute;
+	top:5px;
+	right:3px;
+	z-index:2;
+}
+[dir="rtl"] .advact_compose_photo_item .sesgroup_upload_item_options{
+	left:3px;
+	right:inherit;
+}
+.advact_compose_photo_item .sesgroup_upload_item_options a{
+	height:16px;
+	line-height:16px;
+	float:left;
+	text-align:center;
+	margin:0 2px !important;
+	width:16px;
+}
+[dir="rtl"] .advact_compose_photo_item .sesgroup_upload_item_options a{
+	float:right;
+}
+.advact_compose_photo_item .sesgroup_upload_item_options a i:before{
+	color:#fff;
+	font-size:15px;
+	text-shadow:0 0 2px rgba(0, 0, 0, .5);
+}
+/*ACTION BUTTON CSS START HERE*/
+.sesgroup_profile_action_button .sesgroup_button{
+	display:block;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	border-radius:5px;
+	font-weight:bold;
+}
+.sesgroup_profile_action_button ._tip{
+	filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	-webkit-filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	border-radius:5px;
+	content:"";
+	position:absolute;
+	padding:10px;
+	text-align:center;
+	min-width:100%;
+	margin-top:8px;
+	line-height:25px;
+	display:none;
+}
+.sesgroup_profile_action_button:hover ._tip{
+	display:block;
+}
+.sesgroup_profile_action_button ._tip:before{
+	width:0; 
+	height:0; 
+	border-left:8px solid transparent;
+	border-right:8px solid transparent;
+	position:absolute;
+	top:-8px;
+	left:50%;
+	transform:translateX(-50%);
+	content:"";
+}
+.sesgroup_profile_action_button:hover .sesbasic_pulldown_options{
+	display:block !important;
+	margin-top:5px;
+}
+.sesgroup_profile_action_button:hover .sesbasic_pulldown_options:before{
+	left:10px;
+	right:auto;
+}
+.sesgroup_profile_action_button:hover .sesbasic_pulldown_options a{
+	border-radius:0;
+}
+/*Popup*/
+.sesgroup_profile_button_action_popup{
+	width:600px;
+}
+.sesgroup_profile_button_action_popup ._header{
+	background-image:url(../images/transprant-bg.png);
+	padding:10px 15px;
+	font-weight:bold;
+	border-bottom-width:1px;
+}
+.sesgroup_profile_button_action_popup ._footer,
+.sesgroup_profile_button_action_link_popup_cont ._footer{
+	border-top-width:1px;
+	padding:10px 15px;
+}
+.sesgroup_profile_button_action_popup ._footer ._text{
+	float:left;
+	line-height:35px;
+}
+.sesgroup_profile_button_action_popup ._footer ._btns,
+.sesgroup_profile_button_action_link_popup_cont ._footer ._btns{
+	float:right;
+}
+.sesgroup_profile_button_action_popup ._footer ._btns a,
+.sesgroup_profile_button_action_link_popup_cont ._footer ._btns a{
+	float:left;
+	margin-left:5px;
+	height:35px;
+	padding:0 25px;
+	line-height:35px;
+	border-radius:3px;
+	background-image:none;
+}
+.sesgroup_profile_button_action_popup ._footer ._btns a.disabled{
+	opacity:.5;
+}
+.sesgroup_profile_button_action_popup ._contmain{
+	padding:20px;
+}
+.sesgroup_profile_button_action_popup .button_preview{
+	margin-bottom:30px;
+}
+.sesgroup_profile_button_action_popup .button_preview ._text{
+	font-size:17px;
+	font-weight:bold;
+	line-height:35px;
+}
+.sesgroup_profile_button_action_popup .button_preview ._btn a{
+	display:block;
+	text-align:center;
+	height:35px;
+	line-height:35px;
+	border-radius:5px;
+	font-weight:bold;
+	width:150px;
+}
+.sesgroup_profile_button_action_popup ._contmaintop ._des{
+	font-size:12px;
+	margin-top:10px;
+}
+.sesgroup_profile_button_action_popup .btn_type_options{
+	margin-top:15px;
+	border-width:1px;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li + li{
+	border-top-width:1px;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li:hover,
+.sesgroup_profile_button_action_popup .btn_type_options li._op_selected_{
+	background-image:url(../images/transprant-bg.png);
+}
+.sesgroup_profile_button_action_popup .btn_type_options li > div:not(.op_fields){
+	padding:15px;
+	cursor:pointer;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li ._ico{
+	float:left;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li ._ind{
+	float:right;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li ._ind:before{
+	content:"\f107";
+}
+.sesgroup_profile_button_action_popup .btn_type_options li._op_selected_ ._ind:before{
+	content:"\f106";
+}
+.sesgroup_profile_button_action_popup .btn_type_options li ._tit{
+	overflow:hidden;
+	display:block;
+	padding:0 10px;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li > div.op_fields{
+	padding:15px;
+	border-top-width:1px;
+	display:none;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li._op_selected_ > div.op_fields{
+	display:block;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li > div.op_fields p{
+	padding:5px 0;
+	float:left;
+	width:50%;
+}
+.sesgroup_profile_button_action_popup .btn_type_options li > div.op_fields p input[type="radio"]{
+	margin:0px 10px 0px 0px
+}
+.sesgroup_profile_button_action_popup ._selectedresult{
+	padding-bottom:20px;
+	border-bottom-width:1px;
+	margin-bottom:20px;
+}
+.sesgroup_profile_button_action_popup ._selectedresult p._text{
+	font-size:17px;
+	line-height:40px;
+}
+.sesgroup_profile_button_action_popup ._selectedresult p._text i{
+	margin-right:5px;
+}
+.sesgroup_profile_button_action_popup ._selectedresult p._btn a{
+	float:left;
+	margin-left:5px;
+	height:35px;
+	padding:0 25px;
+	line-height:35px;
+	border-radius:3px;
+	background-image:none;
+	font-weight:bold;
+}
+.sesgroup_profile_button_action_popup ._selectedresult._stepsuccessmsg{
+	margin-bottom:0;
+	border-width:0;
+}
+.sesgroup_profile_button_action_popup .step2_ops{
+	border-width:1px;
+	margin-top:15px;
+}
+.sesgroup_profile_button_action_popup .step2_ops li + li{
+	border-top-width:1px;
+}
+.sesgroup_profile_button_action_popup .step2_ops li a{
+	padding:15px;
+	display:block;
+	text-decoration:none !important;
+}
+.sesgroup_profile_button_action_popup .step2_ops li:hover a{
+	background-image:url(../images/transprant-bg.png);
+}
+.sesgroup_profile_button_action_popup .step2_ops ._icon{
+	border-radius:50%;
+	height:44px;
+	width:44px;
+	border-width:1px;
+	margin-right:15px;
+	box-shadow:0 0 5px rgba(0, 0, 0, .05);
+}
+.sesgroup_profile_button_action_popup .step2_ops ._icon:before{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+}
+.sesgroup_profile_button_action_popup .step2_ops ._cont{
+	overflow:hidden;
+	display:block;
+}
+.sesgroup_profile_button_action_popup .step2_ops ._cont p{
+	margin-top:5px;
+}
+.sesgroup_profile_button_action_link_popup{
+	background-color:rgba(0, 0, 0, 0.4);
+	position:fixed !important;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	display:none;
+}
+.sesgroup_profile_button_action_link_popup_cont{
+	border-radius:5px;
+	position:absolute;
+	top:180px;
+	left:50%;
+	transform:translateX(-50%);
+	width:500px;
+}
+.sesgroup_profile_button_action_link_popup_cont ._field{
+	padding:20px;
+}
+.sesgroup_profile_button_action_link_popup_cont ._field input{
+	width:100%;
+	margin-top:10px;
+	padding:0 10px;
+	line-height:35px;
+	height:35px;
+}
+/*ACTION BUTTON CSS END HERE*/
+/*TIPS CSS START HERE*/
+.layout_sesgroup_profile_tips{
+	background:none !important;
+	border-width:0 !important;
+	padding:0 !important;
+}
+.layout_sesgroup_profile_tips > h3{
+	display:none !important;
+}
+.sesgroup_profile_tips{
+	border-radius:5px;
+	border-width:1px;
+	overflow:hidden;
+	position:relative;
+}
+.sesgroup_profile_tips_header{
+	padding:20px 150px 20px 20px;
+}
+.sesgroup_profile_tips_header ._heading{
+	font-size:17px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.sesgroup_profile_tips_header ._remove{
+	position:absolute;
+	height:20px;
+	width:20px;
+	text-align:center;
+	line-height:20px;
+	right:0;
+	top:0;
+	z-index:1;
+}
+.sesgroup_profile_tips_header ._des{
+	font-size:12px;	
+}
+.sesgroup_profile_tips_header ._img{
+	position:absolute;
+	right:0;
+	bottom:0;
+	max-width:130px;
+	background-image:url(../images/icons/tip.svg);
+	height:100%;
+	width:100px;
+	display:block;
+	background-size:70%;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.sesgroup_profile_tips ._tips li{
+	border-top-width:1px;
+	padding:20px 15px;
+}
+.sesgroup_profile_tips ._tips li:hover{
+	background-image:url(../images/transprant-bg.png);
+}
+.sesgroup_profile_tips ._tips li i{
+	background-repeat:no-repeat;
+	background-position:center;
+	float:left;
+	width:24px;
+	height:24px;
+	margin:0 15px 0 0;
+}
+.sesgroup_profile_tips ._tips li._address i{
+	background-image:url(../images/icons/location-add.svg);
+}
+.sesgroup_profile_tips ._tips li._profilephoto i{
+	background-image:url(../images/icons/profile-photo-add.svg);
+}
+.sesgroup_profile_tips ._tips li._coverphoto i{
+	background-image:url(../images/icons/cover-add.svg);
+}
+.sesgroup_profile_tips ._tips li._username i{
+	background-image:url(../images/icons/username-add.svg);
+}
+.sesgroup_profile_tips ._tips ._btn{
+	float:right;
+	margin-left:20px;
+	margin-top:10px;
+}
+.sesgroup_profile_tips ._tips ._btn a{
+	display:block;
+	padding:7px 10px;
+	font-weight:bold;
+	border-radius:3px;
+	font-size:12px;
+}
+.sesgroup_profile_tips ._tips li ._cont{
+	display:block;
+	overflow:hidden;
+	font-size:12px;
+}
+.sesgroup_profile_tips ._tips li ._cont ._title{
+	font-weight:bold;
+	margin-bottom:5px;
+}
+/*TIPS CSS END HERE*/
+/*OPEN HOUR CSS START HERE*/
+.sesgroup_opningtime_block ._timezone{
+	margin-bottom:5px;
+	text-align:right;
+	text-decoration:underline;
+}
+.sesgroup_opningtime_block > ._text{
+	text-align:center;
+	font-size:16px;
+}
+.sesgroup_opningtime_block .opningtime:not(.showall) ._day{
+	display:none;
+}
+.sesgroup_opningtime_block .opningtime ._day:nth-child(1){
+	display:block;
+	padding-right:10px;
+	position:relative;
+}
+.sesgroup_opningtime_block .opningtime ._day:nth-child(1) *{
+	font-weight:bold;
+}
+.sesgroup_opningtime_block .opningtime:not(.showall) ._day:nth-child(1):after{
+	content:"\f078";
+	font-family:FontAwesome;
+	position:absolute;
+	right:0;
+	top:4px;
+	font-size:10px;
+}
+.sesgroup_opningtime_block .opningtime ._day .label{
+	float:left;
+	width:85px;
+	margin-right:5px;
+	line-height:22px;
+	font-size:12px;
+}
+.sesgroup_opningtime_block .opningtime ._day .time{
+	display:block;
+	overflow:hidden;
+	line-height:22px;
+	font-size:12px;
+}
+.sesgroup_opningtime_block .opningtime ._day ._closed{
+	color:#f00;
+}
+/*OPEN HOUR CSS END HERE*/
+/*PROFILE TABS CONTENT CSS START*/
+.sesgroup_profile_content_search{
+	padding:10px 0;
+	border-bottom-width:1px;
+	margin-bottom:10px;
+}
+.sesgroup_profile_content_search > div{
+	float:left;
+	padding-right:10px;
+}
+.sesgroup_profile_content_search > div._input{
+	width:40%
+}
+.sesgroup_profile_content_search > div._select{
+	width:25%;
+}
+.sesgroup_profile_content_search > div._addbtn{
+	width:35%;
+	float:right;
+	padding-right:0;
+}
+.sesgroup_profile_content_search > div._addbtn a{
+	float:right;
+	padding:0 10px;
+}
+.sesgroup_profile_content_search > div input[type="text"],
+.sesgroup_profile_content_search > div select{
+	height:30px;
+	padding:0 10px;
+	line-height:30px;
+	width:100%;	
+}
+.layout_right .sesgroup_profile_content_search > div{
+	padding:0 5px;
+}
+.layout_right .sesgroup_profile_content_search > div._input,
+.layout_right .sesgroup_profile_content_search > div._select{
+	width:50%;
+}
+.sesgroup_profile_content_search > div._addbtn{
+	margin-top:10px;
+}
+.sesgroup_profile_content_total{
+	padding:0 0 10px;
+}
+.sesgroup_profile_content_total ._count{
+	float:left;
+}
+.sesgroup_profile_content_total ._links{
+	float:right;
+}
+/*PROFILE TABS CONTENT CSS END*/
+/*PROFILE MEMBERS WIDGET CSS START HERE*/
+.sesgroup_profile_members_listing_container ._head{
+	font-weight:bold;
+	padding:10px 0;
+	border-bottom-width:1px;
+}
+.sesgroup_profile_members_listing{
+	margin-bottom:20px;
+}
+.sesgroup_profile_members_list_item{
+	padding:10px 0;
+}
+.sesgroup_profile_members_list_item article{
+ -ms-box-orient:horizontal;
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-moz-flex;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-justify-content:flex-start;
+  justify-content:flex-start;
+  -webkit-flex-flow:row wrap;
+  flex-flow:row wrap;
+  -webkit-align-items:stretch;
+  align-items:stretch;
+}
+.sesgroup_profile_members_list_item ._thumb{
+	margin-right:10px;
+	width:80px;
+	height:80px;
+}
+.sesgroup_profile_members_list_item ._thumb > a,
+.sesgroup_profile_members_list_item ._thumb > a span{
+	border-width:0;
+	display:block;
+	width:100%;
+	height:100%;
+}
+.sesgroup_profile_members_list_item ._btns{
+	margin-left:10px;
+}
+.sesgroup_profile_members_list_item ._btns > div{
+	float:left;
+}
+.sesgroup_profile_members_list_item ._btns > div > a{
+	margin-left:5px;
+	height:30px;
+	line-height:28px;
+	padding:0 10px;
+}
+.sesgroup_profile_members_list_item ._btns ._option > a{
+	height:30px;
+	width:30px;
+	text-align:center;
+	padding:0;
+}
+.sesgroup_profile_members_list_item ._btns ._option > a i{
+	margin:0;
+	float:none;
+}
+.sesgroup_profile_members_list_item ._btns .sesbasic_pulldown_options{
+	width:160px;
+	margin-left:-120px;
+}
+.sesgroup_profile_members_list_item ._cont{
+	flex:2;
+}
+.sesgroup_profile_members_list_item ._cont ._name,
+.sesgroup_profile_members_list_item ._cont ._role{
+	font-weight:bold;
+}
+.sesgroup_profile_members_list_item ._cont ._role,
+.sesgroup_profile_members_list_item ._cont ._date{
+	margin-top:5px;
+	font-size:.9em;
+}
+.sesgroup_profile_members_list_item ._cont ._ques{
+	font-weight:bold;
+	font-size:.9em;
+	margin-top:5px;
+}
+.sesgroup_profile_members_list_item ._cont ._ans{
+	font-size:.9em;
+}
+
+.sesgroup_profile_members ._seeall_link{
+	border-top-width:1px;
+	padding:10px;
+	text-align:center;
+}
+/*PROFILE MEMBERS WIDGET CSS END HERE*/
+/*MAIN PHOTO & VERTICAL TABS CSS START HERE*/
+.layout_sesgroup_profile_main_photo{
+	padding:0 !important;
+	background:none !important;
+	box-shadow:none !important;
+	border-width:0 !important;
+}
+.sesgroup_mainphoto_block ._mainphoto{
+	position:relative;
+}
+.sesgroup_mainphoto_block ._mainphoto img{
+	width:100%;
+	max-width:100%;
+}
+.sesgroup_profile_mainphoto_change_btn{
+	left:10px;
+	top:10px;
+	display:block;
+	right:inherit;
+	position:absolute;
+}
+.sesgroup_profile_mainphoto_change_btn > a{
+	border-radius:50%;
+	height:30px;
+	width:30px;
+	padding:0;
+	display:none;
+}
+.sesgroup_profile_mainphoto_change_btn > a i{
+	color:#fff;
+	float:left;
+	line-height:25px;
+	height:25px;
+	margin-right:5px;
+	text-align:center;
+	width:25px;
+	font-size:17px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .5);
+}
+.sesgroup_mainphoto_block ._mainphoto:hover .sesgroup_profile_mainphoto_change_btn > a,
+.sesgroup_profile_mainphoto_change_btn > a.open{
+	display:block;
+}
+.sesgroup_profile_mainphoto_change_btn > a.open + .sesbasic_option_box{
+	display:block;
+	margin-top:10px;
+	margin-left:-8px;
+}
+.sesgroup_profile_mainphoto_change_btn .sesbasic_option_box > i{
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	height:0;
+	left:9px;
+	position:absolute;
+	top:-10px;
+	width:0;
+}
+
+.sesgroup_mainphoto_block ._cont{
+	margin-top:10px;
+}
+.sesgroup_mainphoto_block ._cont h2{
+	margin:0;
+	font-size:22px;
+}
+.sesgroup_mainphoto_block ._cont p{
+	margin-top:10px;
+}
+.sesgroup_mainphoto_block ._vtabs{
+	margin-top:10px;
+}
+.sesgroup_mainphoto_block ._vtabs .tabs_alt,
+.sesgroup_mainphoto_block ._vtabs .tabs_alt > ul{
+	border-width:0 !important;
+	background:none !important;
+	padding:0;
+	width:100%;
+}
+.sesgroup_mainphoto_block ._vtabs .tabs_alt > ul > li{
+	border-radius:0 !important;
+	border-width:0 !important;
+	display:block;
+	background-color:transparent !important;
+	padding:0 !important;
+	margin:0 0 5px !important;
+	position:relative;
+	width:100%;
+}
+.sesgroup_mainphoto_block ._vtabs .tabs_alt > ul > li > a{
+	border-radius:0 !important;
+	border-width:0 !important;
+	display:block;
+	padding:8px 10px !important;
+	position:inherit;
+	height:auto;
+	line-height:initial;
+	text-align:left;
+}
+/*MAIN PHOTO & VERTICAL TABS CSS END HERE*/
+/*ANNOUCEMENTS TAB CSS START HERE*/
+.sesgroup_profile_announcements ._item + ._item{
+	padding-top:20px;
+	margin-top:20px;
+	border-top-width:1px;
+}
+.sesgroup_profile_announcements ._item h3{
+	background:none !important;
+	border-width:0 !important;
+	box-shadow:none !important;
+	margin:0 0 5px;
+	padding:0;
+	font-size:125%;
+}
+.sesgroup_profile_announcements ._item ._date{
+	font-size:12px;
+}
+.sesgroup_profile_announcements ._item ._body{
+	margin-top:10px;
+}
+/*ANNOUCEMENTS TAB CSS END HERE*/
+/*OPTIONS DROPDOWN CSS START HERE*/
+.sesgroup_options_dropdown{
+	position:absolute;
+	display:none;
+	z-index:99;
+}
+.sesgroup_options_dropdown.show-options{
+	display:block;
+}
+.sesgroup_options_dropdown_arrow{
+	width:0;
+	height:0;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	float:right;
+	margin-right:13px;
+}
+.sesgroup_options_dropdown_links{
+	clear:both;
+	width:180px;
+}
+.sesgroup_options_dropdown_links .layout_sesgroup_profile_options{
+	margin:0 !important;
+}
+.sesgroup_options_dropdown_links li{
+	margin:0 !important;
+	padding:0 !important;
+}
+.sesgroup_options_dropdown_links li a{
+	padding:10px 10px 10px 30px !important;
+	display:block !important;
+	line-height:normal !important;
+	font-size:12px !important;
+	position:relative !important;
+}
+.sesgroup_options_dropdown_links li a:before{
+	position:absolute;
+	left:10px !important;
+}
+/*OPTIONS DROPDOWN CSS END HERE*/
+/*LABELS CSS START HERE*/
+.sesgroup_view_labels{
+	bottom:20px;
+	position:absolute;
+	left:20px;
+	text-align:center;
+	z-index:1;
+}
+.sesgroup_view_labels span{
+	display:inline-block;
+	border-radius:50%;
+	height:20px;
+	width:20px;
+	color:#fff;
+	margin:0 2px;
+	box-shadow:0 0 5px rgba(0, 0, 0, .5);
+	border:1px solid #fff;
+	font-size:12px;
+}
+.sesgroup_view_sidebar_labels{
+	text-align:center;
+}
+.sesgroup_view_sidebar_labels span{
+	display:inline-block;
+	border-radius:50%;
+	height:30px;
+	width:30px;
+	color:#fff;
+	margin:0 2px;
+	box-shadow:0 0 5px rgba(0, 0, 0, .5);
+	border:1px solid #fff;
+	font-size:17px;
+	line-height:28px;
+	margin:0 5px;
+}
+.sesgroup_view_sidebar_labels .label_verified{
+	background-color:#5890ff;
+}
+/*LABELS CSS END HERE*/
+/*Status*/
+.sesgroup_view_status{
+
+}
+.sesgroup_view_status span{
+	border-radius:20px;
+	color:#fff;
+	display:block;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+}
+.sesgroup_view_status ._open{
+	background-color:#17b138;
+	color:#fff;
+}
+.sesgroup_view_status ._close{
+	background-color:#dc1c1c;
+	color:#fff;
+}
+/*People Liked group*/
+.sesgroup_people_like_field + .sesgroup_people_like_field{
+	margin-top:10px;
+}
+.sesgroup_people_like_title{
+	margin-bottom:5px;
+	border-bottom-width:1px;
+	padding-bottom:5px;
+}
+.sesgroup_people_like_title i{
+	float:left;
+	margin-right:5px;
+	margin-top:2px;
+	font-size:15px;
+}
+.sesgroup_people_like_title i.fa-thumbs-up{
+	color:#02adea;
+}
+.sesgroup_people_like_title i.fa-heart{
+	color:#ff4c4c;
+}
+.sesgroup_people_like_title i.fa-users{
+	color:#42a62a;
+}
+.sesgroup_people_like_title span{
+	display:block;
+	font-weight:600;
+	font-size:15px;
+}
+.sesgroup_people_like_list{
+	float:left;
+	padding:2px;
+}
+.sesgroup_people_like_list_img{
+	width:50px;
+	height:50px;
+	display:block;
+	position:relative;
+}
+.sesgroup_people_like_list_img span{
+	height:100%;
+	width:100%;
+	display:block;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.sesgroup_more_link a{
+	text-align:center;
+	color:#fff;
+	font-size:15px;
+	display:block;
+}
+/*Contact Information*/
+.sesgroup_owner_contact_details li + li{
+	border-top-style:dashed;
+	border-top-width:1px;
+	margin-top:5px;
+	padding-top:5px;
+}
+.sesgroup_owner_contact_name{
+	font-weight:bold;
+}
+.sesgroup_owner_contact_details li > i{
+	float:left;
+	margin-right:5px;
+	margin-top:2px;
+	text-align:center;
+	width:20px;
+}
+.sesgroup_owner_contact_details li > i:before{
+	font-size:15px;
+}
+.sesgroup_owner_contact_details li > i.fa-mobile:before{
+	font-size:18px;
+}
+.sesgroup_owner_contact_details li span{
+	display:block;
+	font-size:12px;
+	line-height:20px;
+	overflow:hidden;
+	word-wrap:break-word
+}
+.sesgroup_owner_contact_social{
+	text-align:center;
+}
+.sesgroup_owner_contact_social a{
+	margin:5px 2px 0;
+	display:inline-block;
+	height:24px;
+	width:24px;
+	line-height:24px;
+}
+.sesgroup_owner_contact_social a:hover{
+	opacity:.8;
+}
+.sesgroup_owner_contact_social a._facebook{
+	background-color:#4267b2 !important;
+}
+.sesgroup_owner_contact_social a._twitter{
+	background-color:#1da1f2 !important;
+}
+.sesgroup_owner_contact_social a._linkedin{
+	background-color:#0077b5 !important;
+}
+
+.layout_sesgroup_like_button,  .layout_sesgroup_advance_share,  .layout_sesgroup_join_group,  .layout_sesgroup_follow_button,  .layout_sesgroup_favourite_button,  .layout_sesgroup_save_button,  .layout_sesgroup_group_status,  .layout_sesgroup_group_quick_create,  .layout_sesgroup_browse_menu_quick{
+	background:none !important;
+	border-width:0 !important;
+	box-shadow:none !important;
+	padding:0 !important;
+}
+.sesgroup_sidebar_button a{
+	border-radius:20px;
+	display:block;
+	text-align:center;
+	padding:4px;
+	line-height:200%;
+}
+.sesgroup_sidebar_button a i{
+	margin-right:10px;
+}
+.layout_sesgroup_vote_button .sesgroup_sidebar_button{
+	text-align:center;
+}
+.layout_sesgroup_vote_button .sesgroup_sidebar_button p{
+	margin:5px 0;
+}
+.layout_sesgroup_vote_button .sesgroup_sidebar_button p b{
+	display:block;
+	margin-top:5px;
+}
+/*Owner Photo*/
+.sesgroup_owner_photo .sesgroup_owner_photo_img{
+	border-radius:50%;
+	overflow:hidden;
+	height:150px;
+	width:150px;
+	margin:0 auto;
+}
+.sesgroup_owner_photo .sesgroup_owner_photo_img a{
+	height:100%;
+	display:block;
+}
+.sesgroup_owner_photo .sesgroup_owner_photo_img a img{
+	object-fit:cover;
+	height:100%;
+	width:100%;
+}
+.sesgroup_owner_photo .sesgroup_owner_photo_name{
+	text-align:center;
+	font-weight:bold;
+	font-size:17px;
+	margin-top:10px;
+}
+/*Profile Info*/
+.sesgroup_profile_info_col{
+	width:50%;
+	padding:10px;
+	float:left;
+}
+.sesgroup_profile_info_row{
+	margin-bottom:20px;
+}
+.sesgroup_profile_info_head{
+	font-size:17px;
+	border-bottom-width:1px;
+	padding:10px;
+	margin-bottom:10px;
+}
+.sesgroup_profile_info_row_info,
+.sesgroup_profile_info_contact_info{
+	margin:10px;
+}
+.sesgroup_profile_info_row_info li,
+.sesgroup_profile_info_row_info .sesbasic_list_customfield{
+	margin:0 0 10px;
+}
+.sesgroup_profile_info_row_info li > span._l,
+.sesgroup_view_custom_fields .sesbasic_list_customfield_lable{
+	width:150px;
+	float:left;
+	font-weight:600;
+	padding-right:10px;
+	margin:0;
+}
+.sesgroup_profile_info_row_info li > span._v{
+	overflow:hidden;
+	display:block;
+}
+.sesgroup_profile_info_row_info li p{
+	line-height:180%;
+}
+.sesgroup_profile_info_contact_info ul li{
+	margin-bottom:10px;
+	line-height:100%;
+}
+.sesgroup_profile_info_contact_info ul li i{
+	float:left;
+	width:16px;
+	height:16px;
+	font-size:80%;
+	text-align:center;
+	margin-right:5px;
+	position:relative;
+}
+.sesgroup_profile_info_contact_info ul li i:before{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+.sesgroup_profile_info_contact_info ul li i.fa-mobile{
+	font-size:18px;
+}
+.sesgroup_profile_info_contact_info ul li span{
+	overflow:hidden;
+	display:block;
+}
+.sesgroup_profile_info_row_info_map{
+	background-color:#ddd;
+	position:relative;
+	height:250px;
+}
+/*Group sidebar profile info*/
+.sesgroup_sidebar_info_block li{
+	margin-bottom:10px;
+	font-size:90%;
+}
+.sesgroup_sidebar_info_block li > i{
+	float:left;
+	margin-right:5px;
+	margin-top:3px;
+	width:14px;
+	text-align:center;
+}
+.sesgroup_sidebar_info_block li > span{
+	display:block;
+	overflow:hidden;
+}
+.sesgroup_sidebar_info_block li.sesgroup_list_stats > span b{
+	display:block;
+	margin-bottom:5px;
+}
+/*Linked Groups Listing CSS*/
+.sesgroup_linked_groups_block{
+	padding:0;
+}
+.sesgroup_linked_groups_block ._itembtns{
+	margin-top:10px;
+}
+.sesgroup_linked_groups_block ._itembtns a{
+	margin:0 5px 5px 0;
+}
+.sesgroup_linked_groups_block ._itembtns .sesgroup_join_button{
+	padding:0 10px;
+	float:left;
+	height:30px;
+	line-height:30px;
+	border-radius:3px;
+	font-weight:bold;
+}
+.layout_sesgroup_group_liked .sesbasic_sidebar_list_title{
+	margin-top:15px;
+}
+/*PHOTO UPDATE POPUP CSS START HERE*/
+.sesgroup_link_content_popup_overlay{
+	background:#000 none repeat scroll 0 0 !important;
+	bottom:0;
+	display:none;
+	height:auto;
+	left:0;
+	min-height:100%;
+	opacity:0.6;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:99;
+}
+.sesgroup_link_content_popup{
+	bottom:0;
+	display:none;
+	height:100%;
+	left:0;
+	overflow-y:auto;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:100;
+}
+.sesgroup_link_content_popup_content{
+	border-radius:5px;
+	margin:100px auto;
+	position:relative;
+	width:600px;
+	z-index:1001;
+}
+.sesgroup_link_content_content_inner{
+	padding:20px;
+}
+.sesgroup_link_content_popup_heading{
+	text-align:center;
+}
+.sesgroup_link_content_popup_heading h2{
+	font-size:20px;
+	margin-bottom:15px;
+	font-weight:bold;
+	letter-spacing:normal;
+}
+.sesgroup_photo_update_popup{
+	position:fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index:99;
+}
+.sesgroup_photo_update_popup_overlay{
+	background-color:rgba(0, 0, 0, .1);
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:99;
+}
+.sesgroup_photo_update_popup_container{
+	border:5px solid #ccc;
+	border-radius:5px;
+	left:50%;
+	margin-left:-330px;
+	position:absolute;
+	top:20px;
+	width:660px;
+	z-index:100;
+}
+.sesgroup_photo_update_popup_header{
+  background-image:url(../images/t-img-light.png);
+  border-bottom-width:1px;
+  font-size:15px;
+  font-weight:bold;
+  line-height:40px;
+  padding:0 10px;
+}
+.sesgroup_photo_update_popup_header > a{
+	padding:13px 0px;
+}
+.sesgroup_photo_update_popup_header .fa{
+  float:right;
+	text-decoration:none !important;
+}
+.sesgroup_photo_update_popup_content{
+	height:450px;
+	width:100%;
+}
+.sesgroup_photo_update_popup_content .tip{
+	text-align:center;
+	margin-top:20px;
+}
+.sesgroup_photo_update_popup_content .tip > span{
+	float:none;
+}
+.sesgroup_update_album_row{
+	clear:both;
+	padding:10px;
+	border-bottom-width:1px;
+}
+.sesgroup_update_album_row:last-child{
+	border-bottom:none;
+}
+.sesgroup_update_album_row .sesgroup_name{
+	display:block;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.sesgroup_update_album_row .sesgroup_thumb{
+	float:left;
+	margin:7px;
+	width:142px;
+}
+.sesgroup_update_album_row .sesgroup_thumb span.bg_item_photo{
+	width:100% !important;
+	height:142px;
+}
+.sesgroup_photo_update_webcam_container{
+	margin-left:-180px;
+	width:360px;
+}
+.sesgroup_photo_update_popup_webcam_options{
+	padding:15px;
+}
+.sesgroup_photo_update_popup_webcam_options #sesgroup_camera{
+	margin:0 auto;
+}
+.sesgroup_photo_update_popup_webcam_options #sesgroup_camera video{
+	height:300px;
+}
+.sesgroup_photo_update_popup_btns{
+	margin-top:10px;
+}
+/*PHOTO UPDATE POPUP CSS END HERE*/
+/*SERVICES TAB CSS START HERE*/
+.sesgroup_profile_services_listing ._services{
+	padding:15px;
+	border-width:1px;
+	border-radius:5px;
+	align-items:center;
+	margin-bottom:15px;
+}
+.sesgroup_profile_services_listing ._services ._thumb{
+	float:right;
+	margin-left:15px;
+	width:100px;
+}
+.sesgroup_profile_services_listing ._services ._thumb img{
+	width:100%;
+}
+.sesgroup_profile_services_listing ._services ._cont{
+	overflow:hidden;
+	display:block;
+	position:relative;
+	min-height:110px;
+}
+.sesgroup_profile_services_listing ._services ._title{
+	font-size:17px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+.sesgroup_profile_services_listing ._services ._pd{
+	margin-bottom:10px;
+}
+.sesgroup_profile_services_listing ._services ._des{
+	line-height:150%;
+}
+/*SERVICES TAB CSS END HERE*/
+/*LIKE AS GROUP POPUP CSS START HERE*/
+.sesgroup_profile_likegroup_popup{
+	width:500px;
+}
+.sesgroup_profile_likegroup_popup ._header{
+	background-image:url(../images/transprant-bg.png);
+	padding:10px 15px;
+	font-weight:bold;
+	border-bottom-width:1px;
+}
+.sesgroup_profile_likegroup_popup ._footer{
+	border-top-width:1px;
+	padding:10px 15px;
+}
+.sesgroup_profile_likegroup_popup ._footer a,
+.sesgroup_profile_likegroup_popup ._footer button{
+	float:left;
+	margin-left:5px;
+	height:35px;
+	padding:0 25px;
+	line-height:35px;
+	border-radius:3px;
+	background-image:none;
+}
+.sesgroup_profile_likegroup_popup ._content{
+	padding:20px;
+}
+.sesgroup_profile_likegroup_popup ._content ._thumb{
+	float:left;
+	width:100px;
+	height:100px;
+	margin-right:15px;
+}
+.sesgroup_profile_likegroup_popup ._content ._thumb img{
+	object-fit:cover;
+	width:100%;
+	height:100%;
+}
+.sesgroup_profile_likegroup_popup ._content ._cont{
+	overflow:hidden;
+}
+.sesgroup_profile_likegroup_popup ._content ._cont p{
+	margin-bottom:10px;
+}
+/*LIKE AS GROUP POPUP CSS END HERE*/
+
+/* responsive css */
+@media (max-width:768px){
+	.sesgroup_profile_info_col{
+		width:100%;
+		padding:10px 0;
+		margin-top:20px;
+	}
+	.sesgroup_profile_info_col{
+			width:100%;
+	}
+}
+/*INVITE POPUP CSS START HERE*/
+.sesgroup_invite_popup{
+	width:500px;
+}
+.sesgroup_invite_popup ._header{
+	background-image:url(../images/transprant-bg.png);
+	border-bottom-width:1px;
+	padding:10px;
+	font-weight:bold;
+}
+.sesgroup_invite_popup ._content ._des{
+	padding:10px;
+}
+.sesgroup_invite_popup ._content ._msg{
+	text-align:center;
+	font-weight:bold;
+	padding:20px;
+}
+.sesgroup_invite_popup ._footer{
+	padding:10px;
+	border-top-width:1px;
+}
+.sesgroup_invite_popup ._memberslistcontainer{
+	max-height:350px;
+	overflow:auto;
+	border-top-width:1px;
+}
+.sesgroup_invite_popup ._memberslist{
+	padding:0 10px;
+}
+.sesgroup_invite_popup ._memberslist .item_list{
+	display:flex;
+	padding:10px 0;
+	border-bottom-width:1px;
+	align-items:center;
+}
+.sesgroup_invite_popup ._memberslist .item_list:nth-last-child(1){
+	border-bottom-width:0;
+}
+.sesgroup_invite_popup ._memberslist .item_list > div{
+	padding:0 5px;
+}
+.sesgroup_invite_popup ._memberslist .item_list .item_list_thumb img{
+	vertical-align:middle;
+	height:40px;
+	width:40px;
+}
+.sesgroup_invite_popup ._memberslist .item_list .item_list_title{
+	font-weight:bold;
+}
+.sesgroup_invite_popup ._content ._btn{
+	margin:0 10px	5px;
+}
+.sesgroup_invite_popup ._content ._btn ._sabtn{
+	display:inline-block;
+}
+.sesgroup_invite_popup ._content ._btn ._sabtn label{
+	display:block;
+	overflow:hidden;
+}
+@media (max-width:768px){
+	.sesgroup_invite_popup{
+		width:100%;
+	}
+}
+/*INVITE POPUP CSS END HERE*/
+
+/*JOIN POPUP STARTS HERE*/
+.sesgroup_join_member{
+	padding:2px 20px;
+}
+.sesgroup_join_member h3{
+	font-size:20px;
+	font-weight:600;
+}
+.sesgroup_join_member p{
+	padding:0 !important;
+}
+.sesgroup_join_member .form-elements{
+	padding:0;
+}
+.sesgroup_join_member .form-label{
+	background-image:url(../images/transprant-bg.png);
+	width:100% !important;
+	margin:0 !important;
+	padding:5px 10px !important;
+	border-radius:10px 10px 0 0;
+	border-width:1px 1px 0;
+}
+.sesgroup_join_member label{
+	font-size:13px;
+	font-weight:600;
+}
+.sesgroup_join_member textarea{
+	padding:8px;
+	max-width:100%;
+	min-height:50px;
+	max-height:60px;
+}
+.sesgroup_join_member label p{
+	font-weight:100;
+}
+.sesgroup_join_member label > div > p,
+.sesgroup_join_member label > p{
+	background-image:url(../images/transprant-bg.png);
+	padding:10px !important;
+	font-size:12px;
+	width:auto !important;
+	border-left-width:4px;
+}
+.sesgroup_join_member #buttons-wrapper{
+	margin-top:10px;
+}
+/*JOIN POPUP ENDS HERE*/

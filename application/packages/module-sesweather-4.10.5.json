@@ -1,0 +1,859 @@
+{
+  "type": "module",
+  "name": "sesweather",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Sesweather",
+  "repository": null,
+  "sku": null,
+  "date": "Wed, 18 Sep 2019 10:32:13 +0000",
+  "title": "SES - Weather Plugin",
+  "description": "SES - Weather Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Wed, 18 Sep 2019 10:32:13 +0000",
+    "title": "SES - Weather Plugin",
+    "description": "SES - Weather Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sesweather\/settings\/install.php",
+    "class": "Sesweather_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sesweather": {
+      "type": "directory",
+      "path": "application\/modules\/Sesweather",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 713,
+          "sha1": "02ee09fafc1135818ac9d051904135a4433205d3"
+        },
+        {
+          "path": "Api\/DarkSky.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5726,
+          "sha1": "6440a471574276aa93842e256be680d6b3305093"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 587,
+          "sha1": "5eccb5fa812f7bd5b23730c58730949d934f36ea"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4042,
+          "sha1": "19a787e194f2d9ce3ac550edce7db325f4bdc8c5"
+        },
+        {
+          "path": "controllers\/Checklicense.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3058,
+          "sha1": "75d7e46c3357b809d97efc37131a528f39cfd86a"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5611,
+          "sha1": "c489410a94000c6f84d0603a59c715846e84d802"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 675,
+          "sha1": "11fa3ab7b0402efb799abc27de261a226a6e1413"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6066,
+          "sha1": "4cd7c76d3d126289d42380c632172db9f6b0e5fa"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/day.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 17286,
+          "sha1": "c72dee2ef12ae2015839360c6c706c3eb9830776"
+        },
+        {
+          "path": "externals\/images\/icons",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/icons\/clear-day.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 17286,
+          "sha1": "c72dee2ef12ae2015839360c6c706c3eb9830776"
+        },
+        {
+          "path": "externals\/images\/icons\/clear-night.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 16102,
+          "sha1": "8861a27b9f316b6e641562ef45a2b29fa5552156"
+        },
+        {
+          "path": "externals\/images\/icons\/cloudy.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 16209,
+          "sha1": "d11e31bc1765c488fab138186e93c15cce651fe9"
+        },
+        {
+          "path": "externals\/images\/icons\/fog.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3682,
+          "sha1": "b3199d4d358aa44738aabdb8fc71932ffa3d172b"
+        },
+        {
+          "path": "externals\/images\/icons\/partly-cloudy-day.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6700,
+          "sha1": "b3b2d004599bfc09103dafe97c41509b3b52e2d8"
+        },
+        {
+          "path": "externals\/images\/icons\/partly-cloudy-night.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6880,
+          "sha1": "0449d829a6bf9e51c4fd5d54f675f3c6b92c2b4c"
+        },
+        {
+          "path": "externals\/images\/icons\/rain.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3682,
+          "sha1": "b3199d4d358aa44738aabdb8fc71932ffa3d172b"
+        },
+        {
+          "path": "externals\/images\/icons\/sleet.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3740,
+          "sha1": "7f9415d0833faa4a36069d3c118d4b2db7550c88"
+        },
+        {
+          "path": "externals\/images\/icons\/snow.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9458,
+          "sha1": "379a5733cc5c3d1ed175b642ed05b95c81ac8673"
+        },
+        {
+          "path": "externals\/images\/icons\/thunderstorm.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8790,
+          "sha1": "21de003f214f02e9dc5e969f14a78f3095a94096"
+        },
+        {
+          "path": "externals\/images\/icons\/wind.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8790,
+          "sha1": "21de003f214f02e9dc5e969f14a78f3095a94096"
+        },
+        {
+          "path": "externals\/images\/mapmarker.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2260,
+          "sha1": "1c7c6817adc63b91e8247cb3189b9d5710024a20"
+        },
+        {
+          "path": "externals\/images\/measure.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1320,
+          "sha1": "4613a9473a981cbf9259c162899ed1c344080ac3"
+        },
+        {
+          "path": "externals\/images\/measure2.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1298,
+          "sha1": "258ab17397c567d76d74218f3688c7c42592a44d"
+        },
+        {
+          "path": "externals\/images\/night.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 16102,
+          "sha1": "8861a27b9f316b6e641562ef45a2b29fa5552156"
+        },
+        {
+          "path": "externals\/images\/precipitation.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1062,
+          "sha1": "d622a489feda30837357cda485e00f7852328fdb"
+        },
+        {
+          "path": "externals\/images\/precipitation2.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1071,
+          "sha1": "b3d8c9661874c45f0c8103ec5e1ac7dd29d344b9"
+        },
+        {
+          "path": "externals\/images\/rainy-6.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3682,
+          "sha1": "b3199d4d358aa44738aabdb8fc71932ffa3d172b"
+        },
+        {
+          "path": "externals\/images\/request.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1135,
+          "sha1": "3e9d6263912148cbd157121e7e0da60aba35dc04"
+        },
+        {
+          "path": "externals\/images\/snowy-6.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9458,
+          "sha1": "379a5733cc5c3d1ed175b642ed05b95c81ac8673"
+        },
+        {
+          "path": "externals\/images\/sun.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1285,
+          "sha1": "b8eca61b5c6fd55b8fcb3cae21f9217fe7ef5547"
+        },
+        {
+          "path": "externals\/images\/sun2.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1370,
+          "sha1": "33fbda584ba916b39f8a094570549facd7e6b8b8"
+        },
+        {
+          "path": "externals\/images\/thunder.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8790,
+          "sha1": "21de003f214f02e9dc5e969f14a78f3095a94096"
+        },
+        {
+          "path": "externals\/images\/trans.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 43,
+          "sha1": "2daeaa8b5f19f0bc209d976c02bd6acb51b00b0a"
+        },
+        {
+          "path": "externals\/images\/weather.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 67002,
+          "sha1": "d6d80b0f8cd1c5f4af55174a038b7ef8e3401de2"
+        },
+        {
+          "path": "externals\/images\/weather_bg.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 261376,
+          "sha1": "67a7ce992cd727769a2c2aafa1e52a711aaa6eea"
+        },
+        {
+          "path": "externals\/images\/weather_icon.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3706,
+          "sha1": "6656a61cf841b5742f1de2867f8aa8a404e78316"
+        },
+        {
+          "path": "externals\/images\/weather_report.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 20965,
+          "sha1": "8c753184be55d5ed72ffc8ff64339dd540e75ebc"
+        },
+        {
+          "path": "externals\/images\/wind.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1278,
+          "sha1": "e95c827add56d41f261695a5fa493942ba5155d0"
+        },
+        {
+          "path": "externals\/images\/wind2.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1315,
+          "sha1": "0d550ea37557640b37efb5d39c224f58efddcf5e"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4261,
+          "sha1": "5b5ea6dd58ea0f8511ee0cba6ad26a5819f67684"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/fonts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/fonts\/weathericons-regular-webfont.eot",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 99774,
+          "sha1": "5d58a11d6de39f76e43a93fb1ef70e7bd78032a2"
+        },
+        {
+          "path": "externals\/styles\/fonts\/weathericons-regular-webfont.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 185225,
+          "sha1": "fb926986407bd032aada84c9004c850ec95bc619"
+        },
+        {
+          "path": "externals\/styles\/fonts\/weathericons-regular-webfont.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 99564,
+          "sha1": "9916e3dbc3990e3073cf5a2cb4c2e958273b7532"
+        },
+        {
+          "path": "externals\/styles\/fonts\/weathericons-regular-webfont.woff",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 56468,
+          "sha1": "5b909f99b700b5289e9af6f750405152b06e32f2"
+        },
+        {
+          "path": "externals\/styles\/fonts\/weathericons-regular-webfont.woff2",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 44720,
+          "sha1": "718dd740e8340888352129e592fed085409e891e"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 559,
+          "sha1": "ae24a04b73469dd21dd7959849e1fc8dbb1fbf41"
+        },
+        {
+          "path": "externals\/styles\/style_weather.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 19209,
+          "sha1": "60c0584421899c5056e2f018974ae5dfc333758c"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/AdminLocation.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2101,
+          "sha1": "381ef677ac8f7f2c04015da30255bc766a752659"
+        },
+        {
+          "path": "Form\/Admin\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3075,
+          "sha1": "566e348d8e8f47f616a439f22f2e265c8fd95ad3"
+        },
+        {
+          "path": "Form\/Admin\/Location.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5003,
+          "sha1": "79f1a0133de9c6d0df402a052323ef0d17bcecb6"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1409,
+          "sha1": "ee2e30605056e6986a8c31ac0cc6afc5c311291b"
+        },
+        {
+          "path": "Form\/Location.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1379,
+          "sha1": "fef0f8093b2c117d7d6734a717d055e31e66c266"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2237,
+          "sha1": "8962659844799215f34ffb854a86a7f8d3bd208e"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1533,
+          "sha1": "6aecaaa7a8174fc8901f2b173b79322c22e85240"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1880,
+          "sha1": "c7bb75d6b887a19f7173831f1fd564fbdfc84e9e"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 836,
+          "sha1": "af305c7a5dd72944fa663f6cb599f1e917cb20fd"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1262,
+          "sha1": "061358e80557affaece6f8df1198ab6632847fd3"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/level.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 759,
+          "sha1": "ce216a58648c7753e26629f6fd7c5c162381b304"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/manage-widgetize-page.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1988,
+          "sha1": "090e94182e521838de357d212855ebbb803f550c"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 735,
+          "sha1": "b1492efba5b8856dc8009bc069750dcead761e4b"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 438,
+          "sha1": "9c1f9d788d62f306c8402e003cb47c51225edaaa"
+        },
+        {
+          "path": "views\/scripts\/location.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1106,
+          "sha1": "9ed4f64e476875cb57663237bba5b556c4928f00"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/location-detect",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/location-detect\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1139,
+          "sha1": "adca8cde6de59c855493750e32a27a2e7f381a97"
+        },
+        {
+          "path": "widgets\/location-detect\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2168,
+          "sha1": "358a0ee11b307b659974f16ec079d9f5bc945c85"
+        },
+        {
+          "path": "widgets\/weather-dark-bg",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/weather-dark-bg\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3360,
+          "sha1": "61d723a07e871b01f66bf9d9f0a5270cab8d1794"
+        },
+        {
+          "path": "widgets\/weather-dark-bg\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9520,
+          "sha1": "ef3dd639ec29064b77337ad23aae945d7653e3f5"
+        },
+        {
+          "path": "widgets\/weather-main",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/weather-main\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3595,
+          "sha1": "bf658588a9edad7b373826cee1135633d8e45b8e"
+        },
+        {
+          "path": "widgets\/weather-main\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8540,
+          "sha1": "d11ed7cfbb33073c4aaa95a88881a0283fc78bb2"
+        },
+        {
+          "path": "widgets\/weather-sidebar",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/weather-sidebar\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2810,
+          "sha1": "4ebadc7a3f380161aba05c445efaac6f5e5a2cb3"
+        },
+        {
+          "path": "widgets\/weather-sidebar\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6567,
+          "sha1": "e0aaf9f98938c85b7ce320ec6616a33798f2940a"
+        }
+      ]
+    },
+    "application\/languages\/en\/sesweather.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sesweather.csv",
+      "structure": {
+        "path": "sesweather.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 1695,
+        "sha1": "a260809db438d4342a92c6d58b6b206d4aabcd10"
+      }
+    }
+  }
+}

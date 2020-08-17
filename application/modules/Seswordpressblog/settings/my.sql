@@ -1,0 +1,1 @@
+INSERT IGNORE INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES  ('seswordpressblog', 'SES - Wordpress Blog Import Plugin', 'seswordpressblogplugin ', '4.10.3', 1, 'extra') ;

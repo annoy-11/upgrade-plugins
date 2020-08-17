@@ -1,0 +1,1340 @@
+
+#global_page_sespage-profile-index #global_wrapper{
+	background-position:top center;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+/*ALBUM COMPOSER*/
+.advact_compose_photo_item .eclassroom_upload_item_abort{
+	position:absolute;
+	bottom:10px;
+	top:inherit;
+	text-align:center;
+	width:100%;
+	z-index:3;
+}
+.advact_compose_photo_item .eclassroom_upload_item_abort span{
+	background-color:#d9534f;
+	border:1px solid #d43f3a;
+	border-radius:3px;
+	color:#fff;
+	cursor:pointer;
+	display:inline-block;
+	font-size:11px;
+	padding:3px 5px;
+}
+.advact_compose_photo_item .eclassroom_upload_item_abort span:hover{
+	background-color:#c9302c;
+}
+[dir="rtl"] .advact_compose_photo_item .eclassroom_upload_item_abort{
+	text-align:center;
+}
+.advact_compose_photo_item .eclassroom_upload_item_options{
+	position:absolute;
+	top:5px;
+	right:3px;
+	z-index:2;
+}
+[dir="rtl"] .advact_compose_photo_item .eclassroom_upload_item_options{
+	left:3px;
+	right:inherit;
+}
+.advact_compose_photo_item .eclassroom_upload_item_options a{
+	height:16px;
+	line-height:16px;
+	float:left;
+	text-align:center;
+	margin:0 2px !important;
+	width:16px;
+}
+[dir="rtl"] .advact_compose_photo_item .eclassroom_upload_item_options a{
+	float:right;
+}
+.advact_compose_photo_item .eclassroom_upload_item_options a i:before{
+	color:#fff;
+	font-size:15px;
+	text-shadow:0 0 2px rgba(0, 0, 0, .5);
+}
+/*ACTION BUTTON CSS START HERE*/
+.eclassroom_profile_action_button .eclassroom_button{
+	display:block;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	border-radius:5px;
+	font-weight:bold;
+}
+.eclassroom_profile_action_button ._tip{
+	filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	-webkit-filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	border-radius:5px;
+	content:"";
+	position:absolute;
+	padding:10px;
+	text-align:center;
+	min-width:100%;
+	margin-top:8px;
+	line-height:25px;
+	display:none;
+}
+.eclassroom_profile_action_button:hover ._tip{
+	display:block;
+}
+.eclassroom_profile_action_button ._tip:before{
+	width:0; 
+	height:0; 
+	border-left:8px solid transparent;
+	border-right:8px solid transparent;
+	position:absolute;
+	top:-8px;
+	left:50%;
+	transform:translateX(-50%);
+	content:"";
+}
+.eclassroom_profile_action_button:hover .sesbasic_pulldown_options{
+	display:block !important;
+	margin-top:5px;
+}
+.eclassroom_profile_action_button:hover .sesbasic_pulldown_options:before{
+	left:10px;
+	right:auto;
+}
+.eclassroom_profile_action_button:hover .sesbasic_pulldown_options a{
+	border-radius:0;
+}
+/*Popup*/
+.eclassroom_profile_button_action_popup{
+	width:600px;
+}
+.eclassroom_profile_button_action_popup ._header{
+	background-image:url(../images/transprant-bg.png);
+	padding:10px 15px;
+	font-weight:bold;
+	border-bottom-width:1px;
+}
+.eclassroom_profile_button_action_popup ._footer,
+.eclassroom_profile_button_action_link_popup_cont ._footer{
+	border-top-width:1px;
+	padding:10px 15px;
+}
+.eclassroom_profile_button_action_popup ._footer ._text{
+	float:left;
+	line-height:35px;
+}
+.eclassroom_profile_button_action_popup ._footer ._btns,
+.eclassroom_profile_button_action_link_popup_cont ._footer ._btns{
+	float:right;
+}
+.eclassroom_profile_button_action_popup ._footer ._btns a,
+.eclassroom_profile_button_action_link_popup_cont ._footer ._btns a{
+	float:left;
+	margin-left:5px;
+	height:35px;
+	padding:0 25px;
+	line-height:35px;
+	border-radius:3px;
+	background-image:none;
+}
+.eclassroom_profile_button_action_popup ._footer ._btns a.disabled{
+	opacity:.5;
+}
+.eclassroom_profile_button_action_popup ._contmain{
+	padding:20px;
+}
+.eclassroom_profile_button_action_popup .button_preview{
+	margin-bottom:30px;
+}
+.eclassroom_profile_button_action_popup .button_preview ._text{
+	font-size:17px;
+	font-weight:bold;
+	line-height:35px;
+}
+.eclassroom_profile_button_action_popup .button_preview ._btn a{
+	display:block;
+	text-align:center;
+	height:35px;
+	line-height:35px;
+	border-radius:5px;
+	font-weight:bold;
+	width:150px;
+}
+.eclassroom_profile_button_action_popup ._contmaintop ._des{
+	font-size:12px;
+	margin-top:10px;
+}
+.eclassroom_profile_button_action_popup .btn_type_options{
+	margin-top:15px;
+	border-width:1px;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li + li{
+	border-top-width:1px;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li:hover,
+.eclassroom_profile_button_action_popup .btn_type_options li._op_selected_{
+	background-image:url(../images/transprant-bg.png);
+}
+.eclassroom_profile_button_action_popup .btn_type_options li > div:not(.op_fields){
+	padding:15px;
+	cursor:pointer;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li ._ico{
+	float:left;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li ._ind{
+	float:right;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li ._ind:before{
+	content:"\f107";
+}
+.eclassroom_profile_button_action_popup .btn_type_options li._op_selected_ ._ind:before{
+	content:"\f106";
+}
+.eclassroom_profile_button_action_popup .btn_type_options li ._tit{
+	overflow:hidden;
+	display:block;
+	padding:0 10px;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li > div.op_fields{
+	padding:15px;
+	border-top-width:1px;
+	display:none;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li._op_selected_ > div.op_fields{
+	display:block;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li > div.op_fields p{
+	padding:5px 0;
+	float:left;
+	width:50%;
+}
+.eclassroom_profile_button_action_popup .btn_type_options li > div.op_fields p input[type="radio"]{
+	margin:0px 10px 0px 0px
+}
+.eclassroom_profile_button_action_popup ._selectedresult{
+	padding-bottom:20px;
+	border-bottom-width:1px;
+	margin-bottom:20px;
+}
+.eclassroom_profile_button_action_popup ._selectedresult p._text{
+	font-size:17px;
+	line-height:40px;
+}
+.eclassroom_profile_button_action_popup ._selectedresult p._text i{
+	margin-right:5px;
+}
+.eclassroom_profile_button_action_popup ._selectedresult p._btn a{
+	float:left;
+	margin-left:5px;
+	height:35px;
+	padding:0 25px;
+	line-height:35px;
+	border-radius:3px;
+	background-image:none;
+	font-weight:bold;
+}
+.eclassroom_profile_button_action_popup ._selectedresult._stepsuccessmsg{
+	margin-bottom:0;
+	border-width:0;
+}
+.eclassroom_profile_button_action_popup .step2_ops{
+	border-width:1px;
+	margin-top:15px;
+}
+.eclassroom_profile_button_action_popup .step2_ops li + li{
+	border-top-width:1px;
+}
+.eclassroom_profile_button_action_popup .step2_ops li a{
+	padding:15px;
+	display:block;
+	text-decoration:none !important;
+}
+.eclassroom_profile_button_action_popup .step2_ops li:hover a{
+	background-image:url(../images/transprant-bg.png);
+}
+.eclassroom_profile_button_action_popup .step2_ops ._icon{
+	border-radius:50%;
+	height:44px;
+	width:44px;
+	border-width:1px;
+	margin-right:15px;
+	box-shadow:0 0 5px rgba(0, 0, 0, .05);
+}
+.eclassroom_profile_button_action_popup .step2_ops ._icon:before{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+}
+.eclassroom_profile_button_action_popup .step2_ops ._cont{
+	overflow:hidden;
+	display:block;
+}
+.eclassroom_profile_button_action_popup .step2_ops ._cont p{
+	margin-top:5px;
+}
+.eclassroom_profile_button_action_link_popup{
+	background-color:rgba(0, 0, 0, 0.4);
+	position:fixed !important;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	display:none;
+}
+.eclassroom_profile_button_action_link_popup_cont{
+	border-radius:5px;
+	position:absolute;
+	top:180px;
+	left:50%;
+	transform:translateX(-50%);
+	width:500px;
+}
+.eclassroom_profile_button_action_link_popup_cont ._field{
+	padding:20px;
+}
+.eclassroom_profile_button_action_link_popup_cont ._field input{
+	width:100%;
+	margin-top:10px;
+	padding:0 10px;
+	line-height:35px;
+	height:35px;
+}
+/*ACTION BUTTON CSS END HERE*/
+/*TIPS CSS START HERE*/
+.layout_eclassroomprofile_tips{
+	background:none !important;
+	border-width:0 !important;
+	padding:0 !important;
+}
+.layout_eclassroomprofile_tips > h3{
+	display:none !important;
+}
+.eclassroom_profile_tips{
+	border-radius:5px;
+	border-width:1px;
+	overflow:hidden;
+	position:relative;
+}
+.eclassroom_profile_tips_header{
+	padding:20px 150px 20px 20px;
+}
+.eclassroom_profile_tips_header ._heading{
+	font-size:17px;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.eclassroom_profile_tips_header ._remove{
+	position:absolute;
+	height:20px;
+	width:20px;
+	text-align:center;
+	line-height:20px;
+	right:0;
+	top:0;
+	z-index:1;
+}
+.eclassroom_profile_tips_header ._des{
+	font-size:12px;	
+}
+.eclassroom_profile_tips_header ._img{
+	position:absolute;
+	right:0;
+	bottom:0;
+	max-width:130px;
+	background-image:url(../images/icons/tip.svg);
+	height:100%;
+	width:100px;
+	display:block;
+	background-size:70%;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+.eclassroom_profile_tips ._tips li{
+	border-top-width:1px;
+	padding:20px 15px;
+}
+.eclassroom_profile_tips ._tips li:hover{
+	background-image:url(../images/transprant-bg.png);
+}
+.eclassroom_profile_tips ._tips li i{
+	background-repeat:no-repeat;
+	background-position:center;
+	float:left;
+	width:24px;
+	height:24px;
+	margin:0 15px 0 0;
+}
+.eclassroom_profile_tips ._tips li._address i{
+	background-image:url(../images/icons/location-add.svg);
+}
+.eclassroom_profile_tips ._tips li._profilephoto i{
+	background-image:url(../images/icons/profile-photo-add.svg);
+}
+.eclassroom_profile_tips ._tips li._coverphoto i{
+	background-image:url(../images/icons/cover-add.svg);
+}
+.eclassroom_profile_tips ._tips li._username i{
+	background-image:url(../images/icons/username-add.svg);
+}
+.eclassroom_profile_tips ._tips ._btn{
+	float:right;
+	margin-left:20px;
+	margin-top:10px;
+}
+.eclassroom_profile_tips ._tips ._btn a{
+	display:block;
+	padding:7px 10px;
+	font-weight:bold;
+	border-radius:3px;
+	font-size:12px;
+}
+.eclassroom_profile_tips ._tips li ._cont{
+	display:block;
+	overflow:hidden;
+	font-size:12px;
+}
+.eclassroom_profile_tips ._tips li ._cont ._title{
+	font-weight:bold;
+	margin-bottom:5px;
+}
+/*TIPS CSS END HERE*/
+/*OPEN HOUR CSS START HERE*/
+.eclassroom_opningtime_block ._timezone{
+	margin-bottom:5px;
+	text-align:right;
+	text-decoration:underline;
+}
+.eclassroom_opningtime_block > ._text{
+	text-align:center;
+	font-size:16px;
+}
+.eclassroom_opningtime_block .opningtime:not(.showall) ._day{
+	display:none;
+}
+.eclassroom_opningtime_block .opningtime ._day:nth-child(1){
+	display:block;
+	padding-right:10px;
+	position:relative;
+}
+.eclassroom_opningtime_block .opningtime ._day:nth-child(1) *{
+	font-weight:bold;
+}
+.eclassroom_opningtime_block .opningtime:not(.showall) ._day:nth-child(1):after{
+	content:"\f078";
+	font-family:FontAwesome;
+	position:absolute;
+	right:0;
+	top:4px;
+	font-size:10px;
+}
+.eclassroom_opningtime_block .opningtime ._day .label{
+	float:left;
+	width:76px;
+	margin-right:5px;
+	line-height:22px;
+	font-size:12px;
+}
+.eclassroom_opningtime_block .opningtime ._day .time{
+	display:block;
+	overflow:hidden;
+	line-height:22px;
+	font-size:12px;
+}
+.eclassroom_opningtime_block .opningtime ._day ._closed{
+	color:#f00;
+}
+/*OPEN HOUR CSS END HERE*/
+/*PROFILE TABS CONTENT CSS START*/
+.eclassroom_profile_content_search{
+	padding:10px 0;
+	border-bottom-width:1px;
+	margin-bottom:10px;
+}
+.eclassroom_profile_content_search > div{
+	float:left;
+	padding-right:10px;
+}
+.eclassroom_profile_content_search > div._input{
+	width:40%
+}
+.eclassroom_profile_content_search > div._select{
+	width:20%
+}
+.eclassroom_profile_content_search > div._addbtn{
+	width:40%;
+	float:right;
+	padding-right:0;
+}
+.eclassroom_profile_content_search > div._addbtn a{
+	float:right;
+	padding:0 10px;
+}
+.eclassroom_profile_content_search > div input[type="text"],
+.eclassroom_profile_content_search > div select{
+	height:30px;
+	padding:0 10px;
+	line-height:30px;
+	width:100%;	
+}
+.eclassroom_profile_content_total{
+	padding:0 0 10px;
+}
+.eclassroom_profile_content_total ._count{
+	float:left;
+}
+.eclassroom_profile_content_total ._links{
+	float:right;
+}
+/*PROFILE TABS CONTENT CSS END*/
+/*PROFILE MEMBERS WIDGET CSS START HERE*/
+.eclassroom_profile_members_listing_container ._head{
+	font-weight:bold;
+	padding:10px 0;
+	border-bottom-width:1px;
+}
+.eclassroom_profile_members_listing{
+	margin-bottom:20px;
+}
+.eclassroom_profile_members_list_item{
+	padding:10px 0;
+}
+.eclassroom_profile_members_list_item article{
+ -ms-box-orient:horizontal;
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-moz-flex;
+  display:-webkit-flex;
+  display:flex;
+  -webkit-justify-content:space-around;
+  justify-content:space-around;
+  -webkit-flex-flow:row wrap;
+  flex-flow:row wrap;
+  -webkit-align-items:stretch;
+  align-items:stretch;
+	
+  align-items:center;
+}
+.eclassroom_profile_members_list_item ._thumb{
+	margin-right:10px;
+	width:80px;
+	height:80px;
+}
+.eclassroom_profile_members_list_item ._thumb > a,
+.eclassroom_profile_members_list_item ._thumb > a span{
+	border-width:0;
+	display:block;
+	width:100%;
+	height:100%;
+}
+.eclassroom_profile_members_list_item ._btns{
+	margin-left:10px;
+}
+.eclassroom_profile_members_list_item ._btns > div{
+	float:left;
+}
+.eclassroom_profile_members_list_item ._btns > div > a{
+	margin-left:5px;
+	height:30px;
+	line-height:28px;
+	padding:0 10px;
+}
+.eclassroom_profile_members_list_item ._btns ._option > a{
+	height:30px;
+	width:30px;
+	text-align:center;
+	padding:0;
+}
+.eclassroom_profile_members_list_item ._btns ._option > a i{
+	margin:0;
+	float:none;
+}
+.eclassroom_profile_members_list_item ._btns .sesbasic_pulldown_options{
+	width:160px;
+	margin-left:-120px;
+}
+.eclassroom_profile_members_list_item ._cont{
+	flex-grow:2;
+}
+.eclassroom_profile_members_list_item ._cont ._name,
+.eclassroom_profile_members_list_item ._cont ._role{
+	font-weight:bold;
+}
+.eclassroom_profile_members_list_item ._cont ._role,
+.eclassroom_profile_members_list_item ._cont ._date{
+	margin-top:5px;
+	font-size:.9em;
+}
+.eclassroom_profile_members ._seeall_link{
+	border-top-width:1px;
+	padding:10px;
+	text-align:center;
+}
+/*PROFILE MEMBERS WIDGET CSS END HERE*/
+/*MAIN PHOTO & VERTICAL TABS CSS START HERE*/
+.layout_eclassroom_profile_main_photo{
+	padding:0 !important;
+	background:none !important;
+	box-shadow:none !important;
+	border-width:0 !important;
+}
+.eclassroom_mainphoto_block ._mainphoto{
+	position:relative;
+}
+.eclassroom_mainphoto_block ._mainphoto img{
+	width:100%;
+	max-width:100%;
+}
+.eclassroom_profile_mainphoto_change_btn{
+	left:10px;
+	top:10px;
+	display:block;
+	right:inherit;
+	position:absolute;
+}
+.eclassroom_profile_mainphoto_change_btn > a{
+	border-radius:50%;
+	height:30px;
+	width:30px;
+	padding:0;
+	display:none;
+}
+.eclassroom_profile_mainphoto_change_btn > a i{
+	color:#fff;
+	float:left;
+	line-height:25px;
+	height:25px;
+	margin-right:5px;
+	text-align:center;
+	width:25px;
+	font-size:17px;
+	text-shadow:0 0 5px rgba(0, 0, 0, .5);
+}
+.eclassroom_mainphoto_block ._mainphoto:hover .eclassroom_profile_mainphoto_change_btn > a,
+.eclassroom_profile_mainphoto_change_btn > a.open{
+	display:block;
+}
+.eclassroom_profile_mainphoto_change_btn > a.open + .sesbasic_option_box {
+	display:block;
+	margin-top:10px;
+	margin-left:-8px;
+}
+.eclassroom_profile_mainphoto_change_btn .sesbasic_option_box > i{
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	height:0;
+	left:9px;
+	position:absolute;
+	top:-10px;
+	width:0;
+}
+
+.eclassroom_mainphoto_block ._cont{
+	margin-top:10px;
+}
+.eclassroom_mainphoto_block ._cont h2{
+	margin:0;
+	font-size:22px;
+}
+.eclassroom_mainphoto_block ._cont p{
+	margin-top:10px;
+}
+.eclassroom_mainphoto_block ._vtabs{
+	margin-top:10px;
+}
+.eclassroom_mainphoto_block ._vtabs .tabs_alt,
+.eclassroom_mainphoto_block ._vtabs .tabs_alt > ul{
+	border-width:0 !important;
+	background:none !important;
+	padding:0;
+	width:100%;
+}
+.eclassroom_mainphoto_block ._vtabs .tabs_alt > ul > li{
+	border-radius:0 !important;
+	border-width:0 !important;
+	display:block;
+	background-color:transparent !important;
+	padding:0 !important;
+	margin:0 0 5px !important;
+	width:100%;
+}
+.eclassroom_mainphoto_block ._vtabs .tabs_alt > ul > li > a{
+	border-radius:0 !important;
+	border-width:0 !important;
+	display:block;
+	padding:8px 10px !important;
+	position:inherit;
+	height:auto;
+	line-height:initial;
+}
+/*MAIN PHOTO & VERTICAL TABS CSS END HERE*/
+/*ANNOUCEMENTS TAB CSS START HERE*/
+.eclassroom_profile_announcements ._item + ._item{
+	padding-top:20px;
+	margin-top:20px;
+	border-top-width:1px;
+}
+.eclassroom_profile_announcements ._item h3{
+	background:none !important;
+	border-width:0 !important;
+	box-shadow:none !important;
+	margin:0 0 5px;
+	padding:0;
+	font-size:125%;
+}
+.eclassroom_profile_announcements ._item ._date{
+	font-size:12px;
+}
+.eclassroom_profile_announcements ._item ._body{
+	margin-top:10px;
+}
+/*ANNOUCEMENTS TAB CSS END HERE*/
+/*OPTIONS DROPDOWN CSS START HERE*/
+.eclassroom_options_dropdown{
+	position:absolute;
+	display:none;
+	z-index:99;
+}
+.eclassroom_options_dropdown.show-options{
+	display:block;
+}
+.eclassroom_options_dropdown_arrow{
+	width:0;
+	height:0;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	float:right;
+	margin-right:13px;
+}
+.eclassroom_options_dropdown_links{
+	clear:both;
+	width:180px;
+}
+.eclassroom_options_dropdown_links .layout_eclassroom_profile_options{
+	margin:0 !important;
+}
+.eclassroom_options_dropdown_links li{
+	margin:0 !important;
+	padding:0 !important;
+}
+.eclassroom_options_dropdown_links li a{
+	padding:10px 10px 10px 30px !important;
+	display:block !important;
+	line-height:normal !important;
+	font-size:12px !important;
+	position:relative !important;
+}
+.eclassroom_options_dropdown_links li a:before{
+	position:absolute;
+	left:10px !important;
+}
+/*OPTIONS DROPDOWN CSS END HERE*/
+/*LABELS CSS START HERE*/
+.eclassroom_view_labels{
+	bottom:20px;
+	position:absolute;
+	left:20px;
+	text-align:center;
+	z-index:1;
+}
+.eclassroom_view_labels span{
+	display:inline-block;
+	border-radius:50%;
+	height:20px;
+	width:20px;
+	color:#fff;
+	margin:0 2px;
+	box-shadow:0 0 5px rgba(0, 0, 0, .5);
+	border:1px solid #fff;
+	font-size:12px;
+}
+.eclassroom_view_sidebar_labels{
+	text-align:center;
+}
+.eclassroom_view_sidebar_labels span:before,
+.eclassroom_view_sidebar_labels span:after{
+	display:none;
+}
+/*LABELS CSS END HERE*/
+/*Status*/
+.eclassroom_view_status{
+
+}
+.eclassroom_view_status span{
+	border-radius:20px;
+	color:#fff;
+	display:block;
+	text-align:center;
+	height:40px;
+	line-height:40px;
+	font-weight:bold;
+}
+.eclassroom_view_status ._open{
+	background-color:#17b138;
+	color:#fff;
+}
+.eclassroom_view_status ._close{
+	background-color:#dc1c1c;
+	color:#fff;
+}
+/*People Liked page*/
+.eclassroom_people_like_field + .eclassroom_people_like_field{
+	margin-top:10px;
+}
+.eclassroom_people_like_title{
+	margin-bottom:5px;
+	border-bottom-width:1px;
+	padding-bottom:5px;
+}
+.eclassroom_people_like_title i{
+	float:left;
+	margin-right:5px;
+	margin-top:2px;
+	font-size:15px;
+}
+.eclassroom_people_like_title i.fa-thumbs-up{
+	color:#02adea;
+}
+.eclassroom_people_like_title i.fa-heart{
+	color:#ff4c4c;
+}
+.eclassroom_people_like_title i.fa-users{
+	color:#42a62a;
+}
+.eclassroom_people_like_title span{
+	display:block;
+	font-weight:600;
+	font-size:15px;
+}
+.eclassroom_people_like_list{
+	float:left;
+	padding:2px;
+}
+.eclassroom_people_like_list_img{
+	width:50px;
+	height:50px;
+	display:block;
+	position:relative;
+}
+.eclassroom_people_like_list_img span{
+	height:100%;
+	width:100%;
+	display:block;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.eclassroom_more_link a{
+	text-align:center;
+	color:#fff;
+	font-size:15px;
+	display:block;
+}
+/*Contact Information*/
+.eclassroom_owner_contact_details li + li{
+	border-top-style:dashed;
+	border-top-width:1px;
+	margin-top:5px;
+	padding-top:5px;
+}
+.eclassroom_owner_contact_name{
+	font-weight:bold;
+}
+.eclassroom_owner_contact_details li > i{
+	float:left;
+	margin-right:5px;
+	margin-top:2px;
+	text-align:center;
+	width:20px;
+}
+.eclassroom_owner_contact_details li > i:before{
+	font-size:15px;
+}
+.eclassroom_owner_contact_details li > i.fa-mobile:before{
+	font-size:18px;
+}
+.eclassroom_owner_contact_details li span{
+	display:block;
+	font-size:12px;
+	line-height:20px;
+	overflow:hidden;
+	word-wrap:break-word
+}
+.eclassroom_owner_contact_social{
+	text-align:center;
+}
+.eclassroom_owner_contact_social a{
+	margin:5px 2px 0;
+	display:inline-block;
+	height:24px;
+	width:24px;
+	line-height:24px;
+}
+.eclassroom_owner_contact_social a:hover{
+	opacity:.8;
+}
+.eclassroom_owner_contact_social a._facebook{
+	background-color:#4267b2 !important;
+}
+.eclassroom_owner_contact_social a._twitter{
+	background-color:#1da1f2 !important;
+}
+.eclassroom_owner_contact_social a._linkedin{
+	background-color:#0077b5 !important;
+}
+
+.layout_eclassroomlike_button,  .layout_eclassroomadvance_share,  .layout_eclassroomjoin_page,  .layout_eclassroomfollow_button,  .layout_eclassroomfavourite_button,  .layout_eclassroomsave_button,  .layout_eclassroompage_status,  .layout_eclassroompage_quick_create,  .layout_eclassroombrowse_menu_quick{
+	background:none !important;
+	border-width:0 !important;
+	box-shadow:none !important;
+	padding:0 !important;
+}
+.eclassroom_sidebar_button a{
+	border-radius:20px;
+	display:block;
+	text-align:center;
+	padding:4px !important;
+	line-height:200%;
+}
+.eclassroom_sidebar_button a i{
+	margin-right:10px;
+}
+.layout_eclassroomvote_button .eclassroom_sidebar_button{
+	text-align:center;
+}
+.layout_eclassroomvote_button .eclassroom_sidebar_button p{
+	margin:5px 0;
+}
+.layout_eclassroomvote_button .eclassroom_sidebar_button p b{
+	display:block;
+	margin-top:5px;
+}
+/*Owner Photo*/
+.eclassroom_owner_photo > a{
+	overflow:hidden;
+	height:150px;
+	width:150px;
+	margin:0 auto;
+	display:block;
+}
+.eclassroom_owner_photo .eclassroom_gutter_photo_circle{
+	border-radius:50%;
+}
+.eclassroom_owner_photo > a img{
+	object-fit:cover;
+	height:100%;
+	width:100%;
+}
+.eclassroom_owner_photo .eclassroom_owner_name{
+	text-align:center;
+	font-weight:bold;
+	font-size:17px;
+	margin-top:10px;
+	display: block;
+}
+.eclassroom_owner_photo ._des{
+    font-size: 90%;
+    line-height: 160%;
+    margin-top: 5px;
+}
+/*Profile Info*/
+.eclassroom_profile_info_col{
+	width:50%;
+	padding:10px;
+	float:left;
+}
+.eclassroom_profile_info_row{
+	margin-bottom:20px;
+}
+.eclassroom_profile_info_head{
+	font-size:17px;
+	border-bottom-width:1px;
+	padding:10px;
+	margin-bottom:10px;
+}
+.eclassroom_profile_info_row_info,
+.eclassroom_profile_info_contact_info{
+	margin:10px;
+}
+.eclassroom_profile_info_row_info li,
+.eclassroom_profile_info_row_info .sesbasic_list_customfield{
+	margin:0 0 10px;
+}
+.eclassroom_profile_info_row_info li > span._l,
+.eclassroom_view_custom_fields .sesbasic_list_customfield_lable{
+	width:150px;
+	float:left;
+	font-weight:600;
+	padding-right:10px;
+	margin:0;
+}
+.eclassroom_profile_info_row_info li > span._v{
+	overflow:hidden;
+	display:block;
+}
+.eclassroom_profile_info_row_info li p{
+	line-height:180%;
+}
+.eclassroom_profile_info_contact_info ul li{
+	margin-bottom:10px;
+	line-height:100%;
+}
+.eclassroom_profile_info_contact_info ul li i{
+	float:left;
+	width:16px;
+	height:16px;
+	font-size:80%;
+	text-align:center;
+	margin-right:5px;
+	position:relative;
+}
+.eclassroom_profile_info_contact_info ul li i:before{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+.eclassroom_profile_info_contact_info ul li i.fa-mobile{
+	font-size:18px;
+}
+.eclassroom_profile_info_contact_info ul li span{
+	overflow:hidden;
+	display:block;
+}
+.eclassroom_profile_info_row_info_map{
+	background-color:#ddd;
+	position:relative;
+	height:250px;
+}
+/*classroom sidebar profile info*/
+.eclassroom_sidebar_info_block li{
+	margin-bottom:10px;
+	font-size:90%;
+}
+.eclassroom_sidebar_info_block li > i{
+	float:left;
+	margin-right:5px;
+	margin-top:3px;
+	width:14px;
+	text-align:center;
+}
+.eclassroom_sidebar_info_block li > span{
+	display:block;
+	overflow:hidden;
+}
+.eclassroom_sidebar_info_block li.eclassroom_list_stats > span b{
+	display:block;
+	margin-bottom:5px;
+}
+/*Linked Clssroom Listing CSS*/
+.eclassroom_linked_pages_block{
+	padding:0;
+}
+.eclassroom_linked_pages_block ._itembtns{
+	margin-top:10px;
+}
+.eclassroom_linked_pages_block ._itembtns a{
+	margin:0 5px 5px 0;
+}
+.eclassroom_linked_pages_block ._itembtns .eclassroom_join_button{
+	padding:0 10px;
+	float:left;
+	height:30px;
+	line-height:30px;
+	border-radius:3px;
+	font-weight:bold;
+}
+.layout_eclassroompage_liked .sesbasic_sidebar_list_title{
+	margin-top:15px;
+}
+/*PHOTO UPDATE POPUP CSS START HERE*/
+.eclassroom_link_content_popup_overlay{
+	background:#000 none repeat scroll 0 0 !important;
+	bottom:0;
+	display:none;
+	height:auto;
+	left:0;
+	min-height:100%;
+	opacity:0.6;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:99;
+}
+.eclassroom_link_content_popup{
+	bottom:0;
+	display:none;
+	height:100%;
+	left:0;
+	overflow-y:auto;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:100;
+}
+.eclassroom_link_content_popup_content{
+	border-radius:5px;
+	margin:100px auto;
+	position:relative;
+	width:600px;
+	z-index:1001;
+}
+.eclassroom_link_content_content_inner{
+	padding:20px;
+}
+.eclassroom_link_content_popup_heading{
+	text-align:center;
+}
+.eclassroom_link_content_popup_heading h2{
+	font-size:20px;
+	margin-bottom:15px;
+	font-weight:bold;
+	letter-spacing:normal;
+}
+.eclassroom_photo_update_popup{
+	position:fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index:99;
+}
+.eclassroom_photo_update_popup_overlay{
+	background-color:rgba(0, 0, 0, .1);
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:99;
+}
+.eclassroom_photo_update_popup_container{
+	border:5px solid #ccc;
+	border-radius:5px;
+	left:50%;
+	margin-left:-330px;
+	position:absolute;
+	top:20px;
+	width:660px;
+	z-index:100;
+}
+.eclassroom_photo_update_popup_header{
+  background-image:url(../images/t-img-light.png);
+  border-bottom-width:1px;
+  font-size:15px;
+  font-weight:bold;
+  line-height:40px;
+  padding:0 10px;
+}
+.eclassroom_photo_update_popup_header > a{
+	padding:13px 0px;
+}
+.eclassroom_photo_update_popup_header .fa{
+  float:right;
+	text-decoration:none !important;
+}
+.eclassroom_photo_update_popup_content{
+	height:450px;
+	width:100%;
+}
+.eclassroom_photo_update_popup_content .tip{
+	text-align:center;
+	margin-top:20px;
+}
+.eclassroom_photo_update_popup_content .tip > span{
+	float:none;
+}
+.eclassroom_update_album_row{
+	clear:both;
+	padding:10px;
+	border-bottom-width:1px;
+}
+.eclassroom_update_album_row:last-child{
+	border-bottom:none;
+}
+.eclassroom_update_album_row .eclassroom_name{
+	display:block;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.eclassroom_update_album_row .eclassroom_thumb{
+	float:left;
+	margin:7px;
+	width:142px;
+}
+.eclassroom_update_album_row .eclassroom_thumb span.bg_item_photo{
+	width:100% !important;
+	height:142px;
+}
+.eclassroom_photo_update_webcam_container{
+	margin-left:-180px;
+	width:360px;
+}
+.eclassroom_photo_update_popup_webcam_options{
+	padding:15px;
+}
+.eclassroom_photo_update_popup_webcam_options #eclassroomcamera{
+	margin:0 auto;
+}
+.eclassroom_photo_update_popup_webcam_options #eclassroomcamera video{
+	height:300px;
+}
+.eclassroom_photo_update_popup_btns{
+	margin-top:10px;
+}
+/*PHOTO UPDATE POPUP CSS END HERE*/
+/*SERVICES TAB CSS START HERE*/
+.eclassroom_profile_services_listing ._services{
+	padding:15px;
+	border-width:1px;
+	border-radius:5px;
+	align-items:center;
+	margin-bottom:15px;
+}
+.eclassroom_profile_services_listing ._services ._thumb{
+	float:right;
+	margin-left:15px;
+	width:100px;
+}
+.eclassroom_profile_services_listing ._services ._thumb img{
+	width:100%;
+}
+.eclassroom_profile_services_listing ._services ._cont{
+	overflow:hidden;
+	display:block;
+	position:relative;
+	min-height:110px;
+}
+.eclassroom_profile_services_listing ._services ._title {
+	font-size:17px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+.eclassroom_profile_services_listing ._services ._pd{
+	margin-bottom:10px;
+}
+.eclassroom_profile_services_listing ._services ._des{
+	line-height:150%;
+}
+/*SERVICES TAB CSS END HERE*/
+/*LIKE AS PAGE POPUP CSS START HERE*/
+.eclassroom_profile_likepage_popup{
+	width:500px;
+}
+.eclassroom_profile_likepage_popup ._header{
+	background-image:url(../images/transprant-bg.png);
+	padding:10px 15px;
+	font-weight:bold;
+	border-bottom-width:1px;
+}
+.eclassroom_profile_likepage_popup ._footer{
+	border-top-width:1px;
+	padding:10px 15px;
+}
+.eclassroom_profile_likepage_popup ._footer a,
+.eclassroom_profile_likepage_popup ._footer button{
+	float:left;
+	margin-left:5px;
+	height:35px;
+	padding:0 25px;
+	line-height:35px;
+	border-radius:3px;
+	background-image:none;
+}
+.eclassroom_profile_likepage_popup ._content{
+	padding:20px;
+}
+.eclassroom_profile_likepage_popup ._content ._thumb{
+	float:left;
+	width:100px;
+	height:100px;
+	margin-right:15px;
+}
+.eclassroom_profile_likepage_popup ._content ._thumb img{
+	object-fit:cover;
+	width:100%;
+	height:100%;
+}
+.eclassroom_profile_likepage_popup ._content ._cont{
+	overflow:hidden;
+}
+.eclassroom_profile_likepage_popup ._content ._cont p{
+	margin-bottom:10px;
+}
+/*LIKE AS PAGE POPUP CSS END HERE*/
+
+/* responsive css */
+@media (max-width:768px) {
+	.eclassroom_profile_info_col {
+		width:100%;
+		padding:10px 0;
+		margin-top:20px;
+	}
+	.eclassroom_profile_info_col{
+			width:100%;
+	}
+}
+/*INVITE POPUP CSS START HERE*/
+.eclassroom_invite_popup{
+	width:500px;
+}
+.eclassroom_invite_popup ._header{
+	background-image:url(../images/transprant-bg.png);
+	border-bottom-width:1px;
+	padding:10px;
+	font-weight:bold;
+}
+.eclassroom_invite_popup ._content ._des{
+	padding:10px;
+}
+.eclassroom_invite_popup ._content ._msg{
+	text-align:center;
+	font-weight:bold;
+	padding:20px;
+}
+.eclassroom_invite_popup ._footer{
+	padding:10px;
+	border-top-width:1px;
+}
+.eclassroom_invite_popup ._memberslistcontainer{
+	max-height:350px;
+	overflow:auto;
+	border-top-width:1px;
+}
+.eclassroom_invite_popup ._memberslist{
+	padding:0 10px;
+}
+.eclassroom_invite_popup ._memberslist .item_list{
+	display:flex;
+	padding:10px 0;
+	border-bottom-width:1px;
+	align-items:center;
+}
+.eclassroom_invite_popup ._memberslist .item_list:nth-last-child(1){
+	border-bottom-width:0;
+}
+.eclassroom_invite_popup ._memberslist .item_list > div{
+	padding:0 5px;
+}
+.eclassroom_invite_popup ._memberslist .item_list .item_list_thumb img{
+	vertical-align:middle;
+	height:40px;
+	width:40px;
+}
+.eclassroom_invite_popup ._memberslist .item_list .item_list_title{
+	font-weight:bold;
+}
+.eclassroom_invite_popup ._content ._btn{
+	margin:0 10px	5px;
+}
+.eclassroom_invite_popup ._content ._btn ._sabtn{
+	display:inline-block;
+}
+.eclassroom_invite_popup ._content ._btn ._sabtn label{
+	display:block;
+	overflow:hidden;
+}
+@media (max-width:768px) {
+	.eclassroom_invite_popup{
+		width:100%;
+	}
+}
+/*INVITE POPUP CSS END HERE*/

@@ -1,0 +1,936 @@
+/* $Id:styles.css 2018-07-04 00:00:00 SocialEngineSolutions $*/
+
+/*Global Classes*/
+.sespagevideo_animation{
+  -webkit-transition:all 800ms ease 0s;
+  -moz-transition:all 800ms ease 0s;
+  -o-transition:all 800ms ease 0s;
+  transition:all 800ms ease 0s;
+}
+.sespagevideo_labels, [dir="rtl"] .sespagevideo_labels{bottom:25px;position:absolute;text-align:center;width:100%;}
+.sespagevideo_labels span{color:#fff;display:inline-block;font-size:10px;letter-spacing:1px;margin:1px;padding:3px 6px;text-align:center;}
+.sespagevideo_label_featured{background-color:#47c8e3;}
+.sespagevideo_label_sponsored{background-color:#53dc10;}
+.sespagevideo_label_hot{background-color:#f00;}
+.sespagevideo_label_highlighted{background-color:#ff4500;}
+.sespagevideo_label_verified{background-color:#489fdd;}
+.sespagevideo_verified{color:#489fdd;font-size:14px;margin:0 3px;vertical-align:middle;}
+.sespagevideo_verified:hover{color:#93c33c;}
+
+/*Grid View*/
+.sespagevideo_listing_grid{
+  display:inline-block;
+  margin:0 0 15px 4px;
+  vertical-align:top;
+  width:182px;
+}
+[dir="rtl"] .sespagevideo_listing_grid{
+  margin:0 4px 15px 0;
+}
+.layout_left .sespagevideo_listing_grid,
+.layout_right .sespagevideo_listing_grid{
+	margin:0;
+	display:block;
+	width:100% !important;
+}
+.layout_left .sespagevideo_listing_grid + .sespagevideo_listing_grid,
+.layout_right .sespagevideo_listing_grid + .sespagevideo_listing_grid{
+	margin-top:10px;
+}
+.sespagevideo_grid_thumb{
+  float:left;
+  height:100%;
+	overflow:hidden;
+  width:100%;
+}
+.sespagevideo_grid_info{
+  padding-top:5px;
+  position:relative;
+}
+.sespagevideo_grid_title{
+  font-weight:bold;
+  margin-bottom:3px;
+}
+.sespagevideo_listing_grid.isoptions .sespagevideo_grid_title{
+  padding:0 20px 0 0;
+}
+[dir="rtl"] .sespagevideo_listing_grid.isoptions .sespagevideo_grid_title{
+	padding:0 0 0 20px;
+}
+.sespagevideo_grid_date{
+	font-size:0.8em;
+	margin-top:3px;
+	overflow:hidden;
+	padding:0 1px;
+}
+/*List View*/
+.sespagevideo_listing_list{
+  padding-bottom:10px;
+}
+.sespagevideo_listing_list + .sespagevideo_listing_list{
+  border-top-width:1px;
+  padding-top:10px;
+}
+.sespagevideo_list_thumb{
+  float:left;
+  height:120px;
+  margin:0 10px 0 0;
+	overflow:hidden;
+  width:200px;
+}
+[dir="rtl"] .sespagevideo_list_thumb{
+	float:right;
+	margin:0 0 0 10px;
+}
+.sespagevideo_list_info{
+  overflow:hidden;
+}
+.sespagevideo_list_title{
+	font-weight:bold;
+  font-size:17px;
+	margin-bottom:3px;
+}
+.sespagevideo_listing_list .sespagevideo_list_btns{
+	margin-top:5px;
+}
+.sespagevideo_list_date{
+	font-size:0.8em;
+	margin-top:3px;
+	overflow:hidden;
+	padding:0 1px;
+}
+.sespagevideo_list_des{
+	margin-top:5px;
+}
+/*Pinboard View*/
+.sespagevideo_video_listing .sesbasic_pinboard_list_btns{
+	width:100%;
+	left:0;
+	right:0;
+	text-align:center;
+}
+.sespagevideo_video_listing .sesbasic_pinboard_list_btns > a{
+	float:none;
+	display:inline-block;
+}
+/*Sidebar List View*/
+.layout_sespagevideo_of_the_day .sesbasic_view_type,
+.sespagevideo_sidebar_video_list .sesbasic_view_type{
+	display:none !important;
+}
+.sespagevideo_sidebar_video_list .sespagevideo_listing_list{
+	padding-bottom:5px;
+}
+.sespagevideo_sidebar_video_list .sespagevideo_listing_list + .sespagevideo_listing_list{
+	border-top-width:0;
+	padding-top:5px;
+}
+.sespagevideo_sidebar_video_list .sespagevideo_play_btn{display:none;}
+.sespagevideo_sidebar_video_list .sespagevideo_list_title{
+	font-size:13px;
+}
+/*STATICS:Common Statics CSS Code for All listins*/
+.sespagevideo_list_stats > span{
+  float:left;
+  font-size:11px;
+}
+[dir="rtl"] .sespagevideo_list_stats > span{
+  float:right;
+}
+.sespagevideo_list_stats > span + span{
+  border-left-width:1px;
+  margin:0 0 0 5px;
+  padding:0 0 0 5px;
+}
+[dir="rtl"] .sespagevideo_list_stats > span + span{
+  border-left-width:0;
+  border-right-width:1px;
+  margin:0 5px 0 0;
+  padding:0 5px 0 0;
+}
+.sespagevideo_list_stats > span i{
+  margin-right:3px;
+}
+[dir="rtl"] .sespagevideo_list_stats > span i{
+  margin-left:3px;
+  margin-right:0;
+}
+.sespagevideo_list_stats > span i:before{
+  font-size:11px;
+}
+.sespagevideo_list_location > span{
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	display:block;
+	float:none;
+}
+/*Grid Layout with inside information*/
+.sespagevideo_listing_in_grid{
+  height:170px;
+	float:left;
+	margin:0 5px 10px;
+	overflow:hidden;
+	position:relative;
+  width:270px;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid{
+	float:right;
+}
+.sespagevideo_listing_in_grid_thumb{
+	border-width:0 !important;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+.sespagevideo_listing_in_grid_info{
+	background:rgba(0,0,0,0.6);
+	background:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.6)));
+	background:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.6)));
+	background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+	bottom:0;
+	padding:20px;
+	position:absolute;
+	width:100%;
+}
+.sespagevideo_listing_in_grid_title{
+	font-weight:bold;
+	font-size:15px;
+}
+.sespagevideo_listing_in_grid_date{
+	font-size:0.8em;
+	margin-top:3px;
+	overflow:hidden;
+	padding:0 1px;
+}
+.sespagevideo_listing_in_grid_info *{
+	color:#fff !important;
+	text-shadow:0 2px 2px rgba(0, 0, 0, 0.4);
+}
+.sespagevideo_listing_in_grid .sespagevideo_watch_later_btn{
+	border-radius:0;
+	bottom:5px;
+	left:5px;
+	opacity:0;
+	filter:alpha(opacity=0);
+	z-index:1;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid .sespagevideo_watch_later_btn{
+	left:inherit;
+	right:5px;
+}
+.sespagevideo_listing_in_grid:hover .sespagevideo_watch_later_btn,
+.sespagevideo_listing_in_grid .sespagevideo_watch_later_btn.selectedWatchlater{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.sespagevideo_listing_in_grid .sespagevideo_length{
+	border-radius:0;
+	bottom:5px;
+	right:5px;
+	z-index:1;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid .sespagevideo_length{
+	left:5px;
+	right:inherit;
+}
+.sespagevideo_listing_in_grid .sespagevideo_labels{
+	bottom:inherit;
+	top:10px;
+}
+.sespagevideo_listing_in_grid:hover .sespagevideo_labels{
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.sespagevideo_listing_in_grid .sespagevideo_play_btn{
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.sespagevideo_listing_in_grid:hover .sespagevideo_play_btn{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.sespagevideo_listing_in_grid:hover .sespagevideo_listing_in_grid_info{
+	bottom:-50px;
+	opacity:0;
+  filter:alpha(opacity=0);
+}
+/*Grid Layout with inside information 2nd Layout*/
+.sespagevideo_listing_in_grid2{
+  height:170px;
+	float:left;
+	margin:0 5px 10px;
+	overflow:hidden;
+	position:relative;
+  width:270px;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid2{
+	float:right;
+}
+.sespagevideo_listing_in_grid2_thumb{
+	border-width:0 !important;
+	padding:0;
+	height:100%;
+	width:100%;
+}
+.sespagevideo_listing_in_grid2 .sespagevideo_thumb_btns{
+  -webkit-transition:all 500ms ease .4s;
+  -moz-transition:all 500ms ease .4s;
+  transition:all 500ms ease .4s;
+}
+.sespagevideo_listing_in_grid2_title_show{
+	background-color:rgba(0, 0, 0, .5);
+	position:absolute;
+	bottom:20px;
+	max-width:90%;
+	right:0;
+	padding:8px;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid2_title_show{
+	left:0;
+	right:inherit;
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_listing_in_grid2_title_show{
+	opacity:0;
+}
+.sespagevideo_listing_in_grid2_title_show a{
+	color:#fff;
+	text-shadow:0 2px 2px rgba(0, 0, 0, 0.4);
+}
+.sespagevideo_listing_in_grid2_info{
+	bottom:-50%;
+	padding:50px 10px;
+	position:absolute;
+	opacity:0;
+	width:100%;
+	height:10%;
+	background:rgba(0,0,0,0.6);
+	background:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.6)));
+	background:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.6)));
+	background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_listing_in_grid2_info{
+	background-color:rgba(0, 0, 0, .7);
+	background-image:none;
+	bottom:0;
+	opacity:1;
+	height:100%;
+}
+.sespagevideo_listing_in_grid2_title{
+	font-size:17px;
+}
+.sespagevideo_listing_in_grid2_date{
+	margin-top:8px;
+	overflow:hidden;
+	padding:0 1px;
+}
+.sespagevideo_listing_in_grid2_date > span + span,
+[dir="rtl"] .sespagevideo_listing_in_grid2_date > span + span{
+	border-width:0;
+}
+.sespagevideo_listing_in_grid2_date > span{
+	font-size:13px;
+}
+.sespagevideo_listing_in_grid2_date > span i:before{
+	font-size:15px;
+}
+.sespagevideo_listing_in_grid2_date > span i{
+	margin-right:5px;
+}
+.sespagevideo_listing_in_grid2_info *{
+	color:#fff !important;
+}
+.sespagevideo_listing_in_grid2 .sespagevideo_watch_later_btn{
+	border-radius:0;
+	bottom:5px;
+	left:5px;
+	opacity:0;
+	filter:alpha(opacity=0);
+	z-index:1;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid2 .sespagevideo_watch_later_btn{
+	left:inherit;
+	right:5px;
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_watch_later_btn,
+.sespagevideo_listing_in_grid2 .sespagevideo_watch_later_btn.selectedWatchlater{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.sespagevideo_listing_in_grid2 .sespagevideo_length{
+	border-radius:0;
+	bottom:5px;
+	right:5px;
+	z-index:1;
+}
+[dir="rtl"] .sespagevideo_listing_in_grid2 .sespagevideo_length{
+	left:5px;
+	right:inherit;
+}
+.sespagevideo_listing_in_grid2 .sespagevideo_labels{
+	bottom:inherit;
+	top:10px;
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_labels{
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.sespagevideo_listing_in_grid2 .sespagevideo_play_btn,
+.sespagevideo_listing_in_grid2 .sespagevideo_length{
+	opacity:0;
+	filter:alpha(opacity=0);
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_length{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_play_btn{
+	opacity:.4;
+	filter:alpha(opacity=40);
+}
+.sespagevideo_listing_in_grid2:hover .sespagevideo_play_btn:hover{
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+.layout_left .sespagevideo_listing_in_grid2,
+.layout_right .sespagevideo_listing_in_grid2{
+	margin:0;
+	display:block;
+	width:100% !important;
+}
+.layout_left .sespagevideo_listing_in_grid2 + .sespagevideo_listing_in_grid2,
+.layout_right .sespagevideo_listing_in_grid2 + .sespagevideo_listing_in_grid2{
+	margin-top:10px;
+}
+/*Manage Options*/
+.sespagevideo_list_option_toggle.fa{
+  cursor:pointer;
+  position:absolute;
+  top:5px;
+  right:10px;
+}
+[dir="rtl"] .sespagevideo_list_option_toggle.fa{
+	left:10px;
+	right:auto;
+}
+.sespagevideo_list_options{
+  margin-top:5px;
+}
+.sespagevideo_list_option_toggle.fa:before{
+  font-size:22px;
+}
+.sespagevideo_listing_options_pulldown{
+  background-color:#fff;
+  border:1px solid #ccc;
+  position:absolute;
+  right:0;
+  top:24px;
+  display:none;
+  width:120px
+}
+[dir="rtl"] .sespagevideo_listing_options_pulldown{
+	left:0;
+	right:auto;
+}
+div.sespagevideo_listing_options_pulldown a{
+  color:#333;
+  font-size:11px;
+  display:block;
+  padding:5px 10px;
+}
+.sespagevideo_list_option_toggle.open, .sespagevideo_list_option_toggle.open + div{
+  display:block;
+}
+.sespagevideo_listing_options_pulldown a:hover{
+  background-color:#ededed;
+  text-decoration:none;
+}
+/*CREATE & EDIT VIDEO FORM CSS START HERE*/
+.sespagevideo_video_form .global_form > div{
+	float:none;
+}
+.sespagevideo_video_form #artists-element .form-options-wrapper li{
+	display:inline-block;
+	vertical-align:top;
+	width:180px;
+}
+.sespagevideo_video_form .global_form div.form-label label.required:after{
+	content:" *";
+	color:#f00;
+}
+/*CREATE & EDIT VIDEO FORM CSS END HERE*/
+
+/*CATEGORY BASE VIDEO LISTING CSS START HERE*/
+.sespagevideo_cat_video_listing{
+	position:relative;
+}
+.sespagevideo_cat_video_list{
+  float:left;
+  height:170px;
+  padding:0 10px 20px;
+  width:200px;
+}
+[dir="rtl"] .sespagevideo_cat_video_list{
+  float:right;
+}
+.sespagevideo_cat_video_list .sespagevideo_thumb{
+  height:100%;
+	position:relative;
+  width:100%;
+}
+.sespagevideo_cat_video_list .sespagevideo_thumb > a{
+  overflow:hidden;
+  height:100%;
+  width:100%;
+  display:block;
+}
+.sespagevideo_cat_video_list_info{
+  background-color:rgba(0, 0, 0, .5);
+  bottom:0;
+  position:absolute;
+  top:0;
+  left:0;
+  margin:2px;
+  opacity:0;
+  filter:alpha(opacity=0);
+  padding:10px;
+  right:0;
+}
+.sespagevideo_cat_video_list:hover .sespagevideo_cat_video_list_info{
+  opacity:1;
+  filter:alpha(opacity=100);
+}
+.sespagevideo_cat_video_list_info *{
+  color:#fff;
+  text-align:center;
+}
+[dir="rtl"] .sespagevideo_cat_video_list_info *{
+	text-align:center;
+}
+.sespagevideo_cat_video_list_info > div{
+  display:table;
+  height:100%;
+  width:100%;
+}
+.sespagevideo_cat_video_list_info > div > div{
+  display:table-cell;
+  height:100%;
+  vertical-align:middle;
+  width:100%;
+}
+.sespagevideo_cat_video_list_title{
+  display:block;
+  font-weight:bold;
+  font-size:15px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width:200px;
+}
+.sespagevideo_cat_video_list_stats{
+  margin-top:5px;
+}
+.sespagevideo_cat_video_list_stats > span,
+[dir="rtl"] .sespagevideo_cat_video_list_stats > span{
+  float:none;
+}
+.sespagevideo_cat_video_list_stats > span + span{
+  margin:0 0 0 1px;
+}
+.sespagevideo_cat_video_list_button{
+	border-radius:3px;
+	display:inline-block;
+	padding:5px 10px;
+	margin-top:10px;
+	font-weight:bold;
+}
+.sespagevideo_videolist_column_big .sespagevideo_cat_video_list_title{
+	font-size:20px;
+}
+.sespagevideo_videolist_column_big .sespagevideo_cat_video_list_stats{
+	font-size:15px;
+}
+.sespagevideo_videolist_column_small{
+  width:25%;
+}
+.sespagevideo_videolist_column_small .sespagevideo_cat_video_list{
+  width:100%;
+}
+.sespagevideo_videolist_column_big{
+  width:50%;
+}
+.sespagevideo_videolist_column_big .sespagevideo_cat_video_list{
+  height:340px;
+	padding:0 10px 20px;
+  width:100%;
+}
+.sespagevideo_cat_video_listing .sesbasic_paging{
+	float:left;
+}
+[dir="rtl"] .sespagevideo_cat_video_listing .sesbasic_paging{
+	float:right;
+}
+/*CATEGORY BASE VIDEO LISTING CSS END HERE*/
+/*VIDEO VIEW PAGE CSS START HERE*/
+.sespagevideo_view_embed{
+	background-color:#000;
+  margin-bottom:10px;
+}
+.sespagevideo_view_embed video,
+.sespagevideo_view_embed iframe,
+.sespagevideo_view_embed object{
+	max-width:100%;
+	min-height:300px;
+	min-width:300px;
+	width:100%;
+}
+.sespagevideo_view_openlightbox_link{
+	float:right;
+	font-size:11px;
+	margin-top:-5px;
+}
+[dir="rtl"] .sespagevideo_view_openlightbox_link{
+	float:left;
+}
+.sespagevideo_view_openlightbox_link:before{
+	margin-right:5px;
+}
+[dir="rtl"] .sespagevideo_view_openlightbox_link:before{
+	margin-left:5px;
+	margin-right:0;
+}
+.sespagevideo_view_title{
+	font-size:20px;
+	font-weight:normal;
+	letter-spacing:normal;
+}
+.sespagevideo_view_title, .sespagevideo_view_desc{
+  margin-bottom:10px;
+}
+.sespagevideo_view_author, .sespagevideo_view_statics{
+  float:left;
+  margin-bottom:10px;
+  width:50%;
+}
+[dir="rtl"] .sespagevideo_view_author, [dir="rtl"] .sespagevideo_view_statics{
+	float:right;
+}
+.sespagevideo_view_author_info{
+  overflow:hidden;
+}
+.sespagevideo_view_author_photo{
+  float:left;
+  margin:0 10px 0 0;
+}
+[dir="rtl"] .sespagevideo_view_author_photo{
+	float:right;
+	margin:0 0 0 10px;
+}
+.sespagevideo_view_author_name{
+  margin:5px 0 3px;
+}
+.sespagevideo_view_author_name a{
+  font-weight:bold;
+}
+.sespagevideo_view_date{
+  font-size:.8em;
+}
+.sespagevideo_view_rating{
+  margin-bottom:5px;
+}
+.sespagevideo_view_meta{
+  margin-bottom:5px;
+}
+.sespagevideo_view_meta > span{
+	display:block;
+  margin-bottom:5px;
+}
+.sespagevideo_view_meta > span i{
+	text-align:center;
+	width:20px;
+}
+[dir="rtl"] .sespagevideo_view_meta > span i{
+	text-align:center;
+}
+.sespagevideo_view_fields div{
+	font-size:11px;
+}
+.sespagevideo_view_fields div + div{
+	margin-top:5px;
+}
+.sespagevideo_view_field_ques{
+	width:200px;
+}
+.sespagevideo_view_field_value{
+	overflow:hidden;
+}
+.sespagevideo_view_options{
+	border-radius:3px;
+  float:right;
+	overflow:hidden;
+}
+.sespagevideo_view_watch_later_btn.selectedWatchlater{
+  background-color:#ff4500;
+}
+.sespagevideo_view_options .sesbasic_icon_btn{
+	border-radius:0;
+	height:35px;
+	float:left;
+	margin:0;
+	padding:10px 0;
+	width:35px;
+}
+.sespagevideo_view_options .sesbasic_icon_btn + .sesbasic_icon_btn{
+	border-left:1px solid rgba(255, 255, 255, 0.1);
+}
+.sespagevideo_view_options .sesbasic_icon_btn i:before{
+	font-size:17px;
+}
+.sespagevideo_view_options .sesbasic_icon_btn_count i:before{top:3px;}
+.sespagevideo_view_options .sesbasic_icon_btn_count span{top:20px;font-size:17px;}
+.sespagevideo_view_options .sesbasic_icon_btn_count:hover i:before{top:-20px;}
+.sespagevideo_view_options .sesbasic_icon_btn_count:hover span{top:3px;}
+/*External Priview*/
+.sespagevideo_external_video_preview{
+	border-width:1px;
+	border-style:solid;
+}
+.sespagevideo_external_video_preview .sespagevideo_external_video_btn_cont{
+	padding:0 10px 10px;
+}
+.sespagevideo_view_bottom{
+	margin-top:20px;
+}
+.sespagevideo_view_bottom_right{
+	float:right;
+	margin-left:20px;
+	width:300px;
+}
+[dir="rtl"] .sespagevideo_view_bottom_right{
+	float:left;
+	margin-left:0;
+	margin-right:20px;
+}
+.sespagevideo_view_bottom_right div > h3{
+	background:none;
+	border-width:0;
+	font-size:14px;
+	font-weight:bold;
+	letter-spacing:normal;
+	margin-bottom:6px;
+	padding:0;
+}
+.sespagevideo_view_bottom_right .sesbasic_sidebar_block{
+	background:none;
+	padding:0;
+	border-width:0;
+	box-shadow:0 0 0 transparent;
+}
+.sespagevideo_view_bottom_left{
+	overflow:hidden;
+}
+.sespagevideo_view_bottom_left .comments{
+	width:100%;
+}
+/*VIDEO VIEW PAGE CSS END HERE*/
+/*Search Widget*/
+.sespagevideo_global_search *{
+  -moz-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.sespagevideo_global_search #filter_form,
+.sespagevideo_global_search #filter_form > div{
+  padding:0 !important;
+}
+.sespagevideo_global_search #filter_form > div > div{
+  padding:10px;
+}
+.sespagevideo_global_search #filter_form > div > div:after,
+.sespagevideo_global_search .form-elements:after{
+  display:block;
+  content:'';
+  clear:both;
+}
+.sespagevideo_global_search .form-elements{
+  border-radius:3px;
+  border-width:1px;
+  padding:5px;
+  width:100%;
+}
+.sespagevideo_global_search .form-wrapper{
+  margin:0 !important;
+}
+.sespagevideo_global_search .form-label{
+  display:none;
+}
+.sespagevideo_global_search #type-wrapper{
+  float:left;
+  width:150px;
+}
+[dir="rtl"] .sespagevideo_global_search #type-wrapper{
+  float:right;
+}
+.sespagevideo_global_search #title-wrapper{
+	clear:none !important;
+	overflow:hidden;
+	width:auto !important;
+}
+.sespagevideo_global_search .form-wrapper select,
+.sespagevideo_global_search .form-wrapper input{
+  background:none;
+  border-width:0;
+  border-radius:0;
+	height:25px;
+  padding:0;
+  outline:none;
+  width:100%;
+}
+.sespagevideo_global_search .form-wrapper input{
+  padding-left:10px;
+}
+[dir="rtl"] .sespagevideo_global_search .form-wrapper input{
+  padding-left:0;
+  padding-right:10px;
+}
+/*LOCATION POPUP CSS START HERE*/
+.sespagevideo_edit_location_popup{
+  margin:15px;
+}
+.sespagevideo_edit_location_popup label{
+  display:block;
+  margin:15px 0 5px;
+}
+.sespagevideo_edit_location_popup input{
+  width:400px;
+}
+#global_page_sespagevideo-index-location #global_content_simple,
+#global_page_sespagevideo-index-location #global_content_simple{display:block !important;}
+.sespagevideo_edit_location_popup #mapcanvas-wrapper{
+  margin-top:15px;
+  width:100%;
+}
+/*LOCATION POPUP CSS END HERE*/
+/*HEIGHTED VIEW CSS START HERE*/
+.sespagevideo_heighted_view .sespagevideo_listing_in_grid{
+	height:150px;
+	margin:0;
+	width:25%;
+}
+.sespagevideo_heighted_view .sespagevideo_listing_in_grid:first-child{
+	height:450px;
+	width:50%;
+}
+.sespagevideo_heighted_view .sespagevideo_listing_in_grid:first-child .sespagevideo_listing_in_grid_title{
+	font-size:22px;
+}
+.sespagevideo_heighted_view .sespagevideo_listing_in_grid:first-child .sespagevideo_play_btn{
+	margin:-40px 0 0 -40px;
+}
+[dir="rtl"] .sespagevideo_heighted_view .sespagevideo_listing_in_grid:first-child .sespagevideo_play_btn{
+	margin:-40px -40px 0 0;
+}
+.sespagevideo_heighted_view .sespagevideo_listing_in_grid:first-child .sespagevideo_play_btn:before{
+	font-size:80px;
+}
+/*HEIGHTED VIEW CSS END HERE*/
+/*EVENT PROFILE WIDGET CSS START HERE*/
+.layout_sespagevideo_profile_videos .sesbasic_profile_tabs_top{
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+.layout_sespagevideo_profile_videos .sesbasic_view_type{
+	display:block;
+	float: left;
+	width:100%;
+  z-index: inherit;
+}
+.layout_sespagevideo_profile_videos .sesbasic_profile_tabs_top + .sesbasic_view_type{
+	margin-top:-49px;
+}
+.layout_sespagevideo_profile_videos .sesbasic_view_type .sesbasic_view_type_options{
+  position: relative;
+  z-index: 3;
+}
+/*EVENT PROFILE WIDGET CSS END HERE*/
+/*LABELS WIDGET START HERE*/
+.sespagevideo_view_labels > span{
+	border-radius:3px;
+	color:#fff;
+	display:block;
+	font-size:12px;
+	font-weight:bold;
+	letter-spacing:2px;
+	padding:5px;
+	text-align:center;
+	text-transform:uppercase;
+}
+.sespagevideo_view_labels > span + span{
+	margin-top:5px;
+}
+/*LABELS WIDGET END HERE*/
+/*RESPONSIVE CSS*/
+@media only screen and (max-width:767px){
+	/*CATEGORY ALBUM LISTING*/
+	.sespagevideo_videolist_column_small{width:50%;}
+	.sespagevideo_videolist_column_big{clear:both;width:100%;}
+	.sespagevideo_cat_video_list{height:150px !important; width:100% !important;padding:0 5px 10px !important;}
+	.sespagevideo_videolist_column_big .sespagevideo_cat_video_list{height:200px !important; width:100% !important;}
+	.sespagevideo_videolist_row .sespagevideo_videolist_column_small{width:100% !important;}
+	.sespagevideo_videolist_row .sespagevideo_videolist_column_small .sespagevideo_cat_video_list{width:50% !important;}
+
+	/*Grid View / Out side*/
+	.sespagevideo_video_listing, [dir="rtl"] .sespagevideo_video_listing{text-align:center;}
+	.sespagevideo_listing_grid{margin:0 1% 2%;width:30% !important}
+	.sespagevideo_listing_grid .sespagevideo_grid_thumb{height:200px !important;}
+
+	/*Grid View / Inside*/
+	.sespagevideo_listing_in_grid2{height:190px !important;margin:0 0.5% 1%;width:32.334% !important}
+
+	/*VIDEO VIEW PAGE*/
+	.layout_page_sespagevideo_index_view .layout_left,
+	.layout_page_sespagevideo_index_view .layout_right,
+	.sespagevideo_view_bottom_right,
+	.sespagevideo_view_openlightbox_link{display:none !important;}
+	.sesalbum_view_photo_container #media_photo_next{min-height:300px;}
+	.sesalbum_photo_view_bottom_right{display:none;}
+
+	/*Fixed Widget*/
+	.sespagevideo_heighted_view .sespagevideo_listing_in_grid{width:50%;}
+	.sespagevideo_heighted_view .sespagevideo_listing_in_grid:first-child{height:200px !important;width:100%;}
+}
+@media only screen and (max-width:600px){
+	/*List View*/
+	.sespagevideo_list_thumb{height:140px !important;width:160px !important;}
+	.sespagevideo_listing_list .sespagevideo_list_des{display:none;}
+
+	/*Grid View / Out side*/
+	.sespagevideo_listing_grid{margin:0 .5% 2%;width:47% !important}
+	.sespagevideo_listing_grid .sespagevideo_grid_thumb{height:200px !important;}
+}
+@media only screen and (max-width:480px){
+	/*Grid View / Inside*/
+	.sespagevideo_listing_in_grid2{height:150px !important;margin:0 .5% 1%;width:49% !important}
+
+	/*Artist View Page*/
+	.sespagevideo_item_view_artwork{height:150px;width:150px;}
+
+	/*VIDEO VIEW PAGE*/
+	.sespagevideo_view_author, .sespagevideo_view_statics{width:100%;}
+}
+@media only screen and (max-width:400px){
+	/*Grid View / Out side*/
+	.sespagevideo_listing_grid{float:left;margin:0 0 10px;width:100% !important}
+	.sespagevideo_listing_grid .sespagevideo_grid_thumb{height:200px !important;}
+}
+@media only screen and (max-width:350px){
+	/*List View*/
+	.sespagevideo_list_thumb{margin-bottom:10px;width:100% !important;}
+	/*Grid View / Inside*/
+	.sespagevideo_listing_in_grid2{height:190px !important;margin:0 0 10px;width:100% !important}
+}

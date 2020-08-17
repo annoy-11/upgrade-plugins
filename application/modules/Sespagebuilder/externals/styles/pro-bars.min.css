@@ -1,0 +1,64 @@
+/*	ProBars v1.0, Copyright 2014, Joe Mottershaw, https://github.com/joemottershaw/
+//	=============================================================================== */
+
+.pro-bar-container-wrapper{float:left;margin:10px 0;width:100%;}
+.pro-bar-container { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; width:100%; margin:0;background:#222; position:relative;}
+.pro-bar { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; width:0;background:#444 }
+.pro-bar.bar-100 { width:100% }
+@-webkit-keyframes progressStripeLTR { to {
+background-position:30px 0
+}
+}
+@-moz-keyframes progressStripeLTR { to {
+background-position:30px 0
+}
+}
+@-ms-keyframes progressStripeLTR { to {
+background-position:30px 0
+}
+}
+@-o-keyframes progressStripeLTR { to {
+background-position:30px 0
+}
+}
+@keyframes progressStripeLTR { to {
+background-position:30px 0
+}
+}
+@-webkit-keyframes progressStripeRTL { to {
+background-position:-30px 0
+}
+}
+@-moz-keyframes progressStripeRTL { to {
+background-position:-30px 0
+}
+}
+@-ms-keyframes progressStripeRTL { to {
+background-position:-30px 0
+}
+}
+@-o-keyframes progressStripeRTL { to {
+background-position:-30px 0
+}
+}
+@keyframes progressStripeRTL { to {
+background-position:-30px 0
+}
+}
+.pro-bar-candy { width:100%; }
+.pro-bar-candy.background-image {background-image:-webkit-linear-gradient(-45deg, rgba(255,255,255,.25)25%, transparent 25%, transparent 50%, rgba(255,255,255,.25)50%, rgba(255,255,255,.25)75%, transparent 75%, transparent); background-image:-moz-linear-gradient(-45deg, rgba(255,255,255,.25)25%, transparent 25%, transparent 50%, rgba(255,255,255,.25)50%, rgba(255,255,255,.25)75%, transparent 75%, transparent); background-image:-ms-linear-gradient(-45deg, rgba(255,255,255,.25)25%, transparent 25%, transparent 50%, rgba(255,255,255,.25)50%, rgba(255,255,255,.25)75%, transparent 75%, transparent); background-image:-o-linear-gradient(-45deg, rgba(255,255,255,.25)25%, transparent 25%, transparent 50%, rgba(255,255,255,.25)50%, rgba(255,255,255,.25)75%, transparent 75%, transparent); background-image:linear-gradient(-45deg, rgba(255,255,255,.25)25%, transparent 25%, transparent 50%, rgba(255,255,255,.25)50%, rgba(255,255,255,.25)75%, transparent 75%, transparent); background-repeat:repeat-x;}
+.pro-bar-candy.animation{-webkit-animation:progressStripeLTR 2s linear infinite; -moz-animation:progressStripeLTR 2s linear infinite; -ms-animation:progressStripeLTR 2s linear infinite; -o-animation:progressStripeLTR 2s linear infinite; animation:progressStripeLTR 2s linear infinite}
+.pro-bar-candy.candy-rtl { -webkit-animation:progressStripeRTL 2s linear infinite; -moz-animation:progressStripeRTL 2s linear infinite; -ms-animation:progressStripeRTL 2s linear infinite; -o-animation:progressStripeRTL 2s linear infinite; animation:progressStripeRTL 2s linear infinite }
+.pro-bar-candy-title { font-weight:bold; font-size:12px; padding:0 10px; position:absolute;top:0; width:100%; }
+/*Postion: Center*/
+.sespagebuilder-prc-c .pro-bar-candy-title{text-align:center;}
+/*Postion: Left*/
+.sespagebuilder-prc-l .pro-bar-candy-title{text-align:left;}
+/*Postion: Right*/
+.sespagebuilder-prc-r .pro-bar-candy-title{text-align:right;}
+/*Postion: top*/
+.sespagebuilder-prc-t {margin-top:20px;}
+.sespagebuilder-prc-t .pro-bar-candy-title{top:-20px;line-height:normal !important;}
+/*Postion: Bottom*/
+.sespagebuilder-prc-b {margin-bottom:20px;}
+.sespagebuilder-prc-b .pro-bar-candy-title{bottom:-20px;top:inherit;line-height:normal !important;}

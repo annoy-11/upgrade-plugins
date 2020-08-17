@@ -1,0 +1,1 @@
+INSERT IGNORE INTO `engine4_sesspectromedia_footerlinks` (`name`, `url`, `enabled`, `sublink`) VALUES ("Footer Column 4", "", 1, 0);

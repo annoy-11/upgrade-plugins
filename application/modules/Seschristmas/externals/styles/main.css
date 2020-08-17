@@ -1,0 +1,242 @@
+/* $Id:main.css 2014-10-31 00:00:00 SocialEngineSolutions $*/
+
+/*Font Import Form Google Web Font*/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab);
+/*Wish Board*/
+.seschristmas_wish_board{
+	clear:both;
+}
+.seschristmas_wish_board:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+.seschristmas_wish_list,
+.seschristmas_wish_list *{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.seschristmas_wish_list{
+	background-color:$theme_foreground_background_color;
+	border:1px solid $theme_border_medium_color;
+	box-shadow:0 0 3px rgba(0, 0, 0, 0.2);
+	cursor:pointer;
+	float:left;
+	margin:0 1% 15px;
+	min-height:200px;
+	position:relative;
+	width:23%;
+	-webkit-transition:all 0.5s ease-in-out 0s;
+	-moz-transition:all 0.5s ease-in-out 0s;
+	transition:all 0.5s ease-in-out 0s;
+}
+[dir="rtl"] .seschristmas_wish_list{
+	float:right;
+}
+.seschristmas_wish_list_inner{
+	color:#fff;
+	float:left;
+	height:100%;
+	padding:10px;
+	position:relative;
+	width:100%;
+}
+.seschristmas_wish_txt{
+	font-family:'Roboto Slab', serif;
+	font-size:17px;
+	height:240px;
+	line-height:30px;
+	overflow:hidden;
+  font-style:italic;
+}
+.seschristmas_wish_list_btm{
+	border-top:1px solid $theme_border_medium_color;
+	clear:both;
+	margin-top:10px;
+	padding-top:10px;
+}
+.seschristmas_wish_list_btm > a{
+	float:left;
+	margin:0 10px 0 0;
+}
+[dir="rtl"] .seschristmas_wish_list_btm > a{
+	float:right;
+	margin:0 0 0 10px;
+}
+.seschristmas_wish_list_btm > a img{
+	border-width:0;
+	border-radius:50%;
+	height:35px;
+	width:35px;
+}
+.seschristmas_wish_list_btm_info{
+	overflow:hidden;
+}
+.seschristmas_wish_list_name{
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.seschristmas_wish_list_date{
+	color:$theme_font_color_light;
+	font-size:.8em;
+}
+.seschristmas_icon{
+	display:inline-block;
+	height:16px;
+	margin-left:10px;
+	vertical-align:middle;
+	width:16px;
+}
+[dir="rtl"] .seschristmas_icon{
+	margin-left:0;
+	margin-right:10px;
+}
+.seschristmas_icon_edit{
+	background-image:url(~/application/modules/Seschristmas/externals/images/edit.png);
+}
+.seschristmas_icon_delete{
+	background-image:url(~/application/modules/Seschristmas/externals/images/delete.png);
+}
+/*Hover Effect*/
+.seschristmas_wish_list:hover{
+	background-color:#b4180c;
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.2) inset;
+}
+.seschristmas_wish_list:hover,
+.seschristmas_wish_list:hover *{
+	color:#fff;
+	-webkit-transition:all 0.5s ease-in-out 0s;
+	-moz-transition:all 0.5s ease-in-out 0s;
+	transition:all 0.5s ease-in-out 0s;
+}
+.seschristmas_wish_list:hover > div:before {
+	background-image:url(~/application/modules/Seschristmas/externals/images/bell.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	content:"";
+	height:36px;
+	left:0;
+	position:absolute;
+	top:-16px;
+	width:100%;
+}
+/*Responsive Css*/
+@media (min-width:768px) and (max-width:980px) {
+  .seschristmas_wish_list{
+    width:31%;
+  }
+}
+ @media only screen and (max-width:768px){
+  .seschristmas_wish_list{
+    margin:0 0 15px;
+    min-height:inherit;
+    width:100%;
+  }
+  .seschristmas_wish_txt{
+    height:auto;
+  }
+}
+/*Post Wish Popup*/
+#global_page_seschristmas-welcome-create form,
+#global_page_seschristmas-welcome-edit form{
+	margin:15px 0 0 15px;
+}
+[dir="rtl"] #global_page_seschristmas-welcome-create form,
+[dir="rtl"] #global_page_seschristmas-welcome-edit form{
+	margin:15px 15px 0 0;
+}
+#global_page_seschristmas-welcome-create #description-label,
+#global_page_seschristmas-welcome-edit #description-label{
+	display:none;
+}
+/*Wish Post Button*/
+.seschristmas_button_wrap{
+	text-align:center;
+	margin-bottom:25px;
+}
+[dir='rtl'] .seschristmas_button_wrap{
+  text-align:center;
+}
+div a.seschristmas_button{
+  border:1px solid #a51b1f;
+  background-color:#cb2122; 
+  background-image:-webkit-gradient(linear, left top, left bottom, from(#cb2122), to(#a51b1f));
+  background-image:-webkit-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:-moz-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:-ms-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:-o-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:linear-gradient(to bottom, #cb2122, #a51b1f);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cb2122, endColorstr=#a51b1f);
+	border-radius:5px;
+	color:#fff;
+	display:inline-block;
+	font-size:15px;
+	padding:10px 15px;
+  text-align:center;
+}
+div a.seschristmas_button:hover{
+  border:1px solid #ac1d20;
+  background-color:#d72324; 
+  background-image:-webkit-gradient(linear, left top, left bottom, from(#d72324), to(#ac1d20));
+  background-image:-webkit-linear-gradient(top, #d72324, #ac1d20);
+  background-image:-moz-linear-gradient(top, #d72324, #ac1d20);
+  background-image:-ms-linear-gradient(top, #d72324, #ac1d20);
+  background-image:-o-linear-gradient(top, #d72324, #ac1d20);
+  background-image:linear-gradient(to bottom, #d72324, #ac1d20);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d72324, endColorstr=#ac1d20);
+}
+div a.seschristmas_button:hover{
+	text-decoration:none;
+}
+.layout_seschristmas_countdown_clock,
+.layout_seschristmas_christmas_page,
+.layout_seschristmas_write_wish{
+  clear:both;
+  margin-bottom:15px;
+}
+.layout_seschristmas_christmas_page a.seschristmas_button,
+.layout_seschristmas_write_wish a.seschristmas_button{
+  display:block;
+}
+/*Countdown Widget*/
+.seschristmas_countdown{
+  text-align:center;
+}
+.seschristmas_countdown .counterbox{
+  background-color:#cb2122; 
+  background-image:-webkit-gradient(linear, left top, left bottom, from(#cb2122), to(#a51b1f));
+  background-image:-webkit-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:-moz-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:-ms-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:-o-linear-gradient(top, #cb2122, #a51b1f);
+  background-image:linear-gradient(to bottom, #cb2122, #a51b1f);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cb2122, endColorstr=#a51b1f);
+  border-radius:5px;
+  color:#fff;
+  display:inline-block;
+  height:45px;
+  text-align:center;
+  text-shadow:0px 2px #a70f12;
+  margin:5px 2px;
+  width:45px;
+}
+.seschristmas_countdown .counterbox .counterbox_number{
+  font-size:17px;
+  display:block;
+  margin:5px 0 0px;
+}
+.seschristmas_countdown .counterbox .counterbox_name{
+  font-size:10px;
+  display:block;
+}
+.seschristmas_countdown_txt{
+  color:#b4180c;
+	font-family:'Roboto Slab', serif;
+	font-size:20px;
+	line-height:30px;
+  text-align:center;
+  font-style:italic;
+}
+[dir='rtl'] .seschristmas_countdown,
+[dir='rtl'] .seschristmas_countdown .counterbox,
+[dir='rtl'] .seschristmas_countdown_txt{
+  text-align:center;
+}

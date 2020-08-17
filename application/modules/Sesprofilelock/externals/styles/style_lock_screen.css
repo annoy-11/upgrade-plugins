@@ -1,0 +1,183 @@
+/* $Id:style_lock_screen.css 2016-04-30 00:00:00 SocialEngineSolutions $*/
+
+/*Lock Page*/
+body {
+	background-color:#ddd;
+	padding:0;
+	margin:0;
+}
+*{
+  font-family:"Open Sans", arial, sans-serif;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.page_background, .page_overlay{
+  bottom:0;
+  height:100%;
+  left:0;
+  position:fixed;
+  right:0;
+  top:0;
+  width:100%;
+  z-index:1;
+}
+.page_background img{
+  height:100%;
+	object-fit:cover;
+  width:100%;
+}
+.page_overlay{
+	background-color:rgba(0, 0, 0, 0.2);
+	z-index:2;
+}
+.lock_box_container {
+  top:50%;
+  left:50%;
+  position:absolute;
+  margin-top:-160px;
+  margin-left:-260px;
+  z-index:3;
+}
+.site_logo {
+  font-size:25px;
+  margin-bottom:10px;
+	color:#fff;
+}
+.site_logo img{
+  max-height:50px;
+  max-width:100%;
+}
+.user_information_container {	
+  background-color:rgba(0, 0, 0, .2);
+  border:1px solid rgba(255, 255, 255, .2);
+	border-radius:3px;
+  padding:10px;
+  width:550px; 
+}
+.user_information_container:after {
+  clear:both;
+  content:"";
+  display:block;
+}
+.user_photo{
+	float:left;
+	height:200px;
+	overflow:hidden;
+  width:200px;
+}
+.user_photo img{
+  height:100%;
+	object-fit:cover;
+  width:100%;
+}
+.user_info {
+	float:right;
+	width:310px;
+}
+.user_info h2 {
+	margin-top:-5px;
+	font-weight:300;
+	color:#fff;
+	font-size:28px;
+	line-height:32px;
+	margin-bottom:5px;
+}
+.user_info .user_email {
+	display:block;
+	font-size:14px;
+	line-height:14px;
+	margin-bottom:10px;
+} 
+.user_info .user_loked {
+	font-size:14px;	
+	line-height:14px;
+	font-style:normal;
+}
+.user_info .user_login_form{
+	margin:28px 0 10px;
+	overflow:hidden;
+}
+.user_info .user_login_form .form-wrapper{
+  float:left;
+}
+.user_info .user_login_form .form-wrapper input{
+  background-color:#fff;
+  box-shadow:0 0 5px rgba(0, 0, 0, 0.5) inset;
+  border-width:0;
+  height:35px;
+  padding:0 7px;
+  width:200px;
+}
+.user_info .user_login_form .form-wrapper button{
+  background-color:#4d90fe;
+  background-image:url("../images/white-arrow.png");
+  background-position:center center;
+  background-repeat:no-repeat;
+  border-width:0;
+  color:#fff;
+  cursor:pointer;
+  float:left;
+  font-size:0;
+  height:35px;
+  overflow:hidden;
+  text-indent:-99px;
+  width:35px;
+}
+.user_info .user_login_form .form-wrapper button:hover{
+  background-color:#2f7eff;
+}
+.user_info .user_login_form .form-errors,
+.user_info .user_login_form .form-errors ul,
+.user_info .user_login_form .form-errors li{
+  padding:0;
+	margin:0;
+	color:#f00;
+	list-style:none;
+	font-size:14px;
+}
+.user_info .user_login_form .form-errors + .form-elements .form-wrapper input{
+  border:2px solid #f00;
+}
+.user_info .relogin_link{
+	clear:both;
+}
+.user_info .relogin_link a{
+	color:#fff;
+	text-decoration:underline;
+	font-size:12px;
+}
+.user_info .user_email, .user_info .user_loked {
+	color:#fff;
+} 
+/*Responsive*/
+@media (max-width:768px) {
+	body{padding:10px;}
+  .site_logo {
+    text-align:center;
+  }
+  .lock_box_container {
+    top: 20px;
+    position: relative;
+    left: 0;
+    margin: 0;
+    right: 0;
+  }	
+  .user_information_container {	
+    padding:20px 10px;
+    text-align:center;	
+    width:100%;
+  }
+  .user_photo{
+    float:none !important;
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    margin-bottom:15px;
+  }
+	.user_info {
+		float:none !important;
+		width:260px;		
+		margin:0 auto;
+	}
+}

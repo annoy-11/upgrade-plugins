@@ -1,0 +1,106 @@
+
+.ytube_banner_btns a{
+	background-color:$theme_button_background_color;
+	border:1px solid $theme_button_border_color;
+  color:$theme_button_font_color !important;
+}
+.ytube_banner_btns a:hover{
+	background-color:$theme_button_background_color_hover;
+  cursor:pointer;
+	color:$theme_button_font_hover_color !important;
+	text-decoration:none;
+}
+.sesytube_landing_page .seytube_content_wrapper,
+.sesytube_landing_page .sesytube_content_carousel_wrapper{
+	background-color:$sesytube_content_background_color;
+}
+.sesytube_landing_page .sesytube_content_carousel .slick-list{
+	max-width:$theme_content_width;
+}
+.seytube_highlights_item a{
+	background-color:$sesytube_content_background_color;
+}
+.seytube_highlights_item:hover a,
+.seytube_content_item:hover .seytube_content_item_title{
+	background-color:$theme_button_background_color_hover;
+	color:#fff;
+}
+.sesytube_feature_item_icon i.icon_feature{
+	border-color:$theme_link_color_hover;
+}
+.sesytube_feature_item:hover .sesytube_feature_item_icon i.icon_feature{
+	+animation;
+	border-color:$theme_base_color;
+}
+.sesytube_feature_item:hover .sesytube_feature_item_cont h3 a{
+	+animation;
+	color:$theme_link_color_hover;
+}
+.sesytube_feature_item:nth-child(4):before,
+.sesytube_feature_item:nth-child(4):after,
+.sesytube_feature_item:nth-child(5):before,
+.sesytube_feature_item:nth-child(5):after{
+	border:1px solid $theme_border_color;
+}
+.sesytube_feature_item:hover .sesytube_feature_item_cont h3{
+	+animation;
+	color:$theme_button_background_color_hover;
+}
+.sesytube_home_slider_cont_inner #typed-cursor{
+	background-color:$theme_link_color;
+	color:$theme_link_color;
+}
+@media only screen and (max-width:$theme_content_width){
+	.sesytube_landing_page .seytube_highlights_cont,
+	.sesytube_landing_page .seytube_content_inner{
+		width:100%;
+	}
+	.sesytube_landing_page .sesytube_content_carousel .slick-list{
+		max-width:100%;
+	}
+	.seytube_highlights_cont{
+		padding:0 10px;
+		width:100%
+	}
+}
+.sesytube_login_main .sesytube_login_form{
+	background-color:$theme_box_background_color;
+}
+/*Login - Signup Popup*/
+.sesytube_quick_popup{
+	background-color:$theme_box_background_color;
+}
+.sesytube_popup_header{
+	background-color:$sesytube_login_popup_header_background_color;
+}
+.sesytube_popup_header a{
+	color:$sesytube_login_popup_header_font_color !important;
+}
+.sesytube_popup_header div.active a{
+	background-color:$theme_list_background_color;
+	color:$theme_font_color !important;
+}
+.sesytube_popup_header_btns a.active{
+	border-bottom:1px solid $sesytube_login_popup_header_font_color;
+}
+.sesytube_popup_login .form-elements > .form-wrapper:nth-child(1) .form-element:before,
+.sesytube_popup_login .form-elements > .form-wrapper:nth-child(2) .form-element:before{
+	border:1px solid $sesytube_login_popup_header_background_color;
+	color:$sesytube_login_popup_header_background_color;
+}
+.sesytube_popup_content_sep{
+	background-color:$theme_border_color;
+}
+.sesytube_popup_content_sep span{
+	background-color:$theme_border_color;
+}
+
+.sesytube_login_main .global_form input[type=email],
+.sesytube_login_main .global_form input[type=password]{
+	color:$theme_font_color !important;
+}
+.sesytube_login_main .global_form input[type=text]::-webkit-input-placeholder ,
+.sesytube_login_main .global_form input[type=email]::-webkit-input-placeholder ,
+.sesytube_login_main .global_form input[type=password]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color:$theme_font_color !important;
+}

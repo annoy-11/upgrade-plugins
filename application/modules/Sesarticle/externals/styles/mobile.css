@@ -1,0 +1,274 @@
+/* $Id:mobile.css 2016-07-23 00:00:00 SocialEngineSolutions $*/
+
+/* ACTION TYPE ICONS */
+.activity_icon_comment_sesarticle:before{content:"\\f0e5";}
+/* ITEM TYPE ICONS */
+.item_icon_sesarticle:before, 
+.item_icon_sesarticle:before,
+.item_icon_sesarticle_entry:before,
+.notification_type_sesuser_claim_article:before,
+.notification_type_sesarticle_claim_declined:before,
+.notification_type_sesuser_claimadmin_article:before,
+.notification_type_sesarticle_subscribed_new:before{
+  content:"\\f0f6";
+  font-family:fontawesome;
+}
+/*Profile Tabs*/
+.sesarticle_profile_tabs ul li a{
+  color:$theme_font_color !important;
+}
+.sesarticle_profile_tabs ul li:hover a,
+.sesarticle_profile_tabs ul li.active a{
+  color:$theme_button_font_color !important;
+}
+.sesarticle_profile_tabs ul li:before{
+  background-color:$theme_button_background_color;
+}
+/*Generic Layout Container*/
+[class*='layout_sesarticle_'], 
+[id^='global_page_sesarticle-'] .layout_core_content{
+  clear:both;
+  margin-bottom:15px;
+}
+[class*='layout_sesarticle_']:after, 
+[id^='global_page_sesarticle-'] .layout_core_content:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+[class*='tab_layout_sesarticle_']{
+  margin:0;
+  clear:none;
+}
+/*Listing Buttons*/
+.sesarticle_thumb_btns{
+	margin-left:2px;
+	position:absolute;
+	opacity:0;
+	top:-20px;
+	right:10px;
+	z-index:2;
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+[dir="rtl"] .sesarticle_thumb_btns{
+	margin-left:0;
+	margin-right:2px;
+	left:10px;
+	right:auto;
+}
+.sesarticle_thumb:hover .sesarticle_thumb_btns,
+.sesarticle_listing_in_grid:hover .sesarticle_thumb_btns,
+.sesarticle_activity_article:hover .sesarticle_thumb_btns,
+.sesarticle_listing_in_grid2:hover .sesarticle_thumb_btns{
+	opacity:1;
+	top:10px;
+}
+/*Create Page*/
+.sesarticle_create_category_items ul > li:hover,
+.sesarticle_create_category_items ul > li.active{
+	background-color:$theme_list_background_color_hover;
+}
+.sesarticle_grid_info_title a{
+  color:$theme_font_color;
+}
+/*Listings*/
+.sesarticle_list_info_title a,
+.sesarticle_admin_list{
+  border-left-color:$theme_button_background_color;
+}
+[dir="rtl"] .sesarticle_list_info_title a,
+[dir="rtl"] .sesarticle_admin_list{
+  border-right-color:$theme_button_background_color;
+}
+.sesarticle_list_full_stats span{
+  border-right-color:$theme_button_background_color;
+}
+[dir="rtl"] .sesarticle_list_full_stats span{
+  border-left-color:$theme_button_background_color;
+}
+.sesarticle_list_info_title a,
+.sesarticle_grid_info_title a,
+.sesarticle_pinboard_list .sesarticle_pinboard_categry span a span,
+.sesarticle_pinboard_list .sesarticle_pinboard_title a,
+.sesblock_pinboard_readmore a,
+.sesarticle_new_grid_block .sesarticle_second_grid_info_title a,
+.sesarticle_last_grid_block .sesarticle_second_readmore_link a,
+.sesarticle_last_grid_block .sesarticle_grid_date_article a,
+.sesarticle_last_grid_block .sesarticle_grid_three_info_title a{
+  color:$theme_font_color !important;
+}
+.sesarticle_list_readmore a:hover,
+.sesarticle_list_border_two,
+.sesarticle_grid_memta_title span a,
+.sesarticle_grid .sesarticle_grid_hover_block,
+.sesarticle_new_grid_block .sesarticle_grid_date_article{
+  background-color:$theme_button_background_color;
+  color:$theme_button_font_color;
+}
+.sesarticle_list_full_stats span, .sesarticle_grid .sesarticle_grid_info_hover_title a, .sesarticle_grid .sesarticle_grid_hover_block .sesarticle_list_stats span, .sesarticle_grid .sesarticle_grid_hover_block .sesarticle_list_stats span i, .sesarticle_grid .sesarticle_grid_des, .sesarticle_grid_read_btn a, .sesarticle_grid_memta_title span a, .sesarticle_grid .sesarticle_admin_category span i, .sesarticle_grid .sesarticle_admin_category span a{
+  color:$theme_button_font_color !important;
+}
+.sesarticle_list_full_contant_article{
+  background:$theme_list_background_color_hover;
+}
+.sesarticle_list_full_view, .sesarticle_list_full_date_article,{
+  border-color:$theme_list_background_color_hover;
+}
+.sesarticle_new_grid_block .sesarticle_grid_info_title, .sesarticle_new_grid_block .sesarticle_grid_info_title a, .sesarticle_new_grid_block .sesarticle_grid_des span,{
+  background:$theme_font_color !important;
+  color:$theme_button_font_color !important;
+}
+.sesarticle_last_grid_block .sesarticle_gird-top_article .sesarticle_grid_info_title a{
+  color:$theme_button_background_color !important;
+}
+/*Mini Tabs*/
+.sesarticle_small_tabs{
+  border-bottom:1px solid $theme_button_background_color;
+  margin-bottom:5px;
+}
+.sesarticle_small_tabs li{
+	float:left;
+	margin-right:2px;
+}
+.sesarticle_small_tabs li a{
+	display:block;
+	padding:5px 7px;
+	text-decoration:none;
+	font-size:12px;
+}
+.sesarticle_small_tabs li.active a, .sesarticle_list_second_article .sesarticle_list_readmore a, .sesarticle_category_list_button a{
+  background-color:$theme_button_background_color !important;
+  color:$theme_button_font_color !important;
+}
+/*ALBUM PAGES CSS START HERE*//*Option Box*/
+.sesarticle_album_option_box{
+  background-color:$theme_list_background_color;
+  border:1px solid $theme_border_medium_color;
+}
+.sesarticle_album_option_box a{
+  color:$theme_font_color !important;
+}
+.sesarticle_album_option_box a:hover{
+  background-color:$theme_list_background_color_hover;
+}
+/*ALBUM PAGES CSS END HERE*/
+.bootstrap-datetimepicker-widget table th.picker-switch, .bootstrap-datetimepicker-widget table th.dow, .bootstrap-datetimepicker-widget table td.today, .bootstrap-datetimepicker-widget table td.day:hover, .bootstrap-datetimepicker-widget table td.hour:hover, .bootstrap-datetimepicker-widget table td.minute:hover, .bootstrap-datetimepicker-widget table td.second:hover{
+  color:$theme_button_background_color !important;
+	font-weight:bold;
+}
+.sesarticle-featured_article_view .featured_article_list .featured_teg a, .sesarticle-featured_article_view .featured_article_listing .featured_teg a, .sesarticle_grid_inside_info .category_tag a{
+  background:$theme_button_background_color;
+}
+.sesarticle_sidebar_categroies_list a{
+  color:$theme_font_color !important;
+}
+.sesarticle_sidebar_categroies_list a:hover{
+  color:$theme_button_background_color !important;
+}
+/*Slideshow*/
+.sesarticle_slideshow_article .bjqs-markers li.active-marker a{
+	background-color:$theme_button_background_color !important;
+}
+.sesarticle_slideshow_article_wrapper.isfull_width .sesarticle_slideshow_article_container > div{
+	margin:0 auto;
+	width:$theme_content_width;
+}
+.sesarticle_slideshow_article .sesarticle_slideshow_info .category_tag span a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sesarticle_slideshow_article .bjqs-controls li a{
+	background-color:$theme_button_background_color;
+}
+.sesarticle_slideshow_article .sesarticle_slideshow_info .category_tag span a:before{
+	border-top-color:$theme_button_background_color !important;
+}
+.sesarticle_slideshow_article .sesarticle_slideshow_info .category_tag span a:after{
+	border-bottom-color:$theme_button_background_color !important;
+}
+.sesarticle_slideshow_inside_contant{
+  border-left:5px solid $theme_button_background_color;
+}
+/*Pinboard*/
+.sesarticle_pinboard_list_comments .comments > form{
+background-color:$theme_list_background_color_hover;
+}
+.sesarticle_pinboard_list_item_btm, .sesarticle_pinboard_list_comments .comments > ul > li, .sesarticle_pinboard_list_comments .comments > form{
+border-color:$theme_border_color;
+}
+.sesarticle_pinboard_list_comments .comments > form textarea{
+color:$theme_font_color;
+}
+.sesarticle_pinboard_list_comments .comments > ul > li{
+background-color:$theme_list_background_color_hover;
+}
+#messages_compose #buttons-wrapper{
+	margin-left:137px;
+}
+#messages_compose #item_preview-element{
+	margin-top:10px;
+}
+#messages_compose #item_preview-element input[type=image]{
+	max-width:302px;
+}
+.sesarticle_dashboard_menu_list .sesbasic_dashboard_tabs > ul.sesbm ul li a:hover, .sesarticle_dashboard_menu_list .sesbasic_dashboard_tabs ul ul li.active a{
+  background-color:$theme_button_background_color;
+  color:$theme_button_font_color;
+}
+.sesarticle_upload_dragdrop_content:hover{
+border-color:$theme_button_background_color;
+}
+.sesarticle_category_cover_blocks{
+background:$theme_list_background_color;
+}
+.sesarticle_category_cover_blocks:after{
+	border-top:43px solid #fff;
+}
+.sesarticle_category_cover_title span{
+  background-color:$theme_button_background_color;
+}
+.feed_attachment_sesarticle > div > a{
+	display:block;
+	width:100%;
+}
+.feed_attachment_sesarticle > div > a > img{
+	max-width:inherit !important;
+	max-height:200px !important;
+	float:left;
+	border-width:0;
+	object-fit:cover;
+	width:100%;
+}
+.feed_attachment_sesarticle > div > div{
+	border-width:1px;
+	border-top-width:0px;
+	padding:10px 15px;
+	clear:both;
+}
+.feed_attachment_sesarticle > div > div .feed_item_link_title{
+	margin-bottom:8px;
+}
+.feed_attachment_sesarticle > div > div .feed_item_link_title a{
+	font-size:14px !important;
+}
+.feed_attachment_sesarticle > div > div .feed_item_link_desc{
+	font-size:13px !important;
+}
+[dir="rtl"] .sesbasic_dashboard_content #sesarticle_ajax_form_submit .form-label{
+	text-align:right;
+}
+/*Welcome Page*/
+#global_page_sesarticle-index-welcome{
+	background-color:$theme_list_background_color !important;
+	padding:0 !important;
+}
+.sesarticle_welcome_btn{
+	background-color:$theme_button_background_color !important;
+	color:$theme_button_font_color !important;
+}
+.sesarticle_welcome_btn:hover{
+	background-color:$theme_button_background_color_hover;
+}
+

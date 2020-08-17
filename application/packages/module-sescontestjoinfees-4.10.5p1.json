@@ -1,0 +1,915 @@
+{
+  "type": "module",
+  "name": "sescontestjoinfees",
+  "version": "4.10.5p1",
+  "revision": null,
+  "path": "application\/modules\/Sescontestjoinfees",
+  "repository": null,
+  "sku": null,
+  "date": "Fri, 25 Oct 2019 13:31:01 +0000",
+  "title": "SES - Advanced Contests - Contests Joining Fees & Payments System Plugin",
+  "description": "Advanced Contests - Contests Joining Fees & Payments System Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Fri, 25 Oct 2019 13:31:01 +0000",
+    "title": "SES - Advanced Contests - Contests Joining Fees & Payments System Plugin",
+    "description": "Advanced Contests - Contests Joining Fees & Payments System Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sescontestjoinfees\/settings\/install.php",
+    "class": "Sescontestjoinfees_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sescontestjoinfees": {
+      "type": "directory",
+      "path": "application\/modules\/Sescontestjoinfees",
+      "structure": [
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 370,
+          "sha1": "03614fa7139505ab955973b5eedb7aa978d1bf0b"
+        },
+        {
+          "path": "views\/scripts\/index\/join-contest.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4011,
+          "sha1": "882431c9715fd2acbe02c22f8805b73697296d6f"
+        },
+        {
+          "path": "views\/scripts\/index\/success.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1758,
+          "sha1": "c92c7f2d2e574370ce74d5e7afb7aab6c9b78197"
+        },
+        {
+          "path": "views\/scripts\/index\/view.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 356,
+          "sha1": "86f4a659982c0d732aa1a547c81dc6eba940a431"
+        },
+        {
+          "path": "views\/scripts\/index\/process.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 824,
+          "sha1": "da3eb9ef64ca540d726022b859253f7cae740259"
+        },
+        {
+          "path": "views\/scripts\/admin-payment",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-payment\/finish.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 921,
+          "sha1": "4dfc4365fb6c5d291fa928d672585085ed74b69d"
+        },
+        {
+          "path": "views\/scripts\/admin-payment\/approve.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 678,
+          "sha1": "3d0d208df9a5922f48c19f5b6fdfb01d511296a6"
+        },
+        {
+          "path": "views\/scripts\/admin-payment\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5991,
+          "sha1": "3aed33d2902a1cc14a1af4e4339d7188bf50bb74"
+        },
+        {
+          "path": "views\/scripts\/admin-payment\/cancel.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 484,
+          "sha1": "458d047e8e307e5eed0312fda120ada427f8d56a"
+        },
+        {
+          "path": "views\/scripts\/admin-payment\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 484,
+          "sha1": "f42695328a2721d08e378f756f6f8bb623db1a7c"
+        },
+        {
+          "path": "views\/scripts\/admin-payment\/process.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 797,
+          "sha1": "7bc8fd0ac43f5cce95051b31d8f2e6020a7f2f42"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/manage-payment-event-owner.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5617,
+          "sha1": "ae861ebe2c5dd34d5d016fd18f5de0bee26d79c9"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/orders.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6066,
+          "sha1": "fd81dfcbe5b8c3c2739d298e4b5ed332fa3478d5"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 484,
+          "sha1": "f42695328a2721d08e378f756f6f8bb623db1a7c"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/extension.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1845,
+          "sha1": "6f57a80502b76021e3f43693958e83797f141ea8"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/view-paymentrequest.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2456,
+          "sha1": "1b872fe1244b60aa4863ff16d99f8724c56164fc"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/level.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1028,
+          "sha1": "fbc6e545f16548000fdce3124d37425d849b86ee"
+        },
+        {
+          "path": "views\/scripts\/order",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/order\/view.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6368,
+          "sha1": "c0b94dcb061b023e9799d00b602ef550a391f61a"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/my-upgrade-4.10.5-4.10.5p1.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 236,
+          "sha1": "b78ed4d084a805320a257d73e7d6fe80f6ba8948"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1468,
+          "sha1": "7fe666df83c84500dff088572fc0ed47d62d3e47"
+        },
+        {
+          "path": "settings\/my-upgrade-4.9.4-4.10.3.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 578,
+          "sha1": "617f62f5d34976813ae87c721d4cc2cb44611a7f"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3201,
+          "sha1": "c5238603a1ac2bfb22d91780e6d221a0aa8a929b"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3431,
+          "sha1": "a4d725f10bf083b2a0ac11be65b7cbd67c18aa66"
+        },
+        {
+          "path": "settings\/my-upgrade-4.10.3p8-4.10.5.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 127,
+          "sha1": "a2e88dd39be0d5189e577dc67c5b3f1523be71b8"
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 629,
+          "sha1": "3c6b4f9edab0179097be14ffdd70627a995658de"
+        },
+        {
+          "path": "settings\/my-upgrade-4.10.3p7-4.10.3p8.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 470,
+          "sha1": "ceb030508514f0eb91df653db3154bdd34a7d9c8"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/Order.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4023,
+          "sha1": "b5190b34b2ab35801d1ebabf0d2bb622cea1406e"
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/Usergateways.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3998,
+          "sha1": "b43d7335a50a895fff6c454d421eff533d000498"
+        },
+        {
+          "path": "Model\/DbTable\/Orders.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6998,
+          "sha1": "454e619b7800e26b7293ca984490f6b64dc32fa2"
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/DbTable\/Gateways.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3243,
+          "sha1": "9d1d837fd66dc882baed0be5afce68bdec9e7ce7"
+        },
+        {
+          "path": "Model\/DbTable\/Remainingpayment.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 791,
+          "sha1": "5fe790a22fd37659b3f6381eb8a3b2404d0955d7"
+        },
+        {
+          "path": "Model\/DbTable\/Remainingpayments.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 791,
+          "sha1": "5fe790a22fd37659b3f6381eb8a3b2404d0955d7"
+        },
+        {
+          "path": "Model\/DbTable\/Userpayrequests.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1317,
+          "sha1": "21d7ff800c15704bf08cac7eb964b124fdcbbaa7"
+        },
+        {
+          "path": "Model\/Userpayrequest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1462,
+          "sha1": "67d9ab35c37b9cc424811f68183608a887d0903d"
+        },
+        {
+          "path": "Model\/Usergateway.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2196,
+          "sha1": "95ca9228eb12c070782ce8148e8e5a7effefa3cf"
+        },
+        {
+          "path": "Model\/Gateway.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1910,
+          "sha1": "6fab028318b57d7e8a38a7f8789ebf63bf780d14"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Gateway",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Gateway\/Stripe.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 22167,
+          "sha1": "596bdf9995c35f20f534a507331de458b54135bf"
+        },
+        {
+          "path": "Plugin\/Gateway\/Testing.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 8415,
+          "sha1": "a393a8cdbd046686f7045528277130df51400970"
+        },
+        {
+          "path": "Plugin\/Gateway\/Paytm.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 21120,
+          "sha1": "666664d0f30b44fecacac10daa68cd5524b17c39"
+        },
+        {
+          "path": "Plugin\/Gateway\/Event",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Gateway\/Event\/Stripe.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13815,
+          "sha1": "7c10db5305699a528f917b1b84f8c1227110ee0a"
+        },
+        {
+          "path": "Plugin\/Gateway\/Event\/Paytm.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11975,
+          "sha1": "7e4549bfdc8a3cf7bf26f548fec921c7a6f1da04"
+        },
+        {
+          "path": "Plugin\/Gateway\/Event\/PayPal.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 27615,
+          "sha1": "ab6be7a4421f5ee1b7feae1dae20ed332b067ca7"
+        },
+        {
+          "path": "Plugin\/Gateway\/2Checkout.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 23682,
+          "sha1": "88e0134a02b34548d050b6a3cb9bfeda2edb93ef"
+        },
+        {
+          "path": "Plugin\/Gateway\/PayPal.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 34916,
+          "sha1": "1cac3bae401e761f66bb4ad8c6d238575f1483dd"
+        },
+        {
+          "path": "Plugin\/Menus.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 794,
+          "sha1": "c79174488667f32cdae019778e901d0dd6aff597"
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2428,
+          "sha1": "b74a0ee50b2ceec683d132a7803227e7d7655a2d"
+        },
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3507,
+          "sha1": "f653a7209d4d6b00079dd119be73b500a802e85e"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-order",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-order\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3777,
+          "sha1": "feb59c227b54bc8b7676787f19d4b17bc3b3be56"
+        },
+        {
+          "path": "widgets\/browse-order\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1975,
+          "sha1": "ca8db75d9f4ea69757e7b9717b773b4364c882f4"
+        },
+        {
+          "path": "widgets\/manage-orders",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/manage-orders\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6500,
+          "sha1": "7e777dffb7057f8dfbb707c4dc166747a4d9ae17"
+        },
+        {
+          "path": "widgets\/manage-orders\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2616,
+          "sha1": "100554bba4d53ab9a7848e814a2cfdafacba5009"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10004,
+          "sha1": "f9ff2461f37141c97bcc68bd1e6ef7b0a4ab09f6"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3709,
+          "sha1": "bf2cdff07df6357d8a6f4a18f680534b442ec764"
+        },
+        {
+          "path": "controllers\/OrderController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1499,
+          "sha1": "23459f9356c4d32e1aebb1f7c4ad15e6b4ee6aeb"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13996,
+          "sha1": "5a10914b01071f16fe1f1832f149f36007d4d7e5"
+        },
+        {
+          "path": "controllers\/AdminPaymentController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 17509,
+          "sha1": "c561d2a315f4193c1157d9a71fc0324b7d916ce1"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 9154,
+          "sha1": "4f4998d88ca3a3865a8841beed730a90f568e5e8"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Conversion.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2393,
+          "sha1": "1351c982817da63418e4cb51c426b54c144011de"
+        },
+        {
+          "path": "Form\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2448,
+          "sha1": "839de8cac30df1062cc51a5a3ab2780d09cb9718"
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/FilterOrder.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2966,
+          "sha1": "d667045689b2e75cedda98174e5032b44f480884"
+        },
+        {
+          "path": "Form\/Admin\/Filterpaymentorder.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2728,
+          "sha1": "9691051225939167371ab82c0d366c50c3051a93"
+        },
+        {
+          "path": "Form\/Admin\/Payment",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Payment\/Approve.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3429,
+          "sha1": "0d15f2648ba1a201899ac91ac0b8aed1b2b2f12d"
+        },
+        {
+          "path": "Form\/Admin\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2578,
+          "sha1": "71b42a245645b82536e4fd22cd3951669098f3a9"
+        },
+        {
+          "path": "Form\/Admin\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4667,
+          "sha1": "cb721e1f19fb057d39a67a9f01507a0979831ad3"
+        },
+        {
+          "path": "Form\/Admin\/FilterPaymentEventOwner.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2413,
+          "sha1": "3777339505b9b01855cad0fa48c97b99e5d210c4"
+        },
+        {
+          "path": "Form\/Paymentrequest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2274,
+          "sha1": "81e4a8d8610dbdc4c87ba7ba877aac8f2736ff6f"
+        },
+        {
+          "path": "Form\/Searchorder.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3569,
+          "sha1": "b8b2b530bc3219604aa493432828b62db76b0f66"
+        },
+        {
+          "path": "Form\/PayPal.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1906,
+          "sha1": "e450843976975cd61974b70ee74aa8d82b9b1af5"
+        },
+        {
+          "path": "Form\/Searchsalereport.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1579,
+          "sha1": "2f1ba5813d7d4e98d9a139e8432b914b33c67fc5"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/t-img-light.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 932,
+          "sha1": "85045c213efb0c2d324e1783e40272e0f213fdff"
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/fail.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5998,
+          "sha1": "e514594ed3c8b5b3e8c8859d21d824ca361a2da9"
+        },
+        {
+          "path": "externals\/images\/money.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1039,
+          "sha1": "c521539f1f14157e3ad9673fdfa027ce55e84f17"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7329,
+          "sha1": "4356763784fc066acc5e305583aed3a4fd499bec"
+        },
+        {
+          "path": "externals\/styles\/print.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2448,
+          "sha1": "7eac2fcd44fdb7efb6ed54ec66bd9965c65af669"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 95,
+          "sha1": "251ef91c55b396a03bf4f4fb301a5fd4538215c7"
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 351,
+          "sha1": "15f29e430cdd3dd14afc5e4d481705f9ddb9f151"
+        }
+      ]
+    },
+    "application\/languages\/en\/sescontestjoinfees.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sescontestjoinfees.csv",
+      "structure": {
+        "path": "sescontestjoinfees.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0777",
+        "size": 10293,
+        "sha1": "41f1782f89b3feab016449506a5047f3b14dbee5"
+      }
+    }
+  }
+}

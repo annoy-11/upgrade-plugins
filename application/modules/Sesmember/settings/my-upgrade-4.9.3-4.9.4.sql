@@ -1,0 +1,2 @@
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `enabled`, `custom`, `order`) VALUES
+("sesmember_admin_main_browsememberspage", "sesmember", "Browse Pages for Profile Types", "", '{"route":"admin_default","module":"sesmember","controller":"manage", "action":"manage-browsepage"}', "sesmember_admin_main", "", 1, 0, 999);

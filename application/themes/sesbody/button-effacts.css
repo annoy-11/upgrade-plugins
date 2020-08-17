@@ -1,0 +1,428 @@
+button.radius{
+	border-radius:3px;
+	border-width:3px;
+	border-style:solid;
+	border-color:$theme_button_background_color;
+}
+button.transparent{
+	background-color:transparent;
+	color:$theme_button_font_color;
+	border:1px solid $theme_button_background_color;
+}
+button.fill{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+button.gradients{
+	color: $theme_button_font_color;
+	background-color: $theme_button_background_color; 
+	background-color: -webkit-gradient(linear, left top, left bottom, from($theme_button_background_gradient_top_color), to($theme_button_background_color));
+	background-image: -webkit-linear-gradient(top, $theme_button_background_gradient_top_color, $theme_button_background_color);
+	background-image: -moz-linear-gradient(top, $theme_button_background_gradient_top_color, $theme_button_background_color);
+	background-image: -ms-linear-gradient(top, $theme_button_background_gradient_top_color, $theme_button_background_color);
+	background-image: -o-linear-gradient(top, $theme_button_background_gradient_top_color, $theme_button_background_color);
+	background-image: linear-gradient(to bottom, $theme_button_background_gradient_top_color, $theme_button_background_color);	
+	filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=$theme_button_background_gradient_top_color, endColorstr=$theme_button_background_color);
+	position:relative;
+	overflow:hidden;
+}
+button.gradients:hover{
+	color: $theme_button_font_hover_color;
+	background-color: $theme_button_background_color; 
+	background-image: -webkit-gradient(linear, left top, left bottom, from($theme_button_background_gradient_top_hover_color), to($theme_button_background_color_hover));
+	background-image: -webkit-linear-gradient(top, $theme_button_background_gradient_top_hover_color, $theme_button_background_color_hover);
+	background-image: -moz-linear-gradient(top, $theme_button_background_gradient_top_hover_color, $theme_button_background_color_hover);
+	background-image: -ms-linear-gradient(top, $theme_button_background_gradient_top_hover_color, $theme_button_background_color_hover);
+	background-image: -o-linear-gradient(top, $theme_button_background_gradient_top_hover_color, $theme_button_background_color_hover);
+	background-image: linear-gradient(to bottom, $theme_button_background_gradient_top_hover_color, $theme_button_background_color_hover);	
+	filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=$theme_button_background_gradient_top_hover_color, endColorstr=$theme_button_background_color);
+}
+button{
+	transition:all .5s ease;
+}
+button:hover{
+  background-color:$theme_button_background_color_hover;
+	transition:all .5s ease;
+}
+
+@constants{
+	sesbutton_effacts:+sesbutton_effacts($sesbutton_effacts);
+}
+
+=sesbutton_effacts($effacts = 0){
+	@if($effacts == 0) {
+		button{
+		padding:8px 20px;
+		text-transform:uppercase;
+		font-weight:bold;
+		font-size:13px;
+		border:none;
+		background-color:$theme_button_background_color;
+		color:$theme_button_font_color;
+		background-repeat:repeat-x;
+		-webkit-transition:all 0.2s;
+		-moz-transition:all 0.2s;
+		transition:all 0.2s;
+	}
+	button:hover{
+		background-color:$theme_button_background_color_hover;
+		color:$theme_button_font_hover_color;
+		cursor:pointer;
+	}
+	button:active{
+		background-color:$theme_button_background_color_hover;
+		color:$theme_button_font_hover_color;
+		background-image:none;
+	}
+	}
+	@if($effacts == 1) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			overflow: hidden;
+			-webkit-transition-duration: 0.5s;
+			transition-duration: 0.5s;
+			-webkit-transition-property: color, background-color;
+			transition-property: color, background-color;
+		}
+		button:hover, button:focus, button:active {
+			-webkit-animation-name: back_pulse;
+			animation-name: back_pulse;
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-delay: 0.5s;
+			animation-delay: 0.5s;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+			background-color: $theme_button_background_color_hover;
+			background-color: $theme_button_background_color_hover;
+			color: $theme_button_font_hover_color;
+		}
+	}
+	@if($effacts == 2) {
+    button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px transparent;
+			position: relative;
+			-webkit-transition-property: color;
+			transition-property: color;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			overflow:hidden;
+		}
+		button:hover{
+			color:$theme_button_font_hover_color;
+		}
+		button:before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $theme_button_background_color_hover;
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-webkit-transform-origin: 0 50%;
+			transform-origin: 0 50%;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+		button:hover:before, 
+		button:focus:before, 
+		button:active:before {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+		}
+	}
+	@if($effacts == 3) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px transparent;
+			position: relative;
+			-webkit-transition-property: color;
+			transition-property: color;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			overflow:hidden;
+		}
+		button:hover{
+			color:$theme_button_font_hover_color;
+		}
+		button:before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $theme_button_background_color_hover;
+			-webkit-transform: scaleY(0);
+			transform: scaleY(0);
+			-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+		button:hover:before, button:focus:before, button:active:before {
+			-webkit-transform: scaleY(1);
+			transform: scaleY(1);
+		}
+	}
+	@if($effacts == 4) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px transparent;
+			position: relative;
+			-webkit-transition-property: color;
+			transition-property: color;
+			-webkit-transition-duration: 0.5s;
+			transition-duration: 0.5s;
+		}
+		button:hover{
+			color:$theme_button_font_hover_color;
+		}
+		button:before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $theme_button_background_color_hover;
+			-webkit-transform: scaleX(0);
+			transform: scaleX(0);
+			-webkit-transform-origin: 0 50%;
+			transform-origin: 0 50%;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-duration: 0.5s;
+			transition-duration: 0.5s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+		button:hover:before, button:focus:before, button:active:before {
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+			transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+		}
+	}
+	@if($effacts == 5) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px transparent;
+			position: relative;
+			overflow: hidden;
+			-webkit-transition-property: color;
+			transition-property: color;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+		}
+		button:hover{
+			color:$theme_button_font_hover_color;
+		}
+		button:before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: $theme_button_background_color_hover;
+			border-radius: 100%;
+			-webkit-transform: scale(0);
+			transform: scale(0);
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+		button:hover:before, button:focus:before, button:active:before {
+			-webkit-transform: scale(2);
+			transform: scale(2);
+		}
+	}
+	@if($effacts == 6) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color: $theme_button_background_color_hover;
+			color:$theme_button_font_color;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px transparent;
+			position: relative;
+			-webkit-transition-property: color;
+			transition-property: color;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			overflow:hidden
+		}
+		button:hover{
+			color:$theme_button_font_hover_color;
+		}
+		button:before{
+			content: "";
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color:$theme_button_background_color;
+			-webkit-transform: scaleX(1);
+			transform: scaleX(1);
+			-webkit-transform-origin: 50%;
+			transform-origin: 50%;
+			-webkit-transition-property: transform;
+			transition-property: transform;
+			-webkit-transition-duration: 0.3s;
+			transition-duration: 0.3s;
+			-webkit-transition-timing-function: ease-out;
+			transition-timing-function: ease-out;
+		}
+		button:hover:before, button:focus:before, button:active:before {
+			-webkit-transform: scaleX(0);
+    	transform: scaleX(0);
+		}
+	}
+	@if($effacts == 7) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			display: inline-block;
+			vertical-align: middle;
+			-webkit-transform: perspective(1px) translateZ(0);
+			transform: perspective(1px) translateZ(0);
+			box-shadow: 0 0 1px transparent;
+			-webkit-transition-duration: 0.5s;
+			transition-duration: 0.5s;
+			overflow:hidden;
+		}
+		button:hover, button:focus, button:active{
+			color:$theme_button_font_hover_color;
+			background-color: $theme_button_background_color_hover;
+			-webkit-transform: scale(1.2);
+			transform: scale(1.2);
+			-webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+			transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+		}
+	}
+	@if($effacts == 8) {
+		button{
+			padding:8px 20px;
+			text-transform:uppercase;
+			font-weight:bold;
+			font-size:13px;
+			border:none;
+			background-color:$theme_button_background_color;
+			color:$theme_button_font_color;
+			-webkit-transition:all 0.2s;
+			-moz-transition:all 0.2s;
+			transition:all 0.2s;
+			position:relative;
+		}
+		button:hover, button:focus, button:active{
+			color:$theme_button_font_hover_color;
+			background-color: $theme_button_background_color_hover;
+		}
+		button:after {
+			content: "";
+			position: absolute;
+			top: -110%;
+			left: -210%;
+			width: 200%;
+			height: 20px;
+			opacity: 0;
+			transform: rotate(30deg);
+			background: rgba(255, 255, 255, 0.13);
+			background: linear-gradient(to right, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.13) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0.0) 100% );
+		}
+		button:hover:after {
+			opacity: 1;
+			top: 4%;
+			left: -0%;
+			transition-property: left, top, opacity;
+			transition-duration: 0.7s, 0.7s, 0.50s;
+			transition-timing-function: ease;
+		}
+	}
+}
+$sesbutton_effacts;
+
+
+

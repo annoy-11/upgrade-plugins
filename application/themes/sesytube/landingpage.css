@@ -1,0 +1,479 @@
+
+/*Home Videos CSS Start Here*/
+.sesytube_video_item{
+	padding:0 10px;
+}
+.sesytube_video_item ._thumb{
+	border-radius:5px;
+	height:150px;
+	position:relative;
+	overflow:hidden;
+}
+.sesytube_video_item ._thumb a{
+	display:block;
+	height:100%;
+}
+.sesytube_video_item ._thumb .bg_item_photo{
+	background-position:center center;
+}
+.sesytube_video_item ._thumb a i{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	border-radius:50%;
+	height:40px;
+	width:40px;
+	background-color:$theme_base_color;
+	line-height:40px;
+	text-align:center;
+	color:#fff;
+	font-size:20px;
+	opacity:0;
+}
+.sesytube_video_item ._thumb a i:before{
+	margin-left:5px;
+}
+.sesytube_video_item ._thumb:hover a i{
+	opacity:1;
+}
+.sesytube_video_item ._info{
+	padding-top:10px;
+}
+.sesytube_video_item ._info ._title{
+	font-weight:bold;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.sesytube_video_item ._info ._poster{
+	margin-top:5px;
+}
+.sesytube_video_item ._info ._poster ._icon{
+	border-radius:50%;
+	float:left;
+	height:20px;
+	width:20px;
+	overflow:hidden;
+	margin-right:10px;
+}
+.sesytube_video_item ._info ._poster ._icon img{
+	border-width:0;
+	height:100%;
+	width:100%;
+}
+.sesytube_video_item ._info ._poster > span{
+	color:$theme_font_color_light;
+	font-size:90%;
+	line-height:20px;
+}
+
+div + .sesytube_videos_row{
+	margin-top:30px;
+}
+.sesytube_videos_header{
+	margin-bottom:15px;
+}
+.sesytube_videos_header ._left{
+	float:left;
+}
+.sesytube_videos_header ._left a{
+	display:block;
+}
+.sesytube_videos_header ._left a i{
+	background-color:$theme_button_background_color;
+	border-radius:50%;
+	float:left;
+	margin-right:15px;
+	height:30px;
+	position:relative;
+	width:30px;
+}
+.sesytube_videos_header ._left a i img{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	max-height:16px;
+	max-width:16px;
+}
+.sesytube_videos_header ._left a span{
+	color:$theme_font_color;
+	line-height:30px;
+	display:block;
+	overflow:hidden;
+	font-size:24px;
+}
+.sesytube_videos_header ._right{
+	float:right;
+}
+.sesytube_videos_header ._right a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+	border-radius:3px;
+	display:block;
+	line-height:30px;
+	font-weight:600;
+	padding:0 20px;
+	text-transform:uppercase;
+}
+.sesytube_videos_header ._right a:hover{
+	background-color:$sesytube_button_background_color_hover;
+	color:$sesytube_button_font_hover_color !important;
+}
+.sesytube_videos_content{
+	display:flex;
+	flex-wrap:wrap;
+	margin:0 -10px;
+}
+.sesytube_videos_content .sesytube_video_item{
+	width:25%;
+}
+/*Popular Videos*/
+.sesytube_populat_videos_content{
+	display:flex;
+	flex-wrap:wrap;
+	margin:0 -10px;
+}
+.sesytube_populat_videos_content .sesytube_video_item{
+	width:33.33%;
+	padding:10px;
+}
+.sesytube_populat_videos_content .sesytube_video_item ._thumb{
+	height:150px;
+}
+.sesytube_populat_videos_content .sesytube_video_item ._info ._poster{
+	margin-top:5px;
+}
+.sesytube_populat_videos_content .sesytube_video_item ._info ._poster span{
+	line-height:none;
+}
+@media only screen and (max-width:767px){
+	.sesytube_video_item ._thumb{
+		height:150px;
+	}
+	.sesytube_features_wrapper  > p,
+	.seytube_highlights_wrapper > p,
+	.sesytube_content_carousel_wrapper > p,
+	.seytube_content_wrapper > p{
+		padding:0 10px;
+	}
+	.sesytube_videos_header ._left a span{
+		font-size:17px;
+	}
+}
+@media only screen and (max-width:540px){
+	.sesytube_video_item{
+		padding:10px;
+		width:100% !important;
+	}
+	.sesytube_video_item ._thumb{
+		height:100px !important;
+		width:100px !important;
+		float:left;
+		margin-right:15px;
+	}
+}
+/*Home Videos CSS End Here*/
+/*Home Slider Widget Start Here*/
+.sesytube_home_slider{
+	height:450px;
+	position:relative;
+	width:100%;
+	z-index:10;
+}
+.sesytube_home_slider_img, .sesytube_home_slider_cont{
+	background-position:center center;
+	background-size:cover;
+	height:100%;
+	left:0;
+	position:absolute;
+	top:0;
+	width:100%;
+}
+.sesytube_home_slider_cont{
+	background-color:rgba(0, 0, 0, 0.2);
+	z-index:1;
+}
+.sesytube_home_slider_cont_inner{
+	position:absolute;
+	left:50%;
+	top:50%;
+	display:table;
+	max-width:90%;
+	text-align:center !important;
+	width:100%;
+	transform:translate(-50%, -50%);
+}
+.sesytube_home_slider_cont_inner > div{
+	display:table-cell;
+	vertical-align:middle;
+}
+.sesytube_home_slider_cont_inner_cont{
+	text-align:center;
+}
+.sesytube_home_slider_cont_inner_cont h1{
+	font-size:35px;
+	font-weight:600;
+	line-height:45px;
+	margin-bottom:10px;
+}
+.sesytube_home_slider_cont_inner_cont h1,
+.sesytube_home_slider_cont_inner_cont .sesytube_slider_caption{
+	color:#fff;
+	display:block;
+}
+.sesytube_home_slider_cont_inner_cont .sesytube_slider_caption{
+	font-size:17px;
+	line-height:170%;
+	display:inline-block;
+	vertical-align:middle;
+}
+@media only screen and (max-width:768px){
+	.sesytube_home_slider{
+		height:250px;
+	}
+	.sesytube_home_slider_cont_inner_cont h1{
+		font-size:25px;
+	}
+}
+/*Home Slider Widget End Here*/
+/*Member Block Start Here*/
+.sesytube_member_block_header{
+	text-align:center;
+}
+.sesytube_member_block_header p{
+	margin-top:10px;
+}
+.sesytube_member_block_members{
+	margin-top:30px;
+}
+.sesytube_member_block_members ul{
+	margin:0 -10px;
+	display:flex;
+	flex-wrap:wrap;
+}
+.sesytube_member_block_members ul li{
+	width:20%;
+	padding:10px;
+}
+.sesytube_member_block_members ul li article{
+	border-radius:5px;
+	box-shadow:0 0 5px rgba(0, 0, 0, .05);
+	height:200px;
+	overflow:hidden;
+}
+.sesytube_member_block_members ul li article a{
+	display:block;
+	height:100%;
+}
+.sesytube_member_block_members ul li article img{
+	max-height:inherit !important;
+	max-width:inherit !important;
+	height:100%;
+	object-fit:cover;
+	width:100%;
+	vertical-align:middle;
+	-webkit-transition:all 500ms ease 0s;
+	-moz-transition:all 500ms ease 0s;
+	-o-transition:all 500ms ease 0s;
+	transition:all 500ms ease 0s;
+}
+.sesytube_member_block_members ul li article:hover img{
+	transform:scale(1.1);
+}
+@media only screen and (max-width:768px){
+	.sesytube_member_block_members ul li{width:25%;}	
+	.sesytube_member_block_members ul li article{height:150px;}
+}
+@media only screen and (max-width:600px){
+	.sesytube_member_block_members ul li{width:33.33%;}	
+}
+@media only screen and (max-width:480px){
+	.sesytube_member_block_members ul li{width:50%;}	
+	.sesytube_member_block_members ul li article{height:120px;}
+}
+/*Member Block End Here*/
+/*HTML Block Start Here*/
+.sesytube_text_block{
+	background-color:$theme_button_background_color;
+	padding:60px 0;
+}
+.sesytube_text_block *{
+	color:$theme_button_font_color;
+}
+.sesytube_text_block_header{
+	text-align:center;
+}
+.sesytube_text_block_header p{
+	margin-top:10px;
+}
+.sesytube_text_block_content{
+	margin-top:30px;
+	padding:0 40px;
+}
+.sesytube_text_block_content ul{
+	margin:0 -10px;
+	display:flex;
+	flex-wrap:wrap;
+}
+.sesytube_text_block_content ul li{
+	padding:10px;
+	width:33.33%
+}
+.sesytube_text_block_content ul li + li{
+	border-left:1px solid rgba(255, 255, 255, .35);
+}
+.sesytube_text_block_content ul li article{
+	padding:0 25px;
+}
+.sesytube_text_block_content ul li article div{
+	text-align:center;
+	line-height:150%;
+}
+.sesytube_text_block_content ul li article div._title{
+	font-weight:bold;
+	margin-bottom:10px;
+	font-size:150%;
+}
+@media only screen and (max-width:767px){
+	.sesytube_text_block_content{
+		padding:0;
+	}
+}
+@media only screen and (max-width:540px){
+	.sesytube_text_block_content ul li{
+		padding:15px;
+		width:100%;
+	}
+	.sesytube_text_block_content ul li + li{
+		border-top:1px solid rgba(255, 255, 255, .35);border-left:0;
+	}
+}
+/*HTML Block End Here*/
+/*Photos Start Here*/
+.sesytube_photos {
+	overflow:hidden;
+}
+.sesytube_photos .item {
+	float:left;
+	margin:4px;
+	border-width:1px;
+	overflow:hidden;
+	position:relative;
+}
+.sesytube_photos .item ._img{
+	display:block;
+	height:100%;
+}
+.sesytube_photos .item ._img img {
+	display:block;
+	object-fit:cover;
+	height:100%;
+	width:100%;
+}
+
+.sesytube_photos .item ._cont{
+	background:#000;
+	background:rgba(0,0,0,0.6);
+	background:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.6)));
+	background:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.6)));
+	background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+	padding:10px 50px 10px 10px;
+	position:absolute;
+	left:0;
+	width:100%;
+	opacity:0;
+	bottom:-10px;
+	z-index:2;
+	-webkit-transition:all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	transition:all 0.2s ease-in-out;
+}
+.sesytube_photos .item:hover ._cont{
+	opacity:1;
+	bottom:0px;
+}
+.sesytube_photos .item ._cont *{
+	color:#fff !important;
+}
+.sesytube_photos .item ._cont > span{
+	display:block;
+	margin-top:5px;
+	font-size:90%;
+}
+.sesytube_photos .item ._cont > span > span{
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:5px;
+}
+.sesytube_photos .item ._cont > span span i{
+	margin-right:5px;
+}
+/*Photos End Here*/
+
+/*COMMON CSS*/
+/*Heading for all blocks*/
+#global_page_core-index-index .layout_middle .generic_layout_container > h3,
+.sesytube_member_block h2,
+.sesytube_text_block h2{
+	background:none !important;
+	border-width:0;
+	font-size:30px;
+	margin:0;
+	text-align:center;
+	text-transform:uppercase;
+	font-weight:600;
+	letter-spacing:1px;
+}
+#global_page_core-index-index .layout_middle .generic_layout_container > h3{
+	margin:0 0 30px;
+}
+/*FULL LANDING PAGE CSS START HERE*/
+.sesytube_landing_page #global_wrapper{padding:0 !important;}
+.sesytube_landing_page #global_content{
+	padding:0;
+	max-width:100%;
+	width:100%;
+}
+.sesytube_landing_page #global_content .layout_middle .generic_layout_container{
+	background-color:transparent;
+	border-width:0;
+	padding:0;
+	margin:0;
+}
+.sesytube_landing_page #global_content .layout_main .layout_middle .generic_layout_container{
+	padding:60px 0;
+}
+.sesytube_landing_page #global_content .layout_main .layout_middle .generic_layout_container:nth-child(odd){
+	background-color:$theme_box_background_color;
+}
+.sesytube_landing_page .sesytube_photos_wrapper,
+.sesytube_landing_page .sesytube_text_block_wrapper,
+.sesytube_landing_page .sesytube_member_block_wrapper,
+.sesytube_landing_page .sesytube_videos_block_wrapper{
+	max-width:$theme_content_width;
+	margin:0 auto;
+}
+@media only screen and (max-width:$theme_content_width){
+	.sesytube_landing_page #global_content .layout_main .layout_middle .generic_layout_container{
+		padding:30px 0;
+	}
+	.sesytube_landing_page .sesytube_text_block_wrapper,
+	.sesytube_landing_page .sesytube_member_block_wrapper,
+	.sesytube_landing_page .sesytube_videos_block_wrapper{
+		max-width:100%;
+		padding:0 15px;
+	}
+}
+@media only screen and (max-width:767px){
+	#global_page_core-index-index .layout_middle .generic_layout_container > h3,
+	.sesytube_member_block h2,
+	.sesytube_text_block h2{
+    font-size:20px;
+		margin-bottom:15px;
+	}
+}
+/*FULL LANDING PAGE CSS END HERE*/

@@ -1,0 +1,311 @@
+
+/*NOTIFICATIONS & ACTIVITY FEED ICONS*/
+/*Page*/
+.item_icon_sespage_page:before,
+.notification_type_sespage_page_waitingapproval:before,
+.notification_type_sespage_waitingadminapproval:before,
+.notification_type_sespage_page_adminapproved:before,
+.notification_type_sespage_page_pagesifollowedlike:before,
+.notification_type_sespage_page_follow:before,
+.notification_type_sespage_page_pagesijoinedlike:before,
+.notification_type_sespage_page_like:before,
+.notification_type_sespage_page_favourite:before,
+.notification_type_sespage_invite:before,
+.notification_type_sespage_pagejoinednamechange:before,
+.notification_type_sespage_pagefavouritednamechange:before,
+.notification_type_sespage_pageroll_create_page:before,
+.notification_type_sespage_crosspost_create_page:before,
+.notification_type_sespage_crosspost_approve_page:before,
+.notification_type_sesuser_claimadmin_page:before,
+.notification_type_sesuser_claim_page:before,
+.notification_type_sespage_page_admindisapproved:before{
+	content:"\\f15b";
+}
+.notification_type_sespage_page_newannouncement:before{
+	content:"\\f0f6";
+}
+/*Album*/
+.item_icon_sespage_album:before,
+.item_icon_sespage_photo:before,
+.notification_type_sespage_page_pagesijoinedalbum:before,
+.notification_type_sespage_page_pagesijoinedphoto:before{
+	content:"\\f03e";
+}
+/*Check*/
+.notification_type_sespage_claim_approve:before,
+.notification_type_sespage_owner_informed:before{
+	content:"\\f058";
+}
+/*Member Join*/
+.notification_type_sespage_approve:before {
+	content:"\\f234";
+}
+.sespage_icon_page_accept:before{
+ content:"\\f234";
+}
+.sespage_icon_page_reject:before{
+  content:"\\f235";
+}
+.sespage_icon_page_cancel:before{
+  content:"\\f235";
+}
+.sespage_icon_page_leave:before{
+	content:"\\f00d";
+}
+.sespage_icon_page_join,
+.activity_icon_sespage_join:before,
+.notification_type_sespage_accepted:before{
+	content:"\\f234";
+}
+#compose-sespage_photo-activator:before,
+#compose-sespage_photo-menu span:before {
+	content: "\\f03e";
+	font-family: fontawesome;
+	margin-right: 6px;
+	color: #4CAF50;
+}
+#messages_compose #compose-sespage-activator,
+#messages_form_reply #compose-sespage-activator{
+  display:none !important;
+}
+/*Generic Container*/
+[class*='layout_sespage_'], [id^='global_page_sespage-'] .layout_core_content{
+  clear:both;
+  margin-bottom:15px;
+}
+[class*='layout_sespage_']:after, [id^='global_page_sespage-'] .layout_core_content:after{
+  clear:both;
+  content:'';
+  display:block;
+}
+[id^='global_page_sespage-'] .layout_core_content + .layout_core_comments{
+  border-top:1px solid $theme_border_medium_color;
+  padding-top:10px;
+}
+[id^='global_page_sespage-'] .layout_core_content + .layout_core_comments > h3{
+  display:none;
+}
+[class*='tab_layout_sespage_']{
+  margin:0;
+  clear:none;
+}
+/*FEED ITEMS*/
+.feed_attachment_sespage_page > div{
+  border-width:1px;
+  margin-bottom:5px;
+  overflow:hidden;
+}
+.feed_attachment_sespage_page > div > a{
+  display:block;
+}
+.feed_attachment_sespage_page > div > a > img{
+  height:250px;
+  margin:0;
+  width:100%;
+  max-height:inherit !important;
+  max-width:inherit !important;
+  object-fit:cover;
+}
+.feed_attachment_sespage_page > div > div{
+  clear:both;
+  padding:10px 15px;
+}
+.feed_attachment_sespage_page .feed_item_link_title{
+  font-size:14px !important;
+}
+.feed_attachment_sespage_page .feed_item_link_desc{
+  font-size:13px !important;
+}
+.feed_item_attachments .feed_attachment_sespage_album > div > a img{
+	max-width: 100% !important;
+	max-height: 400px !important;
+	width: auto;
+}
+.feed_item_attachments .feed_attachment_sespage_album > div > a + div{
+	display:none;
+}
+/*Button*/
+.sespage_button{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+	text-align:center;
+}
+.sespage_button:hover{
+	background-color:$theme_button_background_color_hover;
+	color:$theme_button_font_color !important;
+	text-decoration:none;
+}
+.sespage_button i{
+	margin-right:5px;
+}
+/*Highlighted Border Color*/
+.pagelocation_compose_photo_uploader:hover{
+	border-color:$theme_button_background_color;
+}
+/*Highlighted Text Color*/
+.sespage_ht,
+.sespage_sidebar_info_block li > i{
+	color:$theme_button_background_color !important;
+}
+.pagelocation_compose_photo_uploader:hover i,
+.pagelocation_compose_photo_uploader:hover span,
+.sespage_pages_slideshow .owl-nav > div,
+.sespage_dashboard_tabs > ul ul a i,
+.sespage_grid_item ._contactlinks a{
+	color:$theme_button_background_color;
+}
+
+/*DASHBOARD CSS START HERE*/
+.sespage_fg_color,
+.sespage_dashboard_top_section,
+.sespage_dashboard_content,
+.sespage_dashboard_tabs > ul,
+.sespage_dashboard_page_info,
+.sespage_tags_cloud_page .sespage_tags_cloud_list li a{
+	background-color:$theme_list_background_color;
+}
+.sespage_create_tips .create_tips_top_sec{
+	background-color:$theme_button_background_color;	
+}
+.sespage_create_tips .create_tips_top_sec:before{
+	border-color:transparent $theme_button_background_color transparent transparent;
+	opacity:0.5;
+}
+.sespage_create_tips .create_tips_bottom_sec ol li{
+	color:$theme_button_background_color;
+}
+.sespage_dashboard_tabs > ul ul li.active a,
+.sespage_dashboard_tabs > ul ul li.active a i{
+	color:$theme_font_color;
+}
+.sespage_dashboard_tabs > ul > li > a{
+	background-color:$theme_button_background_color !important;
+	color:$theme_button_font_color !important;
+}
+/*DASHBOARD CSS END HERE*/
+/*LISTING CSS START HERE*/
+.sespage_listing_share_popup,
+.sespage_grid_item article,
+.sespage_grid_cover_item article,
+.ui-timepicker-standard,
+.sespage_banner_search_wrapper ._catsection > ._cont,
+.sespage_banner_search_wrapper ._searchform form,
+.sespage_hlist_item article{
+	background-color:$theme_list_background_color;
+}
+.sespage_cover_inner,
+.sespage_grid_cover_item ._cover,
+.sespage_cover_empty{
+  background:$theme_button_background_color;
+  background:-webkit-linear-gradient(to left, $theme_button_background_color, #eef2f3);
+  background:linear-gradient(to left, $theme_button_background_color, #eef2f3);
+}
+.sespage_pages_slideshow .owl-dots div{
+	background-color:$theme_button_background_color_hover;
+}
+.sespage_advgrid_item ._cont ._listbuttons > div  > a:hover,
+.sespage_banner_categories .owl-nav > div{
+	color:$theme_button_cont_color;
+	border-color:$theme_button_background_color;
+	background-color:$theme_button_background_color;
+}
+.sespage_banner_search_wrapper ._maincontent,
+.sespage_banner_search_wrapper ._catsection{
+	max-width:$theme_content_width;
+	margin:0 auto;
+}
+/*LISTING CSS END HERE*/
+/*PAGE PROFILE CSS START HERE*/
+.sespage_more_link a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sespage_cover_container_full ._cnw{
+	max-width:$theme_content_width;
+	margin:0 auto;
+}
+.sespage_cover_d1 ._footer .sesbasic_icon_btn:hover{
+	background-color:$theme_button_background_color;
+}
+.sescover_footer_des2_footer ._leftbtns > div > a > i,
+.sespage_banner_search_wrapper ._searchform form .form-wrapper:before{
+	color:$theme_font_color_light;
+}
+/*.sescover_footer_des2_footer ._leftbtns > div > a.button_active > i{
+	color:$theme_button_background_color;
+}*/
+.sespage_mainphoto_block ._vtabs .tabs_alt > ul > li.active > a,
+.sespage_mainphoto_block ._vtabs .tabs_alt > ul > li > a:hover,
+.sespage_pages_slideshow .owl-nav > div,
+.sespage_options_dropdown_links li a:hover{
+	background-color:$theme_button_background_color !important;
+	color:$theme_button_font_color !important;
+}
+.sespage_options_dropdown_arrow{
+	border-bottom:5px solid $theme_border_color;
+}
+.sespage_options_dropdown_links{
+	border:1px solid $theme_border_color;
+	background-color:$theme_list_background_color;
+}
+.sespage_profile_tips,
+.sespage_profile_button_action_popup .step2_ops ._icon,
+.sespage_profile_button_action_link_popup_cont,
+.sespage_profile_action_button ._tip,
+.sescover_footer_des2_footer{
+	background-color:$theme_list_background_color;
+}
+.sespage_profile_tips_header{
+	background-color:$theme_button_background_color;
+}
+.sespage_profile_tips_header *,
+.sespage_profile_tips_header ._remove,
+.sespage_pages_slideshow .owl-nav > div i:before{
+	color:$theme_button_font_color;
+}
+.sespage_profile_action_button ._tip:before{
+	border-bottom:8px solid $theme_list_background_color;
+}
+.sespage_profile_mainphoto_change_btn .sesbasic_option_box > i,
+.sespagecover_option_box_arrow{
+	border-bottom:10px solid $theme_list_background_color;
+}
+/*PAGE PROFILE CSS END HERE*/
+/*WELCOME PAGE CSS START HERE*/
+.sespage_welcome_page{
+	background-color:$theme_list_background_color;
+}
+.sespage_welcome_page #global_content .layout_middle .generic_layout_container,
+.sespage_welcome_page #global_content .sespage_howitworks_wrapper{
+	max-width:$theme_content_width;
+}
+@media (min-width:768px){
+	.sespage_welcome_page #global_content .layout_main .layout_sespage_browse_menu .tabs > ul > li > a{
+		border:1px solid $theme_button_background_color;
+		color:$theme_button_background_color;
+	}
+}
+.sespage_welcome_page #global_content .generic_layout_container > h3:after{
+	content:"";
+	border-bottom:3px solid $theme_button_background_color;
+	width:80px;
+	position:absolute;
+	left:50%;
+	margin-left:-40px;
+	bottom:-20px;
+}
+/* Actiivty Feed */
+.feed_attachment_sespage_photo div{
+	max-height:450px;
+}
+.feed_attachment_sespage_photo div a img{
+	width: 100% !important;
+  object-fit: cover;
+}
+
+@media (max-width:767px){
+	.sespage_banner_search_wrapper ._searchform .form-elements > .form-wrapper{
+		border-bottom:1px solid $theme_border_color;
+	}
+}
+/*WELCOME PAGE CSS END HERE*/

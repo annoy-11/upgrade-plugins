@@ -1,0 +1,13 @@
+go to file /application/modules/Sescommunityads/controllers/PaymentController.php
+
+Line: 190 and paste this code.
+
+if($gateway->toArray()['plugin']=="Esenangpay_Plugin_Gateway_Senangpay"){
+  // Integration of Senang Payment method using Esenang Payment plugin.
+    $table = Engine_Api::_()->getDbTable('gateways','payment');
+    $select = $table->select()->where('plugin =?','Esenangpay_Plugin_Gateway_Senangpay')->where('enabled =?',1);
+    $stripe = $table->fetchRow($select);
+    $gateway_id = $stripe->getIdentity();
+    $this->_session->gateway_id = $gateway_id;
+    return $this->_helper->redirector->gotoRoute(array('module' => 'esenangpay', 'controller' => 'payment', 'action' => 'index', 'source_id' => $this->_item->getIdentity(), 'gateway_id' => $gateway_id, 'price' => $_POST['price'],'order_id'=>$order_id,'type'=>'sescommunityads'),'default',true);
+}

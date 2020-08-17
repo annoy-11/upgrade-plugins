@@ -1,0 +1,1907 @@
+{
+  "type": "module",
+  "name": "sesprofilefield",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Sesprofilefield",
+  "repository": null,
+  "sku": null,
+  "date": "Thu, 19 Sep 2019 06:22:15 +0000",
+  "title": "SES - Professional Profile Fields Plugin",
+  "description": "SES - Professional Profile Fields Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Thu, 19 Sep 2019 06:22:15 +0000",
+    "title": "SES - Professional Profile Fields Plugin",
+    "description": "SES - Professional Profile Fields Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sesprofilefield\/settings\/install.php",
+    "class": "Sesprofilefield_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sesprofilefield": {
+      "type": "directory",
+      "path": "application\/modules\/Sesprofilefield",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1674,
+          "sha1": "6602b6a622ca6d050125cb6aabd5f96ce20eff7e"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1212,
+          "sha1": "355ec696372274c3d7239573e960bae9fae8c0fe"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminLevelController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2368,
+          "sha1": "e6f972141f72b2e8ed9d05583294a654ee06d8fe"
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 29662,
+          "sha1": "16f84f0c280d1a070533644f64dcef8c7c308933"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1499,
+          "sha1": "e7fffc8f6ac9baa385effd0182ca01329cd46310"
+        },
+        {
+          "path": "controllers\/AdminSpecialtiesController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6316,
+          "sha1": "7e05275cefd79d4b57a8e28cdd8560af53c33e1b"
+        },
+        {
+          "path": "controllers\/Checklicense.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3199,
+          "sha1": "39cf2b103d3a2059b8b58182aeb475d03293613f"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1541,
+          "sha1": "53cbb77e34d5a59a15eecc61f2bdacbe421d55c8"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 47480,
+          "sha1": "c60c40ba9b81cb384aa9e8ad3a135a0075487b3e"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10722,
+          "sha1": "cbf48a79b696c68431dd90d90313feff61917d96"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/authority.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6021,
+          "sha1": "97cd007e6d5694469b71bcbcab71033841359261"
+        },
+        {
+          "path": "externals\/images\/award.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 690,
+          "sha1": "d5f1a03fa52edb04da4811f455ff3492f028bc2d"
+        },
+        {
+          "path": "externals\/images\/certificate.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 447,
+          "sha1": "59f4e792ee090d1bd282153f001e929f86bf7dd5"
+        },
+        {
+          "path": "externals\/images\/company.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7055,
+          "sha1": "14652f1de1f519271ae85853c360693f174988ac"
+        },
+        {
+          "path": "externals\/images\/courses.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 642,
+          "sha1": "f943f1a96d177a990dcf37cecd3c3d6cc5e5ad1a"
+        },
+        {
+          "path": "externals\/images\/doc.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 942,
+          "sha1": "b92b1716588788813e853998540f15c04b85a559"
+        },
+        {
+          "path": "externals\/images\/document.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 942,
+          "sha1": "b92b1716588788813e853998540f15c04b85a559"
+        },
+        {
+          "path": "externals\/images\/education.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 495,
+          "sha1": "57cb5e734ef2f23bf4ddc206d3e943af137d7dd3"
+        },
+        {
+          "path": "externals\/images\/language.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 734,
+          "sha1": "ac86725a2036389bda523b46df8cd73335a8a936"
+        },
+        {
+          "path": "externals\/images\/music.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 19440,
+          "sha1": "59d58657c7300e54c06b010ea4336ff40c50c04e"
+        },
+        {
+          "path": "externals\/images\/organisation.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 751,
+          "sha1": "8fb245d35c5fec93f5b3255aab9abaaf3963fc11"
+        },
+        {
+          "path": "externals\/images\/pdf-icon.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2748,
+          "sha1": "be79e498a24b9896865e409109b3602c5fe85b09"
+        },
+        {
+          "path": "externals\/images\/pdf.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2748,
+          "sha1": "be79e498a24b9896865e409109b3602c5fe85b09"
+        },
+        {
+          "path": "externals\/images\/projects.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 618,
+          "sha1": "638038c50b25225ec633e020854b4efb0fa57a00"
+        },
+        {
+          "path": "externals\/images\/record.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 453,
+          "sha1": "1f2eccc3c50552448835224f89ebf843bf802e4f"
+        },
+        {
+          "path": "externals\/images\/school.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7404,
+          "sha1": "641aca8bc05993096a051dcde782887c354bd215"
+        },
+        {
+          "path": "externals\/images\/signup_bg.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 95891,
+          "sha1": "6a5dee240aa64b3952b36375e8d71300d0623520"
+        },
+        {
+          "path": "externals\/images\/skill.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 608,
+          "sha1": "e7a9301514ad21e34c02f9c279a73cbacb76bb7f"
+        },
+        {
+          "path": "externals\/images\/specialties.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 662,
+          "sha1": "b508b41d70fade7f2bce78577d1cbfdc463ce761"
+        },
+        {
+          "path": "externals\/images\/work.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 362,
+          "sha1": "76501d0754fd0e7acf2877c8caec15698e62ae92"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5556,
+          "sha1": "3f47fe1bb77f8c701d6609b215e80158af06468a"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 142,
+          "sha1": "5023236890454e3ed97043c65949a9a02af4e117"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 906,
+          "sha1": "e97cdbecdba1128e2ce7ea4d503547cb9d4b4c60"
+        },
+        {
+          "path": "externals\/styles\/signup.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5518,
+          "sha1": "89d80e53ce1d4dadfda806f28ccaa2b5c252c448"
+        },
+        {
+          "path": "externals\/styles\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 30812,
+          "sha1": "e4c071707e0bccb5c650a754f479e1bef8e489d7"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Add.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2767,
+          "sha1": "f580bbee77025a1120f8e7fb77a0cbf13ea797e7"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/AddLanguage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1331,
+          "sha1": "c8e6ddf987ca277a94cbc51114d06e2f6c1d801b"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/AddSkill.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1320,
+          "sha1": "9fc4ef9378e005fedcdd342b2c6c0aa3482cf9c7"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Authority.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2794,
+          "sha1": "772d43c5f171e21a301975b75e8cd4d4261f6ec3"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Company.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2776,
+          "sha1": "ef4ee75d6bc966b6d47cfa7266fdce984dfe0e35"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Degree.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2755,
+          "sha1": "032d9c798168c81f770ca4b4a3b69f49a157a2c2"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 559,
+          "sha1": "b64dd9d708f5e6565c6e8fbbf72fc2f86a93e542"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/EditLanguage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 585,
+          "sha1": "e577d1571b5ce14c12429100f00fa8a5a795c88b"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/EditSkill.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 574,
+          "sha1": "c3a81c70c2c2001a4cda8603158ba2e348e469fa"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Position.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2761,
+          "sha1": "43b105ee41f12af833faa9d0ff28b62905b80d65"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/School.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2769,
+          "sha1": "5be744bc6f17815e6f38b862cf435038722c5d53"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Study.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2753,
+          "sha1": "16d7ab7138510e6000bf09c635c03e4ed34e2ee1"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3848,
+          "sha1": "695e9819e36f4e93af5f5537bfa09338d3cb270b"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5804,
+          "sha1": "7b907c61e35414c4fa11feb7cb4243302c7f4340"
+        },
+        {
+          "path": "Form\/Admin\/Specialty",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Specialty\/Add.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1761,
+          "sha1": "8beb4cfb288e80450a7ad91bac6bd9aa224b1bab"
+        },
+        {
+          "path": "Form\/Admin\/Specialty\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 567,
+          "sha1": "23e68be7a813e644ed171b472e6421f1c4e507ea"
+        },
+        {
+          "path": "Form\/Profile",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 12288,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Profile\/AddAward.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3695,
+          "sha1": "f4b167897fb6e7ab91741a490c6a3f85c37f939e"
+        },
+        {
+          "path": "Form\/Profile\/AddCertification.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3979,
+          "sha1": "f2e003ff37c7bdb1716fa792d93c67cc8bb83456"
+        },
+        {
+          "path": "Form\/Profile\/AddCourse.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2314,
+          "sha1": "e2966bbc265c5974f6e746e86c400cdf78e6c4dc"
+        },
+        {
+          "path": "Form\/Profile\/AddEducation.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4385,
+          "sha1": "b94ebc499ec1bc9060c3111e7d649f83d341a0c2"
+        },
+        {
+          "path": "Form\/Profile\/AddExperience.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4572,
+          "sha1": "d66e688fcd74683f15ab15d6fbfc5cab67f23ebe"
+        },
+        {
+          "path": "Form\/Profile\/AddLanguage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1911,
+          "sha1": "3807f2538ce74dee35ba842da98f1752f999ce6c"
+        },
+        {
+          "path": "Form\/Profile\/AddOrganization.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4648,
+          "sha1": "04dd3046aec892769aa66041d19e5ca60d04fd85"
+        },
+        {
+          "path": "Form\/Profile\/AddProject.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4642,
+          "sha1": "155bbcbfc42a832a8604a1a38806aa9b6422bd60"
+        },
+        {
+          "path": "Form\/Profile\/AddRecord.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7267,
+          "sha1": "75bc374c92a8105fed800658d9d168ec7dd3551b"
+        },
+        {
+          "path": "Form\/Profile\/AddSkill.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1691,
+          "sha1": "6712b24ecd84a77e546e6f93c51c72fd7402c2e4"
+        },
+        {
+          "path": "Form\/Profile\/AddSpecialty.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2875,
+          "sha1": "a1b4f24c20e7bb77725a7676c78f24851422d248"
+        },
+        {
+          "path": "Form\/Profile\/DeleteAward.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1261,
+          "sha1": "b90ab0d3597a32a8dc1f76a7550a66b391cd5a71"
+        },
+        {
+          "path": "Form\/Profile\/DeleteCertification.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1285,
+          "sha1": "e4064806112f1c0c9bc93ad4ece16cfbe241df3c"
+        },
+        {
+          "path": "Form\/Profile\/DeleteCourse.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1262,
+          "sha1": "5ac60976420df3985ea5bb1162ac0f21fc56aa89"
+        },
+        {
+          "path": "Form\/Profile\/DeleteEducation.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1392,
+          "sha1": "910bfadd84828fc62689553a4ecea0df18549f63"
+        },
+        {
+          "path": "Form\/Profile\/DeleteExperience.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1276,
+          "sha1": "2965f948d719d8dcfb3ad2962f75b8a4e4b617ae"
+        },
+        {
+          "path": "Form\/Profile\/DeleteLanguage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1268,
+          "sha1": "4a2765f6d84aa033a8cbeb73253bcaf0a4d21ef6"
+        },
+        {
+          "path": "Form\/Profile\/DeleteOrganization.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1280,
+          "sha1": "648e9cfca0eea23937a6db215aa4d65bf6f7f594"
+        },
+        {
+          "path": "Form\/Profile\/DeleteProject.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1265,
+          "sha1": "64cc836782767183c790ff8fe994a25acf28afda"
+        },
+        {
+          "path": "Form\/Profile\/DeleteSkill.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1259,
+          "sha1": "77bcf3bd7f25c909711a6baaacbe35e4cc2a5179"
+        },
+        {
+          "path": "Form\/Profile\/EditAward.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 699,
+          "sha1": "891e276fecf07c4b6ddba873bc5d891e7b96c81f"
+        },
+        {
+          "path": "Form\/Profile\/EditCertification.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 800,
+          "sha1": "24618817cc6d3dd152d997ef5b4fa92924d12f0a"
+        },
+        {
+          "path": "Form\/Profile\/EditCourse.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 694,
+          "sha1": "ba8cb60a992179b4f01a2d45b0bddd062248a6eb"
+        },
+        {
+          "path": "Form\/Profile\/EditEducation.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 776,
+          "sha1": "6e1d38544b1eb5c37b92d1757d2a982d81d7fb46"
+        },
+        {
+          "path": "Form\/Profile\/EditExperience.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 714,
+          "sha1": "339cd212da42dbc9d697dfc8ae7bcb6007cf25ad"
+        },
+        {
+          "path": "Form\/Profile\/EditLanguage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 775,
+          "sha1": "171162a954018127ea533be38d3acf743821a17a"
+        },
+        {
+          "path": "Form\/Profile\/EditOrganization.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 724,
+          "sha1": "df35e12776a3b74ca6d5afdc11f7af8e7c61adf2"
+        },
+        {
+          "path": "Form\/Profile\/EditProject.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 699,
+          "sha1": "6c71b71f888e171c00817fae2b066149e7b8507e"
+        },
+        {
+          "path": "Form\/Profile\/EditRecord.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 762,
+          "sha1": "5af4e9b35cb327f0593f6e30427cb64dc3384cc0"
+        },
+        {
+          "path": "Form\/Profile\/EditSpecialty.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 776,
+          "sha1": "5a3f9ee6f6f0877ebf6f7975110ffda00ba98abb"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/Adminspecialty.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 559,
+          "sha1": "58164954f4725a80ca841d1da6b9a069b6cd29c3"
+        },
+        {
+          "path": "Model\/Authority.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 443,
+          "sha1": "b14da6dd7e35f0d3def7de01ca51fbd3060f3109"
+        },
+        {
+          "path": "Model\/Award.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 435,
+          "sha1": "5625fa6dbbe79c0fb803dcb3efd6df930a01f6d3"
+        },
+        {
+          "path": "Model\/Certification.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 451,
+          "sha1": "94d3c4efb71caaa7341aaae4bceb13adb16568a8"
+        },
+        {
+          "path": "Model\/Company.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 439,
+          "sha1": "444b8cbe983475e3065dd407d68dd81e722663f3"
+        },
+        {
+          "path": "Model\/Course.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 437,
+          "sha1": "22cfaa86b5c30a5706f0ce0b59eb4855a9226a58"
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/DbTable\/Adminspecialties.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2968,
+          "sha1": "a24e7dbe6a4c2713cfe5a3a9d6bbc40890f79fc4"
+        },
+        {
+          "path": "Model\/DbTable\/Authorities.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1134,
+          "sha1": "6f01f1937844aacbf545a405016958b0c0ac42ac"
+        },
+        {
+          "path": "Model\/DbTable\/Awards.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 791,
+          "sha1": "1d3e6519ec8a81c0297ca16d9c987cf5910aa504"
+        },
+        {
+          "path": "Model\/DbTable\/Certifications.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 831,
+          "sha1": "d545219e2bd9175f5cc804ecc95ce471f4223f4c"
+        },
+        {
+          "path": "Model\/DbTable\/Companies.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1121,
+          "sha1": "5e756946e72942cc62f99c28a0c8befeb4c9556a"
+        },
+        {
+          "path": "Model\/DbTable\/Courses.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 789,
+          "sha1": "cce447f7e8224c7ede916ef10b693242349e8d19"
+        },
+        {
+          "path": "Model\/DbTable\/Degrees.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1061,
+          "sha1": "f2ad06d656c718a1c5527ce435aa628ec8f32f67"
+        },
+        {
+          "path": "Model\/DbTable\/Educations.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 809,
+          "sha1": "a9acf59d537e6d4d58e947c184e53ed8136d20c0"
+        },
+        {
+          "path": "Model\/DbTable\/Endorsements.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3948,
+          "sha1": "506e95cd7ada915f787cddc7cdcad6e9de5a0794"
+        },
+        {
+          "path": "Model\/DbTable\/Experiences.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 816,
+          "sha1": "4f3a799099af60245a49cb4ea130f0c674c37219"
+        },
+        {
+          "path": "Model\/DbTable\/Languages.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1144,
+          "sha1": "6281015f8379bb353efac42bf11ffdda806829cb"
+        },
+        {
+          "path": "Model\/DbTable\/Managelanguages.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1308,
+          "sha1": "2988297ee7ec064af362e162ff87b8e825a8c2ab"
+        },
+        {
+          "path": "Model\/DbTable\/Manageskills.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1311,
+          "sha1": "96c1d5967c544c6b540b32889d4d2125d613c394"
+        },
+        {
+          "path": "Model\/DbTable\/Organizations.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 819,
+          "sha1": "974b5fe70ac47866a2cead9278e84a5ec69b68df"
+        },
+        {
+          "path": "Model\/DbTable\/Positions.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1073,
+          "sha1": "612425b2e4d830757147ce8c5d7b064fba4e4e93"
+        },
+        {
+          "path": "Model\/DbTable\/Projects.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 794,
+          "sha1": "b588c2809be448be1dc3a729fc42a772e26b0528"
+        },
+        {
+          "path": "Model\/DbTable\/Records.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1961,
+          "sha1": "d5259e649ec57a56df2aa5d7a3e563e06314713d"
+        },
+        {
+          "path": "Model\/DbTable\/Schools.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1061,
+          "sha1": "008e1eee1e6ab04e33abfa1f1503f01b24f3e140"
+        },
+        {
+          "path": "Model\/DbTable\/Skills.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1121,
+          "sha1": "4c965d3c3fbd38d63f78c48c28c1a07f5c6380f0"
+        },
+        {
+          "path": "Model\/DbTable\/Specialties.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1624,
+          "sha1": "f2ab16eff481dba28a86e830114dc8b5f815e094"
+        },
+        {
+          "path": "Model\/DbTable\/Studies.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1105,
+          "sha1": "92db3620af2ec4e1aaac9fc8e6b8d561ee7e43ee"
+        },
+        {
+          "path": "Model\/Degree.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 437,
+          "sha1": "b9041adb4b57afc34afaf9d518f215d57e388dd5"
+        },
+        {
+          "path": "Model\/Education.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 443,
+          "sha1": "8f47b4929a88fcd54cf7c1d220132a9ef7e94016"
+        },
+        {
+          "path": "Model\/Endorsement.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 447,
+          "sha1": "bdca1879c10b3efd39c39e3cf97801c587fb4f22"
+        },
+        {
+          "path": "Model\/Experience.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 445,
+          "sha1": "c5fe0dd652d01de4a10281793c176a62bfac58a6"
+        },
+        {
+          "path": "Model\/Language.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 481,
+          "sha1": "6362c7f24c12cd6e420d9585857776cc1659cb7b"
+        },
+        {
+          "path": "Model\/Managelanguage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 565,
+          "sha1": "7dd83e1a518f066766e2fa877bac5d50122f3327"
+        },
+        {
+          "path": "Model\/Manageskill.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 554,
+          "sha1": "764729a5f27182392dc8facdd482f9329b72e329"
+        },
+        {
+          "path": "Model\/Organization.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 449,
+          "sha1": "d6883fc98568017105629246f80759cc37c43833"
+        },
+        {
+          "path": "Model\/Position.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 441,
+          "sha1": "59095bade8411f422e6dc5f119a4bcd93cfd03e5"
+        },
+        {
+          "path": "Model\/Project.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 439,
+          "sha1": "2a8e456ac6820919ca9789285e1c8c6f5650f5f8"
+        },
+        {
+          "path": "Model\/Record.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 437,
+          "sha1": "07b588b47f8c30b2466e489ee3170fdd698991ec"
+        },
+        {
+          "path": "Model\/School.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 437,
+          "sha1": "3984e5fe53c251af312d6bb436cfb0068d489d2f"
+        },
+        {
+          "path": "Model\/Skill.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 475,
+          "sha1": "0cd10261e8a16432f289b9b690194b8b7a2963db"
+        },
+        {
+          "path": "Model\/Specialty.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 443,
+          "sha1": "246ed884b7be755139da277c2794c7047e627625"
+        },
+        {
+          "path": "Model\/Study.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 435,
+          "sha1": "9a64e81a49e73f0b2a7501b31f45101081f279bd"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 983,
+          "sha1": "e91d648839c369781f7f95406f2643b60cd22a79"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 536,
+          "sha1": "cab1221db710dc5b212525cc423bae8065d8741f"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2509,
+          "sha1": "ed112c523d00d586f8cdf6166523619be9d51de0"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 924,
+          "sha1": "cbb3ce4698483fd6a3d2fe6db5bcbfb9ac3be7d0"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-level",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-level\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 804,
+          "sha1": "5f850cba55c82e19cdb1d031314b2a20ce051a86"
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/add-language.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 513,
+          "sha1": "7433b706925740b0081ccff1fe05a27c70ff0770"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/add-skill.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 510,
+          "sha1": "239e71748ec41ed3663b2cfb2808b7d1e6c67129"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/add.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 504,
+          "sha1": "b98be8b0fdfee615ce7f8a1ef9bedc5cb5aa3056"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/authorities.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5056,
+          "sha1": "d2f6695b72c6d9a4008f398a3dc6374a931c17f6"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/companies.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5001,
+          "sha1": "67d41e1642fbd3fc96b93dffe62c1ea665b5db1e"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/degrees.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4197,
+          "sha1": "da945f7b6925b62c290122501b18b199ef5a5850"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete-icon.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1026,
+          "sha1": "4f29b797db15e2baa02f83cd300a50f5bc0867cd"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete-language.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1019,
+          "sha1": "27eecbee42c6cdea3fe57e53d1e24fabb0b122cb"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete-skill.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1008,
+          "sha1": "93ff47f2173300d0c75b908a3ae33a126faa839c"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2304,
+          "sha1": "d2dc68f45b210e06a30e9d8cea66896f2e754d97"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/edit-language.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 509,
+          "sha1": "dfd00a40087a330a8f3764cdef9f6b89c205737c"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/edit-skill.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 506,
+          "sha1": "af420f9df190e64bc49dd0151373ba766e3d8993"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 500,
+          "sha1": "9e7d99551c0231fc42c7b371bbd450ff309fff18"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/languages.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3403,
+          "sha1": "03ae248e05379dc7f761e164fc38e0eef9536c30"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/positions.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4223,
+          "sha1": "9987fb7cf078034707910989168f39e2e374ecf9"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/schools.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5006,
+          "sha1": "c3246381b690642255947e13eda818b4fcea3e2f"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/skills.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3350,
+          "sha1": "87478ef07af9d29ffc6cb6faebfe26768985d9c4"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/studys.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4208,
+          "sha1": "c4d39b7ceae1452d9a48200fed699f88bad71ef3"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1273,
+          "sha1": "d047b1971d74b66a6f0d297db942faa5a684b008"
+        },
+        {
+          "path": "views\/scripts\/admin-specialties",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-specialties\/add.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 504,
+          "sha1": "b98be8b0fdfee615ce7f8a1ef9bedc5cb5aa3056"
+        },
+        {
+          "path": "views\/scripts\/admin-specialties\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2585,
+          "sha1": "f7d7504b3ce730aad84da604d151d43387303ca8"
+        },
+        {
+          "path": "views\/scripts\/admin-specialties\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 500,
+          "sha1": "9e7d99551c0231fc42c7b371bbd450ff309fff18"
+        },
+        {
+          "path": "views\/scripts\/admin-specialties\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5884,
+          "sha1": "9dd5850077e8e9edcfc7adc9c3b282980eaff7aa"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1211,
+          "sha1": "cce5bf5d257308adc31447a64e50609fc1210b88"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 12288,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/add-award.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6230,
+          "sha1": "d450259d129fc4a73fb4adbb7ff7785883887592"
+        },
+        {
+          "path": "views\/scripts\/index\/add-certification.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6121,
+          "sha1": "4d11b7e50c108cb0ca43f0c7b25fa79395ac8fe8"
+        },
+        {
+          "path": "views\/scripts\/index\/add-course.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6021,
+          "sha1": "8c8084c6c586f461c483a02b82c147d317477cad"
+        },
+        {
+          "path": "views\/scripts\/index\/add-education.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5370,
+          "sha1": "b706d27d06c04dffd1853d9643db2399d5f0f852"
+        },
+        {
+          "path": "views\/scripts\/index\/add-experience.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4655,
+          "sha1": "f29055481f8d36863c0621c27b6e9eb816ff9b6a"
+        },
+        {
+          "path": "views\/scripts\/index\/add-language.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4531,
+          "sha1": "b47c5a723dd6646f63564526cf6cc5617f249b91"
+        },
+        {
+          "path": "views\/scripts\/index\/add-organization.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3646,
+          "sha1": "86caca5369b4ede16f7a501d8e26d7941ed8248c"
+        },
+        {
+          "path": "views\/scripts\/index\/add-project.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3551,
+          "sha1": "20b0b6bc31b78909e5b75fa79defa40752173709"
+        },
+        {
+          "path": "views\/scripts\/index\/add-record.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2717,
+          "sha1": "af2156977b9b1dde6cf9c51ee37b58e812a6e5b2"
+        },
+        {
+          "path": "views\/scripts\/index\/add-skill.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10091,
+          "sha1": "b8cee72b96c8022f33cf423fa6b72b88475f452d"
+        },
+        {
+          "path": "views\/scripts\/index\/add-specialty.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3728,
+          "sha1": "7946c42b37e847cf6b1d10532b1511fa4ab0b70a"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-award.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1979,
+          "sha1": "70969d175d528fcc2afca87467502d5d8bd30f1f"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-certification.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2158,
+          "sha1": "8591d5e4f1a40c50e183ebfa7cc982c0741f05bf"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-course.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1998,
+          "sha1": "c65b25f4467113cbb6124e04b5ee339d9a2b1855"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-education.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2104,
+          "sha1": "9c40b75eb1a302777f78a8fc36e1716e4176ac5a"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-experience.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2117,
+          "sha1": "d11601bb24e69873a6f12315361fd48115f44642"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-language.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2075,
+          "sha1": "0508689cfb034968deaa747674e5c44519f772ae"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-organization.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2153,
+          "sha1": "0434a1000140f8fc4d6685dee6f08b1fbd0f3243"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-project.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2068,
+          "sha1": "6fe87fec5542b37e0200bdaec9323f5c8b720d00"
+        },
+        {
+          "path": "views\/scripts\/index\/delete-skill.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2024,
+          "sha1": "615552458aace75ffdb944c99c176f890c171372"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-award.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6297,
+          "sha1": "02bda8af1757487274ceedaea0211cecc38e075b"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-certification.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6402,
+          "sha1": "a6a779ca85a9a9fc5e6f74c9589676f923997a7e"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-course.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6324,
+          "sha1": "824fcb827d996cd45523666887baa6971dcb2864"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-education.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5629,
+          "sha1": "5084b489cd7969bae63c504267bcf65e73a158f6"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-experience.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4572,
+          "sha1": "93512c49c5f5f5ef2271d6897effdaeecce23b04"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-language.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2901,
+          "sha1": "98c258e2e8552b3c12cc8a65f8bba3bf03cd92ff"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-organization.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3729,
+          "sha1": "a7130bf62a0f197c5ba6ca629c43975c535aee9e"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-project.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3624,
+          "sha1": "e6c2a9f7bcaad4c60f55b8c6bc3e324d606d8828"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-record.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2802,
+          "sha1": "a3398b4ae9348b0a02e36d9b83e35e379f618fb9"
+        },
+        {
+          "path": "views\/scripts\/index\/edit-specialty.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3939,
+          "sha1": "0c6b046f0b494393b338f89618f7d8ff8a844fc8"
+        },
+        {
+          "path": "views\/scripts\/index\/endorsement.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3950,
+          "sha1": "aa4d7420877eb205540c5ca8c5e587734615dc40"
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 453,
+          "sha1": "0b91857f74fe8d0adf26ba2e3fd31af6c7119389"
+        },
+        {
+          "path": "views\/scripts\/_awards.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1936,
+          "sha1": "73015a42996430b63a3a8924bb76e630c0e94c1b"
+        },
+        {
+          "path": "views\/scripts\/_certifications.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3857,
+          "sha1": "efd997e590d1037630d1c3586bd445b385ff2637"
+        },
+        {
+          "path": "views\/scripts\/_courses.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1763,
+          "sha1": "e231dc2437010b619486c42a1b1f49acc7610a8d"
+        },
+        {
+          "path": "views\/scripts\/_educations.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4446,
+          "sha1": "842a682867db4a982241eba756915b24124cbc3b"
+        },
+        {
+          "path": "views\/scripts\/_languages.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2266,
+          "sha1": "f85d97cdd1918011b7f0c34bda32757d8900dbc6"
+        },
+        {
+          "path": "views\/scripts\/_organization.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2764,
+          "sha1": "5676900e2ebe1031b896be5b2a2bbc373b6ce962"
+        },
+        {
+          "path": "views\/scripts\/_projects.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2358,
+          "sha1": "6c74da8e722e7a4d4f9f05caf32ead63d72226d6"
+        },
+        {
+          "path": "views\/scripts\/_records.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3695,
+          "sha1": "c63faf44ebef1436f8dc277583ca701000d5e1c4"
+        },
+        {
+          "path": "views\/scripts\/_skills.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3730,
+          "sha1": "fecf8a1339344f7d5b0da0becbed33576c10b31a"
+        },
+        {
+          "path": "views\/scripts\/_work_experience.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4121,
+          "sha1": "495cbdc2958047235b3c94000254743dcce2985b"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/profile-information-sections",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/profile-information-sections\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4151,
+          "sha1": "6ade46708640faa4ea4671e31af6819924877de9"
+        },
+        {
+          "path": "widgets\/profile-information-sections\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8615,
+          "sha1": "496b27b17d5e79b2d0bacf11116cef0997ffe341"
+        },
+        {
+          "path": "widgets\/profile-informations",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/profile-informations\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4570,
+          "sha1": "2fac1500df222b114c1a066a22dfd4572c0b2b8f"
+        },
+        {
+          "path": "widgets\/profile-informations\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13029,
+          "sha1": "c8240aa1a28f6f91241fce52edc199ad103ab105"
+        }
+      ]
+    },
+    "application\/languages\/en\/sesprofilefield.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sesprofilefield.csv",
+      "structure": {
+        "path": "sesprofilefield.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 0,
+        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      }
+    }
+  }
+}

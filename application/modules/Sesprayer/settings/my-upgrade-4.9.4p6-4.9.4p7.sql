@@ -1,0 +1,1 @@
+UPDATE `engine4_core_menuitems` SET `params` = '{"route":"sesprayer_general","action":"create", "class":"sessmoothbox"}' WHERE `engine4_core_menuitems`.`name` = "sesprayer_main_create";

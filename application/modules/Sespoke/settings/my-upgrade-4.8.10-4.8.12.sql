@@ -1,0 +1,1 @@
+ALTER TABLE `engine4_sespoke_manageactions` ADD `image` INT(11) NOT NULL;

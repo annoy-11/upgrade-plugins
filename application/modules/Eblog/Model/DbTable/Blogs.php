@@ -1,0 +1,427 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Eblog
+ * @package    Eblog
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Blogs.php 2016-07-23 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+class Eblog_Model_DbTable_Blogs extends Engine_Db_Table
+{
+
+  protected $_rowClass = "Eblog_Model_Blog";
+
+  /**
+   * Gets a paginator for eblogs
+   *
+   * @param Core_Model_Item_Abstract $user The user to get the messages for
+   * @return Zend_Paginator
+   */
+  public function getEblogsPaginator($params = array(), $customFields = array())
+  {
+
+    $paginator = Zend_Paginator::factory($this->getEblogsSelect($params, $customFields));
+    if (!empty($params['page']))
+      $paginator->setCurrentPageNumber($params['page']);
+    if (!empty($params['limit']))
+      $paginator->setItemCountPerPage($params['limit']);
+
+    if (empty($params['limit'])) {
+      $page = (int)Engine_Api::_()->getApi('settings', 'core')->getSetting('eblog.page', 10);
+      $paginator->setItemCountPerPage($page);
+    }
+
+    return $paginator;
+  }
+
+  /**
+   * Gets a select object for the user's eblog entries
+   *
+   * @param Core_Model_Item_Abstract $user The user to get the messages for
+   * @return Zend_Db_Table_Select
+   */
+  public function getEblogsSelect($params = array(), $customFields = array())
+  {
+
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $viewerId = $viewer->getIdentity();
+    $tableLocationName = Engine_Api::_()->getDbtable('locations', 'sesbasic')->info('name');
+    $blogTable = Engine_Api::_()->getDbtable('blogs', 'eblog');
+    $blogTableName = $blogTable->info('name');
+    $select = $blogTable->select()
+                      ->setIntegrityCheck(false)
+                      ->from($blogTableName)
+                      ->where($blogTableName.'.owner_id <> ?', 0);
+
+    if (!empty($params['user_id']) && is_numeric($params['user_id']))
+      $select->where($blogTableName . '.owner_id = ?', $params['user_id']);
+
+    if (isset($params['parent_type']))
+      $select->where($blogTableName . '.parent_type = ?', $params['parent_type']);
+
+    if (!empty($params['user']) && $params['user'] instanceof User_Model_User)
+      $select->where($blogTableName . '.owner_id = ?', $params['user']->getIdentity());
+
+    if (isset($params['show']) && $params['show'] == 2 && $viewer->getIdentity()) {
+      $users = $viewer->membership()->getMembershipsOfIds();
+      if ($users)
+        $select->where($blogTableName . '.owner_id IN (?)', $users);
+      else
+        $select->where($blogTableName . '.owner_id IN (?)', 0);
+    }
+
+    if (empty($params['miles']))
+      $params['miles'] = 200;
+
+    if (isset($params['lat']) && isset($params['miles']) && $params['miles'] != 0 && isset($params['lng']) && $params['lat'] != '' && $params['lng'] != '' && ((isset($params['location']) && $params['location'] != '' && strtolower($params['location']) != 'world'))) {
+      $origLat = $params['lat'];
+      $origLon = $params['lng'];
+      if (Engine_Api::_()->getApi('settings', 'core')->getSetting('eblog.search.type', 1) == 1)
+        $searchType = 3956;
+      else
+        $searchType = 6371;
+
+      //This is the maximum distance (in miles) away from $origLat, $origLon in which to search
+      $dist = $params['miles'];
+
+      $asinSort = array('lat', 'lng', 'distance' => new Zend_Db_Expr(($searchType . " * 2 * ASIN(SQRT( POWER(SIN(($origLat - abs(lat))*pi()/180/2),2) + COS($origLat*pi()/180 )*COS(abs(lat)*pi()/180) *POWER(SIN(($origLon-lng)*pi()/180/2),2)))")));
+      $select->joinLeft($tableLocationName, $tableLocationName . '.resource_id = ' . $blogTableName . '.blog_id AND ' . $tableLocationName . '.resource_type = "eblog_blog" ', $asinSort);
+      $select->where($tableLocationName . ".lng between ($origLon-$dist/abs(cos(radians($origLat))*69)) and ($origLon+$dist/abs(cos(radians($origLat))*69)) and " . $tableLocationName . ".lat between ($origLat-($dist/69)) and ($origLat+($dist/69))");
+      $select->order('distance');
+      $select->having("distance < $dist");
+    } else {
+      $select->joinLeft($tableLocationName, $tableLocationName . '.resource_id = ' . $blogTableName . '.blog_id AND ' . $tableLocationName . '.resource_type = "eblog_blog" ', array('lat', 'lng'));
+    }
+
+    if (!empty($params['tag'])) {
+      $tmName = Engine_Api::_()->getDbtable('TagMaps', 'core')->info('name');
+      $select->setIntegrityCheck(false)->joinLeft($tmName, "$tmName.resource_id = $blogTableName.blog_id")
+        ->where($tmName . '.resource_type = ?', 'eblog_blog')
+        ->where($tmName . '.tag_id = ?', $params['tag']);
+    }
+
+
+
+    if (!empty($params['alphabet']) && $params['alphabet'] != 'all')
+      $select->where($blogTableName . ".title LIKE ?", $params['alphabet'] . '%');
+
+    $currentTime = date('Y-m-d H:i:s');
+    if (isset($params['popularCol']) && !empty($params['popularCol'])) {
+      if ($params['popularCol'] == 'week') {
+        $endTime = date('Y-m-d H:i:s', strtotime("-1 week"));
+        $select->where("DATE(" . $blogTableName . ".creation_date) between ('$endTime') and ('$currentTime')");
+      } elseif ($params['popularCol'] == 'month') {
+        $endTime = date('Y-m-d H:i:s', strtotime("-1 month"));
+        $select->where("DATE(" . $blogTableName . ".creation_date) between ('$endTime') and ('$currentTime')");
+      } else {
+        $select = $select->order($blogTableName . '.' . $params['popularCol'] . ' DESC');
+      }
+    }
+
+    if (isset($params['fixedData']) && !empty($params['fixedData']) && $params['fixedData'] != '')
+      $select = $select->where($blogTableName . '.' . $params['fixedData'] . ' =?', 1);
+
+    if (isset($params['featured']) && !empty($params['featured']))
+      $select = $select->where($blogTableName . '.featured =?', 1);
+
+    if (isset($params['verified']) && !empty($params['verified']))
+      $select = $select->where($blogTableName . '.verified =?', 1);
+
+    if (isset($params['sponsored']) && !empty($params['sponsored']))
+      $select = $select->where($blogTableName . '.sponsored =?', 1);
+
+    if (!empty($params['category_id']))
+      $select = $select->where($blogTableName . '.category_id =?', $params['category_id']);
+
+    if (!empty($params['subcat_id']))
+      $select = $select->where($blogTableName . '.subcat_id =?', $params['subcat_id']);
+
+    if (!empty($params['subsubcat_id']))
+      $select = $select->where($blogTableName . '.subsubcat_id =?', $params['subsubcat_id']);
+
+    if (isset($params['draft']))
+      $select->where($blogTableName . '.draft = ?', $params['draft']);
+
+    if (!empty($params['text']))
+      $select->where($blogTableName . ".title LIKE ? OR " . $blogTableName . ".body LIKE ?", '%' . $params['text'] . '%');
+
+    if (!empty($params['date']))
+      $select->where("DATE_FORMAT(" . $blogTableName . ".creation_date, '%Y-%m-%d') = ?", date('Y-m-d', strtotime($params['date'])));
+
+    if (!empty($params['start_date']))
+      $select->where($blogTableName . ".creation_date = ?", date('Y-m-d', $params['start_date']));
+
+    if (!empty($params['end_date']))
+      $select->where($blogTableName . ".creation_date < ?", date('Y-m-d', $params['end_date']));
+
+    if (!empty($params['visible']))
+      $select->where($blogTableName . ".search = ?", $params['visible']);
+
+    if (!isset($params['manage-widget'])) {
+      $select->where($blogTableName . ".publish_date <= '$currentTime' OR " . $blogTableName . ".publish_date = ''");
+      $select->where($blogTableName . '.is_approved = ?', (bool)1)->where($blogTableName . '.draft = ?', (bool)0)->where($blogTableName . '.search = ?', (bool)1);
+      //check package query
+      if (Engine_Api::_()->getDbtable('modules', 'core')->isModuleEnabled('eblogpackage') && Engine_Api::_()->getApi('settings', 'core')->getSetting('eblogpackage.enable.package', 1)) {
+        $order = Engine_Api::_()->getDbTable('orderspackages', 'eblogpackage');
+        $orderTableName = $order->info('name');
+        $select->joinLeft($orderTableName, $orderTableName . '.orderspackage_id = ' . $blogTableName . '.orderspackage_id', null);
+        $select->where($orderTableName . '.expiration_date  > "' . date("Y-m-d H:i:s") . '" || expiration_date IS NULL || expiration_date = "0000-00-00 00:00:00"');
+      }
+    } else
+      $select->where($blogTableName . '.owner_id = ?', $viewerId);
+
+
+    if (isset($params['criteria'])) {
+      if ($params['criteria'] == 1)
+        $select->where($blogTableName . '.featured =?', '1');
+      else if ($params['criteria'] == 2)
+        $select->where($blogTableName . '.sponsored =?', '1');
+      else if ($params['criteria'] == 3)
+        $select->where($blogTableName . '.featured = 1 OR ' . $blogTableName . '.sponsored = 1');
+      else if ($params['criteria'] == 4)
+        $select->where($blogTableName . '.featured = 0 AND ' . $blogTableName . '.sponsored = 0');
+      else if ($params['criteria'] == 6)
+        $select->where($blogTableName . '.verified =?', '1');
+    }
+
+
+    if (isset($params['order']) && !empty($params['order'])) {
+      if ($params['order'] == 'week') {
+        $endTime = date('Y-m-d H:i:s', strtotime("-1 week"));
+        $select->where("DATE(" . $blogTableName . ".creation_date) between ('$endTime') and ('$currentTime')");
+      } elseif ($params['order'] == 'month') {
+        $endTime = date('Y-m-d H:i:s', strtotime("-1 month"));
+        $select->where("DATE(" . $blogTableName . ".creation_date) between ('$endTime') and ('$currentTime')");
+      }
+    }
+
+    if (isset($params['widgetName']) && !empty($params['widgetName']) && $params['widgetName'] == 'Similar Blogs') {
+      if (!empty($params['widgetName'])) {
+        $select->where($blogTableName . '.category_id =?', $params['category_id']);
+        $endTime = date('Y-m-d H:i:s', strtotime("-1 week"));
+        $select->where("DATE(" . $blogTableName . ".creation_date) between ('$endTime') and ('$currentTime')");
+        $select->order('featured DESC');
+        $select->order('view_count DESC');
+      }
+    }
+
+    if (isset($params['similar_blog']))
+      $select->where($blogTableName . '.parent_id =?', $params['blog_id']);
+
+    if (isset($customFields['has_photo']) && !empty($customFields['has_photo'])) {
+      $select->where($blogTableName . '.photo_id != ?', "0");
+    }
+
+    if (isset($params['criteria'])) {
+      switch ($params['info']) {
+        case 'recently_created':
+          $select->order($blogTableName . '.creation_date DESC');
+          break;
+        case 'most_viewed':
+          $select->order($blogTableName . '.view_count DESC');
+          break;
+        case 'most_liked':
+          $select->order($blogTableName . '.like_count DESC');
+          break;
+        case 'most_favourite':
+          $select->order($blogTableName . '.favourite_count DESC');
+          break;
+        case 'most_commented':
+          $select->order($blogTableName . '.comment_count DESC');
+          break;
+        case 'most_rated':
+          $select->order($blogTableName . '.rating DESC');
+          break;
+        case 'random':
+          $select->order('Rand()');
+          break;
+      }
+    }
+    if (!empty($params['getblog'])) {
+      $select->where($blogTableName . ".title LIKE ? OR " . $blogTableName . ".body LIKE ?", '%' . $params['textSearch'] . '%')->where($blogTableName . ".search = ?", 1);
+    }
+
+    //don't show other module blogs
+    if (Engine_Api::_()->getApi('settings', 'core')->getSetting('eblog.other.moduleblogs', 1) && empty($params['resource_type'])) {
+      $select->where($blogTableName . '.resource_type IS NULL')
+        ->where($blogTableName . '.resource_id =?', 0);
+    } else if (!empty($params['resource_type']) && !empty($params['resource_id'])) {
+      $select->where($blogTableName . '.resource_type =?', $params['resource_type'])
+        ->where($blogTableName . '.resource_id =?', $params['resource_id']);
+    } else if (!empty($params['resource_type'])) {
+      $select->where($blogTableName . '.resource_type =?', $params['resource_type']);
+    }
+    //don't show other module blogs
+
+
+    $select->order(!empty($params['orderby']) ? $params['orderby'] . ' DESC' : $blogTableName . '.creation_date DESC');
+    if (isset($params['fetchAll'])) {
+      if (!isset($params['rss'])) {
+        if (empty($params['limit']))
+          $select->limit(3);
+        else
+          $select->limit($params['limit']);
+      }
+      return $this->fetchAll($select);
+    } else
+      return $select;
+  }
+
+  public function getBlog($params = array())
+  {
+
+    $table = Engine_Api::_()->getDbtable('blogs', 'eblog');
+    $blogTableName = $table->info('name');
+    $select = $table->select()
+      ->where($blogTableName . '.draft = ?', 0)
+      ->where($blogTableName . ".title LIKE ? OR " . $blogTableName . ".body LIKE ?", '%' . $params['text'] . '%')
+      ->where($blogTableName . ".search = ?", 1)
+      ->order('creation_date DESC');
+
+    if (Engine_Api::_()->getApi('settings', 'core')->getSetting('eblog.other.moduleblogs', 1) && empty($params['resource_type'])) {
+      $select->where($blogTableName . '.resource_type IS NULL')->where($blogTableName . '.resource_id =?', 0);
+    }
+
+    return $this->fetchAll($select);
+  }
+
+  /**
+   * Returns an array of dates where a given user created a eblog entry
+   *
+   * @param User_Model_User user to calculate for
+   * @return Array Dates
+   */
+  public function getArchiveList($spec)
+  {
+
+    if (!($spec instanceof User_Model_User))
+      return null;
+
+    $localeObject = Zend_Registry::get('Locale');
+    if (!$localeObject)
+      $localeObject = new Zend_Locale();
+
+    $dates = $this->select()
+      ->from($this, 'creation_date')
+      ->where('owner_type = ?', 'user')
+      ->where('owner_id = ?', $spec->getIdentity())
+      ->where('draft = ?', 0)
+      ->order('blog_id DESC')
+      ->query()
+      ->fetchAll(Zend_Db::FETCH_COLUMN);
+
+    $time = time();
+
+    $archive_list = array();
+    foreach ($dates as $date) {
+
+      $date = strtotime($date);
+      $ltime = localtime($date, true);
+      $ltime["tm_mon"] = $ltime["tm_mon"] + 1;
+      $ltime["tm_year"] = $ltime["tm_year"] + 1900;
+
+      // LESS THAN A YEAR AGO - MONTHS
+      if ($date + 31536000 > $time) {
+        $date_start = mktime(0, 0, 0, $ltime["tm_mon"], 1, $ltime["tm_year"]);
+        $date_end = mktime(0, 0, 0, $ltime["tm_mon"] + 1, 1, $ltime["tm_year"]);
+        $type = 'month';
+
+        $dateObject = new Zend_Date($date);
+        $format = $localeObject->getTranslation('yMMMM', 'dateitem', $localeObject);
+        $label = $dateObject->toString($format, $localeObject);
+      } // MORE THAN A YEAR AGO - YEARS
+      else {
+        $date_start = mktime(0, 0, 0, 1, 1, $ltime["tm_year"]);
+        $date_end = mktime(0, 0, 0, 1, 1, $ltime["tm_year"] + 1);
+        $type = 'year';
+
+        $dateObject = new Zend_Date($date);
+        $format = $localeObject->getTranslation('yyyy', 'dateitem', $localeObject);
+        if (!$format)
+          $format = $localeObject->getTranslation('y', 'dateitem', $localeObject);
+
+        $label = $dateObject->toString($format, $localeObject);
+      }
+
+      if (!isset($archive_list[$date_start])) {
+        $archive_list[$date_start] = array(
+          'type' => $type,
+          'label' => $label,
+          'date' => $date,
+          'date_start' => $date_start,
+          'date_end' => $date_end,
+          'count' => 1
+        );
+      } else
+        $archive_list[$date_start]['count']++;
+    }
+    return $archive_list;
+  }
+
+  public function getOfTheDayResults()
+  {
+    return $this->select()
+      ->from($this->info('name'), 'blog_id')
+      ->where('offtheday =?', 1)
+      ->where('starttime <= DATE(NOW())')
+      ->where('endtime >= DATE(NOW())')
+      ->order('RAND()')
+      ->query()
+      ->fetchColumn();
+  }
+
+  public function checkCustomUrl($value = '', $blog_id = '')
+  {
+    $select = $this->select('blog_id')->where('custom_url = ?', $value);
+    if ($blog_id)
+      $select->where('blog_id !=?', $blog_id);
+    return $select->query()->fetchColumn();
+  }
+
+  public function getBlogId($slug = null)
+  {
+    if ($slug) {
+      $tableName = $this->info('name');
+      $select = $this->select()
+        ->from($tableName)
+        ->where($tableName . '.custom_url = ?', $slug);
+      $row = $this->fetchRow($select);
+      if (empty($row)) {
+        $blog_id = $slug;
+      } else
+        $blog_id = $row->blog_id;
+      return $blog_id;
+    }
+    return '';
+  }
+  public function getBlogIdForScroll($allid, $categoryid)
+  {
+    $select = $this->select()
+      ->from($this->info('name'),'blog_id')
+      ->where('blog_id !=(?)', $allid);
+    if(!empty($categoryid))
+    {
+      $select=$select->where('category_id = ?',$categoryid);
+    }
+    $select=$select->order('blog_id DESC')
+    ->query()
+    ->fetchAll();
+
+    return $select;
+  }
+  
+  public function getItemCount($params = array()) {
+    
+    $select = $this->select()->from($this->info('name'), 'count(*) AS total');
+    
+    if(isset($params['columnName']) && !empty($params['columnName']))
+      $select = $select->where($params['columnName'].' =?', 1);
+    
+    return $select->query()->fetchColumn();
+  }
+}

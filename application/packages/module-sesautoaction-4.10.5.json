@@ -1,0 +1,923 @@
+{
+  "type": "module",
+  "name": "sesautoaction",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Sesautoaction",
+  "repository": null,
+  "sku": null,
+  "date": "Wed, 18 Sep 2019 12:06:39 +0000",
+  "title": "SES - Auto Bot Actions Plugin - Auto Follow \/ Join \/ Like \/ Comment \/ Auto Friend Request",
+  "description": "SES - Auto Bot Actions Plugin - Auto Follow \/ Join \/ Like \/ Comment \/ Auto Friend Request",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Wed, 18 Sep 2019 12:06:39 +0000",
+    "title": "SES - Auto Bot Actions Plugin - Auto Follow \/ Join \/ Like \/ Comment \/ Auto Friend Request",
+    "description": "SES - Auto Bot Actions Plugin - Auto Follow \/ Join \/ Like \/ Comment \/ Auto Friend Request",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sesautoaction\/settings\/install.php",
+    "class": "Sesautoaction_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sesautoaction": {
+      "type": "directory",
+      "path": "application\/modules\/Sesautoaction",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13871,
+          "sha1": "be69c662dd0a430ec7c19018709efea2f3b07ff5"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 596,
+          "sha1": "711506c449cdfe2e5e0a42eb5987bdf3e2bc0103"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminBotmanageactionController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7249,
+          "sha1": "64180595d46e3d2be0a61e678c9ea9bc04f815f8"
+        },
+        {
+          "path": "controllers\/AdminIntegrateothermodulesController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5187,
+          "sha1": "672d59edbe1ba8f359da7bc267c21ced76215629"
+        },
+        {
+          "path": "controllers\/AdminManageautofriendController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5425,
+          "sha1": "da5c3ed13ab1385c3818d97c12af4022babadcaf"
+        },
+        {
+          "path": "controllers\/AdminManagecommentsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4694,
+          "sha1": "d705bb1edf0268e7dfe1242a4debbb70f14898fe"
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5758,
+          "sha1": "757ee5e7dfb702d3952209f3837c1a853e81de05"
+        },
+        {
+          "path": "controllers\/AdminManageusersController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4803,
+          "sha1": "f94fba840eae89275fc10774dc0d4b9f302ea138"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1773,
+          "sha1": "0c4137f19ad41ab41253cae3335d0a181960679a"
+        },
+        {
+          "path": "controllers\/Checklicense.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3058,
+          "sha1": "3b517107b57bd09d3126e08074e7ee037ee6fe22"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 419,
+          "sha1": "c3d19f3d46825f61b718679302b106fba22d3009"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2919,
+          "sha1": "a2f2a124207c0a8aaf21ad120ef565bf195c2920"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8203,
+          "sha1": "b22d9d718ec1ab12cc3153815577a200dc2c05ec"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/check.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 606,
+          "sha1": "48faef65661c46a5679a1d77771c0a934dfa7105"
+        },
+        {
+          "path": "externals\/images\/error.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 657,
+          "sha1": "806447dc55dd593d2872166862bed582ca9544ae"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 545,
+          "sha1": "1d17c6c0a286438d9e6fd3d0fa81e229c7b010f1"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Add.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1365,
+          "sha1": "619fac2c01b23fb23bf2ccf81efeafe5a65b64c5"
+        },
+        {
+          "path": "Form\/Admin\/AddModules.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4347,
+          "sha1": "e65afae8973c3afa9eeadea1a186f9769958838e"
+        },
+        {
+          "path": "Form\/Admin\/Autofriend.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3335,
+          "sha1": "37866586e115c5c5ca5fb6d533ce9ff1555c3255"
+        },
+        {
+          "path": "Form\/Admin\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5972,
+          "sha1": "c0fd6d21f0af01f45dd4678a1c8346ea8490d6d7"
+        },
+        {
+          "path": "Form\/Admin\/Createbotaction.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5614,
+          "sha1": "4bd1f8b72ab0cf6a63de615d4c8922bd5c14d99d"
+        },
+        {
+          "path": "Form\/Admin\/CreateComment.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1522,
+          "sha1": "47288b7f46c76c70b4b8518658c5ac181dcaba02"
+        },
+        {
+          "path": "Form\/Admin\/Delete.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 970,
+          "sha1": "20e674d184d2aa4e97b96a875ee741c11b675ecf"
+        },
+        {
+          "path": "Form\/Admin\/Deleteautofriend.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 990,
+          "sha1": "f5e44f3b4bc367dc31d249449892fc8e7f3b67bc"
+        },
+        {
+          "path": "Form\/Admin\/DeleteBotAction.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 988,
+          "sha1": "5e91107f5bcf08155e1ce83c76614ac99be6e4e2"
+        },
+        {
+          "path": "Form\/Admin\/DeleteComment.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 984,
+          "sha1": "410a6742862036ad44280ce29cfcd95fc674d6c7"
+        },
+        {
+          "path": "Form\/Admin\/Deleteuser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 978,
+          "sha1": "a5bd32f3d3273fed6bb5dfb06de02d1a2a9de14f"
+        },
+        {
+          "path": "Form\/Admin\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4848,
+          "sha1": "21c3db77662bc413db0d594056d8cdcb1d598456"
+        },
+        {
+          "path": "Form\/Admin\/Editautofriend.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2992,
+          "sha1": "407f8eaa259b3e61309107f6bb303437bdf33116"
+        },
+        {
+          "path": "Form\/Admin\/Editbotaction.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4839,
+          "sha1": "6d12479c7f7be6fecf0d88fbf74e44bf0ee9910b"
+        },
+        {
+          "path": "Form\/Admin\/EditComments.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1440,
+          "sha1": "9ab32a596b2c1fa77d848de859109a5a936ae17a"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4061,
+          "sha1": "d05a78203377dd5170525466a4a1e523678742bc"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/Action.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 473,
+          "sha1": "bce5b1c92b657572536a407e008cb877a5e5ba5f"
+        },
+        {
+          "path": "Model\/Botaction.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 479,
+          "sha1": "c9dad725078e6639ad927e3adc402e7404f613b3"
+        },
+        {
+          "path": "Model\/Comment.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 475,
+          "sha1": "39c06d9bf343af3fcd8d1090053119e79f4ada2e"
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/DbTable\/Actions.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 852,
+          "sha1": "d8c58c74cd0c10518764648d232c677f371142b8"
+        },
+        {
+          "path": "Model\/DbTable\/Botactions.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 867,
+          "sha1": "6654f378a81b09ff3bc02270b7c52080d5066ec2"
+        },
+        {
+          "path": "Model\/DbTable\/Comments.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1195,
+          "sha1": "4fca03482d2b1227476ed6343ee955544c7caafe"
+        },
+        {
+          "path": "Model\/DbTable\/Friends.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 852,
+          "sha1": "639b4bf8cf7f49ed14606120f42aadfba96ff990"
+        },
+        {
+          "path": "Model\/DbTable\/Integrateothersmodules.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1557,
+          "sha1": "74ec2f750a85872c867cea977dfb17c97d3e5669"
+        },
+        {
+          "path": "Model\/DbTable\/Users.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 842,
+          "sha1": "9152194767cf77fd36470a96f112ae43b4953760"
+        },
+        {
+          "path": "Model\/Friend.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 473,
+          "sha1": "c09df8c4d3ee496e274ef69fa2e0b812a89432a8"
+        },
+        {
+          "path": "Model\/Integrateothersmodule.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 497,
+          "sha1": "bd94a9489f8765b94aac2fa164723716a5beb4e0"
+        },
+        {
+          "path": "Model\/User.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 469,
+          "sha1": "f9ffca1b35e69ff39a0f2493d9c5798754267267"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4717,
+          "sha1": "2fcc827bea237a5768d7ef6e50ff1d8d213bc340"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 378,
+          "sha1": "1afbd0d8601a89ee3a4b43149b376999b3b1ea99"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1516,
+          "sha1": "c8ba56d127c4153b6c2964157406f535fc436438"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2504,
+          "sha1": "95a4761f58b869ce0c5e3a586ffc4ca841816c3f"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 871,
+          "sha1": "114c0b842849c361d7000ebe9857aad9a59b9fe4"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-botmanageaction",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-botmanageaction\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3252,
+          "sha1": "9218a9e21a8f7c84c20f8735492759fa9422d5a1"
+        },
+        {
+          "path": "views\/scripts\/admin-botmanageaction\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 494,
+          "sha1": "02d8c45b4f2714f4ecbe1cef101d5da082bb68d8"
+        },
+        {
+          "path": "views\/scripts\/admin-botmanageaction\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1437,
+          "sha1": "925869c5e6359768d37927e8d3968b9915b55669"
+        },
+        {
+          "path": "views\/scripts\/admin-botmanageaction\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4614,
+          "sha1": "cde8dc7b02d980c1de0b0599c7777a18d9425163"
+        },
+        {
+          "path": "views\/scripts\/admin-integrateothermodules",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-integrateothermodules\/addmodule.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1416,
+          "sha1": "386b27a43801975839d24cdeda4189e491bfaad1"
+        },
+        {
+          "path": "views\/scripts\/admin-integrateothermodules\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 983,
+          "sha1": "b86d1a10800dd37577c8bf1b818ecff55d247d71"
+        },
+        {
+          "path": "views\/scripts\/admin-integrateothermodules\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3734,
+          "sha1": "ab347003514a76817622a6f05b5316b8799fb9a8"
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4761,
+          "sha1": "334c2382435a457700140e43583bff723c5956bc"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 494,
+          "sha1": "02d8c45b4f2714f4ecbe1cef101d5da082bb68d8"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3579,
+          "sha1": "37e8d27f535f0fbe9325554b135b45dc49b64ba6"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5475,
+          "sha1": "b3fb5943783f4e2f778ad8af424fab034ffd0140"
+        },
+        {
+          "path": "views\/scripts\/admin-manageautofriend",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manageautofriend\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 913,
+          "sha1": "8872b5aa77bd17a9a78632156f30e1206d7aa397"
+        },
+        {
+          "path": "views\/scripts\/admin-manageautofriend\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 494,
+          "sha1": "02d8c45b4f2714f4ecbe1cef101d5da082bb68d8"
+        },
+        {
+          "path": "views\/scripts\/admin-manageautofriend\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 822,
+          "sha1": "423610e3498715544ffc3f4430b50f70308f489d"
+        },
+        {
+          "path": "views\/scripts\/admin-manageautofriend\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4415,
+          "sha1": "f1a67e28a0ec1994a7313c0f5fd9b8bfb26c5df5"
+        },
+        {
+          "path": "views\/scripts\/admin-managecomments",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-managecomments\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 899,
+          "sha1": "8933130cb6c85a71c8b44c79b7008f5f4784aa4d"
+        },
+        {
+          "path": "views\/scripts\/admin-managecomments\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 494,
+          "sha1": "02d8c45b4f2714f4ecbe1cef101d5da082bb68d8"
+        },
+        {
+          "path": "views\/scripts\/admin-managecomments\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 812,
+          "sha1": "6089b8cafeac86ad59d857feb8e7513250231dc9"
+        },
+        {
+          "path": "views\/scripts\/admin-managecomments\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4456,
+          "sha1": "b764c828c709d30ac533bfb0e77b6bb5f2ea1bdb"
+        },
+        {
+          "path": "views\/scripts\/admin-manageusers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manageusers\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2109,
+          "sha1": "670fde5e5a8a672171d79d03c34ac521db07d9d9"
+        },
+        {
+          "path": "views\/scripts\/admin-manageusers\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 494,
+          "sha1": "02d8c45b4f2714f4ecbe1cef101d5da082bb68d8"
+        },
+        {
+          "path": "views\/scripts\/admin-manageusers\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4462,
+          "sha1": "6cbd5a29e9735c7a6be476d5b55be178718d8225"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/autofriend.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1309,
+          "sha1": "c52360ca4322a8ac425d801b585c0e5b91b83ebc"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1267,
+          "sha1": "cb300a0f3d84614f4dd1bab4978dac2868e64878"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/support.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2499,
+          "sha1": "7f4414cfed8e6417bdcc4dd1aa7908b3b4586290"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 904,
+          "sha1": "68b8895f9c207c329185e3302a9bf2c0ab7da521"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 447,
+          "sha1": "f03e08325612edc64ea783813aaf5976e457248e"
+        }
+      ]
+    },
+    "application\/languages\/en\/sesautoaction.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sesautoaction.csv",
+      "structure": {
+        "path": "sesautoaction.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 0,
+        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      }
+    }
+  }
+}

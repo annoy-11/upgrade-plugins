@@ -1,0 +1,1 @@
+INSERT IGNORE INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES  ('snsdemo', 'Demo Plugin', '', '4.10.0', 1, 'extra') ;

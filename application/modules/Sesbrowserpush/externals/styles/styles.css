@@ -1,0 +1,370 @@
+
+.layout_sesbrowserpush_notification_button{
+	padding:0 !important;
+	margin:0 !important;
+	height:0 !important;
+	background:none !important;
+	border-width:0 !important;
+}
+.sesbrowserpush_button{
+	height:35px;
+	line-height:33px;
+	padding:0 20px;
+	border-radius:5px;
+}
+/*NOTIFICATION TIP CSS START HERE*/
+.sesbrowserpush_tip{
+	border-radius:3px;
+	box-shadow:0 0px 50px 20px rgba(0,0,0,0.2);
+	position:fixed;
+	display:none;
+	top:50px;
+	max-width:750px;
+	left:50%;
+	transform:translateX(-50%);
+	width:100%;
+	z-index:1000;
+}
+.sesbrowserpush_tip_inner{
+	align-items:center;
+	padding:20px;
+	display:flex;
+	width:100%;
+}
+.sesbrowserpush_tip_icon img{
+	max-height:55px;
+	vertical-align:middle;
+}
+.sesbrowserpush_tip_content{
+	padding:0 20px;
+	flex:1;
+}
+.sesbrowserpush_tip_title{
+	font-weight:bold;
+}
+.sesbrowserpush_tip_des{
+	margin-top:5px;
+	font-size:90%;
+}
+.sesbrowserpush_tip_buttons{
+	display:flex;
+}
+.sesbrowserpush_tip_buttons a.sesbrowserpush_button_main{
+	padding:0 40px;
+	margin-left:10px;
+}
+/*NOTIFICATION TIP CSS END HERE*/
+/*NOTIFICATION BUTTON CSS START HERE*/
+.sesbrowserpush_notification_button > a{
+	opacity:.5;
+	height:40px;
+	width:40px;
+	display:block;
+	border-radius:50%;
+	position:relative;
+	position:fixed;
+	bottom:20px;
+	left:20px;
+	filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	-webkit-filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	z-index:11;
+	-webkit-transition:all 500ms ease 0s;
+	-moz-transition:all 500ms ease 0s;
+	-o-transition:all 500ms ease 0s;
+	transition:all 500ms ease 0s;
+	transform:scale(1);
+}
+.sesbrowserpush_notification_button > a > i{
+	background-image:url(../images/bell-icon-white.svg);
+	background-size:100%;
+	background-repeat:no-repeat;
+	background-position:center center;
+	display:block;
+	width:25px;
+	height:25px;
+	margin:0 auto;
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+}
+.sesbrowserpush_notification_button.showpulldown > a > i{
+	background-image:url(../images/close-white.svg);
+	background-size:60%;
+}
+.sesbrowserpush_notification_button > a:hover,
+.sesbrowserpush_notification_button.showpulldown > a{
+	opacity:1;
+	transform:scale(1.2);
+}
+.sesbrowserpush_notification_button ._tip{
+	position:fixed;
+	background-color:rgba(0,0,0,.5);
+	bottom:20px;
+	color:#fff;
+	border-radius:5px;
+	height:40px;
+	padding:0 15px;
+	line-height:40px;
+	left:80px;
+	display:none;
+	z-index:1;
+}
+.sesbrowserpush_notification_button ._tip:before{
+	content:"";
+	width:0;
+	height:0;
+	border-top:10px solid transparent;
+	border-bottom:10px solid transparent;
+	border-right:10px solid rgba(0,0,0,.5);
+	left:-10px;
+	position:absolute;
+	top:10px;
+}
+.sesbrowserpush_notification_button:not(.showpulldown):hover ._tip{
+	display:block;
+}
+.sesbrowserpush_notification_bubble{
+	border-radius:5px;
+	position:fixed;
+	width:320px;
+	bottom:20px;
+	left:80px;
+	display:none;
+	filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	-webkit-filter:drop-shadow(0 0 20px rgba(0, 0, 0, .1));
+	z-index:11;
+}
+.showpulldown .sesbrowserpush_notification_bubble{
+	display:block;
+}
+.sesbrowserpush_notification_bubble_content{
+	padding:10px;
+	display:flex;
+}
+.sesbrowserpush_notification_bubble_content ._icon{
+	margin-right:5px;
+	width:80px;
+	padding:10px;
+}
+.sesbrowserpush_notification_bubble_content ._cont{
+	flex:1;
+}
+.sesbrowserpush_notification_bubble_content ._title{
+	font-weight:bold;
+}
+.sesbrowserpush_notification_bubble_content ._des{
+	font-size:90%;
+	margin-top:5px;
+}
+.sesbrowserpush_notification_bubble_content ._icon img{
+	width:100%;
+	vertical-align:middle;
+}
+.sesbrowserpush_notification_bubble_buttons{
+	margin:0 -1px;
+	display:flex;
+}
+.sesbrowserpush_notification_bubble_buttons > div{
+	padding:0 1px;
+	width:50%;
+}
+.sesbrowserpush_notification_bubble._unsubscribe .sesbrowserpush_notification_bubble_buttons > div{
+	width:100%;
+}
+.sesbrowserpush_notification_bubble_buttons a{
+	background-color:rgba(0, 0, 0, 0.09);
+	display:block;
+	line-height:40px;
+	text-align:center;
+	font-weight:bold;
+	letter-spacing:inherit;
+	font-size:95%;
+}
+.sesbrowserpush_notification_bubble:before,
+.sesbrowserpush_notification_bubble:after{
+	content:"";
+	border-left:20px solid transparent;
+	border-top:20px solid transparent;
+	border-right-width:20px;
+	border-right-style:solid;
+	bottom:0px;
+	left:-35px;
+	position:absolute;
+}
+.sesbrowserpush_notification_bubble:after{
+	border-right-color:rgba(0, 0, 0, 0.09);
+}
+/*NOTIFICATION BUTTON CSS END HERE*/
+/*NOTIFICATION POPUP CSS START HERE*/
+.sesbrowserpush_notification_popup_wrapper{
+	border-radius:10px;
+	display:none;
+	position:fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index:110;
+}
+.sesbrowserpush_notification_popup_overlay{
+	background-color:rgba(0,0,0,.5);
+	height:100%;
+}
+.sesbrowserpush_notification_popup{
+	background-size:cover;
+	box-shadow:0 0px 50px 20px rgba(0,0,0,0.2);
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:500px;
+	border-radius:10px;
+	height:400px;
+}
+.sesbrowserpush_notification_popup:before{
+	content:"";
+	background-color:rgba(0,0,0,0.2);
+	position:absolute;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+}
+.sesbrowserpush_notification_popup_close{
+	background-image:url(../images/close-icon.png);	
+	height:32px;
+	position:absolute;
+	right:-16px;
+	top:-16px;
+	width:32px;
+}
+.sesbrowserpush_notification_popup section{
+	position:relative;
+	padding:20px 20px 70px;
+	height:100%;
+}
+.sesbrowserpush_notification_popup_content{
+	overflow:auto;
+	height:100%;
+}
+.sesbrowserpush_notification_popup_content *{
+	color:#fff;
+	text-shadow:0 0 5px rgba(0,0,0,.3);
+}
+.sesbrowserpush_notification_popup_content ._title{
+	font-size:30px;
+	font-weight:bold;
+}
+.sesbrowserpush_notification_popup_content ._des{
+	font-size:20px;
+}
+.sesbrowserpush_notification_popup_content div + ._des{
+	margin-top:10px;
+}
+.sesbrowserpush_notification_popup_button{
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding:20px;
+}
+.sesbrowserpush_notification_popup_button{
+	display:flex;
+}
+.sesbrowserpush_notification_popup_button a{
+	border:2px solid #fff;
+	color:#fff;
+	line-height:35px;
+	padding:0 30px;
+	margin-left:10px;
+	font-weight:bold;
+}
+.sesbrowserpush_notification_popup_button a:nth-last-chid(1){
+	padding:0 50px;
+}
+/**/
+.sesbrowsepush_browser_permission_container{
+	display:none;
+	background:rgba(0, 0, 0, 0.90);
+	position:fixed;
+	height:100%;
+	top:0px;
+	left:0px;
+	width:100%;
+	z-index:9999;
+}
+.sesbrowsepush_browser_permission_box i{
+	background-image:url(../images/point-arrow.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	position:relative;
+	width:80px;
+	height:80px;
+	display:block;
+	top:200px;
+	left:300px;
+}
+.sesbrowsepush_browser_permission_box span{
+	position:relative;
+	color:#fff;
+	font-size:17px;
+	display:block;
+	top:200px;
+	left:400px;
+	height:100px;
+	width:180px;
+}
+@supports (-ms-ime-align:auto) {
+	.sesbrowsepush_browser_permission_box i{
+		top:310px;
+		left:650px;
+		transform:rotate(180deg);
+	}
+	.sesbrowsepush_browser_permission_box span{
+		top:100px;
+	}
+}
+/*NOTIFICATION POPUP CSS END HERE*/
+@media (max-width:767px){
+	.sesbrowserpush_tip{
+		width:90%;
+	}
+	.sesbrowserpush_notification_popup{
+		width:95% !important;
+		height:auto !important;
+	}
+}
+@media (max-width:540px){
+	/*Tip*/
+	.sesbrowserpush_tip{
+		top:50%;
+		transform:translate(-50%, -50%);
+	}
+	.sesbrowserpush_tip_inner{
+		flex-wrap:wrap;
+	}	
+	.sesbrowserpush_tip_inner > div{
+		width:100%;
+		padding:10px 0;
+	}
+	/*Popup*/
+	.sesbrowserpush_notification_popup{
+		width:90%;
+	}
+	.sesbrowserpush_notification_popup_content ._title{
+		font-size:25px;
+	}
+	/*Bell Button*/
+	.sesbrowserpush_notification_bubble{
+    left:20px;
+    right:20px;
+    width:auto;
+    bottom:80px;
+	}
+	.sesbrowserpush_notification_bubble:before,
+	.sesbrowserpush_notification_bubble:after{
+    display:none;
+	}
+}
+
+

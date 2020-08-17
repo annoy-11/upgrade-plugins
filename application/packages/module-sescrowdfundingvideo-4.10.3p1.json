@@ -1,0 +1,2803 @@
+{
+  "type": "module",
+  "name": "sescrowdfundingvideo",
+  "version": "4.10.3p1",
+  "revision": null,
+  "path": "application\/modules\/Sescrowdfundingvideo",
+  "repository": null,
+  "sku": null,
+  "date": "Wed, 26 Dec 2018 11:01:48 +0000",
+  "title": "SES - Crowdfunding Videos Extension",
+  "description": "SES - Crowdfunding Videos Extension",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"http:\/\/www.socialenginesolutions.com\" style=\"text-decoration:underline;\" target=\"_blank\">SocialEngineSolutions<\/a>"
+  ],
+  "meta": {
+    "date": "Wed, 26 Dec 2018 11:01:48 +0000",
+    "title": "SES - Crowdfunding Videos Extension",
+    "description": "SES - Crowdfunding Videos Extension",
+    "developer": null,
+    "authors": [
+      "<a href=\"http:\/\/www.socialenginesolutions.com\" style=\"text-decoration:underline;\" target=\"_blank\">SocialEngineSolutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sescrowdfundingvideo\/settings\/install.php",
+    "class": "Sescrowdfundingvideo_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.9.4p3",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sescrowdfundingvideo": {
+      "type": "directory",
+      "path": "application\/modules\/Sescrowdfundingvideo",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 17850,
+          "sha1": "36a91ac7254a0e162cec83518550a347fd335be8"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1444,
+          "sha1": "be0b321f8fc400a481e18f8d7e59e9a088a80d16"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10829,
+          "sha1": "4f329bc23d2039b5eff9aba18eb65a99384bd52f"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10387,
+          "sha1": "6b36a9d3706b9a6766dd47f9f86d44025dd97323"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 36737,
+          "sha1": "490b57b9728736a42d73a9958f746ff252d94572"
+        },
+        {
+          "path": "controllers\/Google",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Auth",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Auth\/Abstract.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1274,
+          "sha1": "469c167c6aac6219ae41744cbf14ea759dbc6c94"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/AppIdentity.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3484,
+          "sha1": "7523186e4ac9bf4c8392a5778d80aa9c1724955b"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/AssertionCredentials.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3866,
+          "sha1": "835f707323da2297e885b5ff3a17b780643b3662"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/ComputeEngine.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4248,
+          "sha1": "95d452f1851aa83d0282eee34380db4195827f20"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 755,
+          "sha1": "b3e79bd07fd61f7ad6d5fdcfe9f74d1b2294f44c"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/LoginTicket.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1926,
+          "sha1": "719580f826e9ca949faaae97762d7c7b712c651b"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/OAuth2.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 19253,
+          "sha1": "9eb018776ab409f921fd141962deedd802b52cb6"
+        },
+        {
+          "path": "controllers\/Google\/Auth\/Simple.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1987,
+          "sha1": "2f97091aaa7ee963ba5197addfcbc168adccabb9"
+        },
+        {
+          "path": "controllers\/Google\/autoload.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1057,
+          "sha1": "d32fd95851f51c126650824fa48c09f53bdc3507"
+        },
+        {
+          "path": "controllers\/Google\/Cache",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Cache\/Abstract.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1453,
+          "sha1": "1ce3d334753ba42472d0d5a397bda145a8951c2c"
+        },
+        {
+          "path": "controllers\/Google\/Cache\/Apc.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2823,
+          "sha1": "926da84023e3c17e4ad4d7bdb318edb8ae1ced48"
+        },
+        {
+          "path": "controllers\/Google\/Cache\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 756,
+          "sha1": "cf988fabe615ca5c6e9eb689bb07bd6065b2e6ce"
+        },
+        {
+          "path": "controllers\/Google\/Cache\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5721,
+          "sha1": "f2b5adeb76c8c7eec6162f84bdad8ebbffcb7b1e"
+        },
+        {
+          "path": "controllers\/Google\/Cache\/Memcache.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4818,
+          "sha1": "ae46996d564dc220e6490728b13aaeaadf47359b"
+        },
+        {
+          "path": "controllers\/Google\/Cache\/Null.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1193,
+          "sha1": "131c5891bb58e14978aa848ffbfc7e6ad1b2b738"
+        },
+        {
+          "path": "controllers\/Google\/Client.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 21084,
+          "sha1": "cc6b145f1061758e30f423d3ea2d27306b19c35f"
+        },
+        {
+          "path": "controllers\/Google\/Collection.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2587,
+          "sha1": "9aa24f5686ef96f14b8bcd24397615f8fd53b8be"
+        },
+        {
+          "path": "controllers\/Google\/Config.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13957,
+          "sha1": "c50ae73654286af2277929aaa0b13bc9dec2f142"
+        },
+        {
+          "path": "controllers\/Google\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 647,
+          "sha1": "dd83bd9350e931a8087eafcc26178c42549363af"
+        },
+        {
+          "path": "controllers\/Google\/Http",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Http\/Batch.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4439,
+          "sha1": "24d8c1fc2d6b071e3856dae22cf03da9d16fe697"
+        },
+        {
+          "path": "controllers\/Google\/Http\/CacheParser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6181,
+          "sha1": "d471271a6a7ec0f15505751f8b7b3724bbae21db"
+        },
+        {
+          "path": "controllers\/Google\/Http\/MediaFileUpload.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8231,
+          "sha1": "26af682436fd4ac860b3fe73085b66659a14ece2"
+        },
+        {
+          "path": "controllers\/Google\/Http\/Request.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12044,
+          "sha1": "ade03ef60c0b21ecf1773ac810c64991f26487a5"
+        },
+        {
+          "path": "controllers\/Google\/Http\/REST.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5900,
+          "sha1": "745057b29da266e704bf40d0f51eed63b280fe97"
+        },
+        {
+          "path": "controllers\/Google\/IO",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/IO\/Abstract.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10871,
+          "sha1": "a579a16c41830993ed2a04f4960e6c9cf9fbcb91"
+        },
+        {
+          "path": "controllers\/Google\/IO\/cacerts.pem",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 134862,
+          "sha1": "433e5589520cd2f1f29dea3e077cfbc2b74fb78c"
+        },
+        {
+          "path": "controllers\/Google\/IO\/Curl.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5340,
+          "sha1": "966ac7ad5211db28115e0b7927c1249bc9d32f11"
+        },
+        {
+          "path": "controllers\/Google\/IO\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1831,
+          "sha1": "aeebb010c690abadf267461048b79ea4b6000da5"
+        },
+        {
+          "path": "controllers\/Google\/IO\/Stream.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6503,
+          "sha1": "222e0db8c9bc09b32bf465fc47ab358babd8f69f"
+        },
+        {
+          "path": "controllers\/Google\/Logger",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Logger\/Abstract.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10143,
+          "sha1": "224ace8123998e100771f2b8810a87f96b1d30c0"
+        },
+        {
+          "path": "controllers\/Google\/Logger\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 757,
+          "sha1": "0b51168cbc552110131aa62210d4fda622debbb0"
+        },
+        {
+          "path": "controllers\/Google\/Logger\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3686,
+          "sha1": "247bfe665749431850d3cef3270a66b99a01ddab"
+        },
+        {
+          "path": "controllers\/Google\/Logger\/Null.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1057,
+          "sha1": "2a148fce7078e72adf8ea041a74f6f85443bc436"
+        },
+        {
+          "path": "controllers\/Google\/Logger\/Psr.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2459,
+          "sha1": "f39b11c79b953edc707ea922542bf4f1a0ec2972"
+        },
+        {
+          "path": "controllers\/Google\/Model.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8170,
+          "sha1": "ad461954e28814f603597764479ccf8fd0158674"
+        },
+        {
+          "path": "controllers\/Google\/Service",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 32768,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Service\/AdExchangeBuyer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 58400,
+          "sha1": "e699050cb8b2c88d863e7ba012a4fd330d402004"
+        },
+        {
+          "path": "controllers\/Google\/Service\/AdExchangeSeller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 46128,
+          "sha1": "704c847bee40d13a585e7bd66292bfb700d85ef5"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Admin.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4488,
+          "sha1": "326186170c5c1d2c73fe03490b5eedb388c77da7"
+        },
+        {
+          "path": "controllers\/Google\/Service\/AdSense.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 101971,
+          "sha1": "6a8b373890163dd938c13473edba253e95347728"
+        },
+        {
+          "path": "controllers\/Google\/Service\/AdSenseHost.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 62438,
+          "sha1": "a82d6d3d4b82a147ab5b70c3fa8ed3fc1bf5421d"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Analytics.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 275729,
+          "sha1": "c95d9aab2a8460539302a9971f21895fdd4ae871"
+        },
+        {
+          "path": "controllers\/Google\/Service\/AndroidEnterprise.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 92938,
+          "sha1": "82ec4109a2f6053bee069c1468b8959871f65f13"
+        },
+        {
+          "path": "controllers\/Google\/Service\/AndroidPublisher.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 126254,
+          "sha1": "28929c9ba59fba0e73f1fb45053eb8739eda7c0e"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Appsactivity.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14465,
+          "sha1": "92c4e8a421944b33900351fe724f5f83f5d7cea0"
+        },
+        {
+          "path": "controllers\/Google\/Service\/AppState.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10317,
+          "sha1": "d1ff72648aba66b3ca74ff085812afbd225100c3"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Audit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10137,
+          "sha1": "5ca97aa0c9a89b58e76af4202d4d8d3496dcae30"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Autoscaler.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 36078,
+          "sha1": "2806038d563ac11f202299aa19d570da0070dec9"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Bigquery.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 90823,
+          "sha1": "a2e2b55a1bd0a77dbc8363bec2e59d7e2ee38c7f"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Blogger.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 90822,
+          "sha1": "e333d161ef86f96a16de147e04ee56fe80a266e7"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Books.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 179089,
+          "sha1": "ebc1853af0ea1d2651a8c8b8dcf8564c9a860a8c"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Calendar.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 112742,
+          "sha1": "088623a9aa419c835b5b2c6134c263ec3b823d56"
+        },
+        {
+          "path": "controllers\/Google\/Service\/CivicInfo.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 37909,
+          "sha1": "b5ba2ea3a370060a2ad9d61ba6bd1345f245bd8a"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Classroom.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 52010,
+          "sha1": "f826a846e93d84be4d9784afe294ab0e56c09896"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Cloudlatencytest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7073,
+          "sha1": "911126e79d0ead5861ef992b17b5140e613edc6a"
+        },
+        {
+          "path": "controllers\/Google\/Service\/CloudMonitoring.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 34581,
+          "sha1": "9982a68bd0c93c8f48188f382346006b8d8c3584"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Cloudresourcemanager.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13689,
+          "sha1": "108a8511cdc207b598ac7f4a40014ee0944a1947"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Cloudsearch.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1372,
+          "sha1": "a52a30af79e377046a22397ac8aa968eb3b762c1"
+        },
+        {
+          "path": "controllers\/Google\/Service\/CloudUserAccounts.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 53773,
+          "sha1": "822f11fed7ed3a5681ba9452c4175d6ffe0c4f2e"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Compute.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 372840,
+          "sha1": "0821534b0b41049d726ace4c92b260e859c08e0c"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Computeaccounts.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 46119,
+          "sha1": "0bd5596278c226566b76e81088fbef4dd21c0e56"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Container.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 24918,
+          "sha1": "8797ed5749f93ffef0d1719fa54c5814b45016fc"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Coordinate.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 42741,
+          "sha1": "5c3e151c3ba8775845af4c521f36561f9dd11464"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Customsearch.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 30174,
+          "sha1": "c6196fb394971a010bbaa4a168bacebb5515d258"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Dataflow.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 85382,
+          "sha1": "f68bf578a823be61a4cd95592379b63721647190"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Datastore.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 36988,
+          "sha1": "185dbd3f5b8dd426063cc32332bb4609fbc9f952"
+        },
+        {
+          "path": "controllers\/Google\/Service\/DeploymentManager.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 43714,
+          "sha1": "e36607f7e033abb368f0c6458fbf85dce4727687"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Dfareporting.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 634685,
+          "sha1": "6d47cb10f953304ee3d8382e5e509de50a87b0af"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Directory.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 150557,
+          "sha1": "9da55e1ed11b7f7649571e12215c84bc3802ffb1"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Dns.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 25790,
+          "sha1": "1c49154e7fe99228bc3f0da1519ffaf376e4dc01"
+        },
+        {
+          "path": "controllers\/Google\/Service\/DoubleClickBidManager.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 26724,
+          "sha1": "7d62f0d681c73db884879313a04f726c20540b2d"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Doubleclicksearch.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 40731,
+          "sha1": "629ac8ff401ea4fa4d73c2886a683d5b54c77766"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Drive.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 153311,
+          "sha1": "7734641a733998a223fcdf95a7a2c41fa5b4319a"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2756,
+          "sha1": "7f3613a7d7a03418a1488c1ee29c61768f394932"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Fitness.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 45651,
+          "sha1": "03f600a0d7a68ae49f9bca19ab5981a3128808b8"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Freebase.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12776,
+          "sha1": "679f084e991e94662a97c6d145cc925e486e99d1"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Fusiontables.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 70670,
+          "sha1": "0def75d05243394a43e070932153a0e176bedfaf"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Games.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 193818,
+          "sha1": "d766f361f78c0bc9f734c19fe530ae1cadc45091"
+        },
+        {
+          "path": "controllers\/Google\/Service\/GamesConfiguration.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 31662,
+          "sha1": "b216852cabf9916079d6d9526689c18394450a62"
+        },
+        {
+          "path": "controllers\/Google\/Service\/GamesManagement.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 41486,
+          "sha1": "173eca0668aae01c647c52a007e345aa16e92597"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Genomics.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1359,
+          "sha1": "eda9fbd2cf230ab1f39276f2d04cb79e75ebb594"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Gmail.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 66084,
+          "sha1": "4e48ba9897532d5115727c744c9834ed8b2e69db"
+        },
+        {
+          "path": "controllers\/Google\/Service\/GroupsMigration.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3349,
+          "sha1": "cd4704e29c1f8e6b542156c8102f79925770536a"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Groupssettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11309,
+          "sha1": "9c71d628f3ec1349e5478ed40d5c1c35b62bf911"
+        },
+        {
+          "path": "controllers\/Google\/Service\/IdentityToolkit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 41385,
+          "sha1": "dfeceb4e9f455b19f660cd395505ddddb7a393e5"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Licensing.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15083,
+          "sha1": "b79996e67861cfaab7bd282aafd6bb530fcbfef6"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Logging.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 40800,
+          "sha1": "d950f6d3e642cc36a58db21caf9558b742aad8d1"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Manager.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 45729,
+          "sha1": "aa7f503d8bf6d5053401efd6db56eb6c66d12a8f"
+        },
+        {
+          "path": "controllers\/Google\/Service\/MapsEngine.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 185795,
+          "sha1": "4a916e86bda49e0fe119f6fd836027fa16e6480d"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Mirror.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 48382,
+          "sha1": "bebf2208abbc6d7e20d5c2bd635c092f50e04491"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Oauth2.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11043,
+          "sha1": "aa070374c90de8fbba16b691c7b4ca4679fd1a77"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Pagespeedonline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 19925,
+          "sha1": "f2239b9fa656a3bcafeafb6bff3b4f162ec0f6d1"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Playmoviespartner.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1386,
+          "sha1": "8cec98717941874729cca6cba833fd5d79d305c7"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Plus.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 79604,
+          "sha1": "dececd5836b9099a9aac1227c66f44b973a9ecdf"
+        },
+        {
+          "path": "controllers\/Google\/Service\/PlusDomains.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 88032,
+          "sha1": "55422cd45c8046e1e5fcd36af7423e46532fec40"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Prediction.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 31390,
+          "sha1": "36860dc960f1283a29995f947712ad631b898a43"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Pubsub.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 27046,
+          "sha1": "71e2c323555846dc821fac9a33cd3480124224f6"
+        },
+        {
+          "path": "controllers\/Google\/Service\/QPXExpress.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 31555,
+          "sha1": "bb2c6b7d2b39e746e23abb7458b262392ea92230"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Replicapool.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 39153,
+          "sha1": "34f6dce45e922e28b669a71a2dc659ed593db6d0"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Replicapoolupdater.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 34394,
+          "sha1": "25925e8454749e11447b899df035f9da527fae59"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Reports.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 28714,
+          "sha1": "20dc4ec4f44b36625745384e1b37032580e6f5b5"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Reseller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 33254,
+          "sha1": "ac4ac4ddaea71c002e0858cc7632c8b32582c7a3"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Resource.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8682,
+          "sha1": "1dce08916d47646c779f1e4b0019946667c7aed9"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Resourceviews.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 37490,
+          "sha1": "eb26f1d7a5f695f50e4406f9d1478816c40f9c3a"
+        },
+        {
+          "path": "controllers\/Google\/Service\/ShoppingContent.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 152963,
+          "sha1": "7d5d69f8b14d3b71c1798ee016883a415b2b3028"
+        },
+        {
+          "path": "controllers\/Google\/Service\/SiteVerification.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12142,
+          "sha1": "049703c9203b2184091503876a62befa54a11d56"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Spectrum.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 42304,
+          "sha1": "9f6dda165116b5d2af6e544bac8286301e9fd4c7"
+        },
+        {
+          "path": "controllers\/Google\/Service\/SQLAdmin.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 97682,
+          "sha1": "0b391f13fa712d307e67791c34acb2adf4308974"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Storage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 105263,
+          "sha1": "735e647bad777a11fe3466b3ef105973cc0a15f5"
+        },
+        {
+          "path": "controllers\/Google\/Service\/TagManager.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 100668,
+          "sha1": "dd39548eae26abff097c2e9a8fe3be37e81049b0"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Taskqueue.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 20198,
+          "sha1": "1f53af5993b0639e767d40900595d1e8b0f0bfec"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Tasks.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 25827,
+          "sha1": "2d5b04e670e8cf19fce8b4639a4669f12eadb69a"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Translate.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9617,
+          "sha1": "8aea85dfecff49fadcee911984556040e2f4807b"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Urlshortener.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10588,
+          "sha1": "c0b3108ae9fcacb004c4a753b68b300fa8fe9885"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Webfonts.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4737,
+          "sha1": "efe86d9202ebdfb74af37336a98ee954b42ab6a9"
+        },
+        {
+          "path": "controllers\/Google\/Service\/Webmasters.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 33948,
+          "sha1": "b0faa98d273b75ebcc1762b665343f2646e845d2"
+        },
+        {
+          "path": "controllers\/Google\/Service\/YouTube.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 386108,
+          "sha1": "908413f2d041492f39f4b7f4503c5e6e46247946"
+        },
+        {
+          "path": "controllers\/Google\/Service\/YouTubeAnalytics.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 35762,
+          "sha1": "f0cc4cbb374264cb98db02d15eec988199f50d55"
+        },
+        {
+          "path": "controllers\/Google\/Service.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1289,
+          "sha1": "4a2b980984f911858a1d25e71a64a75d8a1abf0b"
+        },
+        {
+          "path": "controllers\/Google\/Signer",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Signer\/Abstract.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 820,
+          "sha1": "376acca9ecc584534ff58aa06c64d792bb5f6efd"
+        },
+        {
+          "path": "controllers\/Google\/Signer\/P12.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3143,
+          "sha1": "bd7e7e0b0573d002eeb1d44c160527d7545d3419"
+        },
+        {
+          "path": "controllers\/Google\/Task",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Task\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 755,
+          "sha1": "135293e1dee0ee6564e0ec8bce58a0f2f8ada78b"
+        },
+        {
+          "path": "controllers\/Google\/Task\/Retryable.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1046,
+          "sha1": "7349cc51b58a89b4d7825ce398890ecc2df46a08"
+        },
+        {
+          "path": "controllers\/Google\/Task\/Runner.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6489,
+          "sha1": "47fc311eb8fbce450bf4f1f3fb07d4a3a913d5dc"
+        },
+        {
+          "path": "controllers\/Google\/Utils",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Utils\/URITemplate.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9473,
+          "sha1": "19e13eaa1ac97f6d090872e5b39676aa8346e5ab"
+        },
+        {
+          "path": "controllers\/Google\/Utils.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3946,
+          "sha1": "1ea0cbaa479b6fcf01d0302658541073bf422464"
+        },
+        {
+          "path": "controllers\/Google\/Verifier",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/Google\/Verifier\/Abstract.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 879,
+          "sha1": "35acabe30aa3f3660b44e686de9521ba31953fdf"
+        },
+        {
+          "path": "controllers\/Google\/Verifier\/Pem.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2142,
+          "sha1": "d886f081ce6b4fa77c6107fd4bfae6a84ab479ab"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 84349,
+          "sha1": "002a818283a97623259ad00a68f0bed54a8826cb"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 22068,
+          "sha1": "adba6926848cfcd86cb5756461eab2aba491cf84"
+        },
+        {
+          "path": "controllers\/VideoController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2743,
+          "sha1": "f01830b1a04157bbe6fafbef3853b4ecd6fe0c73"
+        },
+        {
+          "path": "controllers\/WatchlaterController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 876,
+          "sha1": "e79739b47cedc6c548e121b62d2f82fcc4962970"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/assets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/assets\/cd-icon-menu.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 671,
+          "sha1": "b2e8e42f7d788deb1b8097639d3e49ec454e70bd"
+        },
+        {
+          "path": "externals\/assets\/cd-icon-navigation.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2082,
+          "sha1": "e030cd74a09e0d80d2b28d8655c0d92ce0ad4a0c"
+        },
+        {
+          "path": "externals\/assets\/cd-logo.svg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 669,
+          "sha1": "f4b10e10601885909bc9690c01229372683cf9e3"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/clock.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3049,
+          "sha1": "782a5c8d2b38ec0dbc8e9dfcab0f9fcfd607913b"
+        },
+        {
+          "path": "externals\/images\/delete.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 715,
+          "sha1": "8f0ebcb45d7ba71a541d4781329f4a6900c7ee65"
+        },
+        {
+          "path": "externals\/images\/edit.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 444,
+          "sha1": "3bed7d7fef488eb238a052b5afe174847d109b8d"
+        },
+        {
+          "path": "externals\/images\/follow.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 606,
+          "sha1": "48faef65661c46a5679a1d77771c0a934dfa7105"
+        },
+        {
+          "path": "externals\/images\/grayshade.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 932,
+          "sha1": "85045c213efb0c2d324e1783e40272e0f213fdff"
+        },
+        {
+          "path": "externals\/images\/locked-video.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 29423,
+          "sha1": "e0e20a20dc067ba22927266dce5356123cec2dfa"
+        },
+        {
+          "path": "externals\/images\/new.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 739,
+          "sha1": "606a684490fe55ff2ef051148ac1c63f019cad56"
+        },
+        {
+          "path": "externals\/images\/nochanelthumb.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3248,
+          "sha1": "b553166b0b883559c15fac2515f1321ba93ffc0b"
+        },
+        {
+          "path": "externals\/images\/nophoto_video_thumb_icon.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1594,
+          "sha1": "e0bc7b3be0803b29bf24dd14d4f3c6aac8a74c55"
+        },
+        {
+          "path": "externals\/images\/nophoto_video_thumb_normal.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2145,
+          "sha1": "4241e6781ab10dca33864788aaf235e7c239fba0"
+        },
+        {
+          "path": "externals\/images\/private-photo.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 17192,
+          "sha1": "e0b452eb18195cb8d389e92c0ccd53b895815fce"
+        },
+        {
+          "path": "externals\/images\/private-video.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 45414,
+          "sha1": "922f2f72e07853fc20497dbf0d6582ceeb65e110"
+        },
+        {
+          "path": "externals\/images\/transprant-bg.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 932,
+          "sha1": "85045c213efb0c2d324e1783e40272e0f213fdff"
+        },
+        {
+          "path": "externals\/images\/types",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/types\/video.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 653,
+          "sha1": "3811ee746f69176ff8c7b610ae5c4ce80e0ec50b"
+        },
+        {
+          "path": "externals\/images\/video.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2958,
+          "sha1": "8f294ce00efb0728b965982ab40914df30230573"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts\/composer_video.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10918,
+          "sha1": "81be76ecab054dd665163de8603f7cc5e609093f"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14883,
+          "sha1": "5f11557bd6e528703be81c884eadb02620f8e53a"
+        },
+        {
+          "path": "externals\/scripts\/slideshowmain.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6262,
+          "sha1": "5f4597bd7ae5fe4cbf30a529c0454f66a586cd2c"
+        },
+        {
+          "path": "externals\/scripts\/slideshowmodernizr.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15253,
+          "sha1": "bfa1008d9ad1c2c7a32a9a0e14af89dcb9bafb1e"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 783,
+          "sha1": "24b35f7d8d0bb0001c6e639f435c272924d1153a"
+        },
+        {
+          "path": "externals\/styles\/carousel.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2849,
+          "sha1": "ff3ae94944babcae9cfb6f00c8e0c71f173175a4"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7331,
+          "sha1": "fa0fb9acf908f3b1fc903bc2d43f4612154db2c8"
+        },
+        {
+          "path": "externals\/styles\/mobile.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7354,
+          "sha1": "a44f793d549259a66fa82170dd3fd115f3637c10"
+        },
+        {
+          "path": "externals\/styles\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 26385,
+          "sha1": "00dad0861c07ef145f2045e33e821ff8d5fc9fef"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Location.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 655,
+          "sha1": "ff23cfa95826aa15c8a65cbcefa19bce749e8651"
+        },
+        {
+          "path": "Form\/Admin\/Manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Filter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7983,
+          "sha1": "4c197c162998b5f6a615243c549a1dc77f23f52b"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11562,
+          "sha1": "a1caab1ad9ba58aa50bc8a0a25fd5da09b0be72b"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/GlobalLicense.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2125,
+          "sha1": "e4d6a9cf727ec039a8c5b5d7a10e6e55fecb9aab"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4789,
+          "sha1": "8f9233447b23fec99fe749532851c5fa524d04ce"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Oftheday.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1648,
+          "sha1": "eb2e22e691c6dc59363779c1de8681d9224d0029"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Profilevideos.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7688,
+          "sha1": "74a5186025d7fce9f71718d56fdc1d6f4f0bb94f"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Tabbed.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10631,
+          "sha1": "9cbb6c3439af3c5f872552e30447418946c11fbe"
+        },
+        {
+          "path": "Form\/Browsesearch.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4723,
+          "sha1": "e4529aec9b68a98f48702b62f482eea80baf1470"
+        },
+        {
+          "path": "Form\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8039,
+          "sha1": "84a364c589a39dd669433e1ccf357c74f533d6d7"
+        },
+        {
+          "path": "Form\/Location.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2145,
+          "sha1": "dbce85084b5247d7492587ef17c405c6326acdc8"
+        },
+        {
+          "path": "Form\/SearchAjax.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 678,
+          "sha1": "0ca8064867589f5924bfecaab6b65362daea1419"
+        },
+        {
+          "path": "Form\/Video.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12968,
+          "sha1": "88269571035f675932539e273fbbb5cbca94a897"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/Crowdfundingvideo.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 17182,
+          "sha1": "97cdb8f7512d51c6488903acffadab9e3657defc"
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/DbTable\/Crowdfundingvideos.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13128,
+          "sha1": "eafb85cf9fc4d685777dee84fe004d21644230ac"
+        },
+        {
+          "path": "Model\/DbTable\/Favourites.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1351,
+          "sha1": "6140a6b312457fdb6aab0b1846cec4b52fdb7960"
+        },
+        {
+          "path": "Model\/DbTable\/Ratings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5146,
+          "sha1": "c5915472227660aaf7fc8e51bac74fdc9e5bb2b1"
+        },
+        {
+          "path": "Model\/DbTable\/Recentlyviewitems.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2725,
+          "sha1": "93c868df2d37630d79154bd8d20a3179c2caa93b"
+        },
+        {
+          "path": "Model\/DbTable\/Videos.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 467,
+          "sha1": "f42ff03156da07df6d1b43c264da2c50f36388c7"
+        },
+        {
+          "path": "Model\/DbTable\/Watchlaters.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 569,
+          "sha1": "dad2fd22800e0b57ddd91e1fd0d537d008775113"
+        },
+        {
+          "path": "Model\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 434,
+          "sha1": "fa4a0f0b332e199ad4ea297943a5fb14c2b6ef08"
+        },
+        {
+          "path": "Model\/Favourite.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 481,
+          "sha1": "c213de719d2bc84a7428f892f67c67d38fd14f6d"
+        },
+        {
+          "path": "Model\/Rating.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 749,
+          "sha1": "7ed5f9d55ebdf97f2d1ca730964d26b360d2d626"
+        },
+        {
+          "path": "Model\/Recentlyviewitem.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 495,
+          "sha1": "17fb4cd517b9cb033ca8965e3635c394862e21ec"
+        },
+        {
+          "path": "Model\/Watchlater.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1156,
+          "sha1": "7d7e05f0a0965d28ba63eb3ed305d36d87f56dfe"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Composer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1265,
+          "sha1": "b14063ac56c754c99745c6b7e4e65cc73875a462"
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4496,
+          "sha1": "d5e24cfba08daa10bdb405ef5cffcd999f2e152b"
+        },
+        {
+          "path": "Plugin\/Job",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Job\/Encode.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14513,
+          "sha1": "2850dd13a9756bec95911c72e88a65ba1dd3dbd0"
+        },
+        {
+          "path": "Plugin\/Job\/Maintenance",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Job\/Maintenance\/RebuildPrivacy.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3956,
+          "sha1": "f24a8df5af7d0287f8499e4f32824fd256747017"
+        },
+        {
+          "path": "Plugin\/Menus.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 403,
+          "sha1": "7d8ce47bf1c76bd166771910d28b693de605aa20"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 66850,
+          "sha1": "0688faaed8064c38db2ee8fcd90c513f2acd8077"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11354,
+          "sha1": "51b51cb3dd7834db65e09e5449b40e2879346458"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5483,
+          "sha1": "472f18af6ff541d18fd7b81f29fb81087eb03099"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 919,
+          "sha1": "3e7b13e4caf5a537277800ccb0f0ade555472f3e"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 8192,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 505,
+          "sha1": "dff4ce4901f166d675a0b5f29bdaa0a895fe51cd"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/feature-sponsored.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 372,
+          "sha1": "488e076825f4806ccca545052f62d9acdb3c7732"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/hot.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 358,
+          "sha1": "49a0561bb37137fe39a0decdd3e5d01636d62ec9"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14694,
+          "sha1": "37749212df7cfcc6445140211a89fb8c1e49f55d"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/oftheday.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1448,
+          "sha1": "078da9447053aec6af8b5ac882c62d7db5d819e7"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/view.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6228,
+          "sha1": "709dd424a1211e3e6a33b0e23b3e8133fe8b4893"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/form.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 555,
+          "sha1": "bac15b44bc2199e38b6ed727f0fa46f3f48703e7"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4293,
+          "sha1": "28c1bad0892e052a9e491d64c34618f4038e1d26"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/level.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1627,
+          "sha1": "1ab8e2e315df268c851491e0b733bdeb2ec6eb90"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/manage-widgetize-page.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2256,
+          "sha1": "9b3810afc68beab24b1941a3ce061bda4593826d"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/statistic.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2482,
+          "sha1": "eeb57475f9715b7ccf91c375958d47b45bbe8bca"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/utility.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2421,
+          "sha1": "38029ee300e4f7f97f9824bc21a6c234cc732b54"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 796,
+          "sha1": "d771341a6313d4517c4b44c7c8f75ed1efbfdf95"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/browse.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 375,
+          "sha1": "bf12af7228bfe7f80c86ced034f79a1b173bf820"
+        },
+        {
+          "path": "views\/scripts\/index\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 24881,
+          "sha1": "7408ff5aa31968a77ba4e939d7a3a814134877f2"
+        },
+        {
+          "path": "views\/scripts\/index\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 419,
+          "sha1": "80dbb83dccc525b18030e6a3ea43677dba7cc48c"
+        },
+        {
+          "path": "views\/scripts\/index\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6671,
+          "sha1": "02cd9414cdafe9ab91cb1fe70b460143636ef95e"
+        },
+        {
+          "path": "views\/scripts\/index\/home.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 359,
+          "sha1": "aa20f135154fbb48666bdc3e4e6444235bfd36ad"
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 461,
+          "sha1": "da82e43b09c90eae5ddad9b76063aa026669e3ff"
+        },
+        {
+          "path": "views\/scripts\/index\/location.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1722,
+          "sha1": "faf19c114583c7b96a52c49cb0a38d13f430fa7e"
+        },
+        {
+          "path": "views\/scripts\/index\/locations.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "views\/scripts\/index\/share.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1824,
+          "sha1": "46907aaaf5d70c6c220be6dd11fafa5ceda0d6a2"
+        },
+        {
+          "path": "views\/scripts\/index\/validation.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 535,
+          "sha1": "7de8ea65edafd232836cfa18e83b716b6dacca42"
+        },
+        {
+          "path": "views\/scripts\/index\/view.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 359,
+          "sha1": "54edf22803112438cb070d72b381a139a7ab4db2"
+        },
+        {
+          "path": "views\/scripts\/location.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 745,
+          "sha1": "d348698429e6070a41ed0c4419223e406bfd6c52"
+        },
+        {
+          "path": "views\/scripts\/video",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/video\/all-videos.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3075,
+          "sha1": "59d22f32ecd41408acd869e69dcf744157b5d657"
+        },
+        {
+          "path": "views\/scripts\/video\/embed.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1230,
+          "sha1": "4603ad0532797ee60bbc3e896161862089269919"
+        },
+        {
+          "path": "views\/scripts\/video\/external.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8651,
+          "sha1": "b8532426cfdc2213eaae38be3f384b6c317e4ee7"
+        },
+        {
+          "path": "views\/scripts\/video\/image-viewer-detail-advance.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 23123,
+          "sha1": "ad277ed526db66a689f4b4cdb5e22e94dc8ed8df"
+        },
+        {
+          "path": "views\/scripts\/video\/image-viewer-detail-basic.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 21905,
+          "sha1": "b9b065cb2f1165079ac3c24a5c08a2f9254e6ca1"
+        },
+        {
+          "path": "views\/scripts\/video\/last-element-data.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2993,
+          "sha1": "b8fc84ccbd1ff006ae296b6f6d9e6d366af02603"
+        },
+        {
+          "path": "views\/scripts\/_composeSescrowdfundingVideo.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4358,
+          "sha1": "bf9fbb02f4d1a655f0223c3af16a21ebb15ad04b"
+        },
+        {
+          "path": "views\/scripts\/_FancyUpload.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14386,
+          "sha1": "0131d398e9fec216c82827f09b3659a7f6886358"
+        },
+        {
+          "path": "views\/scripts\/_pagging.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2688,
+          "sha1": "02bfd5b2100de82a3547e2cbe99c59a45e8b91d2"
+        },
+        {
+          "path": "views\/scripts\/_profileShowVideoListGrid.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 86104,
+          "sha1": "cec24286250320aa5c10185f202b000e75a2c950"
+        },
+        {
+          "path": "views\/scripts\/_showVideoListGrid.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 64840,
+          "sha1": "583226cabb69277808875437aa54142cbdd15815"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 8192,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/breadcrumb",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/breadcrumb\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 833,
+          "sha1": "80d4ce463ae4c48d8e7d1089bdb4dccdff540161"
+        },
+        {
+          "path": "widgets\/breadcrumb\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1057,
+          "sha1": "2f5e4a50508852af8644f819c89ab4a6f09934c3"
+        },
+        {
+          "path": "widgets\/browse-search",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-search\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2788,
+          "sha1": "8cc8754ddc6dbdea90c511e95ca9921392aeea72"
+        },
+        {
+          "path": "widgets\/browse-search\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4651,
+          "sha1": "34bd372c87f87e6a2a4e0c623a4d504e4de70232"
+        },
+        {
+          "path": "widgets\/browse-video",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-video\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13548,
+          "sha1": "7e729772b96c1e39807cf05b83c703c16a59a2c8"
+        },
+        {
+          "path": "widgets\/browse-video\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 646,
+          "sha1": "677b78fcc5da84088026733318884396fc90d36e"
+        },
+        {
+          "path": "widgets\/browse-video-button",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-video-button\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 510,
+          "sha1": "63220700c6853837589f1bd969ed4d4f9b3825a5"
+        },
+        {
+          "path": "widgets\/browse-video-button\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 552,
+          "sha1": "f337f824ef7d50db9af4df7b42cc0c53695c9113"
+        },
+        {
+          "path": "widgets\/featured-sponsored",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/featured-sponsored\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2574,
+          "sha1": "46b2c76e07bb71ede50e09ff5d1ec054baa3801f"
+        },
+        {
+          "path": "widgets\/featured-sponsored\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 761,
+          "sha1": "d2dd8b047d152772b76db4baec801861792f1125"
+        },
+        {
+          "path": "widgets\/featured-sponsored-carosel",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/featured-sponsored-carosel\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3687,
+          "sha1": "a208ab550032fc2b05b695b49c13974b15119000"
+        },
+        {
+          "path": "widgets\/featured-sponsored-carosel\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15076,
+          "sha1": "5c953e22519e224b33c8da20663c9f0dec943b01"
+        },
+        {
+          "path": "widgets\/featured-sponsored-fixed-view",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/featured-sponsored-fixed-view\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3251,
+          "sha1": "b26cb26b71b6745888a4ec1b3cebc86db34c5f63"
+        },
+        {
+          "path": "widgets\/featured-sponsored-fixed-view\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12173,
+          "sha1": "5674f257dbf49d6bd9bfadb762f5615800fdd7d9"
+        },
+        {
+          "path": "widgets\/of-the-day",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/of-the-day\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2053,
+          "sha1": "1b8aefd265785a550a81b0c817c8e0f82b0ce243"
+        },
+        {
+          "path": "widgets\/of-the-day\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 722,
+          "sha1": "6d8cee684d1708313c541a1a678f19a9566fd24d"
+        },
+        {
+          "path": "widgets\/owner-photo",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/owner-photo\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 823,
+          "sha1": "6c889cd140d9d91dc74bcf656cafe72f2067e6cd"
+        },
+        {
+          "path": "widgets\/owner-photo\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 726,
+          "sha1": "beef004ae836a5d6cb37fb1a0269c3b7551b4cd8"
+        },
+        {
+          "path": "widgets\/people-favourite-item",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/people-favourite-item\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1650,
+          "sha1": "128f915618380615992ebc652e19ddee9537f96c"
+        },
+        {
+          "path": "widgets\/people-favourite-item\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1662,
+          "sha1": "4a66b83902fa12e84dc105fb3b3dfe9368e898d2"
+        },
+        {
+          "path": "widgets\/people-like-item",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/people-like-item\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1582,
+          "sha1": "12d83324447cb037ffc3ce1dc714808f03a4904f"
+        },
+        {
+          "path": "widgets\/people-like-item\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1656,
+          "sha1": "84d1ada2ba887f93b2cf183c463a7a110883aee4"
+        },
+        {
+          "path": "widgets\/popularity-videos",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/popularity-videos\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4462,
+          "sha1": "d48084c8dcf560097d2221dddc1b2c5c86104bee"
+        },
+        {
+          "path": "widgets\/popularity-videos\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 24974,
+          "sha1": "41fc4cd8ac1ebdefd051e36b7e0ce5dc3fe1d5c0"
+        },
+        {
+          "path": "widgets\/profile-videos",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/profile-videos\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9701,
+          "sha1": "c61eb1c23c2f0f771a85217b7c9df36b6a1556f0"
+        },
+        {
+          "path": "widgets\/profile-videos\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 648,
+          "sha1": "9f022504b6ce78004a5f8d879af6c461d1eb9f14"
+        },
+        {
+          "path": "widgets\/recently-viewed-item",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/recently-viewed-item\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2163,
+          "sha1": "25b9a80018733f254bd96501826d8fea144635e1"
+        },
+        {
+          "path": "widgets\/recently-viewed-item\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 761,
+          "sha1": "d2dd8b047d152772b76db4baec801861792f1125"
+        },
+        {
+          "path": "widgets\/search",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/search\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 565,
+          "sha1": "e100441efaca8aebf472f518c27230f70518c6c2"
+        },
+        {
+          "path": "widgets\/search\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2581,
+          "sha1": "ed8c3771497b4afb2262dc229eb120209ca2ea09"
+        },
+        {
+          "path": "widgets\/show-also-liked",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/show-also-liked\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2399,
+          "sha1": "104538cf2153db0a0ee33c513d6465ae35b4b8fb"
+        },
+        {
+          "path": "widgets\/show-also-liked\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 761,
+          "sha1": "d2dd8b047d152772b76db4baec801861792f1125"
+        },
+        {
+          "path": "widgets\/show-same-poster",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/show-same-poster\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2442,
+          "sha1": "876e0982af650dc1037bc47d338c26591c4b4441"
+        },
+        {
+          "path": "widgets\/show-same-poster\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 762,
+          "sha1": "1291ca9059a711b4ac33cee0334f0111e71cc57e"
+        },
+        {
+          "path": "widgets\/show-same-tags",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/show-same-tags\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3174,
+          "sha1": "2ef03b0bf9237dbb8283bfba0c10dc1ed41c8a25"
+        },
+        {
+          "path": "widgets\/show-same-tags\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 761,
+          "sha1": "d2dd8b047d152772b76db4baec801861792f1125"
+        },
+        {
+          "path": "widgets\/tabbed-widget-video",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/tabbed-widget-video\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11264,
+          "sha1": "f8b739309946ae8e4a884c84d8e972bf9af4671e"
+        },
+        {
+          "path": "widgets\/tabbed-widget-video\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 646,
+          "sha1": "103967fc309fbd61b92d8b8b81817995bd346f8d"
+        },
+        {
+          "path": "widgets\/video-home-error",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/video-home-error\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 749,
+          "sha1": "2109503d3276a2a30f8f9e60f52b70911e4a422b"
+        },
+        {
+          "path": "widgets\/video-home-error\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 570,
+          "sha1": "2efcf62e606fdf0d9e0335c9b297f208b9b35593"
+        },
+        {
+          "path": "widgets\/video-label",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/video-label\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 846,
+          "sha1": "a562c7649606eb1f6cef5a7abebc3c6fb98d4f3c"
+        },
+        {
+          "path": "widgets\/video-label\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1231,
+          "sha1": "482b4d55dae5cfc406d308421c2ceba4a34e26f6"
+        },
+        {
+          "path": "widgets\/video-view-page",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/video-view-page\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6466,
+          "sha1": "06bddc3d4d0a392e26ce62b6e3103f51cbe14c44"
+        },
+        {
+          "path": "widgets\/video-view-page\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 28374,
+          "sha1": "0b785aa0a9e755eaf5385a848686f74088137818"
+        }
+      ]
+    },
+    "application\/languages\/en\/sescrowdfundingvideo.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sescrowdfundingvideo.csv",
+      "structure": {
+        "path": "sescrowdfundingvideo.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 1109,
+        "sha1": "4947104205d1dceb11acba3ada387cb6fb8c1eaf"
+      }
+    }
+  }
+}

@@ -1,0 +1,157 @@
+
+/*WIDGETS*/
+[class*='layout_sespagebuilder_'], [id^='global_page_sespagebuilder-'] .layout_core_content{
+  clear:both;
+  margin-bottom:15px;
+}
+.layout_sespagebuilder_page_progress_bar{
+	margin:0;
+}
+[class*='layout_sespagebuilder_']:after, [id^='global_page_sespagebuilder-'] .layout_core_content:after{
+  clear:both;
+  content:'';
+  display:block;
+}
+[class*='tab_layout_sespagebuilder_']{
+  margin:0;
+  clear:none;
+}
+.layout_sespagebuilder_progress_bar{margin:0 !important;}
+/*Responsive Tabs*/
+.sespagebuilder_r_tabs.r-tabs{
+	background:$theme_list_background_color_hover;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-nav .r-tabs-anchor{
+	background:$theme_list_background_color_hover;
+  color:$theme_font_color;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor{
+	background:$theme_list_background_color;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-panel{
+	background:$theme_list_background_color;
+}
+@media only screen and (max-width:768px) {
+	.sespagebuilder_r_tabs.r-tabs > div + div{border-top:1px solid $theme_border_dark_color;}
+}
+/*Accordian Tabs*/
+.sespagebuilder_ac_container label{
+	background:$theme_list_background_color;
+  color:$theme_font_color;
+}
+.sespagebuilder_ac_container input:checked + label,
+.sespagebuilder_ac_container input + label:hover{
+	background:$theme_list_background_color_hover;
+	box-shadow:0 0 5px rgba(0, 0, 0, .5);
+}
+.sespagebuilder_ac_container article{
+	background-color:$theme_list_background_color;
+}
+/*Tree Menu*/
+.sespagebuilder_treemenu_block{
+ +foreground;
+ +rounded;
+	padding:5px;
+}
+
+/*Pricing Table*/
+.sespagebuilder_pricing_table_features{
+	background-color:$theme_body_background_color;
+}
+.sespagebuilder_pricing_table_features li i:before{
+	color:$theme_font_color_light;
+	font-size:14px;
+}
+.sespagebuilder_pricing_table_features li i:hover:before{
+	color:$theme_font_color;
+	font-size:14px;
+}
+/*Accordian Menu:Vertical*/
+.sespagebuilder_accordion_menu.isvertical > li > div{
+	background:$theme_list_background_color;
+}
+.sespagebuilder_accordion_menu.isvertical > li > div:hover,
+.sespagebuilder_accordion_menu.isvertical > li.open > div{
+	background:$theme_list_background_color_hover;
+}
+.sespagebuilder_accordion_menu.isvertical li a{
+	color:$theme_font_color;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu{
+	background:$theme_list_background_color;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a:hover{
+	color:$theme_link_color_hover;
+}
+/*Accordian Menu:Horizontal*/
+.sespagebuilder_accordion_menu.ishorizontal,
+.sespagebuilder_accordion_menu.ishorizontal ul li + li{
+	border-color:$theme_border_medium_color;
+}
+.sespagebuilder_accordion_menu.ishorizontal{
+	+rounded;
+	background:$theme_list_background_color_hover;
+}
+.sespagebuilder_accordion_menu.ishorizontal > li > div:hover,
+.sespagebuilder_accordion_menu.ishorizontal > li.open > div,
+.sespagebuilder_accordion_menu.ishorizontal > li > div.active{
+	background:$theme_list_background_color;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul{
+	background:$theme_list_background_color;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul li:hover{
+	background:$theme_list_background_color_hover;
+}
+/*Generic Menu*/
+.sespagebuilder_generic_menu{
+	+rounded;
+	+foreground;
+}
+.sespagebuilder_generic_menu,
+.sespagebuilder_generic_menu ul li,
+.sespagebuilder_generic_menu_vertical .sespagebuilder_menu_submenu,
+.sespagebuilder_generic_menu_vertical .sespagebuilder_menu_submenu a + a{
+	border-color:$theme_border_medium_color;
+}
+.sespagebuilder_generic_menu ul li:hover > a{
+	background-color:rgba(0, 0, 0, .05);
+}
+/*Generic Menu:Sub Menu*/
+.sespagebuilder_menu_catmenu,
+.sespagebuilder_generic_menu ul ul{
+	background-color:$theme_list_background_color;
+}
+.sespagebuilder_menu_catmenu > a,
+.sespagebuilder_generic_menu_vertical li ul a{
+	color:$theme_font_color !important;
+}
+.sespagebuilder_menu_catmenu > a:hover,
+.sespagebuilder_generic_menu_vertical li ul a:hover{
+	background-color:rgba(0, 0, 0, .05);
+	text-decoration:none;
+}
+/*Submenu*/
+.layout_core_menu_main ul.sespagebuilder_menu_submenu{
+	background-color:$theme_topbar_menu_background_color;
+}
+.layout_core_menu_main ul.sespagebuilder_menu_submenu li a{
+	color:$theme_topbar_menu_link_color;
+	font-size:$theme_topbar_menu_link_size;
+}
+.layout_core_menu_main ul.sespagebuilder_menu_submenu li:hover a, 
+.layout_core_menu_main ul.sespagebuilder_menu_submenu li.active a{
+  color:$theme_topbar_menu_link_hover_color;
+  background:$theme_topbar_menu_link_background_color_hover;
+}
+@media only screen and (max-width:767px){
+	/*Mobile Menu*/
+	.sespagebuilder_nav_mob_btn{background-color:$theme_topbar_menu_background_color;}
+	.sespagebuilder_nav_mob_btn:hover{background:$theme_topbar_menu_link_background_color_hover;}
+	.sespagebuilder_nav_mob_btn:before{color:$theme_topbar_menu_link_color;}
+	.sespagebuilder_nav_mob_btn:before:hover{color:$theme_topbar_menu_link_hover_color;}
+}
+
+.sespagebuilder_accordion_menu.ishorizontal > li > div > a:active{
+	color:#f00;
+}

@@ -1,0 +1,44 @@
+
+.sesmultiplecurrency_mini_menu_currency_chooser{
+
+}
+.sesmultiplecurrency_mini_menu_currency_chooser > a{font-weight:bold;color:$theme_topbar_minimenu_link_color !important;white-space:nowrap;}
+.sesmultiplecurrency_mini_menu_currency_chooser > a i{
+  margin-left:5px;
+}
+.sesmultiplecurrency_mini_menu_currency_chooser_dropdown{
+	border:1px solid $theme_border_medium_color;
+  background-color:$theme_list_background_color;
+  display:none;
+  position:absolute;
+  min-width:80px;
+  max-width:250px;
+  z-index:99;
+	margin-top:15px;
+	margin-left:-30px;
+}
+.sesmultiplecurrency_mini_menu_currency_chooser_dropdown:before{
+  content:"";
+  width:0; 
+	height:0; 
+  position:absolute;
+  margin:-5px 0 0;
+  right:0;
+  border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	border-bottom:5px solid $theme_border_medium_color;
+}
+.sesmultiplecurrency_mini_menu_currency_chooser_dropdown li + li{
+	border-top:1px solid $theme_border_medium_color;
+}
+.sesmultiplecurrency_mini_menu_currency_chooser_dropdown a {
+  display:block;
+  font-size:13px;
+  padding:5px 10px;
+  color:$theme_font_color !important;
+}
+.sesmultiplecurrency_mini_menu_currency_chooser_dropdown a:hover,
+.sesmultiplecurrency_mini_menu_currency_chooser_dropdown .selected a{
+  background-color:$theme_list_background_color_hover;
+  text-decoration:none;
+}

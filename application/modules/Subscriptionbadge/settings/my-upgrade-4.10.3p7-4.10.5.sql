@@ -1,0 +1,1 @@
+UPDATE `engine4_core_menuitems` SET `params` = '{\"route\":\"admin_default\",\"module\":\"subscriptionbadge\",\"controller\":\"settings\"}' WHERE `engine4_core_menuitems`.`name` = 'core_admin_main_plugins_subscriptionbadge';

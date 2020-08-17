@@ -1,0 +1,57 @@
+<?php
+
+ /**
+ * socialnetworking.solutions
+ *
+ * @category   Application_Modules
+ * @package    Courses
+ * @copyright  Copyright 2014-2019 Ahead WebSoft Technologies Pvt. Ltd.
+ * @license    https://socialnetworking.solutions/license/
+ * @version    $Id: Editors.php 2019-08-28 00:00:00 socialnetworking.solutions $
+ * @author     socialnetworking.solutions
+ */
+
+class Courses_Model_DbTable_Editors extends Engine_Db_Table {
+  protected $_rowClass = "Courses_Model_Editor";
+
+  /**
+   * Gets a paginator for eclassrooms
+   *
+   * @param Core_Model_Item_Abstract $user The user to get the messages for
+   * @return Zend_Paginator
+   */
+  public function getCourseEditorsPaginator($params = array()) {
+    $paginator = Zend_Paginator::factory($this->getCourseEditorsSelect($params));
+    if( !empty($params['page']) )
+    $paginator->setCurrentPageNumber ($params['page']);
+    if( !empty($params['limit']) )
+    $paginator->setItemCountPerPage($params['limit']);
+    if( empty($params['limit']) ) {
+      $course = (int) Engine_Api::_()->getApi('settings', 'core')->getSetting('courses.course', 10);
+      $paginator->setItemCountPerPage($course);
+    }
+    return $paginator;
+  }
+  /**
+   * Gets a select object for the user's eclassroom entries
+   *
+   * @param Core_Model_Item_Abstract $user The user to get the messages for
+   * @return Zend_Db_Table_Select
+   */
+  public function getCourseEditorsSelect($params = array()) {
+
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $courseTableName = $this->info('name');
+    $select = $this->select()->where('user_id =?', $viewer->getIdentity())->where('status =?', 0);
+    return $select;
+  }
+
+  public function claimCount() {
+     $viewerId = Engine_Api::_()->user()->getViewer()->getIdentity();
+     return $this->select()
+     ->from($this->info('name'), 'claim_id')
+     ->where('user_id =?', $viewerId)
+     ->where('status =?', 0)->query()->fetchColumn();
+  }
+
+}

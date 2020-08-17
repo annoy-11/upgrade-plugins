@@ -1,0 +1,1 @@
+UPDATE `engine4_activity_actiontypes` SET `body` = '{item:$subject} has added {var:$count} photo(s) to the album {var:$albumname} in page {var:$pagename}:' WHERE `engine4_activity_actiontypes`.`type` = 'sespage_album_photo_new';

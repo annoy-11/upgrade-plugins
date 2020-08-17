@@ -1,0 +1,898 @@
+{
+  "type": "module",
+  "name": "ecoupon",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Ecoupon",
+  "repository": null,
+  "sku": null,
+  "date": "Thu, 17 Oct 2019 04:11:48 +0000",
+  "title": "SNS - Advanced Discount & Coupon Plugin",
+  "description": "Ecoupon",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "socialenginesolutions"
+  ],
+  "meta": {
+    "date": "Thu, 17 Oct 2019 04:11:48 +0000",
+    "title": "SNS - Advanced Discount & Coupon Plugin",
+    "description": "Ecoupon",
+    "developer": null,
+    "authors": [
+      "socialenginesolutions"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Ecoupon\/settings\/install.php",
+    "class": "Ecoupon_Installer",
+    "priority": 100
+  },
+  "dependencies": null,
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Ecoupon": {
+      "type": "directory",
+      "path": "application\/modules\/Ecoupon",
+      "structure": [
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 14816,
+          "sha1": "adc7644391c2e9706daf5bc893a2387d2fc115d9"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 80,
+          "sha1": "60c6d73cfd8239412ef588fde29f1eaeaa6d8b33"
+        },
+        {
+          "path": "views\/scripts\/index\/browse.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 376,
+          "sha1": "2d73e20e184574aec630d6ad3b90760e01b82e17"
+        },
+        {
+          "path": "views\/scripts\/index\/enable.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 504,
+          "sha1": "1192170916d95bd24391e46daabba33985550a05"
+        },
+        {
+          "path": "views\/scripts\/index\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 16352,
+          "sha1": "99c3f418e1eb192018578aab40430a29c38ce14c"
+        },
+        {
+          "path": "views\/scripts\/index\/print.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2356,
+          "sha1": "91c2c05a38b1e39d107ec4b024143ba0e22b8e34"
+        },
+        {
+          "path": "views\/scripts\/index\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 17092,
+          "sha1": "3ca0b44faef7ca24d20071419444243693fa5920"
+        },
+        {
+          "path": "views\/scripts\/index\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 507,
+          "sha1": "7f0121145d1cd8d9cdf7991e5d680f340d67f578"
+        },
+        {
+          "path": "views\/scripts\/_customDiscountEnddates.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4379,
+          "sha1": "8a90e6aa529acd7f4cd148efc84669742ec9bebb"
+        },
+        {
+          "path": "views\/scripts\/_customdates.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4172,
+          "sha1": "b45a03cb236f68760055d293174583b90b73d682"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 985,
+          "sha1": "ec075ec8b975afa37c215e00225a5302f5763bd8"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/roles-create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 677,
+          "sha1": "6dfb967a912172b3672fbcdd05b5fc69f1e4b7cd"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/support.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4923,
+          "sha1": "81e93c0af9a0b4f67a4a9d8b5b0cbbad8637e921"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/manage-widgetize.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1588,
+          "sha1": "faf8ac31a1f9fa5d7aaa1965112c9c477b09607b"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/statistic.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3700,
+          "sha1": "cc8790fb6d769c86317267fc0f6d62e7110fd522"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/roles.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1315,
+          "sha1": "b74175e3ac9656c12b64822d9d44207130461a52"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2427,
+          "sha1": "04cabca7e310ee748697f49e1048b6aa506c5b44"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/utility.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1876,
+          "sha1": "ea6801301dac53ed5f77352163e1075cebb1eb27"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/edit-dashboards-settings.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 480,
+          "sha1": "edc493daeb63fda2697dab3d173b6d2593aa553d"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/manage-dashboards.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2307,
+          "sha1": "9c50ff21df23020d98d33254c097782d5601620d"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/level.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1131,
+          "sha1": "4d5968aada8be8c801aa053b82a461da6f798181"
+        },
+        {
+          "path": "views\/scripts\/_have_coupon.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0644",
+          "size": 2614,
+          "sha1": "d9c604f8e406fd7921e8935a0b7836650584ebfc"
+        },
+        {
+          "path": "views\/scripts\/_headingElementsForm.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1228,
+          "sha1": "c65f99daea25e5a6a0a0962d3dd2836975395442"
+        },
+        {
+          "path": "views\/scripts\/profile",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/profile\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 364,
+          "sha1": "8b56675e660a5e55759df902a99ca45855b91fca"
+        },
+        {
+          "path": "views\/scripts\/have_coupon.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2141,
+          "sha1": "2a2bebcba52fb19c30545fdf04c4a5aad0b68fb1"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 989,
+          "sha1": "cdbcd042eb095f9f4a69c121a98b7738ffe9da62"
+        },
+        {
+          "path": "views\/scripts\/_customDiscountStartdates.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4476,
+          "sha1": "54544e538bcb1dba31780e7dd48706466ff9181f"
+        },
+        {
+          "path": "views\/scripts\/admin-coupon",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-coupon\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10942,
+          "sha1": "a1564549e70aab64d288b8de560b80ee7188b12f"
+        },
+        {
+          "path": "views\/scripts\/admin-coupon\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 10594,
+          "sha1": "3863aeb81e83ce76957894010feb2d6ec3fd0b8a"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4054,
+          "sha1": "39082d79eff440767db70fb87af7f5935d56a320"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 687,
+          "sha1": "2c799fe4ff0465c75ad96669d60010ee61ca5845"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1635,
+          "sha1": "a8946f66549f76d6465b44a72a796a031eeeb467"
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3196,
+          "sha1": "d78aac8f5c9dcdb31a3166d04372ecab8865008a"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/Types.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 693,
+          "sha1": "56293faa99b20b2896f0a2c595859eb2059f1fc2"
+        },
+        {
+          "path": "Model\/DbTable\/Coupons.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3214,
+          "sha1": "6c6f4cdb367e454046ddf9ab606e7954fb648bb6"
+        },
+        {
+          "path": "Model\/DbTable\/Ordercoupons.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 790,
+          "sha1": "25a6b407606d1d8e2ef5fa046c1959d5dad24a86"
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Model\/Coupon.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1803,
+          "sha1": "ad408eb3cc889e661943f16ac73374043b4c1f30"
+        },
+        {
+          "path": "Model\/Ordercoupon.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 583,
+          "sha1": "91a8c35b306bb9adee7bfa159dd21587e46e1d90"
+        },
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4326,
+          "sha1": "cf2e7b17ce30c408af01039cb5b679001f22ef2b"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/alphabet-search",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/alphabet-search\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1194,
+          "sha1": "b95ccef16b7a4a85c8f49e28cebd1d32a57a0fb3"
+        },
+        {
+          "path": "widgets\/alphabet-search\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 581,
+          "sha1": "6f171bac50aa24dc157e72cd25f99d3628ccd6a9"
+        },
+        {
+          "path": "widgets\/.listing",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1402,
+          "sha1": "815e73fb05a54ab8af6e831fe74cbe3f16cd8ea2"
+        },
+        {
+          "path": "widgets\/coupon-view",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/coupon-view\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4280,
+          "sha1": "eb9db638147fe4ccc1a70bbd1759e8d3c5bfbb2a"
+        },
+        {
+          "path": "widgets\/coupon-view\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1420,
+          "sha1": "3971806f1657b19d1270c44031f26758a5708073"
+        },
+        {
+          "path": "widgets\/browse-coupons",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-coupons\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11295,
+          "sha1": "30d6da4fd803b2580a64d9fbbc6d3c6dcf380c87"
+        },
+        {
+          "path": "widgets\/browse-coupons\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2987,
+          "sha1": "9194d0a26405c5050343f0f2dd4d30e3fed3eec5"
+        },
+        {
+          "path": "widgets\/browse-search",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-search\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 4369,
+          "sha1": "4f4fdc99958bc423f1ecdbbc810251dd7b586f62"
+        },
+        {
+          "path": "widgets\/browse-search\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3015,
+          "sha1": "c3cad0413e310891997a319d4cf672dbb2041aa0"
+        },
+        {
+          "path": "widgets\/profile-offers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/profile-offers\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5609,
+          "sha1": "68b8d7e672026b3860013ea42e7b569190bd019f"
+        },
+        {
+          "path": "widgets\/profile-offers\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 1529,
+          "sha1": "980cfbdf5074e07d797ba15b0db8f18c94f3ffad"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/DashboardController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 90929,
+          "sha1": "50263d8e6af0e35cfd2f18afd842c0ab5bec631b"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 5843,
+          "sha1": "931ca731e776dcd5d2bfaad7e6b02bdb48da4cbd"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 21105,
+          "sha1": "4454d6752ba0ea52348008943450f8ce084201ab"
+        },
+        {
+          "path": "controllers\/AdminCouponController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3131,
+          "sha1": "2ab058a7739a2df8427f0f1d925279e76a6e4775"
+        },
+        {
+          "path": "controllers\/ProfileController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6413,
+          "sha1": "926a9ba10d26fead3137a74372b860c8d990c8ae"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3468,
+          "sha1": "1f90a044143843b78bc31843574ce446087bb83d"
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3290,
+          "sha1": "d150f06d23a48bb90a7770d39d3582f8423b4895"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 19691,
+          "sha1": "531a175f390fae52b32a75de5b7fa4254e84886f"
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/.listing",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 430,
+          "sha1": "f1e3ea7d4829890df4f5ad676637ff8221e4edb1"
+        },
+        {
+          "path": "Form\/Admin\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 6706,
+          "sha1": "95e9f939e01e2dde3517c3142917497c65bb3726"
+        },
+        {
+          "path": "Form\/Admin\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 11540,
+          "sha1": "2919134c86b323e857b27c9a031ffc8e1a4dfc5f"
+        },
+        {
+          "path": "Form\/Admin\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3169,
+          "sha1": "980299ecf9ca0659a12d42cc5026a8316f80ce05"
+        },
+        {
+          "path": "Form\/Admin\/Filter.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 3384,
+          "sha1": "09a8ccf65217e1641d8207ee20576e0eee7207c1"
+        },
+        {
+          "path": "Form\/Admin\/Coupon",
+          "dir": true,
+          "file": false,
+          "perms": "0755",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Coupon\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 13004,
+          "sha1": "d2eaf66f6107f3a09655b0459876bc914e53d26e"
+        },
+        {
+          "path": "Form\/Admin\/Coupon\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 440,
+          "sha1": "9692dfeaa69f0dfe12b96e79428ad7ee32d9c6d1"
+        },
+        {
+          "path": "Form\/Enable.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 577,
+          "sha1": "35cc8f199fb3808deecfec1251a05edd1a2021b0"
+        },
+        {
+          "path": "Form\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 414,
+          "sha1": "8ac4c0e2fe06b7a9e459016cce28506f5db380fc"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/img.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 47147,
+          "sha1": "976d5ed74b184bcf13c9dc6667f9cd7e638000c5"
+        },
+        {
+          "path": "externals\/images\/downarrow.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2876,
+          "sha1": "2b6de7e2a5d1d496a5e260970959eefb99efe086"
+        },
+        {
+          "path": "externals\/images\/leftarrow.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 2908,
+          "sha1": "1f7d0e79fd9b19b712e4ee78345b021ffb8819f2"
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/transprant-bg.png",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 932,
+          "sha1": "85045c213efb0c2d324e1783e40272e0f213fdff"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 7260,
+          "sha1": "1f05cff8728c0ae6cd4bdc47c24d880bb851fea4"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 360,
+          "sha1": "7f71a7a0347b219bc80fd98c9b8e96b2a1767542"
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0777",
+          "size": 86,
+          "sha1": "c6a72b79cd4e48663f2f18059388551442714cea"
+        }
+      ]
+    },
+    "application\/languages\/en\/ecoupon.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/ecoupon.csv",
+      "structure": {
+        "path": "ecoupon.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0777",
+        "size": 0,
+        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      }
+    }
+  }
+}

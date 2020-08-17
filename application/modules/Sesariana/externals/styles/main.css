@@ -1,0 +1,89 @@
+
+.ariana_banner_btns a{
+	background-color:$theme_button_background_color;
+	border:1px solid $theme_button_border_color;
+  color:$theme_button_font_color !important;
+}
+.ariana_banner_btns a:hover{
+	background-color:$theme_button_background_color_hover;
+  cursor:pointer;
+	color:$theme_button_font_hover_color !important;
+	text-decoration:none;
+}
+.sesariana_landing_page .seariana_content_wrapper,
+.sesariana_landing_page .sesariana_content_carousel_wrapper{
+	background-color:$sesariana_content_background_color;
+}
+.sesariana_landing_page .sesariana_content_carousel .slick-list{
+	max-width:$theme_content_width;
+}
+.seariana_highlights_item a{
+	background-color:$sesariana_content_background_color;
+}
+.seariana_highlights_item:hover a,
+.seariana_content_item:hover .seariana_content_item_title{
+	background-color:$theme_button_background_color_hover;
+	color:#fff;
+}
+.sesariana_feature_item_icon i.icon_feature{
+	border-color:$theme_link_color_hover;
+}
+.sesariana_feature_item:hover .sesariana_feature_item_icon i.icon_feature{
+	+animation;
+	border-color:$theme_base_color;
+}
+.sesariana_feature_item:hover .sesariana_feature_item_cont h3 a{
+	+animation;
+	color:$theme_link_color_hover;
+}
+.sesariana_feature_item:nth-child(4):before,
+.sesariana_feature_item:nth-child(4):after,
+.sesariana_feature_item:nth-child(5):before,
+.sesariana_feature_item:nth-child(5):after{
+	border:1px solid $theme_border_color;
+}
+.sesariana_feature_item:hover .sesariana_feature_item_cont h3{
+	+animation;
+	color:$theme_button_background_color_hover;
+}
+.sesariana_home_slider_cont_inner #typed-cursor{
+	background-color:$theme_link_color;
+	color:$theme_link_color;
+}
+@media only screen and (max-width:$theme_content_width){
+	.sesariana_landing_page .seariana_highlights_cont,
+	.sesariana_landing_page .seariana_content_inner{
+		width:100%;
+	}
+	.sesariana_landing_page .sesariana_content_carousel .slick-list{
+		max-width:100%;
+	}	
+	.seariana_highlights_cont{
+		padding:0 10px;
+		width:100%
+	}
+}
+/*Login - Signup Popup*/
+.sesariana_quick_popup{
+	background-color:$theme_box_background_color;
+}
+.sesariana_popup_header{
+	background-color:$sesariana_login_popup_header_background_color;
+}
+.sesariana_popup_header_btns a{
+	color:$sesariana_login_popup_header_font_color !important;
+}
+.sesariana_popup_header_btns a.active{
+	border-bottom:1px solid $sesariana_login_popup_header_font_color;
+}
+.sesariana_popup_login .form-elements > .form-wrapper:nth-child(1) .form-element:before,
+.sesariana_popup_login .form-elements > .form-wrapper:nth-child(2) .form-element:before{
+	border:1px solid $sesariana_login_popup_header_background_color;
+	color:$sesariana_login_popup_header_background_color;
+}
+.sesariana_popup_content_sep{
+	background-color:$theme_border_color;
+}
+.sesariana_popup_content_sep span{
+	background-color:$theme_border_color;
+}

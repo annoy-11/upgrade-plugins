@@ -1,0 +1,855 @@
+/* $Id:styles.css 2015-01-31 00:00:00 SocialEngineSolutions $ */
+
+
+/*FIXED PAGE HTML CONTENT START HERE*/
+.sespagebuilder_page_content{
+	overflow:hidden;
+}
+.sespagebuilder_page_content strong,
+.sespagebuilder_page_content b{
+	font-weight:bold !important;
+}
+.sespagebuilder_page_content p, 
+.sespagebuilder_page_content ul, 
+.sespagebuilder_page_content ol{
+	margin-bottom:10px;
+}
+.sespagebuilder_page_content ul{
+	list-style:disc;
+}
+.sespagebuilder_page_content ul, 
+.sespagebuilder_page_content ol{
+	padding-left:20px;
+}
+[dir="rtl"] .sespagebuilder_page_content ul, 
+[dir="rtl"] .sespagebuilder_page_content ol{
+	padding-left:0;
+	padding-right:20px;
+}
+.sespagebuilder_page_content img{
+	margin:5px;
+	max-width:100%;
+}
+/*RESPONSIVE TABS CSS START HERE*/
+.sespagebuilder_r_tabs.r-tabs {
+	position:relative;
+	border-width:1px;
+	border-style:solid;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-nav {
+	margin:0;
+	padding:0;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-tab {
+	display:inline-block;
+	margin:0;
+	list-style:none;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-panel {
+	padding:10px;
+	display:none;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-accordion-title {
+	display:none;
+}
+.sespagebuilder_r_tabs.r-tabs .r-tabs-panel.r-tabs-state-active {
+	display:block;
+}
+/* Accordion responsive breakpoint */
+@media only screen and (max-width:768px) {
+	.sespagebuilder_r_tabs.r-tabs .r-tabs-nav {
+		display:none;
+	}
+	.sespagebuilder_r_tabs.r-tabs .r-tabs-accordion-title {
+		display:block;
+	}
+}
+/* Tab element */
+.sespagebuilder_r_tabs.r-tabs .r-tabs-nav .r-tabs-tab {
+	position:relative;
+}
+/* Tab anchor */
+.sespagebuilder_r_tabs.r-tabs .r-tabs-nav .r-tabs-anchor {
+	display:inline-block;
+	font-size:14px;
+	font-weight:bold;
+	padding:10px 12px;
+	text-decoration:none;
+}
+/* Active state tab anchor */
+.sespagebuilder_r_tabs.r-tabs .r-tabs-nav .r-tabs-state-active .r-tabs-anchor {
+	text-shadow:none;
+}
+
+/* Accordion anchor */
+.r-tabs .r-tabs-accordion-title .r-tabs-anchor {
+	display:block;
+	padding:10px;
+	font-weight:bold;
+	text-decoration:none;
+	font-size:14px;
+}
+/* Active accordion anchor */
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active .r-tabs-anchor {
+	text-shadow:none;
+}
+/*RESPONSIVE TABS CSS END HERE*/
+
+/*ACCORDIAN TABS CSS START HERE*/
+.sespagebuilder_ac_container{
+	border-width:1px;
+	border-style:solid;
+	margin:0 auto;
+	width:100%;
+}
+.sespagebuilder_ac_container > div{
+	overflow:hidden;
+}
+.sespagebuilder_ac_container > div + div{
+	border-top-width:1px;
+	border-top-style:solid;
+}
+.sespagebuilder_ac_container label{
+	cursor:pointer;
+  font-weight:bold;
+	padding:10px 20px 10px 10px;
+	position:relative;
+	display:block;
+	z-index:0;
+}
+[dir="rtl"] .sespagebuilder_ac_container label{
+	padding:10px 10px 10px 20px;
+}
+.sespagebuilder_ac_container label:after{
+	font-family:FontAwesome;
+	font-size:12px;
+	content:'\f078';
+	height:24px;
+	margin:-7px 0 0 0;
+	position:absolute;
+	right:0;
+	top:50%;
+	width:24px;
+}
+[dir="rtl"] .sespagebuilder_ac_container label:after{
+	left:0;
+	right:inherit;
+}
+.sespagebuilder_ac_container input:checked + label:after{
+	content:'\f077 ';
+}
+.sespagebuilder_ac_container input{
+	display:none;
+}
+.sespagebuilder_ac_container article{
+	overflow:hidden;
+	height:0px;
+	padding:0 10px;
+	position:relative;
+	z-index:0;
+	-webkit-transition:height 0.3s ease-in-out;
+	-moz-transition:height 0.3s ease-in-out;
+	-o-transition:height 0.3s ease-in-out;
+	-ms-transition:height 0.3s ease-in-out;
+	transition:height 0.3s ease-in-out;
+}
+.sespagebuilder_ac_container input:checked ~ article{
+	-webkit-transition:height 0.5s ease-in-out;
+	-moz-transition:height 0.5s ease-in-out;
+	-o-transition:height 0.5s ease-in-out;
+	-ms-transition:height 0.5s ease-in-out;
+	transition:height 0.5s ease-in-out;
+	padding:10px;
+}
+.sespagebuilder_ac_container input:checked ~ article{
+	height:180px;
+  overflow:auto;
+}
+/*ACCORDIAN TABS CSS END HERE*/
+/*ACCORDION MENU CSS START HERE*/
+.sespagebuilder_accordion_menu {
+	border-width:1px;
+	display:block;
+	margin:0 auto;
+}
+/*Vertical*/
+.sespagebuilder_accordion_menu.isvertical > li{
+	border-top-width:1px;
+}
+.sespagebuilder_accordion_menu.isvertical > li:first-child{
+	border-top-width:0px;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_menu_link {
+	cursor:pointer;
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	line-height:100%;
+	padding:10px 30px 10px 35px;
+	position:relative;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_menu_link.noicon{
+  padding:10px 30px 10px 10px;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_menu_link.noicon img{
+  display:none;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_menu_link img {
+  left:10px;
+  top:50%;
+  position:absolute;
+  max-height:16px;
+  max-width:16px;
+  margin-top:-8px;
+}
+.sespagebuilder_accordion_menu.isvertical li:last-child .sespagebuilder_accordion_menu_link {
+	border-bottom:0;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_menu_link a:hover {
+	text-decoration:none;
+}
+.sespagebuilder_accordion_menu.isvertical li i.fa-chevron-down {
+	font-size:12px;
+	position:absolute;
+	top:11px;
+	right:12px;
+	-webkit-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+.sespagebuilder_accordion_menu.isvertical li.open i.fa-chevron-down {
+ color:$theme_font_color_light;
+	-webkit-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+/*Submenu*/
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu {
+	display:none;
+	font-size:11px;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a {
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	line-height:100%;
+	text-decoration:none;
+	padding:8px 10px 8px 45px;
+	position:relative;
+	-webkit-transition:all 0.25s ease;
+	-o-transition:all 0.25s ease;
+	transition:all 0.25s ease;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a:hover {
+	text-decoration:none;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a img, 
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a i{
+  left:20px;
+  margin-top:-8px;
+  top:50%;
+  position:absolute;
+  max-height:16px;
+  max-width:16px;
+}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a i{left:25px;}
+.sespagebuilder_accordion_menu.isvertical .sespagebuilder_accordion_submenu a i:before{font-size:8px;}
+
+/*Horizontal Menu*/
+.sespagebuilder_accordion_menu.ishorizontal > li{
+	border-right-width:1px;
+	float:left
+}
+.sespagebuilder_accordion_menu.ishorizontal .sespagebuilder_accordion_menu_link {
+	cursor:pointer;
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	line-height:100%;
+	padding:10px 10px 10px 35px;
+	position:relative;
+}
+.sespagebuilder_accordion_menu.ishorizontal .sespagebuilder_accordion_menu_link.noicon{
+  padding:10px;
+}
+.sespagebuilder_accordion_menu.ishorizontal .sespagebuilder_accordion_menu_link.noicon img{
+  display:none;
+}
+.sespagebuilder_accordion_menu.ishorizontal .sespagebuilder_accordion_menu_link img {
+	left:10px;
+	top:50%;
+	position:absolute;
+	max-height:16px;
+	max-width:16px;
+	margin-top:-8px;
+}
+.sespagebuilder_accordion_menu.ishorizontal .sespagebuilder_accordion_menu_link a:hover {
+	text-decoration:none;
+}
+.sespagebuilder_accordion_menu.ishorizontal li i.fa-chevron-down {
+	margin:0 0 0 5px;
+	-webkit-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+.sespagebuilder_accordion_menu.ishorizontal li.open i.fa-chevron-down {
+ color:$theme_font_color_light;
+	-webkit-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+.sespagebuilder_accordion_menu.ishorizontal li i:before{
+	float:left;
+	font-size:12px;
+	position:relative;
+}
+.sespagebuilder_accordion_menu.ishorizontal li.open i.fa-chevron-down:before{top:-2px;}
+/*Submenu*/
+.sespagebuilder_accordion_menu.ishorizontal ul {
+	display:none;
+	position:absolute;
+	min-width:180px;
+	box-shadow:0 3px 3px rgba(0, 0, 0, 0.1);
+	z-index:1;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul li{
+	border-top-width:1px;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul a {
+	display:block;
+	font-size:14px;
+	font-weight:bold;
+	line-height:100%;
+	text-decoration:none;
+	padding:10px 10px 10px 35px;
+	position:relative;
+	-webkit-transition:all 0.25s ease;
+	-o-transition:all 0.25s ease;
+	transition:all 0.25s ease;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul a:hover {
+	text-decoration:none;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul a img, 
+.sespagebuilder_accordion_menu.ishorizontal ul a i{
+	left:10px;
+	top:50%;
+	margin-top:-8px;
+	position:absolute;
+	max-height:16px;
+	max-width:16px;
+}
+.sespagebuilder_accordion_menu.ishorizontal ul a i{left:15px;margin-top:-4px;}
+.sespagebuilder_accordion_menu.ishorizontal ul a i:before{font-size:8px;}
+/*ACCORDION MENU CSS END HERE*/
+
+/*TREE MENU*/
+.sespagebuilder_treemenu_block{
+	overflow:hidden;
+}
+.dTree .text {
+	height:18px;
+	display:inline-block;
+	float:left;
+	text-decoration:none;
+}
+.dTree li {
+	height:18px;
+	display:block;
+	line-height:20px;
+}
+.dTree li.folder-group {
+	height:auto;
+}
+.dTree .folder-group ul {
+	padding-left:10px;
+	display:none;
+}
+.dTree .folder {
+	background:url(../images/misc.png) 0px -39px no-repeat;
+	padding-left:20px;
+	height:18px;
+	display:inline-block;
+	float:left;
+	transition:all 0.5s ease-in-out;
+}
+.dTree .folder-open {
+	background:url(../images/misc.png) -21px -39px no-repeat;
+	padding-left:20px;
+	height:18px;
+	display:inline-block;
+	float:left;
+	transition:all 0.5s ease-in-out;
+}
+.dTree .main {
+	background:url(../images/misc.png) 2px 0 no-repeat;
+	width:18px;
+	height:18px;
+	display:inline-block;
+	float:left;
+}
+.dTree .folder-group {
+	background:url(../images/misc.png) -46px -2px repeat-y;
+}
+.dTree .folder-group.last {
+	background:none;
+}
+.dTree .plus {
+	background:url(../images/misc.png) 0px -59px no-repeat;
+	padding-left:20px;
+	display:inline-block;
+	height:18px;
+	float:left;
+}
+.dTree .last .plus {
+	background:url(../images/misc.png) 0px -82px no-repeat;
+	padding-left:20px;
+	display:inline-block;
+	height:18px;
+	float:left;
+}
+.dTree .folder-group.last .minus {
+	background:url(../images/misc.png) -18px -82px no-repeat;
+	padding-left:20px;
+	display:inline-block;
+	height:18px;
+	float:left;
+}
+.dTree .minus {
+	background:url(../images/misc.png) -18px -59px no-repeat;
+	padding-left:20px;
+	display:inline-block;
+	height:18px;
+	float:left;
+}
+.dTree .page {
+	background:url(../images/misc.png) no-repeat;
+	width:18px;
+	height:18px;
+	display:inline-block;
+	float:left;
+}
+.dTree .join {
+	background:url(../images/misc.png) 0 -20px no-repeat;
+	width:18px;
+	height:18px;
+	display:inline-block;
+	float:left;
+}
+.dTree .join-last .join {
+	background:url(../images/misc.png) -18px -20px no-repeat;
+	width:18px;
+	height:18px;
+	display:inline-block;
+	float:left;
+}
+/*PRICING TABLE CSS START HERE*/
+.sespagebuilder_pricing_table {
+	background-color:rgba(0, 0, 0, 0.02);
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+	padding:20px;
+}
+ .sespagebuilder_pricing_table_heading{
+	font-size:25px;
+	margin-bottom:10px;
+	text-align:center;
+}
+.sespagebuilder_pricing_table_des{
+	margin-bottom:20px;
+	text-align:center;
+}
+.sesfp-pt-block{
+	display:inline-block;
+	position:relative;
+	margin-bottom:10px;
+}
+.sesfp-pt-block{
+  transform:scale(1);
+  transition:all 900ms ease 0s;
+	margin-left:-4px;
+	vertical-align:top;
+}
+/*.sesfp-pt-block.heighlighted{
+  transform:scale(1.02);
+	z-index:1;
+}*/
+/*Blocks Show*/
+.sesfp-pt-blocks-3 .sesfp-pt-block{
+	/*margin:0 1.5%;*/
+	width:30%;
+}
+.sesfp-pt-blocks-4 .sesfp-pt-block{
+	/*margin:0 1.5%;*/
+	width:25%;
+}
+/*Top Content*/
+.sespagebuilder_pricing_table_title{
+	line-height:60px;
+	height:60px;
+}
+.sespagebuilder_pricing_table_title span{
+	background-color:rgba(0, 0, 0, .1);
+	color:#FEFEFE;
+	display:block;
+	font-size:20px;
+	padding:0 10px;
+	text-align:center;
+}
+.sespagebuilder_pricing_table_content{
+	color:#fefefe;
+	height:70px;
+	padding:10px 0;
+	position:relative;
+	text-align:center;
+}
+.sespagebuilder_pricing_table_content .price{
+	position:relative;
+	display:inline-block;
+	margin-bottom:10px;
+}
+.sespagebuilder_pricing_table_content .price span{    
+	font-size:40px;
+	vertical-align:middle;
+}
+.sespagebuilder_pricing_table_content .price sup{
+	font-size:16px;    
+	vertical-align:super;
+}
+.sespagebuilder_pricing_table_content .price sub{
+	font-size:16px;    
+	vertical-align:text-bottom;
+}
+.sespagebuilder_pricing_table_hint{
+	color:#FEFEFE;
+	font-style:italic;
+	padding:5px 10px;
+	text-align:center;
+}
+.sespagebuilder_pricing_table_content + .sespagebuilder_pricing_table_hint{padding-top:0;}
+/*Features*/
+ul.sespagebuilder_pricing_table_features{
+	border-width:1px;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+.sespagebuilder_pricing_table_features li{
+	border-bottom:1px solid #ddd;
+	height:40px;
+	padding:10px;
+	overflow:hidden;
+	width:100%;
+}
+.sespagebuilder_pricing_table_features li img{
+	margin-right:2px;
+	max-width:16px;
+	vertical-align:middle;
+}
+.sespagebuilder_pricing_table_features li i{
+	float:right;
+	margin-left:5px;
+}
+[dir="rtl"] .sespagebuilder_pricing_table_features li i{
+	float:left;
+	margin-left:0;
+	margin-right:5px;
+}
+.sespagebuilder_pricing_table_features li span{
+	overflow:hidden;
+}
+.sespagebuilder_pricing_table_features li:last-child{border-bottom-width:0;}
+.sespagebuilder_pricing_table_features li .mCSB_dragger{
+	min-height:10px !important;
+}
+.sespagebuilder_pricing_table_features.iscenter li,
+.sespagebuilder_pricing_table_features.iscenter li .mCSB_container{text-align:center;}
+/*Footer Button*/
+.sespagebuilder_pricing_table_footer{
+	font-size:20px;
+	line-height:50px;
+	text-align:center;
+}
+.sespagebuilder_pricing_table_footer a{
+	color:#FEFEFE;
+	display:block;
+	text-decoration:none;
+}
+.sespagebuilder_pricing_table_footer:hover a{
+	background-color:rgba(0, 0, 0, .1);
+	text-decoration:none;
+}
+/*Highlighted*/
+.sesfp-pt-block.heighlighted .sespagebuilder_pricing_table_title{
+	margin-top: -10px;
+	padding-bottom: 10px;
+	height:70px;
+}
+.sesfp-pt-block.heighlighted .sespagebuilder_pricing_table_footer a{
+	padding-top:10px;
+}
+/*Ribbon*/
+.sespagebuilder_pricing_table_label{
+  position:absolute;
+  top:0;
+  right:0;
+  width:110px;
+  height:110px;
+  overflow:hidden;
+}
+.sespagebuilder_pricing_table_label div{
+  background-color:#5d80a1;
+	color:#fff;
+  font-size:15px;
+  font-weight:bold;
+  text-align:center;
+  text-transform:uppercase;
+  position:relative;
+  padding:5px 10px;
+	top:18px;
+  width:158px;
+}
+.sespagebuilder_pricing_table_label.left{
+	left:0
+}
+.sespagebuilder_pricing_table_label.left > div{
+  left:-45px;
+  -webkit-transform:rotate(-45deg) translate3d(0, 0, 0);
+  -moz-transform:rotate(-45deg) translate3d(0, 0, 0);
+  -ms-transform:rotate(-45deg) translate3d(0, 0, 0);
+  -o-transform:rotate(-45deg) translate3d(0, 0, 0);
+}
+.sespagebuilder_pricing_table_label.right{
+	right:0;
+}
+.sespagebuilder_pricing_table_label.right > div{
+  left:-8px;
+  -webkit-transform:rotate(45deg) translate3d(0, 0, 0);
+  -moz-transform:rotate(45deg) translate3d(0, 0, 0);
+  -ms-transform:rotate(45deg) translate3d(0, 0, 0);
+  -o-transform:rotate(45deg) translate3d(0, 0, 0);
+}
+.sesfp-pt-block.heighlighted .sespagebuilder_pricing_table_label{
+	top:-10px;
+}
+/*PRICING TABLE CSS END HERE*/
+@media only screen and (max-width:768px){
+	.sespagebuilder_page_content iframe{width:100% !important;}
+}
+/*FIXED PAGE HTML CONTENT END HERE*/
+/*TIP*/
+.sespagebuilder_custom_tip{
+	border-radius:3px;
+	background-color:rgba(0, 0, 0, .8);
+	max-width:200px;
+	z-index:13000;
+}
+.sespagebuilder_custom_tip .tip-top, 
+.sespagebuilder_custom_tip .tip-bottom{display:none;}
+.sespagebuilder_custom_tip .tip-title {
+	font-size:11px;
+	color:#ddd;
+	padding:8px;
+}
+.sespagebuilder_custom_tip .tip{
+	border-width:0;
+	background:none;
+	margin:0;
+	padding:0;
+}
+/*GENERIC MENU CSS START HERE*/
+.layout_page_header .layout_sespagebuilder_advancedmenu_generic{
+	margin-bottom:0;
+}
+.layout_sespagebuilder_advancedmenu_generic > div,
+.layout_sespagebuilder_advancedmenu_generic > div > ul{
+	overflow:visible;
+}
+.layout_sespagebuilder_advancedmenu_generic > div > ul{
+	position:relative;
+}
+/*Main Menu*/
+.sespagebuilder_nav_mob_btn{display:none;padding:10px 12px;}
+.sespagebuilder_nav_mob_btn:before{font-size:20px;}
+/*Category Menu*/
+.layout_sespagebuilder_advancedmenu_generic > div:after,
+.layout_sespagebuilder_advancedmenu_generic > div > ul:after{
+	content:'';
+	clear:both;
+	display:block;
+}
+.layout_core_menu_main div.sespagebuilder_menu_catmenu{
+	border-width:1px;
+	display:none;
+	left:0;
+	right:0;
+	position:absolute;
+	z-index:1;
+	padding:10px;
+	box-shadow:5px 5px 2px rgba(0, 0, 0, .1);
+}
+.layout_core_menu_main li:hover .sespagebuilder_menu_catmenu{
+	display:block;
+}
+.layout_core_menu_main div.sespagebuilder_menu_catmenu > a{
+	border-radius:3px;
+	float:left;
+	line-height:normal;
+	padding:5px 10px;
+	margin:0;
+	width:25%;
+}
+div.sespagebuilder_menu_catmenu > a i.fa{
+	margin-right:5px;
+}
+/*Submenu*/
+.layout_core_menu_main > ul > li > ul.sespagebuilder_menu_submenu,
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu{
+	box-shadow:5px 5px 2px rgba(0, 0, 0, .1);
+	display: none;
+	margin: 0;
+	min-width: 170px;
+	position: absolute;
+	z-index:11;
+}
+.layout_core_menu_main > ul > li:hover > ul.sespagebuilder_menu_submenu,
+.sespagebuilder_generic_menu_horizontal > ul > li:hover > ul.sespagebuilder_menu_submenu{
+	display:block;
+}
+.layout_core_menu_main > ul > li > ul.sespagebuilder_menu_submenu > li,
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu > li{
+	clear:both;
+}
+.layout_core_menu_main > ul > li > ul.sespagebuilder_menu_submenu > li > a,
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu > li > a{
+	display: block;
+	font-size: 14px;
+	line-height: normal;
+	padding: 5px 10px;
+	text-decoration:none !important;
+}
+.layout_core_menu_main > ul > li > ul.sespagebuilder_menu_submenu > li > a i.fa,
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu > li > a i.fa{
+	margin-right:5px;
+}
+.layout_core_menu_main > ul > li.explore{
+	position:relative;
+}
+.layout_core_menu_main > ul > li.explore > ul.sespagebuilder_menu_submenu{
+	right:0;
+}
+@media only screen and (max-width:767px){
+	.sespagebuilder_nav_mob_btn{display:block;float:right;text-decoration:none !important;}
+	.layout_sespagebuilder_advancedmenu_generic .layout_core_menu_main{display:none;}
+	.layout_sespagebuilder_advancedmenu_generic .layout_core_menu_main.show-navigation{display:block;clear:both;}
+	.layout_sespagebuilder_advancedmenu_generic .layout_core_menu_main.show-navigation ul,
+	.layout_sespagebuilder_advancedmenu_generic .layout_core_menu_main.show-navigation div.sespagebuilder_menu_catmenu{position:inherit;width:inherit;}
+	.layout_sespagebuilder_advancedmenu_generic .layout_core_menu_main.show-navigation li,
+	.layout_sespagebuilder_advancedmenu_generic .layout_core_menu_main.show-navigation li a{float:none;clear:both;display:block;}
+	.layout_core_menu_main div.sespagebuilder_menu_catmenu > a{width:100%;}
+}
+/*Horizontal*/
+.sespagebuilder_generic_menu_horizontal{
+	border-width:1px;
+	border-style:solid;
+	overflow:hidden;
+}
+.sespagebuilder_generic_menu_horizontal > ul{
+	position:inherit !important;
+}
+.sespagebuilder_generic_menu_horizontal > ul:after{
+	content:'';
+	clear:both;
+	display:block;
+}
+.sespagebuilder_generic_menu_horizontal > ul > li{
+	float:left;
+	border-right-width:1px;
+	border-right-style:solid;	
+}
+.sespagebuilder_generic_menu_horizontal > ul > li > a{
+	display:block;
+	font-weight:bold;
+	padding:10px 15px;
+}
+.sespagebuilder_generic_menu_horizontal > ul > li > a:hover{
+	text-decoration:none;
+}
+/*Submenu*/
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu{
+	border-width:1px;
+	border-style:solid;
+}
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu > li{
+	border-width:0;
+	width:100%;
+}
+.sespagebuilder_generic_menu_horizontal > ul > li > ul.sespagebuilder_menu_submenu > li + li{
+	border-top-width:1px;
+}
+@media only screen and (max-width:767px){
+	.sespagebuilder_generic_menu_horizontal ul li{float:none;display:block;border-width:0;}
+	.sespagebuilder_generic_menu_horizontal ul li + li{border-top-width:1px;border-top-style:solid;}
+}
+/*Vertical*/
+.sespagebuilder_generic_menu_vertical{
+	border-width:1px;
+	border-style:solid;
+	overflow:hidden;
+}
+.sespagebuilder_generic_menu_vertical ul:after{
+	content:'';
+	clear:both;
+	display:block;
+}
+.sespagebuilder_generic_menu_vertical ul li{
+	clear:both;
+}
+.sespagebuilder_generic_menu_vertical ul li + li{
+	border-top-width:1px;
+	border-top-style:solid;	
+}
+.sespagebuilder_generic_menu_vertical ul li a{
+	display:block;
+	font-weight:bold;
+	padding:10px 15px;
+}
+.sespagebuilder_generic_menu_vertical ul li a:hover{
+	text-decoration:none;
+}
+/*Submenu Vertical*/
+.sespagebuilder_generic_menu_vertical div.sespagebuilder_menu_catmenu,
+.sespagebuilder_generic_menu_vertical li > ul{
+	border-width:1px;
+	border-style:solid;
+	border-radius:0;
+	display:none;
+	margin-left:150px;
+	margin-top:-38px;
+	position:absolute;
+	width:200px;
+	z-index:1;
+}
+.sespagebuilder_generic_menu_vertical li:hover .sespagebuilder_menu_catmenu,
+.sespagebuilder_generic_menu_vertical li:hover ul{
+	display:block;
+}
+.sespagebuilder_generic_menu_vertical .sespagebuilder_menu_catmenu a + a,
+.sespagebuilder_generic_menu_vertical li ul li + li{
+	border-top-width:1px;
+	border-top-style:solid;	
+}
+.sespagebuilder_generic_menu_vertical li ul a i.fa,
+.submenu ul a i.fa{
+	margin-right:5px;
+}
+@media only screen and (max-width:767px){
+	.sespagebuilder_generic_menu_vertical div.sespagebuilder_menu_catmenu,
+	.sespagebuilder_generic_menu_vertical ul ul{position:inherit;margin:0;width:100%;border-width:0;}
+	.sespagebuilder_generic_menu_vertical a{float:none;clear:both;display:block;}
+}
+/*GENERIC MENU CSS END HERE*/

@@ -1,0 +1,40 @@
+.sesproduct_image_quick_view{
+  float: left;
+  display: block;
+  position: relative;
+}
+.quickviewoverlay{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 2;
+}
+
+.quickviewoverlay:after{
+  /*content: "Hover me!";*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  margin-left: -80px;
+  margin-top: -1.5em;
+
+  width: 160px;
+  height: 3em;
+  line-height: 3em;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  font-weight: bold;
+}
+
+.quickviewoverlay:hover:after{
+  display: none;
+}
+#ip-viewfinder{
+  border: dotted #CCC 1px;
+  background: rgba(255,255,255,0.5);
+}

@@ -1,0 +1,768 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* Style the tab */
+.sesinviter_section{
+	background-color:$theme_list_background_color;
+}
+.sesinviter_tab {
+	overflow:hidden;
+	border:1px solid $theme_tabs_border_color;
+	background-color:$theme_tabs_background_color;
+}
+
+/* Style the buttons inside the tab */
+.sesinviter_tab button {
+	background-color:inherit;
+	color:$theme_tabs_font_color;
+	float:left;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	padding:14px 16px;
+	transition:0.3s;
+}
+
+/* Change background color of buttons on hover */
+.sesinviter_tab button:hover {
+	background:$theme_tabs_background_color_hover;
+	border:1px sold $theme_tabs_border_color_hover;
+}
+
+/* Create an active/current tablink class */
+.sesinviter_tab button.active {
+	background-color:$theme_tabs_background_color_active;
+	color:$theme_tabs_font_color_active;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display:none;
+	padding:6px 15px;
+	border:1px solid $theme_tabs_border_color;
+	border-top:none;
+}
+#input_contact > p{
+	margin-top:15px;
+}
+.sesinviter_main .social_link_contact{
+	padding:0px;
+	clear:both;
+	overflow:hidden;
+}
+.sesinviter_main .social_link_contact > li{
+	list-style:none;
+	float:left;
+	padding:25px 50px 25px 0px;
+	width:30%;
+}
+.sesinviter_main .social_link_contact li.facebook a{
+	background-color:#4867aa;
+}
+.sesinviter_main .social_link_contact li.twitter a{
+	background-color:#1da1f2;
+}
+.sesinviter_main .social_link_contact li.google a{
+	background-color:#dc4a38;
+}
+.sesinviter_main .social_link_contact li.hotmail a{
+	background-color:#f57f20;
+}
+.sesinviter_main .social_link_contact li.email a{
+	background-color:#dc4a38;
+}
+.sesinviter_main .social_link_contact li.yahoo a{
+	background-color:#a107d7;
+}
+.sesinviter_main .social_link_contact li.csv a{
+	background-color:#89C429;
+}
+.sesinviter_main .social_link_contact li a{
+	color:#fff;
+	text-decoration:none;
+	line-height:110px;
+	height:110px;
+	display:inline-block;
+	width:100%;
+	font-size:16px;
+	text-align:center;
+	border-radius:3px;
+}
+.sesinviter_main .social_link_contact li:hover{
+	opacity:0.8;
+}
+.sesinviter_main .social_link_contact li a i{
+	margin-right:5px;
+}
+#upload_contact > p{
+	margin:15px 0px;
+	font-size:14px;
+}
+#upload_contact .upload_csv_file{
+	padding-bottom:20px;
+}
+#upload_contact .upload_csv_file #errorUploadCsvFile{
+	margin-top:5px;
+	margin-left:2px;
+}
+#add_address p.recipients b,
+#add_address p.message{
+	margin-top:30px;
+}
+#add_address p.recipients b,
+#add_address p.message b{
+	display:block;
+	margin-bottom:5px;
+}
+#add_address p.recipients textarea,
+#add_address p.message textarea{
+	height:120px;
+	width:500px;
+	padding:5px;
+	border-radius:3px;
+}
+#add_address p.send_btn input[type=button]{
+	background:#48b7e9;
+	border:none;
+	color:#fff;
+	padding:12px 15px;
+	border-radius:3px;
+}
+.sesimporter_contactlist{
+	border:1px solid #e7e7e7;
+}
+.sesimporter_contactlist h2{
+	background-color:#e7e7e7;
+	padding:8px 15px;
+	margin:0px;
+}
+.sesimporter_contactlist h2 i.fa-google-plus{
+	background-color	:#DD4B38;
+}
+.sesimporter_contactlist h2 i.fa-twitter{
+	background-color	:#1da1f2;
+}
+.sesimporter_contactlist h2 i.fa-facebook{
+	background-color	:#4867AA;
+}
+.sesimporter_contactlist h2 i.fa-yahoo{
+	background-color	:#a107d7;
+}
+.sesimporter_contactlist h2 i.fa-envelope{
+	background-color	:#f57f20;
+}
+.sesimporter_contactlist h2 i{
+	background-color:#89C429;
+	border-radius:100%;
+	height:32px;
+	width:32px;
+	text-align:center;
+	color:#fff;
+	font-size:18px;
+	line-height:32px;
+}
+.importer_content{
+	padding:15px;
+}
+.importer_content > p{
+	margin-bottom:15px;
+	font-size:14px;
+}
+.importer_content #emailerror_message{
+	margin-bottom:10px;
+	color:#d60000;
+}
+.contact_search_box{
+	clear:both;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+.contact_search_box input[type=text]{
+	width:87%;
+	padding:10px;
+	float:left;
+	margin-right:10px;
+}
+.contact_search_box p.select_all{
+	overflow:hidden;
+	margin:6px 0px;	
+	text-align:right;
+}
+.contact_search_box p.select_all input[type=checkbox]{
+	margin:0px;
+	vertical-align:middle;
+	display:inline-block;
+	float:none;
+	margin-right:5px;
+}
+.importer_list{
+	height:300px;
+	overflow:auto;
+	margin:15px 0px;
+	padding:10px;
+	border-width:1px;
+}
+.importer_list ul{
+	padding:0px;
+	clear:both;
+	overflow:hidden;
+	margin:0px -8px;;
+}
+.importer_list ul li{
+	float:left;
+	width:50%;
+	list-style:none;
+}
+.importer_list_content{
+	border:1px solid #ededed;
+	padding:10px;
+	margin:10px;
+	clear:both;
+	overflow:hidden;
+	position:relative;
+	min-height:48px;
+}
+.importer_list_content input[type=checkbox]{
+	position:relative;
+	z-index:2;
+}
+.importer_list_content input[type=checkbox]:checked + span{
+	background:rgba(204, 204, 204, 0.25);
+	display:block;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:1;
+}
+.importer_list_content .input_checkbox{
+	float:left;
+	display:block;
+}
+.importer_list_content .inporter_details{
+	display:block;
+	overflow:hidden;
+}
+.importer_list_content .inporter_details{
+	position:relative;
+	z-index:2;
+}
+.importer_list_content .inporter_profile_photo{
+	margin-right:5px;
+	float:left;
+}
+.importer_list_content .inporter_profile_photo img{
+	height:45px;
+	width:45px;
+	border-radius:100%;
+  object-fit:cover;
+}
+.importer_list_content .inporter_details p{
+	margin-bottom:7px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.importer_message{
+	clear:both;
+	overflow:hidden;
+}
+.importer_message input[type=submit]{
+	border:none;
+	padding:12px 15px;
+	border-radius:3px;
+	float:right;
+	width:auto;
+	height:auto;
+}
+
+
+.creation_description_modal {
+    display:none; /* Hidden by default */
+    position:fixed; /* Stay in place */
+    z-index:3; /* Sit on top */
+    padding-top:100px; /* Location of the box */
+    left:0;
+    top:0;
+    width:100%; /* Full width */
+    height:100%; /* Full height */
+    overflow:auto; /* Enable scroll if needed */
+    background-color:rgb(0,0,0); /* Fallback color */
+    background-color:rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.creation_description_modal_content {
+	background-color:#fefefe;
+	border:1px solid #888;
+	margin:auto;
+	padding:20px;
+	width:50%;
+	position:relative;
+}
+
+/* The Close Button */
+.close {
+	color:#333333;
+	float:right;
+	font-size:20px;
+	font-weight:bold;
+	position:absolute;
+	top:5px;
+	right:12px;
+}
+
+.close:hover,
+.close:focus {
+	color:#000;
+	text-decoration:none;
+	cursor:pointer;
+}
+.creation_description_modal_content > div{
+	margin-bottom:15px;
+}
+.creation_description_modal_content > div:last-child{
+	margin-bottom:0px;
+}
+.creation_description_modal_content p{
+	margin:0px;
+}
+.creation_description_modal_content p.tittle a{
+	text-transform:capitalize;
+	text-decoration:none;
+	font-weight:bold;
+}
+.creation_description_modal_content p.discription{
+	padding:10px;
+}
+.creation_description_modal_content p.discription span{
+	display:block;
+	margin-bottom:8px;
+}
+.creation_description_two p.discription,
+.creation_description_three p.discription,
+.creation_description_four p.discription,
+.creation_description_five p.discription{
+	display:none;
+}
+.ic_content_modal {
+   /* display:none;*/ /* Hidden by default */
+    position:fixed; /* Stay in place */
+    z-index:100; /* Sit on top */
+    padding-top:50px; /* Location of the box */
+    left:0;
+    top:0;
+    width:100%; /* Full width */
+    height:100%; /* Full height */
+    overflow:auto; /* Enable scroll if needed */
+    background-color:rgb(0,0,0); /* Fallback color */
+    background-color:rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.ic_content_modal_content {
+	background-color:#fefefe;
+	border:1px solid #888;
+	margin:auto;
+	padding:0px;
+	width:60%;
+	position:relative;
+}
+
+/* The Close Button */
+.ic_content_modal_content .ic_close {
+	color:#aaaaaa;
+	float:right;
+	font-size:28px;
+	font-weight:bold;
+	position:absolute;
+	top:8px;
+	right:8px;
+}
+
+.ic_content_modal_content .ic_close:hover,
+.ic_content_modal_content .ic_close:focus {
+	color:#000;
+	text-decoration:none;
+	cursor:pointer;
+}
+.send_invitions_form{
+	padding:15px;
+}
+.torow .mailing_box_holdier{
+	position:relative;
+	overflow:hidden;
+	margin:10px 0px;
+}
+.torow .mailing_box_holdier ul{
+	width:100%;
+	overflow:auto;
+	max-height:53px;
+	border-width:1px;
+	box-sizing:border-box;
+}
+.torow .mailing_box_holdier ul li{
+	display:inline-block;
+	padding:5px 11px;
+	background:#ccc;
+	margin:6px 0px 6px 9px;
+	border-radius:3px;
+}
+.torow .mailing_box_holdier ul li > div > div{
+	display:inline-block;
+}
+.torow .mailing_box_holdier ul li .mailing_name_close{
+	cursor:pointer;
+	margin-left:5px;
+}
+.torow .mailing_box_holdier input[type=text]{
+	visibility:hidden;
+	position:absolute;
+}
+.send_invitions_form .mailing_box_holdier input,
+.send_invitions_form .mailing_box_holdier textarea{
+	width:100%;
+	padding:10px;
+	border-radius:3px;
+	border:1px solid #e7e7e7;
+	margin:10px 0px;
+}
+.send_invitions_form .mailing_box_holdier textarea{
+	height:120px;
+}
+.mailing_footer_holder{
+	clear:both;
+	overflow:hidden;
+}
+.mailing_footer_holder .mailing_footer_back{
+	float:left;
+}
+.mailing_footer_holder .mailing_footer_back input{
+	background-color:#939393 !important;
+	border:none;
+	padding:10px;
+	border-radius:3px;
+	width:auto;
+	height:auto;
+	color:#fff !important;
+}
+.mailing_footer_holder .mailing_footer_send{
+	float:right;
+}
+.mailing_footer_holder .mailing_footer_send input{
+	background-color:#48b7e9;
+	border:none;
+	padding:10px;
+	border-radius:3px;
+	color:#fff;
+	width:auto;
+	height:auto;
+}
+
+/*SIDE BUTTON CSS START HERE*/
+.sesinviter_button{
+	text-decoration:none;
+	width:100%;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+.sesinviter_button:hover{
+	text-decoration:none;
+}
+.sesinviter_side_button{
+	font-size:15px;
+	font-weight:bold;
+	letter-spacing:1px;
+  line-height:36px;
+  height:36px;
+	padding:0 10px;
+	position:fixed !important;
+	top:30%;
+	text-align:center;
+	-ms-transform:rotate(-90deg); /* IE 9 */
+	-webkit-transform:rotate(-90deg); /* Chrome, Safari, Opera */
+	transform:rotate(-90deg);
+	width:150px;
+	z-index:99;
+}
+.sesinviter_button{
+  +rounded;
+  display:block;
+	font-size:15px;
+	font-weight:bold;
+	letter-spacing:normal;
+	padding:10px;
+	text-align:center;
+	z-index:99;
+}
+.sesinviter_right_side_button{
+	right:-60px;
+}
+.sesinviter_left_side_button{
+	left:-60px;
+}
+/*SIDE BUTTON CSS END HERE*/
+#sesinviter_invite{
+	margin:15px 0px;
+}
+#sesinviter_invite > div > div{
+	background:transparent;
+	border:none;
+	padding:0px;
+}
+#sesinviter_invite .form-elements input[type=checkbox]{
+	margin-left:150px !important;
+}
+/*invitor popup css*/
+.sessmoothbox_container .sesinviter_main {
+	width:650px;
+}
+.sessmoothbox_container .sesinviter_main .social_link_contact > li{
+	padding:25px 15px 25px 0px;
+	width:33%;
+}
+.sessmoothbox_container .sesinviter_main .social_link_contact > li a{
+	height:90px;
+	line-height:90px;
+}
+.sesinviter_button{
+	border-radius:0px;
+	text-transform:capitalize;
+	padding:20px;
+}
+/* Search Form */
+.layout_sesinviter_browse_search .form-elements > div,.layout_sesinviter_manage_search .form-elements > div{
+  margin-bottom:15px;
+}
+.layout_middle .layout_sesinviter_browse_search .form-elements,.layout_middle .layout_sesinviter_manage_search .form-elements{
+	display:flex;
+	flex-wrap:nowrap;
+}
+.layout_middle .layout_sesinviter_browse_search .form-elements > div,.layout_middle .layout_sesinviter_manage_search .form-elements > div {
+	flex:1;
+	margin:10px 0;
+	margin-right:20px;
+}
+.layout_sesinviter_browse_search .form-elements > div label, .layout_sesinviter_manage_search .form-elements > div label {
+	font-weight:600;
+	margin-bottom:7px !important;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+.layout_sesinviter_browse_search .form-elements .buttons > button,.layout_sesinviter_manage_search .form-elements .buttons > button {
+	width:100%;
+}
+.layout_middle .layout_sesinviter_browse_search .form-elements .buttons > button,.layout_middle .layout_sesinviter_manage_search .form-elements .buttons > button {
+	margin-top:24px;
+}
+/* Invite Friend */
+.sesinviter_invite_friend {
+  position:relative;
+}
+.sesinviter_invite_friend > ._head {
+  font-weight:600;
+}
+.sesinviter_invite_friend > ._des {
+	font-size:95%;
+	margin-top:2px;
+}
+.sesinviter_invite_friend .sesinviter_referral_field input {
+	padding:10px;
+	width:100%;
+	border-width:1px;
+	margin:15px 0 20px;
+}
+.sesinviter_invite_btn {
+	position:absolute;
+	bottom:14px;
+	right:5px;
+}
+.sesinviter_invite_btn > a {
+	padding:7px 15px;
+	border-radius:4px;
+	border:1px solid $theme_button_background_color;
+	color:$theme_button_background_color !important;
+}
+/* MANAGE INVITES */
+.sesinviter_manage_ref_form > table {
+	width:100%;
+	border-width:1px;
+	margin:30px 0 15px;
+}
+.sesinviter_manage_ref_form > table thead{
+	background:url("~/application/modules/Sesinviter/externals/images/transprant-bg.png");
+}
+.sesinviter_manage_ref_form > table tr{
+	border-bottom-width:1px;
+}
+.sesinviter_manage_ref_form > table tr:last-child{
+	border-bottom-width:0;
+}
+.sesinviter_manage_ref_form > table tr td,.sesinviter_manage_ref_form > table tr th {
+	text-align:center;
+	padding:10px;
+}
+/* Invite Popup */
+#global_page_sesinviter-index-inviteref > span{
+	padding:10px;
+}
+#global_page_sesinviter-index-inviteref > span, #global_page_sesinviter-index-inviteref a {
+	display:block;
+	text-align:center;
+}
+#global_page_sesinviter-index-inviteref img{
+  width:60px;
+	margin:10px 0;
+}
+#global_page_sesinviter-index-inviteref h2{
+  font-size:130%;
+  font-weight:600;
+}
+#global_page_sesinviter-index-inviteref a:hover {
+	color: #1bc1d6;
+	text-decoration: underline;
+	font-weight: bold;
+}
+/* Inviter List View */
+.sesinviter_list_item {
+  display:flex;
+	border-bottom-width:1px;
+}
+.sesinviter_list_item:last-child{
+	border-bottom-width:0;
+}
+.sesinviter_list_item > a{
+	margin-right:10px;
+}
+.sesinviter_list_item > a > img {
+	border-radius:50px;
+	padding:2px;
+	box-sizing:border-box;
+	background:$theme_box_background_color;
+}
+.sesinviter_topinviters_inner .sesinviter_topinviters_name > a {
+	font-weight:bold;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.sesinviter_topinviters_friends > span {
+  font-size:95%;
+	margin-right:5px;
+}
+.sesinviter_topinviters_friends > span > span{
+	font-weight:bold;
+}
+/* Inviter Grid View */
+.sesinviter_grid_item{
+	position:relative;
+	padding:0 !important;
+	border-radius:6px;
+}
+.sesinviter_grid_item > a {
+	width:100%;
+	height:150px;
+	overflow:hidden;
+	display:block;
+}
+.sesinviter_grid_item > a > img {
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	object-position:center center;
+}
+.sesinviter_grid_item .sesinviter_topinviters_info {
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	padding:10px;
+	background:linear-gradient(to top,rgba(0, 0, 0, 0.75) 50%,#fff0);
+}
+.sesinviter_grid_item .sesinviter_topinviters_name > a{
+	font-weight:bold;
+}
+.sesinviter_grid_item .sesinviter_topinviters_friends > span > span{
+	font-size:95%;
+	margin-right:5px;
+}
+.sesinviter_grid_item .sesinviter_topinviters_name > a,.sesinviter_grid_item .sesinviter_topinviters_friends > span{
+	color:#fff;
+}
+/*RESPONSIVE CSS*/
+@media (min-width:980px) and (max-width:1050px){}
+@media (min-width:768px) and (max-width:979px){
+	.sesinviter_main .social_link_contact > li,
+	.sessmoothbox_container .sesinviter_main .social_link_contact > li{
+		padding:20px 15px 15px 0px;
+		width:33%;
+	}
+	.sessmoothbox_container .sesinviter_main{
+		width:auto;
+	}
+}
+@media (max-width:767px){
+	.sesinviter_main .social_link_contact > li,
+	.sessmoothbox_container .sesinviter_main .social_link_contact > li{
+		padding:20px 20px 0px 0px;
+		width:50%;
+	}
+	#input_contact{
+		padding-bottom:20px;
+	}
+	.creation_description_modal_content{
+		width:80%;
+	}
+	.ic_content_modal_content{
+		width:90%;
+	}
+	.contact_search_box input[type=text]{
+		width:70%;
+	}
+	.sessmoothbox_container .sesinviter_main{
+		width:auto;
+	}
+}
+@media (max-width:599px){
+	.importer_list ul li{
+		width:100%;
+	}
+}
+@media (max-width:479px){
+	.sesinviter_main .social_link_contact > li,
+	.sessmoothbox_container .sesinviter_main .social_link_contact > li{
+		width:100%;
+		padding-right:0px;
+	}
+	#add_address #sesinviter_invite > div{
+		width:100%;
+	}
+	#add_address #sesinviter_invite > div	.form-element textarea{
+		width:100%;
+	}
+	#sesinviter_invite .form-elements input[type=checkbox]{
+		margin-left:0px !important;
+	}
+	#add_address #sesinviter_invite > div .form-label,
+	#add_address #sesinviter_invite > div .form-label label{
+		text-align:left;
+	}
+	#add_address #sesinviter_invite > div #submit-wrapper .form-label{
+		display:none;
+	}
+	.creation_description_modal_content{
+		width:90%;
+	}
+	.contact_search_box input[type=text]{
+		width:50%;
+	}
+	#importsend_email.ic_content_modal{
+		bottom:10px;
+		padding-top:0px;
+	}
+}
+	

@@ -1,0 +1,2346 @@
+{
+  "type": "module",
+  "name": "seseventpdfticket",
+  "version": "4.9.4",
+  "revision": null,
+  "path": "application\/modules\/Seseventpdfticket",
+  "repository": null,
+  "sku": null,
+  "date": "Tue, 06 Nov 2018 04:25:27 +0000",
+  "title": "SES - Advanced Events - PDF Email Attachment for Tickets",
+  "description": "SES - Advanced Events - PDF Email Attachment for Tickets",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"http:\/\/www.socialenginesolutions.com\" style=\"text-decoration:underline;\" target=\"_blank\">SocialEngineSolutions<\/a>"
+  ],
+  "meta": {
+    "date": "Tue, 06 Nov 2018 04:25:27 +0000",
+    "title": "SES - Advanced Events - PDF Email Attachment for Tickets",
+    "description": "SES - Advanced Events - PDF Email Attachment for Tickets",
+    "developer": null,
+    "authors": [
+      "<a href=\"http:\/\/www.socialenginesolutions.com\" style=\"text-decoration:underline;\" target=\"_blank\">SocialEngineSolutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Seseventpdfticket\/settings\/install.php",
+    "class": "Seseventpdfticket_Installer",
+    "priority": 100
+  },
+  "dependencies": null,
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Seseventpdfticket": {
+      "type": "directory",
+      "path": "application\/modules\/Seseventpdfticket",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1070,
+          "sha1": "955437ef9364e5c74439de307a1ffaeab8a5e25e"
+        },
+        {
+          "path": "Api\/pdf",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/autoload.inc.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 795,
+          "sha1": "66c0cc92cf67ed95eb0a37d47b9c8bad72438507"
+        },
+        {
+          "path": "Api\/pdf\/lib",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/Cpdf.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 183502,
+          "sha1": "cde30a595ab13f63b4c0960eede8f046a30625f2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Courier-Bold.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15827,
+          "sha1": "4090e90fc354804d839b7eac369c5feb8e3dbdfd"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Courier-BoldOblique.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15887,
+          "sha1": "3a1af6d0d1fc8c1bf6d04b2cabac1a02a6a03d74"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Courier-Oblique.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15938,
+          "sha1": "2cb7f58bde700c46abab24c59da6c8d5d86c07c9"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Courier.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15826,
+          "sha1": "9749be00ab95eef189d1ad6fc03fe09bb2682ba3"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans-Bold.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 693876,
+          "sha1": "99444cd834ec03f1a57415b87c8684b3234f09cf"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans-Bold.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 207826,
+          "sha1": "f24a998e209cc2e5c222b34df57ba61fdc7ec8a1"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans-BoldOblique.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 632168,
+          "sha1": "f363a06f6f411b8ebca68fb3d5168d5427036538"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans-BoldOblique.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 192605,
+          "sha1": "eeb4f6e7aab10b2648feb129160b54fd7d10d5b9"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans-Oblique.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 632416,
+          "sha1": "d992e2c768f906a7467116429935ac3d6f33c0fb"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans-Oblique.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 186706,
+          "sha1": "c0f5817702a0b8a34b2d690daf19b56e10c708c2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 741536,
+          "sha1": "a82423c55b3851a0db79c4fe2483e9a9625e8711"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSans.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 225850,
+          "sha1": "4f26e8c9f5057dd043466d41ffa5c1db7f14fe83"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono-Bold.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 318392,
+          "sha1": "a2152e5cc64b7f038546d0150bfb68f61572aa55"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono-Bold.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 112670,
+          "sha1": "fe83d114a1ac1c848d2a2e2661f619ee1d7491a0"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono-BoldOblique.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 239876,
+          "sha1": "55a4c36e31e4b98e64c05da33250156a2e5ab3ea"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono-BoldOblique.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 90973,
+          "sha1": "c21f5f15a2211abc23613a7558703126ccbb8b9e"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono-Oblique.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 245948,
+          "sha1": "80e9943ec95f2e0d75debfbdab472f7f194114e2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono-Oblique.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 95733,
+          "sha1": "b565f9a52d4bc343d0fe9ae4c068274a1849e9d1"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 335068,
+          "sha1": "73225779da81fc5a874596d065e336ca3d7b4c37"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSansMono.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 117395,
+          "sha1": "af3d63e3fcdcd7b89440f6422fd456a61695cf4a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif-Bold.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 345364,
+          "sha1": "74849a0445f59bc834e2d5da15e35174b6bc9a04"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif-Bold.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 131217,
+          "sha1": "3cc97ec922df62a78df74f155079a1ea88c5ab5f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif-BoldItalic.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 336884,
+          "sha1": "0b263af5ec3618e9c8f0e82276757c8fdab8bb90"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif-BoldItalic.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 128444,
+          "sha1": "500710cffd3739be53bd80cf2ac609675064c92c"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif-Italic.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 343388,
+          "sha1": "4e1a83b39f20d8665cc355aab938d727737461fc"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif-Italic.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 132861,
+          "sha1": "441a2d80bcc4ba86c4dbef3649d40e8f1a463925"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif.ttf",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 367260,
+          "sha1": "be0293ab1546fbb0464fe0b3f8953c9457c249d9"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/DejaVuSerif.ufm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 135992,
+          "sha1": "64dbcb86030fbd953e5ff3559450cc3f347f900a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/dompdf_font_family_cache.dist.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3391,
+          "sha1": "772debf3914f87b3e044f1542651b97480f7c15f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Helvetica-Bold.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 72244,
+          "sha1": "af91f762ca9347cd9e9efaf2b80d9e373958c146"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Helvetica-BoldOblique.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 72340,
+          "sha1": "b99b17726d61a8f6762797afa839441d0a83cd52"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Helvetica-Oblique.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 77591,
+          "sha1": "26271fb6d1a00e95c53ef1b775ee17005f89123a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Helvetica.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 77492,
+          "sha1": "6d87ef5acd18f991c39759d3a5e8c9381d20ced2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Helvetica.afm.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10927,
+          "sha1": "7660e5c99e683863a12e1c07f43e44ad1ea59835"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/log.htm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 251,
+          "sha1": "67da67d82a85ffe8a56e6f748836b82d73d9356f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/mustRead.html",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1040,
+          "sha1": "863bf81a14a012bae59e9ebcce900a0caaacdc88"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Symbol.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9953,
+          "sha1": "24ef9f1d981633530181c40da0b0f6ec6dbe48a1"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Times-Bold.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 66987,
+          "sha1": "8231e7f2c406f2ad0455fd6826d5e578a84f5f03"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Times-Bold.afm.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10925,
+          "sha1": "64077317e3a9037ecdd3f1e8261622515edf399a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Times-BoldItalic.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 62173,
+          "sha1": "3d7c363f9a2202b1766fa28f227b0f23981db5fe"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Times-Italic.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 69143,
+          "sha1": "0ed5c5ed9f479fc272c1a0ef80acd13b993a3f21"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Times-Roman.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 63026,
+          "sha1": "4f8ff304a3b706c36237acdc93c2405d1ffa8ca6"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/Times-Roman.afm.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10921,
+          "sha1": "721913744229debc6c8815ba55d40c112f6668e2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/fonts\/ZapfDingbats.afm",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9752,
+          "sha1": "f5ae5a7dae0526350f80e9d0e03632afe061e70a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib\/Data.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4373,
+          "sha1": "bfdbbcd2074c5e21f26092ce4c2869abbf416b5c"
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib\/InputStream.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10258,
+          "sha1": "61d3d58526052ee8655dfc494cde22c1ad31c215"
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib\/named-character-references.ser",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 182163,
+          "sha1": "dc091532a8d03393ba0d6f9fcb9b538ec338468f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib\/Parser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1147,
+          "sha1": "bc3dad3cb45d281f52a61e0582941976e2128b04"
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib\/Tokenizer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 114770,
+          "sha1": "e066b57e043478d1ff76c8f878b43cf6af6a4e84"
+        },
+        {
+          "path": "Api\/pdf\/lib\/html5lib\/TreeBuilder.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 172600,
+          "sha1": "550800a63c2e2b140afa74260c14a068df94eeac"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14,
+          "sha1": "589190795440cf1351767c7d7e973b1440d75f6f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/bower.json",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 525,
+          "sha1": "197a5722dbe8fc4145b18ed9a2eeca4d920016cb"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 467,
+          "sha1": "a3d6bb0a06ecf7f955245694ea2f6daee855f5dc"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/index.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 34,
+          "sha1": "2864987af86e166480c3b76d20fbc72afb1a354e"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/LICENSE",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 24362,
+          "sha1": "4222cd260698b5659332cbc02105dedf8f0ee481"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/adobe-standard-encoding.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7861,
+          "sha1": "08286d40b43422075e2490d38c852b070baf2c76"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1250.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4797,
+          "sha1": "6eabee11144e1f91d321e9609ca113c6be3af28c"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1251.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5031,
+          "sha1": "80c73c826e2c6cb2f32de8b853f12b4778180b1d"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1252.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4792,
+          "sha1": "86298ee772edaed4f889b9034e8c31c86967480d"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1253.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4494,
+          "sha1": "aa7bb93fdff82553e9bdbcfceedc45f446524215"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1254.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4772,
+          "sha1": "1e0b3a7e1f2467ea55a351b1f74d8cf637d9c023"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1255.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4531,
+          "sha1": "0967e8f2135e7254d0af7ae14b9209bafeb2cfe4"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1257.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4678,
+          "sha1": "aa652b5e1dd0bdbe5312cb4789450a427d00de18"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp1258.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4740,
+          "sha1": "04172d6606ea632c314001b0c2d0363cb758e7c4"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/cp874.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4488,
+          "sha1": "ebfca2c655bab2b0a5516263017d3bf1235be66d"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-1.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4861,
+          "sha1": "49645eeb5d6d846382ed6c862570eda529bd3500"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-11.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4937,
+          "sha1": "02f9abdcd908555253fdcba1fcaa450076197e1b"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-15.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4835,
+          "sha1": "5bc012473f62eade999318672febe300c3595eeb"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-16.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4881,
+          "sha1": "2a06477af69dfab482a36332141ce84f1ea79133"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-2.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4825,
+          "sha1": "9a870b145bb49bd306e97ed762d4a0a27656349c"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-4.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4844,
+          "sha1": "b9f90dc542630295dc7878b4534b81fc748f1361"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-5.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4975,
+          "sha1": "67dd91d4a77897a6b4f786780e8fc1178484d92f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-7.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4680,
+          "sha1": "075b94c1683b244fe617ff449380527aea5614a5"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/iso-8859-9.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4879,
+          "sha1": "a3e9f00615e986f0f8aaa3e7b69b9e9b2c2d5454"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/koi8-r.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4995,
+          "sha1": "8fe15ff70c4cc0e1ec863797bb380e3cecaddb04"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/maps\/koi8-u.map",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4995,
+          "sha1": "8222dc78d3f9bde8521843d4b2dcc15a9dbe485e"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 470,
+          "sha1": "70fb516d44afacbf1d5022e16da0f57472200fa2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/AdobeFontMetrics.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5864,
+          "sha1": "8a2efb81625d3fef207ef488f43326f7f5442c8a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Autoloader.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 986,
+          "sha1": "44c856b643c019f710ad2c8684d4d7edc536acba"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/BinaryStream.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8714,
+          "sha1": "a362cbbece20cbc904472b843a5c2083912842e6"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/EncodingMap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 835,
+          "sha1": "9fa4bd425bdb2ebd305849fc690fcd9be0530d16"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/EOT",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/EOT\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3379,
+          "sha1": "4c0c6dee4bebdd528f55faebe2493cc67ef21efa"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/EOT\/Header.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3287,
+          "sha1": "3dd38552164806198a46d6f07e056cd0b9ed258b"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Font.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1606,
+          "sha1": "133aaafda09347d0ca6e7e970e2a280a705374cc"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Glyph",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Glyph\/Outline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2279,
+          "sha1": "003d5be22e06b70bb52fbb9ba51888781aa91112"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Glyph\/OutlineComponent.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 705,
+          "sha1": "a3b8d111497430d01b24fb99332f174d3b3d5cc7"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Glyph\/OutlineComposite.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6658,
+          "sha1": "92a25f4804a2367667346566d4cd38e00f96de70"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Glyph\/OutlineSimple.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8377,
+          "sha1": "cdd7f64a66af6ed6409aa4cd225460e8bd630cec"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Header.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 724,
+          "sha1": "15582cc8c3323eb424a774f7a58d568c5313d5bb"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/OpenType",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/OpenType\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 394,
+          "sha1": "b216cad05da7e653b64834119259892a69120cdc"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/OpenType\/TableDirectoryEntry.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 437,
+          "sha1": "4d8f658d022096bdfd99d9e1ef86a917528da0ff"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/DirectoryEntry.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2452,
+          "sha1": "58f98c39f8b4e41507948fd4227a8b1af8c3ecfd"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Table.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1812,
+          "sha1": "3b2b5b3ab7f3fc295fd276b8a9b58717b55163e6"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/cmap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7217,
+          "sha1": "bb7d2e1d2608a3de4a22c90ec83f1ed7882b1e54"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/glyf.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4191,
+          "sha1": "408ab13e79089d1e8718836c05e8cbc4c3be4dbc"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/head.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1352,
+          "sha1": "407995e5ae06c9a86508b83062547fac3333a45c"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/hhea.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1206,
+          "sha1": "10560421cfce9d3cfdcdeb58e9ebe0392213e3cc"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/hmtx.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1363,
+          "sha1": "f5d49db67e271422655de234757d1fed4ac01bb0"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/kern.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1711,
+          "sha1": "25443d6087486a958781d4ed6da9ff929593a4f3"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/loca.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1761,
+          "sha1": "db4dd2526c4ed704ba253697a46595950af03be4"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/maxp.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1244,
+          "sha1": "152316191a4dc98858fdfbba590f8863546c25b3"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/name.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4840,
+          "sha1": "190a4054502808e1b09cf064f23827ab829e0d35"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/nameRecord.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1156,
+          "sha1": "117ea7cf8157c083162aaa35dc93a6ddd02fab52"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/os2.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1574,
+          "sha1": "7bca8533b6b4446af33004801765ead3421ba0fb"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/Table\/Type\/post.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3129,
+          "sha1": "ee21b35001717c5fc5affb5b6d99f6b84dae750d"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/TrueType",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/TrueType\/Collection.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1927,
+          "sha1": "7b7b757be624058ea72cd4267975c892bbcd4c83"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/TrueType\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11526,
+          "sha1": "416c173d83508ffd20a09591a728f30dcc2e5e5f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/TrueType\/Header.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 760,
+          "sha1": "1e11f75ffe8810bd6ed6ceef2230886c0c1af313"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/TrueType\/TableDirectoryEntry.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 735,
+          "sha1": "68e26801093969b2112ac93aceb64a0ab14dd7a6"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/WOFF",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/WOFF\/File.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1975,
+          "sha1": "d450c6f28d8fa9862d96b3c3b6fb1b5841ea2255"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/WOFF\/Header.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 872,
+          "sha1": "6989d7911a17260d0d3ecbd1454efa3337b19a8d"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-font-lib\/src\/FontLib\/WOFF\/TableDirectoryEntry.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 782,
+          "sha1": "07a68a096b029f7442e49fa78d8054241e4d3986"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/.travis.yml",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 264,
+          "sha1": "b6b3aad58691e0b3bb213afd9bfd3fa61011331f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/composer.json",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 379,
+          "sha1": "0193679c5fc49ee88014d015cbba006684db3a5a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/phpunit.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 541,
+          "sha1": "9e6b832f51bb1b1e4cec476ebfe917e818d265ba"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/README.md",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1058,
+          "sha1": "4e2ae69b990f491912c3729c2e162bd4db4f5bb4"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/autoload.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 505,
+          "sha1": "52aad7469c530fc9279c0a6ef9ccade8e65ace7f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/DefaultStyle.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 693,
+          "sha1": "7894196445c8a3a856ba1ab3bc81424306d2fc32"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Document.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8384,
+          "sha1": "3e66cf671a882639bdfcd7c413b3d0e789db6d36"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Style.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15909,
+          "sha1": "06eb51b70a73a9ee28b75d54f0e94190416219ae"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Surface",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Surface\/CPdf.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 170118,
+          "sha1": "d45f167bfa00e78eac55924f5aa6189227fc2b84"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Surface\/SurfaceCpdf.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11656,
+          "sha1": "2657ee66e9e7faef860f979cafefa9f0be244ded"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Surface\/SurfaceGmagick.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7818,
+          "sha1": "96ecc7889438d7655aed0a7c3175865a7e3256b0"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Surface\/SurfaceInterface.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2094,
+          "sha1": "f0a672921f9d5221ddc4dc006a2913e521a7a0c0"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Surface\/SurfacePDFLib.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11411,
+          "sha1": "d93cc7dd4a74e7da57612237c3b1589d474966cb"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/AbstractTag.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3451,
+          "sha1": "d6b7f9706569fcbb9e989c759821861b8e64730f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Anchor.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 279,
+          "sha1": "014614e9302dbb531e8a6a20214287732b0399ce"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Circle.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 729,
+          "sha1": "21f18e035777fc810209437677279beb39191ea8"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Ellipse.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 913,
+          "sha1": "60071ed723e749191233a2735e237e65746a9a8e"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Group.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 740,
+          "sha1": "39e191587e16d9d1209342a3efa37e144a4df9bd"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Image.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1528,
+          "sha1": "82b1878967f407babce4fe2c89fef0a20ab9f19e"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Line.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 913,
+          "sha1": "77f7845997f9b1d14b2e7edc43adcfbdd1f97755"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/LinearGradient.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 342,
+          "sha1": "a5fdf5f4c42c0d91ca070fa40b2167c849da7af2"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Path.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 18430,
+          "sha1": "bdcb5076c9be537b6362bb3812acb419bd75dff6"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Polygon.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 790,
+          "sha1": "ec1e347b5b9ecbf2c88ac386d22a586d2cc8a3a7"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Polyline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 759,
+          "sha1": "4b7c8e81486370185415fa439cb15c6ec86f5b82"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/RadialGradient.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 341,
+          "sha1": "c75a6c59f055b6271070b89bc57db0d367d17ee1"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Rect.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1124,
+          "sha1": "26a60c5181c3c2c24302ae08bcbbc30503105670"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Shape.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1325,
+          "sha1": "e741aa29df0db94cf9d79bb340c6cbb86577741f"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Stop.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 331,
+          "sha1": "cd4aab89acfca5cb508d6b081035bdc4ee94f93d"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/src\/Svg\/Tag\/Text.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1275,
+          "sha1": "da1aa53cf82de1a2861e5bddd5aa84eab8bde09a"
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/tests",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/tests\/Svg",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/php-svg-lib\/tests\/Svg\/StyleTest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1283,
+          "sha1": "7fbb64db50afa6bec2222a33da9678ca6eb607a6"
+        },
+        {
+          "path": "Api\/pdf\/lib\/res",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/lib\/res\/broken_image.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 618,
+          "sha1": "95a6fb0ff9fa66fe657395b797a530432bc3badd"
+        },
+        {
+          "path": "Api\/pdf\/lib\/res\/html.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7944,
+          "sha1": "c1e4aca5ea51933e26aa68e3d5d99e6a00c40fe7"
+        },
+        {
+          "path": "Api\/pdf\/src",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Adapter",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Adapter\/CPDF.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 27790,
+          "sha1": "f4ee601ac1eb5b4e1e22b62baff69ce6615f719d"
+        },
+        {
+          "path": "Api\/pdf\/src\/Adapter\/GD.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 26857,
+          "sha1": "f12535dca065a405d781483bf9a1b2b2024d3cb4"
+        },
+        {
+          "path": "Api\/pdf\/src\/Adapter\/PDFLib.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 32396,
+          "sha1": "0c032c014c564fb528b2e02c880f656b9e46eae4"
+        },
+        {
+          "path": "Api\/pdf\/src\/Autoloader.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 929,
+          "sha1": "263b149fd93e6fc7d57dc6383e18c08f51d48b67"
+        },
+        {
+          "path": "Api\/pdf\/src\/Canvas.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9925,
+          "sha1": "0dd0b4331858ef59ea5a6437989efe6f1ce5e6a7"
+        },
+        {
+          "path": "Api\/pdf\/src\/CanvasFactory.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1499,
+          "sha1": "8c1baaab0c95fa802f7919aca18962d31f9859fb"
+        },
+        {
+          "path": "Api\/pdf\/src\/Cellmap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 23351,
+          "sha1": "a6e3eb1c12b82b38845ea6a07b7509ba6185d794"
+        },
+        {
+          "path": "Api\/pdf\/src\/Css",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Css\/AttributeTranslator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 17192,
+          "sha1": "7a2949b023ab9d83eb444c89272e4627ab18fcc6"
+        },
+        {
+          "path": "Api\/pdf\/src\/Css\/Color.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8873,
+          "sha1": "dfe7ff10ec91f9d3de2d9a98652e7c0fd6c46cea"
+        },
+        {
+          "path": "Api\/pdf\/src\/Css\/Style.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 82472,
+          "sha1": "f3b165ed3c22f85a963ca121f75604ea77c79d8d"
+        },
+        {
+          "path": "Api\/pdf\/src\/Css\/Stylesheet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 49209,
+          "sha1": "872160a6657d41cede74b43f4b0c97d63bfdfb68"
+        },
+        {
+          "path": "Api\/pdf\/src\/Dompdf.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 42510,
+          "sha1": "4c9e865cf73ccb24c19a60e183e535d3d347d65b"
+        },
+        {
+          "path": "Api\/pdf\/src\/Exception",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Exception\/ImageException.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 619,
+          "sha1": "7f41f96fb4fa1ddcd38b90866d393174c31736f4"
+        },
+        {
+          "path": "Api\/pdf\/src\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 594,
+          "sha1": "8c2bd4c67e1e433c9b536634d664ee8bb1862738"
+        },
+        {
+          "path": "Api\/pdf\/src\/FontMetrics.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 16247,
+          "sha1": "fdc61f765962b466e3f57545e038b85e77e87fc5"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame\/Factory.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8308,
+          "sha1": "89b182f0f2038e3a2e3d8e665d95177f510248be"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame\/FrameList.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 494,
+          "sha1": "c7e2a78c03153c17766a86f0472e98a3be49ffc4"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame\/FrameListIterator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1492,
+          "sha1": "cfb2cf6fcca9ae70a94566ac4882f9b69d3b424e"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame\/FrameTree.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8320,
+          "sha1": "b1b780deb14959b1192beaed795c7b210ec94301"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame\/FrameTreeIterator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1558,
+          "sha1": "707cc6f5504bdace280bee5c1f587f521df52954"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame\/FrameTreeList.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 556,
+          "sha1": "c5043b350acf2949ab7eb65f5d9f558fdf90d808"
+        },
+        {
+          "path": "Api\/pdf\/src\/Frame.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 27881,
+          "sha1": "739e67f8c9871a07aeaa389fd1a00021a71c7724"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/AbstractFrameDecorator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 18937,
+          "sha1": "8abf4ca8061e7ca7af445f9a2aa0fdb0c8840eb9"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/Block.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6821,
+          "sha1": "848c08eead29bfe18f9773fb68ca5813f4fa9bf2"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/Image.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2325,
+          "sha1": "a676bfcf04122ac3422dcbd381c570e21f22b91c"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/Inline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2613,
+          "sha1": "7fc911099ea28347b1e3bb27496f3a2611dcecc7"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/ListBullet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2196,
+          "sha1": "4dcf79510b040ceddde22d059b440755a67e9f79"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/ListBulletImage.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4780,
+          "sha1": "8ae31e79ce5301035262f65e24dba114a80c5f29"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/NullFrameDecorator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 665,
+          "sha1": "5fc0772d591a0888d1c812ef4b1b3af1a2fed959"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/Page.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 20164,
+          "sha1": "f0883c81e20b88e1984167229ffb6d568d66f8c6"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/Table.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9837,
+          "sha1": "c90ce5d7b087044c3aeb13829c038e4d8f734aaa"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/TableCell.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3033,
+          "sha1": "2cc80ede3634f7004ba80efe62562bb62a53ee20"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/TableRow.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1272,
+          "sha1": "0ded480f1dc7ffec2db1ee0a351610d7beb64ab1"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/TableRowGroup.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1734,
+          "sha1": "9649b4ddab0d1c9cf1224e612f0b1a545e16fc19"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameDecorator\/Text.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5719,
+          "sha1": "1ac51c9f2ee79e97ed4d100044145d99eb1715ef"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/AbstractFrameReflower.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14433,
+          "sha1": "37b6b0af38d6f515dedacbdfce070372be54566a"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/Block.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 26428,
+          "sha1": "e9e2056194922cd3fda8494779f01d8dd36561cc"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/Image.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7269,
+          "sha1": "22ddd756c2c9f504c4ddc17f28d6d78453bbf026"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/Inline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2165,
+          "sha1": "75a2137b1147f2f55d2d26abae58403c3f2169a5"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/ListBullet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1015,
+          "sha1": "e12c183bf5c6163891494704639fd49a8728d039"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/NullFrameReflower.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 601,
+          "sha1": "66732c7800d7b62e5f531e1fb16c2101f327ce02"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/Page.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6209,
+          "sha1": "deb21987630fa619365779d064d785169a8cb406"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/Table.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 19042,
+          "sha1": "0742726bb5e704e924fab0e5bb7773c4d4569f3c"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/TableCell.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3497,
+          "sha1": "00724efc1dfc29f373abecfa94fde5bac14bd94f"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/TableRow.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1817,
+          "sha1": "3503f52856a91d95e010b5c276a5d4c748d4ddc2"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/TableRowGroup.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1783,
+          "sha1": "26c6d240caab942af4a02644315b569fc1a49e51"
+        },
+        {
+          "path": "Api\/pdf\/src\/FrameReflower\/Text.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 16107,
+          "sha1": "37e091114ea2d8f4e2b0d41110b140835e7b1d9d"
+        },
+        {
+          "path": "Api\/pdf\/src\/Helpers.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 24737,
+          "sha1": "10e4549f49df2dd6d19f7f7baa9cc6f1abbdc80e"
+        },
+        {
+          "path": "Api\/pdf\/src\/Image",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Image\/Cache.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7775,
+          "sha1": "53a7e3617c914556a99b3f03926ea20e8a84272a"
+        },
+        {
+          "path": "Api\/pdf\/src\/JavascriptEmbedder.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 797,
+          "sha1": "df992cd3cce3f14f7ff3333194c29c7fe9cbf19c"
+        },
+        {
+          "path": "Api\/pdf\/src\/LineBox.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5397,
+          "sha1": "e3298879b1a2d6a9837fd51cabc7098b29dea300"
+        },
+        {
+          "path": "Api\/pdf\/src\/Options.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 26272,
+          "sha1": "fe2fb39fa028a532eda75314e9d11cfb29be5bcb"
+        },
+        {
+          "path": "Api\/pdf\/src\/PhpEvaluator.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1231,
+          "sha1": "496ceab55c6c7316f5abafcb210bb786ee41aec6"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/Absolute.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3750,
+          "sha1": "6785bb64e3b90ca9179a27f54a4b6c9fd2cf9771"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/AbstractPositioner.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1204,
+          "sha1": "e32be3ed9e9e1f130824ce29390ae82620b2effb"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/Block.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1530,
+          "sha1": "fa7dfdc2cbfad13b811cd81cadadb2bc9aa9b33f"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/Fixed.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3198,
+          "sha1": "3fa15a43943f20a14e7bc21e8d8b86d718f0f685"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/Inline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2284,
+          "sha1": "a58dfa84f93d9d33618459d3dd987ccdd18773d6"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/ListBullet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2860,
+          "sha1": "d4d8b05c37fa6cf0979b8795e411f4aa1517440d"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/NullPositioner.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 556,
+          "sha1": "ec35471158e44bcc1e4822ecc52ea15167cecf15"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/TableCell.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 836,
+          "sha1": "8f30f90fa0835b658c088ddb5d2e90ceddd11c85"
+        },
+        {
+          "path": "Api\/pdf\/src\/Positioner\/TableRow.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 896,
+          "sha1": "c5c52c15718f1998e72d1a17da85f1394a798095"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/AbstractRenderer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 26334,
+          "sha1": "7a4c772e57346edc9e94fa2a9195734c646fa9ab"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/Block.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8187,
+          "sha1": "a6be012f1985956c9d5b54d14d70525678ed4d91"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/Image.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3871,
+          "sha1": "98acfc05e6d012b234ea080aa863ce786b96b359"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/Inline.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8534,
+          "sha1": "48084c325a080a6b817b42ad72da06d54f72462d"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/ListBullet.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7846,
+          "sha1": "801b324b66412545197ba917a974bd296b113344"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/TableCell.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5474,
+          "sha1": "ab2fd62d4130dacb182322e79e2f987388ad08d5"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/TableRowGroup.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1354,
+          "sha1": "eb9f65073d757b2f6034c41e0aae8472255f42e0"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer\/Text.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5529,
+          "sha1": "acc2d9a4c346ad79cbd856b16cbbd4dcf75eec6d"
+        },
+        {
+          "path": "Api\/pdf\/src\/Renderer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8586,
+          "sha1": "dc953bb0bd13c93baec4d6d3f4b0c96ffafa81bf"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 451,
+          "sha1": "1bcb49267065c642c4e8aec5eb483ce325c72c80"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1661,
+          "sha1": "3cf7e0591bc5692e2bbc1814f2493fbfb29bedbf"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 458,
+          "sha1": "6c914a6b13789c71e861d193bb49dd3c31f897f1"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1965,
+          "sha1": "73288dd004f16c6551a70e358b458ed8bf709a1b"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2186,
+          "sha1": "cd535aa3de2653539e5f182b8d80674c51d07fc7"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3618,
+          "sha1": "df410b4a783bf0ed8f57af738850c900b757178f"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1380,
+          "sha1": "18299e12a93a55ab4d97b624f248311a6706ad8c"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 813,
+          "sha1": "de23c35c172b2d902b6da972c00f92e8f601ff9b"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1635,
+          "sha1": "e30766ce2a05310ce2734b432a1a30c4b824b4cf"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 454,
+          "sha1": "29fc6e8b20ba124655e8fb65f35f717a6f6bbce0"
+        },
+        {
+          "path": "views\/scripts\/pdfContent.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8140,
+          "sha1": "7816de95571bc9c539f330818c16c3615e99af1c"
+        },
+        {
+          "path": "views\/scripts\/pdfGenerate.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1378,
+          "sha1": "e30f7f779d641718fd2308c29bfa34daecd53b1c"
+        }
+      ]
+    },
+    "application\/languages\/en\/seseventpdfticket.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/seseventpdfticket.csv",
+      "structure": {
+        "path": "seseventpdfticket.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 0,
+        "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      }
+    }
+  }
+}

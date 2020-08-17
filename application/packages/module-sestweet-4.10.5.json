@@ -1,0 +1,421 @@
+{
+  "type": "module",
+  "name": "sestweet",
+  "version": "4.10.5",
+  "revision": null,
+  "path": "application\/modules\/Sestweet",
+  "repository": null,
+  "sku": null,
+  "date": "Wed, 18 Sep 2019 12:11:32 +0000",
+  "title": "SES - Click To Tweet Plugin",
+  "description": "SES - Click To Tweet Plugin",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+  ],
+  "meta": {
+    "date": "Wed, 18 Sep 2019 12:11:32 +0000",
+    "title": "SES - Click To Tweet Plugin",
+    "description": "SES - Click To Tweet Plugin",
+    "developer": null,
+    "authors": [
+      "<a href=\"https:\/\/socialnetworking.solutions\" style=\"text-decoration:underline;\" target=\"_blank\">SocialNetworking.Solutions<\/a>"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Sestweet\/settings\/install.php",
+    "class": "Sestweet_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.10.5",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Sestweet": {
+      "type": "directory",
+      "path": "application\/modules\/Sestweet",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2291,
+          "sha1": "a2ca7e00fa735975fe20abb0138e500dc99d2236"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1786,
+          "sha1": "020062978980d4e169e89272163b3e20176fc69f"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1879,
+          "sha1": "77b0ac63ccbf4b9e8d7459b6efbdf1439eb85ae8"
+        },
+        {
+          "path": "controllers\/defaultsettings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 991,
+          "sha1": "9912906d6e687ed649cb1dfb8cef799bc209eaf9"
+        },
+        {
+          "path": "controllers\/License.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1600,
+          "sha1": "67adc41454ff0448f56771a51691f876f316e82f"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147,
+          "sha1": "9f1638a8edbe1c5d28789e017fb35b2f2465f01e"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/images\/tweet.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 452,
+          "sha1": "c44e11c4aaffc987b1a2fc12366ece0e4e5d2d4c"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6317,
+          "sha1": "3bb9902d48a3a6eca861f1473a95495f4920245c"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/admin\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 151,
+          "sha1": "1cc5827a2d8dfae2d96c234fb95d224ee64ab461"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1806,
+          "sha1": "49d4acfcdf6d508cf5cad1a667c1e1683df24757"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7014,
+          "sha1": "b4e89e4f8b8cd2db442d6ced253c43c3fd470252"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/.htempty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3675,
+          "sha1": "e39553f842685d735b4386a23c4be2cb5eb2c9a1"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1470,
+          "sha1": "bfe57a733b90ca9d528907c7caca3c216a7fc362"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2120,
+          "sha1": "9c03078eee497666519735856ae2e518ec8c66ac"
+        },
+        {
+          "path": "settings\/my-upgrade-4.9.3-4.9.3p1.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 299,
+          "sha1": "aa232ca2d9630c3040e382d931aebb3c6f485359"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 493,
+          "sha1": "e40cbbe8a93656815fb9ee7b545b8845449778d5"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/faq.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3855,
+          "sha1": "c1cb9a57c86cc1c3f0c9c0a4a93d5424d3b44f38"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2527,
+          "sha1": "250a5a4343a3af2b42f858cf3b9c968275eaad6b"
+        },
+        {
+          "path": "views\/scripts\/dismiss_message.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2232,
+          "sha1": "0504f26c6c5d4762017c5a73421f1d2627b03c77"
+        },
+        {
+          "path": "views\/scripts\/tweet-text.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1806,
+          "sha1": "2d5aedad66ac42c2423cdd6d8da585166d5e471e"
+        }
+      ]
+    },
+    "externals\/tinymce\/plugins\/tweet": {
+      "type": "directory",
+      "path": "externals\/tinymce\/plugins\/tweet",
+      "structure": [
+        {
+          "path": "plugin.min.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1739,
+          "sha1": "dbf6e91156434189b83636dc5a9474c5a7a3474b"
+        }
+      ]
+    },
+    "application\/libraries\/Engine\/View\/Helper\/TinyMce.php": {
+      "type": "file",
+      "path": "application\/libraries\/Engine\/View\/Helper\/TinyMce.php",
+      "structure": {
+        "path": "TinyMce.php",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 8420,
+        "sha1": "5e843c316b0886e9faf1fbb68aaa0c9ee52ab9cc"
+      }
+    },
+    "application\/languages\/en\/sestweet.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/sestweet.csv",
+      "structure": {
+        "path": "sestweet.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 38,
+        "sha1": "d3ab137c14ba10d85364d012a1ea43023050509e"
+      }
+    }
+  }
+}

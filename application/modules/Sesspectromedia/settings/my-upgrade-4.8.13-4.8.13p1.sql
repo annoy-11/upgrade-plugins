@@ -1,0 +1,2 @@
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES 
+("sesspectromedia_admin_main_customcss", "sesspectromedia", "Custom CSS", "", '{"route":"admin_default","module":"sesspectromedia","controller":"custom-theme", "action":"index"}', "sesspectromedia_admin_main", "", 54);

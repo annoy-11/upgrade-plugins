@@ -1,0 +1,163 @@
+/* $Id: media-queries.css 2014-10-31 00:00:00 SocialEngineSolutions $*/
+
+/* RESPONSIVE DESIGN, using media-queries, starts here */
+
+@media only screen and (max-width:1100px){
+	#global_header{
+		margin-bottom:15px;
+	}
+	div.layout_page_header .layout_main,
+	div#global_content,
+	div.layout_page_footer{
+		box-sizing: border-box;
+		padding: 0 10px !important;
+		width: 100%;
+	}
+	.layout_core_menu_main > ul > li > a{
+		padding:0 8px;
+	}
+	.layout_left, .layout_right{
+		width:20%;
+		padding:0 0 0 0;
+		margin:0 0;
+	}
+	html[dir="rtl"] .layout_left, html[dir="rtl"] .layout_right{
+		padding:0 0 0 0;
+		margin:0 0;
+	}
+	.layout_middle{
+		padding:0 1%;
+		margin:0 0;
+	}
+	.layout_page_footer{
+		padding:10px;
+	}
+}
+@media only screen and (max-width:768px){
+	.layout_core_menu_mini,
+	html[dir="rtl"] .layout_core_menu_mini{
+		float:none;
+	}
+	.layout_core_menu_mini #core_menu_mini_menu{
+		margin:0;
+		width:100%;
+	}
+	.layout_core_menu_mini > div > ul > li{
+		line-height:40px;
+	}
+	.layout_core_menu_main > ul > li > a{
+		padding:0 5px;
+	}
+	.layout_core_menu_logo,	html[dir="rtl"] .layout_core_menu_logo{
+		float: none;
+		height: auto;
+		line-height: normal;
+		margin: 0 0 20px;
+		text-align: center;
+	}
+	.layout_core_menu_logo img{
+		max-width:90%;
+	}
+	#core_menu_mini_menu #global_search_field{
+		padding:0.5em;
+		width:120px;
+	}
+	/*Layouts*/
+	.layout_left, 
+	.layout_right{
+		width:25%;
+		padding:0 1% 0 0;
+		float:left;
+		clear:both;
+	}
+	html[dir="rtl"] .layout_left, 
+	html[dir="rtl"] .layout_right{
+		padding:0 0 0 1%;
+		float:right;
+	}
+	.layout_middle{
+		padding:0 0 0 1%;
+	}
+	html[dir="rtl"] .layout_middle{
+		padding:0 1% 0 0;
+	}
+	ul.feed .feed_item_body .feed_item_attachments .music_player.playlist_short_player{
+		display:none !important;
+	}
+	ul.feed .feed_item_body .feed_item_attachments .music_player{
+		display:block !important;
+		width:auto;
+	}
+	ul.feed .feed_item_body .feed_item_attachments .video_object object{
+		width:100%;
+		height:auto;
+	}
+	/*Notification Page*/
+	div.notifications_layout > div.notifications_leftside{
+		width:30%;
+	}
+	/*Form Elements*/
+	.global_form div.form-label{
+		text-align:left;
+		float:none;
+		width:auto;
+	}
+	html[dir="rtl"] .global_form div.form-label{
+		float:none;
+		text-align:right;
+	}
+	.global_form .form-elements input, .global_form .form-elements textarea{
+		width:90%;
+	}
+	.form-elements input[type="checkbox"], .form-elements input[type="radio"]{
+		width:auto;
+	}
+	input[type="text"], input[type="email"], input[type="password"], input.text, textarea, select{
+		width:94%;
+		padding:2%;
+	}
+	/*Album View Page*/
+	div.albums_viewmedia {
+		max-width: 100%;
+		min-width: inherit;
+	}
+	div.albums_viewmedia_info{
+		border:0;
+		padding:0;
+	}
+	div.album_viewmedia_container {
+		display: block;
+	}
+	div.albums_viewmedia #media_photo {
+		max-width: 100%;
+	}
+ 
+}
+ @media only screen and (max-width:480px){
+	/*Layout*/
+	.layout_middle{
+		padding:0 0 0 0;
+	}
+	.layout_left, .layout_right{
+		clear: both;
+		float: none;
+		width: auto !important;
+	}
+	/*Profile Photo*/
+	.layout_user_profile_photo #profile_photo, .layout_group_profile_photo #group_photo, .layout_event_profile_photo #event_photo{
+		text-align:center;
+	}
+	/*Form*/
+	#filter_form .form-wrapper{
+		float:none !important;
+		width:100% !important
+	}
+	/*Notification Page*/
+	div.notifications_layout > div.notifications_leftside{
+		width:100%;
+	}
+	div.notifications_layout > div.notifications_rightside{
+		clear:both;
+		padding:10px 0 0 0;
+	}
+}

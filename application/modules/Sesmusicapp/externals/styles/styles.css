@@ -1,0 +1,535 @@
+/*SESMUSIC APP CSS*/
+/* $Id:main.css 2015-3-1 00:00:00 SocialEngineSolutions $*/
+[class*='layout_sesmusicapp_']{
+  clear:both;
+  margin-bottom:15px;
+}
+[class*='layout_sesmusicapp_']:after{
+  clear:both;
+  content:'';
+  display:block;
+}
+[class*='tab_layout_sesmusicapp_']{
+  margin:0;
+  clear:none;
+}
+/*PLAYLIST GRID LISTING START*/
+.sesmusicapp_playlist_grid_listing *{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+.sesmusicapp_playlist_grid{
+  float:left;
+  margin:5px;
+  width:200px;
+}
+[dir="rtl"] .sesmusicapp_playlist_grid{
+  float:right;
+}
+.sesmusicapp_playlist_grid_top{
+  position: relative;
+  overflow: hidden;
+	height: 200px;
+}/*
+.sesmusicapp_playlist_grid_top:before{
+  position: absolute;
+  content:"";
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0,0,0,0.6);
+}*/
+[dir="rtl"] .sesmusicapp_playlist_grid_top > a{
+  float:right;
+  margin-left:10px;
+  margin-right:0;
+}
+.sesmusicapp_playlist_grid_top > a img{
+  border-width:0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.sesmusicapp_playlist_grid_top > a + div{
+  overflow:hidden;
+  position: absolute;
+  left:10px;
+  bottom: 10px;
+}
+.sesmusicapp_playlist_grid_title{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  margin-bottom:5px;
+}
+.sesmusicapp_playlist_grid_stats{
+  margin-bottom:5px;
+  font-size:.8em;
+}
+.sesmusicapp_playlist_grid_stats a{
+  display:inline-block;
+  vertical-align:middle;
+}
+.sesmusicapp_playlist_grid .sesmusicapp_tracks_container{
+  height:125px;
+}
+.sesmusicapp_carousel_wrapper{
+  position: relative;
+}
+/*For left Right Column*/
+.layout_left .sesmusicapp_playlist_grid,
+.layout_right .sesmusicapp_playlist_grid{
+  margin:5px 0;
+  width:100% !important;
+}
+.layout_left .sesmusicapp_carousel_wrapper .sesmusicapp_playlist_grid,
+.layout_right .sesmusicapp_carousel_wrapper .sesmusicapp_playlist_grid{
+  margin:0;
+}
+.layout_left .sesmusicapp_playlist_grid .sesmusicapp_tracks_container,
+.layout_right .sesmusicapp_playlist_grid .sesmusicapp_tracks_container{
+  height:auto;
+  max-height:133px;
+}
+/*PLAYLIST GRID LISTING END*/
+/*MUSIC TRACKS START HERE*/
+.sesmusicapp_tracks_container{
+  margin:10px 0;
+  overflow:hidden !important;
+}
+.sesmusicapp_tracks_list *{
+  box-sizing:border-box;
+}
+.sesmusicapp_tracks_list li{
+  padding: 3px;
+  margin-bottom: 5px;
+}
+.sesmusicapp_tracks_list_photo{
+  float:left;
+  position:relative;
+}
+[dir="rtl"] .sesmusicapp_tracks_list_photo{
+  float:right;
+}
+.sesmusicapp_tracks_list_photo img{
+  border-width:0;
+  float:left;
+  height:26px !important;
+  margin:3px;
+  border-radius: 5px;
+  width:26px !important;
+}
+.sesmusicapp_tracks_list .sesmusicapp_songslist_playbutton{
+  height:20px;
+  display:none;
+  left:0;
+  line-height:normal;
+  margin:8px 1px;
+  position:absolute;
+  width:20px;
+  color:#ff4500 !important;
+}
+.sesmusicapp_tracks_list .sesmusicapp_songslist_playbutton i{
+  height:16px;
+  width:16px;
+}
+.sesmusicapp_tracks_list .sesmusicapp_songslist_playbutton i:before{
+  font-size:18px;
+  line-height:17px !important;
+  margin:0 0 0 6px;
+}
+[dir="rtl"] .sesmusicapp_tracks_list .sesmusicapp_songslist_playbutton i:before{
+  margin:0 3px 0 0;
+}
+.sesmusicapp_tracks_list li > div{
+  line-height:32px;
+}
+.sesmusicapp_tracks_list_stats{
+  float:right;
+  font-size:.8em;
+  padding:0 5px 0 20px;
+  width:60px;
+}
+[dir="rtl"] .sesmusicapp_tracks_list_stats{
+  float:left;
+  padding:0 20px 0 5px;
+}
+.sesmusicapp_tracks_list_stats i:before{
+  font-size:10px;
+  margin-right:5px;
+}
+.sesmusicapp_tracks_list_name{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  padding:0 5px;
+  font-size: 90%;
+}
+.sesmusicapp_tracks_list li:hover{
+  background-image:url(~/application/modules/Sesmusicapp/externals/images/transprant-bg1.png);
+}
+.sesmusicapp_tracks_list li:hover .sesmusicapp_songslist_playbutton{
+  display:block;
+}
+/*MUSIC TRACKS END HERE*/
+/*sesmusic artist css*/
+.sesmusicapp_artist_grid{
+  float:left;
+  text-align:center;
+  width:180px;
+  border-radius: 5px;
+  margin:6px 10px;
+}
+.sesmusicapp_artist_grid .sesmusicapp_artist_grid_inner{
+  font-size:12px;
+  margin:7px 7px 10px;
+  position:relative;
+}
+.sesmusicapp_artist_grid .sesmusicapp_artist_grid_bg_image{
+  height:180px;
+  overflow:hidden;
+  position:relative;
+  border-radius:50%;
+}
+.sesmusicapp_artist_grid .sesmusicapp_artist_grid_bg_image img{
+  min-height:100%;
+  max-height:inherit;
+  max-width:inherit;
+  width:100%;
+  position:relative;
+  transform:scale(1);
+  transition:all 800ms ease 0s;
+  filter:url(blur.svg#blur);
+  -webkit-filter:blur(3px);
+  filter:blur(3px);
+  opacity:0.6;
+}
+.sesmusicapp_artist_grid .sesmusicapp_item_artwork{
+  height:180px;
+  position:absolute;
+  border-radius: 5px;
+  top:0px;
+  width:100%;
+}
+.sesmusicapp_artist_grid .sesmusicapp_item_artwork img{
+  border:0;
+  height:135px;
+  width:135px;
+  position:relative;
+  transition:all 800ms ease 0s;
+  transform:translate(-50%, -50%);
+  left:50%;
+  top:50%;
+  border-radius:100%;
+  object-fit:cover;
+}
+.sesmusicapp_artist_grid .hover_box{
+  opacity:0;
+}
+.sesmusicapp_artist_grid .sesmusicapp_item_artwork:hover .hover_box{
+  opacity:1;
+  -webkit-transition:all 800ms ease-in-out 0s;
+  -moz-transition:all 800ms ease-in-out 0s;
+  transition:all 800ms ease-in-out 0s;
+}
+.sesmusicapp_artist_grid .hover_box{
+  height: 100%;
+  left: -10px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 115%;
+  z-index: 2;
+  clip-path: circle(68px at center);
+}
+.sesmusicapp_artist_grid .hover_box_options {
+  top:50%;
+  position:absolute;
+  z-index:3;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.sesmusicapp_artist_grid .hover_box_options a i{
+  color:#fff;
+  font-size:30px;
+  text-shadow:0 0 5px #000;
+}
+.sesmusicapp_artist_grid .hover_box_options a i.sesmusicapp_favourite,
+.sesmusicapp_playlist_listing_options_buttons a.sesmusicapp_favourite:before{
+  color:#ff4500 !important;
+}
+.sesmusicapp_artist_grid .transparentbg {
+  background-color:#616161;
+  height:100%;
+  left:0;
+  opacity:0.5;
+  position:absolute;
+  top:0;
+  right:0;
+  width:100%;
+  z-index:1;
+}
+.sesmusicapp_artist_grid .sesmusicapp_artist_info{
+  clear:both;
+  overflow:hidden;
+}
+.sesmusicapp_artist_grid .sesmusicapp_artist_title{
+  font-weight:bold;
+  margin:5px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+.sesmusicapp_artist_stats {
+  font-size:.8em;
+}
+.layout_left .sesmusicapp_artist_grid,
+.layout_right .sesmusicapp_artist_grid{
+  width:100%;
+}
+.layout_left .sesmusicapp_artist_grid img,
+.layout_right .sesmusicapp_artist_grid .sesmusicapp_item_artwork img{
+  height:150px;
+  width:150px;
+}
+
+/*SIDEBAR LISTING START HERE*/
+.sesmusicapp_sidebar_list{
+  clear:both;
+  padding:5px 0;
+}
+.sesmusicapp_sidebar_list_thumb{
+  float:left;
+}
+[dir="rtl"] .sesmusicapp_sidebar_list_thumb{
+  float:right;
+  margin-left:10px;
+  margin-right:0;
+}
+.sesmusicapp_sidebar_list_info{
+  overflow:hidden;
+  padding-left:10px;
+}
+.sesmusicapp_sidebar_list_title{
+  font-weight:bold;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.sesmusicapp_sidebar_list_song_title{
+  overflow:hidden;
+  padding:0 0 3px 0px;
+  margin:0;
+  position:relative;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+[dir="rtl"] .sesmusicapp_sidebar_list_song_title{
+  padding:0 25px 6px 0;
+}
+.sesmusicapp_sidebar_list_photo_block{
+  position:relative;
+  float:left;
+}
+.sesmusicapp_sidebar_list_play_btn{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  opacity:0;
+}
+.sesmusicapp_sidebar_list:hover .sesmusicapp_sidebar_list_play_btn{
+  opacity:1;
+}
+.sesmusicapp_sidebar_list_play_btn .sesmusicapp_sidebar_list_playbutton{
+  color:#ff4500;
+  text-decoration:none !important;
+}
+.sesmusicapp_sidebar_list_playbutton i{
+  height:20px;
+  text-align:center;
+  display:block;
+  width:20px;
+}
+.sesmusicapp_sidebar_list_playbutton i:before{
+  font-size:20px;
+}
+[dir="rtl"] .sesmusicapp_sidebar_list_playbutton i:before{
+  float:right;
+  margin:3px 7px 0 0;
+}
+.sesmusicapp_sidebar_list_stats{
+  font-size:12px;
+  margin-bottom:4px;
+}
+.sesmusicapp_sidebar_list_stats a{
+  display:inline;
+  white-space:normal;
+}
+/*SIDEBAR LISTING END HERE*/
+/*Music App Carousal*/
+.sesmusicapp_category_carousel_wrapper li{
+  list-style: none;
+  float: left;
+}
+.sesmusicapp_category_carousel_item{
+  margin: 0 1px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+}
+[dir="rtl"] .sesmusicapp_category_carousel_item{
+  float: right;
+}
+.sesmusicapp_category_carousel_item_thumb{
+  max-width: 100%;
+}
+.sesmusicapp_category_carousel_item_thumb a{
+  display: block;
+  height: 100%;
+}
+.sesmusicapp_category_carousel_item_thumb span{
+  background-size: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sesmusicapp_category_carousel_item_thumb ._catname {
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+}
+.sesmusicapp_category_carousel_item_thumb ._catname > span{
+  position: relative;
+  top:42%;
+}
+body.sesmusicapp_category_carousel .layout_sesmusicapp_category_carousel{
+  background-color: transparent !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+  margin: 0 0 15px;
+  padding: 0 !important;
+}
+body.sesmusicapp_category_carousel .sesmusicapp_category_carousel{
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+}
+.sesmusicapp_category_carousel{
+  position: relative;
+}
+.sesmusicapp_category_carousel .owl-stage-outer{
+  overflow: hidden;
+}
+.sesmusicapp_category_carousel .owl-item{
+  float: left;
+  padding: 0 2px;
+}
+.sesmusicapp_category_carousel .sesgroup_list_item{
+  margin: 0;
+}
+.sesmusicapp_category_carousel .sesgroup_list_item article{
+  box-shadow: none;
+}
+.sesmusicapp_category_carousel .owl-nav > div{
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 0 !important;
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, .4) !important;
+  transition: all 0.3s ease .5s;
+  opacity: 1;
+  filter: alpha(opacity=0);
+  height: 60px;
+  line-height: 60px;
+  display: block !important;
+  padding: 0;
+  overflow: hidden;
+  outline: none !important;
+  width: 50px;
+  z-index: 10;
+}
+.sesmusicapp_category_carousel .owl-nav > div i:before{
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sesmusicapp_category_carousel .owl-nav > div.owl-prev{
+  left: -70px;
+}
+.sesmusicapp_category_carousel:hover .owl-nav > div.owl-prev{
+  left: 0;
+}
+.sesmusicapp_category_carousel .owl-nav > div.owl-next{
+  right: -70px;
+}
+.sesmusicapp_category_carousel:hover .owl-nav > div.owl-next{
+  right: 0;
+}
+@media(max-width:767px){
+	.sesmusicapp_playlist_grid {
+    width: 100% !important;
+}
+.sesmusicapp_artist_grid {
+    width: 87px !important;
+}
+.sesmusicapp_artist_grid .sesmusicapp_artist_grid_bg_image {
+    height: 80px !important;
+    border-radius: 100px;
+    width: 80px;
+    margin: auto;
+}
+.sesmusicapp_artist_grid .sesmusicapp_item_artwork {
+    height:80px !important;
+    right: -5px;
+}
+.sesmusic_item_grid .sesmusic_item_info {
+    padding:10px;
+}
+.sesmusicapp_artist_grid .sesmusicapp_item_artwork img{
+	  height: 80px !important;
+    border-radius: 100px;
+    width: 80px;
+}
+html .sesmusic_item_grid {
+    margin: 5px 0px 10px;
+    width: 46% !important;
+    margin-right: 12px;
+}
+html .sesmusic_item_grid .sesmusic_item_artwork,
+.sesmusic_item_grid .sesmusic_item_artwork_img {
+    height: 100px !important;
+}
+.sesmusicapp_category_carousel_item_thumb{
+	 height:110px !important;
+}
+.sesmusicapp_category_carousel_item_thumb span {
+    background-position: center;
+}
+html .layout_sesmusicapp_featured_sponsored_hot_carousel .sesmusic_item_grid{
+    width:50% !important;
+}
+.sesmusic_carousel_wrapper{
+    border:0;
+}
+}

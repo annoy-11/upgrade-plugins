@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Sesmaterial
+ * @package    Sesmaterial
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: Addsublink.php 2018-07-28 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+
+class Sesmaterial_Form_Admin_Addsublink extends Engine_Form {
+
+  public function init() {
+
+    $this->setMethod('POST');
+
+    $this->addElement('Text', "name", array(
+        'label' => 'Enter link name.',
+        'allowEmpty' => false,
+        'required' => true,
+    ));
+
+    $this->addElement('Text', "url", array(
+        'label' => 'Enter URL for this link for Non Loggined member.',
+    ));
+
+    $this->addElement('Select', "nonloginenabled", array(
+        'label' => 'Link Enabled for Non Loggined Member',
+        'multiOptions' => array(
+            '1' => 'Yes',
+            '0' => "No",
+        ),
+    ));
+
+    $this->addElement('Select', "nonlogintarget", array(
+        'label' => 'Open in New Tab for Non Loggined Members',
+        'multiOptions' => array(
+            '0' => "No",
+            '1' => 'Yes',
+        ),
+    ));
+
+    $this->addElement('Text', "loginurl", array(
+        'label' => 'Enter URL for this link for Loggined member.',
+    ));
+
+    $this->addElement('Select', "loginenabled", array(
+        'label' => 'Link Enabled for Loggined Member',
+        'multiOptions' => array(
+            '1' => 'Yes',
+            '0' => "No",
+        ),
+    ));
+
+    $this->addElement('Select', "logintarget", array(
+        'label' => 'Open in New Tab for Loggined Members',
+        'multiOptions' => array(
+            '0' => "No",
+            '1' => 'Yes',
+        ),
+    ));
+
+
+    $this->addElement('Button', 'button', array(
+        'type' => 'submit',
+        'ignore' => true,
+        'decorators' => array('ViewHelper')
+    ));
+
+    $this->addElement('Cancel', 'cancel', array(
+        'label' => 'Cancel',
+        'link' => true,
+        'prependText' => ' or ',
+        'onclick' => 'javascript:parent.Smoothbox.close()',
+        'decorators' => array(
+            'ViewHelper',
+        ),
+    ));
+    $this->addDisplayGroup(array('button', 'cancel'), 'buttons');
+  }
+
+}

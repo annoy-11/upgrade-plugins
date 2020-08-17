@@ -1,0 +1,2 @@
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+("sesmember_main_alphbeticmemberssearch", "sesmember", "Alphbetic Members Search", "", '{"route":"sesmember_general","action":"alphabetic-members-search"}', "sesmember_main", "", 880);

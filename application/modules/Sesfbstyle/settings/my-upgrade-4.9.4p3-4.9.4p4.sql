@@ -1,0 +1,1 @@
+ALTER TABLE `engine4_sesfbstyle_dashboardlinks` ADD `order` INT(11) NOT NULL;

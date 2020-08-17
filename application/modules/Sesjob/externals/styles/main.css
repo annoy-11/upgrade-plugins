@@ -1,0 +1,358 @@
+/* $Id:main.css 2016-07-23 00:00:00 SocialEngineSolutions $*/
+
+/* ACTION TYPE ICONS */
+.activity_icon_comment_sesjob:before{content:"\\f0e5";}
+/* ITEM TYPE ICONS */
+.item_icon_sesjob_job:before,
+.item_icon_sesjob:before,
+.item_icon_sesjob_entry:before,
+.notification_type_sesjob_subscribed_new:before,
+.notification_type_sesjob_new_application:before,
+.notification_type_sesjob_newjobposted:before{
+  content:"\\f0b1";
+  font-family:fontawesome;
+}
+/*Profile Tabs*/
+.sesjob_profile_tabs ul li a{
+  color:$theme_font_color !important;
+}
+.sesjob_profile_tabs ul li:hover a,
+.sesjob_profile_tabs ul li.active a{
+  color:$theme_button_font_color !important;
+}
+.sesjob_profile_tabs ul li:before{
+  background-color:$theme_button_background_color;
+}
+/*Generic Layout Container*/
+[class*='layout_sesjob_'],
+[id^='global_page_sesjob-'] .layout_core_content{
+  clear:both;
+  margin-bottom:15px;
+}
+[class*='layout_sesjob_']:after,
+[id^='global_page_sesjob-'] .layout_core_content:after{
+	clear:both;
+	content:'';
+	display:block;
+}
+[class*='tab_layout_sesjob_']{
+  margin:0;
+  clear:none;
+}
+/*Listing Buttons*/
+.sesjob_thumb_btns{
+	margin-left:2px;
+	position:absolute;
+	opacity:0;
+	top:-20px;
+	right:10px;
+	z-index:2;
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+[dir="rtl"] .sesjob_thumb_btns{
+	margin-left:0;
+	margin-right:2px;
+	left:10px;
+	right:auto;
+}
+.sesjob_thumb:hover .sesjob_thumb_btns,
+.sesjob_listing_in_grid:hover .sesjob_thumb_btns,
+.sesjob_activity_job:hover .sesjob_thumb_btns,
+.sesjob_listing_in_grid2:hover .sesjob_thumb_btns{
+	opacity:1;
+	top:10px;
+}
+/*Create Page*/
+.sesjob_create_category_items ul > li:hover,
+.sesjob_create_category_items ul > li.active{
+	background-color:$theme_list_background_color_hover;
+}
+.sesjob_grid_info_title a{
+  color:$theme_font_color;
+}
+/*Listings*/
+[dir="rtl"] .sesjob_list_info_title a,
+[dir="rtl"] .sesjob_admin_list{
+  border-right-color:$theme_button_background_color;
+}
+.sesjob_list_full_stats span{
+  border-right-color:$theme_button_background_color !important;
+}
+.sesjob_list_full_view_info .sesjob_list_full_stats span{
+	color:#fff !important;
+}
+[dir="rtl"] .sesjob_list_full_stats span{
+  border-left-color:$theme_button_background_color;
+}
+.sesjob_list_info_title a,
+.sesjob_grid_info_title a,
+.sesjob_pinboard_list .sesjob_pinboard_categry span a span,
+.sesjob_pinboard_list .sesjob_pinboard_title a,
+.sesblock_pinboard_readmore a,
+.sesjob_new_grid_block .sesjob_second_grid_info_title a,
+.sesjob_last_grid_block .sesjob_second_readmore_link a,
+.sesjob_last_grid_block .sesjob_grid_date_job a,
+.sesjob_last_grid_block .sesjob_grid_three_info_title a,
+.sesjob_three_job_footer_links ul li a{
+  color:$theme_font_color !important;
+}
+.sesjob_list_readmore a:hover,
+.sesjob_list_border_two,
+.sesjob_grid_memta_title span a,
+.sesjob_grid .sesjob_grid_hover_block,
+.sesjob_new_grid_block .sesjob_grid_date_job{
+  background-color:$theme_button_background_color;
+  color:$theme_button_font_color !important;
+}
+.sesjob_list_full_stats span, .sesjob_grid .sesjob_grid_info_hover_title a, .sesjob_grid .sesjob_grid_hover_block .sesjob_list_stats span, .sesjob_grid .sesjob_grid_hover_block .sesjob_list_stats span i, .sesjob_grid .sesjob_grid_des, .sesjob_grid_read_btn a, .sesjob_grid_memta_title span a, .sesjob_grid .sesjob_admin_category span i, .sesjob_grid .sesjob_admin_category span a, .sesjob_grid .sesjob_grid_hover_block .sesjob_list_stats span a{
+  color:$theme_button_font_color !important;
+}
+.sesjob_list_full_contant_job{
+  background:$theme_list_background_color_hover;
+}
+.sesjob_list_full_view, .sesjob_list_full_date_job,
+.sesjob_pinboard_info_job{
+  border-color:$theme_list_background_color_hover;
+}
+.sesjob_new_grid_block .sesjob_grid_info_title, .sesjob_new_grid_block .sesjob_grid_info_title a, .sesjob_new_grid_block .sesjob_grid_des span,{
+  background:$theme_font_color !important;
+  color:$theme_button_font_color !important;
+}
+/*Mini Tabs*/
+.sesjob_small_tabs{
+  border-bottom:1px solid $theme_button_background_color;
+  margin-bottom:5px;
+}
+.sesjob_small_tabs li{
+	float:left;
+	margin-right:2px;
+}
+.sesjob_small_tabs li a{
+	display:block;
+	padding:5px 7px;
+	text-decoration:none;
+	font-size:12px;
+}
+.sesjob_small_tabs li.active a,
+.sesjob_list_second_job .sesjob_list_readmore a,
+.sesjob_category_list_button a{
+  background-color:$theme_button_background_color !important;
+  color:$theme_button_font_color !important;
+}
+/*ALBUM PAGES CSS START HERE*//*Option Box*/
+.sesjob_album_option_box{
+  background-color:$theme_list_background_color;
+  border:1px solid $theme_border_medium_color;
+}
+.sesjob_album_option_box a{
+  color:$theme_font_color !important;
+}
+.sesjob_album_option_box a:hover{
+  background-color:$theme_list_background_color_hover;
+}
+/*ALBUM PAGES CSS END HERE*/
+.bootstrap-datetimepicker-widget table th.picker-switch, .bootstrap-datetimepicker-widget table th.dow, .bootstrap-datetimepicker-widget table td.today, .bootstrap-datetimepicker-widget table td.day:hover, .bootstrap-datetimepicker-widget table td.hour:hover, .bootstrap-datetimepicker-widget table td.minute:hover, .bootstrap-datetimepicker-widget table td.second:hover{
+  color:$theme_button_background_color !important;
+	font-weight:bold;
+}
+.sesjob-featured_job_view .featured_job_list .featured_teg a,
+.sesjob-featured_job_view .featured_job_listing .featured_teg a,
+.sesjob_grid_inside_info .category_tag a{
+  background:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sesjob_sidebar_categroies_list a{
+  color:$theme_font_color !important;
+}
+.sesjob_sidebar_categroies_list a:hover{
+  color:$theme_link_color_hover !important;
+}
+/*Slideshow*/
+.sesjob_slideshow_job .bjqs-markers li.active-marker a,.featured_job_industry  span{
+	background-color:$theme_button_background_color !important;
+}
+.sesjob_slideshow_job_wrapper.isfull_width .sesjob_slideshow_job_container > div{
+	margin:0 auto;
+	width:$theme_content_width;
+}
+.sesjob_slideshow_job .sesjob_slideshow_info .category_tag span a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sesjob_slideshow_job .bjqs-controls li a{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+}
+.sesjob_slideshow_job .sesjob_slideshow_info .category_tag span a:before{
+	border-top-color:$theme_button_background_color !important;
+}
+.sesjob_slideshow_job .sesjob_slideshow_info .category_tag span a:after{
+	border-bottom-color:$theme_button_background_color !important;
+}
+.sesjob_slideshow_inside_contant{
+  border-left:5px solid $theme_button_background_color;
+}
+/*Pinboard*/
+.sesjob_pinboard_list_item_btm,
+.sesjob_pinboard_list_comments .comments > ul > li,
+.sesjob_pinboard_list_comments .comments > form{
+  border-color:$theme_border_color;
+}
+.sesjob_pinboard_list_comments .comments > form textarea{
+  color:$theme_font_color;
+}
+#messages_compose #buttons-wrapper{
+	margin-left:137px;
+}
+#messages_compose #item_preview-element{
+	margin-top:10px;
+}
+#messages_compose #item_preview-element input[type=image]{
+	max-width:302px;
+}
+.sesjob_dashboard_menu_list .sesbasic_dashboard_tabs > ul.sesbm ul li a:hover,
+.sesjob_dashboard_menu_list .sesbasic_dashboard_tabs ul ul li.active a{
+  background-color:$theme_button_background_color;
+  color:$theme_button_font_color;
+}
+.sesjob_upload_dragdrop_content:hover{
+	border-color:$theme_button_background_color;
+}
+.sesjob_category_cover_blocks{
+	background:$theme_list_background_color;
+}
+.sesjob_category_cover_blocks:after{
+	border-top:43px solid #fff;
+}
+.sesjob_category_cover_title span{
+  background-color:$theme_button_background_color;
+}
+.feed_attachment_sesjob_job > div{
+  border-width:1px;
+  margin-bottom:5px;
+  overflow:hidden;
+}
+.feed_attachment_sesjob_job > div > a{
+	display:block;
+	width:100%;
+}
+.feed_attachment_sesjob_job > div > a > img{
+	max-width:inherit !important;
+	max-height:200px !important;
+	float:left;
+	border-width:0;
+	object-fit:cover;
+	width:100%;
+}
+.feed_attachment_sesjob_job > div > div{
+	padding:10px 15px;
+	clear:both;
+}
+.feed_attachment_sesjob_job > div > div .feed_item_link_title{
+	margin-bottom:8px;
+}
+.feed_attachment_sesjob_job > div > div .feed_item_link_title a{
+	font-size:14px !important;
+}
+.feed_attachment_sesjob_job > div > div .feed_item_link_desc{
+	font-size:13px !important;
+}
+[dir="rtl"] .sesbasic_dashboard_content #sesjob_ajax_form_submit .form-label{
+	text-align:right;
+}
+/*Welcome Page*/
+#global_page_sesjob-index-welcome{
+	background-color:$theme_list_background_color !important;
+}
+.sesjob_welcome_btn,.sesjob_layout_contant .sesjob_view_apply > a,.sesjob_layout_contant .sesjob_deshboard_job ul li a:hover{
+	background-color:$theme_button_background_color !important;
+	color:$theme_button_font_color !important;
+}
+.sesjob_welcome_btn:hover{
+	background-color:$theme_button_background_color_hover;
+}
+.sesjob_new_grid .sesjob_grid_stats ul{
+	background-color:$theme_topbar_background_color;
+}
+.sesjob_jobs_slideshow_container{
+	background-color:$theme_list_background_color;
+}
+.sesjob_jobs_slideshow_cat a{
+	background-color:$theme_button_background_color_hover;
+	color:#fff !important;
+}
+.sesjob_jobs_slideshow .owl-nav > div{
+	background-color:$theme_button_background_color_hover;
+	color:#fff;
+}
+.sesjob_jobs_slideshow .owl-dots div{
+	border:1px solid #fff;
+	background-color:$theme_button_background_color_hover;
+	border-radius:50%;
+	height:12px;
+	width:12px;
+	margin:0 2px;
+	cursor:pointer;
+}
+.sesjob_jobs_slideshow .owl-dots div.active{
+	background-color:#fff;
+}
+.sesjob_jobs_ticker_title,.sesjob_category_item_single .sesjob_list_readmore > a {
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+}
+.sesjob_jobs_ticker_item_date:after{
+	border-right:2px solid $theme_border_color;
+}
+.sesjob_jobs_ticker .owl-nav > div i,.layout_sesjob_job_apply_button > a,.sesjob_manage_role_form .applicant_info .send_mail,.sesjob_manage_role_form .applicant_info .remove_application{
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color !important;
+}
+.sesjob_last_grid_block .sesjob_grid_info:before{
+	content:'';
+	background-color:$theme_list_background_color;
+}
+.sesjob_morebtn{
+  margin-top:10px;
+  text-align:center;
+}
+.sesjob_morebtn a {
+	background-color:$theme_button_background_color;
+	color:$theme_button_font_color;
+	display:inline-block;
+	width:90%;
+	padding:10px;
+	border-radius:5px;
+}
+.sesjob_list_job_view,.sesjob_grid .sesjob_thumb{
+	border-bottom:2px solid $theme_button_background_color !important;
+}
+.sesjob_list_job_view .sesjob_list_readmore a{
+	color:$theme_button_background_color;
+	border-color:$theme_button_background_color;
+}
+.sesjob_list_job_main .sesjob_list_right_cont > a > i:before,.sesjob_job_points .sesjob_stats_list_itype:last-child:before{
+	color:$theme_border_color !important;
+}
+.sesjob_layout_contant h2{
+	color:$theme_button_background_color;
+}
+.sesjob_job_form .form-label {
+  width: 100% !important;
+}
+.sesjob_category_item .sesjob_list_readmore > a {
+	color:$theme_button_background_color !important;
+	border:1px solid $theme_button_background_color;
+}
+
+.sesjob_banner_search_wrapper ._catsection > ._cont,
+.sesjob_banner_search_wrapper ._searchform form {
+  background-color:$theme_list_background_color;
+}
+.sesjob_banner_search_wrapper ._maincontent,
+.sesjob_banner_search_wrapper ._catsection{
+  max-width:$theme_content_width;
+  margin:0 auto;
+}

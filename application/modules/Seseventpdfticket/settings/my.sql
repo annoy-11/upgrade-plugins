@@ -1,0 +1,5 @@
+INSERT IGNORE INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES  ('seseventpdfticket', 'SES - Advanced Events - PDF Email Attachment for Tickets', 'SES - Advanced Events - PDF Email Attachment for Tickets', '4.8.12', 1, 'extra');
+
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+('sesevent_admin_main_seseventpdfticket', 'seseventpdfticket', 'PDF Ticket', '', '{"route":"admin_default","module":"seseventpdfticket","controller":"settings"}', 'sesevent_admin_main', '', 996),
+('seseventpdfticket_admin_main_settings', 'seseventpdfticket', 'Global Settings', '', '{"route":"admin_default","module":"seseventpdfticket","controller":"settings"}', 'seseventpdfticket_admin_main', '', 1);

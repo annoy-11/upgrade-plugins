@@ -1,0 +1,89 @@
+<?php
+/**
+ * SocialEngineSolutions
+ *
+ * @category   Application_Seselegant
+ * @package    Seselegant
+ * @copyright  Copyright 2015-2016 SocialEngineSolutions
+ * @license    http://www.socialenginesolutions.com/license/
+ * @version    $Id: IndexController.php 2016-04-18 00:00:00 SocialEngineSolutions $
+ * @author     SocialEngineSolutions
+ */
+class Seselegant_IndexController extends Core_Controller_Action_Standard {
+
+  public function inboxAction() {
+
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $this->view->paginator = $paginator = Engine_Api::_()->getItemTable('messages_conversation')->getInboxPaginator($viewer);
+    $paginator->setCurrentPageNumber($this->_getParam('page'));
+    Engine_Api::_()->getApi('message', 'seselegant')->setUnreadMessage($viewer);
+  }
+
+  public function generalSettingAction() {
+
+    //Get user setting navigation menu
+    $this->view->settingNavigation = $settingsNavigation = Engine_Api::_()
+            ->getApi('menus', 'core')
+            ->getNavigation('user_settings', array());
+
+    $user = Engine_Api::_()->user()->getViewer();
+    if ($user && $user->getIdentity()) {
+      if (1 === count(Engine_Api::_()->user()->getSuperAdmins()) && 1 === $user->level_id) {
+        foreach ($settingsNavigation as $page) {
+          if ($page instanceof Zend_Navigation_Page_Mvc &&
+                  $page->getAction() == 'delete') {
+            $settingsNavigation->removePage($page);
+          }
+        }
+      }
+    }
+  }
+
+  public function friendshipRequestsAction() {
+
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $this->view->friendRequests = $newFriendRequests = Engine_Api::_()->getDbtable('notifications', 'seselegant')->getFriendrequestPaginator($viewer);
+    $newFriendRequests->setCurrentPageNumber($this->_getParam('page'));
+    Engine_Api::_()->getApi('message', 'seselegant')->setUnreadFriendRequest($viewer);
+  }
+
+
+  public function newUpdatesAction() {
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $this->view->notificationCount = Engine_Api::_()->getDbtable('notifications', 'sesbasic')->hasNotifications($viewer);
+  }
+
+  public function newFriendRequestsAction() {
+    $viewer = Engine_Api::_()->user()->getViewer();
+    $this->view->requestCount = Engine_Api::_()->getDbtable('notifications', 'sesbasic')->hasNotifications($viewer, 'friend');
+  }
+
+  public function newMessagesAction() {
+    $this->view->messageCount = Engine_Api::_()->getApi('message', 'seselegant')->getMessagesUnreadCount(Engine_Api::_()->user()->getViewer());
+  }
+
+  public function deleteMessageAction() {
+
+    $message_id = $this->getRequest()->getParam('id');
+    $viewer_id = Engine_Api::_()->user()->getViewer()->getIdentity();
+
+    $db = Engine_Api::_()->getDbtable('messages', 'messages')->getAdapter();
+    $db->beginTransaction();
+    try {
+      $recipients = Engine_Api::_()->getItem('messages_conversation', $message_id)->getRecipientsInfo();
+      foreach ($recipients as $r) {
+        if ($viewer_id == $r->user_id) {
+          $this->view->deleted_conversation_ids[] = $r->conversation_id;
+          $r->inbox_deleted = true;
+          $r->outbox_deleted = true;
+          $r->save();
+        }
+      }
+
+      $db->commit();
+    } catch (Exception $e) {
+      $db->rollback();
+      throw $e;
+    }
+  }
+}

@@ -1,0 +1,2 @@
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+('seselegant_admin_main_minimenu', 'seselegant', 'Mini Menu', '', '{"route":"admin_default","module":"seselegant","controller":"menu"}', 'seselegant_admin_main', '', 3);

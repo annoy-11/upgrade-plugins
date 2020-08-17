@@ -1,0 +1,204 @@
+/* $Id: style_welcome.css 2014-10-31 00:00:00 SocialEngineSolutions $*/
+
+#global_page_seschristmas-welcome-index{ 
+	background-image: url(../images/welcome/body-bg.jpg);
+	background-size: 100% auto;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+/*Page Wrap*/
+.seschristmas-welcome-page-wrap{
+	overflow:hidden; 
+	width:100%; 
+}
+.seschristmas-welcome-page-wrap .back-rays {
+	background-image:url(../images/welcome/rays.png);
+	height:980px;
+	position:absolute; 
+	top:50%; left:50%; 
+	margin-left:-490px; 
+	margin-top:-460px; 
+	width:980px;
+	z-index:-1;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.seschristmas-welcome-page-wrap .back-rays{ 
+	-moz-animation:9s rotateRight infinite linear; 
+	-webkit-animation:9s rotateRight infinite linear; 
+	animation:9s rotateRight infinite linear; 
+}
+.seschristmas-welcome-body .back-rays{
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transition: all 100ms ease-out 1s;
+	-moz-transition: all 100ms ease-out 1s;
+	-o-transition: all 100ms ease-out 1s;
+	transition: all 100ms ease-out 1s;
+}
+/*Rotate Animation*/
+@-moz-keyframes rotateRight{
+	0%{ -moz-transform:rotate(0deg); -moz-transform-origin:50% 50%; }
+	100%{ -moz-transform:rotate(360deg); }
+}
+@-webkit-keyframes rotateRight{
+	0%{ -webkit-transform:rotate(0deg); -webkit-transform-origin:50% 50%; }
+	100%{ -webkit-transform:rotate(360deg); }
+}
+@keyframes rotateRight{
+	0%{ transform:rotate(0deg); transform-origin:50% 50%; }
+	100%{ transform:rotate(360deg); }
+}
+.seschristmas-welcome-page-wrap .top-left, 
+.seschristmas-welcome-page-wrap .bottom-right{ 
+	height: 283px;
+	position: absolute;
+	width: 272px;
+	z-index: 11;
+}
+.seschristmas-welcome-page-wrap .top-left { 
+	background: url(../images/welcome/topleft.png) no-repeat;
+	left: 0;
+	top: 0;
+}
+.seschristmas-welcome-page-wrap .bottom-right{ 
+	background: url(../images/welcome/bottomright.png) no-repeat;
+	bottom: 0;
+	right: 0;
+}
+/*Counter Block*/
+.seschristmas-welcome-page-wrap .counter{
+	background: url(../images/welcome/counter-bg.png) no-repeat top right;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: bold;
+	height: 282px;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	top: -500px;
+	width: 254px;
+	z-index: 12;
+}
+.seschristmas-welcome-body .counter{
+	top: 0;
+	-webkit-transition: all 1500ms ease-out 3s;
+	-moz-transition: all 1500ms ease-out 3s;
+	-o-transition: all 1500ms ease-out 3s;
+	transition: all 1500ms ease-out 3s;
+}
+.seschristmas-welcome-page-wrap .counter > div{
+	float:left;
+	width:100%;
+}
+.seschristmas-welcome-page-wrap .counter .title{
+	font-size: 16px;
+	height:47px;
+	line-height:47px;
+	margin-top: 60px;
+}
+.seschristmas-welcome-page-wrap .counter .countdown{
+	font-size:22px;
+}
+.seschristmas-welcome-page-wrap .counter span{
+	display: block;
+	height: 48px;
+	line-height: 48px;
+	margin-top: 5px;
+}
+.seschristmas-welcome-page-wrap .counter span.time{
+	line-height: 44px
+}
+.seschristmas-welcome-page-wrap .counter .sitelink{
+	font-size: 22px;
+	height: 45px;
+	line-height: 43px;
+	margin-top: 5px;
+}
+.seschristmas-welcome-page-wrap .counter .sitelink a{
+	color:#fff;
+	text-decoration:none;
+}
+/*Main Img*/
+.sliderbackground-img{
+	background-image:url(../images/welcome/main-img.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	height:586px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-293px 0 0 -300px;
+	width:600px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.seschristmas-welcome-body .sliderbackground-img{
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transition: all 1000ms ease-out 1.5s;
+	-moz-transition: all 1000ms ease-out 1.5s;
+	-o-transition: all 1000ms ease-out 1.5s;
+	transition: all 1000ms ease-out 1.5s;
+}
+/*Slideshow*/
+#christmas-welcome-slideshow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	z-index:10;
+	width:451px;
+	height:425px;
+	margin:-225px 0 0 -222px;
+	overflow:hidden;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.seschristmas-welcome-body #christmas-welcome-slideshow{
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transition: all 1200ms ease-out 2s;
+	-moz-transition: all 1200ms ease-out 2s;
+	-o-transition: all 1200ms ease-out 2s;
+	transition: all 1200ms ease-out 2s;
+}
+/*Footer*/
+.seschristmas-welcome-page-footer {
+	background: url(../images/welcome/footer-bg.png) repeat-x center;
+	bottom: 0;
+	height: 125px;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+.seschristmas-welcome-page-footer-inner{
+	height:100%;
+	margin:0 auto;
+	position:relative;
+	width:900px;
+}
+.seschristmas-welcome-page-footer-inner .footer-img{
+	background: url(../images/welcome/footer-img2.png) no-repeat;
+	bottom: 0;
+	height: 233px;
+	left: 0;
+	position: absolute;
+	width: 379px;
+	z-index: 1;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.seschristmas-welcome-body .footer-img{
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transition: all 1200ms ease-out 2.5s;
+	-moz-transition: all 1200ms ease-out 2.5s;
+	-o-transition: all 1200ms ease-out 2.5s;
+	transition: all 1200ms ease-out 2.5s;
+}

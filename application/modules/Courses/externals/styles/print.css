@@ -1,0 +1,366 @@
+/* $Id:print.css 2019-02-12 00:00:00 SocialEngineSolutions $*/
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	color:#000;
+}
+a{
+	text-decoration:none;
+	color:#000;
+}
+.sesbasic_bxs{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+#global_content_simple{
+	display:block;
+}
+.floatL {
+  float: left;
+}
+.floatR {
+  float: right;
+}
+/*Order & Invoice Css Starts Here*/
+.courses_ticket_order_view_page{
+	padding:8px;
+}
+.courses_order_view_top{
+	margin-bottom:15px;
+}
+.courses_invoice_header{
+	margin-bottom:15px;
+}
+.courses_invoice_header  h3,
+.courses_invoice_order_table h3{
+	font-size: 100%;
+	font-weight: bold;
+	margin-bottom: 0;
+	color:#000;
+}
+.courses_invoice_header ul{
+	padding-left: 0 !important;
+	margin-left: 0;
+}
+.courses_invoice_header ul._shippingdetails li,
+.courses_invoice_header ul._billingdetails li{
+	margin-bottom: 5px;
+	font-size: 90%;
+	display: inline-block;
+}
+.courses_invoice_header div{
+	width:48%;
+}
+.courses_invoice_content_wrap{
+	border-style:solid;
+	border:1px solid #ddd;
+	display:table;
+	margin-bottom:5px;
+	width:100%;
+}
+.courses_invoice_content_left,
+.courses_invoice_content_right{
+	display:table-cell;
+	width:50%;
+}
+.courses_invoice_content_left{
+	border-right-style:solid;
+	border:1px solid #ddd;
+}
+.courses_invoice_content_box{
+	padding:10px;
+}
+.courses_invoice_content_box + .courses_invoice_content_box{
+	border:1px solid #ddd;
+}
+.courses_invoice_content_box b.bold{
+	display:block;
+	margin-bottom:5px;
+	color: #000;
+  font-size: 95%;
+}
+.courses_invoice_content_detail span{
+	display: block;
+  margin-bottom: 5px;
+  font-size: 90%;
+}
+.courses_invoice_content_detail .fa-caret-right{
+  margin:0 5px;
+}
+.courses_invoice_content_qr{
+	margin:5px;
+	text-align:center;
+}
+/*Order Table*/
+.courses_table table{
+	margin-bottom: 15px;
+  width: 100%;
+  float: left;
+  margin-bottom:10px;
+}
+.courses_table table th,
+.courses_table table td{
+	border:1px solid #ddd;
+	padding:5px;
+	font-size: 90%;
+	vertical-align:top;
+}
+.courses_table table th{
+	background-image:url(../images/transprant-bg.png);
+	color:#000;
+}
+.courses_invoice_total_price_box{
+  float: right;
+  max-width: 100%;
+  width: 100%;
+  background: #f6f6f6;
+}
+.courses_invoice_total_price_box div{
+	clear:both;
+	overflow:hidden;
+}
+.courses_invoice_total_price_box div span{
+	float:left;
+	padding:5px;
+	text-align:left;
+	display: inline-block;
+	width:70%;
+}
+.courses_invoice_total_price_box div span + span{
+	text-align:right;
+	width:30%;
+}
+[dir="rtl"] .courses_invoice_total_price_box div span + span{
+	text-align:left;
+}
+.courses_invoice_total_price_box_total span{
+	font-weight:bold;
+	color:#000;
+}
+/*Popup*/
+#global_page_courses-order-view #global_content_simple{display:block;margin:10px 0 0 10px;width:800px;}
+#global_page_courses-order-view #global_content_simple .layout_core_content{margin:0;}
+#global_page_courses-order-view #global_content_simple .layout_middle{padding:0;}
+
+.courses_orderview_popup_close{display:none;}
+#global_content_simple .courses_orderview_popup_close{
+  position:absolute;
+  right:10px;
+  top:10px;
+  display:block;
+  text-decoration:none !important;
+}
+[dir="rtl"] #global_content_simple .courses_orderview_popup_close{
+  left:10px;
+  right:auto;
+}
+#global_content_simple .courses_orderview_popup_close:before{
+  font-size:20px;
+}
+#global_content_simple .courses_invoice_header div{
+  float:left; 
+  margin-right:15px;
+}
+[dir="rtl"] #global_content_simple .courses_invoice_header div{
+  float:left;
+  margin-left:15px;
+  margin-right:0;
+}
+.courses_test_result_head{
+	text-align:center;
+	font-size:28px;
+	font-weight:bold;
+}
+.courses_test_result_header{
+	text-align:center;
+}
+.courses_test_result_header > ._name{
+  font-weight:600;
+}
+.courses_test_result_header > span{
+	font-size:18px;
+	padding:0 20px;
+}
+.courses_test_result_body {
+  margin-top:40px;
+}
+.courses_test_result_box {
+  margin:10px 0;
+}
+.courses_test_result_ques {
+	padding:15px;
+	background-image:url(../images/transprant-bg.png);
+	display:flex;
+}
+.courses_test_result_ques *{
+	font-weight:500;
+	font-size:15px;
+}
+.courses_test_result_ques .ques_num{
+	margin-right:6px;
+	font-weight:bold;
+	min-width:30px;
+}
+.courses_test_result_answer {
+  padding:20px 40px;
+	font-size:95%;
+}
+.courses_test_result_answer ._ans{
+	font-size:120%;
+}
+.courses_test_result_answer img{
+	vertical-align:middle;
+}
+.courses_test_result_body .border{
+	position:relative;
+}
+.border > div {
+  opacity: .5;
+}
+.courses_test_result_answer .correct_ans {
+	display:inline-block;
+	padding:8px 20px;
+	font-weight:bold;
+	margin-top:20px;
+	color:#fff;
+	background:#47df69;
+	border-radius:4px;
+}
+.courses_total_Score {
+	font-weight:bold;
+	text-align:center;
+	font-size:16px;
+	padding-top:30px;
+	margin-top: 8px;
+	border-top-width:2px;
+	border-top-style:dashed;
+}
+.courses_pass_fail p {
+	text-align: center;
+	font-size: 18px;
+	margin-top: 20px;
+}
+.courses_pass_fail > span {
+	padding:12px 20px;
+	border-radius:6px;
+	display:block;
+	text-align:center;
+	font-size:30px;
+}
+.courses_pass_fail > span img {
+	display:block;
+	margin:20px auto 10px;
+}
+.courses_pass_fail > .passed {
+	color:#47df69;
+}
+.courses_pass_fail .failed {
+	color:#e2574c;
+}
+/* ORDER INVOICE CSS STARTS HERE */
+.layout_courses_order_invoice{
+	max-width:650px;
+	border:0 !important;
+	box-shadow:none !important;
+	padding:0 !important;
+	margin:auto !important;
+	width:100%;
+}
+.courses_invoice_page{
+	border-width:1px;
+	border-radius:2px;
+	border-bottom-width:2px;
+}
+.courses_invoice_header{
+	padding:20px;
+	border-bottom-width:1px;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.courses_invoice_header a > img{
+	max-height:38px;
+}
+.courses_invoice_header span > span{
+  display:block;
+}
+.courses_invoice_header span ._num{
+	font-size:18px;
+	font-weight:600;
+}
+.courses_invoice_header span ._date{
+  font-size:13px;
+}
+.courses_invoice_body {
+  padding:20px;
+}
+.courses_invoice_details {
+	display:flex;
+	justify-content:space-between;
+}
+.courses_invoice_details > div {
+  flex:1;
+}
+.courses_invoice_details > div ._head {
+	font-weight:bold;
+	margin-bottom:10px;
+	font-size:100%;
+}
+.courses_invoice_details > div ._name{
+	margin-bottom:5px;
+	font-weight:bold;
+	font-size:18px;
+}
+.courses_invoice_details > div > div {
+	font-size:13px;
+	line-height:24px;
+}
+.courses_invoice_table td, 
+.courses_invoice_table th,
+.courses_invoice_total_table td,
+.courses_invoice_total_table th{
+  padding:10px;
+  vertical-align:middle;
+  border-top-width:1px;
+  font-weight:normal;
+	font-size:95%;
+	text-align:center;
+}
+.courses_invoice_table thead th {
+	vertical-align:bottom;
+	border-bottom-width:2px;
+	font-weight:bold;
+}
+.courses_invoice_table tbody tr:nth-of-type(odd) {
+  background:url(../images/transprant-bg.png);
+}
+.courses_invoice_table table {
+	width:100%;
+	max-width:100%;
+	margin-top:25px;
+}
+.courses_invoice_total_table td,
+.courses_invoice_total_table th{
+	font-size:90%;
+}
+.courses_invoice_total_table {
+  float:right;
+	margin-top:10px;
+}
+.courses_invoice_footer {
+	font-size:13px;
+	text-align:center;
+	font-weight:500;
+	padding:15px;
+	border-top-width:1px;
+}
+@media(max-width:767px){
+	.courses_invoice_details{
+		 display:block;
+	}
+	.courses_invoice_table{
+		overflow-x:auto;
+	}
+}
+/* ORDER INVOICE CSS ENDS HERE */

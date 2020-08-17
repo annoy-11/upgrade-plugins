@@ -1,0 +1,2 @@
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+('sesfooter_admin_main_typography', 'sesfooter', 'Typography', '', '{"route":"admin_default","module":"sesfooter","controller":"settings", "action":"typography"}', 'sesfooter_admin_main', '', 50);

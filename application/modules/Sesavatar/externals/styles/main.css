@@ -1,0 +1,109 @@
+#global_page_sesavatar-index-avatar ul,#global_page_sesavatar-index-avatars .form-options-wrapper,#global_page_user-signup-index #SignupForm #image_id-wrapper ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+#global_page_sesavatar-index-avatar ul li,#global_page_sesavatar-index-avatars .form-options-wrapper li,#global_page_user-signup-index #SignupForm #image_id-wrapper ul li{
+	width: calc(25% - 5px);
+	position: relative;
+	overflow: hidden;
+	margin: 2px;
+	margin-bottom: 4px;
+}
+#global_page_sesavatar-index-avatar ul li label{
+	height:100px;
+}
+#global_page_sesavatar-index-avatar ul li img,#global_page_sesavatar-index-avatars .form-options-wrapper li img,#global_page_user-signup-index #SignupForm #image_id-wrapper ul li img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+#global_page_sesavatar-index-avatar ul li input,#global_page_sesavatar-index-avatars .form-options-wrapper li input,#global_page_user-signup-index #SignupForm #image_id-wrapper ul li input{
+	margin-left: 5px;
+	margin-right: 2px;
+	margin-top: 0;
+}
+#global_page_sesavatar-index-avatar ul li input[type=radio],#global_page_sesavatar-index-avatars .form-options-wrapper li input[type=radio],#global_page_user-signup-index #SignupForm #image_id-wrapper ul li input[type=radio]{
+	position: absolute;
+	visibility: hidden;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	margin: 0px;
+}
+#global_page_sesavatar-index-avatar ul li input[type=radio]+label, #global_page_sesavatar-index-avatars .form-options-wrapper li input[type=radio]+label,#global_page_user-signup-index #SignupForm #image_id-wrapper ul li input[type=radio]+label{
+  position: relative;
+}
+#global_page_sesavatar-index-avatar ul li input[type=radio]:checked+label:before,#global_page_sesavatar-index-avatars .form-options-wrapper li input[type=radio]:checked+label:before,#global_page_user-signup-index #SignupForm #image_id-wrapper ul li input[type=radio]:checked+label:before{
+	content: '';
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-image: url(~/application/modules/Sesavatar/externals/images/checked.png);
+	background-repeat: no-repeat;
+	background-size: 24px;
+	left: 5px;
+	top: 4px;
+}
+.user_home_avatar:before {
+  content: "\\f2be";
+}
+/* Edit profile Avatar Page Additional CSS */
+#global_page_sesavatar-index-avatars .global_form div.form-label{
+	display:none;
+}
+#global_page_sesavatar-index-avatars .global_form div.form-element{
+	max-width:100%;
+}
+#global_page_sesavatar-index-avatars .form-options-wrapper li {
+	width: 145px !important;
+}
+#global_page_sesavatar-index-avatars .form-options-wrapper li label{
+  height: 145px !important;
+}
+#global_page_sesavatar-index-avatars .form-options-wrapper {
+	max-height: 500px;
+	overflow: auto;
+}
+#global_page_sesavatar-index-avatars .global_form > div > div > h3 + p{
+	font-size:14px;
+}
+/* Sign up Page Additional CSS */
+#global_page_user-signup-index #SignupForm .form-elements {
+  position: relative;
+}
+#global_page_user-signup-index #SignupForm #image_id-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow: visible;
+  height: 450px;
+}
+#global_page_user-signup-index #SignupForm #image_id-wrapper:before {
+	content: "OR";
+	position: absolute;
+  left: -45px;
+	top: 50%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 50px;
+	border-width: 1px;
+	border-style: dashed;
+}
+#global_page_user-signup-index #SignupForm #image_id-wrapper #image_id-element{
+	height:450px;
+	overflow:auto;
+}
+#global_page_user-signup-index #SignupForm #image_id-wrapper ul li{
+  width: calc(20% - 5px) !important;
+}
+#global_page_user-signup-index #SignupForm #image_id-wrapper ul li label{
+	height: 120px !important;
+}
+#global_page_user-signup-index .global_form > div{
+	float:none !important;
+}

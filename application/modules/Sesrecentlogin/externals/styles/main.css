@@ -1,0 +1,230 @@
+/*RECENT MEMBER LOGIN CSS (Style.css)*/
+/*Member Item*/
+.sesrecentlogin_section {
+  padding: 20px;
+}
+.sesrecentlogin_head h3 {
+	font-size: 25px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.sesrecentlogin_head p{
+	margin-bottom: 15px;
+	font-size: 15px;
+}
+.layout_left .sesrecentlogin_head h3,
+.layout_right .sesrecentlogin_head h3{
+	font-size:115%;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 10px;
+}
+.layout_left .sesrecentlogin_head h3:before,
+.layout_right .sesrecentlogin_head h3:before{
+	bottom: 0;
+	content: "";
+	display: block;
+	min-height: 2px;
+	position: absolute;
+	width: 78px;
+}
+.sesrecentlogin_members_data .sesrecentlogin_member_item{
+	display: inline-block;
+	position: relative;
+	width: auto;
+	margin: 10px;
+	margin-left:0;
+	transition: all -.4s ease;
+	border-radius: 10px;
+	border: 1px solid #eee;
+}
+.sesrecentlogin_members_data .sesrecentlogin_member_item:hover{
+	box-shadow: 0 0 15px #ddd;
+}
+.sesrecentlogin_member_item img{
+	border:0;
+}
+.sesrecentlogin_members_tab_item ._img {
+	height: 200px;
+	width: 200px;
+}
+.sesrecentlogin_members_tab_item ._img > span{
+	border:0;
+	border-radius:5px;
+}
+.sesrecentlogin_members_tab_item ._img i{
+	position: relative;
+	top: 50%;
+	padding: 5px;
+	width: 40px;
+	font-size: 140%;
+	height: 40px;
+	line-height: 41px;
+	text-align: center;
+	border-radius: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.sesrecentlogin_members_tab_item ._cont{
+	padding: 12px;
+	text-align: center;
+	font-weight: bold;
+}
+.sesrecentlogin_members_tab_item ._cont span{
+	font-size: 100%;
+	text-transform: capitalize;
+}
+.sesrecentlogin_member_item span._badge {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	background-color: #fa3e3e;
+	box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, .3);
+	padding: 5px;
+	width: 17px;
+	font-size: 80%;
+	text-align: center;
+	border-radius: 50%;
+	height: 17px;
+	line-height: 17px;
+}
+.sesrecentlogin_member_item a.close-btn {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background: rgba(0,0,0,0.4);
+	padding: 3px;
+	border-radius: 50%;
+	width: 20px;
+	font-size: 90%;
+	text-align: center;
+	height: 20px;
+	box-shadow: 0 0 10px #eee;
+	line-height: 19px;
+	transition: all 0.4s ease;
+}
+.sesrecentlogin_member_item:hover a.close-btn{
+	top:-7px;
+	left:-7px;
+}
+/*For Sidebar Widget*/
+.layout_left .sesrecentlogin_section,
+.layout_right .sesrecentlogin_section{
+	padding:0;
+}
+.layout_left .sesrecentlogin_member_item,
+.layout_right .sesrecentlogin_member_item{
+	padding: 5px;
+	background: #fff;
+	margin: 3px 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+.layout_left .sesrecentlogin_member_item:hover,
+.layout_right .sesrecentlogin_member_item:hover{
+	box-shadow: 0 0 8px #ddd;
+}
+.layout_left .sesrecentlogin_members_tab_item,
+.layout_right .sesrecentlogin_members_tab_item{
+	display:flex;
+	flex-wrap:wrap;
+	align-items: center;
+}
+.layout_left .sesrecentlogin_members_tab_item ._img,
+.layout_right .sesrecentlogin_members_tab_item ._img{
+	height: 45px;
+	width: 45px;
+	padding-left: 5px;
+}
+.layout_left .sesrecentlogin_members_tab_item ._img i,
+.layout_right .sesrecentlogin_members_tab_item ._img i{
+	padding: 5px;
+	width: 25px;
+	font-size: 100%;
+	height: 25px;
+	line-height: 27px;
+}
+.layout_left .sesrecentlogin_members_tab_item ._cont,
+.layout_right .sesrecentlogin_members_tab_item ._cont{
+	font-weight: normal;
+	flex:1;
+	text-align:left;
+}
+.layout_left .sesrecentlogin_members_tab_item ._cont span,
+.layout_right .sesrecentlogin_members_tab_item ._cont span{
+	font-size: 90%;
+}
+.layout_left .sesrecentlogin_member_item span._badge,
+.layout_right .sesrecentlogin_member_item span._badge {
+	padding: 2px;
+	left: 0;
+	right: auto;
+}
+.layout_left .sesrecentlogin_member_item a.close-btn,
+.layout_right .sesrecentlogin_member_item a.close-btn{
+	padding: 2px;
+	width: 16px;
+	font-size: 80%;
+	right:2px;
+	top:2px;
+	left:auto;
+	height: 16px;
+	line-height: 15px;
+}
+.layout_left .sesrecentlogin_member_item:hover a.close-btn,
+.layout_right .sesrecentlogin_member_item:hover a.close-btn{
+	top:-7px;
+	right:-7px;
+}
+/* RESPOSNSIVE */
+@media (max-width: 599px){
+	.sesrecentlogin_members_data > div{
+		margin: 15px 5px 0 0;
+		width: calc(50% - 10px);
+	}
+	.sesrecentlogin_members_tab_item > ._img {
+		width: 100%;
+		height:150px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*THEME BASED CSS (main.css)*/
+.sesrecentlogin_member_item:last-child ._cont{
+	color:$theme_button_background_color;
+}
+.sesrecentlogin_members_tab_item ._img i,.sesrecentlogin_member_item a.close-btn:hover{
+	background-color: $theme_button_background_color;
+	color:$theme_list_background_color;
+}
+.sesrecentlogin_member_item span._badge,.sesrecentlogin_member_item a.close-btn{
+	color: $theme_list_background_color;
+}
+.layout_left .sesrecentlogin_head h3:before,
+.layout_right .sesrecentlogin_head h3:before{
+	background:  $theme_button_background_color;
+}

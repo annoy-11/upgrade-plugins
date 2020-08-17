@@ -1,0 +1,983 @@
+
+
+/*info ADD BUTTON START*/
+.layout_sesprofilefield_profile_information_sections{
+	border-width:0 !important;
+	padding:0 !important;
+	position:relative;
+}
+.sesprofilefield_infoadd_btn ._mainbtn{
+	display:block;
+	cursor:pointer;
+	padding:15px;
+	-moz-user-select:none;
+	-webkit-user-select:none;
+}
+.sesprofilefield_infoadd_btn ._mainbtn span{
+	font-size:15px;
+	line-height:20px;
+	font-weight:bold;
+}
+.sesprofilefield_infoadd_btn ._mainbtn i{
+	float:right;
+	height:20px;
+	width:20px;
+	text-align:center;
+	line-height:20px;
+	font-size:20px;
+}
+.sesprofilefield_infoadd_btn._expend ._mainbtn i:before{
+	content:"\f0d8";
+}
+.sesprofilefield_infoadd_options{
+	border-width:1px;
+	display:none;
+	position:absolute;
+	width:100%;
+	margin-top:5px;
+	z-index:1;
+}
+.sesprofilefield_infoadd_btn._expend .sesprofilefield_infoadd_options{
+	display:block;
+}
+.sesprofilefield_infoadd_options li + li{
+	border-top-width:1px;
+}
+.sesprofilefield_infoadd_options ._suboptionshead{
+	padding:15px;
+	font-weight:bold;
+	cursor:pointer;
+}
+.sesprofilefield_infoadd_options ._suboptionshead > i{
+	float:right;
+	font-size:25px;
+}
+.sesprofilefield_infoadd_options li._expend ._suboptionshead > i:before{
+	content:"\f106";
+}
+.sesprofilefield_infoadd_options ._suboptions{
+	display:none;
+}
+.sesprofilefield_infoadd_options li._expend ._suboptions{
+	display:block;
+	padding:5px;
+}
+.sesprofilefield_infoadd_options ._suboptions > a{
+	padding:10px;
+	padding-right:5px;
+	display:block;
+	text-decoration:none !important;
+}
+.sesprofilefield_infoadd_options ._suboptions > a i._icon{
+	float:left;
+	margin-right:10px;
+	margin-top:3px;
+	height:16px;
+	width:16px;
+}
+.sesprofilefield_infoadd_options ._suboptions > a._work i._icon{background-image:url(../images/work.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._edu i._icon{background-image:url(../images/education.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._specialties i._icon{background-image:url(../images/specialties.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._record i._icon{background-image:url(../images/record.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._skill i._icon{background-image:url(../images/skill.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._certification i._icon{background-image:url(../images/certificate.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._awards i._icon{background-image:url(../images/award.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._organizations i._icon{background-image:url(../images/organisation.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._courses i._icon{background-image:url(../images/courses.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._projects i._icon{background-image:url(../images/projects.png);}
+.sesprofilefield_infoadd_options ._suboptions > a._languages i._icon{background-image:url(../images/language.png);}
+.sesprofilefield_infoadd_options ._suboptions > a i._plisicon{
+	float:right;
+	margin-left:5px;
+	height:24px;
+	width:24px;
+	border-width:1px;
+	border-radius:50%;
+	color:#777a7d;
+	position:relative;
+	top:-4px;
+}
+.sesprofilefield_infoadd_options ._suboptions > a i._plisicon:before{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	font-size:12px;
+	margin-left:-1px;
+}
+.sesprofilefield_infoadd_options ._suboptions > a span{
+	display:block;
+	overflow:hidden;
+}
+/*info ADD BUTTON END*/
+/*ADD DETAILS POPUP START HERE*/
+.sesprofilefield_add_details_form{
+	min-width:744px; 
+}
+.sesprofilefield_add_details_form *{
+	box-sizing:border-box;
+}
+.sesprofilefield_add_details_form .global_form > div > div{
+	padding:0;
+}
+.sesprofilefield_add_details_form .global_form > div{
+	width:100%;
+}
+.sesprofilefield_add_details_form .global_form h3{
+	padding:15px 20px;
+	border-bottom-width:1px;
+	margin:0;
+}
+.sesprofilefield_add_details_form .global_form div.form-elements{
+	padding:10px 10px;
+	max-height:500px;
+	overflow:auto;
+}
+.sesprofilefield_add_details_form .global_form .form-wrapper{
+	padding:0px 10px;
+}
+.sesprofilefield_add_details_form .global_form div.form-label,
+.sesprofilefield_add_details_form .global_form fieldset legent{
+	width:100%;
+	text-align:left;
+	padding:0 0 5px;
+	margin-bottom:0;
+}
+.sesprofilefield_add_details_form .global_form div.form-element{
+	min-width:100%;
+	max-width:100%;
+	width:100%;
+}
+.sesprofilefield_add_details_form .global_form input[type=text], 
+.sesprofilefield_add_details_form .global_form input[type=email], 
+.sesprofilefield_add_details_form .global_form input[type=password],
+.sesprofilefield_add_details_form .global_form select,
+.sesprofilefield_add_details_form .global_form textarea{
+	width:100%;
+	border-radius:0px;
+	height:35px;
+	line-height:35px;
+	padding:0 10px;
+	max-width:100%;
+}
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-fromyearmonth,
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-toyearmonth,
+.sesprofilefield_add_details_form .global_form div.form-elements #present-wrapper{
+	width:50%;
+	float:left;
+	padding:0 10px;
+	clear:none;
+}
+.sesprofilefield_add_details_form .global_form div.form-elements #timeperiod-element,
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-fromyearmonth .form-label,
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-toyearmonth .form-label{
+	display:none;
+}
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-fromyearmonth .form-wrapper,
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-toyearmonth .form-wrapper{
+	width:50%;
+	float:left;
+	clear:none;
+	padding-left:0;
+}
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-fromyearmonth .form-element select,
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-toyearmonth .form-element select{
+	width:100%;
+	max-width:100%;
+}
+.sesprofilefield_add_details_form .global_form div#frommonth-element,
+.sesprofilefield_add_details_form .global_form div#tomonth-element{
+	width:95%;
+	float:right;
+	min-width:100%;
+}
+.sesprofilefield_add_details_form .global_form div.form-elements #fromyear-wrapper,
+.sesprofilefield_add_details_form .global_form div.form-elements #toyear-wrapper{
+	width:50%;
+	float:left;
+	clear:none;
+}
+.sesprofilefield_add_details_form .global_form #notexpire-wrapper > .form-label{
+	display:none;
+}
+.sesprofilefield_add_details_form .global_form #buttons-wrapper{
+	padding:15px 10px;
+	margin-top:20px;
+	border-top-width:1px;
+}
+.sesprofilefield_add_details_form #sesprofilefield_loading_image{
+	padding:5px;
+	text-align:center;
+	border-width:0 1px 1px;
+}
+.sesprofilefield_add_details_form #uploadaddmore-label{display:none;}
+.sesprofilefield_popup_addmore_btn i{
+	margin-right:5px;	
+}
+/*Add Honors & Awards Css*/
+.add_award_form .global_form div.form-elements #fieldset-fromyearmonth{
+	width:100%;
+	float:none;
+}
+.add_award_form .global_form div#frommonth-element{
+	float:left;
+}
+.add_award_form .global_form div#associate_with-label{
+	display:none;
+}
+/*edit award Form Css*/
+.edit_award_form .global_form div.form-elements #fieldset-fromyearmonth{
+	width:100%;
+	float:none;
+	box-sizing:border-box;
+}
+.edit_award_form .global_form div#frommonth-element, 
+.edit_award_form .global_form div#tomonth-element{
+	float:left;
+}
+.edit_award_form .global_form div.form-elements #associate_with-wrapper .form-label{
+	display:none;
+}
+/*Add Experiance*/
+.add_experience_form .global_form div#frommonth-element, 
+.add_experience_form .global_form div#tomonth-element{
+	float:left;
+}
+.add_experience_form .global_form div.form-elements #currentlywork-wrapper .form-label{
+	display:none;
+}
+/*Specialty*/
+.add_specialty_form #athletic_specialties-element .form-options-wrapper li,
+.add_specialty_form #professional_specialties-element .form-options-wrapper li{
+	width:220px;
+	float:left;
+}
+/*Skills*/
+.sesprofilefield_skills {
+  padding:0 !important;
+}
+.sesprofilefield_skills ul{
+	padding:20px;
+}
+.sesprofilefield_skills .skills_head {
+	padding:20px;
+	padding-bottom:0;
+	border-bottom-width:1px;
+}
+.skills_head h2 {
+  margin-bottom:10px !important;
+}
+.skills_head > a {
+	padding:0 !important;
+	font-size:20px !important;
+	display:block;
+	line-height:inherit !important;
+}
+.sesprofilefield_skills .field_option {
+	top:15px !important;
+}
+.add_skill_form .global_form div.form-elements{
+	height:auto;
+}
+.add_skill_form .global_form div#skillname-label,
+.add_skill_form .global_form div#custom_add_skills-label,
+.add_skill_form .global_form div#custom_add_skill-label{
+	display:none;
+}
+.add_skill_form .global_form div#custom_add_skills-element{
+	border-bottom-width:1px;
+}
+.add_skill_form .global_form div#custom_add_skill-element p.addskills_popup_list{
+	background-color:#e6e6e6;
+	padding:8px 0px;
+	box-sizing:border-box;
+	text-align:left;
+	float:left;
+	border-radius:30px;
+	margin-right:5px;
+	margin-bottom:5px;
+}
+.add_skill_form .global_form div#custom_add_skill-element .addskills_popup_list span.addskills_popup_list_name{
+	float:left;
+	padding:4px 0px 4px 15px;
+}
+.add_skill_form .global_form div#custom_add_skill-element .addskills_popup_list span.addskills_popup_list_right{
+	float:right;
+	font-size:15px;
+	padding:3px 20px;
+}
+#skill_tip > span {
+  margin: 20px;
+}
+/*Records*/
+.edit_specialty_form .form-label{
+	font-weight:bold;
+}
+.edit_specialty_form #athletic_specialties-element,
+.edit_specialty_form #professional_specialties-element{
+	max-height:150px;
+	overflow:auto;
+	border-width:1px;
+	padding:10px;
+}
+.sesprofilefield_edit_record_form #recordsmain_1_main-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmain_2_main-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmain_13_main-wrapper .form-element{
+	font-size:20px;
+	border-bottom-width:1px;
+	padding-bottom:10px;
+}
+.sesprofilefield_edit_record_form #recordsmainsub_1_3-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmainsub_1_36-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmainsub_1_37-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmainsub_1_38-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmainsub_2_39-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmainsub_2_40-wrapper .form-element,
+.sesprofilefield_edit_record_form #recordsmainsub_13_41-wrapper .form-element{
+	font-size:17px;
+}
+.sesprofilefield_edit_record_form #recordsmain_1_main-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmain_2_main-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmain_13_main-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_1_3-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_1_36-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_1_37-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_1_38-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_2_39-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_2_40-wrapper .form-label,
+.sesprofilefield_edit_record_form #recordsmainsub_13_41-wrapper .form-label{
+	display:none;
+}
+.sesprofilefield_edit_record_form [id^="recordsgrp_"] .form-wrapper{
+	float:left;
+	clear:none;
+}
+/*Benchmark WODs and Metabolic Conditions*/
+.sesprofilefield_edit_record_form #recordsgrp_1_3_4_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_5_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_6_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_7_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_8_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_36_42_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_36_43_recordgroup .form-label{
+	float:left;
+	width:130px;
+	font-weight:bold;
+	margin-top:7px;
+}
+.sesprofilefield_edit_record_form #recordsgrp_1_3_4_recordgroup .form-wrapper:nth-last-child(1) .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_5_recordgroup .form-wrapper:nth-last-child(1) .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_6_recordgroup .form-wrapper:nth-last-child(1) .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_7_recordgroup .form-wrapper:nth-last-child(1) .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_8_recordgroup .form-wrapper:nth-last-child(1) .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_36_42_recordgroup .form-wrapper:nth-last-child(1) .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_36_43_recordgroup .form-wrapper:nth-last-child(1) .form-label{
+	display:none;
+}
+.sesprofilefield_edit_record_form #recordsgrp_1_3_4_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_5_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_6_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_7_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_3_8_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_36_42_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_36_43_recordgroup .form-element{
+	min-width:inherit;
+	width:100px;
+}
+/*Eymnastic Skills and Strength*/
+.sesprofilefield_edit_record_form #recordsgrp_1_37_62_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_37_63_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_37_64_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_44_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_45_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_46_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_47_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_48_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_49_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_50_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_51_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_52_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_53_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_57_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_58_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_59_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_60_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_61_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_13_41_54_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_13_41_55_recordgroup .form-label,
+.sesprofilefield_edit_record_form #recordsgrp_13_41_56_recordgroup .form-label{
+	float:left;
+	width:220px;
+	font-weight:bold;
+	margin-top:7px;
+}
+.sesprofilefield_edit_record_form #recordsgrp_1_37_62_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_37_63_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_37_64_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_44_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_45_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_46_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_47_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_1_38_48_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_49_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_50_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_51_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_52_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_39_53_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_57_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_58_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_59_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_60_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_2_40_61_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_13_41_54_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_13_41_55_recordgroup .form-element,
+.sesprofilefield_edit_record_form #recordsgrp_13_41_56_recordgroup .form-element{
+	min-width:inherit;
+	width:100px;
+}
+/*Success Message*/
+.sesprofilefield_success_message{
+	background-color:#f1f9f7;
+	border:1px solid #e0f1e9;
+	padding:15px;
+	border-radius:5px;
+	margin:10px;
+}
+.sesprofilefield_success_message i{
+	color:#1d9d74; 
+	font-size:25px;
+	vertical-align:middle;
+	margin-right:10px;
+}
+.sesprofilefield_success_message span{
+	color:#1d9d74;
+	font-size:17px;
+}
+@media (max-width:767px){
+.sesprofilefield_add_details_form{
+	min-width:100%; 
+}
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-fromyearmonth,
+.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-toyearmonth{
+	width:100%;
+	padding:0px 30px;
+	float:none;
+	box-sizing:border-box;
+}
+}
+@media (max-width:599px){
+	.sesprofilefield_add_details_form .global_form div.form-elements #fromyear-wrapper,
+	.sesprofilefield_add_details_form .global_form div.form-elements #toyear-wrapper{
+		width:100%;
+		padding:0px 30px;
+		box-sizing:border-box;
+	}
+}
+@media (max-width:479px){
+	.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-fromyearmonth .form-wrapper, 
+	.sesprofilefield_add_details_form .global_form div.form-elements #fieldset-toyearmonth .form-wrapper{
+		width:100%;
+	}
+}
+/*ADD DETAILS POPUP END HERE*/
+/*DELETE POPUP START HERE*/
+.sesprofilefield_delete_popup{
+	width:400px;
+	box-sizing:border-box;
+}
+.sesprofilefield_delete_popup .global_form_popup{
+	padding:15px !important; 
+}
+.sesprofilefield_delete_popup .global_form > div > div > h3 + p,
+.sesprofilefield_delete_popup .global_form > div > div .form-elements{padding:0;}
+/*DELETE POPUP END HERE*/
+/*PROFILE INFORMATION START HERE*/
+.sesprofilefields_profile_information > section{
+	margin:20px 0;
+	padding:20px;
+	border-width:1px;
+}
+.sesprofilefields_profile_information h2{
+  text-align:right;
+  margin-bottom:15px;
+  display:inline-block;
+}
+.sesprofilefields_profile_information h2 span{
+  float:left;
+  font-size:22px;
+}
+.sesprofilefields_profile_information h2 span samp{
+  margin-right:2px;
+}
+.sesprofilefields_profile_information a.add_entries{
+  font-size:36px;
+  line-height:0;
+  float:right;
+  padding:10px 0;
+	text-decoration:none !important;
+}
+[dir="rtl"] .sesprofilefields_profile_information a.add_entries{
+	float:left;
+}
+.sesprofilefields_profile_information ul.sesprofilefield_informaint_list_box > li{
+	position:relative;
+	margin-bottom:20px;
+}
+.sesprofilefields_profile_information ul.sesprofilefield_informaint_list_box > li:last-child{
+	border-bottom-width:0;
+	margin-bottom:0;
+}
+.sesprofilefields_profile_information .field_option{
+	width:auto;
+	float:right;
+	display:none;
+	padding:0px 10px;
+	position:absolute;
+	right:0;
+	top:0;
+}
+[dir="rtl"] .sesprofilefields_profile_information .field_option{
+	float:left;
+	left:0;
+  right:auto;
+}
+.sesprofilefields_profile_information .field_option a{
+	display:inline-block;
+	text-align:center;
+	margin-left:5px;
+	font-size:16px;
+	text-decoration:none !important;
+}
+.sesprofilefields_profile_information ul.sesprofilefield_informaint_list_box > li:hover .field_option{
+	display:block;
+}
+.sesprofilefields_profile_information ._gallery{
+	margin:20px -5px 0;
+}
+.sesprofilefields_profile_information ._gallery ._galleryitem{
+	float:left;
+	height:80px;
+	width:120px;
+	margin:0 5px;
+	border-radius:3px;
+}
+[dir="rtl"] .sesprofilefields_profile_information ._gallery ._galleryitem{
+	float:right;
+}
+.sesprofilefields_profile_information ._gallery ._galleryitem span{
+	background-size:50px;
+  background-position:center center;
+	border-width:1px;
+}
+/*Experiences*/
+#sesprofilefield_experiences > li:last-child{
+	border-bottom-width:0;
+}
+#sesprofilefield_experiences .experience_details_logo{
+  width:56px;
+	height:56px;
+	border-radius:4px;
+	overflow:hidden;
+  float:left;
+  margin-right:15px;
+}
+[dir="rtl"] #sesprofilefield_experiences .experience_details_logo{
+	float:right;
+	margin-right:0;
+  margin-left:15px;
+}
+#sesprofilefield_experiences .experience_details_logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+#sesprofilefield_experiences .experience_details_main{
+  overflow:hidden;
+	padding-bottom:25px;
+	display:block;
+	border-bottom-width:1px;
+}
+#sesprofilefield_experiences li:nth-last-child(1) .experience_details_main{
+	border-bottom-width:0;
+	margin-bottom:0;
+}
+#sesprofilefield_experiences .experience_details{
+  float:left;
+  width:93%;
+}
+#sesprofilefield_experiences .experience_details p.experience_title{
+  font-size:16px;
+	font-weight:bold;
+	line-height:1.5;
+}
+#sesprofilefield_experiences .experience_details p.experience_company span {
+	font-size:15px;
+}
+#sesprofilefield_experiences .experience_details p.experience_company span + span{
+  margin-left:3px;
+}
+#sesprofilefield_experiences .experience_details p.experience_des{
+  margin-top:10px;
+	font-size:14px;
+	letter-spacing:.2px;
+  line-height:1.5;
+}
+#sesprofilefield_experiences .experience_details .experience_time,#sesprofilefield_experiences .experience_details .experience_location{
+	font-size:14px;
+}
+/*Education*/
+#sesprofilefield_educations .education_details_logo{
+	width:56px;
+	height:56px;
+	border-radius:4px;
+	overflow:hidden;
+	float:left;
+	margin-right:15px;
+}
+#sesprofilefield_educations .education_details_logo img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+#sesprofilefield_educations .education_details_main{
+  overflow:hidden;
+	border-bottom-width:1px;
+  margin-bottom:20px;
+  padding-bottom:15px;
+	display:block;
+}
+#sesprofilefield_educations li:nth-last-child(1) .education_details_main{
+	border-bottom-width:0;
+	margin-bottom:0;
+}
+#sesprofilefield_educations .education_details{
+	float:left;
+	width:93%;
+}
+#sesprofilefield_educations .education_details p.school{
+	font-size:16px;
+	line-height:1.5;
+	font-weight:bold;
+	word-break:break-all;
+}
+#sesprofilefield_educations .education_details p.from_years {
+	font-size:14px;
+	line-height:1.75;
+}
+#sesprofilefield_educations p.degree span + span{
+	margin-left:3px;
+}
+#sesprofilefield_educations p.education_des{
+	margin-top:10px;
+	font-size:95%;
+	line-height:1.5;
+}
+/*Certifiction*/
+#sesprofilefield_certifications > li {
+  border-bottom:0;
+}
+#sesprofilefield_certifications .certifiction_details_main{
+  overflow:hidden;
+	border-bottom-width:1px;
+  margin-bottom:20px;
+  padding-bottom:15px;
+	display:block;
+}
+#sesprofilefield_certifications li:nth-last-child(1) .certifiction_details_main{
+	border-bottom-width:0;
+	margin-bottom:0;
+}
+#sesprofilefield_certifications .certifiction_details .date {
+	font-size:14px;
+	margin-top:2px;
+}
+#sesprofilefield_certifications .certifiction_details{
+	float:left;
+	width:93%;
+}
+#sesprofilefield_certifications p.certifiction_name{
+	font-size:14px;
+	font-weight:bold;
+}
+#sesprofilefield_certifications  p.degree span + span{
+	margin-left:3px;
+}
+#sesprofilefield_certifications p.certifiction_autority{
+	margin:15px 0px;
+}
+#sesprofilefield_certifications .certifiction_autority img{
+	width:35px;
+  height:30px;
+	object-fit:cover;
+	vertical-align:middle;
+	margin-right:5px;
+}
+#sesprofilefield_certifications .certifiction_details .certification_link a {
+	font-weight:bold;
+	font-size:14px;
+}
+#sesprofilefield_certifications .certifiction_details .certification_link a:hover{
+	text-decoration:underline;
+}
+/*Awards*/
+#sesprofilefield_awards .awards_details_main{
+  overflow:hidden;
+	border-bottom-width:1px;
+  margin-bottom:20px;
+  padding-bottom:15px;
+	display:block;
+}
+#sesprofilefield_awards li:nth-last-child(1) .awards_details_main{
+	border-bottom-width:0;
+	margin-bottom:0;
+}
+#sesprofilefield_awards .awards_details{
+	float:left;
+	width:93%;
+}
+#sesprofilefield_awards p.awards_name{
+	font-size:14px;
+	font-weight:bold;
+}
+#sesprofilefield_awards .awards_des{
+	margin-top:10px;
+}
+
+
+/*Skills*/
+#sesprofilefield_skills .profile_skill_item{
+	clear:both;
+	position:relative;
+	display:inline-block;
+	width:100%;
+	padding:10px 0;
+	margin-bottom:0;
+  border-bottom-width:1px;
+}
+#sesprofilefield_skills .profile_skill_item:last-child{
+	border-bottom:0;
+	padding-bottom:0;
+}
+#sesprofilefield_skills .profile_skill_item_endorse{
+	border-radius:2px;
+	float:left;
+	padding:1px;
+}
+[dir="rtl"] #sesprofilefield_skills .profile_skill_item_endorse{
+	float:right;
+}
+#sesprofilefield_skills .profile_skill_item_endorse > span{
+	color:#fff;
+	float:left;
+	line-height:28px;
+	text-align:center;
+	width:30px;
+}
+#sesprofilefield_skills .profile_skill_item_endorse > a > span{
+	background-color:#fff;
+	float:left;
+	line-height:26px;
+  padding-right:5px;
+}
+#sesprofilefield_skills .profile_skill_item_endorse > a > span:first-child {
+  font-weight:bold;
+}
+#sesprofilefield_skills .profile_skill_item_endorsers_container{
+	float:right;
+}
+#sesprofilefield_skills .profile_skill_item_endorsers_container ul {
+	padding:0;
+}
+#sesprofilefield_skills .profile_skill_item_endorsers_container ul li{
+	float:left;
+	margin-left:2px;
+}
+#sesprofilefield_skills .profile_skill_item_endorsers_container ul li img{
+	float:left;
+	height:30px;
+	width:30px;
+	margin-left: -15px;
+}
+#sesprofilefield_skills .profile_skill_item_arrow{
+	float:right;
+	margin-left:5px;
+	position:absolute;
+	right:-25px;
+}
+#sesprofilefield_skills .profile_skill_item_arrow a{
+	line-height:30px;
+	padding:0 5px;
+}
+#sesprofilefield_skills .profile_skill_item_endorse_btn_container{
+	overflow:hidden;
+	padding:0 10px;
+}
+#sesprofilefield_skills .profile_skill_item_endorse_btn a{
+	margin-top:7px;
+}
+#sesprofilefield_skills .profile_skill_item_endorse_btn span{
+	margin-left:5px;
+	line-height:14px;
+	float:left;
+	display:none;
+}
+#sesprofilefield_skills .profile_skill_item_endorse_btn_container:hover .profile_skill_item_endorse_btn span{
+	display:block;
+}
+
+/*Records*/
+#sesprofilefield_records li{
+	margin-bottom:20px;
+}
+#sesprofilefield_records .records_head h4{
+	font-size:20px;
+	font-weight:normal;
+	border-width:1px 0 0;
+	padding-bottom:0;
+}
+#sesprofilefield_records .records_cont_head{
+	font-weight:600;
+}
+#sesprofilefield_records div + .records_cont_head{
+	margin-top:20px;
+}
+#sesprofilefield_records .records_cont_entries{
+	display:flex;
+	flex-wrap:wrap;
+}
+#sesprofilefield_records .records_cont_entries_item{
+	font-size:.9em;
+	margin-top:5px;
+	overflow:hidden;
+	padding-left:20px;
+	width:50%;
+} 
+#sesprofilefield_records .records_cont_entries_item span:nth-child(1){
+	font-weight:600;
+	float:left;
+	margin-right:10px;
+}
+#sesprofilefield_records .records_cont_entries_item span + span{
+	overflow:hidden;
+	display:block;
+}
+/*Education Information Css End*/
+
+/* OTHER CSS */
+.courses_details_main .courses_details,.organization_details_main .organization_details,.project_details_main .project_details,.certifiction_details_main .certifiction_details,language_details_main .language_details{
+	float:left;
+	width:93%;
+}
+.language_details .language_name{
+	font-weight:bold;
+}
+.courses_details_main .courses_name,.organization_details_main .organization_title,#sesprofilefield_projects .project_title{
+	font-weight:bold;
+}
+#sesprofilefield_organizations > li,#sesprofilefield_projects > li{
+	padding-bottom:20px;
+  border-bottom-width:1px;
+}
+#sesprofilefield_organizations > li:last-child,#sesprofilefield_projects > li:last-child{
+	padding-bottom:0;
+  border-bottom-width:0;
+}
+.organization_details_main .organization_des,#sesprofilefield_projects .project_des{
+	margin-top:15px;
+}
+.project_url a {
+	font-weight:bold;
+	font-size:14px;
+	margin-top:20px;
+  display:block;
+}
+.project_url a:hover{
+	text-decoration:underline;
+}
+/* SUMMARY */
+.sesprofilefield_summary,.sesprofilefield_accomplishments{
+	border-width:1px;
+}
+.sesprofilefield_summary > section,.sesprofilefield_accomplishments > section{
+	padding:20px;
+	border-bottom-width:1px;
+}
+.sesprofilefield_summary > section:last-child{
+	border-bottom-width:0;
+}
+.sesprofilefield_accomplishments .accomplishments_head {
+	padding:20px;
+	padding-bottom:15px;
+  border-bottom-width:1px;
+}
+.accomplishments_head h2{
+	margin-bottom:0;
+}
+.accomplishments_head a{
+	line-height:15px !important;
+}
+/* accomplishment */
+.accomp_dropdown {
+  position: relative;
+}
+.accomp_dropdown .dropdown_options ul{
+	position: absolute;
+	z-index:1000;
+  width: 250px;
+  margin-top: 0;
+  padding: 8px 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 6px 9px rgba(0,0,0,.2);
+	right:0;
+}
+.accomp_dropdown .dropdown_options ul:after {
+	border-color: transparent;
+	border-style: solid;
+	border-width: 0 9px;
+	content: "";
+	height: 0;
+	width: 0;
+	margin-left: -34px;
+	top: -9px;
+}
+.accomp_dropdown .dropdown_options ul li a{
+	font-weight: 600;
+	color: rgba(0,0,0,.6);
+	display: inline-block;
+	width: 100%;
+	min-height: 36px;
+	line-height: normal;
+	max-height: 52px;
+	padding: 8px 16px;
+	cursor: pointer;
+	box-sizing: border-box;
+	word-break: break-all;
+}
+/* USER POPUP */
+.sesprofilefield_users_popup {
+  padding:15px;
+}
+.sesprofilefield_users_popup_header{
+	font-weight:bold;
+	margin-bottom:15px;
+}
+.sesprofilefield_users_popup_cont {
+	display: flex;
+	flex-wrap: wrap;
+}
+.sesprofilefield_users_popup_item_list {
+	width: calc(33% - 20px);
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.sesprofilefield_users_popup_item_list_title{
+  text-align: center;
+  font-size: 12px;
+}
+.sesprofilefield_users_popup_footer{
+  margin-top:10px;
+}
+.sesprofilefield_users_popup_item_list_user_thumb img{
+	margin: auto;
+  display: block;
+  margin-bottom: 5px;
+}

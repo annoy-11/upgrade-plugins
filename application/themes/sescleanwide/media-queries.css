@@ -1,0 +1,54 @@
+/* $Id:media-queries.css 2015-3-1 00:00:00 SocialEngineSolutions $*/
+
+@media only screen and (max-width:1200px){
+	div.layout_page_header .layout_main, div#global_content, div.layout_page_footer{box-sizing:border-box;padding:0 2px;width:96%;}
+	.layout_core_menu_main, .layout_page_footer .layout_main{width:100%;}
+}
+@media only screen and (max-width:900px){
+	div.layout_page_header .layout_main, div#global_content, div.layout_page_footer{box-sizing:border-box;padding:0 1px;width:98%;}
+	.layout_core_menu_logo{width:100%;}
+	[dir="rtl"] .layout_core_menu_logo{text-align:center;}
+	.layout_core_menu_logo img{max-width:90%;}
+	#core_menu_mini_menu #global_search_field{width:120px;}
+	/*Layouts*/
+	.layout_left, .layout_right{width:200px;padding:0 10px 0 0;float:left;clear:both;}
+	html[dir="rtl"] .layout_left, html[dir="rtl"] .layout_right{padding:0 0 0 10px;	float:right;}
+	.layout_middle{padding:0;}
+	ul.feed .feed_item_body .feed_item_attachments .music_player.playlist_short_player{display:none !important;}
+	ul.feed .feed_item_body .feed_item_attachments .music_player{display:block !important;width:auto;}
+	ul.feed .feed_item_body .feed_item_attachments .video_object object{width:100%;height:auto;}
+	/*Notification Page*/
+	div.notifications_layout > div.notifications_leftside{width:30%;}
+	/*Form Elements*/
+	.global_form div.form-label{text-align:left;float:none;width:auto;}
+	html[dir="rtl"] .global_form div.form-label{float:none;text-align:right;}
+	.global_form .form-elements input, .global_form .form-elements textarea{width:90%;}
+	.form-elements input[type="checkbox"], .form-elements input[type="radio"]{width:auto;}
+	input[type="text"], input[type="email"], input[type="password"], input.text, textarea, select{width:94%;padding:2%;}
+	/*Album View Page*/
+	div.albums_viewmedia{max-width:100%;min-width:inherit;}
+	div.albums_viewmedia_info{border:0;padding:0;}
+	div.album_viewmedia_container{display:block;}
+	div.albums_viewmedia #media_photo{max-width:100%;}
+	/*Smoothbox Form*/
+	#global_content_simple .global_form div.form-label{float:left;}
+}
+@media only screen and (max-width:767px){
+	/*Layouts*/
+	.layout_left, .layout_right{width:100%;padding:0;float:none;clear:both;}
+	html[dir="rtl"] .layout_left,	html[dir="rtl"] .layout_right{padding:0;float:none;}
+	.layout_middle{padding:0;}
+}
+@media only screen and (max-width:480px){
+	.layout_core_menu_logo{text-align:center;}
+	.layout_middle{padding:0 0 0 0;}
+	.layout_left, .layout_right{clear:both;float:none;width:auto !important;}
+	.layout_left, .layout_right{display:none;}
+	/*Form*/
+	#filter_form .form-wrapper{float:none !important;width:100% !important}
+	/*Notification Page*/
+	div.notifications_layout > div.notifications_leftside{width:100%;}
+	div.notifications_layout > div.notifications_rightside{clear:both;padding:10px 0 0 0;}
+	/*Smoothbox Form*/
+	#global_content_simple .global_form div.form-label{float:none;}
+}

@@ -1,0 +1,1 @@
+UPDATE `engine4_activity_actiontypes` SET `shareable` = "0" WHERE `engine4_activity_actiontypes`.`module` = "sespoke";

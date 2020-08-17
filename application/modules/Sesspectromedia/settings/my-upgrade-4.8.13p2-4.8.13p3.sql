@@ -1,0 +1,2 @@
+INSERT IGNORE INTO `engine4_core_menuitems` (`name`, `module`, `label`, `plugin`, `params`, `menu`, `submenu`, `order`) VALUES
+('sesspectromedia_admin_main_typography', 'sesspectromedia', 'Manage Fonts', '', '{"route":"admin_default","module":"sesspectromedia","controller":"settings", "action":"typography"}', 'sesspectromedia_admin_main', '', 50);

@@ -1,0 +1,264 @@
+
+
+.sescoverpphoto_overlay{
+	background-color:rgba(255, 255, 255, .5);
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.sesusercoverphoto_cover_image video,
+.sesusercover_cover_wrapper .sesusercover_cover_img video{
+	display: block;
+	min-height: 100%;
+	min-width: 100%;
+	max-width: none;
+	height: auto;
+	width: auto;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	bottom: auto;
+	right: auto;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+/*Loading Image*/
+.sescover_loading {position:absolute;top:50%;left:50%;}
+.sescover_loading_bar{display: inline-block;width: 4px;height: 18px;border-radius: 4px;animation: loading 1s ease-in-out infinite;}
+.sescover_loading_bar:nth-child(1) {background-color: #3498db;animation-delay: 0;}
+.sescover_loading_bar:nth-child(2) {background-color: #c0392b;animation-delay: 0.09s;}
+.sescover_loading_bar:nth-child(3){background-color: #f1c40f;animation-delay: .18s;}
+.sescover_loading_bar:nth-child(4){background-color: #27ae60;animation-delay: .27s;}
+
+@keyframes loading {
+  0% {transform: scale(1);}
+  20% {transform: scale(1, 2.2);}
+  40% {transform: scale(1);}
+}
+
+/*User Options Icons*/
+.sesuser_cover_options_pulldown li a:before{
+	left: 13px;
+	position: absolute;
+	font-size: 16px;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[dir="rtl"] .sesuser_cover_options_pulldown li a:before{
+	left:auto;
+	right:13px;
+}
+.sesuser_cover_options_pulldown li a.user_profile_edit,
+.sesuser_cover_options_pulldown li a.sesmember_location_edit,
+.sesuser_cover_options_pulldown li a.user_profile_message,
+.sesuser_cover_options_pulldown li a.sesmember_compliments,
+.sesuser_cover_options_pulldown li a.user_profile_block,
+.sesuser_cover_options_pulldown li a.user_profile_report,
+.sesuser_cover_options_pulldown li a.user_profile_admin,
+.sesuser_cover_options_pulldown .sesprofilelock_index_profilelock,
+.sesuser_cover_options_pulldown .sespoke_gutter_create_1{
+	background-image:none !important;
+}
+.sesuser_cover_options_pulldown li a.user_profile_edit:before{content:"\f040";}
+.sesuser_cover_options_pulldown li a.sesmember_location_edit:before{content:"\f041";}
+.sesuser_cover_options_pulldown li a.user_profile_message:before{content:"\f0e0";}
+.sesuser_cover_options_pulldown li a.sesmember_compliments:before{content:"\f118";}
+.sesuser_cover_options_pulldown li a.user_profile_block:before{content:"\f056"}
+.sesuser_cover_options_pulldown li a.user_profile_report:before{content:"\f024"}
+.sesuser_cover_options_pulldown li a.user_profile_admin:before{content:"\f013"}
+.sesuser_cover_options_pulldown .sesprofilelock_index_profilelock:before{content:"\f007"}
+.sesuser_cover_options_pulldown .sespoke_gutter_create_1:before{content:"\f0a4"}
+
+
+/*Member Profile Photo*/
+.sesusercoverphoto_member_profile_photo {position:relative;}
+.sesusercoverphoto_member_profile_photo img{max-width:inherit;width:100%;}
+.sesusercoverphoto_member_photo_loading{
+	background: rgba(0, 0, 0, 0.3) url(../images/ajax_loading.gif) no-repeat scroll center center;
+	color: #fff;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+/*Change Cover Buttons*/
+.sesusercoverphoto_member_profile_photo .sesusercoverphoto_album_coverphoto_op{
+	top:0;
+	left:0;
+	right:0;
+	position:absolute
+}
+.sesusercoverphoto_album_coverphoto_op > a{
+	display:block;
+	overflow:hidden;
+	padding:10px 5px;
+}
+.sesusercoverphoto_album_coverphoto_op:hover > a,
+.sesusercoverphoto_album_coverphoto_op.active > a{
+	background-color:rgba(0, 0, 0, 0.8);
+	border:1px solid rgba(255, 255, 255, 0.8);
+  -webkit-transition:all 300ms ease 0s;
+  -moz-transition:all 300ms ease 0s;
+  -o-transition:all 300ms ease 0s;
+	transition:all 300ms ease 0s;
+}
+.sesusercoverphoto_album_coverphoto_op > a i{
+	float:left;
+	height:25px;
+	margin-right:5px;
+	text-align:center;
+	width:25px;
+}
+[dir="rtl"] .sesusercoverphoto_album_coverphoto_op > a i{
+	float:right;
+	margin-left:5px;
+	margin-right:0;
+}
+.sesusercoverphoto_album_coverphoto_op > a i:before{
+	color:#f1f1f1;
+	display:block;
+	font-size:22px;
+	margin-top:2px;
+	text-shadow:0 0 5px rgba(0, 0, 0, 0.8);
+}
+.sesusercoverphoto_album_coverphoto_op.active > a i:before,
+.sesusercoverphoto_album_coverphoto_op:hover > a i:before{
+	color:#f1f1f1;
+	display:block;
+	font-size:22px;
+	margin-top:1px;
+	-ms-transform:scale(.7); /* IE 9 */
+	-webkit-transform:scale(.7); /* Safari */
+	transform:scale(.7);
+  -webkit-transition:all 300ms ease 0s;
+  -moz-transition:all 300ms ease 0s;
+  -o-transition:all 300ms ease 0s;
+	transition:all 300ms ease 0s;
+}
+.sesusercoverphoto_album_coverphoto_op > a span{
+	color:#fff;
+	display:none;
+	font-size:12px;
+	float:left;
+	margin-top:3px;
+}
+[dir="rtl"] .sesusercoverphoto_album_coverphoto_op > a span{
+	float:right;
+}
+.sesusercoverphoto_album_coverphoto_op:hover > a span,
+.sesusercoverphoto_album_coverphoto_op.active > a span{
+	display:block;
+}
+.sesusercoverphoto_album_coverphoto_op.active .sesusercoverphoto_album_coverphoto_op_box{
+	left:0;
+	top:45px;
+	display:block;
+}
+[dir="rtl"] .sesusercoverphoto_album_coverphoto_op.active .sesusercoverphoto_album_coverphoto_op_box{
+	left:inherit;
+	right:0;
+}
+.sesusercoverphoto_change_cover_options,
+.sesusercoverphoto_album_coverphoto_op_box{
+	width:auto;
+}
+.sesusercoverphoto_change_cover_options a,
+.sesusercoverphoto_album_coverphoto_op_box a{
+	white-space:nowrap;
+}
+.sesusercoverphoto_album_coverphoto_op_box_arrow{
+	border-bottom:10px solid #fff;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	height:0;
+	left:7px;
+	position:absolute;
+	top:-10px;
+	width:0;
+}
+.sesusercoverphoto_member_profile_photo .sesusercoverphoto_album_coverphoto_op_box{
+	left:10px;
+}
+[dir="rtl"] .sesusercoverphoto_member_profile_photo .sesusercoverphoto_album_coverphoto_op_box{
+	left:inherit;
+	right:10px;
+}
+/*Photo update Popup*/
+.sesusercoverphoto_photo_update_popup{
+	position:fixed;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	z-index:99;
+}
+.sesusercoverphoto_photo_update_popup_overlay{
+	background-color:rgba(0, 0, 0, .1);
+	position:absolute;
+	height:100%;
+	width:100%;
+	z-index:99;
+}
+.sesusercoverphoto_photo_update_popup_container{
+	left: 50%;
+	margin-left: -330px;
+	position: absolute;
+	top: 20px;
+	width: 660px;
+	z-index: 100;
+}
+.sesusercoverphoto_photo_update_popup_content{
+	height:450px;
+	width:100%;
+}
+.sesusercoverphoto_update_album_row{
+	clear:both;
+	padding:10px;
+	border-bottom-width:1px;
+}
+.sesusercoverphoto_update_album_row:last-child{border-bottom:none;}
+.sesusercoverphoto_update_album_row .sesusercoverphoto_name{
+	display:block;
+	font-size:14px;
+	margin-bottom:5px;
+}
+.sesusercoverphoto_update_album_row .sesusercoverphoto_thumb{
+	border-width:1px;
+	float:left;
+	height:100px;
+	margin:2px;
+	width:100px;
+}
+.sesusercoverphoto_update_album_row .sesusercoverphoto_thumb a span{
+	background-size:cover;
+	background-position:center center;
+	display:block;
+	height:100%;
+	width:100%;
+}
+.sesusercoverphoto_update_album_row .sesusercoverphoto_thumb:hover{border-width:2px;}
+.sesusercoverphoto_photo_update_webcam_container{margin-left:-180px;width:360px;}
+.sesusercoverphoto_photo_update_popup_webcam_options{padding:15px;}
+.sesusercoverphoto_photo_update_popup_webcam_options #coverphoto_camera{margin:0 auto;}
+.sesusercoverphoto_photo_update_popup_btns{margin-top:10px;}
+
+@media only screen and (max-width:767px){
+	.sesusercoverphoto_photo_update_popup_container{
+    width: 100%;
+    margin: 0;
+    left: 0;
+	}
+	.sesusercoverphoto_cover_change_cover:hover > a span,
+	.sesusercoverphoto_cover_change_cover.active > a span,
+	.sesusercoverphoto_cover_change_cover_main:hover > a span,
+	.sesusercoverphoto_cover_change_cover_main.active > a span{
+		display:none !important;
+	}
+}

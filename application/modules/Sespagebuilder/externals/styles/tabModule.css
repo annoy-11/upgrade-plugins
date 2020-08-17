@@ -1,0 +1,100 @@
+@charset "UTF-8";
+.tab * {
+    box-sizing: border-box;
+}
+
+
+.tab .tab-content {
+    background-color: #fff;
+}
+.tab .tab-content > li h4 {
+  border: 1px solid #dc5147;
+  font-weight: normal;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+}
+.tab-horiz .tab-legend > li.active:first-child {
+    border-left: 0 none;
+    padding-left: 16px;
+}
+.tab-horiz .tab-legend > li.active:last-child {
+    border-right: 0 none;
+    padding-right: 16px;
+}
+.unselectable, .tab .tab-legend > li {
+    -moz-user-select: none;
+}
+.tab {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+}
+.tab .tab-legend {
+    font-family: Helvetica,Arial,sans-serif;
+    overflow: hidden;
+}
+.tab .tab-legend > li {
+    color: #999999;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    padding:10px 15px;
+    text-transform: uppercase;
+}
+.tab .tab-legend > li {
+    background-color: #dedede;
+}
+.tab .tab-legend .active {
+    background-color: #fff;
+    color: #dc5147;
+    padding: 10px 15px;
+}
+.tab .tab-content {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.tab .tab-content > li {
+    overflow: hidden;
+    position: relative;
+}
+.tab-horiz .tab-legend {
+    width: 100%;
+}
+.tab-horiz .tab-legend > li {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+.tab.tab-horiz .tab-legend .active {
+    border-bottom: 0 none;
+    border-top: 4px solid #dc5147;
+}
+.tab-horiz .tab-legend > li:first-child {
+    border-left: 1px solid #ccc;
+}
+.tab-horiz .tab-content {
+    width: 100%;
+}
+.tab-vert .tab-legend {
+    float: left;
+    width: 25%;
+}
+.tab-vert .tab-legend > li {
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    width: 100%;
+}
+.tab-vert .tab-legend > li.active {
+    border-right: 0 none;
+}
+.tab-vert .tab-content {
+    display: block;
+    float: left;
+    width: 75%;
+}
+.tab-vert .tab-content > li {
+    display: block;
+    min-height: 100%;
+}
