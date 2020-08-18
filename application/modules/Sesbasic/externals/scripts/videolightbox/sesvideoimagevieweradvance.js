@@ -586,7 +586,7 @@ function getImageViewerObjectDataVideo(imageURL,requestedURL){
 								sesJqueryObject('#sesbasic_lightbox_content').find('iframe').attr('width',width);
 								sesJqueryObject('#sesbasic_lightbox_content').find('iframe').css('margin-top',marginTop+'px');
 								sesJqueryObject('#sesbasic_lightbox_content').find('iframe').css('margin-bottom',marginTop+'px');
-								if(sesJqueryObject('#sesbasic_lightbox_content').find('iframe').attr('src').indexOf('?')){
+								if(sesJqueryObject('#sesbasic_lightbox_content').find('iframe').attr('src').indexOf('?') > -1){
 									var urlQuery = '&width='+width+'&height='+parseInt(height-marginTop);
 								}else
 									var urlQuery = '?width='+width+'&height='+parseInt(height-marginTop);

@@ -15,7 +15,7 @@ return array(
         'type' => 'module',
         'name' => 'sesbasic',
         'sku' => 'sesbasic',
-        'version' => '5.2.1',
+        'version' => '5.2.1p1',
         'path' => 'application/modules/Sesbasic',
         'title' => 'SocialNetworking.Solutions (SNS) Basic Required Plugin',
         'description' => 'SocialNetworking.Solutions (SNS) Basic Required Plugin',
