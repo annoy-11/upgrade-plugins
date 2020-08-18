@@ -5,8 +5,8 @@ plugin_name = input("Please enter plugin name")
 
 all_demo=[['fb_clone',['otpsms', 'sesshortcut', 'sesarticle', 'seserrorpage','sesevent','seseventvideo','sesalbum', 'sespoke','sesadvsitenotification']],
           ['utube_clone',['activity','testapi']],
-          ['instaclone_demo', ['sesbasic','sesalbum','sesvideo','sesfixedlayout','sesminify','sesdemouser','sesblog','eandstories','sesadvancedactivity','sesbasic']]
-          ['courses_demo', ['Sesadvancedheader', 'Courses','Sesuserimport', 'Sesadvancedbanner','Sesfooter', 'Sesautoaction', 'Sescusdash','Seslandingpage','Sesfixedlayout','Seshtmlbackground','Sesminify','Sesloginpopup','Sesusercoverphoto','Sesdemouser','Sessociallogin','Sestestimonial','Sesmenu','Sesblog','Eandstories','Sesadvancedactivity','Sesbasic']]
+          ['instaclone_demo', ['sesbasic','sesalbum','sesvideo','sesfixedlayout','sesminify','sesdemouser','sesblog','eandstories','sesadvancedactivity','sesbasic']],
+          ['courses_demo', ['Sesadvancedheader', 'Courses','Sesuserimport', 'Sesadvancedbanner','Sesfooter', 'Sesautoaction', 'Sescusdash','Seslandingpage','Sesfixedlayout','Seshtmlbackground','Sesminify','Sesloginpopup','Sesusercoverphoto','Sesdemouser','Sessociallogin','Sestestimonial','Sesmenu','Sesblog','Eandstories','Sesadvancedactivity','Sesbasic']],
           ['linkedinclone_demo', ['Sesuserimport', 'Sesevent', 'Sesalbum', 'Sesvideo', 'Sescommunityads', 'Sesfixedlayout', 'Sesgroup', 'Sesminify', 'Sesusercoverphoto', 'Sespymk', 'Sesgdpr', 'Sessocialshare', 'Sesqa', 'Quicksignup', 'Sesrecentlogin','Sesdemouser','Sessociallogin','Sesmetatag','Sesblog','Eandstories','Sesmember','Sesadvancedactivity','Sesbasic']]
 
           ]
