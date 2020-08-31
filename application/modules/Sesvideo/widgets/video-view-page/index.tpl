@@ -232,7 +232,7 @@ var tagAction = window.tagAction = function(tag,name){
     <div id="video_embed" class="sesvideo_view_embed clear sesbasic_clearfix">
       <?php if ($this->video_extension !== 'flv'): ?>
         <?php if(Engine_Api::_()->getDbTable('modules', 'core')->isModuleEnabled('videovod')): ?>
-          <iframe src="<?php echo  $this->baseUrl();  ?>/videovod/Iframe/index?video_id=<?php echo $this->v_id; ?>" width="480"  ></iframe>
+          <iframe src="<?php echo  $this->baseUrl();  ?>/videovod/Iframe/index?video_id=<?php echo $this->v_id; ?>" width="480" allowfullscreen></iframe>
         <?php else: ?>
           <video id="video" controls preload="auto" width="480" height="386">
             <source type='video/mp4' src="<?php echo $this->video_location ?>">

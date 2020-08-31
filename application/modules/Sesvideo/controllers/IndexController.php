@@ -2397,72 +2397,138 @@ $image->open($tmpFile)
     }
   }
 
-    // HELPER FUNCTIONS
+  public function getYoutubeIdFromUrl($url) {
+    $parts = parse_url($url);
+    if(isset($parts['query'])) {
+      parse_str($parts['query'], $qs);
+      if(isset($qs['v'])){
+        return $qs['v'];
+      } else if(isset($qs['vi'])){
+        return $qs['vi'];
+      }
+    }
+    if(isset($parts['path'])){
+      $path = explode('/', trim($parts['path'], '/'));
+      return $path[count($path)-1];
+    }
+    return false;
+  }
 
-    public function handleIframelyInformation($uri) {
+  public function YoutubeVideoInfomation($uri) {
+    
+    $video_id = $this->getYoutubeIdFromUrl($uri);
+    $key = Engine_Api::_()->getApi('settings', 'core')->getSetting('video.youtube.apikey');
+    if(empty($key)){
+        return;
+    }
+    $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$video_id.'&key='.$key.'&part=snippet,player,contentDetails';
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_REFERER']);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $response_a = json_decode($response,TRUE);    
+    $iframely =  $response_a['items'][0];
+    if (!in_array('player', array_keys($iframely))) {
+        return;
+    }
+    $information = array('thumbnail' => '', 'title' => '', 'description' => '', 'duration' => '');
+    if (!empty($iframely['snippet']['thumbnails'])) {
+        $information['thumbnail'] = $iframely['snippet']['thumbnails']['high']['url'];
+        if (parse_url($information['thumbnail'], PHP_URL_SCHEME) === null) {
+            $information['thumbnail'] = str_replace(array('://', '//'), '', $information['thumbnail']);
+            $information['thumbnail'] = "http://" . $information['thumbnail'];
+        }
+    }
+    if (!empty($iframely['snippet']['title'])) {
+        $information['title'] = $iframely['snippet']['title'];
+    }
+    if (!empty($iframely['snippet']['description'])) {
+        $information['description'] = $iframely['snippet']['description'];
+    }
+    if (!empty($iframely['contentDetails']['duration'])) {
+        $information['duration'] =  Engine_Date::convertISO8601IntoSeconds($iframely['contentDetails']['duration']);
+    }
+    $information['code'] = $iframely['player']['embedHtml'];
+    return $information; 
+  }
+  
+  // HELPER FUNCTIONS
+  public function handleIframelyInformation($uri) {
 
-        $iframelyDisallowHost = Engine_Api::_()->getApi('settings', 'core')->getSetting('video_iframely_disallow');
-        if (parse_url($uri, PHP_URL_SCHEME) === null) {
-            $uri = "http://" . $uri;
-        }
-        $uriHost = Zend_Uri::factory($uri)->getHost();
-        if ($iframelyDisallowHost && in_array($uriHost, $iframelyDisallowHost)) {
-            return;
-        }
+    $iframelyDisallowHost = Engine_Api::_()->getApi('settings', 'core')->getSetting('video_iframely_disallow');
+    if (parse_url($uri, PHP_URL_SCHEME) === null) {
+        $uri = "http://" . $uri;
+    }
+    $uriHost = Zend_Uri::factory($uri)->getHost();
+    if ($iframelyDisallowHost && in_array($uriHost, $iframelyDisallowHost)) {
+        return;
+    }
+    if(in_array($uriHost, array('youtube.com','www.youtube.com','youtube', 'youtu.be'))){
+        return $this->YoutubeVideoInfomation($uri);
+    } else {
         $config = Engine_Api::_()->getApi('settings', 'core')->core_iframely;
         $iframely = Engine_Iframely::factory($config)->get($uri);
-        if (!in_array('player', array_keys($iframely['links']))) {
-            return;
-        }
-        $information = array('thumbnail' => '', 'title' => '', 'description' => '', 'duration' => '');
-        if (!empty($iframely['links']['thumbnail'])) {
-            $information['thumbnail'] = $iframely['links']['thumbnail'][0]['href'];
-            if (parse_url($information['thumbnail'], PHP_URL_SCHEME) === null) {
-                $information['thumbnail'] = str_replace(array('://', '//'), '', $information['thumbnail']);
-                $information['thumbnail'] = "http://" . $information['thumbnail'];
-            }
-        }
-        if (!empty($iframely['meta']['title'])) {
-            $information['title'] = $iframely['meta']['title'];
-        }
-        if (!empty($iframely['meta']['description'])) {
-            $information['description'] = $iframely['meta']['description'];
-        }
-        if (!empty($iframely['meta']['duration'])) {
-            $information['duration'] = $iframely['meta']['duration'];
-        }else if($iframely['meta']['site'] == 'YouTube') {
-          $video_id = explode("?v=", $iframely['meta']['canonical']);
-          $video_id = $video_id[1];
-          $information['duration'] = $this->YoutubeVideoInfo($video_id);
-          $information['duration'] = Engine_Date::convertISO8601IntoSeconds($information['duration']);
-        }else if($iframely['meta']['site'] == 'Dailymotion') {
-          $video_id = explode("/video/", $iframely['meta']['canonical']);
-          $information = $this->handleInformation(4,$video_id[1]);
-          $information['duration'] = $information['duration'];
-        }
-        else{
-          $information['duration'] = 0;
-        }
-        $information['status'] = 1;
-        $information['code'] = $iframely['html'];
-        if($iframely['meta']['site'])
-          $information['site'] = $iframely['meta']['site'];
-        return $information;
     }
-     public function YoutubeVideoInfo($video_id) {
-      $key = Engine_Api::_()->getApi('settings', 'core')->getSetting('video.youtube.apikey');
-        $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$video_id.'&key='.$key.'&part=snippet,contentDetails';
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $response_a = json_decode($response);
-        return  $response_a->items[0]->contentDetails->duration; //get video duaration
+    if (!in_array('player', array_keys($iframely['links']))) {
+        return;
     }
+    $information = array('thumbnail' => '', 'title' => '', 'description' => '', 'duration' => '');
+    if (!empty($iframely['links']['thumbnail'])) {
+        $information['thumbnail'] = $iframely['links']['thumbnail'][0]['href'];
+        if (parse_url($information['thumbnail'], PHP_URL_SCHEME) === null) {
+            $information['thumbnail'] = str_replace(array('://', '//'), '', $information['thumbnail']);
+            $information['thumbnail'] = "http://" . $information['thumbnail'];
+        }
+    }
+    if (!empty($iframely['meta']['title'])) {
+        $information['title'] = $iframely['meta']['title'];
+    }
+    if (!empty($iframely['meta']['description'])) {
+        $information['description'] = $iframely['meta']['description'];
+    }
+    if (!empty($iframely['meta']['duration'])) {
+        $information['duration'] = $iframely['meta']['duration'];
+    }else if($iframely['meta']['site'] == 'YouTube') {
+      $video_id = explode("?v=", $iframely['meta']['canonical']);
+      $video_id = $video_id[1];
+      $information['duration'] = $this->YoutubeVideoInfo($video_id);
+      $information['duration'] = Engine_Date::convertISO8601IntoSeconds($information['duration']);
+    }else if($iframely['meta']['site'] == 'Dailymotion') {
+      $video_id = explode("/video/", $iframely['meta']['canonical']);
+      $information = $this->handleInformation(4,$video_id[1]);
+      $information['duration'] = $information['duration'];
+    }
+    else{
+      $information['duration'] = 0;
+    }
+    $information['status'] = 1;
+    $information['code'] = $iframely['html'];
+    if($iframely['meta']['site'])
+      $information['site'] = $iframely['meta']['site'];
+    return $information;
+  }
+  
+  public function YoutubeVideoInfo($video_id) {
+    $key = Engine_Api::_()->getApi('settings', 'core')->getSetting('video.youtube.apikey');
+      $url = 'https://www.googleapis.com/youtube/v3/videos?id='.$video_id.'&key='.$key.'&part=snippet,contentDetails';
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+      curl_setopt($ch, CURLOPT_PROXYPORT, 3128);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+      curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+      $response = curl_exec($ch);
+      curl_close($ch);
+      $response_a = json_decode($response);
+      return  $response_a->items[0]->contentDetails->duration; //get video duaration
+  }
+  
   public function validationAction() {
 
     $video_type = $this->_getParam('type');

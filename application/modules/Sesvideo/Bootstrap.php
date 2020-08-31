@@ -10,7 +10,7 @@
  * @version    $Id: Bootstrap.php 2015-10-11 00:00:00 SocialEngineSolutions $
  * @author     SocialEngineSolutions
  */
- 
+ /* Test video script */
 class Sesvideo_Bootstrap extends Engine_Application_Bootstrap_Abstract {
 
   public function __construct($application) {

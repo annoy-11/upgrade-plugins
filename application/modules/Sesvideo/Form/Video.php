@@ -361,7 +361,7 @@ $viewOptions = array_intersect_key($availableLabels, array_flip($viewOptions));
 if (!empty($viewOptions) && count($viewOptions) >= 1) {
       // Make a hidden field
   if (count($viewOptions) == 1) {
-    $this->addElement('hidden', 'auth_view', array('value' => key($viewOptions)));
+    $this->addElement('hidden', 'auth_view', array('value' => key($viewOptions), 'order' => '14589623'));
         // Make select box
   } else {
     $this->addElement('Select', 'auth_view', array(
@@ -379,7 +379,7 @@ $commentOptions = array_intersect_key($availableLabels, array_flip($commentOptio
 if (!empty($commentOptions) && count($commentOptions) >= 1) {
       // Make a hidden field
   if (count($commentOptions) == 1) {
-    $this->addElement('hidden', 'auth_comment', array('value' => key($commentOptions)));
+    $this->addElement('hidden', 'auth_comment', array('value' => key($commentOptions), 'order' => '189623'));
         // Make select box
   } else {
     $this->addElement('Select', 'auth_comment', array(

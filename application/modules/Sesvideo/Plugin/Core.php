@@ -147,14 +147,14 @@ if($viewer->getIdentity() != 0){
       foreach ($videoTable->fetchAll($videoSelect) as $video) {
         Engine_Api::_()->getApi('core', 'sesvideo')->deleteVideo($video);
       }
-      $likeTable = Engine_Api::_()->getDbtable('likes', 'core');
-      // Delete likes by poster
-      $likeSelect = $likeTable->select()
-        ->where('poster_type = ?', 'user')
-        ->where('poster_id = ?', $payload->getIdentity());
-      foreach( $likeTable->fetchAll($likeSelect) as $like ) {
-        $like->delete();
-      }
+      // $likeTable = Engine_Api::_()->getDbtable('likes', 'core');
+      // // Delete likes by poster
+      // $likeSelect = $likeTable->select()
+      //   ->where('poster_type = ?', 'user')
+      //   ->where('poster_id = ?', $payload->getIdentity());
+      // foreach( $likeTable->fetchAll($likeSelect) as $like ) {
+      //   $like->delete();
+      // }
       //Delete channels
       Engine_Api::_()->getDbtable('chanels', 'sesvideo')->delete(array(
         'owner_id = ?' => $payload->getIdentity(),
